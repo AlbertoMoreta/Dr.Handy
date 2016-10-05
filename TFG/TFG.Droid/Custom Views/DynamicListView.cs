@@ -96,7 +96,7 @@ namespace TFG.Droid.Custom_Views {
         }
 
         public void init(Context context) {
-            this.LongClick += ItemLongClick; 
+            this.LongClick += OnItemLongClick; 
             DisplayMetrics metrics = context.Resources.DisplayMetrics;
             _smoothScrollAmountAtEdge = (int) (SMOOTH_SCROLL_AMOUNT_AT_EDGE / metrics.Density);
         }
@@ -105,7 +105,7 @@ namespace TFG.Droid.Custom_Views {
          * Listens for long clicks on any items in the listview. When a cell has
          * been selected, the hover cell is created and set up.
          */
-        private void ItemLongClick(object sender, EventArgs e) {
+        private void OnItemLongClick(object sender, EventArgs e) {
             _totalOffset = 0;
 
             int position = PointToPosition(_downX, _downY);
