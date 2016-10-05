@@ -8,8 +8,8 @@ using Android.Widget;
 using Android.OS;
 
 namespace TFG.Droid{
-	[Activity (Label = "TFG.Droid", MainLauncher = true, Icon = "@drawable/icon")]
-	public class MainActivity : Activity{
+	[Activity (Label = "MainActivity", MainLauncher = true, Icon = "@drawable/icon")]
+	public class MainActivity : BaseActivity{
 		int count = 1;
 
 		protected override void OnCreate (Bundle bundle){

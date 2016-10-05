@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <item name="dark_green" type="color">#009878</item>
+  <item name="light_green" type="color">#29CBA8</item>
+  <item name="dark_grey" type="color">#B2B2B2</item>
+  <item name="light_grey" type="color">#F1F1F1</item>
+  <item name="white" type="color">#FFFFFF</item>
+  <item name="transparent" type="color">#00000000</item>
+  <item name="blue" type="color">#5D82AA</item>
+  <item name="light_blue" type="color">#64BCF9</item>
+  <item name="dark_yellow" type="color">#EEB600</item>
+  <item name="light_yellow" type="color">#FFCC66</item>
+  <item name="orange" type="color">#E17A3F</item>
+  <item name="red" type="color">#DE4949</item>
+  <item name="grey" type="color">#666666</item>
+  <item name="green" type="color">#1BAB8C</item>
+  <item name="black" type="color">#000000</item>
+</resources>
