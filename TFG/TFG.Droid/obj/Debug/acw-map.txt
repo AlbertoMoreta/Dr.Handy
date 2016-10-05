@@ -1,0 +1,4 @@
+TFG.Droid.MainActivity, TFG.Droid;md5b9206eb84b4119708ab92ee32a78b65f.MainActivity
+TFG.Droid.MainActivity, TFG.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5b9206eb84b4119708ab92ee32a78b65f.MainActivity
+TFG.Droid.MainActivity;md5b9206eb84b4119708ab92ee32a78b65f.MainActivity
+tfg.droid.MainActivity;md5b9206eb84b4119708ab92ee32a78b65f.MainActivity
