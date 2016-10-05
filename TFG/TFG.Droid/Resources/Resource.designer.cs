@@ -2561,6 +2561,9 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f050003
 			public const int CardView_Light = 2131034115;
 			
+			// aapt resource value: 0x7f050143
+			public const int MyTheme_Base = 2131034435;
+			
 			// aapt resource value: 0x7f05001b
 			public const int Platform_AppCompat = 2131034139;
 			
@@ -2866,9 +2869,6 @@ namespace TFG.Droid
 			
 			// aapt resource value: 0x7f0500fb
 			public const int ThemeOverlay_AppCompat_Light = 2131034363;
-			
-			// aapt resource value: 0x7f050143
-			public const int ToolBarTheme = 2131034435;
 			
 			// aapt resource value: 0x7f0500fc
 			public const int Widget_AppCompat_ActionBar = 2131034364;
