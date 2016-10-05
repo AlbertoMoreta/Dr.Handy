@@ -48,6 +48,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapters\StableArrayAdapter.cs" />
+    <Compile Include="Custom Views\DynamicListView.cs" />
     <Compile Include="Custom Views\HealthCard.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
