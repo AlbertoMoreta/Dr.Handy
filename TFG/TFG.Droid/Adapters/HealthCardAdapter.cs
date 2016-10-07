@@ -9,68 +9,75 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Support.V7.Widget; 
 using TFG.Droid.Custom_Views;
+using Java.Util;
 
-namespace TFG.Droid.Adapters { 
-    class HealthCardAdapter : BaseAdapter{
+namespace TFG.Droid.Adapters {
+    class HealthCardAdapter : RecyclerView.Adapter {
 
-        //ViewHolder For The Cards
-        private class ViewHolder : Java.Lang.Object {
-            public HealthCard Card { get; set; }
-        }
-              
-        private List<HealthCard> cards = new List<HealthCard>();
+        //ViewHolder for the Cards
+        public class CardViewHolder : RecyclerView.ViewHolder {
 
-        private Context context;
-        private LayoutInflater inflater;
+            //Name of the Module
+            public TextView Name { get; set; }
 
-        public HealthCardAdapter(Context context) {
-            this.context = context;
-            inflater = (LayoutInflater) context.GetSystemService(Context.LayoutInflaterService);
-        } 
-
-        public void SetCards(List<HealthCard> cards) {
-            this.cards = cards;
+            public CardViewHolder(View itemView) : base(itemView) {
+                Name = itemView.FindViewById<TextView>(Resource.Id.module_name);
+            }
         }
 
-        public void AddCard(HealthCard card) {
-            cards.Add(card);
-        } 
+        private List<HealthCard> _cards = new List<HealthCard>();
 
-        public override int Count {
+        public HealthCardAdapter(List<HealthCard> cards) {
+            _cards = cards;
+        }
+
+        public override int ItemCount {
             get {
-                return cards.Count;
+                return _cards.Count;
             }
         }
 
-        public override Java.Lang.Object GetItem(int position) {
-            return cards.ElementAt(position);
+        public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
+            View itemView = LayoutInflater.From(parent.Context).
+            Inflate(Resource.Layout.health_card, parent, false);
+
+            return new CardViewHolder(itemView); 
         }
 
-        public override long GetItemId(int position) {
-            return position;
+        public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+            CardViewHolder viewHolder = holder as CardViewHolder;
+            viewHolder.Name.Text = _cards[position].Name; 
         }
 
-        //Get Card
-        public override View GetView(int position, View convertView, ViewGroup parent) {
-
-            ViewHolder viewHolder = null;
-
-            if (convertView == null) {
-                viewHolder = new ViewHolder();
-                convertView = new HealthCard(context);
-                viewHolder.Card = convertView as HealthCard;
-                convertView.Tag = viewHolder; 
-            } else {
-                viewHolder = convertView.Tag as ViewHolder;
+        public bool OnItemMove(int fromPosition, int toPosition) {
+            if(fromPosition < toPosition) {
+                for (int i = fromPosition; i<toPosition; i++) {
+                    var initialCard = _cards[i];
+                    var finalCard = _cards[i + 1];
+                    _cards.RemoveAt(i + 1);
+                    _cards.Insert(i + 1, initialCard);
+                    _cards.RemoveAt(i);
+                    _cards.Insert(i, finalCard); 
+                }
+            }else {
+                for (int i = fromPosition; i > toPosition; i--) {
+                    var initialCard = _cards[i];
+                    var finalCard = _cards[i - 1];
+                    _cards.RemoveAt(i - 1);
+                    _cards.Insert(i - 1, initialCard);
+                    _cards.RemoveAt(i);
+                    _cards.Insert(i, finalCard);
+                }
             }
+            NotifyItemMoved(fromPosition, toPosition);
+            return true;
+        }
 
-            viewHolder.Card.Name = cards.ElementAt(position).Name;
-
-            return convertView;
-
-        }  
-
-
+        public void OnItemDismiss(int position) {
+            _cards.RemoveAt(position);
+            NotifyItemRemoved(position);
+        }
     }
 }

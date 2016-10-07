@@ -9,6 +9,9 @@ using Android.OS;
 using TFG.Droid.Custom_Views;
 using TFG.Droid.Adapters;
 using System.Collections.Generic;
+using Android.Support.V7.Widget;
+using TFG.Droid.Callbacks;
+using Android.Support.V7.Widget.Helper;
 
 namespace TFG.Droid{
 	[Activity (Label = "MainActivity", MainLauncher = true, Icon = "@drawable/icon", Theme="@style/AppTheme")]
@@ -29,13 +32,17 @@ namespace TFG.Droid{
             cards.Add(new HealthCard(this) { Name = "Card 4" });
             cards.Add(new HealthCard(this) { Name = "Card 5" });
 
-            HealthCardAdapter adapter = new HealthCardAdapter(this);
-            adapter.SetCards(cards);
-            DynamicListView listView = FindViewById<DynamicListView>(Resource.Id.listview);
+            RecyclerView recyclerView = FindViewById<RecyclerView>(Resource.Id.recycler_view);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+            linearLayoutManager.Orientation = (int) Orientation.Vertical;
+            recyclerView.SetLayoutManager(linearLayoutManager);
 
-            listView.SetViewList(cards);
-            listView.Adapter = adapter;
-            listView.ChoiceMode = ChoiceMode.Single;
+            HealthCardAdapter adapter = new HealthCardAdapter(cards);
+            recyclerView.SetAdapter(adapter);
+
+            ItemTouchHelper.Callback callback = new HealthCardCallback(adapter);
+            ItemTouchHelper helper = new ItemTouchHelper(callback);
+            helper.AttachToRecyclerView(recyclerView);
 
         }
 	}
