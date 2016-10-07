@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using Android.Support.V7.Widget;
 using TFG.Droid.Callbacks;
 using Android.Support.V7.Widget.Helper;
+using com.refractored.fab;
 
 namespace TFG.Droid{
 	[Activity (Label = "MainActivity", MainLauncher = true, Icon = "@drawable/icon", Theme="@style/AppTheme")]
@@ -43,6 +44,9 @@ namespace TFG.Droid{
             ItemTouchHelper.Callback callback = new HealthCardCallback(adapter);
             ItemTouchHelper helper = new ItemTouchHelper(callback);
             helper.AttachToRecyclerView(recyclerView);
+
+            var fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+            fab.AttachToRecyclerView(recyclerView);
 
         }
 	}

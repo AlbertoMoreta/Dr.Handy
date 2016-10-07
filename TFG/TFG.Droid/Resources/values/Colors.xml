@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
+  <item name="primary" type="color">#1BAB8C</item>
+  <item name="primary_dark" type="color">#009878</item>
+  <item name="ripple" type="color">#29CBA8</item>
+  
   <item name="dark_green" type="color">#009878</item>
   <item name="light_green" type="color">#29CBA8</item>
   <item name="dark_grey" type="color">#B2B2B2</item>
