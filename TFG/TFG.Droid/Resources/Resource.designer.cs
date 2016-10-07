@@ -1699,6 +1699,9 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f0b0028
 			public const int list_item = 2131427368;
 			
+			// aapt resource value: 0x7f0b0052
+			public const int listview = 2131427410;
+			
 			// aapt resource value: 0x7f0b0056
 			public const int media_actions = 2131427414;
 			
@@ -1713,9 +1716,6 @@ namespace TFG.Droid
 			
 			// aapt resource value: 0x7f0b0014
 			public const int multiply = 2131427348;
-			
-			// aapt resource value: 0x7f0b0052
-			public const int myButton = 2131427410;
 			
 			// aapt resource value: 0x7f0b001f
 			public const int never = 2131427359;

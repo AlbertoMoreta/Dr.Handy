@@ -2,10 +2,6 @@
 <resources>
 
   <style name="AppTheme" parent="@style/MyTheme.Base">
-    <item name="android:colorPrimary">@color/green</item>
-    <item name="colorPrimaryDark">@color/green</item>
-    <item name="android:colorAccent">@color/light_green</item>
-    
     <item name="android:windowContentTransitions">true</item>
     <item name="android:windowAllowEnterTransitionOverlap">true</item>
     <item name="android:windowAllowReturnTransitionOverlap">true</item>

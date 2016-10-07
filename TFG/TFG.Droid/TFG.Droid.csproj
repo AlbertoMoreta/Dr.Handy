@@ -66,7 +66,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adapters\StableArrayAdapter.cs" />
+    <Compile Include="Adapters\HealthCardAdapter.cs" />
     <Compile Include="BaseActivity.cs" />
     <Compile Include="Custom Views\DynamicListView.cs" />
     <Compile Include="Custom Views\HealthCard.cs" />
