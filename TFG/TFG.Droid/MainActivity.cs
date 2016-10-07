@@ -6,6 +6,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using TFG.Droid.Custom_Views;
+using TFG.Droid.Adapters;
+using System.Collections.Generic;
 
 namespace TFG.Droid{
 	[Activity (Label = "MainActivity", MainLauncher = true, Icon = "@drawable/icon", Theme="@style/AppTheme")]
@@ -14,21 +17,27 @@ namespace TFG.Droid{
 
 		protected override void OnCreate (Bundle bundle){
 			base.OnCreate (bundle);
-
-			// Set our view from the "main" layout resource
+             
 			SetContentView (Resource.Layout.Main);
 
             SetUpToolBar();
 
-			// Get our button from the layout resource,
-			// and attach an event to it
-			Button button = FindViewById<Button> (Resource.Id.myButton);
-			
-			button.Click += delegate {
-				button.Text = string.Format ("{0} clicks!", count++);
-			};
-            
-		}
+            List<HealthCard> cards = new List<HealthCard>();
+            cards.Add(new HealthCard(this) { Name = "Card 1" });
+            cards.Add(new HealthCard(this) { Name = "Card 2" });
+            cards.Add(new HealthCard(this) { Name = "Card 3" });
+            cards.Add(new HealthCard(this) { Name = "Card 4" });
+            cards.Add(new HealthCard(this) { Name = "Card 5" });
+
+            HealthCardAdapter adapter = new HealthCardAdapter(this);
+            adapter.SetCards(cards);
+            DynamicListView listView = FindViewById<DynamicListView>(Resource.Id.listview);
+
+            listView.SetViewList(cards);
+            listView.Adapter = adapter;
+            listView.ChoiceMode = ChoiceMode.Single;
+
+        }
 	}
 }
 
