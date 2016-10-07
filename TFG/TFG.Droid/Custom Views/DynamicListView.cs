@@ -49,7 +49,7 @@ namespace TFG.Droid.Custom_Views {
         private readonly int MOVE_DURATION = 150;
         private readonly int LINE_THICKNESS = 15;
 
-        public List<View> _viewList;
+        public List<HealthCard> _viewList;
 
         private int _lastEventY = -1;
 
@@ -96,7 +96,7 @@ namespace TFG.Droid.Custom_Views {
         }
 
         public void init(Context context) {
-            this.LongClick += OnItemLongClick; 
+            LongClick += delegate { OnItemLongClick(); }; 
             DisplayMetrics metrics = context.Resources.DisplayMetrics;
             _smoothScrollAmountAtEdge = (int) (SMOOTH_SCROLL_AMOUNT_AT_EDGE / metrics.Density);
         }
@@ -105,7 +105,7 @@ namespace TFG.Droid.Custom_Views {
          * Listens for long clicks on any items in the listview. When a cell has
          * been selected, the hover cell is created and set up.
          */
-        private void OnItemLongClick(object sender, EventArgs e) {
+        private void OnItemLongClick() {
             _totalOffset = 0;
 
             int position = PointToPosition(_downX, _downY);
@@ -180,7 +180,7 @@ namespace TFG.Droid.Custom_Views {
          */
         private void UpdateNeighborViewsForID(long itemID) {
             int position = GetPositionForID(itemID);
-            StableArrayAdapter adapter = ((StableArrayAdapter) Adapter);
+            HealthCardAdapter adapter = ((HealthCardAdapter) Adapter);
             _aboveItemId = adapter.GetItemId(position - 1);
             _belowItemId = adapter.GetItemId(position + 1);
         }
@@ -188,7 +188,7 @@ namespace TFG.Droid.Custom_Views {
         /** Retrieves the view in the list corresponding to itemID */
         public View GetViewForID(long itemID) {
             int firstVisiblePosition = FirstVisiblePosition;
-            StableArrayAdapter adapter = ((StableArrayAdapter) Adapter);
+            HealthCardAdapter adapter = ((HealthCardAdapter) Adapter);
             for (int i = 0; i < ChildCount; i++) {
                 View v = GetChildAt(i);
                 int position = firstVisiblePosition + i;
@@ -341,8 +341,8 @@ namespace TFG.Droid.Custom_Views {
              }
          }
 
-        private void SwapElements(List<View> list, int indexOne, int indexTwo) {
-            View temp = list.ElementAt(indexOne);
+        private void SwapElements(List<HealthCard> list, int indexOne, int indexTwo) {
+            HealthCard temp = list.ElementAt(indexOne);
             list.Insert(indexOne, list.ElementAt(indexTwo));
             list.Insert(indexTwo, temp);
         }
@@ -464,7 +464,7 @@ namespace TFG.Droid.Custom_Views {
             return false;
         }
 
-        public void setViewList(List<View> viewList) {
+        public void SetViewList(List<HealthCard> viewList) {
             _viewList = viewList;
         }
 
