@@ -16,8 +16,7 @@ using com.refractored.fab;
 
 namespace TFG.Droid{
 	[Activity (Label = "MainActivity", MainLauncher = true, Icon = "@drawable/icon", Theme="@style/AppTheme")]
-	public class MainActivity : BaseActivity {
-		int count = 1;
+	public class MainActivity : BaseActivity { 
 
 		protected override void OnCreate (Bundle bundle){
 			base.OnCreate (bundle);
@@ -47,6 +46,8 @@ namespace TFG.Droid{
 
             var fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.AttachToRecyclerView(recyclerView);
+
+            fab.Click += delegate { StartActivity(typeof(ModuleListActivity)); };
 
         }
 	}
