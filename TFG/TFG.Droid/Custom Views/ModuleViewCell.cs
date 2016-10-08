@@ -41,7 +41,7 @@ namespace TFG.Droid.Custom_Views {
             _moduleName = FindViewById<TextView>(Resource.Id.module_name);
             _moduleDescription = FindViewById<TextView>(Resource.Id.module_description);
             _moduleIcon = FindViewById<ImageView>(Resource.Id.module_icon);
-            _addButton = FindViewById<ImageView>(Resource.Id.module_addbutton)
+            _addButton = FindViewById<ImageView>(Resource.Id.module_addbutton);
         }
 
     }
