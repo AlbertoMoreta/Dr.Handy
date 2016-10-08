@@ -63,7 +63,7 @@ namespace TFG.Droid.Adapters {
                 convertView = new ModuleViewCell(_context);
                 viewHolder.ViewCell = convertView as ModuleViewCell;
                 convertView.Tag = viewHolder;
-              //  viewHolder.ViewCell.AddButton.Click += delegate {  };
+                viewHolder.ViewCell.AddButton.Click += delegate { AddButtonClick(); };
             } else {
                 viewHolder = convertView.Tag as ViewHolder;
             }
@@ -72,12 +72,14 @@ namespace TFG.Droid.Adapters {
 
             viewHolder.ViewCell.Name = module.HealthModuleName();
             viewHolder.ViewCell.Description = module.HealthModuleDescription();
-            viewHolder.ViewCell.AddButton = _context.GetDrawable(Resource.Drawable.ic_remove);
+            viewHolder.ViewCell.AddButtonImage = _context.GetDrawable(Resource.Drawable.ic_remove);
 
 
             return convertView;
 
         }  
+
+        private void AddButtonClick() { }
          
        
     }
