@@ -1656,13 +1656,19 @@ namespace TFG.Droid
 			public const int fab_shadow_mini = 2130837580;
 			
 			// aapt resource value: 0x7f02004d
-			public const int ic_edit = 2130837581;
+			public const int ic_add = 2130837581;
 			
 			// aapt resource value: 0x7f02004e
-			public const int Icon = 2130837582;
+			public const int ic_edit = 2130837582;
 			
 			// aapt resource value: 0x7f02004f
-			public const int notification_template_icon_bg = 2130837583;
+			public const int ic_remove = 2130837583;
+			
+			// aapt resource value: 0x7f020050
+			public const int Icon = 2130837584;
+			
+			// aapt resource value: 0x7f020051
+			public const int notification_template_icon_bg = 2130837585;
 			
 			static Drawable()
 			{

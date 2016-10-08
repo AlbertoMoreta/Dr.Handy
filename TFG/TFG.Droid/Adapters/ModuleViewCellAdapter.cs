@@ -72,6 +72,7 @@ namespace TFG.Droid.Adapters {
 
             viewHolder.ViewCell.Name = module.HealthModuleName();
             viewHolder.ViewCell.Description = module.HealthModuleDescription();
+            viewHolder.ViewCell.AddButton = _context.GetDrawable(Resource.Drawable.ic_remove);
 
 
             return convertView;

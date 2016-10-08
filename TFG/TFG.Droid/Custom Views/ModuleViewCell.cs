@@ -10,9 +10,10 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Util;
+using Android.Graphics.Drawables;
 
 namespace TFG.Droid.Custom_Views {
-    class ModuleViewCell : LinearLayout{
+    class ModuleViewCell : RelativeLayout{
 
         private TextView _moduleName;
         private TextView _moduleDescription;
@@ -27,6 +28,15 @@ namespace TFG.Droid.Custom_Views {
         public string Description {
             set { _moduleDescription.Text = value; }
             get { return _moduleDescription.Text; }
+        }
+
+        public ImageView AddButton{
+            get { return _addButton; }
+        }
+
+        public Drawable AddButtonImage {
+            set { _addButton.SetImageDrawable(value); }
+            get { return _addButton.Drawable; }
         }
 
 
