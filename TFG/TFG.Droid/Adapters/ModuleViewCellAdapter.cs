@@ -22,7 +22,7 @@ namespace TFG.Droid.Adapters {
 
         private Context _context;
         private LayoutInflater _inflater;
-        private List<HealthModule> _modules = HealthModules.GetHealthModules;
+        private List<HealthModules> _modules = HealthModulesInfo.GetHealthModules;
         private List<ModuleViewCell> _viewCells = new List<ModuleViewCell>();
 
         public ModuleViewCellAdapter(Context context) {
@@ -31,11 +31,11 @@ namespace TFG.Droid.Adapters {
         } 
          
 
-        public void AddModule(HealthModule module) {
+        public void AddModule(HealthModules module) {
             _modules.Add(module);
         }
 
-        public void SetModules(List<HealthModule> modules) {
+        public void SetModules(List<HealthModules> modules) {
             _modules = modules;
         } 
 
@@ -57,7 +57,7 @@ namespace TFG.Droid.Adapters {
         public override View GetView(int position, View convertView, ViewGroup parent) {
 
             ViewHolder viewHolder = null;
-            HealthModule module = _modules.ElementAt(position);
+            HealthModules module = _modules.ElementAt(position);
 
             if (convertView == null) {
                 viewHolder = new ViewHolder();
@@ -81,7 +81,7 @@ namespace TFG.Droid.Adapters {
 
         }  
 
-        private void OnAddButtonClick(HealthModule module) {
+        private void OnAddButtonClick(HealthModules module) {
             if (DBHelper.Instance.CheckIfExists(module)) {
                 if (DBHelper.Instance.CheckIfVisible(module)) {
                     DBHelper.Instance.ChangeModuleVisibility(module, false);
@@ -92,8 +92,11 @@ namespace TFG.Droid.Adapters {
                 DBHelper.Instance.AddHealthModule(module);
             }
 
+            NotifyDataSetChanged();
+
         }
          
        
+
     }
 }

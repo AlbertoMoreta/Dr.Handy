@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using TFG.Droid.Custom_Views;
 using TFG.Model;
 
 namespace TFG {
@@ -12,7 +13,7 @@ namespace TFG {
          
         public static readonly string DB_NAME = "HealthApp.db3";
 
-        private static readonly string TABLE_NAME = "health_module";
+        public static readonly string TABLE_NAME = "HEALTH_MODULE";
         private static readonly string COL_KEY_ID = "Id";
         private static readonly string COL_NAME = "Name";
         private static readonly string COL_DESCRIPTION = "Description";
@@ -73,16 +74,16 @@ namespace TFG {
         }
         
         
-        public void AddHealthModule(HealthModule module) {
+        public void AddHealthModule(HealthModules module) {
             var sql = "INSERT INTO " + TABLE_NAME + " (" + COL_NAME + ", " + COL_DESCRIPTION + ", " + COL_POSITION + ", " + COL_VISIBLE + ") VALUES " 
-                + "('" + module.HealthModuleName() + "', '" + module.HealthModuleName() + "', " + Count() + ", 1)" ;
+                + "('" + module.HealthModuleName() + "', '" + module.HealthModuleDescription() + "', " + Count() + ", 1)" ;
 
             Connection.Execute(sql);
         } 
 
-        public bool CheckIfExists(HealthModule module) {
+        public bool CheckIfExists(HealthModules module) {
             try {
-                var sql = "SELECT COUNT(*) FROM " + TABLE_NAME + " WHERE " + COL_NAME + " = " + module.HealthModuleName();
+                var sql = "SELECT COUNT(*) FROM " + TABLE_NAME + " WHERE " + COL_NAME + " = '" + module.HealthModuleName() + "'";
                 var count = Connection.ExecuteScalar<int>(sql);
                 return count > 0;
             } catch(SQLite.SQLiteException e) {
@@ -91,9 +92,10 @@ namespace TFG {
 
         }
 
-        public bool CheckIfVisible(HealthModule module) {
+        public bool CheckIfVisible(HealthModules module) {
             try {
-                var sql = "SELECT COUNT(*) FROM " + TABLE_NAME + " WHERE " + COL_VISIBLE + " = 1";
+                var sql = "SELECT COUNT(*) FROM " + TABLE_NAME + " WHERE " + COL_NAME + " = '" + module.HealthModuleName() 
+                    + "' AND " + COL_VISIBLE + " = 1";
                 var count = Connection.ExecuteScalar<int>(sql);
                 return count > 0;
             } catch (SQLite.SQLiteException e) {
@@ -101,12 +103,26 @@ namespace TFG {
             }
         }
 
-        public void ChangeModuleVisibility(HealthModule module, bool value) {
+        public void ChangeModuleVisibility(HealthModules module, bool value) {
             var sql = "UPDATE " + TABLE_NAME + " SET " + COL_VISIBLE + " = " + (value ? 1 : 0) 
-                + " WHERE " + COL_NAME + " = " + module.HealthModuleName();
+                + " WHERE " + COL_NAME + " = '" + module.HealthModuleName() + "'";
 
             Connection.Execute(sql);
         }
+
+        public List<HealthModule> GetModules() {
+            var sql = "SELECT " +  COL_NAME+" FROM " + TABLE_NAME 
+                + " WHERE " + COL_VISIBLE + " = 1 ORDER BY " + COL_POSITION + " ASC";
+            return Connection.Query<HealthModule>(sql);
+
+        } 
+
+
+        public void DropTable(string tableName) {
+            var sql = "DROP TABLE IF EXISTS " + tableName;
+            Connection.Execute(sql);
+        }
+
     }
 
 

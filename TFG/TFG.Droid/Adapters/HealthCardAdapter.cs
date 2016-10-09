@@ -79,5 +79,9 @@ namespace TFG.Droid.Adapters {
             _cards.RemoveAt(position);
             NotifyItemRemoved(position);
         }
+
+        public void SetCards(List<HealthCard> cards) {
+            _cards = cards;
+        }
     }
 }
