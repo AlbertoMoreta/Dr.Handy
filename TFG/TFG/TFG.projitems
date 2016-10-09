@@ -9,6 +9,7 @@
     <Import_RootNamespace>TFG</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)DBHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\HealthModule.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MyClass.cs" />
   </ItemGroup>

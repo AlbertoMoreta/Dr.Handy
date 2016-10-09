@@ -57,29 +57,42 @@ namespace TFG.Droid.Adapters {
         public override View GetView(int position, View convertView, ViewGroup parent) {
 
             ViewHolder viewHolder = null;
+            HealthModule module = _modules.ElementAt(position);
 
             if (convertView == null) {
                 viewHolder = new ViewHolder();
                 convertView = new ModuleViewCell(_context);
                 viewHolder.ViewCell = convertView as ModuleViewCell;
                 convertView.Tag = viewHolder;
-                viewHolder.ViewCell.AddButton.Click += delegate { AddButtonClick(); };
+                viewHolder.ViewCell.AddButton.Click += delegate { OnAddButtonClick(module); };
             } else {
                 viewHolder = convertView.Tag as ViewHolder;
             }
 
-            HealthModule module = _modules.ElementAt(position);
 
             viewHolder.ViewCell.Name = module.HealthModuleName();
             viewHolder.ViewCell.Description = module.HealthModuleDescription();
-            viewHolder.ViewCell.AddButtonImage = _context.GetDrawable(Resource.Drawable.ic_remove);
+            viewHolder.ViewCell.AddButtonImage = DBHelper.Instance.CheckIfExists(module) &&
+                                                 DBHelper.Instance.CheckIfVisible(module) ? _context.GetDrawable(Resource.Drawable.ic_remove)
+                                                                                          : _context.GetDrawable(Resource.Drawable.ic_add);
 
 
             return convertView;
 
         }  
 
-        private void AddButtonClick() { }
+        private void OnAddButtonClick(HealthModule module) {
+            if (DBHelper.Instance.CheckIfExists(module)) {
+                if (DBHelper.Instance.CheckIfVisible(module)) {
+                    DBHelper.Instance.ChangeModuleVisibility(module, false);
+                }else {
+                    DBHelper.Instance.ChangeModuleVisibility(module, true);
+                }
+            }else {
+                DBHelper.Instance.AddHealthModule(module);
+            }
+
+        }
          
        
     }

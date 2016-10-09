@@ -25,6 +25,8 @@ namespace TFG.Droid {
             
             ListView modulesList = FindViewById<ListView>(Resource.Id.listView);
             modulesList.Adapter = adapter;
+
+            DBHelper.Instance.Init();
             
 
         }
