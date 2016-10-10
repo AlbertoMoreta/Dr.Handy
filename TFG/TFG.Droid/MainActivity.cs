@@ -63,8 +63,8 @@ namespace TFG.Droid{
             List<HealthCard> cards = new List<HealthCard>();
 
             List<HealthModule> modules = DBHelper.Instance.GetModules();
-            foreach(HealthModule module in modules) {
-                cards.Add(new HealthCard(this) { Name = module.Name });
+            foreach(HealthModule module in modules) { 
+                cards.Add(new HealthCard(this, module) { Name = module.Name });
             }
 
             return cards;

@@ -110,8 +110,15 @@ namespace TFG {
             Connection.Execute(sql);
         }
 
+        public void ChangeModulePosition(HealthModule module, int position) {
+            var sql = "UPDATE " + TABLE_NAME + " SET " + COL_POSITION + " = " + position
+                + " WHERE " + COL_NAME + " = '" + module.Name + "'";
+
+            Connection.Execute(sql);
+        }
+
         public List<HealthModule> GetModules() {
-            var sql = "SELECT " +  COL_NAME+" FROM " + TABLE_NAME 
+            var sql = "SELECT * FROM " + TABLE_NAME 
                 + " WHERE " + COL_VISIBLE + " = 1 ORDER BY " + COL_POSITION + " ASC";
             return Connection.Query<HealthModule>(sql);
 

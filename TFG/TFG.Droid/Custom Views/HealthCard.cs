@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Util;
+using TFG.Model;
 
 namespace TFG.Droid.Custom_Views {
     class HealthCard : LinearLayout{
@@ -22,13 +23,18 @@ namespace TFG.Droid.Custom_Views {
             get { return _moduleName.Text;  }
         }
 
+        public HealthModule HealthModule { get; set; }
 
-        public HealthCard(Context context) : base(context) {
+         
+        public HealthCard(Context context, HealthModule module) : base(context) {
+            HealthModule = module;
             Init();
-        } 
-        public HealthCard(Context context, IAttributeSet attrs): base(context, attrs) {
+        }
+
+        public HealthCard(Context context, IAttributeSet attrs, HealthModule module) : base(context, attrs) {
+            HealthModule = module;
             Init();
-        } 
+        }
 
 
         private void Init() {

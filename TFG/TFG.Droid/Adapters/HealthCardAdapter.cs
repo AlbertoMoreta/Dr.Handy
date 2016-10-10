@@ -54,25 +54,25 @@ namespace TFG.Droid.Adapters {
         public bool OnItemMove(int fromPosition, int toPosition) {
             if(fromPosition < toPosition) {
                 for (int i = fromPosition; i<toPosition; i++) {
-                    var initialCard = _cards[i];
-                    var finalCard = _cards[i + 1];
-                    _cards.RemoveAt(i + 1);
-                    _cards.Insert(i + 1, initialCard);
-                    _cards.RemoveAt(i);
-                    _cards.Insert(i, finalCard); 
+                    DBHelper.Instance.ChangeModulePosition(_cards[i + 1].HealthModule, i);
+                    DBHelper.Instance.ChangeModulePosition(_cards[i].HealthModule, i + 1);
+                    Swap(_cards, i, i + 1);
                 }
             }else {
                 for (int i = fromPosition; i > toPosition; i--) {
-                    var initialCard = _cards[i];
-                    var finalCard = _cards[i - 1];
-                    _cards.RemoveAt(i - 1);
-                    _cards.Insert(i - 1, initialCard);
-                    _cards.RemoveAt(i);
-                    _cards.Insert(i, finalCard);
+                    DBHelper.Instance.ChangeModulePosition(_cards[i - 1].HealthModule, i);
+                    DBHelper.Instance.ChangeModulePosition(_cards[i].HealthModule, i - 1);
+                    Swap(_cards, i, i - 1);
                 }
             }
             NotifyItemMoved(fromPosition, toPosition);
             return true;
+        }
+
+        public void Swap<T>(IList<T> list, int fromPosition, int toPosition) {
+            T tmp = list[fromPosition];
+            list[fromPosition] = list[toPosition];
+            list[toPosition] = tmp; 
         }
 
         public void OnItemDismiss(int position) {
