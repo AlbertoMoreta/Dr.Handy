@@ -27,7 +27,7 @@ namespace TFG.Droid.Callbacks {
         }
 
         public override int GetMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-            int dragFlags = ItemTouchHelper.Up | ItemTouchHelper.Down;  //Support for drag and drop
+            int dragFlags = ItemTouchHelper.Up | ItemTouchHelper.Down | ItemTouchHelper.Left | ItemTouchHelper.Right;  //Support for drag and drop
             int swipeFlags = 0;     //No support for swipe
             return MakeMovementFlags(dragFlags, swipeFlags);
         }
