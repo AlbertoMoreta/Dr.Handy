@@ -12,6 +12,7 @@ using Android.Widget;
 using Android.Support.V7.Widget; 
 using TFG.Droid.Custom_Views;
 using Java.Util;
+using TFG.Droid.Listeners;
 
 namespace TFG.Droid.Adapters {
     class HealthCardAdapter : RecyclerView.Adapter {
@@ -28,6 +29,8 @@ namespace TFG.Droid.Adapters {
         }
 
         private List<HealthCard> _cards = new List<HealthCard>();
+        private HealthCardClickListener _listener;
+
 
         public HealthCardAdapter(List<HealthCard> cards) {
             _cards = cards;
@@ -42,8 +45,9 @@ namespace TFG.Droid.Adapters {
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
             View itemView = LayoutInflater.From(parent.Context).
             Inflate(Resource.Layout.health_card, parent, false);
+            itemView.Click += delegate { _listener.OnHealthCardClick(); };
 
-            return new CardViewHolder(itemView); 
+            return new CardViewHolder(itemView);
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position) {
@@ -83,5 +87,10 @@ namespace TFG.Droid.Adapters {
         public void SetCards(List<HealthCard> cards) {
             _cards = cards;
         }
+
+        public void SetHealthCardClickListener(HealthCardClickListener listener)  {
+            _listener = listener;
+        }
+
     }
 }

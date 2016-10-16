@@ -74,6 +74,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\ModuleDetailActivity.cs" />
     <Compile Include="Adapters\HealthCardAdapter.cs" />
     <Compile Include="Adapters\ModuleViewCellAdapter.cs" />
     <Compile Include="Activities\BaseActivity.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Custom Views\ModuleViewCell.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\ModuleListActivity.cs" />
+    <Compile Include="Listeners\HealthCardClickListener.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\SQLite.cs" />
@@ -101,6 +103,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\modules_list.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\module_detail.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -124,7 +129,9 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\values\Colors.xml" />
+    <AndroidResource Include="Resources\values\Colors.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\toolbar.xml">
@@ -132,7 +139,9 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\values-v21\Dimens.xml" />
+    <AndroidResource Include="Resources\values-v21\Dimens.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Dimens.xml">

@@ -13,11 +13,13 @@ using Android.Support.V7.Widget;
 using TFG.Droid.Callbacks;
 using Android.Support.V7.Widget.Helper;
 using com.refractored.fab;
+using TFG.Droid.Activities;
+using TFG.Droid.Listeners;
 using TFG.Model;
 
 namespace TFG.Droid{
 	[Activity (Label = "MainActivity", MainLauncher = true, Icon = "@drawable/icon", Theme="@style/AppTheme")]
-	public class MainActivity : BaseActivity {
+	public class MainActivity : BaseActivity, HealthCardClickListener {
 
         private HealthCardAdapter _adapter;
 
@@ -40,6 +42,7 @@ namespace TFG.Droid{
             recyclerView.SetLayoutManager(linearLayoutManager);
 
             _adapter = new HealthCardAdapter(cards);
+            _adapter.SetHealthCardClickListener(this);
             recyclerView.SetAdapter(_adapter);
 
             ItemTouchHelper.Callback callback = new HealthCardCallback(_adapter);
@@ -69,6 +72,10 @@ namespace TFG.Droid{
 
             return cards;
         }
+
+	    public void OnHealthCardClick()  {
+	        StartActivity(typeof(ModuleDetailActivity));
+	    }
 	}
 }
 
