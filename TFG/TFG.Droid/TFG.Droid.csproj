@@ -83,6 +83,8 @@
     <Compile Include="Custom Views\ModuleViewCell.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\ModuleListActivity.cs" />
+    <Compile Include="Fragments\ColorBlindnessTest\CBTBodyFragment.cs" />
+    <Compile Include="Fragments\ColorBlindnessTest\CBTHeaderFragment.cs" />
     <Compile Include="Listeners\HealthCardClickListener.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,6 +108,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\module_detail.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_cbt_header.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_cbt_body.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
