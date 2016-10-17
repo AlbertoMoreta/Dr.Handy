@@ -96,6 +96,7 @@
     <Compile Include="Utils\SQLiteAsync.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\JSON\ColorBlindnessTest.json" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml">
@@ -186,6 +187,10 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_add.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_add.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_add.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_01.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_02.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_03.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_04.png" />
   </ItemGroup>
   <Import Project="..\TFG\TFG.projitems" Label="Shared" Condition="Exists('..\TFG\TFG.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
