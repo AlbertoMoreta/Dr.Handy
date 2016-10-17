@@ -10,10 +10,15 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using TFG.Droid.Fragments.ColorBlindnessTest;
+using TFG.Droid.Interfaces;
 
 namespace TFG.Droid.Activities {
     [Activity(Label = "ModuleDetailActivity", Theme = "@style/AppTheme")]
     public class ModuleDetailActivity : BaseActivity {
+
+        public IHealthFragment HeaderFragment { get; private set; }
+        public IHealthFragment BodyFragment { get; private set; }
+
         protected override void OnCreate(Bundle savedInstanceState) {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.module_detail);
@@ -23,11 +28,11 @@ namespace TFG.Droid.Activities {
             FragmentManager fragmentManager = FragmentManager;
             FragmentTransaction fragmentTransaction = fragmentManager.BeginTransaction();
 
-            CBTHeaderFragment headerFragment = new CBTHeaderFragment();
-            fragmentTransaction.Add(Resource.Id.fragments_container, headerFragment);
+            HeaderFragment = new CBTHeaderFragment();
+            fragmentTransaction.Add(Resource.Id.fragments_container, HeaderFragment as Fragment);
 
-            CBTBodyFragment bodyFragment = new CBTBodyFragment();
-            fragmentTransaction.Add(Resource.Id.fragments_container, bodyFragment);
+            BodyFragment = new CBTBodyFragment();
+            fragmentTransaction.Add(Resource.Id.fragments_container, BodyFragment as Fragment);
 
             fragmentTransaction.Commit();
 

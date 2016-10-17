@@ -5,15 +5,34 @@ using System.Text;
 using Newtonsoft.Json;
 
 namespace TFG.Logic {
-    class ColorBlindnessLogic {
+    class ColorBlindnessLogic  {
 
+        public static readonly int TOTAL_QUESTIONS = 4;
+        public static readonly int ANSWERS_COUNT = 4;
+
+        public int CurrentQuestion { get; set; } = 0;
         public List<Model.ColorBlindnessQuestion> Questions { get; set; }
 
-#if __ANDROID__
-        private Android.Content.Context _context;
+        private static ColorBlindnessLogic _instance;
 
-        public ColorBlindnessLogic(Android.Content.Context context){
+        public static ColorBlindnessLogic Instance() {
+            if (_instance == null)  {
+                _instance = new ColorBlindnessLogic();
+            }
+
+            return _instance;
+        }
+  
+
+#if __ANDROID__
+        private static Android.Content.Context _context;
+
+        public static ColorBlindnessLogic Instance(Android.Content.Context context){
             _context = context;
+            if (_instance == null) {
+                _instance = new ColorBlindnessLogic();
+            }
+            return _instance;
         }
 
 #endif
