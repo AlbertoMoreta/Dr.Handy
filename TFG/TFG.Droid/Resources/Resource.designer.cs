@@ -1342,11 +1342,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f05000a
 			public const int abc_text_size_title_material_toolbar = 2131034122;
 			
-			// aapt resource value: 0x7f050057
-			public const int actionbar_height = 2131034199;
-			
 			// aapt resource value: 0x7f050058
-			public const int card_height = 2131034200;
+			public const int actionbar_height = 2131034200;
+			
+			// aapt resource value: 0x7f050059
+			public const int card_height = 2131034201;
 			
 			// aapt resource value: 0x7f050003
 			public const int cardview_compat_inset_shadow = 2131034115;
@@ -1405,11 +1405,14 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f050050
 			public const int notification_subtext_size = 2131034192;
 			
-			// aapt resource value: 0x7f050056
-			public const int text_size_large = 2131034198;
+			// aapt resource value: 0x7f050057
+			public const int text_size_large = 2131034199;
 			
-			// aapt resource value: 0x7f050059
-			public const int toolbar_top_padding = 2131034201;
+			// aapt resource value: 0x7f050056
+			public const int text_size_normal = 2131034198;
+			
+			// aapt resource value: 0x7f05005a
+			public const int toolbar_top_padding = 2131034202;
 			
 			static Dimension()
 			{
