@@ -1653,28 +1653,25 @@ namespace TFG.Droid
 			public const int abc_textfield_search_material = 2130837578;
 			
 			// aapt resource value: 0x7f02004b
-			public const int background_purple = 2130837579;
+			public const int fab_shadow = 2130837579;
 			
 			// aapt resource value: 0x7f02004c
-			public const int fab_shadow = 2130837580;
+			public const int fab_shadow_mini = 2130837580;
 			
 			// aapt resource value: 0x7f02004d
-			public const int fab_shadow_mini = 2130837581;
+			public const int ic_add = 2130837581;
 			
 			// aapt resource value: 0x7f02004e
-			public const int ic_add = 2130837582;
+			public const int ic_edit = 2130837582;
 			
 			// aapt resource value: 0x7f02004f
-			public const int ic_edit = 2130837583;
+			public const int ic_remove = 2130837583;
 			
 			// aapt resource value: 0x7f020050
-			public const int ic_remove = 2130837584;
+			public const int Icon = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int Icon = 2130837585;
-			
-			// aapt resource value: 0x7f020052
-			public const int notification_template_icon_bg = 2130837586;
+			public const int notification_template_icon_bg = 2130837585;
 			
 			static Drawable()
 			{
@@ -2241,11 +2238,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f090012
 			public const int abc_toolbar_collapse_description = 2131296274;
 			
-			// aapt resource value: 0x7f090015
-			public const int app_name = 2131296277;
-			
 			// aapt resource value: 0x7f090014
-			public const int hello = 2131296276;
+			public const int app_name = 2131296276;
+			
+			// aapt resource value: 0x7f090015
+			public const int color_blindness_test_name = 2131296277;
 			
 			// aapt resource value: 0x7f090013
 			public const int status_bar_notification_info_overflow = 2131296275;

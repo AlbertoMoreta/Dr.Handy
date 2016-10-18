@@ -12,6 +12,5 @@
     <Compile Include="$(MSBuildThisFileDirectory)DBHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\HealthModule.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\HealthModulesInfo.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MyClass.cs" />
   </ItemGroup>
 </Project>

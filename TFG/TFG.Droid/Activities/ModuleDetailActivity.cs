@@ -17,7 +17,7 @@ namespace TFG.Droid.Activities {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.module_detail);
 
-            SetUpToolBar();
-        }
+            //ToolBarTitle.Text = 
+        } 
     }
 }

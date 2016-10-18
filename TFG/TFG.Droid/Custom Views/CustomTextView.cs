@@ -13,7 +13,7 @@ using Android.Views;
 using Android.Widget;
 
 namespace TFG.Droid.Custom_Views {
-    class CustomTextView : TextView{
+    public class CustomTextView : TextView{
         public CustomTextView(Context context) : base(context) {
             Init();
         }
