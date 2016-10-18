@@ -7,6 +7,9 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V4.Content;
+using Android.Support.V7.App;
+using Android.Text.Style;
 using Android.Views;
 using Android.Widget;
 using TFG.Droid.Fragments.ColorBlindnessTest;
@@ -21,7 +24,8 @@ namespace TFG.Droid.Activities {
 
         protected override void OnCreate(Bundle savedInstanceState) {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.module_detail);
+            Window.DecorView.Background = ContextCompat.GetDrawable(this, Resources.GetIdentifier("background_purple", "drawable", PackageName));
+            SetContentView(Resource.Layout.module_detail); 
 
             SetUpToolBar();
 

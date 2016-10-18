@@ -12,6 +12,6 @@ using Android.Widget;
 
 namespace TFG.Droid.Listeners {
     interface HealthCardClickListener {
-        void OnHealthCardClick();
+        void OnHealthCardClick(View moduleView);
     }
 }

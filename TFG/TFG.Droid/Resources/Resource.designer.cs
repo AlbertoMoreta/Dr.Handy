@@ -1342,11 +1342,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f05000a
 			public const int abc_text_size_title_material_toolbar = 2131034122;
 			
-			// aapt resource value: 0x7f050058
-			public const int actionbar_height = 2131034200;
-			
 			// aapt resource value: 0x7f050059
-			public const int card_height = 2131034201;
+			public const int actionbar_height = 2131034201;
+			
+			// aapt resource value: 0x7f05005a
+			public const int card_height = 2131034202;
 			
 			// aapt resource value: 0x7f050003
 			public const int cardview_compat_inset_shadow = 2131034115;
@@ -1411,8 +1411,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f050056
 			public const int text_size_normal = 2131034198;
 			
-			// aapt resource value: 0x7f05005a
-			public const int toolbar_top_padding = 2131034202;
+			// aapt resource value: 0x7f050058
+			public const int text_size_toolbar = 2131034200;
+			
+			// aapt resource value: 0x7f05005b
+			public const int toolbar_top_padding = 2131034203;
 			
 			static Dimension()
 			{
@@ -1653,37 +1656,40 @@ namespace TFG.Droid
 			public const int abc_textfield_search_material = 2130837578;
 			
 			// aapt resource value: 0x7f02004b
-			public const int fab_shadow = 2130837579;
+			public const int background_purple = 2130837579;
 			
 			// aapt resource value: 0x7f02004c
-			public const int fab_shadow_mini = 2130837580;
+			public const int fab_shadow = 2130837580;
 			
 			// aapt resource value: 0x7f02004d
-			public const int ic_add = 2130837581;
+			public const int fab_shadow_mini = 2130837581;
 			
 			// aapt resource value: 0x7f02004e
-			public const int ic_edit = 2130837582;
+			public const int ic_add = 2130837582;
 			
 			// aapt resource value: 0x7f02004f
-			public const int ic_remove = 2130837583;
+			public const int ic_edit = 2130837583;
 			
 			// aapt resource value: 0x7f020050
-			public const int Icon = 2130837584;
+			public const int ic_remove = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int ishihara_01 = 2130837585;
+			public const int Icon = 2130837585;
 			
 			// aapt resource value: 0x7f020052
-			public const int ishihara_02 = 2130837586;
+			public const int ishihara_01 = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int ishihara_03 = 2130837587;
+			public const int ishihara_02 = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int ishihara_04 = 2130837588;
+			public const int ishihara_03 = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int notification_template_icon_bg = 2130837589;
+			public const int ishihara_04 = 2130837589;
+			
+			// aapt resource value: 0x7f020056
+			public const int notification_template_icon_bg = 2130837590;
 			
 			static Drawable()
 			{

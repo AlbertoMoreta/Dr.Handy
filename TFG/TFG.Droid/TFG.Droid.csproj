@@ -195,6 +195,7 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_02.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_03.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_04.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\background_purple.png" />
   </ItemGroup>
   <Import Project="..\TFG\TFG.projitems" Label="Shared" Condition="Exists('..\TFG\TFG.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />

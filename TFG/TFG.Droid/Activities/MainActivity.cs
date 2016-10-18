@@ -73,7 +73,7 @@ namespace TFG.Droid{
             return cards;
         }
 
-	    public void OnHealthCardClick()  {
+	    public void OnHealthCardClick(View moduleView)  {
 	        StartActivity(typeof(ModuleDetailActivity));
 	    }
 	}

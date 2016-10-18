@@ -45,7 +45,7 @@ namespace TFG.Droid.Adapters {
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
             View itemView = LayoutInflater.From(parent.Context).
             Inflate(Resource.Layout.health_card, parent, false);
-            itemView.Click += delegate { _listener.OnHealthCardClick(); };
+            itemView.Click += delegate { _listener.OnHealthCardClick(itemView); };
 
             return new CardViewHolder(itemView);
         }
