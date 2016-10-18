@@ -11,6 +11,7 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TFG", "TFG\TFG\TFG.shproj",
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		TFG\TFG\TFG.projitems*{82736bd0-7cfc-4747-b9ea-ba35c4bb22d3}*SharedItemsImports = 4
 		TFG\TFG\TFG.projitems*{9952bd72-9c8f-4343-a1aa-b5b82fca0089}*SharedItemsImports = 4
 		TFG\TFG\TFG.projitems*{f98aee32-12d0-4e95-b7b6-1531de782da3}*SharedItemsImports = 13
 	EndGlobalSection

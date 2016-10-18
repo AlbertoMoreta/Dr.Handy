@@ -7,8 +7,15 @@
     android:paddingTop="@dimen/toolbar_top_padding"
     android:minHeight="@dimen/actionbar_height"
     android:elevation="4dp"
-    android:gravity="center"
-    android:background="?attr/colorPrimary"
+    android:gravity="center" 
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"> 
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+    <TFG.Droid.Custom_Views.CustomTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_gravity="center" 
+        android:textSize="@dimen/text_size_large"
+        android:textColor="@color/white"/>
 </android.support.v7.widget.Toolbar>
