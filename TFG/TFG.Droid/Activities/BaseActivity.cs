@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Support.V7.App;
-
+using TFG.Droid.Custom_Views;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace TFG.Droid {
@@ -32,7 +32,9 @@ namespace TFG.Droid {
 
             if (toolBar != null) {  
                 SetSupportActionBar(toolBar);
-                SupportActionBar.SetDisplayShowTitleEnabled(true);  
+                SupportActionBar.SetDisplayShowTitleEnabled(false);
+                var title = toolBar.FindViewById<CustomTextView>(Resource.Id.title);
+                title.Text = this.Title;
 
             }
         }

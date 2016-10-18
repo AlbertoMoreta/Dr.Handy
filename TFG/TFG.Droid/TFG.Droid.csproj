@@ -83,6 +83,7 @@
     <Compile Include="Adapters\ModuleViewCellAdapter.cs" />
     <Compile Include="Activities\BaseActivity.cs" />
     <Compile Include="Callbacks\HealthCardCallback.cs" />
+    <Compile Include="Custom Views\CustomTextView.cs" />
     <Compile Include="Custom Views\HealthCard.cs" />
     <Compile Include="Custom Views\ModuleViewCell.cs" />
     <Compile Include="Activities\MainActivity.cs" />
@@ -98,6 +99,8 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\JSON\ColorBlindnessTest.json" />
+    <AndroidAsset Include="Assets\Fonts\DroidSerif-Bold.ttf" />
+    <AndroidAsset Include="Assets\Fonts\DroidSerif-Regular.ttf" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml">
