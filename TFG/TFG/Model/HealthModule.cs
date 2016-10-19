@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace TFG.Model {
-    class HealthModule  {
+    public class HealthModule  {
 
         public int Id { get; set; }
         public string Name { get; set; }

@@ -16,8 +16,9 @@ namespace TFG.Droid.Activities {
         protected override void OnCreate(Bundle savedInstanceState) {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.module_detail);
+            SetUpToolBar();
 
-            //ToolBarTitle.Text = 
+            ToolBarTitle.Text = Intent.GetStringExtra("Name");
         } 
     }
 }

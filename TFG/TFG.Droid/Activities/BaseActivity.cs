@@ -20,9 +20,7 @@ namespace TFG.Droid {
         public CustomTextView ToolBarTitle { get; private set; }
 
         protected override void OnCreate(Bundle savedInstanceState) {
-            base.OnCreate(savedInstanceState); 
-            
-            SetUpToolBar();
+            base.OnCreate(savedInstanceState);  
         }
 
 
