@@ -18,7 +18,7 @@ namespace TFG.Droid.Activities {
             SetContentView(Resource.Layout.module_detail);
             SetUpToolBar();
 
-            ToolBarTitle.Text = Intent.GetStringExtra("Name");
+            ToolbarTitle.Text = Intent.GetStringExtra("name");
         } 
     }
 }
