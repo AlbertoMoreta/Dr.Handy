@@ -29,19 +29,24 @@ namespace TFG.Droid.Activities {
 
             SetUpToolBar();
 
-	        ToolbarTitle.Text = Intent.GetStringExtra("name");
+            var moduleName = Intent.GetStringExtra("name");
+
+            ToolbarTitle.Text = moduleName;
 
             FragmentManager fragmentManager = FragmentManager;
             FragmentTransaction fragmentTransaction = fragmentManager.BeginTransaction();
 
-            HeaderFragment = new CBTHeaderFragment();
-            fragmentTransaction.Add(Resource.Id.fragments_container, HeaderFragment as Fragment);
+            HeaderFragment = HealthModulesInfoExtension.GetHeaderFragmentFromHealthModuleName(moduleName);
+            if (HeaderFragment != null) {
+                fragmentTransaction.Add(Resource.Id.fragments_container, HeaderFragment as Fragment);
+            }
 
-            BodyFragment = new CBTBodyFragment();
-            fragmentTransaction.Add(Resource.Id.fragments_container, BodyFragment as Fragment);
+            BodyFragment = HealthModulesInfoExtension.GetBodyFragmentFromHealthModuleName(moduleName);
+            if (BodyFragment != null) {
+                fragmentTransaction.Add(Resource.Id.fragments_container, BodyFragment as Fragment);
+            }
 
             fragmentTransaction.Commit();
-
-        }
+        } 
     }
 }
