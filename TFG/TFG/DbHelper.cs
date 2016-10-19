@@ -74,14 +74,14 @@ namespace TFG {
         }
         
         
-        public void AddHealthModule(HealthModules module) {
+        public void AddHealthModule(HealthModuleType module) {
             var sql = "INSERT INTO " + TABLE_NAME + " (" + COL_NAME + ", " + COL_DESCRIPTION + ", " + COL_POSITION + ", " + COL_VISIBLE + ") VALUES " 
                 + "('" + module.HealthModuleName() + "', '" + module.HealthModuleDescription() + "', " + Count() + ", 1)" ;
 
             Connection.Execute(sql);
         } 
 
-        public bool CheckIfExists(HealthModules module) {
+        public bool CheckIfExists(HealthModuleType module) {
             try {
                 var sql = "SELECT COUNT(*) FROM " + TABLE_NAME + " WHERE " + COL_NAME + " = '" + module.HealthModuleName() + "'";
                 var count = Connection.ExecuteScalar<int>(sql);
@@ -92,7 +92,7 @@ namespace TFG {
 
         }
 
-        public bool CheckIfVisible(HealthModules module) {
+        public bool CheckIfVisible(HealthModuleType module) {
             try {
                 var sql = "SELECT COUNT(*) FROM " + TABLE_NAME + " WHERE " + COL_NAME + " = '" + module.HealthModuleName() 
                     + "' AND " + COL_VISIBLE + " = 1";
@@ -103,7 +103,7 @@ namespace TFG {
             }
         }
 
-        public void ChangeModuleVisibility(HealthModules module, bool value) {
+        public void ChangeModuleVisibility(HealthModuleType module, bool value) {
             var sql = "UPDATE " + TABLE_NAME + " SET " + COL_VISIBLE + " = " + (value ? 1 : 0) 
                 + " WHERE " + COL_NAME + " = '" + module.HealthModuleName() + "'";
 
