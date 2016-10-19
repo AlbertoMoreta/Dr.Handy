@@ -1342,11 +1342,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f05000a
 			public const int abc_text_size_title_material_toolbar = 2131034122;
 			
-			// aapt resource value: 0x7f050058
-			public const int actionbar_height = 2131034200;
+			// aapt resource value: 0x7f05005a
+			public const int actionbar_height = 2131034202;
 			
-			// aapt resource value: 0x7f050059
-			public const int card_height = 2131034201;
+			// aapt resource value: 0x7f05005b
+			public const int card_height = 2131034203;
 			
 			// aapt resource value: 0x7f050003
 			public const int cardview_compat_inset_shadow = 2131034115;
@@ -1411,8 +1411,14 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f050056
 			public const int text_size_normal = 2131034198;
 			
-			// aapt resource value: 0x7f05005a
-			public const int toolbar_top_padding = 2131034202;
+			// aapt resource value: 0x7f050059
+			public const int text_size_toolbar = 2131034201;
+			
+			// aapt resource value: 0x7f050058
+			public const int text_size_xlarge = 2131034200;
+			
+			// aapt resource value: 0x7f05005c
+			public const int toolbar_top_padding = 2131034204;
 			
 			static Dimension()
 			{
@@ -1670,8 +1676,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f020050
 			public const int Icon = 2130837584;
 			
+			// aapt resource value: 0x7f020052
+			public const int notification_template_icon_bg = 2130837586;
+			
 			// aapt resource value: 0x7f020051
-			public const int notification_template_icon_bg = 2130837585;
+			public const int ripple = 2130837585;
 			
 			static Drawable()
 			{
