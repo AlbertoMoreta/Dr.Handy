@@ -14,20 +14,20 @@ using TFG.Model;
 namespace TFG.Droid{
     public static class HealthModulesInfoExtension {
 
-        public static Fragment GetHeadFragmentFromHealthModule(this HealthModules module) {
+        public static Fragment GetHeadFragmentFromHealthModule(this HealthModuleType module) {
             switch (module) {
-                case HealthModules.Module1: return null;
-                case HealthModules.Module2: return null;
-                case HealthModules.Module3: return null;
+                case HealthModuleType.Module1: return null;
+                case HealthModuleType.Module2: return null;
+                case HealthModuleType.Module3: return null;
                 default: return null;
             }
         }
 
-        public static Fragment GetBodyFragmentFromHealthModule(this HealthModules module) {
+        public static Fragment GetBodyFragmentFromHealthModule(this HealthModuleType module) {
             switch (module) {
-                case HealthModules.Module1: return null;
-                case HealthModules.Module2: return null;
-                case HealthModules.Module3: return null;
+                case HealthModuleType.Module1: return null;
+                case HealthModuleType.Module2: return null;
+                case HealthModuleType.Module3: return null;
                 default: return null;
             }
         }
