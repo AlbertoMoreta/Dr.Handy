@@ -29,7 +29,7 @@ namespace TFG.Droid.Activities {
 
             SetUpToolBar();
 
-	    ToolbarTitle.Text = Intent.GetStringExtra("name");
+	        ToolbarTitle.Text = Intent.GetStringExtra("name");
 
             FragmentManager fragmentManager = FragmentManager;
             FragmentTransaction fragmentTransaction = fragmentManager.BeginTransaction();
