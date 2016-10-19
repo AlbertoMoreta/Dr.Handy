@@ -33,6 +33,17 @@ namespace TFG.Model {
                 case HealthModules.Module3: return "Module3 Description";
                 default: return "Error";
             }
-        } 
+        }
+
+        public static string GetStringFromResourceName(string resName){
+
+#if __ANDROID__
+            var context = Android.App.Application.Context;
+            return context.GetString(context.Resources.GetIdentifier(resName, "string", context.PackageName));
+#elif __IOS__
+
+#endif
+
+        }
     }
 }
