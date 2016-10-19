@@ -43,16 +43,17 @@ namespace TFG.Droid.Adapters {
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
-            View itemView = LayoutInflater.From(parent.Context).
-            Inflate(Resource.Layout.health_card, parent, false);
-            itemView.Click += delegate { _listener.OnHealthCardClick(itemView); };
-
+            var itemView = LayoutInflater.From(parent.Context).
+                            Inflate(Resource.Layout.health_card, parent, false);  
             return new CardViewHolder(itemView);
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             CardViewHolder viewHolder = holder as CardViewHolder;
-            viewHolder.Name.Text = _cards[position].Name; 
+            var item = _cards[position];
+            viewHolder.Name.Text = item.Name;
+
+            viewHolder.ItemView.Click += delegate { _listener.OnHealthCardClick(item.HealthModule); };
         }
 
         public bool OnItemMove(int fromPosition, int toPosition) {

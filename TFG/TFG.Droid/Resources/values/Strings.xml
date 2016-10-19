@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<resources>
-	<string name="hello">Hello World, Click Me!</string>
+<resources> 
 	<string name="app_name">TFG.Droid</string>
+
+  <string name="color_blindness_test_name">Color Blindness Test</string>
 </resources>

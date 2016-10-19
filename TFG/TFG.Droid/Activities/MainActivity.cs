@@ -24,8 +24,7 @@ namespace TFG.Droid{
         private HealthCardAdapter _adapter;
 
 		protected override void OnCreate (Bundle bundle){
-			base.OnCreate (bundle);
-             
+			base.OnCreate (bundle);           
 			SetContentView (Resource.Layout.Main);
 
             SetUpToolBar();
@@ -73,8 +72,11 @@ namespace TFG.Droid{
             return cards;
         }
 
-	    public void OnHealthCardClick(View moduleView)  {
-	        StartActivity(typeof(ModuleDetailActivity));
+	    public void OnHealthCardClick(HealthModule healthModule)  {
+            var intent = new Intent(this, typeof(ModuleDetailActivity)); 
+	        intent.PutExtra("Name", healthModule.Name);
+	        intent.PutExtra("Description", healthModule.Description);
+	        StartActivity(intent);
 	    }
 	}
 }

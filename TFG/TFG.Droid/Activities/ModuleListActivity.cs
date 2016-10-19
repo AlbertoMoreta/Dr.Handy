@@ -17,9 +17,7 @@ namespace TFG.Droid {
         protected override void OnCreate(Bundle savedInstanceState) {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.modules_list);
-
             SetUpToolBar();
-
 
             ModuleViewCellAdapter adapter = new ModuleViewCellAdapter(this);
             
