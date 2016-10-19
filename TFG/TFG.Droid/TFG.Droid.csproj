@@ -88,6 +88,7 @@
     <Compile Include="Custom Views\ModuleViewCell.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\ModuleListActivity.cs" />
+<Compile Include="Extensions\HealthModulesInfoExtension.cs" />
     <Compile Include="Fragments\ColorBlindnessTest\CBTBodyFragment.cs" />
     <Compile Include="Fragments\ColorBlindnessTest\CBTHeaderFragment.cs" />
     <Compile Include="Interfaces\IHealthFragment.cs" />
