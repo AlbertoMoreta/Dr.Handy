@@ -32,7 +32,7 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
         }
 
         private void Init() { 
-            _logic = ColorBlindnessLogic.Instance(Activity); 
+            _logic = ColorBlindnessLogic.Instance(); 
             _questions = _logic.GetQuestions();
 
         }

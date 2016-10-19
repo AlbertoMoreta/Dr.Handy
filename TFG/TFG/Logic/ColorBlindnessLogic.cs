@@ -22,20 +22,6 @@ namespace TFG.Logic {
 
             return _instance;
         }
-  
-
-#if __ANDROID__
-        private static Android.Content.Context _context;
-
-        public static ColorBlindnessLogic Instance(Android.Content.Context context){
-            _context = context;
-            if (_instance == null) {
-                _instance = new ColorBlindnessLogic();
-            }
-            return _instance;
-        }
-
-#endif
 
 
         public List<Model.ColorBlindnessQuestion> GetQuestions()  {
@@ -44,9 +30,10 @@ namespace TFG.Logic {
                 string jsonFile;
                 string fileName = "JSON/ColorBlindnessTest.json";
 #if __IOS__
-            jsonFile = File.ReadAllText(fileName);
+                jsonFile = File.ReadAllText(fileName);
 #elif __ANDROID__
-                StreamReader stream = new StreamReader(_context.Assets.Open(fileName));
+                var context = Android.App.Application.Context;
+                StreamReader stream = new StreamReader(context.Assets.Open(fileName));
                 jsonFile = stream.ReadToEnd();
                 stream.Close();
 

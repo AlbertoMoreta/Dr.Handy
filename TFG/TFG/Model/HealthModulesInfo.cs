@@ -18,7 +18,7 @@ namespace TFG.Model {
 
         public static string HealthModuleName(this HealthModuleType module) {
             switch (module) {
-                case HealthModuleType.Module1: return "Module1";
+                case HealthModuleType.Module1: return GetStringFromResourceName("color_blindness_test_name");
                 case HealthModuleType.Module2: return "Module2";
                 case HealthModuleType.Module3: return "Module3";
                 default: return "Error";
