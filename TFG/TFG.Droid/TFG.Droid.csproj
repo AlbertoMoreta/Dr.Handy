@@ -85,6 +85,7 @@
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\ModuleListActivity.cs" />
     <Compile Include="Extensions\HealthModulesInfoExtension.cs" />
+    <Compile Include="Interfaces\IHealthFragment.cs" />
     <Compile Include="Listeners\HealthCardClickListener.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
