@@ -14,7 +14,7 @@ using Android.Widget;
 using TFG.Droid.Interfaces;
 
 namespace TFG.Droid.Activities {
-    [Activity(Label = "ModuleDetailActivity", Theme = "@style/AppTheme", LaunchMode = LaunchMode.SingleTask)]
+    [Activity(Label = "ModuleDetailActivity", LaunchMode = LaunchMode.SingleTask)]
     public class ModuleDetailActivity : BaseActivity {
 
         public IHealthFragment HeaderFragment { get; private set; }
@@ -27,8 +27,10 @@ namespace TFG.Droid.Activities {
             SetUpToolBar();
 
             var moduleName = Intent.GetStringExtra("name");
-
             ToolbarTitle.Text = moduleName;
+
+            var theme = HealthModulesInfoExtension.GetStyleFromHealthModuleName(moduleName);
+            if(theme != -1) { SetTheme(theme);} 
 
             FragmentManager fragmentManager = FragmentManager;
             FragmentTransaction fragmentTransaction = fragmentManager.BeginTransaction();

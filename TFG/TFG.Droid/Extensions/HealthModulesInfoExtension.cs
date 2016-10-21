@@ -29,5 +29,13 @@ namespace TFG.Droid{
             return null;
         }
 
+        public static int GetStyleFromHealthModuleName(string moduleName)
+        {
+            if (HealthModuleType.Module1.HealthModuleName().Equals(moduleName)) { return -1; }
+            if (HealthModuleType.Module2.HealthModuleName().Equals(moduleName)) { return -1; }
+            if (HealthModuleType.Module3.HealthModuleName().Equals(moduleName)) { return -1; }
+            return -1;
+        }
+
     }
 }
