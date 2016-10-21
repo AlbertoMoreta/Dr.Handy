@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
 
-  <style name="AppTheme" parent="MyTheme.Base"> 
+  <style name="AppTheme_Purple" parent="MyTheme.Base">
+    <item name="colorPrimary">@color/purple</item>
+    <item name="colorPrimaryDark">@color/dark_purple</item> 
+    <item name="colorAccent">@color/light_green</item>
   </style>
   
-  <style name="MyTheme.Base" parent="@style/Theme.AppCompat.Light.DarkActionBar">
-    <item name="colorPrimary">@color/green</item>
-    <item name="colorPrimaryDark">@color/green</item>
-    <item name="colorAccent">@color/light_green</item>
+  <style name="MyTheme.Base" parent="@style/Theme.AppCompat.Light.DarkActionBar"> 
     <item name="windowNoTitle">true</item> 
     <item name="windowActionBar">false</item>
     <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     <item name="android:windowTranslucentStatus">true</item>
-  </style>
+  </style> 
 
 </resources>

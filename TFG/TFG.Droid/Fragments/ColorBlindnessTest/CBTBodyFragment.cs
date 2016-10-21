@@ -51,7 +51,7 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
                 var answer =
                     view.FindViewById<Button>(Resources.GetIdentifier("answer" + (i + 1), "id", Activity.PackageName));
 
-                answer.Click += OnButtonClicked;
+                answer.Click += OnSelectAnswer;
                 _answers.Add(answer);
             }
             
@@ -67,7 +67,7 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
             }
         }
 
-        private void OnButtonClicked(object sender, EventArgs eventArgs) {
+        private void OnSelectAnswer(object sender, EventArgs eventArgs) {
             _logic.CurrentQuestion ++;
             if (_logic.CurrentQuestion < ColorBlindnessLogic.TOTAL_QUESTIONS)  {
                 UpdateQuestion(_logic.CurrentQuestion);

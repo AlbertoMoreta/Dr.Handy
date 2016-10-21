@@ -3,6 +3,8 @@
   <item name="primary" type="color">#1BAB8C</item>
   <item name="primary_dark" type="color">#009878</item>
   <item name="ripple" type="color">#29CBA8</item>
+  <item name="purple" type="color">#903E97</item>
+  <item name="dark_purple" type="color">#6A2572</item>
   
   <item name="dark_green" type="color">#009878</item>
   <item name="light_green" type="color">#29CBA8</item>
