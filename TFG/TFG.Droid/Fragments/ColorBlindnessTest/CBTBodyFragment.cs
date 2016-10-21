@@ -76,8 +76,8 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
                 UpdateQuestion(_logic.CurrentQuestion);
                 UpdateAnswers(_logic.CurrentQuestion);
 
-                ((CBTHeaderFragment) ((ModuleDetailActivity) Activity).HeaderFragment).UpdateQuestion(
-                    _logic.CurrentQuestion);
+                ((CBTHeaderFragment) ((ModuleDetailActivity) Activity).HeaderFragment)
+                                                        .UpdateQuestion( _logic.CurrentQuestion);
             } else {
                 ShowResults();
             }
@@ -86,7 +86,9 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
         private void ShowResults()  {
             InitResultsTable();
             _questionsLayout.Visibility = ViewStates.Gone; 
-            _resultsTable.Visibility = ViewStates.Visible; 
+            _resultsTable.Visibility = ViewStates.Visible;
+            ((CBTHeaderFragment) ((ModuleDetailActivity) Activity).HeaderFragment)
+                                                        .ShowResult();
         }
 
         private void InitResultsTable() {

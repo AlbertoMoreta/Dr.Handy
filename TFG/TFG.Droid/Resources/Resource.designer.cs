@@ -1716,8 +1716,8 @@ namespace TFG.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060064
-			public const int action0 = 2131099748;
+			// aapt resource value: 0x7f060065
+			public const int action0 = 2131099749;
 			
 			// aapt resource value: 0x7f060043
 			public const int action_bar = 2131099715;
@@ -1743,8 +1743,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060044
 			public const int action_context_bar = 2131099716;
 			
-			// aapt resource value: 0x7f060068
-			public const int action_divider = 2131099752;
+			// aapt resource value: 0x7f060069
+			public const int action_divider = 2131099753;
 			
 			// aapt resource value: 0x7f060003
 			public const int action_menu_divider = 2131099651;
@@ -1770,8 +1770,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06001d
 			public const int always = 2131099677;
 			
-			// aapt resource value: 0x7f060072
-			public const int answer = 2131099762;
+			// aapt resource value: 0x7f060073
+			public const int answer = 2131099763;
 			
 			// aapt resource value: 0x7f060054
 			public const int answer1 = 2131099732;
@@ -1791,14 +1791,14 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06002d
 			public const int buttonPanel = 2131099693;
 			
-			// aapt resource value: 0x7f060065
-			public const int cancel_action = 2131099749;
+			// aapt resource value: 0x7f060066
+			public const int cancel_action = 2131099750;
 			
 			// aapt resource value: 0x7f06003b
 			public const int checkbox = 2131099707;
 			
-			// aapt resource value: 0x7f06006b
-			public const int chronometer = 2131099755;
+			// aapt resource value: 0x7f06006c
+			public const int chronometer = 2131099756;
 			
 			// aapt resource value: 0x7f06001e
 			public const int collapseActionView = 2131099678;
@@ -1806,8 +1806,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060033
 			public const int contentPanel = 2131099699;
 			
-			// aapt resource value: 0x7f060073
-			public const int correct_answer = 2131099763;
+			// aapt resource value: 0x7f060074
+			public const int correct_answer = 2131099764;
 			
 			// aapt resource value: 0x7f060039
 			public const int custom = 2131099705;
@@ -1830,8 +1830,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06001b
 			public const int end = 2131099675;
 			
-			// aapt resource value: 0x7f060070
-			public const int end_padder = 2131099760;
+			// aapt resource value: 0x7f060071
+			public const int end_padder = 2131099761;
 			
 			// aapt resource value: 0x7f060027
 			public const int expand_activities_button = 2131099687;
@@ -1839,11 +1839,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06003a
 			public const int expanded_menu = 2131099706;
 			
-			// aapt resource value: 0x7f06005e
-			public const int fab = 2131099742;
-			
 			// aapt resource value: 0x7f06005f
-			public const int fragments_container = 2131099743;
+			public const int fab = 2131099743;
+			
+			// aapt resource value: 0x7f060060
+			public const int fragments_container = 2131099744;
 			
 			// aapt resource value: 0x7f060005
 			public const int home = 2131099653;
@@ -1860,29 +1860,29 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060028
 			public const int image = 2131099688;
 			
-			// aapt resource value: 0x7f06006f
-			public const int info = 2131099759;
+			// aapt resource value: 0x7f060070
+			public const int info = 2131099760;
 			
 			// aapt resource value: 0x7f060000
 			public const int item_touch_helper_previous_elevation = 2131099648;
 			
-			// aapt resource value: 0x7f060069
-			public const int line1 = 2131099753;
+			// aapt resource value: 0x7f06006a
+			public const int line1 = 2131099754;
 			
-			// aapt resource value: 0x7f06006d
-			public const int line3 = 2131099757;
+			// aapt resource value: 0x7f06006e
+			public const int line3 = 2131099758;
 			
 			// aapt resource value: 0x7f06000a
 			public const int listMode = 2131099658;
 			
-			// aapt resource value: 0x7f060063
-			public const int listView = 2131099747;
+			// aapt resource value: 0x7f060064
+			public const int listView = 2131099748;
 			
 			// aapt resource value: 0x7f06002a
 			public const int list_item = 2131099690;
 			
-			// aapt resource value: 0x7f060067
-			public const int media_actions = 2131099751;
+			// aapt resource value: 0x7f060068
+			public const int media_actions = 2131099752;
 			
 			// aapt resource value: 0x7f06001c
 			public const int middle = 2131099676;
@@ -1890,20 +1890,20 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060022
 			public const int mini = 2131099682;
 			
+			// aapt resource value: 0x7f060063
+			public const int module_addbutton = 2131099747;
+			
 			// aapt resource value: 0x7f060062
-			public const int module_addbutton = 2131099746;
+			public const int module_description = 2131099746;
 			
 			// aapt resource value: 0x7f060061
-			public const int module_description = 2131099745;
-			
-			// aapt resource value: 0x7f060060
-			public const int module_icon = 2131099744;
-			
-			// aapt resource value: 0x7f06005a
-			public const int module_image = 2131099738;
+			public const int module_icon = 2131099745;
 			
 			// aapt resource value: 0x7f06005b
-			public const int module_name = 2131099739;
+			public const int module_image = 2131099739;
+			
+			// aapt resource value: 0x7f06005c
+			public const int module_name = 2131099740;
 			
 			// aapt resource value: 0x7f060015
 			public const int multiply = 2131099669;
@@ -1929,8 +1929,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060053
 			public const int question = 2131099731;
 			
-			// aapt resource value: 0x7f060071
-			public const int question_number = 2131099761;
+			// aapt resource value: 0x7f060072
+			public const int question_number = 2131099762;
 			
 			// aapt resource value: 0x7f060052
 			public const int questions_layout = 2131099730;
@@ -1938,8 +1938,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06003d
 			public const int radio = 2131099709;
 			
-			// aapt resource value: 0x7f06005d
-			public const int recycler_view = 2131099741;
+			// aapt resource value: 0x7f06005e
+			public const int recycler_view = 2131099742;
+			
+			// aapt resource value: 0x7f06005a
+			public const int result = 2131099738;
 			
 			// aapt resource value: 0x7f060016
 			public const int screen = 2131099670;
@@ -2013,8 +2016,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060019
 			public const int src_over = 2131099673;
 			
-			// aapt resource value: 0x7f060066
-			public const int status_bar_latest_event_content = 2131099750;
+			// aapt resource value: 0x7f060067
+			public const int status_bar_latest_event_content = 2131099751;
 			
 			// aapt resource value: 0x7f06004e
 			public const int submit_area = 2131099726;
@@ -2028,17 +2031,17 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060059
 			public const int test_image = 2131099737;
 			
-			// aapt resource value: 0x7f06006e
-			public const int text = 2131099758;
+			// aapt resource value: 0x7f06006f
+			public const int text = 2131099759;
 			
-			// aapt resource value: 0x7f06006c
-			public const int text2 = 2131099756;
+			// aapt resource value: 0x7f06006d
+			public const int text2 = 2131099757;
 			
 			// aapt resource value: 0x7f060036
 			public const int textSpacerNoButtons = 2131099702;
 			
-			// aapt resource value: 0x7f06006a
-			public const int time = 2131099754;
+			// aapt resource value: 0x7f06006b
+			public const int time = 2131099755;
 			
 			// aapt resource value: 0x7f06002c
 			public const int title = 2131099692;
@@ -2046,8 +2049,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060031
 			public const int title_template = 2131099697;
 			
-			// aapt resource value: 0x7f06005c
-			public const int toolbar = 2131099740;
+			// aapt resource value: 0x7f06005d
+			public const int toolbar = 2131099741;
 			
 			// aapt resource value: 0x7f060030
 			public const int topPanel = 2131099696;

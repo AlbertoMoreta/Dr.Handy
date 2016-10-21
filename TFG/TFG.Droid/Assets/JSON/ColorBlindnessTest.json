@@ -1,23 +1,27 @@
 ﻿[
+  {
+    "number": "1",
+    "imageName": "ishihara_01",
+    "question": "¿Que número ves en la imagen?",
+    "correctAnswer": "12",
+    "answers": [ "12", "43", "31", "Ninguna" ]
+  },
 	{	
-		"imageName": "ishihara_01",
-		"question":"¿Que número ves en la imagen?",
-		"correctAnswer":"12",
-		"answers":["12", "43", "31", "Ninguna"]
-	},
-	{	
+    "number": "2",
 		"imageName": "ishihara_02",
 		"question":"¿Que número ves en la imagen?",
 		"correctAnswer":"8",
 		"answers":["45", "34", "8", "Ninguna"]
 	},
 	{	
+    "number": "3",
 		"imageName": "ishihara_03",
 		"question":"¿Que número ves en la imagen?",
 		"correctAnswer":"6",
 		"answers":["4", "9", "6", "Ninguna"]
 	},
 	{	
+    "number": "4",
 		"imageName": "ishihara_04",
 		"question":"¿Que número ves en la imagen?",
 		"correctAnswer":"29",
