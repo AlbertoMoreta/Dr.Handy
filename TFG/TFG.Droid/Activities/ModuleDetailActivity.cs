@@ -5,6 +5,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V4.Content;
@@ -13,7 +14,7 @@ using Android.Widget;
 using TFG.Droid.Interfaces;
 
 namespace TFG.Droid.Activities {
-    [Activity(Label = "ModuleDetailActivity", Theme = "@style/AppTheme")]
+    [Activity(Label = "ModuleDetailActivity", Theme = "@style/AppTheme", LaunchMode = LaunchMode.SingleTask)]
     public class ModuleDetailActivity : BaseActivity {
 
         public IHealthFragment HeaderFragment { get; private set; }

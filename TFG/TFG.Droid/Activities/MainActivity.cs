@@ -9,6 +9,7 @@ using Android.OS;
 using TFG.Droid.Custom_Views;
 using TFG.Droid.Adapters;
 using System.Collections.Generic;
+using Android.Content.PM;
 using Android.Support.V7.Widget;
 using TFG.Droid.Callbacks;
 using Android.Support.V7.Widget.Helper;
@@ -18,7 +19,7 @@ using TFG.Droid.Listeners;
 using TFG.Model;
 
 namespace TFG.Droid{
-	[Activity (Label = "MainActivity", MainLauncher = true, Icon = "@drawable/icon", Theme="@style/AppTheme")]
+	[Activity (Label = "MainActivity", MainLauncher = true, Icon = "@drawable/icon", Theme="@style/AppTheme", LaunchMode = LaunchMode.SingleTask)]
 	public class MainActivity : BaseActivity, HealthCardClickListener {
 
         private HealthCardAdapter _adapter;

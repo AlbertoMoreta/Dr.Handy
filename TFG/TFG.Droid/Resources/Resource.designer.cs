@@ -1676,11 +1676,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f020050
 			public const int Icon = 2130837584;
 			
-			// aapt resource value: 0x7f020052
-			public const int notification_template_icon_bg = 2130837586;
-			
 			// aapt resource value: 0x7f020051
-			public const int ripple = 2130837585;
+			public const int notification_template_icon_bg = 2130837585;
 			
 			static Drawable()
 			{
