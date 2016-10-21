@@ -122,6 +122,9 @@
     </AndroidResource>
     <AndroidResource Include="Resources\layout\fragment_cbt_body.axml" />
     <AndroidResource Include="Resources\layout\fragment_cbt_header.axml" />
+    <AndroidResource Include="Resources\layout\result_row.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
@@ -190,6 +193,10 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_add.png" />
     <AndroidResource Include="Resources\drawable\ripple.xml" />
     <AndroidResource Include="Resources\drawable-xxhdpi\background_purple.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_01.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_02.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_03.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_04.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="..\TFG\TFG.projitems" Label="Shared" Condition="Exists('..\TFG\TFG.projitems')" />

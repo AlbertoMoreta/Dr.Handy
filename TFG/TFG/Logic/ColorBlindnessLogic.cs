@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 
@@ -44,5 +45,8 @@ namespace TFG.Logic {
             return Questions;;
         }
 
+        public void SubmitAnswer(string answer) {
+            Questions.ElementAt(CurrentQuestion).UserAnswer = answer;
+        }
     }
 }

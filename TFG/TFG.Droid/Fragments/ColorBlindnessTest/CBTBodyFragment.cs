@@ -1,19 +1,16 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
+using System.Linq; 
 
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Util;
+using Android.App; 
+using Android.OS; 
 using Android.Views;
 using Android.Widget;
 using TFG.Droid.Activities;
+using TFG.Droid.Custom_Views;
 using TFG.Droid.Interfaces;
 using TFG.Logic;
+using TFG.Model;
 
 namespace TFG.Droid.Fragments.ColorBlindnessTest {
     public class CBTBodyFragment : Fragment, IHealthFragment {
@@ -23,6 +20,8 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
         private List<Model.ColorBlindnessQuestion> _questions;
         private List<Button> _answers = new List<Button>();
         private TextView _question;
+        private LinearLayout _questionsLayout;
+        private TableLayout _resultsTable;
         private Logic.ColorBlindnessLogic _logic;
 
         public override void OnCreate(Bundle savedInstanceState) {
@@ -39,6 +38,8 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             var view = inflater.Inflate(Resource.Layout.fragment_cbt_body, container, false);
+            _questionsLayout = view.FindViewById<LinearLayout>(Resource.Id.questions_layout);
+            _resultsTable = view.FindViewById<TableLayout>(Resource.Id.table_results);
             _question = view.FindViewById<TextView>(Resource.Id.question);
             InitAnswers(view);
             UpdateQuestion(0);
@@ -51,7 +52,7 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
                 var answer =
                     view.FindViewById<Button>(Resources.GetIdentifier("answer" + (i + 1), "id", Activity.PackageName));
 
-                answer.Click += OnSelectAnswer;
+                answer.Click += OnAnswerSelected;
                 _answers.Add(answer);
             }
             
@@ -67,14 +68,34 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
             }
         }
 
-        private void OnSelectAnswer(object sender, EventArgs eventArgs) {
+        private void OnAnswerSelected(object sender, EventArgs eventArgs) {
+            _logic.SubmitAnswer(((Button) sender).Text);
+
             _logic.CurrentQuestion ++;
-            if (_logic.CurrentQuestion < ColorBlindnessLogic.TOTAL_QUESTIONS)  {
+            if (_logic.CurrentQuestion < ColorBlindnessLogic.TOTAL_QUESTIONS) {
                 UpdateQuestion(_logic.CurrentQuestion);
                 UpdateAnswers(_logic.CurrentQuestion);
 
                 ((CBTHeaderFragment) ((ModuleDetailActivity) Activity).HeaderFragment).UpdateQuestion(
                     _logic.CurrentQuestion);
+            } else {
+                ShowResults();
+            }
+        }
+
+        private void ShowResults()  {
+            InitResultsTable();
+            _questionsLayout.Visibility = ViewStates.Gone; 
+            _resultsTable.Visibility = ViewStates.Visible; 
+        }
+
+        private void InitResultsTable() {
+            foreach (ColorBlindnessQuestion question in _logic.Questions) {
+                var row = (TableRow) LayoutInflater.From(Activity).Inflate(Resource.Layout.result_row, null);
+                row.FindViewById<CustomTextView>(Resource.Id.question_number).Text = question.Number.ToString();
+                row.FindViewById<CustomTextView>(Resource.Id.answer).Text = question.UserAnswer;
+                row.FindViewById<CustomTextView>(Resource.Id.correct_answer).Text = question.CorrectAnswer;
+                _resultsTable.AddView(row);
             }
         }
     }

@@ -3,4 +3,8 @@
 	<string name="app_name">TFG.Droid</string>
 
   <string name="color_blindness_test_name">Color Blindness Test</string>
+  <string name="question_number">Question</string>
+  <string name="answer">Answer</string>
+  <string name="correct_answer">Correct</string>
+  
 </resources>

@@ -1,56 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent">
-
-  <LinearLayout 
-      android:orientation="vertical"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:background="@color/white"
-      android:paddingBottom="10dp">
-      <TextView
-          android:id="@+id/question"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:textSize="@dimen/text_size_large"
-          android:gravity="center"
-          android:layout_weight="0.7" />
-      <Button
-          android:id="@+id/answer1"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:background="@drawable/ripple"
-          android:textSize="@dimen/text_size_xlarge"
-          android:layout_weight="1" />
-      <Button
-          android:id="@+id/answer2"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:background="@drawable/ripple"
-          android:textSize="@dimen/text_size_xlarge"
-          android:layout_weight="1" />
-      <Button
-          android:id="@+id/answer3"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:background="@drawable/ripple"
-          android:textSize="@dimen/text_size_xlarge"
-          android:layout_weight="1" />
-      <Button
-          android:id="@+id/answer4"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:background="@drawable/ripple"
-          android:textSize="@dimen/text_size_xlarge"
-          android:layout_weight="1" />
-  </LinearLayout>
-
-  <TableLayout
-    android:id="@+id/table_results"
-    android:layout_width= "match_parent"
-    android:layout_height= "match_parent">
-    
-  </TableLayout>
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
   
+    <LinearLayout
+        android:id="@+id/questions_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="10dp">
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_large"
+            android:gravity="center"
+            android:layout_weight="0.7" />
+        <Button
+            android:id="@+id/answer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple"
+            android:textSize="@dimen/text_size_xlarge"
+            android:layout_weight="1" />
+        <Button
+            android:id="@+id/answer2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple"
+            android:textSize="@dimen/text_size_xlarge"
+            android:layout_weight="1" />
+        <Button
+            android:id="@+id/answer3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple"
+            android:textSize="@dimen/text_size_xlarge"
+            android:layout_weight="1" />
+        <Button
+            android:id="@+id/answer4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple"
+            android:textSize="@dimen/text_size_xlarge"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <TableLayout
+        android:id="@+id/table_results"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+      <TableRow 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_grey"
+        android:padding="10dp">
+        <TFG.Droid.Custom_Views.CustomTextView
+            android:text="@string/question_number"  
+            android:gravity="center"
+            android:textColor="?colorPrimary"
+            android:textSize="@dimen/text_size_large"
+            android:layout_weight="1" />
+        <TFG.Droid.Custom_Views.CustomTextView
+            android:text="@string/answer"
+            android:gravity="center"
+            android:textColor="?colorPrimary"
+            android:textSize="@dimen/text_size_large"
+            android:layout_weight="1" />
+        <TFG.Droid.Custom_Views.CustomTextView
+            android:text="@string/correct_answer"
+            android:gravity="center"
+            android:textColor="?colorPrimary"
+            android:textSize="@dimen/text_size_large"
+            android:layout_weight="1" />
+      </TableRow>
+    </TableLayout>
 </RelativeLayout>
