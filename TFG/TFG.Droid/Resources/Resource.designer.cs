@@ -849,32 +849,32 @@ namespace TFG.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f080051
-			public const int abc_background_cache_hint_selector_material_dark = 2131230801;
-			
-			// aapt resource value: 0x7f080052
-			public const int abc_background_cache_hint_selector_material_light = 2131230802;
-			
 			// aapt resource value: 0x7f080053
-			public const int abc_color_highlight_material = 2131230803;
+			public const int abc_background_cache_hint_selector_material_dark = 2131230803;
+			
+			// aapt resource value: 0x7f080054
+			public const int abc_background_cache_hint_selector_material_light = 2131230804;
+			
+			// aapt resource value: 0x7f080055
+			public const int abc_color_highlight_material = 2131230805;
 			
 			// aapt resource value: 0x7f080004
 			public const int abc_input_method_navigation_guard = 2131230724;
 			
-			// aapt resource value: 0x7f080054
-			public const int abc_primary_text_disable_only_material_dark = 2131230804;
-			
-			// aapt resource value: 0x7f080055
-			public const int abc_primary_text_disable_only_material_light = 2131230805;
-			
 			// aapt resource value: 0x7f080056
-			public const int abc_primary_text_material_dark = 2131230806;
+			public const int abc_primary_text_disable_only_material_dark = 2131230806;
 			
 			// aapt resource value: 0x7f080057
-			public const int abc_primary_text_material_light = 2131230807;
+			public const int abc_primary_text_disable_only_material_light = 2131230807;
 			
 			// aapt resource value: 0x7f080058
-			public const int abc_search_url_text = 2131230808;
+			public const int abc_primary_text_material_dark = 2131230808;
+			
+			// aapt resource value: 0x7f080059
+			public const int abc_primary_text_material_light = 2131230809;
+			
+			// aapt resource value: 0x7f08005a
+			public const int abc_search_url_text = 2131230810;
 			
 			// aapt resource value: 0x7f080005
 			public const int abc_search_url_text_normal = 2131230725;
@@ -885,11 +885,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f080007
 			public const int abc_search_url_text_selected = 2131230727;
 			
-			// aapt resource value: 0x7f080059
-			public const int abc_secondary_text_material_dark = 2131230809;
+			// aapt resource value: 0x7f08005b
+			public const int abc_secondary_text_material_dark = 2131230811;
 			
-			// aapt resource value: 0x7f08005a
-			public const int abc_secondary_text_material_light = 2131230810;
+			// aapt resource value: 0x7f08005c
+			public const int abc_secondary_text_material_light = 2131230812;
 			
 			// aapt resource value: 0x7f080008
 			public const int accent_material_dark = 2131230728;
@@ -909,11 +909,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f08000d
 			public const int background_material_light = 2131230733;
 			
-			// aapt resource value: 0x7f080050
-			public const int black = 2131230800;
+			// aapt resource value: 0x7f080052
+			public const int black = 2131230802;
 			
-			// aapt resource value: 0x7f080048
-			public const int blue = 2131230792;
+			// aapt resource value: 0x7f08004a
+			public const int blue = 2131230794;
 			
 			// aapt resource value: 0x7f08000e
 			public const int bright_foreground_disabled_material_dark = 2131230734;
@@ -951,14 +951,17 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f080003
 			public const int cardview_shadow_start_color = 2131230723;
 			
-			// aapt resource value: 0x7f080042
-			public const int dark_green = 2131230786;
-			
 			// aapt resource value: 0x7f080044
-			public const int dark_grey = 2131230788;
+			public const int dark_green = 2131230788;
 			
-			// aapt resource value: 0x7f08004a
-			public const int dark_yellow = 2131230794;
+			// aapt resource value: 0x7f080046
+			public const int dark_grey = 2131230790;
+			
+			// aapt resource value: 0x7f080043
+			public const int dark_purple = 2131230787;
+			
+			// aapt resource value: 0x7f08004c
+			public const int dark_yellow = 2131230796;
 			
 			// aapt resource value: 0x7f080016
 			public const int dim_foreground_disabled_material_dark = 2131230742;
@@ -981,11 +984,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f08001b
 			public const int foreground_material_light = 2131230747;
 			
-			// aapt resource value: 0x7f08004f
-			public const int green = 2131230799;
+			// aapt resource value: 0x7f080051
+			public const int green = 2131230801;
 			
-			// aapt resource value: 0x7f08004e
-			public const int grey = 2131230798;
+			// aapt resource value: 0x7f080050
+			public const int grey = 2131230800;
 			
 			// aapt resource value: 0x7f08001c
 			public const int highlighted_text_material_dark = 2131230748;
@@ -999,17 +1002,17 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f08001f
 			public const int hint_foreground_material_light = 2131230751;
 			
-			// aapt resource value: 0x7f080049
-			public const int light_blue = 2131230793;
-			
-			// aapt resource value: 0x7f080043
-			public const int light_green = 2131230787;
+			// aapt resource value: 0x7f08004b
+			public const int light_blue = 2131230795;
 			
 			// aapt resource value: 0x7f080045
-			public const int light_grey = 2131230789;
+			public const int light_green = 2131230789;
 			
-			// aapt resource value: 0x7f08004b
-			public const int light_yellow = 2131230795;
+			// aapt resource value: 0x7f080047
+			public const int light_grey = 2131230791;
+			
+			// aapt resource value: 0x7f08004d
+			public const int light_yellow = 2131230797;
 			
 			// aapt resource value: 0x7f080020
 			public const int material_blue_grey_800 = 2131230752;
@@ -1047,8 +1050,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f08002b
 			public const int material_grey_900 = 2131230763;
 			
-			// aapt resource value: 0x7f08004c
-			public const int orange = 2131230796;
+			// aapt resource value: 0x7f08004e
+			public const int orange = 2131230798;
 			
 			// aapt resource value: 0x7f08003f
 			public const int primary = 2131230783;
@@ -1080,8 +1083,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f080033
 			public const int primary_text_disabled_material_light = 2131230771;
 			
-			// aapt resource value: 0x7f08004d
-			public const int red = 2131230797;
+			// aapt resource value: 0x7f080042
+			public const int purple = 2131230786;
+			
+			// aapt resource value: 0x7f08004f
+			public const int red = 2131230799;
 			
 			// aapt resource value: 0x7f080041
 			public const int ripple = 2131230785;
@@ -1110,11 +1116,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f08003b
 			public const int switch_thumb_disabled_material_light = 2131230779;
 			
-			// aapt resource value: 0x7f08005b
-			public const int switch_thumb_material_dark = 2131230811;
+			// aapt resource value: 0x7f08005d
+			public const int switch_thumb_material_dark = 2131230813;
 			
-			// aapt resource value: 0x7f08005c
-			public const int switch_thumb_material_light = 2131230812;
+			// aapt resource value: 0x7f08005e
+			public const int switch_thumb_material_light = 2131230814;
 			
 			// aapt resource value: 0x7f08003c
 			public const int switch_thumb_normal_material_dark = 2131230780;
@@ -1122,11 +1128,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f08003d
 			public const int switch_thumb_normal_material_light = 2131230781;
 			
-			// aapt resource value: 0x7f080047
-			public const int transparent = 2131230791;
+			// aapt resource value: 0x7f080049
+			public const int transparent = 2131230793;
 			
-			// aapt resource value: 0x7f080046
-			public const int white = 2131230790;
+			// aapt resource value: 0x7f080048
+			public const int white = 2131230792;
 			
 			static Color()
 			{
@@ -1659,28 +1665,31 @@ namespace TFG.Droid
 			public const int abc_textfield_search_material = 2130837578;
 			
 			// aapt resource value: 0x7f02004b
-			public const int fab_shadow = 2130837579;
+			public const int background_purple = 2130837579;
 			
 			// aapt resource value: 0x7f02004c
-			public const int fab_shadow_mini = 2130837580;
+			public const int fab_shadow = 2130837580;
 			
 			// aapt resource value: 0x7f02004d
-			public const int ic_add = 2130837581;
+			public const int fab_shadow_mini = 2130837581;
 			
 			// aapt resource value: 0x7f02004e
-			public const int ic_edit = 2130837582;
+			public const int ic_add = 2130837582;
 			
 			// aapt resource value: 0x7f02004f
-			public const int ic_remove = 2130837583;
+			public const int ic_edit = 2130837583;
 			
 			// aapt resource value: 0x7f020050
-			public const int Icon = 2130837584;
-			
-			// aapt resource value: 0x7f020052
-			public const int notification_template_icon_bg = 2130837586;
+			public const int ic_remove = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int ripple = 2130837585;
+			public const int Icon = 2130837585;
+			
+			// aapt resource value: 0x7f020053
+			public const int notification_template_icon_bg = 2130837587;
+			
+			// aapt resource value: 0x7f020052
+			public const int ripple = 2130837586;
 			
 			static Drawable()
 			{
@@ -1695,8 +1704,8 @@ namespace TFG.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f06005c
-			public const int action0 = 2131099740;
+			// aapt resource value: 0x7f060063
+			public const int action0 = 2131099747;
 			
 			// aapt resource value: 0x7f060043
 			public const int action_bar = 2131099715;
@@ -1722,8 +1731,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060044
 			public const int action_context_bar = 2131099716;
 			
-			// aapt resource value: 0x7f060060
-			public const int action_divider = 2131099744;
+			// aapt resource value: 0x7f060067
+			public const int action_divider = 2131099751;
 			
 			// aapt resource value: 0x7f060003
 			public const int action_menu_divider = 2131099651;
@@ -1749,20 +1758,32 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06001d
 			public const int always = 2131099677;
 			
+			// aapt resource value: 0x7f060053
+			public const int answer1 = 2131099731;
+			
+			// aapt resource value: 0x7f060054
+			public const int answer2 = 2131099732;
+			
+			// aapt resource value: 0x7f060055
+			public const int answer3 = 2131099733;
+			
+			// aapt resource value: 0x7f060056
+			public const int answer4 = 2131099734;
+			
 			// aapt resource value: 0x7f06001a
 			public const int beginning = 2131099674;
 			
 			// aapt resource value: 0x7f06002d
 			public const int buttonPanel = 2131099693;
 			
-			// aapt resource value: 0x7f06005d
-			public const int cancel_action = 2131099741;
+			// aapt resource value: 0x7f060064
+			public const int cancel_action = 2131099748;
 			
 			// aapt resource value: 0x7f06003b
 			public const int checkbox = 2131099707;
 			
-			// aapt resource value: 0x7f060063
-			public const int chronometer = 2131099747;
+			// aapt resource value: 0x7f06006a
+			public const int chronometer = 2131099754;
 			
 			// aapt resource value: 0x7f06001e
 			public const int collapseActionView = 2131099678;
@@ -1791,8 +1812,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06001b
 			public const int end = 2131099675;
 			
-			// aapt resource value: 0x7f060068
-			public const int end_padder = 2131099752;
+			// aapt resource value: 0x7f06006f
+			public const int end_padder = 2131099759;
 			
 			// aapt resource value: 0x7f060027
 			public const int expand_activities_button = 2131099687;
@@ -1800,11 +1821,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06003a
 			public const int expanded_menu = 2131099706;
 			
-			// aapt resource value: 0x7f060056
-			public const int fab = 2131099734;
+			// aapt resource value: 0x7f06005d
+			public const int fab = 2131099741;
 			
-			// aapt resource value: 0x7f060057
-			public const int fragments_container = 2131099735;
+			// aapt resource value: 0x7f06005e
+			public const int fragments_container = 2131099742;
 			
 			// aapt resource value: 0x7f060005
 			public const int home = 2131099653;
@@ -1821,29 +1842,29 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060028
 			public const int image = 2131099688;
 			
-			// aapt resource value: 0x7f060067
-			public const int info = 2131099751;
+			// aapt resource value: 0x7f06006e
+			public const int info = 2131099758;
 			
 			// aapt resource value: 0x7f060000
 			public const int item_touch_helper_previous_elevation = 2131099648;
 			
-			// aapt resource value: 0x7f060061
-			public const int line1 = 2131099745;
+			// aapt resource value: 0x7f060068
+			public const int line1 = 2131099752;
 			
-			// aapt resource value: 0x7f060065
-			public const int line3 = 2131099749;
+			// aapt resource value: 0x7f06006c
+			public const int line3 = 2131099756;
 			
 			// aapt resource value: 0x7f06000a
 			public const int listMode = 2131099658;
 			
-			// aapt resource value: 0x7f06005b
-			public const int listView = 2131099739;
+			// aapt resource value: 0x7f060062
+			public const int listView = 2131099746;
 			
 			// aapt resource value: 0x7f06002a
 			public const int list_item = 2131099690;
 			
-			// aapt resource value: 0x7f06005f
-			public const int media_actions = 2131099743;
+			// aapt resource value: 0x7f060066
+			public const int media_actions = 2131099750;
 			
 			// aapt resource value: 0x7f06001c
 			public const int middle = 2131099676;
@@ -1851,20 +1872,20 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060022
 			public const int mini = 2131099682;
 			
-			// aapt resource value: 0x7f06005a
-			public const int module_addbutton = 2131099738;
+			// aapt resource value: 0x7f060061
+			public const int module_addbutton = 2131099745;
+			
+			// aapt resource value: 0x7f060060
+			public const int module_description = 2131099744;
+			
+			// aapt resource value: 0x7f06005f
+			public const int module_icon = 2131099743;
 			
 			// aapt resource value: 0x7f060059
-			public const int module_description = 2131099737;
+			public const int module_image = 2131099737;
 			
-			// aapt resource value: 0x7f060058
-			public const int module_icon = 2131099736;
-			
-			// aapt resource value: 0x7f060052
-			public const int module_image = 2131099730;
-			
-			// aapt resource value: 0x7f060053
-			public const int module_name = 2131099731;
+			// aapt resource value: 0x7f06005a
+			public const int module_name = 2131099738;
 			
 			// aapt resource value: 0x7f060015
 			public const int multiply = 2131099669;
@@ -1887,11 +1908,14 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060007
 			public const int progress_horizontal = 2131099655;
 			
+			// aapt resource value: 0x7f060052
+			public const int question = 2131099730;
+			
 			// aapt resource value: 0x7f06003d
 			public const int radio = 2131099709;
 			
-			// aapt resource value: 0x7f060055
-			public const int recycler_view = 2131099733;
+			// aapt resource value: 0x7f06005c
+			public const int recycler_view = 2131099740;
 			
 			// aapt resource value: 0x7f060016
 			public const int screen = 2131099670;
@@ -1965,8 +1989,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060019
 			public const int src_over = 2131099673;
 			
-			// aapt resource value: 0x7f06005e
-			public const int status_bar_latest_event_content = 2131099742;
+			// aapt resource value: 0x7f060065
+			public const int status_bar_latest_event_content = 2131099749;
 			
 			// aapt resource value: 0x7f06004e
 			public const int submit_area = 2131099726;
@@ -1974,17 +1998,23 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06000c
 			public const int tabMode = 2131099660;
 			
-			// aapt resource value: 0x7f060066
-			public const int text = 2131099750;
+			// aapt resource value: 0x7f060057
+			public const int table_results = 2131099735;
 			
-			// aapt resource value: 0x7f060064
-			public const int text2 = 2131099748;
+			// aapt resource value: 0x7f060058
+			public const int test_image = 2131099736;
+			
+			// aapt resource value: 0x7f06006d
+			public const int text = 2131099757;
+			
+			// aapt resource value: 0x7f06006b
+			public const int text2 = 2131099755;
 			
 			// aapt resource value: 0x7f060036
 			public const int textSpacerNoButtons = 2131099702;
 			
-			// aapt resource value: 0x7f060062
-			public const int time = 2131099746;
+			// aapt resource value: 0x7f060069
+			public const int time = 2131099753;
 			
 			// aapt resource value: 0x7f06002c
 			public const int title = 2131099692;
@@ -1992,8 +2022,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060031
 			public const int title_template = 2131099697;
 			
-			// aapt resource value: 0x7f060054
-			public const int toolbar = 2131099732;
+			// aapt resource value: 0x7f06005b
+			public const int toolbar = 2131099739;
 			
 			// aapt resource value: 0x7f060030
 			public const int topPanel = 2131099696;
@@ -2127,58 +2157,64 @@ namespace TFG.Droid
 			public const int abc_select_dialog_material = 2130903064;
 			
 			// aapt resource value: 0x7f030019
-			public const int health_card = 2130903065;
+			public const int fragment_cbt_body = 2130903065;
 			
 			// aapt resource value: 0x7f03001a
-			public const int Main = 2130903066;
+			public const int fragment_cbt_header = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int module_detail = 2130903067;
+			public const int health_card = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public const int module_viewcell = 2130903068;
+			public const int Main = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public const int modules_list = 2130903069;
+			public const int module_detail = 2130903069;
 			
 			// aapt resource value: 0x7f03001e
-			public const int notification_media_action = 2130903070;
+			public const int module_viewcell = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public const int notification_media_cancel_action = 2130903071;
+			public const int modules_list = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public const int notification_template_big_media = 2130903072;
+			public const int notification_media_action = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public const int notification_template_big_media_narrow = 2130903073;
+			public const int notification_media_cancel_action = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public const int notification_template_lines = 2130903074;
+			public const int notification_template_big_media = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public const int notification_template_media = 2130903075;
+			public const int notification_template_big_media_narrow = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public const int notification_template_part_chronometer = 2130903076;
+			public const int notification_template_lines = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public const int notification_template_part_time = 2130903077;
+			public const int notification_template_media = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int select_dialog_item_material = 2130903078;
+			public const int notification_template_part_chronometer = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int select_dialog_multichoice_material = 2130903079;
+			public const int notification_template_part_time = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int select_dialog_singlechoice_material = 2130903080;
+			public const int select_dialog_item_material = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int support_simple_spinner_dropdown_item = 2130903081;
+			public const int select_dialog_multichoice_material = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int toolbar = 2130903082;
+			public const int select_dialog_singlechoice_material = 2130903082;
+			
+			// aapt resource value: 0x7f03002b
+			public const int support_simple_spinner_dropdown_item = 2130903083;
+			
+			// aapt resource value: 0x7f03002c
+			public const int toolbar = 2130903084;
 			
 			static Layout()
 			{
@@ -2284,8 +2320,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f07008d
 			public const int Animation_AppCompat_DropDownUp = 2131165325;
 			
-			// aapt resource value: 0x7f070142
-			public const int AppTheme = 2131165506;
+			// aapt resource value: 0x7f070144
+			public const int AppTheme = 2131165508;
+			
+			// aapt resource value: 0x7f070143
+			public const int AppTheme_Purple = 2131165507;
 			
 			// aapt resource value: 0x7f07008e
 			public const int Base_AlertDialog_AppCompat = 2131165326;
@@ -2725,8 +2764,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f070003
 			public const int CardView_Light = 2131165187;
 			
-			// aapt resource value: 0x7f070143
-			public const int MyTheme_Base = 2131165507;
+			// aapt resource value: 0x7f070142
+			public const int MyTheme_Base = 2131165506;
 			
 			// aapt resource value: 0x7f07001b
 			public const int Platform_AppCompat = 2131165211;

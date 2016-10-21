@@ -40,6 +40,10 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Refractored.FloatingActionButton, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Refractored.FloatingActionButton.1.4.0\lib\MonoAndroid10\Refractored.FloatingActionButton.dll</HintPath>
       <Private>True</Private>
@@ -85,6 +89,8 @@
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\ModuleListActivity.cs" />
     <Compile Include="Extensions\HealthModulesInfoExtension.cs" />
+    <Compile Include="Fragments\ColorBlindnessTest\CBTBodyFragment.cs" />
+    <Compile Include="Fragments\ColorBlindnessTest\CBTHeaderFragment.cs" />
     <Compile Include="Interfaces\IHealthFragment.cs" />
     <Compile Include="Listeners\HealthCardClickListener.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -95,6 +101,7 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\Fonts\DroidSerif-Bold.ttf" />
     <AndroidAsset Include="Assets\Fonts\DroidSerif-Regular.ttf" />
+    <AndroidAsset Include="Assets\JSON\ColorBlindnessTest.json" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml">
@@ -113,6 +120,8 @@
     <AndroidResource Include="Resources\layout\module_detail.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_cbt_body.axml" />
+    <AndroidResource Include="Resources\layout\fragment_cbt_header.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
@@ -180,6 +189,7 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_add.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_add.png" />
     <AndroidResource Include="Resources\drawable\ripple.xml" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\background_purple.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="..\TFG\TFG.projitems" Label="Shared" Condition="Exists('..\TFG\TFG.projitems')" />
