@@ -40,10 +40,6 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Refractored.FloatingActionButton, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Refractored.FloatingActionButton.1.4.0\lib\MonoAndroid10\Refractored.FloatingActionButton.dll</HintPath>
       <Private>True</Private>
@@ -89,8 +85,6 @@
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\ModuleListActivity.cs" />
     <Compile Include="Extensions\HealthModulesInfoExtension.cs" />
-    <Compile Include="Fragments\ColorBlindnessTest\CBTBodyFragment.cs" />
-    <Compile Include="Fragments\ColorBlindnessTest\CBTHeaderFragment.cs" />
     <Compile Include="Interfaces\IHealthFragment.cs" />
     <Compile Include="Listeners\HealthCardClickListener.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -99,7 +93,6 @@
     <Compile Include="Utils\SQLiteAsync.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\JSON\ColorBlindnessTest.json" />
     <AndroidAsset Include="Assets\Fonts\DroidSerif-Bold.ttf" />
     <AndroidAsset Include="Assets\Fonts\DroidSerif-Regular.ttf" />
     <None Include="packages.config" />
@@ -118,12 +111,6 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\module_detail.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\fragment_cbt_header.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\fragment_cbt_body.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -192,13 +179,9 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_add.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_add.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_add.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_01.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_02.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_03.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_04.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\background_purple.png" />
     <AndroidResource Include="Resources\drawable\ripple.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="..\TFG\TFG.projitems" Label="Shared" Condition="Exists('..\TFG\TFG.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets')" />
