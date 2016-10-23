@@ -32,7 +32,8 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
         }
 
         private void Init() { 
-            _logic = ColorBlindnessLogic.Instance(); 
+            _logic = ColorBlindnessLogic.Instance();
+            if (_logic.CurrentQuestion >= 24) { _logic.CurrentQuestion = 0; } 
             _questions = _logic.GetQuestions();
         }
 
@@ -43,8 +44,8 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
             _resultsTable = view.FindViewById<TableLayout>(Resource.Id.table_results);
             _question = view.FindViewById<TextView>(Resource.Id.question);
             InitAnswers(view);
-            UpdateQuestion(0);
-            UpdateAnswers(0);
+            UpdateQuestion(_logic.CurrentQuestion);
+            UpdateAnswers(_logic.CurrentQuestion);
             return view;
         }
 

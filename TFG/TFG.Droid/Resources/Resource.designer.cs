@@ -1923,6 +1923,9 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060072
 			public const int info = 2131099762;
 			
+			// aapt resource value: 0x7f06005c
+			public const int info_text = 2131099740;
+			
 			// aapt resource value: 0x7f060000
 			public const int item_touch_helper_previous_elevation = 2131099648;
 			
@@ -2000,9 +2003,6 @@ namespace TFG.Droid
 			
 			// aapt resource value: 0x7f060060
 			public const int recycler_view = 2131099744;
-			
-			// aapt resource value: 0x7f06005c
-			public const int result = 2131099740;
 			
 			// aapt resource value: 0x7f060058
 			public const int results_layout = 2131099736;

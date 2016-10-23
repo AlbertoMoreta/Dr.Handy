@@ -18,7 +18,7 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
     public class CBTHeaderFragment : Fragment, IHealthFragment {
         private List<Model.ColorBlindnessQuestion> _questions;
         private ImageView _questionImage;
-        private CustomTextView _resultTextView;
+        private CustomTextView _infoText;
 
         private Logic.ColorBlindnessLogic _logic;
 
@@ -30,7 +30,8 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
         }
 
         private void Init() { 
-            _logic = ColorBlindnessLogic.Instance();  
+            _logic = ColorBlindnessLogic.Instance();
+            if (_logic.CurrentQuestion >= 24) { _logic.CurrentQuestion = 0; }
             _questions = _logic.GetQuestions();
            
         }
@@ -38,7 +39,7 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) { 
              var view = inflater.Inflate(Resource.Layout.fragment_cbt_header, container, false);
             _questionImage = view.FindViewById<ImageView>(Resource.Id.test_image);
-            _resultTextView = view.FindViewById<CustomTextView>(Resource.Id.result);
+            _infoText = view.FindViewById<CustomTextView>(Resource.Id.info_text);
             UpdateQuestion(_logic.CurrentQuestion); 
 
             return view;
@@ -48,16 +49,20 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
         public void UpdateQuestion(int plate) {
             var a = _logic.CurrentQuestion;
             UpdateImage(plate);
+            UpdateQuestionNumber(plate);
         }
 
         public void UpdateImage(int plate) { 
             _questionImage.SetImageResource(Resources.GetIdentifier(_questions.ElementAt(plate).ImageName, "drawable", Activity.PackageName));
         }
 
+        private void UpdateQuestionNumber(int plate) {
+            _infoText.Text = (plate + 1) + " / " + ColorBlindnessLogic.TOTAL_QUESTIONS;
+        }
+
         public void ShowResult()  {
-            _questionImage.Visibility = ViewStates.Gone;
-            _resultTextView.Visibility = ViewStates.Visible;
-            _resultTextView.Text = "Result";
+            _questionImage.Visibility = ViewStates.Gone; 
+            _infoText.Text = "Result";
         }
     }
 }
