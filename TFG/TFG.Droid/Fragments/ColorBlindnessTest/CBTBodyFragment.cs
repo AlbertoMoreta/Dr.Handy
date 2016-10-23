@@ -17,12 +17,13 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
 
         
 
-        private List<Model.ColorBlindnessQuestion> _questions;
+        private List<ColorBlindnessQuestion> _questions;
         private List<Button> _answers = new List<Button>();
         private TextView _question;
         private LinearLayout _questionsLayout;
         private TableLayout _resultsTable;
-        private Logic.ColorBlindnessLogic _logic;
+        private LinearLayout _resultsLayout;
+        private ColorBlindnessLogic _logic;
 
         public override void OnCreate(Bundle savedInstanceState) {
             base.OnCreate(savedInstanceState);
@@ -33,12 +34,12 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
         private void Init() { 
             _logic = ColorBlindnessLogic.Instance(); 
             _questions = _logic.GetQuestions();
-
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             var view = inflater.Inflate(Resource.Layout.fragment_cbt_body, container, false);
             _questionsLayout = view.FindViewById<LinearLayout>(Resource.Id.questions_layout);
+            _resultsLayout = view.FindViewById<LinearLayout>(Resource.Id.results_layout);
             _resultsTable = view.FindViewById<TableLayout>(Resource.Id.table_results);
             _question = view.FindViewById<TextView>(Resource.Id.question);
             InitAnswers(view);
@@ -86,7 +87,7 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
         private void ShowResults()  {
             InitResultsTable();
             _questionsLayout.Visibility = ViewStates.Gone; 
-            _resultsTable.Visibility = ViewStates.Visible;
+            _resultsLayout.Visibility = ViewStates.Visible;
             ((CBTHeaderFragment) ((ModuleDetailActivity) Activity).HeaderFragment)
                                                         .ShowResult();
         }
@@ -94,9 +95,22 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
         private void InitResultsTable() {
             foreach (ColorBlindnessQuestion question in _logic.Questions) {
                 var row = (TableRow) LayoutInflater.From(Activity).Inflate(Resource.Layout.result_row, null);
-                row.FindViewById<CustomTextView>(Resource.Id.question_number).Text = question.Number.ToString();
-                row.FindViewById<CustomTextView>(Resource.Id.answer).Text = question.UserAnswer;
-                row.FindViewById<CustomTextView>(Resource.Id.correct_answer).Text = question.CorrectAnswer;
+
+                //Add question number to result row
+                var questionNumber = row.FindViewById<CustomTextView>(Resource.Id.question_number);
+                questionNumber.LayoutParameters = new TableRow.LayoutParams(0, ViewGroup.LayoutParams.WrapContent, 1f);
+                questionNumber.Text = question.Number.ToString();
+
+                //Add answer to result row
+                var answer = row.FindViewById<CustomTextView>(Resource.Id.answer);
+                answer.LayoutParameters = new TableRow.LayoutParams(0, ViewGroup.LayoutParams.WrapContent, 1f);
+                answer.Text = question.UserAnswer;
+
+                //Add correct answer to result row
+                var correctAnswer = row.FindViewById<CustomTextView>(Resource.Id.correct_answer);
+                correctAnswer.LayoutParameters = new TableRow.LayoutParams(0, ViewGroup.LayoutParams.WrapContent, 1f);
+                correctAnswer.Text = question.CorrectAnswer;
+
                 _resultsTable.AddView(row);
             }
         }

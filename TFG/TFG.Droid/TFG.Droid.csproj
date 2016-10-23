@@ -194,9 +194,29 @@
     <AndroidResource Include="Resources\drawable\ripple.xml" />
     <AndroidResource Include="Resources\drawable-xxhdpi\background_purple.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_01.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_18.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_20.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_22.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_23.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_26.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_29.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_30.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_32.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_35.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_37.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_38.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_02.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_03.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_04.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_06.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_07.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_08.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_09.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_11.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_13.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_14.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_15.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_16.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_17.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="..\TFG\TFG.projitems" Label="Shared" Condition="Exists('..\TFG\TFG.projitems')" />

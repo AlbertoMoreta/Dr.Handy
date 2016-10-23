@@ -8,11 +8,14 @@ using Newtonsoft.Json;
 namespace TFG.Logic {
     class ColorBlindnessLogic  {
 
-        public static readonly int TOTAL_QUESTIONS = 4;
+        public static readonly int TOTAL_QUESTIONS = 24;
         public static readonly int ANSWERS_COUNT = 4;
 
         public int CurrentQuestion { get; set; } = 0;
         public List<Model.ColorBlindnessQuestion> Questions { get; set; }
+        public int CorrectAnswersCount { get; set; }
+        public int RGColorBlindnessCount { get; set; }
+        public int TotalColorBlindnessCount { get; set; }
 
         private static ColorBlindnessLogic _instance;
 
@@ -45,8 +48,13 @@ namespace TFG.Logic {
             return Questions;;
         }
 
-        public void SubmitAnswer(string answer) {
-            Questions.ElementAt(CurrentQuestion).UserAnswer = answer;
+        public void SubmitAnswer(string answer){
+            var question = Questions.ElementAt(CurrentQuestion);
+            question.UserAnswer = answer;
+
+            if (answer.Equals(question.CorrectAnswer)) { CorrectAnswersCount++; }
+            else if (answer.Equals(question.RGColorBlindness)) { RGColorBlindnessCount++;}
+            else if (answer.Equals(question.TotalColorBlindness)) { TotalColorBlindnessCount++; }
         }
     }
 }
