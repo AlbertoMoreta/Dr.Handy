@@ -1,19 +1,18 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFG.Droid", "TFG\TFG.Droid\TFG.Droid.csproj", "{9952BD72-9C8F-4343-A1AA-B5B82FCA0089}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFG.Droid", "TFG.Droid\TFG.Droid.csproj", "{9952BD72-9C8F-4343-A1AA-B5B82FCA0089}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFG.iOS", "TFG\TFG.iOS\TFG.iOS.csproj", "{82736BD0-7CFC-4747-B9EA-BA35C4BB22D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFG.iOS", "TFG.iOS\TFG.iOS.csproj", "{82736BD0-7CFC-4747-B9EA-BA35C4BB22D3}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TFG", "TFG\TFG\TFG.shproj", "{F98AEE32-12D0-4E95-B7B6-1531DE782DA3}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TFG", "TFG\TFG.shproj", "{F98AEE32-12D0-4E95-B7B6-1531DE782DA3}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		TFG\TFG\TFG.projitems*{82736bd0-7cfc-4747-b9ea-ba35c4bb22d3}*SharedItemsImports = 4
-		TFG\TFG\TFG.projitems*{9952bd72-9c8f-4343-a1aa-b5b82fca0089}*SharedItemsImports = 4
-		TFG\TFG\TFG.projitems*{f98aee32-12d0-4e95-b7b6-1531de782da3}*SharedItemsImports = 13
+		TFG\TFG.projitems*{82736bd0-7cfc-4747-b9ea-ba35c4bb22d3}*SharedItemsImports = 4
+		TFG\TFG.projitems*{9952bd72-9c8f-4343-a1aa-b5b82fca0089}*SharedItemsImports = 4
+		TFG\TFG.projitems*{f98aee32-12d0-4e95-b7b6-1531de782da3}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
