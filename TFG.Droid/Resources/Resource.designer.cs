@@ -2394,11 +2394,20 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f090018
 			public const int correct_answer = 2131296280;
 			
+			// aapt resource value: 0x7f090019
+			public const int no_daltonism = 2131296281;
+			
 			// aapt resource value: 0x7f090016
 			public const int question_number = 2131296278;
 			
+			// aapt resource value: 0x7f09001a
+			public const int red_and_green_daltonism = 2131296282;
+			
 			// aapt resource value: 0x7f090013
 			public const int status_bar_notification_info_overflow = 2131296275;
+			
+			// aapt resource value: 0x7f09001b
+			public const int total_daltonism = 2131296283;
 			
 			static String()
 			{

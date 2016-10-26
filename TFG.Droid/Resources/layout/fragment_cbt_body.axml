@@ -48,57 +48,60 @@
             android:textAllCaps="false"
             android:layout_weight="1" />
     </LinearLayout>
-
     <LinearLayout
-       android:id="@+id/results_layout"
-       android:orientation="vertical"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:visibility="gone">
-      <TableLayout
-          android:id="@+id/table_header"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content" >
-        <TableRow
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/light_grey"
-              android:padding="10dp">
-          <TFG.Droid.Custom_Views.CustomTextView
-              android:text="@string/question_number"
-              android:layout_width="0dp"
-              android:layout_height="wrap_content"
-              android:gravity="center"
-              android:textColor="?colorPrimary"
-              android:textSize="@dimen/text_size_large"
-              android:layout_weight="1" />
-          <TFG.Droid.Custom_Views.CustomTextView
-              android:text="@string/answer"
-              android:layout_width="0dp"
-              android:layout_height="wrap_content"
-              android:gravity="center"
-              android:textColor="?colorPrimary"
-              android:textSize="@dimen/text_size_large"
-              android:layout_weight="1" />
-          <TFG.Droid.Custom_Views.CustomTextView
-              android:text="@string/correct_answer"
-              android:layout_width="0dp"
-              android:layout_height="wrap_content"
-              android:gravity="center"
-              android:textColor="?colorPrimary"
-              android:textSize="@dimen/text_size_large"
-              android:layout_weight="1" />
-        </TableRow>
-      </TableLayout>
-      
-      <ScrollView 
+        android:id="@+id/results_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <TableLayout
+            android:id="@+id/table_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/light_grey"
+                android:padding="10dp">
+                <TFG.Droid.Custom_Views.CustomTextView
+                    android:text="@string/question_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    android:textColor="?colorPrimary"
+                    android:textSize="@dimen/text_size_large"
+                    android:layout_weight="1" />
+                <TFG.Droid.Custom_Views.CustomTextView
+                    android:text="@string/answer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    android:textColor="?colorPrimary"
+                    android:textSize="@dimen/text_size_large"
+                    android:layout_weight="1" />
+                <TFG.Droid.Custom_Views.CustomTextView
+                    android:text="@string/correct_answer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    android:textColor="?colorPrimary"
+                    android:textSize="@dimen/text_size_large"
+                    android:layout_weight="1" />
+            </TableRow>
+        </TableLayout>
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-          <TableLayout
-              android:id="@+id/table_results"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
-          </TableLayout>
+            <TableLayout
+                android:id="@+id/table_results"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </ScrollView>
     </LinearLayout>
 </RelativeLayout>

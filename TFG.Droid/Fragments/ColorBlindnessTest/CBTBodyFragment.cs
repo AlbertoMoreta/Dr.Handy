@@ -71,6 +71,8 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
         }
 
         private void OnAnswerSelected(object sender, EventArgs eventArgs) {
+            foreach (var answer in _answers) { answer.Enabled = false; }
+
             _logic.SubmitAnswer(((Button) sender).Text);
 
             _logic.CurrentQuestion ++;
@@ -83,6 +85,8 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
             } else {
                 ShowResults();
             }
+
+            foreach (var answer in _answers) { answer.Enabled = true; }
         }
 
         private void ShowResults()  {

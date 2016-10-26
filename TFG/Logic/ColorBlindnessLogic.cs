@@ -49,12 +49,14 @@ namespace TFG.Logic {
         }
 
         public void SubmitAnswer(string answer){
-            var question = Questions.ElementAt(CurrentQuestion);
-            question.UserAnswer = answer;
+            if(CurrentQuestion < TOTAL_QUESTIONS) {
+                var question = Questions.ElementAt(CurrentQuestion);
+                question.UserAnswer = answer;
 
-            if (answer.Equals(question.CorrectAnswer)) { CorrectAnswersCount++; }
-            else if (answer.Equals(question.RGColorBlindness)) { RGColorBlindnessCount++;}
-            else if (answer.Equals(question.TotalColorBlindness)) { TotalColorBlindnessCount++; }
-        }
+                if (answer.Equals(question.CorrectAnswer)) { CorrectAnswersCount++; }
+                else if (answer.Equals(question.RGColorBlindness)) { RGColorBlindnessCount++;}
+                else { TotalColorBlindnessCount++; }
+            }
+        } 
     }
 }

@@ -7,6 +7,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V4.Content;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
@@ -61,8 +62,26 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
         }
 
         public void ShowResult()  {
-            _questionImage.Visibility = ViewStates.Gone; 
-            _infoText.Text = "Result";
+            _questionImage.Visibility = ViewStates.Gone;
+            _infoText.SetTextSize(ComplexUnitType.Px, Resources.GetDimension(Resources.GetIdentifier("text_size_large", "dimen",
+                Activity.PackageName)));
+            Log.Verbose("TAG", "Correct: " + _logic.CorrectAnswersCount);
+            Log.Verbose("TAG", "RG: " + _logic.RGColorBlindnessCount);
+            Log.Verbose("TAG", "Total: " + _logic.TotalColorBlindnessCount);
+
+            if (_logic.CorrectAnswersCount >= 17) {
+                _infoText.Text =
+                    Resources.GetString(Resources.GetIdentifier("no_daltonism", "string",
+                        Activity.PackageName));
+            } else if(_logic.RGColorBlindnessCount >= _logic.TotalColorBlindnessCount) {
+                _infoText.Text =
+                    Resources.GetString(Resources.GetIdentifier("red_and_green_daltonism", "string",
+                        Activity.PackageName));
+            } else if (_logic.RGColorBlindnessCount < _logic.TotalColorBlindnessCount) {
+                _infoText.Text =
+                    Resources.GetString(Resources.GetIdentifier("total_daltonism", "string",
+                        Activity.PackageName));
+            }  
         }
     }
 }
