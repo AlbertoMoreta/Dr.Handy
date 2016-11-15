@@ -18,14 +18,14 @@ namespace TFG.Droid{
 
         public static IHealthFragment GetHeaderFragmentFromHealthModuleName(string moduleName) {
             if (HealthModuleType.ColorBlindnessTest.HealthModuleName().Equals(moduleName)) { return new CBTHeaderFragment(); }
-            if (HealthModuleType.Module2.HealthModuleName().Equals(moduleName)) { return null; }
+            if (HealthModuleType.StepCounter.HealthModuleName().Equals(moduleName)) { return new StepCounterHeaderFragment(); }
             if (HealthModuleType.Module3.HealthModuleName().Equals(moduleName)) { return null; }
             return null;
         }
 
         public static IHealthFragment GetBodyFragmentFromHealthModuleName(string moduleName) {
             if (HealthModuleType.ColorBlindnessTest.HealthModuleName().Equals(moduleName)) { return new CBTBodyFragment(); } 
-            if (HealthModuleType.Module2.HealthModuleName().Equals(moduleName)) { return null; } 
+            if (HealthModuleType.StepCounter.HealthModuleName().Equals(moduleName)) { return new StepCounterBodyFragment(); } 
             if (HealthModuleType.Module3.HealthModuleName().Equals(moduleName)) { return null; }
             return null;
         }
@@ -35,7 +35,9 @@ namespace TFG.Droid{
             if (HealthModuleType.ColorBlindnessTest.HealthModuleName().Equals(moduleName)) {
                 return context.Resources.GetIdentifier("AppTheme_Purple", "style", context.PackageName);
             }
-            if (HealthModuleType.Module2.HealthModuleName().Equals(moduleName)) { return -1; }
+            if (HealthModuleType.StepCounter.HealthModuleName().Equals(moduleName)) {
+                return context.Resources.GetIdentifier("AppTheme_Orange", "style", context.PackageName);
+            }
             if (HealthModuleType.Module3.HealthModuleName().Equals(moduleName)) { return -1; }
             return -1;
         }
