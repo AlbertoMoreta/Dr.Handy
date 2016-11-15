@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources> 
 	<string name="app_name">TFG.Droid</string>
 
@@ -7,7 +7,7 @@
   <string name="answer">Tu Respuesta</string>
   <string name="correct_answer">Respuesta Correcta</string>
 
-  <string name="no_daltonism">No hay de que preocuparse, no sufres ningún tipo de daltonismo</string>
+  <string name="no_daltonism">No hay de que preocuparse, no sufres ning�n tipo de daltonismo</string>
   <string name="red_and_green_daltonism">En base a tus respuestas es posible que padezcas daltonismo de rojo y verde</string>
   <string name="total_daltonism">En base a tus respuestas es posible que padezcas daltonismo total</string> 
   
