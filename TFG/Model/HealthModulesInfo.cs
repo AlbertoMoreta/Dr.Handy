@@ -43,7 +43,7 @@ namespace TFG.Model {
 #elif __IOS__
 
 #endif
-
+            return null;
         }
     }
 }
