@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using TFG.Droid.Fragments.ColorBlindnessTest;
+using TFG.Droid.Fragments.StepCounter;
 using TFG.Droid.Interfaces;
 using TFG.Model;
 

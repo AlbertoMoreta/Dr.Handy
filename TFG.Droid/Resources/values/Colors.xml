@@ -3,8 +3,11 @@
   <item name="primary" type="color">#1BAB8C</item>
   <item name="primary_dark" type="color">#009878</item>
   <item name="ripple" type="color">#29CBA8</item>
-  <item name="purple" type="color">#903E97</item>
-  <item name="dark_purple" type="color">#6A2572</item>
+  <item name="purple" type="color">#9C27B0</item>
+  <item name="dark_purple" type="color">#6A1B9A</item>
+
+  <item name="orange" type="color">#FF9800</item>
+  <item name="dark_orange" type="color">#EF6C00</item>
   
   <item name="dark_green" type="color">#009878</item>
   <item name="light_green" type="color">#29CBA8</item>
@@ -16,7 +19,6 @@
   <item name="light_blue" type="color">#64BCF9</item>
   <item name="dark_yellow" type="color">#EEB600</item>
   <item name="light_yellow" type="color">#FFCC66</item>
-  <item name="orange" type="color">#E17A3F</item>
   <item name="red" type="color">#DE4949</item>
   <item name="grey" type="color">#666666</item>
   <item name="green" type="color">#1BAB8C</item>
