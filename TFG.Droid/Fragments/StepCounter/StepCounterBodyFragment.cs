@@ -13,5 +13,6 @@ using TFG.Droid.Interfaces;
 
 namespace TFG.Droid.Fragments.StepCounter {
     class StepCounterBodyFragment: Fragment, IHealthFragment {
+
     }
 }
