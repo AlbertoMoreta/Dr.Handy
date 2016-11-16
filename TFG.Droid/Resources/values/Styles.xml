@@ -8,13 +8,13 @@
     <item name="android:windowTranslucentStatus">true</item>
   </style>
 
-  <style name="AppTheme_Purple" parent="MyTheme.Base">
+  <style name="AppTheme_purple" parent="MyTheme.Base">
     <item name="colorPrimary">@color/purple</item>
     <item name="colorPrimaryDark">@color/dark_purple</item>
     <item name="colorAccent">@color/light_green</item>
   </style>
 
-  <style name="AppTheme_Orange" parent="MyTheme.Base">
+  <style name="AppTheme_orange" parent="MyTheme.Base">
     <item name="colorPrimary">@color/orange</item>
     <item name="colorPrimaryDark">@color/dark_orange</item>
     <item name="colorAccent">@color/light_green</item>

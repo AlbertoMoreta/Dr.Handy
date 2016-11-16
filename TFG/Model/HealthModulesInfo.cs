@@ -35,6 +35,13 @@ namespace TFG.Model {
             }
         }
 
+        public static string GetHealthModuleColorFromHealthModuleName(string moduleName){
+            if (HealthModuleType.ColorBlindnessTest.HealthModuleName().Equals(moduleName)) { return "purple"; }
+            if (HealthModuleType.StepCounter.HealthModuleName().Equals(moduleName)) { return "orange"; }
+            if (HealthModuleType.Module3.HealthModuleName().Equals(moduleName)) { return null; }
+            return null;
+        }
+
         public static string GetStringFromResourceName(string resName){
 
 #if __ANDROID__

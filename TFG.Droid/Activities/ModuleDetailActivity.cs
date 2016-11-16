@@ -15,6 +15,7 @@ using Android.Views;
 using Android.Widget;
 using TFG.Droid.Fragments.ColorBlindnessTest;
 using TFG.Droid.Interfaces;
+using TFG.Model;
 
 namespace TFG.Droid.Activities {
     [Activity(Label = "ModuleDetailActivity", LaunchMode = LaunchMode.SingleTask)]
@@ -25,7 +26,6 @@ namespace TFG.Droid.Activities {
 
         protected override void OnCreate(Bundle savedInstanceState) {
             base.OnCreate(savedInstanceState);
-            Window.DecorView.Background = ContextCompat.GetDrawable(this, Resources.GetIdentifier("background_purple", "drawable", PackageName));
             SetContentView(Resource.Layout.module_detail); 
 
             SetUpToolBar();
@@ -33,8 +33,15 @@ namespace TFG.Droid.Activities {
             var moduleName = Intent.GetStringExtra("name");
             ToolbarTitle.Text = moduleName;
 
-            var theme = HealthModulesInfoExtension.GetStyleFromHealthModuleName(moduleName);
-            if(theme != -1) { SetTheme(theme);} 
+            var moduleColorSufix = HealthModulesInfo.GetHealthModuleColorFromHealthModuleName(moduleName);
+            if (moduleColorSufix == null) { moduleColorSufix = "purple"; }
+
+            Window.DecorView.Background = ContextCompat.GetDrawable(this, 
+                                                Resources.GetIdentifier("background_" + moduleColorSufix, 
+                                                "drawable", PackageName));
+
+            var theme = Resources.GetIdentifier("AppTheme_" + moduleColorSufix, "style", PackageName);
+            if (theme != -1) { SetTheme(theme);} 
 
             FragmentManager fragmentManager = FragmentManager;
             FragmentTransaction fragmentTransaction = fragmentManager.BeginTransaction();
