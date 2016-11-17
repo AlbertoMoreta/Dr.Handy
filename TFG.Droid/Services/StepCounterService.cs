@@ -13,20 +13,57 @@ using Android.Widget;
 
 namespace TFG.Droid.Services {
     [Service(Enabled = true)]
-    public class StepCounterService : Service, ISensorEventListener{
-        public override IBinder OnBind(Intent intent)
-        {
-            throw new NotImplementedException();
+    public class StepCounterService : Service, ISensorEventListener  {
+
+        public int Steps { get; set; }
+        public StepCounterServiceBinder Binder { get; set; }
+        private bool _isRunning;
+
+        public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId) {
+            Console.WriteLine("Service OnStartCommand");
+
+            Init();
+
+            return base.OnStartCommand(intent, flags, startId);
+        } 
+
+        public override IBinder OnBind(Intent intent) {
+            Binder = new StepCounterServiceBinder(this);
+
+            
+
+            return Binder;
         }
 
-        public void OnAccuracyChanged(Sensor sensor, SensorStatus accuracy)
-        {
-            throw new NotImplementedException();
+        private void Init() {
+            if (!_isRunning) {
+                var sensorManager = (SensorManager) GetSystemService(SensorService);
+                var sensor = sensorManager.GetDefaultSensor(SensorType.StepDetector);
+                sensorManager.RegisterListener(this, sensor, SensorDelay.Normal);
+            }
+
+            _isRunning = true;
         }
 
-        public void OnSensorChanged(SensorEvent e)
-        {
-            throw new NotImplementedException();
+        public void OnAccuracyChanged(Sensor sensor, SensorStatus accuracy) {
+        }
+
+        public void OnSensorChanged(SensorEvent e) {
+            Steps++;
+            Console.WriteLine(Steps + " Steps");
+        }
+
+        public override void OnDestroy() {
+            base.OnDestroy();
+
+            try {
+                var sensorManager = (SensorManager) GetSystemService(SensorService);
+                sensorManager.UnregisterListener(this); 
+                _isRunning = false;
+            } catch (Exception e) { 
+            }
+
+            _isRunning = false;
         }
     }
 }
