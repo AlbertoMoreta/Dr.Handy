@@ -9,7 +9,9 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using TFG.Droid.Custom_Views;
 using TFG.Droid.Interfaces;
+using TFG.Droid.Listeners;
 using TFG.Droid.Services;
 
 namespace TFG.Droid.Fragments.StepCounter {
@@ -19,13 +21,33 @@ namespace TFG.Droid.Fragments.StepCounter {
         public StepCounterServiceBinder Binder { get; set; }
         public StepCounterServiceConnection _serviceConnection;
         public bool _firstRun = true;
+        private Handler _handler;
+
+        private CustomTextView _steps;
 
         public override void OnCreate(Bundle savedInstanceState) {
             base.OnCreate(savedInstanceState);
             Console.WriteLine("Fragment OnCreate Called"); 
             StartStepCounterService();
+
+            _handler = new Handler();
+            _handler.PostDelayed(() => UpdateSteps(), 500);
         }
-        
+
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+            var view = inflater.Inflate(Resource.Layout.fragment_cbt_header, container, false); 
+            _steps = view.FindViewById<CustomTextView>(Resource.Id.info_text); 
+
+            return view;
+        }
+
+        private void UpdateSteps() {
+            if (Binder != null) {
+                _steps.Text = Binder.GetStepCounterService().Steps.ToString();
+                _handler.PostDelayed(() => UpdateSteps(), 500);
+            }
+        }
+     
 
         public override void OnStart() {
             base.OnStart();
@@ -74,7 +96,13 @@ namespace TFG.Droid.Fragments.StepCounter {
 
         public override void OnResume() {
             base.OnResume();
+            if (!_firstRun) {
+                if(_handler == null) {  _handler = new Handler();}
+                _handler.PostDelayed(() => UpdateSteps(), 500);
+            }
+
             _firstRun = false;
         }
+         
     }
 }

@@ -23,8 +23,7 @@ namespace TFG.Droid.Services {
 
         public void OnServiceConnected(ComponentName name, IBinder service) {
             var serviceBinder = service as StepCounterServiceBinder;
-            if (serviceBinder != null)
-            {
+            if (serviceBinder != null) {
                 _fragment.Binder = serviceBinder;
                 _fragment.IsBound = true;
             }

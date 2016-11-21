@@ -24,14 +24,12 @@ namespace TFG.Droid.Services {
 
             Init();
 
-            return base.OnStartCommand(intent, flags, startId);
+            return StartCommandResult.Sticky;
         } 
 
         public override IBinder OnBind(Intent intent) {
             Binder = new StepCounterServiceBinder(this);
-
             
-
             return Binder;
         }
 
@@ -61,9 +59,7 @@ namespace TFG.Droid.Services {
                 sensorManager.UnregisterListener(this); 
                 _isRunning = false;
             } catch (Exception e) { 
-            }
-
-            _isRunning = false;
+            } 
         }
     }
 }
