@@ -13,6 +13,9 @@ using TFG.Droid.Fragments.StepCounter;
 using TFG.Droid.Interfaces;
 
 namespace TFG.Droid.Services {
+    /// <summary>
+    /// What to do when a client is connected or disconnected from the service
+    /// </summary>
     class StepCounterServiceConnection : Java.Lang.Object, IServiceConnection {
 
         private StepCounterHeaderFragment _fragment;

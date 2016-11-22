@@ -15,6 +15,9 @@ using TFG.Droid.Listeners;
 using TFG.Droid.Services;
 
 namespace TFG.Droid.Fragments.StepCounter {
+    /// <summary>
+    /// Header fragment for the Step Counter health module
+    /// </summary>
     class StepCounterHeaderFragment : Fragment, IHealthFragment {
 
         public bool IsBound { get; set; }
@@ -26,12 +29,11 @@ namespace TFG.Droid.Fragments.StepCounter {
         private CustomTextView _steps;
 
         public override void OnCreate(Bundle savedInstanceState) {
-            base.OnCreate(savedInstanceState);
-            Console.WriteLine("Fragment OnCreate Called"); 
+            base.OnCreate(savedInstanceState); 
             StartStepCounterService();
 
             _handler = new Handler();
-            _handler.PostDelayed(() => UpdateSteps(), 500);
+            _handler.PostDelayed(() => UpdateSteps(), 500); //Update the UI every 0.5 seconds
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -42,6 +44,9 @@ namespace TFG.Droid.Fragments.StepCounter {
         }
 
         private void UpdateSteps() {
+#if DEBUG
+            Console.WriteLine("Updating UI...");
+#endif
             if (Binder != null) {
                 _steps.Text = Binder.GetStepCounterService().Steps.ToString();
                 _handler.PostDelayed(() => UpdateSteps(), 500);
@@ -51,37 +56,45 @@ namespace TFG.Droid.Fragments.StepCounter {
 
         public override void OnStart() {
             base.OnStart();
-            Console.WriteLine("Fragment OnStart");
-
 
             if (!_firstRun) StartStepCounterService();
 
             if (IsBound) return;
 
+            BindService();
+        }
+
+        private void StartStepCounterService() {
             try {
-                Console.WriteLine("Starting Step Counter Service...");  
+#if DEBUG
+                Console.WriteLine("Starting Step Counter Service...");
+#endif
+                var service = new Intent(Activity, typeof(StepCounterService));
+                Activity.ApplicationContext.StartService(service); 
+            } catch (Exception e) { }
+        }
+
+        private void BindService() {
+            try {
+#if DEBUG
+                Console.WriteLine("Binding client to the service...");
+#endif
                 var serviceIntent = new Intent(Activity, typeof(StepCounterService));
                 _serviceConnection = new StepCounterServiceConnection(this);
                 Activity.ApplicationContext.BindService(serviceIntent, _serviceConnection, Bind.AutoCreate);
             } catch (Exception e) { }
         }
 
-        private void StartStepCounterService() {
-            try {
-                Console.WriteLine("Starting Step Counter Service...");
-                var service = new Intent(Activity, typeof(StepCounterService));
-                Activity.ApplicationContext.StartService(service); 
-            } catch (Exception e) { }
-        }
-
         private void UnbindService() {
+#if DEBUG
+            Console.WriteLine("Unbinding client from the service...");
+#endif
             Activity.ApplicationContext.UnbindService(_serviceConnection);
             IsBound = false;
         }
 
         public override void OnDestroy() {
-            base.OnDestroy();
-            Console.WriteLine("Fragment OnDestroy");
+            base.OnDestroy(); 
             if (IsBound) {
                 UnbindService();
             }

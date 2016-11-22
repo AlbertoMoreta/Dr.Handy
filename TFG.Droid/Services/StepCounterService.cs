@@ -10,8 +10,13 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Java.Sql;
+using Java.Text;
 
 namespace TFG.Droid.Services {
+    /// <summary>
+    /// Service for the step counter sensor
+    /// </summary>
     [Service(Enabled = true)]
     public class StepCounterService : Service, ISensorEventListener  {
 
@@ -20,9 +25,11 @@ namespace TFG.Droid.Services {
         private bool _isRunning;
 
         public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId) {
-            Console.WriteLine("Service OnStartCommand");
 
             Init();
+#if DEBUG
+            Console.WriteLine("Service started");
+#endif
 
             return StartCommandResult.Sticky;
         } 
@@ -47,8 +54,10 @@ namespace TFG.Droid.Services {
         }
 
         public void OnSensorChanged(SensorEvent e) {
-            Steps++;
-            Console.WriteLine(Steps + " Steps");
+#if DEBUG 
+            Console.WriteLine("Step detected");
+#endif
+            Steps++; 
         }
 
         public override void OnDestroy() {
