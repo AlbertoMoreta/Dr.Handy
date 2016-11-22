@@ -47,16 +47,18 @@ namespace TFG.Droid.Activities {
             FragmentTransaction fragmentTransaction = fragmentManager.BeginTransaction();
 
             HeaderFragment = HealthModulesInfoExtension.GetHeaderFragmentFromHealthModuleName(moduleName);
-            if (HeaderFragment != null) {
-                fragmentTransaction.Add(Resource.Id.fragments_container, HeaderFragment as Fragment);
-            }
-
             BodyFragment = HealthModulesInfoExtension.GetBodyFragmentFromHealthModuleName(moduleName);
-            if (BodyFragment != null) {
-                fragmentTransaction.Add(Resource.Id.fragments_container, BodyFragment as Fragment);
-            }
+            if (savedInstanceState == null) {   //Prevent the fragments to duplicate
+                if (HeaderFragment != null)  {
+                    fragmentTransaction.Add(Resource.Id.fragments_container, HeaderFragment as Fragment);
+                }
 
-            fragmentTransaction.Commit();
+                if (BodyFragment != null) {
+                    fragmentTransaction.Add(Resource.Id.fragments_container, BodyFragment as Fragment);
+                }
+
+                fragmentTransaction.Commit();
+            }
         } 
     }
 }
