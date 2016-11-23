@@ -1,11 +1,10 @@
-﻿using Android.App;
-using Android.Database.Sqlite;
+﻿
 using SQLite;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
-using TFG.Droid.Custom_Views;
+using System.Linq;
+using System.Text; 
 using TFG.Model;
 
 namespace TFG {
@@ -20,6 +19,11 @@ namespace TFG {
         private static readonly string COL_POSITION = "Position";
         private static readonly string COL_VISIBLE = "Visible";
 
+
+        //Step Counter Module
+        public static readonly string STEPCOUNTER_TABLE = "STEPCOUNTER";
+        public static readonly string COL_STEPS = "Steps";
+        public static readonly string COL_DATE = "Date";
 
 
         private static DBHelper _instance;
@@ -124,12 +128,37 @@ namespace TFG {
 
         } 
 
-
         public void DropTable(string tableName) {
             var sql = "DROP TABLE IF EXISTS " + tableName;
             Connection.Execute(sql);
         }
 
+
+        public void CreateStepCounterTable() {
+            var sql = "CREATE TABLE IF NOT EXISTS " + STEPCOUNTER_TABLE + " (" + COL_DATE + " text primary key, "
+                + COL_STEPS + " integer)";
+
+            Connection.Execute(sql);
+        }
+
+        public void UpdateSteps(DateTime date, int steps) {
+
+            var stringDate = date.ToString("yy-MM-dd");
+
+            var sql = "INSERT OR REPLACE INTO " + STEPCOUNTER_TABLE + " (" + COL_DATE + ", " + COL_STEPS + ") VALUES "
+                      + "('" + stringDate + "', " + steps + ")"; 
+
+            Connection.Execute(sql);
+        }
+
+        public List<StepCounterItem> GetStepsFromDate(DateTime date) {
+            var stringDate = date.ToString("yy-MM-dd");
+
+
+            var sql = "SELECT * FROM " + STEPCOUNTER_TABLE + " WHERE " + COL_DATE + " = '" + stringDate + "'";
+
+            return Connection.Query<StepCounterItem>(sql);
+        }
     }
 
 

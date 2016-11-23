@@ -41,13 +41,20 @@ namespace TFG.Droid.Services {
         }
 
         private void Init() {
+
+           // DBHelper.Instance.DropTable("STEPCOUNTER");
             if (!_isRunning) {
+                DBHelper.Instance.CreateStepCounterTable();
                 var sensorManager = (SensorManager) GetSystemService(SensorService);
                 var sensor = sensorManager.GetDefaultSensor(SensorType.StepDetector);
                 sensorManager.RegisterListener(this, sensor, SensorDelay.Normal);
             }
 
             _isRunning = true;
+            var s = DBHelper.Instance.GetStepsFromDate(DateTime.Now);
+            if(s.Count > 0) { Steps = s.ElementAt(0).Steps; }
+            
+            Console.WriteLine("Initial Steps = " + Steps);
         }
 
         public void OnAccuracyChanged(Sensor sensor, SensorStatus accuracy) {
@@ -57,7 +64,8 @@ namespace TFG.Droid.Services {
 #if DEBUG 
             Console.WriteLine("Step detected");
 #endif
-            Steps++; 
+            Steps++;
+            DBHelper.Instance.UpdateSteps(DateTime.Now, Steps);
         }
 
         public override void OnDestroy() {
