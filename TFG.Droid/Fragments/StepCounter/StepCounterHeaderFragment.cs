@@ -27,6 +27,9 @@ namespace TFG.Droid.Fragments.StepCounter {
         private Handler _handler;
 
         private CustomTextView _steps;
+        private CustomTextView _calories;
+        private CustomTextView _distance;
+
         public override void OnCreate(Bundle savedInstanceState) {
             base.OnCreate(savedInstanceState); 
             StartStepCounterService(); 
@@ -36,6 +39,8 @@ namespace TFG.Droid.Fragments.StepCounter {
             var view = inflater.Inflate(Resource.Layout.fragment_stepcounter_header, container, false);
             _handler = new Handler();
             _steps = view.FindViewById<CustomTextView>(Resource.Id.steps);
+            _calories = view.FindViewById<CustomTextView>(Resource.Id.calories);
+            _distance = view.FindViewById<CustomTextView>(Resource.Id.distance);
             UpdateSteps();
             (Activity as BaseActivity).ToolbarTitle.Text = DateTime.Now.ToString("dd / MM / yyyy"); 
 
@@ -46,17 +51,23 @@ namespace TFG.Droid.Fragments.StepCounter {
 #if DEBUG
             Console.WriteLine("Updating UI...");
 #endif
+
+            int stepsToday = 0;
+
             if (Binder != null) {
-                _steps.Text = Binder.GetStepCounterService().Steps.ToString();
+                stepsToday = Binder.GetStepCounterService().Steps; 
             } else {
-                var stepsToday =
+                var items =
                     DBHelper.Instance.GetStepCounterItemFromDate(DateTime.Now.AddDays(-7));
 
-                _steps.Text = stepsToday.Count > 0
-                    ? stepsToday.ElementAt(0).Steps.ToString()
-                    : "-";
+                stepsToday = items.Count > 0    //Check if item exists
+                    ? items.ElementAt(0).Steps
+                    : 0;
             }
 
+            _steps.Text = stepsToday != 0 ? stepsToday.ToString() : "-";
+            _calories.Text = (stepsToday/20).ToString();
+            _distance.Text = Math.Round((stepsToday * 0.00075), 2).ToString();
             _handler.PostDelayed(() => UpdateSteps(), 500); //Update the UI every 0.5 seconds
         }
 

@@ -1782,8 +1782,8 @@ namespace TFG.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f06006a
-			public const int action0 = 2131099754;
+			// aapt resource value: 0x7f06006d
+			public const int action0 = 2131099757;
 			
 			// aapt resource value: 0x7f060043
 			public const int action_bar = 2131099715;
@@ -1809,8 +1809,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060044
 			public const int action_context_bar = 2131099716;
 			
-			// aapt resource value: 0x7f06006e
-			public const int action_divider = 2131099758;
+			// aapt resource value: 0x7f060071
+			public const int action_divider = 2131099761;
 			
 			// aapt resource value: 0x7f060003
 			public const int action_menu_divider = 2131099651;
@@ -1836,8 +1836,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06001d
 			public const int always = 2131099677;
 			
-			// aapt resource value: 0x7f060078
-			public const int answer = 2131099768;
+			// aapt resource value: 0x7f06007b
+			public const int answer = 2131099771;
 			
 			// aapt resource value: 0x7f060054
 			public const int answer1 = 2131099732;
@@ -1857,14 +1857,17 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06002d
 			public const int buttonPanel = 2131099693;
 			
-			// aapt resource value: 0x7f06006b
-			public const int cancel_action = 2131099755;
+			// aapt resource value: 0x7f060061
+			public const int calories = 2131099745;
+			
+			// aapt resource value: 0x7f06006e
+			public const int cancel_action = 2131099758;
 			
 			// aapt resource value: 0x7f06003b
 			public const int checkbox = 2131099707;
 			
-			// aapt resource value: 0x7f060071
-			public const int chronometer = 2131099761;
+			// aapt resource value: 0x7f060074
+			public const int chronometer = 2131099764;
 			
 			// aapt resource value: 0x7f06001e
 			public const int collapseActionView = 2131099678;
@@ -1872,8 +1875,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060033
 			public const int contentPanel = 2131099699;
 			
-			// aapt resource value: 0x7f060079
-			public const int correct_answer = 2131099769;
+			// aapt resource value: 0x7f06007c
+			public const int correct_answer = 2131099772;
 			
 			// aapt resource value: 0x7f060039
 			public const int custom = 2131099705;
@@ -1890,14 +1893,17 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06000d
 			public const int disableHome = 2131099661;
 			
+			// aapt resource value: 0x7f060062
+			public const int distance = 2131099746;
+			
 			// aapt resource value: 0x7f060045
 			public const int edit_query = 2131099717;
 			
 			// aapt resource value: 0x7f06001b
 			public const int end = 2131099675;
 			
-			// aapt resource value: 0x7f060076
-			public const int end_padder = 2131099766;
+			// aapt resource value: 0x7f060079
+			public const int end_padder = 2131099769;
 			
 			// aapt resource value: 0x7f060027
 			public const int expand_activities_button = 2131099687;
@@ -1905,11 +1911,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06003a
 			public const int expanded_menu = 2131099706;
 			
-			// aapt resource value: 0x7f060064
-			public const int fab = 2131099748;
+			// aapt resource value: 0x7f060067
+			public const int fab = 2131099751;
 			
-			// aapt resource value: 0x7f060065
-			public const int fragments_container = 2131099749;
+			// aapt resource value: 0x7f060068
+			public const int fragments_container = 2131099752;
 			
 			// aapt resource value: 0x7f060005
 			public const int home = 2131099653;
@@ -1926,8 +1932,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060028
 			public const int image = 2131099688;
 			
-			// aapt resource value: 0x7f060075
-			public const int info = 2131099765;
+			// aapt resource value: 0x7f060078
+			public const int info = 2131099768;
 			
 			// aapt resource value: 0x7f06005c
 			public const int info_text = 2131099740;
@@ -1935,23 +1941,23 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060000
 			public const int item_touch_helper_previous_elevation = 2131099648;
 			
-			// aapt resource value: 0x7f06006f
-			public const int line1 = 2131099759;
+			// aapt resource value: 0x7f060072
+			public const int line1 = 2131099762;
 			
-			// aapt resource value: 0x7f060073
-			public const int line3 = 2131099763;
+			// aapt resource value: 0x7f060076
+			public const int line3 = 2131099766;
 			
 			// aapt resource value: 0x7f06000a
 			public const int listMode = 2131099658;
 			
-			// aapt resource value: 0x7f060069
-			public const int listView = 2131099753;
+			// aapt resource value: 0x7f06006c
+			public const int listView = 2131099756;
 			
 			// aapt resource value: 0x7f06002a
 			public const int list_item = 2131099690;
 			
-			// aapt resource value: 0x7f06006d
-			public const int media_actions = 2131099757;
+			// aapt resource value: 0x7f060070
+			public const int media_actions = 2131099760;
 			
 			// aapt resource value: 0x7f06001c
 			public const int middle = 2131099676;
@@ -1959,20 +1965,20 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060022
 			public const int mini = 2131099682;
 			
-			// aapt resource value: 0x7f060068
-			public const int module_addbutton = 2131099752;
+			// aapt resource value: 0x7f06006b
+			public const int module_addbutton = 2131099755;
 			
-			// aapt resource value: 0x7f060067
-			public const int module_description = 2131099751;
+			// aapt resource value: 0x7f06006a
+			public const int module_description = 2131099754;
 			
-			// aapt resource value: 0x7f060066
-			public const int module_icon = 2131099750;
+			// aapt resource value: 0x7f060069
+			public const int module_icon = 2131099753;
 			
-			// aapt resource value: 0x7f060060
-			public const int module_image = 2131099744;
+			// aapt resource value: 0x7f060063
+			public const int module_image = 2131099747;
 			
-			// aapt resource value: 0x7f060061
-			public const int module_name = 2131099745;
+			// aapt resource value: 0x7f060064
+			public const int module_name = 2131099748;
 			
 			// aapt resource value: 0x7f060015
 			public const int multiply = 2131099669;
@@ -1998,8 +2004,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060053
 			public const int question = 2131099731;
 			
-			// aapt resource value: 0x7f060077
-			public const int question_number = 2131099767;
+			// aapt resource value: 0x7f06007a
+			public const int question_number = 2131099770;
 			
 			// aapt resource value: 0x7f060052
 			public const int questions_layout = 2131099730;
@@ -2007,8 +2013,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06003d
 			public const int radio = 2131099709;
 			
-			// aapt resource value: 0x7f060063
-			public const int recycler_view = 2131099747;
+			// aapt resource value: 0x7f060066
+			public const int recycler_view = 2131099750;
 			
 			// aapt resource value: 0x7f060058
 			public const int results_layout = 2131099736;
@@ -2085,14 +2091,17 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060019
 			public const int src_over = 2131099673;
 			
-			// aapt resource value: 0x7f06006c
-			public const int status_bar_latest_event_content = 2131099756;
+			// aapt resource value: 0x7f06006f
+			public const int status_bar_latest_event_content = 2131099759;
 			
-			// aapt resource value: 0x7f06005f
-			public const int steps = 2131099743;
+			// aapt resource value: 0x7f060060
+			public const int steps = 2131099744;
 			
 			// aapt resource value: 0x7f06005e
 			public const int steps_last_week = 2131099742;
+			
+			// aapt resource value: 0x7f06005f
+			public const int steps_layout = 2131099743;
 			
 			// aapt resource value: 0x7f06005d
 			public const int steps_yesterday = 2131099741;
@@ -2112,17 +2121,17 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06005b
 			public const int test_image = 2131099739;
 			
-			// aapt resource value: 0x7f060074
-			public const int text = 2131099764;
+			// aapt resource value: 0x7f060077
+			public const int text = 2131099767;
 			
-			// aapt resource value: 0x7f060072
-			public const int text2 = 2131099762;
+			// aapt resource value: 0x7f060075
+			public const int text2 = 2131099765;
 			
 			// aapt resource value: 0x7f060036
 			public const int textSpacerNoButtons = 2131099702;
 			
-			// aapt resource value: 0x7f060070
-			public const int time = 2131099760;
+			// aapt resource value: 0x7f060073
+			public const int time = 2131099763;
 			
 			// aapt resource value: 0x7f06002c
 			public const int title = 2131099692;
@@ -2130,8 +2139,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060031
 			public const int title_template = 2131099697;
 			
-			// aapt resource value: 0x7f060062
-			public const int toolbar = 2131099746;
+			// aapt resource value: 0x7f060065
+			public const int toolbar = 2131099749;
 			
 			// aapt resource value: 0x7f060030
 			public const int topPanel = 2131099696;
@@ -2409,11 +2418,17 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f090014
 			public const int app_name = 2131296276;
 			
+			// aapt resource value: 0x7f09001e
+			public const int calories = 2131296286;
+			
 			// aapt resource value: 0x7f090015
 			public const int color_blindness_test_name = 2131296277;
 			
 			// aapt resource value: 0x7f090018
 			public const int correct_answer = 2131296280;
+			
+			// aapt resource value: 0x7f09001f
+			public const int kilometers = 2131296287;
 			
 			// aapt resource value: 0x7f090019
 			public const int no_daltonism = 2131296281;
@@ -2424,8 +2439,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f09001a
 			public const int red_and_green_daltonism = 2131296282;
 			
-			// aapt resource value: 0x7f09001e
-			public const int same_day_last_week = 2131296286;
+			// aapt resource value: 0x7f090021
+			public const int same_day_last_week = 2131296289;
 			
 			// aapt resource value: 0x7f090013
 			public const int status_bar_notification_info_overflow = 2131296275;
@@ -2433,11 +2448,14 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f09001c
 			public const int step_counter_name = 2131296284;
 			
+			// aapt resource value: 0x7f09001d
+			public const int steps = 2131296285;
+			
 			// aapt resource value: 0x7f09001b
 			public const int total_daltonism = 2131296283;
 			
-			// aapt resource value: 0x7f09001d
-			public const int yesterday = 2131296285;
+			// aapt resource value: 0x7f090020
+			public const int yesterday = 2131296288;
 			
 			static String()
 			{

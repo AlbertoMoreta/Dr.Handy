@@ -23,8 +23,6 @@
       android:layout_height="wrap_content"
       android:gravity="center"
       android:textSize="@dimen/text_size_xxlarge"/>
-  
-  
 
   <TFG.Droid.Custom_Views.CustomTextView
       android:layout_width="match_parent"
