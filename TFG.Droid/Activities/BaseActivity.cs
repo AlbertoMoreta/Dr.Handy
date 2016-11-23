@@ -17,7 +17,7 @@ namespace TFG.Droid {
     [Activity(Label = "BaseActivity", Theme ="@style/AppTheme")]
     public class BaseActivity : AppCompatActivity{
 
-        public CustomTextView ToolbarTitle { get; private set; }
+        public CustomTextView ToolbarTitle { get; set; }
 
         protected override void OnCreate(Bundle savedInstanceState) {
             base.OnCreate(savedInstanceState);  

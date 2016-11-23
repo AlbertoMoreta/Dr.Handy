@@ -151,7 +151,7 @@ namespace TFG {
             Connection.Execute(sql);
         }
 
-        public List<StepCounterItem> GetStepsFromDate(DateTime date) {
+        public List<StepCounterItem> GetStepCounterItemFromDate(DateTime date) {
             var stringDate = date.ToString("yy-MM-dd");
 
 

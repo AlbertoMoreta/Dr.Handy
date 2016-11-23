@@ -14,5 +14,7 @@
 
   <!-- Step Counter Strings -->
   <string name="step_counter_name">Podómetro</string>
+  <string name="yesterday">AYER</string>
+  <string name="same_day_last_week">MISMO DÍA DE LA SEMANA PASADA</string>
 
 </resources>

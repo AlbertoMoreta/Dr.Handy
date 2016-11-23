@@ -51,7 +51,7 @@ namespace TFG.Droid.Services {
             }
 
             _isRunning = true;
-            var s = DBHelper.Instance.GetStepsFromDate(DateTime.Now);
+            var s = DBHelper.Instance.GetStepCounterItemFromDate(DateTime.Now);
             if(s.Count > 0) { Steps = s.ElementAt(0).Steps; }
             
             Console.WriteLine("Initial Steps = " + Steps);

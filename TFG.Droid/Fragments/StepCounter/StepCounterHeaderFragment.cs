@@ -27,18 +27,17 @@ namespace TFG.Droid.Fragments.StepCounter {
         private Handler _handler;
 
         private CustomTextView _steps;
-
         public override void OnCreate(Bundle savedInstanceState) {
             base.OnCreate(savedInstanceState); 
-            StartStepCounterService();
-
-            _handler = new Handler();
-            _handler.PostDelayed(() => UpdateSteps(), 500); //Update the UI every 0.5 seconds
+            StartStepCounterService(); 
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            var view = inflater.Inflate(Resource.Layout.fragment_cbt_header, container, false); 
-            _steps = view.FindViewById<CustomTextView>(Resource.Id.info_text); 
+            var view = inflater.Inflate(Resource.Layout.fragment_stepcounter_header, container, false);
+            _handler = new Handler();
+            _steps = view.FindViewById<CustomTextView>(Resource.Id.steps);
+            UpdateSteps();
+            (Activity as BaseActivity).ToolbarTitle.Text = DateTime.Now.ToString("dd / MM / yyyy"); 
 
             return view;
         }
@@ -49,10 +48,18 @@ namespace TFG.Droid.Fragments.StepCounter {
 #endif
             if (Binder != null) {
                 _steps.Text = Binder.GetStepCounterService().Steps.ToString();
-                _handler.PostDelayed(() => UpdateSteps(), 500);
+            } else {
+                var stepsToday =
+                    DBHelper.Instance.GetStepCounterItemFromDate(DateTime.Now.AddDays(-7));
+
+                _steps.Text = stepsToday.Count > 0
+                    ? stepsToday.ElementAt(0).Steps.ToString()
+                    : "-";
             }
+
+            _handler.PostDelayed(() => UpdateSteps(), 500); //Update the UI every 0.5 seconds
         }
-     
+
 
         public override void OnStart() {
             base.OnStart();
@@ -105,6 +112,8 @@ namespace TFG.Droid.Fragments.StepCounter {
             if (IsBound) {
                 UnbindService();
             }
+
+            _handler.RemoveCallbacksAndMessages(null);
         }
 
         public override void OnResume() {
