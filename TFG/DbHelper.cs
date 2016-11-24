@@ -24,6 +24,7 @@ namespace TFG {
         public static readonly string STEPCOUNTER_TABLE = "STEPCOUNTER";
         public static readonly string COL_STEPS = "Steps";
         public static readonly string COL_DATE = "Date";
+        public static readonly string DATE_FORMAT = "yy-MM-dd";
 
 
         private static DBHelper _instance;
@@ -143,7 +144,7 @@ namespace TFG {
 
         public void UpdateSteps(DateTime date, int steps) {
 
-            var stringDate = date.ToString("yy-MM-dd");
+            var stringDate = date.ToString(DATE_FORMAT);
 
             var sql = "INSERT OR REPLACE INTO " + STEPCOUNTER_TABLE + " (" + COL_DATE + ", " + COL_STEPS + ") VALUES "
                       + "('" + stringDate + "', " + steps + ")"; 
@@ -152,7 +153,7 @@ namespace TFG {
         }
 
         public List<StepCounterItem> GetStepCounterItemFromDate(DateTime date) {
-            var stringDate = date.ToString("yy-MM-dd");
+            var stringDate = date.ToString(DATE_FORMAT);
 
 
             var sql = "SELECT * FROM " + STEPCOUNTER_TABLE + " WHERE " + COL_DATE + " = '" + stringDate + "'";

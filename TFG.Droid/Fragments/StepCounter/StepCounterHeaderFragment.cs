@@ -52,20 +52,20 @@ namespace TFG.Droid.Fragments.StepCounter {
             Console.WriteLine("Updating UI...");
 #endif
 
-            int stepsToday = 0;
+            int stepsToday;
 
             if (Binder != null) {
                 stepsToday = Binder.GetStepCounterService().Steps; 
             } else {
                 var items =
-                    DBHelper.Instance.GetStepCounterItemFromDate(DateTime.Now.AddDays(-7));
+                    DBHelper.Instance.GetStepCounterItemFromDate(DateTime.Now);
 
                 stepsToday = items.Count > 0    //Check if item exists
                     ? items.ElementAt(0).Steps
                     : 0;
             }
 
-            _steps.Text = stepsToday != 0 ? stepsToday.ToString() : "-";
+            _steps.Text = stepsToday.ToString();
             _calories.Text = (stepsToday/20).ToString();
             _distance.Text = Math.Round((stepsToday * 0.00075), 2).ToString();
             _handler.PostDelayed(() => UpdateSteps(), 500); //Update the UI every 0.5 seconds

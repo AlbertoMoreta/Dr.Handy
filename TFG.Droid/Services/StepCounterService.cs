@@ -21,6 +21,7 @@ namespace TFG.Droid.Services {
     public class StepCounterService : Service, ISensorEventListener  {
 
         public int Steps { get; set; }
+        public DateTime DateLastStep { get; set; }
         public StepCounterServiceBinder Binder { get; set; }
         private bool _isRunning;
 
@@ -52,7 +53,14 @@ namespace TFG.Droid.Services {
 
             _isRunning = true;
             var s = DBHelper.Instance.GetStepCounterItemFromDate(DateTime.Now);
-            if(s.Count > 0) { Steps = s.ElementAt(0).Steps; }
+            if (s.Count > 0) {
+                Steps = s.ElementAt(0).Steps;
+                DateLastStep = DateTime.ParseExact(s.ElementAt(0).Date,
+                    DBHelper.DATE_FORMAT,
+                    System.Globalization.CultureInfo.InvariantCulture);
+            } else {
+                Steps = 0;
+            }
             
             Console.WriteLine("Initial Steps = " + Steps);
         }
@@ -64,7 +72,14 @@ namespace TFG.Droid.Services {
 #if DEBUG 
             Console.WriteLine("Step detected");
 #endif
-            Steps++;
+            var CurrentDate = DateTime.Now;
+            if (!DateLastStep.Date.Equals(CurrentDate.Date)) {
+                Steps = 0;
+                DateLastStep = CurrentDate;
+            } else {
+                Steps++;
+            }
+
             DBHelper.Instance.UpdateSteps(DateTime.Now, Steps);
         }
 
