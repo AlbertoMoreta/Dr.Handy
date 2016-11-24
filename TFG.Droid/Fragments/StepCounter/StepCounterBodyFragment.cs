@@ -16,36 +16,63 @@ namespace TFG.Droid.Fragments.StepCounter {
     class StepCounterBodyFragment: Fragment, IHealthFragment {
 
         private CustomTextView _stepsYesterday;
+        private CustomTextView _caloriesYesterday;
+        private CustomTextView _distanceYesterday;
+
         private CustomTextView _stepsLastWeek;
+        private CustomTextView _caloriesLastWeek;
+        private CustomTextView _distanceLastWeek;
 
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             var view = inflater.Inflate(Resource.Layout.fragment_stepcounter_body, container, false);
 
             _stepsYesterday = view.FindViewById<CustomTextView>(Resource.Id.steps_yesterday);
+            _caloriesYesterday = view.FindViewById<CustomTextView>(Resource.Id.calories_yesterday);
+            _distanceYesterday = view.FindViewById<CustomTextView>(Resource.Id.distance_yesterday);
+
             _stepsLastWeek = view.FindViewById<CustomTextView>(Resource.Id.steps_last_week);
-            UpdateStepsYesterday();
-            UpdateStepsLastWeek();
+            _caloriesLastWeek = view.FindViewById<CustomTextView>(Resource.Id.calories_last_week);
+            _distanceLastWeek = view.FindViewById<CustomTextView>(Resource.Id.distance_last_week);
+
+            UpdateYesterdayInfo();
+            UpdateLastWeekInfo();
             return view;
         }
 
 
-        private void UpdateStepsYesterday() {
+        private void UpdateYesterdayInfo() {
             var yesterday =
                 DBHelper.Instance.GetStepCounterItemFromDate(DateTime.Now.AddDays(-1));
 
-            _stepsYesterday.Text = yesterday.Count > 0
-                ? yesterday.ElementAt(0).Steps.ToString()
-                : "-";
+            if (yesterday.Count > 0) {
+                var item = yesterday.ElementAt(0);
+                _stepsYesterday.Text = item.Steps.ToString();
+                _caloriesYesterday.Text = item.Calories.ToString();
+                _distanceYesterday.Text = item.Distance.ToString();
+            } else {
+                _stepsYesterday.Text = "-";
+                _caloriesYesterday.Text = "-";
+                _distanceYesterday.Text = "-";
+            }
+
+
         }
 
-        private void UpdateStepsLastWeek()  {
+        private void UpdateLastWeekInfo()  {
             var lastWeek =
                 DBHelper.Instance.GetStepCounterItemFromDate(DateTime.Now.AddDays(-7));
 
-            _stepsLastWeek.Text = lastWeek.Count > 0
-                ? lastWeek.ElementAt(0).Steps.ToString()
-                : "-";
+            if (lastWeek.Count > 0) {
+                var item = lastWeek.ElementAt(0);
+                _stepsLastWeek.Text = item.Steps.ToString();
+                _caloriesLastWeek.Text = item.Calories.ToString();
+                _distanceLastWeek.Text = item.Distance.ToString();
+            } else {
+                _stepsLastWeek.Text = "-";
+                _caloriesLastWeek.Text = "-";
+                _distanceLastWeek.Text = "-";
+            }
         }
     }
 }
