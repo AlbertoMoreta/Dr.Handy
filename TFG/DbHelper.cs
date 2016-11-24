@@ -3,8 +3,6 @@ using SQLite;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text; 
 using TFG.Model;
 
 namespace TFG {
@@ -22,8 +20,10 @@ namespace TFG {
 
         //Step Counter Module
         public static readonly string STEPCOUNTER_TABLE = "STEPCOUNTER";
-        public static readonly string COL_STEPS = "Steps";
         public static readonly string COL_DATE = "Date";
+        public static readonly string COL_STEPS = "Steps";
+        public static readonly string COL_CALORIES = "Calories";
+        public static readonly string COL_DISTANCE = "Distance";
         public static readonly string DATE_FORMAT = "yy-MM-dd";
 
 
@@ -84,7 +84,16 @@ namespace TFG {
                 + "('" + module.HealthModuleName() + "', '" + module.HealthModuleDescription() + "', " + Count() + ", 1)" ;
 
             Connection.Execute(sql);
-        } 
+
+            InitHealthModule(module);
+        }
+
+        public void InitHealthModule(HealthModuleType module) {
+            switch (module) {
+                case HealthModuleType.ColorBlindnessTest: break;
+                case HealthModuleType.StepCounter: CreateStepCounterTable(); break;
+            }
+        }
 
         public bool CheckIfExists(HealthModuleType module) {
             try {
@@ -137,17 +146,17 @@ namespace TFG {
 
         public void CreateStepCounterTable() {
             var sql = "CREATE TABLE IF NOT EXISTS " + STEPCOUNTER_TABLE + " (" + COL_DATE + " text primary key, "
-                + COL_STEPS + " integer)";
+                + COL_STEPS + " integer, " + COL_CALORIES + " integer, " + COL_DISTANCE + " integer)";
 
             Connection.Execute(sql);
         }
 
-        public void UpdateSteps(DateTime date, int steps) {
+        public void UpdateSteps(DateTime date, int steps, int calories, double distance) {
 
             var stringDate = date.ToString(DATE_FORMAT);
 
-            var sql = "INSERT OR REPLACE INTO " + STEPCOUNTER_TABLE + " (" + COL_DATE + ", " + COL_STEPS + ") VALUES "
-                      + "('" + stringDate + "', " + steps + ")"; 
+            var sql = "INSERT OR REPLACE INTO " + STEPCOUNTER_TABLE + " (" + COL_DATE + ", " + COL_STEPS + ", " + COL_CALORIES + ", " + COL_DISTANCE + ") VALUES "
+                      + "('" + stringDate + "', " + steps + ", " + calories + ", " + distance + ")"; 
 
             Connection.Execute(sql);
         }

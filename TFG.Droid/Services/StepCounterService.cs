@@ -12,6 +12,7 @@ using Android.Views;
 using Android.Widget;
 using Java.Sql;
 using Java.Text;
+using TFG.Logic;
 
 namespace TFG.Droid.Services {
     /// <summary>
@@ -21,9 +22,13 @@ namespace TFG.Droid.Services {
     public class StepCounterService : Service, ISensorEventListener  {
 
         public int Steps { get; set; }
+        public int Calories { get; set; }
+        public double Distance { get; set; }
         public DateTime DateLastStep { get; set; }
         public StepCounterServiceBinder Binder { get; set; }
         private bool _isRunning;
+
+        private StepCounterLogic _logic;
 
         public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId) {
 
@@ -44,22 +49,30 @@ namespace TFG.Droid.Services {
         private void Init() {
 
            // DBHelper.Instance.DropTable("STEPCOUNTER");
+
+            _logic = StepCounterLogic.Instance();
+
             if (!_isRunning) {
-                DBHelper.Instance.CreateStepCounterTable();
                 var sensorManager = (SensorManager) GetSystemService(SensorService);
                 var sensor = sensorManager.GetDefaultSensor(SensorType.StepDetector);
                 sensorManager.RegisterListener(this, sensor, SensorDelay.Normal);
             }
 
             _isRunning = true;
-            var s = DBHelper.Instance.GetStepCounterItemFromDate(DateTime.Now);
-            if (s.Count > 0) {
-                Steps = s.ElementAt(0).Steps;
-                DateLastStep = DateTime.ParseExact(s.ElementAt(0).Date,
+            var items = DBHelper.Instance.GetStepCounterItemFromDate(DateTime.Now);
+            if (items.Count > 0) {
+                var item = items.ElementAt(0);
+                DateLastStep = DateTime.ParseExact(item.Date,
                     DBHelper.DATE_FORMAT,
                     System.Globalization.CultureInfo.InvariantCulture);
+
+                Steps = item.Steps;
+                Calories = item.Calories;
+                Distance = item.Distance;
             } else {
                 Steps = 0;
+                Calories = 0;
+                Distance = 0;
             }
             
             Console.WriteLine("Initial Steps = " + Steps);
@@ -75,12 +88,16 @@ namespace TFG.Droid.Services {
             var CurrentDate = DateTime.Now;
             if (!DateLastStep.Date.Equals(CurrentDate.Date)) {
                 Steps = 0;
+                Calories = 0;
+                Distance = 0;
                 DateLastStep = CurrentDate;
             } else {
                 Steps++;
+                Calories = _logic.GetCaloriesFromSteps(Steps);
+                Distance = _logic.GetDistanceFromSteps(Steps);
             }
 
-            DBHelper.Instance.UpdateSteps(DateTime.Now, Steps);
+            DBHelper.Instance.UpdateSteps(DateTime.Now, Steps, Calories, Distance);
         }
 
         public override void OnDestroy() {

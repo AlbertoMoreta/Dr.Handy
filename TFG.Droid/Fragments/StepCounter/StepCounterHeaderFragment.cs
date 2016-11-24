@@ -52,22 +52,29 @@ namespace TFG.Droid.Fragments.StepCounter {
             Console.WriteLine("Updating UI...");
 #endif
 
-            int stepsToday;
+            int stepsToday = 0;
+            int caloriesToday = 0;
+            double distanceToday = 0;
 
             if (Binder != null) {
-                stepsToday = Binder.GetStepCounterService().Steps; 
+                stepsToday = Binder.GetStepCounterService().Steps;
+                caloriesToday = Binder.GetStepCounterService().Calories;
+                distanceToday = Binder.GetStepCounterService().Distance;
             } else {
                 var items =
                     DBHelper.Instance.GetStepCounterItemFromDate(DateTime.Now);
 
-                stepsToday = items.Count > 0    //Check if item exists
-                    ? items.ElementAt(0).Steps
-                    : 0;
+                if (items.Count > 0) {
+                    var item = items.ElementAt(0);
+                    stepsToday = item.Steps;
+                    caloriesToday = item.Calories;
+                    distanceToday = item.Distance;
+                } 
             }
 
             _steps.Text = stepsToday.ToString();
-            _calories.Text = (stepsToday/20).ToString();
-            _distance.Text = Math.Round((stepsToday * 0.00075), 2).ToString();
+            _calories.Text = caloriesToday.ToString();
+            _distance.Text = distanceToday.ToString();
             _handler.PostDelayed(() => UpdateSteps(), 500); //Update the UI every 0.5 seconds
         }
 
