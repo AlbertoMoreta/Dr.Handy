@@ -5,6 +5,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -31,8 +32,13 @@ namespace TFG.Droid.Fragments.StepCounter {
         private CustomTextView _distance;
 
         public override void OnCreate(Bundle savedInstanceState) {
-            base.OnCreate(savedInstanceState); 
-            StartStepCounterService(); 
+            base.OnCreate(savedInstanceState);
+            if (!Utils.StepCounterUtils.IsKitKatWithStepCounter(Activity.PackageManager)) {
+                Console.WriteLine("The device is not compatible with the step sensor");
+                return;
+            }
+
+            StartStepCounterService();
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -81,6 +87,12 @@ namespace TFG.Droid.Fragments.StepCounter {
 
         public override void OnStart() {
             base.OnStart();
+
+            if (!Utils.StepCounterUtils.IsKitKatWithStepCounter(Activity.PackageManager)) {
+                Console.WriteLine("The device is not compatible with the step sensor");
+                return;
+            }
+
 
             if (!_firstRun) StartStepCounterService();
 

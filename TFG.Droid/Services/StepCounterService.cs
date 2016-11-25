@@ -48,7 +48,13 @@ namespace TFG.Droid.Services {
 
         private void Init() {
 
-           // DBHelper.Instance.DropTable("STEPCOUNTER");
+            // DBHelper.Instance.DropTable("STEPCOUNTER");
+
+            if (!Utils.StepCounterUtils.IsKitKatWithStepCounter(PackageManager)) {
+                Console.WriteLine("The device is not compatible with the step sensor");
+                StopSelf();
+                return;
+            }
 
             _logic = StepCounterLogic.Instance();
 
