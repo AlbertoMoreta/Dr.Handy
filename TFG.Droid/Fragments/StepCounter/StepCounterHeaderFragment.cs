@@ -19,13 +19,12 @@ namespace TFG.Droid.Fragments.StepCounter {
     /// <summary>
     /// Header fragment for the Step Counter health module
     /// </summary>
-    class StepCounterHeaderFragment : Fragment, IHealthFragment {
+    class StepCounterHeaderFragment : Fragment, IHealthFragment, StepDetectedListener {
 
         public bool IsBound { get; set; }
         public StepCounterServiceBinder Binder { get; set; }
         public StepCounterServiceConnection _serviceConnection;
-        public bool _firstRun = true;
-        private Handler _handler;
+        public bool _firstRun = true; 
 
         private CustomTextView _steps;
         private CustomTextView _calories;
@@ -42,8 +41,8 @@ namespace TFG.Droid.Fragments.StepCounter {
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            var view = inflater.Inflate(Resource.Layout.fragment_stepcounter_header, container, false);
-            _handler = new Handler();
+            var view = inflater.Inflate(Resource.Layout.fragment_stepcounter_header, container, false); 
+
             _steps = view.FindViewById<CustomTextView>(Resource.Id.steps);
             _calories = view.FindViewById<CustomTextView>(Resource.Id.calories);
             _distance = view.FindViewById<CustomTextView>(Resource.Id.distance);
@@ -51,6 +50,11 @@ namespace TFG.Droid.Fragments.StepCounter {
             (Activity as BaseActivity).ToolbarTitle.Text = DateTime.Now.ToString("dd / MM / yyyy"); 
 
             return view;
+        }
+
+
+        public void StepDetected() { 
+            UpdateSteps();
         }
 
         private void UpdateSteps() {
@@ -80,8 +84,7 @@ namespace TFG.Droid.Fragments.StepCounter {
 
             _steps.Text = stepsToday.ToString();
             _calories.Text = caloriesToday.ToString();
-            _distance.Text = distanceToday.ToString();
-            _handler.PostDelayed(() => UpdateSteps(), 500); //Update the UI every 0.5 seconds
+            _distance.Text = distanceToday.ToString(); 
         }
 
 
@@ -133,28 +136,24 @@ namespace TFG.Droid.Fragments.StepCounter {
         public override void OnDestroy() {
             base.OnDestroy(); 
             if (IsBound) {
+                Binder.GetStepCounterService().SetListener(null);
                 UnbindService();
-            }
+            } 
         }
 
         public override void OnStop() {
             base.OnStop();
             if (IsBound) {
+                Binder.GetStepCounterService().SetListener(null);
                 UnbindService();
-            }
-
-            _handler.RemoveCallbacksAndMessages(null);
+            } 
         }
 
         public override void OnResume() {
-            base.OnResume();
-            if (!_firstRun) {
-                if(_handler == null) {  _handler = new Handler();}
-                _handler.PostDelayed(() => UpdateSteps(), 500);
-            }
+            base.OnResume(); 
 
             _firstRun = false;
         }
-         
+
     }
 }

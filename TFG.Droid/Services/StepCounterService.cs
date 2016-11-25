@@ -12,6 +12,7 @@ using Android.Views;
 using Android.Widget;
 using Java.Sql;
 using Java.Text;
+using TFG.Droid.Listeners;
 using TFG.Logic;
 
 namespace TFG.Droid.Services {
@@ -27,6 +28,7 @@ namespace TFG.Droid.Services {
         public DateTime DateLastStep { get; set; }
         public StepCounterServiceBinder Binder { get; set; }
         private bool _isRunning;
+        private StepDetectedListener _listener;
 
         private StepCounterLogic _logic;
 
@@ -104,6 +106,8 @@ namespace TFG.Droid.Services {
             }
 
             DBHelper.Instance.UpdateSteps(DateTime.Now, Steps, Calories, Distance);
+
+            _listener.StepDetected();
         }
 
         public override void OnDestroy() {
@@ -115,6 +119,10 @@ namespace TFG.Droid.Services {
                 _isRunning = false;
             } catch (Exception e) { 
             } 
+        }
+
+        public void SetListener(StepDetectedListener listener) {
+            _listener = listener;
         }
     }
 }

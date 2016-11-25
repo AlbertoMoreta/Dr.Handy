@@ -29,6 +29,7 @@ namespace TFG.Droid.Services {
             if (serviceBinder != null) {
                 _fragment.Binder = serviceBinder;
                 _fragment.IsBound = true;
+                serviceBinder.GetStepCounterService().SetListener(_fragment);
             }
         }
 

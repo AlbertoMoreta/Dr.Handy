@@ -15,7 +15,7 @@ namespace TFG.Droid.Services {
         private StepCounterService _service;
 
         public StepCounterServiceBinder(StepCounterService service) {
-            _service = service;
+            _service = service; 
         }
 
         public StepCounterService GetStepCounterService() {
