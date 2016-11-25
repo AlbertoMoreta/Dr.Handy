@@ -3,6 +3,7 @@
 	<uses-sdk android:minSdkVersion="17" />
 
   <uses-feature android:name="android.hardware.sensor.stepdetector" />
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
   
 	<application android:label="TFG.Droid" android:theme="@style/AppTheme"></application>
 </manifest>
