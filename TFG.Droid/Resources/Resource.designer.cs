@@ -61,6 +61,1294 @@ namespace TFG.Droid
 			global::com.refractored.fab.Resource.Styleable.RecyclerView_reverseLayout = global::TFG.Droid.Resource.Styleable.RecyclerView_reverseLayout;
 			global::com.refractored.fab.Resource.Styleable.RecyclerView_spanCount = global::TFG.Droid.Resource.Styleable.RecyclerView_spanCount;
 			global::com.refractored.fab.Resource.Styleable.RecyclerView_stackFromEnd = global::TFG.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
+			global::com.refractored.Resource.Animation.abc_fade_in = global::TFG.Droid.Resource.Animation.abc_fade_in;
+			global::com.refractored.Resource.Animation.abc_fade_out = global::TFG.Droid.Resource.Animation.abc_fade_out;
+			global::com.refractored.Resource.Animation.abc_grow_fade_in_from_bottom = global::TFG.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::com.refractored.Resource.Animation.abc_popup_enter = global::TFG.Droid.Resource.Animation.abc_popup_enter;
+			global::com.refractored.Resource.Animation.abc_popup_exit = global::TFG.Droid.Resource.Animation.abc_popup_exit;
+			global::com.refractored.Resource.Animation.abc_shrink_fade_out_from_bottom = global::TFG.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::com.refractored.Resource.Animation.abc_slide_in_bottom = global::TFG.Droid.Resource.Animation.abc_slide_in_bottom;
+			global::com.refractored.Resource.Animation.abc_slide_in_top = global::TFG.Droid.Resource.Animation.abc_slide_in_top;
+			global::com.refractored.Resource.Animation.abc_slide_out_bottom = global::TFG.Droid.Resource.Animation.abc_slide_out_bottom;
+			global::com.refractored.Resource.Animation.abc_slide_out_top = global::TFG.Droid.Resource.Animation.abc_slide_out_top;
+			global::com.refractored.Resource.Attribute.actionBarDivider = global::TFG.Droid.Resource.Attribute.actionBarDivider;
+			global::com.refractored.Resource.Attribute.actionBarItemBackground = global::TFG.Droid.Resource.Attribute.actionBarItemBackground;
+			global::com.refractored.Resource.Attribute.actionBarPopupTheme = global::TFG.Droid.Resource.Attribute.actionBarPopupTheme;
+			global::com.refractored.Resource.Attribute.actionBarSize = global::TFG.Droid.Resource.Attribute.actionBarSize;
+			global::com.refractored.Resource.Attribute.actionBarSplitStyle = global::TFG.Droid.Resource.Attribute.actionBarSplitStyle;
+			global::com.refractored.Resource.Attribute.actionBarStyle = global::TFG.Droid.Resource.Attribute.actionBarStyle;
+			global::com.refractored.Resource.Attribute.actionBarTabBarStyle = global::TFG.Droid.Resource.Attribute.actionBarTabBarStyle;
+			global::com.refractored.Resource.Attribute.actionBarTabStyle = global::TFG.Droid.Resource.Attribute.actionBarTabStyle;
+			global::com.refractored.Resource.Attribute.actionBarTabTextStyle = global::TFG.Droid.Resource.Attribute.actionBarTabTextStyle;
+			global::com.refractored.Resource.Attribute.actionBarTheme = global::TFG.Droid.Resource.Attribute.actionBarTheme;
+			global::com.refractored.Resource.Attribute.actionBarWidgetTheme = global::TFG.Droid.Resource.Attribute.actionBarWidgetTheme;
+			global::com.refractored.Resource.Attribute.actionButtonStyle = global::TFG.Droid.Resource.Attribute.actionButtonStyle;
+			global::com.refractored.Resource.Attribute.actionDropDownStyle = global::TFG.Droid.Resource.Attribute.actionDropDownStyle;
+			global::com.refractored.Resource.Attribute.actionLayout = global::TFG.Droid.Resource.Attribute.actionLayout;
+			global::com.refractored.Resource.Attribute.actionMenuTextAppearance = global::TFG.Droid.Resource.Attribute.actionMenuTextAppearance;
+			global::com.refractored.Resource.Attribute.actionMenuTextColor = global::TFG.Droid.Resource.Attribute.actionMenuTextColor;
+			global::com.refractored.Resource.Attribute.actionModeBackground = global::TFG.Droid.Resource.Attribute.actionModeBackground;
+			global::com.refractored.Resource.Attribute.actionModeCloseButtonStyle = global::TFG.Droid.Resource.Attribute.actionModeCloseButtonStyle;
+			global::com.refractored.Resource.Attribute.actionModeCloseDrawable = global::TFG.Droid.Resource.Attribute.actionModeCloseDrawable;
+			global::com.refractored.Resource.Attribute.actionModeCopyDrawable = global::TFG.Droid.Resource.Attribute.actionModeCopyDrawable;
+			global::com.refractored.Resource.Attribute.actionModeCutDrawable = global::TFG.Droid.Resource.Attribute.actionModeCutDrawable;
+			global::com.refractored.Resource.Attribute.actionModeFindDrawable = global::TFG.Droid.Resource.Attribute.actionModeFindDrawable;
+			global::com.refractored.Resource.Attribute.actionModePasteDrawable = global::TFG.Droid.Resource.Attribute.actionModePasteDrawable;
+			global::com.refractored.Resource.Attribute.actionModePopupWindowStyle = global::TFG.Droid.Resource.Attribute.actionModePopupWindowStyle;
+			global::com.refractored.Resource.Attribute.actionModeSelectAllDrawable = global::TFG.Droid.Resource.Attribute.actionModeSelectAllDrawable;
+			global::com.refractored.Resource.Attribute.actionModeShareDrawable = global::TFG.Droid.Resource.Attribute.actionModeShareDrawable;
+			global::com.refractored.Resource.Attribute.actionModeSplitBackground = global::TFG.Droid.Resource.Attribute.actionModeSplitBackground;
+			global::com.refractored.Resource.Attribute.actionModeStyle = global::TFG.Droid.Resource.Attribute.actionModeStyle;
+			global::com.refractored.Resource.Attribute.actionModeWebSearchDrawable = global::TFG.Droid.Resource.Attribute.actionModeWebSearchDrawable;
+			global::com.refractored.Resource.Attribute.actionOverflowButtonStyle = global::TFG.Droid.Resource.Attribute.actionOverflowButtonStyle;
+			global::com.refractored.Resource.Attribute.actionOverflowMenuStyle = global::TFG.Droid.Resource.Attribute.actionOverflowMenuStyle;
+			global::com.refractored.Resource.Attribute.actionProviderClass = global::TFG.Droid.Resource.Attribute.actionProviderClass;
+			global::com.refractored.Resource.Attribute.actionViewClass = global::TFG.Droid.Resource.Attribute.actionViewClass;
+			global::com.refractored.Resource.Attribute.activityChooserViewStyle = global::TFG.Droid.Resource.Attribute.activityChooserViewStyle;
+			global::com.refractored.Resource.Attribute.alertDialogButtonGroupStyle = global::TFG.Droid.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::com.refractored.Resource.Attribute.alertDialogCenterButtons = global::TFG.Droid.Resource.Attribute.alertDialogCenterButtons;
+			global::com.refractored.Resource.Attribute.alertDialogStyle = global::TFG.Droid.Resource.Attribute.alertDialogStyle;
+			global::com.refractored.Resource.Attribute.alertDialogTheme = global::TFG.Droid.Resource.Attribute.alertDialogTheme;
+			global::com.refractored.Resource.Attribute.allowStacking = global::TFG.Droid.Resource.Attribute.allowStacking;
+			global::com.refractored.Resource.Attribute.arrowHeadLength = global::TFG.Droid.Resource.Attribute.arrowHeadLength;
+			global::com.refractored.Resource.Attribute.arrowShaftLength = global::TFG.Droid.Resource.Attribute.arrowShaftLength;
+			global::com.refractored.Resource.Attribute.autoCompleteTextViewStyle = global::TFG.Droid.Resource.Attribute.autoCompleteTextViewStyle;
+			global::com.refractored.Resource.Attribute.background = global::TFG.Droid.Resource.Attribute.background;
+			global::com.refractored.Resource.Attribute.backgroundSplit = global::TFG.Droid.Resource.Attribute.backgroundSplit;
+			global::com.refractored.Resource.Attribute.backgroundStacked = global::TFG.Droid.Resource.Attribute.backgroundStacked;
+			global::com.refractored.Resource.Attribute.backgroundTint = global::TFG.Droid.Resource.Attribute.backgroundTint;
+			global::com.refractored.Resource.Attribute.backgroundTintMode = global::TFG.Droid.Resource.Attribute.backgroundTintMode;
+			global::com.refractored.Resource.Attribute.barLength = global::TFG.Droid.Resource.Attribute.barLength;
+			global::com.refractored.Resource.Attribute.borderlessButtonStyle = global::TFG.Droid.Resource.Attribute.borderlessButtonStyle;
+			global::com.refractored.Resource.Attribute.buttonBarButtonStyle = global::TFG.Droid.Resource.Attribute.buttonBarButtonStyle;
+			global::com.refractored.Resource.Attribute.buttonBarNegativeButtonStyle = global::TFG.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::com.refractored.Resource.Attribute.buttonBarNeutralButtonStyle = global::TFG.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::com.refractored.Resource.Attribute.buttonBarPositiveButtonStyle = global::TFG.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::com.refractored.Resource.Attribute.buttonBarStyle = global::TFG.Droid.Resource.Attribute.buttonBarStyle;
+			global::com.refractored.Resource.Attribute.buttonPanelSideLayout = global::TFG.Droid.Resource.Attribute.buttonPanelSideLayout;
+			global::com.refractored.Resource.Attribute.buttonStyle = global::TFG.Droid.Resource.Attribute.buttonStyle;
+			global::com.refractored.Resource.Attribute.buttonStyleSmall = global::TFG.Droid.Resource.Attribute.buttonStyleSmall;
+			global::com.refractored.Resource.Attribute.buttonTint = global::TFG.Droid.Resource.Attribute.buttonTint;
+			global::com.refractored.Resource.Attribute.buttonTintMode = global::TFG.Droid.Resource.Attribute.buttonTintMode;
+			global::com.refractored.Resource.Attribute.checkboxStyle = global::TFG.Droid.Resource.Attribute.checkboxStyle;
+			global::com.refractored.Resource.Attribute.checkedTextViewStyle = global::TFG.Droid.Resource.Attribute.checkedTextViewStyle;
+			global::com.refractored.Resource.Attribute.closeIcon = global::TFG.Droid.Resource.Attribute.closeIcon;
+			global::com.refractored.Resource.Attribute.closeItemLayout = global::TFG.Droid.Resource.Attribute.closeItemLayout;
+			global::com.refractored.Resource.Attribute.collapseContentDescription = global::TFG.Droid.Resource.Attribute.collapseContentDescription;
+			global::com.refractored.Resource.Attribute.collapseIcon = global::TFG.Droid.Resource.Attribute.collapseIcon;
+			global::com.refractored.Resource.Attribute.color = global::TFG.Droid.Resource.Attribute.color;
+			global::com.refractored.Resource.Attribute.colorAccent = global::TFG.Droid.Resource.Attribute.colorAccent;
+			global::com.refractored.Resource.Attribute.colorButtonNormal = global::TFG.Droid.Resource.Attribute.colorButtonNormal;
+			global::com.refractored.Resource.Attribute.colorControlActivated = global::TFG.Droid.Resource.Attribute.colorControlActivated;
+			global::com.refractored.Resource.Attribute.colorControlHighlight = global::TFG.Droid.Resource.Attribute.colorControlHighlight;
+			global::com.refractored.Resource.Attribute.colorControlNormal = global::TFG.Droid.Resource.Attribute.colorControlNormal;
+			global::com.refractored.Resource.Attribute.colorPrimary = global::TFG.Droid.Resource.Attribute.colorPrimary;
+			global::com.refractored.Resource.Attribute.colorPrimaryDark = global::TFG.Droid.Resource.Attribute.colorPrimaryDark;
+			global::com.refractored.Resource.Attribute.colorSwitchThumbNormal = global::TFG.Droid.Resource.Attribute.colorSwitchThumbNormal;
+			global::com.refractored.Resource.Attribute.commitIcon = global::TFG.Droid.Resource.Attribute.commitIcon;
+			global::com.refractored.Resource.Attribute.contentInsetEnd = global::TFG.Droid.Resource.Attribute.contentInsetEnd;
+			global::com.refractored.Resource.Attribute.contentInsetLeft = global::TFG.Droid.Resource.Attribute.contentInsetLeft;
+			global::com.refractored.Resource.Attribute.contentInsetRight = global::TFG.Droid.Resource.Attribute.contentInsetRight;
+			global::com.refractored.Resource.Attribute.contentInsetStart = global::TFG.Droid.Resource.Attribute.contentInsetStart;
+			global::com.refractored.Resource.Attribute.controlBackground = global::TFG.Droid.Resource.Attribute.controlBackground;
+			global::com.refractored.Resource.Attribute.customNavigationLayout = global::TFG.Droid.Resource.Attribute.customNavigationLayout;
+			global::com.refractored.Resource.Attribute.defaultQueryHint = global::TFG.Droid.Resource.Attribute.defaultQueryHint;
+			global::com.refractored.Resource.Attribute.dialogPreferredPadding = global::TFG.Droid.Resource.Attribute.dialogPreferredPadding;
+			global::com.refractored.Resource.Attribute.dialogTheme = global::TFG.Droid.Resource.Attribute.dialogTheme;
+			global::com.refractored.Resource.Attribute.displayOptions = global::TFG.Droid.Resource.Attribute.displayOptions;
+			global::com.refractored.Resource.Attribute.divider = global::TFG.Droid.Resource.Attribute.divider;
+			global::com.refractored.Resource.Attribute.dividerHorizontal = global::TFG.Droid.Resource.Attribute.dividerHorizontal;
+			global::com.refractored.Resource.Attribute.dividerPadding = global::TFG.Droid.Resource.Attribute.dividerPadding;
+			global::com.refractored.Resource.Attribute.dividerVertical = global::TFG.Droid.Resource.Attribute.dividerVertical;
+			global::com.refractored.Resource.Attribute.drawableSize = global::TFG.Droid.Resource.Attribute.drawableSize;
+			global::com.refractored.Resource.Attribute.drawerArrowStyle = global::TFG.Droid.Resource.Attribute.drawerArrowStyle;
+			global::com.refractored.Resource.Attribute.dropDownListViewStyle = global::TFG.Droid.Resource.Attribute.dropDownListViewStyle;
+			global::com.refractored.Resource.Attribute.dropdownListPreferredItemHeight = global::TFG.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::com.refractored.Resource.Attribute.editTextBackground = global::TFG.Droid.Resource.Attribute.editTextBackground;
+			global::com.refractored.Resource.Attribute.editTextColor = global::TFG.Droid.Resource.Attribute.editTextColor;
+			global::com.refractored.Resource.Attribute.editTextStyle = global::TFG.Droid.Resource.Attribute.editTextStyle;
+			global::com.refractored.Resource.Attribute.elevation = global::TFG.Droid.Resource.Attribute.elevation;
+			global::com.refractored.Resource.Attribute.expandActivityOverflowButtonDrawable = global::TFG.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::com.refractored.Resource.Attribute.gapBetweenBars = global::TFG.Droid.Resource.Attribute.gapBetweenBars;
+			global::com.refractored.Resource.Attribute.goIcon = global::TFG.Droid.Resource.Attribute.goIcon;
+			global::com.refractored.Resource.Attribute.height = global::TFG.Droid.Resource.Attribute.height;
+			global::com.refractored.Resource.Attribute.hideOnContentScroll = global::TFG.Droid.Resource.Attribute.hideOnContentScroll;
+			global::com.refractored.Resource.Attribute.homeAsUpIndicator = global::TFG.Droid.Resource.Attribute.homeAsUpIndicator;
+			global::com.refractored.Resource.Attribute.homeLayout = global::TFG.Droid.Resource.Attribute.homeLayout;
+			global::com.refractored.Resource.Attribute.icon = global::TFG.Droid.Resource.Attribute.icon;
+			global::com.refractored.Resource.Attribute.iconifiedByDefault = global::TFG.Droid.Resource.Attribute.iconifiedByDefault;
+			global::com.refractored.Resource.Attribute.imageButtonStyle = global::TFG.Droid.Resource.Attribute.imageButtonStyle;
+			global::com.refractored.Resource.Attribute.indeterminateProgressStyle = global::TFG.Droid.Resource.Attribute.indeterminateProgressStyle;
+			global::com.refractored.Resource.Attribute.initialActivityCount = global::TFG.Droid.Resource.Attribute.initialActivityCount;
+			global::com.refractored.Resource.Attribute.isLightTheme = global::TFG.Droid.Resource.Attribute.isLightTheme;
+			global::com.refractored.Resource.Attribute.itemPadding = global::TFG.Droid.Resource.Attribute.itemPadding;
+			global::com.refractored.Resource.Attribute.layout = global::TFG.Droid.Resource.Attribute.layout;
+			global::com.refractored.Resource.Attribute.listChoiceBackgroundIndicator = global::TFG.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::com.refractored.Resource.Attribute.listDividerAlertDialog = global::TFG.Droid.Resource.Attribute.listDividerAlertDialog;
+			global::com.refractored.Resource.Attribute.listItemLayout = global::TFG.Droid.Resource.Attribute.listItemLayout;
+			global::com.refractored.Resource.Attribute.listLayout = global::TFG.Droid.Resource.Attribute.listLayout;
+			global::com.refractored.Resource.Attribute.listPopupWindowStyle = global::TFG.Droid.Resource.Attribute.listPopupWindowStyle;
+			global::com.refractored.Resource.Attribute.listPreferredItemHeight = global::TFG.Droid.Resource.Attribute.listPreferredItemHeight;
+			global::com.refractored.Resource.Attribute.listPreferredItemHeightLarge = global::TFG.Droid.Resource.Attribute.listPreferredItemHeightLarge;
+			global::com.refractored.Resource.Attribute.listPreferredItemHeightSmall = global::TFG.Droid.Resource.Attribute.listPreferredItemHeightSmall;
+			global::com.refractored.Resource.Attribute.listPreferredItemPaddingLeft = global::TFG.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::com.refractored.Resource.Attribute.listPreferredItemPaddingRight = global::TFG.Droid.Resource.Attribute.listPreferredItemPaddingRight;
+			global::com.refractored.Resource.Attribute.logo = global::TFG.Droid.Resource.Attribute.logo;
+			global::com.refractored.Resource.Attribute.logoDescription = global::TFG.Droid.Resource.Attribute.logoDescription;
+			global::com.refractored.Resource.Attribute.maxButtonHeight = global::TFG.Droid.Resource.Attribute.maxButtonHeight;
+			global::com.refractored.Resource.Attribute.measureWithLargestChild = global::TFG.Droid.Resource.Attribute.measureWithLargestChild;
+			global::com.refractored.Resource.Attribute.multiChoiceItemLayout = global::TFG.Droid.Resource.Attribute.multiChoiceItemLayout;
+			global::com.refractored.Resource.Attribute.navigationContentDescription = global::TFG.Droid.Resource.Attribute.navigationContentDescription;
+			global::com.refractored.Resource.Attribute.navigationIcon = global::TFG.Droid.Resource.Attribute.navigationIcon;
+			global::com.refractored.Resource.Attribute.navigationMode = global::TFG.Droid.Resource.Attribute.navigationMode;
+			global::com.refractored.Resource.Attribute.overlapAnchor = global::TFG.Droid.Resource.Attribute.overlapAnchor;
+			global::com.refractored.Resource.Attribute.paddingEnd = global::TFG.Droid.Resource.Attribute.paddingEnd;
+			global::com.refractored.Resource.Attribute.paddingStart = global::TFG.Droid.Resource.Attribute.paddingStart;
+			global::com.refractored.Resource.Attribute.panelBackground = global::TFG.Droid.Resource.Attribute.panelBackground;
+			global::com.refractored.Resource.Attribute.panelMenuListTheme = global::TFG.Droid.Resource.Attribute.panelMenuListTheme;
+			global::com.refractored.Resource.Attribute.panelMenuListWidth = global::TFG.Droid.Resource.Attribute.panelMenuListWidth;
+			global::com.refractored.Resource.Attribute.popupMenuStyle = global::TFG.Droid.Resource.Attribute.popupMenuStyle;
+			global::com.refractored.Resource.Attribute.popupTheme = global::TFG.Droid.Resource.Attribute.popupTheme;
+			global::com.refractored.Resource.Attribute.popupWindowStyle = global::TFG.Droid.Resource.Attribute.popupWindowStyle;
+			global::com.refractored.Resource.Attribute.preserveIconSpacing = global::TFG.Droid.Resource.Attribute.preserveIconSpacing;
+			global::com.refractored.Resource.Attribute.progressBarPadding = global::TFG.Droid.Resource.Attribute.progressBarPadding;
+			global::com.refractored.Resource.Attribute.progressBarStyle = global::TFG.Droid.Resource.Attribute.progressBarStyle;
+			global::com.refractored.Resource.Attribute.pstsDividerColor = global::TFG.Droid.Resource.Attribute.pstsDividerColor;
+			global::com.refractored.Resource.Attribute.pstsDividerPadding = global::TFG.Droid.Resource.Attribute.pstsDividerPadding;
+			global::com.refractored.Resource.Attribute.pstsDividerWidth = global::TFG.Droid.Resource.Attribute.pstsDividerWidth;
+			global::com.refractored.Resource.Attribute.pstsIndicatorColor = global::TFG.Droid.Resource.Attribute.pstsIndicatorColor;
+			global::com.refractored.Resource.Attribute.pstsIndicatorHeight = global::TFG.Droid.Resource.Attribute.pstsIndicatorHeight;
+			global::com.refractored.Resource.Attribute.pstsPaddingMiddle = global::TFG.Droid.Resource.Attribute.pstsPaddingMiddle;
+			global::com.refractored.Resource.Attribute.pstsScrollOffset = global::TFG.Droid.Resource.Attribute.pstsScrollOffset;
+			global::com.refractored.Resource.Attribute.pstsShouldExpand = global::TFG.Droid.Resource.Attribute.pstsShouldExpand;
+			global::com.refractored.Resource.Attribute.pstsTabBackground = global::TFG.Droid.Resource.Attribute.pstsTabBackground;
+			global::com.refractored.Resource.Attribute.pstsTabPaddingLeftRight = global::TFG.Droid.Resource.Attribute.pstsTabPaddingLeftRight;
+			global::com.refractored.Resource.Attribute.pstsTextAllCaps = global::TFG.Droid.Resource.Attribute.pstsTextAllCaps;
+			global::com.refractored.Resource.Attribute.pstsTextAlpha = global::TFG.Droid.Resource.Attribute.pstsTextAlpha;
+			global::com.refractored.Resource.Attribute.pstsTextColorSelected = global::TFG.Droid.Resource.Attribute.pstsTextColorSelected;
+			global::com.refractored.Resource.Attribute.pstsTextSelectedStyle = global::TFG.Droid.Resource.Attribute.pstsTextSelectedStyle;
+			global::com.refractored.Resource.Attribute.pstsTextStyle = global::TFG.Droid.Resource.Attribute.pstsTextStyle;
+			global::com.refractored.Resource.Attribute.pstsUnderlineColor = global::TFG.Droid.Resource.Attribute.pstsUnderlineColor;
+			global::com.refractored.Resource.Attribute.pstsUnderlineHeight = global::TFG.Droid.Resource.Attribute.pstsUnderlineHeight;
+			global::com.refractored.Resource.Attribute.queryBackground = global::TFG.Droid.Resource.Attribute.queryBackground;
+			global::com.refractored.Resource.Attribute.queryHint = global::TFG.Droid.Resource.Attribute.queryHint;
+			global::com.refractored.Resource.Attribute.radioButtonStyle = global::TFG.Droid.Resource.Attribute.radioButtonStyle;
+			global::com.refractored.Resource.Attribute.ratingBarStyle = global::TFG.Droid.Resource.Attribute.ratingBarStyle;
+			global::com.refractored.Resource.Attribute.ratingBarStyleIndicator = global::TFG.Droid.Resource.Attribute.ratingBarStyleIndicator;
+			global::com.refractored.Resource.Attribute.ratingBarStyleSmall = global::TFG.Droid.Resource.Attribute.ratingBarStyleSmall;
+			global::com.refractored.Resource.Attribute.searchHintIcon = global::TFG.Droid.Resource.Attribute.searchHintIcon;
+			global::com.refractored.Resource.Attribute.searchIcon = global::TFG.Droid.Resource.Attribute.searchIcon;
+			global::com.refractored.Resource.Attribute.searchViewStyle = global::TFG.Droid.Resource.Attribute.searchViewStyle;
+			global::com.refractored.Resource.Attribute.seekBarStyle = global::TFG.Droid.Resource.Attribute.seekBarStyle;
+			global::com.refractored.Resource.Attribute.selectableItemBackground = global::TFG.Droid.Resource.Attribute.selectableItemBackground;
+			global::com.refractored.Resource.Attribute.selectableItemBackgroundBorderless = global::TFG.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::com.refractored.Resource.Attribute.showAsAction = global::TFG.Droid.Resource.Attribute.showAsAction;
+			global::com.refractored.Resource.Attribute.showDividers = global::TFG.Droid.Resource.Attribute.showDividers;
+			global::com.refractored.Resource.Attribute.showText = global::TFG.Droid.Resource.Attribute.showText;
+			global::com.refractored.Resource.Attribute.singleChoiceItemLayout = global::TFG.Droid.Resource.Attribute.singleChoiceItemLayout;
+			global::com.refractored.Resource.Attribute.spinBars = global::TFG.Droid.Resource.Attribute.spinBars;
+			global::com.refractored.Resource.Attribute.spinnerDropDownItemStyle = global::TFG.Droid.Resource.Attribute.spinnerDropDownItemStyle;
+			global::com.refractored.Resource.Attribute.spinnerStyle = global::TFG.Droid.Resource.Attribute.spinnerStyle;
+			global::com.refractored.Resource.Attribute.splitTrack = global::TFG.Droid.Resource.Attribute.splitTrack;
+			global::com.refractored.Resource.Attribute.srcCompat = global::TFG.Droid.Resource.Attribute.srcCompat;
+			global::com.refractored.Resource.Attribute.state_above_anchor = global::TFG.Droid.Resource.Attribute.state_above_anchor;
+			global::com.refractored.Resource.Attribute.submitBackground = global::TFG.Droid.Resource.Attribute.submitBackground;
+			global::com.refractored.Resource.Attribute.subtitle = global::TFG.Droid.Resource.Attribute.subtitle;
+			global::com.refractored.Resource.Attribute.subtitleTextAppearance = global::TFG.Droid.Resource.Attribute.subtitleTextAppearance;
+			global::com.refractored.Resource.Attribute.subtitleTextColor = global::TFG.Droid.Resource.Attribute.subtitleTextColor;
+			global::com.refractored.Resource.Attribute.subtitleTextStyle = global::TFG.Droid.Resource.Attribute.subtitleTextStyle;
+			global::com.refractored.Resource.Attribute.suggestionRowLayout = global::TFG.Droid.Resource.Attribute.suggestionRowLayout;
+			global::com.refractored.Resource.Attribute.switchMinWidth = global::TFG.Droid.Resource.Attribute.switchMinWidth;
+			global::com.refractored.Resource.Attribute.switchPadding = global::TFG.Droid.Resource.Attribute.switchPadding;
+			global::com.refractored.Resource.Attribute.switchStyle = global::TFG.Droid.Resource.Attribute.switchStyle;
+			global::com.refractored.Resource.Attribute.switchTextAppearance = global::TFG.Droid.Resource.Attribute.switchTextAppearance;
+			global::com.refractored.Resource.Attribute.textAllCaps = global::TFG.Droid.Resource.Attribute.textAllCaps;
+			global::com.refractored.Resource.Attribute.textAppearanceLargePopupMenu = global::TFG.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::com.refractored.Resource.Attribute.textAppearanceListItem = global::TFG.Droid.Resource.Attribute.textAppearanceListItem;
+			global::com.refractored.Resource.Attribute.textAppearanceListItemSmall = global::TFG.Droid.Resource.Attribute.textAppearanceListItemSmall;
+			global::com.refractored.Resource.Attribute.textAppearanceSearchResultSubtitle = global::TFG.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::com.refractored.Resource.Attribute.textAppearanceSearchResultTitle = global::TFG.Droid.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::com.refractored.Resource.Attribute.textAppearanceSmallPopupMenu = global::TFG.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::com.refractored.Resource.Attribute.textColorAlertDialogListItem = global::TFG.Droid.Resource.Attribute.textColorAlertDialogListItem;
+			global::com.refractored.Resource.Attribute.textColorSearchUrl = global::TFG.Droid.Resource.Attribute.textColorSearchUrl;
+			global::com.refractored.Resource.Attribute.theme = global::TFG.Droid.Resource.Attribute.theme;
+			global::com.refractored.Resource.Attribute.thickness = global::TFG.Droid.Resource.Attribute.thickness;
+			global::com.refractored.Resource.Attribute.thumbTextPadding = global::TFG.Droid.Resource.Attribute.thumbTextPadding;
+			global::com.refractored.Resource.Attribute.title = global::TFG.Droid.Resource.Attribute.title;
+			global::com.refractored.Resource.Attribute.titleMarginBottom = global::TFG.Droid.Resource.Attribute.titleMarginBottom;
+			global::com.refractored.Resource.Attribute.titleMarginEnd = global::TFG.Droid.Resource.Attribute.titleMarginEnd;
+			global::com.refractored.Resource.Attribute.titleMarginStart = global::TFG.Droid.Resource.Attribute.titleMarginStart;
+			global::com.refractored.Resource.Attribute.titleMarginTop = global::TFG.Droid.Resource.Attribute.titleMarginTop;
+			global::com.refractored.Resource.Attribute.titleMargins = global::TFG.Droid.Resource.Attribute.titleMargins;
+			global::com.refractored.Resource.Attribute.titleTextAppearance = global::TFG.Droid.Resource.Attribute.titleTextAppearance;
+			global::com.refractored.Resource.Attribute.titleTextColor = global::TFG.Droid.Resource.Attribute.titleTextColor;
+			global::com.refractored.Resource.Attribute.titleTextStyle = global::TFG.Droid.Resource.Attribute.titleTextStyle;
+			global::com.refractored.Resource.Attribute.toolbarNavigationButtonStyle = global::TFG.Droid.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::com.refractored.Resource.Attribute.toolbarStyle = global::TFG.Droid.Resource.Attribute.toolbarStyle;
+			global::com.refractored.Resource.Attribute.track = global::TFG.Droid.Resource.Attribute.track;
+			global::com.refractored.Resource.Attribute.voiceIcon = global::TFG.Droid.Resource.Attribute.voiceIcon;
+			global::com.refractored.Resource.Attribute.windowActionBar = global::TFG.Droid.Resource.Attribute.windowActionBar;
+			global::com.refractored.Resource.Attribute.windowActionBarOverlay = global::TFG.Droid.Resource.Attribute.windowActionBarOverlay;
+			global::com.refractored.Resource.Attribute.windowActionModeOverlay = global::TFG.Droid.Resource.Attribute.windowActionModeOverlay;
+			global::com.refractored.Resource.Attribute.windowFixedHeightMajor = global::TFG.Droid.Resource.Attribute.windowFixedHeightMajor;
+			global::com.refractored.Resource.Attribute.windowFixedHeightMinor = global::TFG.Droid.Resource.Attribute.windowFixedHeightMinor;
+			global::com.refractored.Resource.Attribute.windowFixedWidthMajor = global::TFG.Droid.Resource.Attribute.windowFixedWidthMajor;
+			global::com.refractored.Resource.Attribute.windowFixedWidthMinor = global::TFG.Droid.Resource.Attribute.windowFixedWidthMinor;
+			global::com.refractored.Resource.Attribute.windowMinWidthMajor = global::TFG.Droid.Resource.Attribute.windowMinWidthMajor;
+			global::com.refractored.Resource.Attribute.windowMinWidthMinor = global::TFG.Droid.Resource.Attribute.windowMinWidthMinor;
+			global::com.refractored.Resource.Attribute.windowNoTitle = global::TFG.Droid.Resource.Attribute.windowNoTitle;
+			global::com.refractored.Resource.Boolean.abc_action_bar_embed_tabs = global::TFG.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::com.refractored.Resource.Boolean.abc_action_bar_embed_tabs_pre_jb = global::TFG.Droid.Resource.Boolean.abc_action_bar_embed_tabs_pre_jb;
+			global::com.refractored.Resource.Boolean.abc_action_bar_expanded_action_views_exclusive = global::TFG.Droid.Resource.Boolean.abc_action_bar_expanded_action_views_exclusive;
+			global::com.refractored.Resource.Boolean.abc_allow_stacked_button_bar = global::TFG.Droid.Resource.Boolean.abc_allow_stacked_button_bar;
+			global::com.refractored.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::TFG.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::com.refractored.Resource.Boolean.abc_config_allowActionMenuItemTextWithIcon = global::TFG.Droid.Resource.Boolean.abc_config_allowActionMenuItemTextWithIcon;
+			global::com.refractored.Resource.Boolean.abc_config_closeDialogWhenTouchOutside = global::TFG.Droid.Resource.Boolean.abc_config_closeDialogWhenTouchOutside;
+			global::com.refractored.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent = global::TFG.Droid.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent;
+			global::com.refractored.Resource.Color.abc_background_cache_hint_selector_material_dark = global::TFG.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::com.refractored.Resource.Color.abc_background_cache_hint_selector_material_light = global::TFG.Droid.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::com.refractored.Resource.Color.abc_color_highlight_material = global::TFG.Droid.Resource.Color.abc_color_highlight_material;
+			global::com.refractored.Resource.Color.abc_input_method_navigation_guard = global::TFG.Droid.Resource.Color.abc_input_method_navigation_guard;
+			global::com.refractored.Resource.Color.abc_primary_text_disable_only_material_dark = global::TFG.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::com.refractored.Resource.Color.abc_primary_text_disable_only_material_light = global::TFG.Droid.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::com.refractored.Resource.Color.abc_primary_text_material_dark = global::TFG.Droid.Resource.Color.abc_primary_text_material_dark;
+			global::com.refractored.Resource.Color.abc_primary_text_material_light = global::TFG.Droid.Resource.Color.abc_primary_text_material_light;
+			global::com.refractored.Resource.Color.abc_search_url_text = global::TFG.Droid.Resource.Color.abc_search_url_text;
+			global::com.refractored.Resource.Color.abc_search_url_text_normal = global::TFG.Droid.Resource.Color.abc_search_url_text_normal;
+			global::com.refractored.Resource.Color.abc_search_url_text_pressed = global::TFG.Droid.Resource.Color.abc_search_url_text_pressed;
+			global::com.refractored.Resource.Color.abc_search_url_text_selected = global::TFG.Droid.Resource.Color.abc_search_url_text_selected;
+			global::com.refractored.Resource.Color.abc_secondary_text_material_dark = global::TFG.Droid.Resource.Color.abc_secondary_text_material_dark;
+			global::com.refractored.Resource.Color.abc_secondary_text_material_light = global::TFG.Droid.Resource.Color.abc_secondary_text_material_light;
+			global::com.refractored.Resource.Color.accent_material_dark = global::TFG.Droid.Resource.Color.accent_material_dark;
+			global::com.refractored.Resource.Color.accent_material_light = global::TFG.Droid.Resource.Color.accent_material_light;
+			global::com.refractored.Resource.Color.background_floating_material_dark = global::TFG.Droid.Resource.Color.background_floating_material_dark;
+			global::com.refractored.Resource.Color.background_floating_material_light = global::TFG.Droid.Resource.Color.background_floating_material_light;
+			global::com.refractored.Resource.Color.background_material_dark = global::TFG.Droid.Resource.Color.background_material_dark;
+			global::com.refractored.Resource.Color.background_material_light = global::TFG.Droid.Resource.Color.background_material_light;
+			global::com.refractored.Resource.Color.bright_foreground_disabled_material_dark = global::TFG.Droid.Resource.Color.bright_foreground_disabled_material_dark;
+			global::com.refractored.Resource.Color.bright_foreground_disabled_material_light = global::TFG.Droid.Resource.Color.bright_foreground_disabled_material_light;
+			global::com.refractored.Resource.Color.bright_foreground_inverse_material_dark = global::TFG.Droid.Resource.Color.bright_foreground_inverse_material_dark;
+			global::com.refractored.Resource.Color.bright_foreground_inverse_material_light = global::TFG.Droid.Resource.Color.bright_foreground_inverse_material_light;
+			global::com.refractored.Resource.Color.bright_foreground_material_dark = global::TFG.Droid.Resource.Color.bright_foreground_material_dark;
+			global::com.refractored.Resource.Color.bright_foreground_material_light = global::TFG.Droid.Resource.Color.bright_foreground_material_light;
+			global::com.refractored.Resource.Color.button_material_dark = global::TFG.Droid.Resource.Color.button_material_dark;
+			global::com.refractored.Resource.Color.button_material_light = global::TFG.Droid.Resource.Color.button_material_light;
+			global::com.refractored.Resource.Color.dim_foreground_disabled_material_dark = global::TFG.Droid.Resource.Color.dim_foreground_disabled_material_dark;
+			global::com.refractored.Resource.Color.dim_foreground_disabled_material_light = global::TFG.Droid.Resource.Color.dim_foreground_disabled_material_light;
+			global::com.refractored.Resource.Color.dim_foreground_material_dark = global::TFG.Droid.Resource.Color.dim_foreground_material_dark;
+			global::com.refractored.Resource.Color.dim_foreground_material_light = global::TFG.Droid.Resource.Color.dim_foreground_material_light;
+			global::com.refractored.Resource.Color.foreground_material_dark = global::TFG.Droid.Resource.Color.foreground_material_dark;
+			global::com.refractored.Resource.Color.foreground_material_light = global::TFG.Droid.Resource.Color.foreground_material_light;
+			global::com.refractored.Resource.Color.highlighted_text_material_dark = global::TFG.Droid.Resource.Color.highlighted_text_material_dark;
+			global::com.refractored.Resource.Color.highlighted_text_material_light = global::TFG.Droid.Resource.Color.highlighted_text_material_light;
+			global::com.refractored.Resource.Color.hint_foreground_material_dark = global::TFG.Droid.Resource.Color.hint_foreground_material_dark;
+			global::com.refractored.Resource.Color.hint_foreground_material_light = global::TFG.Droid.Resource.Color.hint_foreground_material_light;
+			global::com.refractored.Resource.Color.material_blue_grey_800 = global::TFG.Droid.Resource.Color.material_blue_grey_800;
+			global::com.refractored.Resource.Color.material_blue_grey_900 = global::TFG.Droid.Resource.Color.material_blue_grey_900;
+			global::com.refractored.Resource.Color.material_blue_grey_950 = global::TFG.Droid.Resource.Color.material_blue_grey_950;
+			global::com.refractored.Resource.Color.material_deep_teal_200 = global::TFG.Droid.Resource.Color.material_deep_teal_200;
+			global::com.refractored.Resource.Color.material_deep_teal_500 = global::TFG.Droid.Resource.Color.material_deep_teal_500;
+			global::com.refractored.Resource.Color.material_grey_100 = global::TFG.Droid.Resource.Color.material_grey_100;
+			global::com.refractored.Resource.Color.material_grey_300 = global::TFG.Droid.Resource.Color.material_grey_300;
+			global::com.refractored.Resource.Color.material_grey_50 = global::TFG.Droid.Resource.Color.material_grey_50;
+			global::com.refractored.Resource.Color.material_grey_600 = global::TFG.Droid.Resource.Color.material_grey_600;
+			global::com.refractored.Resource.Color.material_grey_800 = global::TFG.Droid.Resource.Color.material_grey_800;
+			global::com.refractored.Resource.Color.material_grey_850 = global::TFG.Droid.Resource.Color.material_grey_850;
+			global::com.refractored.Resource.Color.material_grey_900 = global::TFG.Droid.Resource.Color.material_grey_900;
+			global::com.refractored.Resource.Color.primary_dark_material_dark = global::TFG.Droid.Resource.Color.primary_dark_material_dark;
+			global::com.refractored.Resource.Color.primary_dark_material_light = global::TFG.Droid.Resource.Color.primary_dark_material_light;
+			global::com.refractored.Resource.Color.primary_material_dark = global::TFG.Droid.Resource.Color.primary_material_dark;
+			global::com.refractored.Resource.Color.primary_material_light = global::TFG.Droid.Resource.Color.primary_material_light;
+			global::com.refractored.Resource.Color.primary_text_default_material_dark = global::TFG.Droid.Resource.Color.primary_text_default_material_dark;
+			global::com.refractored.Resource.Color.primary_text_default_material_light = global::TFG.Droid.Resource.Color.primary_text_default_material_light;
+			global::com.refractored.Resource.Color.primary_text_disabled_material_dark = global::TFG.Droid.Resource.Color.primary_text_disabled_material_dark;
+			global::com.refractored.Resource.Color.primary_text_disabled_material_light = global::TFG.Droid.Resource.Color.primary_text_disabled_material_light;
+			global::com.refractored.Resource.Color.psts_background_tab_pressed = global::TFG.Droid.Resource.Color.psts_background_tab_pressed;
+			global::com.refractored.Resource.Color.ripple_material_dark = global::TFG.Droid.Resource.Color.ripple_material_dark;
+			global::com.refractored.Resource.Color.ripple_material_light = global::TFG.Droid.Resource.Color.ripple_material_light;
+			global::com.refractored.Resource.Color.secondary_text_default_material_dark = global::TFG.Droid.Resource.Color.secondary_text_default_material_dark;
+			global::com.refractored.Resource.Color.secondary_text_default_material_light = global::TFG.Droid.Resource.Color.secondary_text_default_material_light;
+			global::com.refractored.Resource.Color.secondary_text_disabled_material_dark = global::TFG.Droid.Resource.Color.secondary_text_disabled_material_dark;
+			global::com.refractored.Resource.Color.secondary_text_disabled_material_light = global::TFG.Droid.Resource.Color.secondary_text_disabled_material_light;
+			global::com.refractored.Resource.Color.switch_thumb_disabled_material_dark = global::TFG.Droid.Resource.Color.switch_thumb_disabled_material_dark;
+			global::com.refractored.Resource.Color.switch_thumb_disabled_material_light = global::TFG.Droid.Resource.Color.switch_thumb_disabled_material_light;
+			global::com.refractored.Resource.Color.switch_thumb_material_dark = global::TFG.Droid.Resource.Color.switch_thumb_material_dark;
+			global::com.refractored.Resource.Color.switch_thumb_material_light = global::TFG.Droid.Resource.Color.switch_thumb_material_light;
+			global::com.refractored.Resource.Color.switch_thumb_normal_material_dark = global::TFG.Droid.Resource.Color.switch_thumb_normal_material_dark;
+			global::com.refractored.Resource.Color.switch_thumb_normal_material_light = global::TFG.Droid.Resource.Color.switch_thumb_normal_material_light;
+			global::com.refractored.Resource.Dimension.abc_action_bar_content_inset_material = global::TFG.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::com.refractored.Resource.Dimension.abc_action_bar_default_height_material = global::TFG.Droid.Resource.Dimension.abc_action_bar_default_height_material;
+			global::com.refractored.Resource.Dimension.abc_action_bar_default_padding_end_material = global::TFG.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::com.refractored.Resource.Dimension.abc_action_bar_default_padding_start_material = global::TFG.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::com.refractored.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::TFG.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::com.refractored.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::TFG.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::com.refractored.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::TFG.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::com.refractored.Resource.Dimension.abc_action_bar_progress_bar_size = global::TFG.Droid.Resource.Dimension.abc_action_bar_progress_bar_size;
+			global::com.refractored.Resource.Dimension.abc_action_bar_stacked_max_height = global::TFG.Droid.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::com.refractored.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::TFG.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::com.refractored.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::TFG.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::com.refractored.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::TFG.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::com.refractored.Resource.Dimension.abc_action_button_min_height_material = global::TFG.Droid.Resource.Dimension.abc_action_button_min_height_material;
+			global::com.refractored.Resource.Dimension.abc_action_button_min_width_material = global::TFG.Droid.Resource.Dimension.abc_action_button_min_width_material;
+			global::com.refractored.Resource.Dimension.abc_action_button_min_width_overflow_material = global::TFG.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::com.refractored.Resource.Dimension.abc_alert_dialog_button_bar_height = global::TFG.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::com.refractored.Resource.Dimension.abc_button_inset_horizontal_material = global::TFG.Droid.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::com.refractored.Resource.Dimension.abc_button_inset_vertical_material = global::TFG.Droid.Resource.Dimension.abc_button_inset_vertical_material;
+			global::com.refractored.Resource.Dimension.abc_button_padding_horizontal_material = global::TFG.Droid.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::com.refractored.Resource.Dimension.abc_button_padding_vertical_material = global::TFG.Droid.Resource.Dimension.abc_button_padding_vertical_material;
+			global::com.refractored.Resource.Dimension.abc_config_prefDialogWidth = global::TFG.Droid.Resource.Dimension.abc_config_prefDialogWidth;
+			global::com.refractored.Resource.Dimension.abc_control_corner_material = global::TFG.Droid.Resource.Dimension.abc_control_corner_material;
+			global::com.refractored.Resource.Dimension.abc_control_inset_material = global::TFG.Droid.Resource.Dimension.abc_control_inset_material;
+			global::com.refractored.Resource.Dimension.abc_control_padding_material = global::TFG.Droid.Resource.Dimension.abc_control_padding_material;
+			global::com.refractored.Resource.Dimension.abc_dialog_fixed_height_major = global::TFG.Droid.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::com.refractored.Resource.Dimension.abc_dialog_fixed_height_minor = global::TFG.Droid.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::com.refractored.Resource.Dimension.abc_dialog_fixed_width_major = global::TFG.Droid.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::com.refractored.Resource.Dimension.abc_dialog_fixed_width_minor = global::TFG.Droid.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::com.refractored.Resource.Dimension.abc_dialog_list_padding_vertical_material = global::TFG.Droid.Resource.Dimension.abc_dialog_list_padding_vertical_material;
+			global::com.refractored.Resource.Dimension.abc_dialog_min_width_major = global::TFG.Droid.Resource.Dimension.abc_dialog_min_width_major;
+			global::com.refractored.Resource.Dimension.abc_dialog_min_width_minor = global::TFG.Droid.Resource.Dimension.abc_dialog_min_width_minor;
+			global::com.refractored.Resource.Dimension.abc_dialog_padding_material = global::TFG.Droid.Resource.Dimension.abc_dialog_padding_material;
+			global::com.refractored.Resource.Dimension.abc_dialog_padding_top_material = global::TFG.Droid.Resource.Dimension.abc_dialog_padding_top_material;
+			global::com.refractored.Resource.Dimension.abc_disabled_alpha_material_dark = global::TFG.Droid.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::com.refractored.Resource.Dimension.abc_disabled_alpha_material_light = global::TFG.Droid.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::com.refractored.Resource.Dimension.abc_dropdownitem_icon_width = global::TFG.Droid.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::com.refractored.Resource.Dimension.abc_dropdownitem_text_padding_left = global::TFG.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::com.refractored.Resource.Dimension.abc_dropdownitem_text_padding_right = global::TFG.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::com.refractored.Resource.Dimension.abc_edit_text_inset_bottom_material = global::TFG.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::com.refractored.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::TFG.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::com.refractored.Resource.Dimension.abc_edit_text_inset_top_material = global::TFG.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::com.refractored.Resource.Dimension.abc_floating_window_z = global::TFG.Droid.Resource.Dimension.abc_floating_window_z;
+			global::com.refractored.Resource.Dimension.abc_list_item_padding_horizontal_material = global::TFG.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::com.refractored.Resource.Dimension.abc_panel_menu_list_width = global::TFG.Droid.Resource.Dimension.abc_panel_menu_list_width;
+			global::com.refractored.Resource.Dimension.abc_search_view_preferred_width = global::TFG.Droid.Resource.Dimension.abc_search_view_preferred_width;
+			global::com.refractored.Resource.Dimension.abc_search_view_text_min_width = global::TFG.Droid.Resource.Dimension.abc_search_view_text_min_width;
+			global::com.refractored.Resource.Dimension.abc_seekbar_track_background_height_material = global::TFG.Droid.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::com.refractored.Resource.Dimension.abc_seekbar_track_progress_height_material = global::TFG.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::com.refractored.Resource.Dimension.abc_select_dialog_padding_start_material = global::TFG.Droid.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::com.refractored.Resource.Dimension.abc_switch_padding = global::TFG.Droid.Resource.Dimension.abc_switch_padding;
+			global::com.refractored.Resource.Dimension.abc_text_size_body_1_material = global::TFG.Droid.Resource.Dimension.abc_text_size_body_1_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_body_2_material = global::TFG.Droid.Resource.Dimension.abc_text_size_body_2_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_button_material = global::TFG.Droid.Resource.Dimension.abc_text_size_button_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_caption_material = global::TFG.Droid.Resource.Dimension.abc_text_size_caption_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_display_1_material = global::TFG.Droid.Resource.Dimension.abc_text_size_display_1_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_display_2_material = global::TFG.Droid.Resource.Dimension.abc_text_size_display_2_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_display_3_material = global::TFG.Droid.Resource.Dimension.abc_text_size_display_3_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_display_4_material = global::TFG.Droid.Resource.Dimension.abc_text_size_display_4_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_headline_material = global::TFG.Droid.Resource.Dimension.abc_text_size_headline_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_large_material = global::TFG.Droid.Resource.Dimension.abc_text_size_large_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_medium_material = global::TFG.Droid.Resource.Dimension.abc_text_size_medium_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_menu_material = global::TFG.Droid.Resource.Dimension.abc_text_size_menu_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_small_material = global::TFG.Droid.Resource.Dimension.abc_text_size_small_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_subhead_material = global::TFG.Droid.Resource.Dimension.abc_text_size_subhead_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::TFG.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::com.refractored.Resource.Dimension.abc_text_size_title_material = global::TFG.Droid.Resource.Dimension.abc_text_size_title_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_title_material_toolbar = global::TFG.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::com.refractored.Resource.Dimension.disabled_alpha_material_dark = global::TFG.Droid.Resource.Dimension.disabled_alpha_material_dark;
+			global::com.refractored.Resource.Dimension.disabled_alpha_material_light = global::TFG.Droid.Resource.Dimension.disabled_alpha_material_light;
+			global::com.refractored.Resource.Dimension.highlight_alpha_material_colored = global::TFG.Droid.Resource.Dimension.highlight_alpha_material_colored;
+			global::com.refractored.Resource.Dimension.highlight_alpha_material_dark = global::TFG.Droid.Resource.Dimension.highlight_alpha_material_dark;
+			global::com.refractored.Resource.Dimension.highlight_alpha_material_light = global::TFG.Droid.Resource.Dimension.highlight_alpha_material_light;
+			global::com.refractored.Resource.Dimension.notification_large_icon_height = global::TFG.Droid.Resource.Dimension.notification_large_icon_height;
+			global::com.refractored.Resource.Dimension.notification_large_icon_width = global::TFG.Droid.Resource.Dimension.notification_large_icon_width;
+			global::com.refractored.Resource.Dimension.notification_subtext_size = global::TFG.Droid.Resource.Dimension.notification_subtext_size;
+			global::com.refractored.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_action_bar_item_background_material = global::TFG.Droid.Resource.Drawable.abc_action_bar_item_background_material;
+			global::com.refractored.Resource.Drawable.abc_btn_borderless_material = global::TFG.Droid.Resource.Drawable.abc_btn_borderless_material;
+			global::com.refractored.Resource.Drawable.abc_btn_check_material = global::TFG.Droid.Resource.Drawable.abc_btn_check_material;
+			global::com.refractored.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::TFG.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::com.refractored.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::TFG.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::com.refractored.Resource.Drawable.abc_btn_colored_material = global::TFG.Droid.Resource.Drawable.abc_btn_colored_material;
+			global::com.refractored.Resource.Drawable.abc_btn_default_mtrl_shape = global::TFG.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::com.refractored.Resource.Drawable.abc_btn_radio_material = global::TFG.Droid.Resource.Drawable.abc_btn_radio_material;
+			global::com.refractored.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::TFG.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::com.refractored.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::TFG.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::com.refractored.Resource.Drawable.abc_btn_rating_star_off_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_btn_rating_star_off_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_btn_rating_star_on_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_btn_rating_star_on_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::TFG.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::com.refractored.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::TFG.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::com.refractored.Resource.Drawable.abc_cab_background_internal_bg = global::TFG.Droid.Resource.Drawable.abc_cab_background_internal_bg;
+			global::com.refractored.Resource.Drawable.abc_cab_background_top_material = global::TFG.Droid.Resource.Drawable.abc_cab_background_top_material;
+			global::com.refractored.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_control_background_material = global::TFG.Droid.Resource.Drawable.abc_control_background_material;
+			global::com.refractored.Resource.Drawable.abc_dialog_material_background_dark = global::TFG.Droid.Resource.Drawable.abc_dialog_material_background_dark;
+			global::com.refractored.Resource.Drawable.abc_dialog_material_background_light = global::TFG.Droid.Resource.Drawable.abc_dialog_material_background_light;
+			global::com.refractored.Resource.Drawable.abc_edit_text_material = global::TFG.Droid.Resource.Drawable.abc_edit_text_material;
+			global::com.refractored.Resource.Drawable.abc_ic_ab_back_mtrl_am_alpha = global::TFG.Droid.Resource.Drawable.abc_ic_ab_back_mtrl_am_alpha;
+			global::com.refractored.Resource.Drawable.abc_ic_clear_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_ic_clear_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_ic_go_search_api_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_ic_go_search_api_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::TFG.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::com.refractored.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_ic_menu_moreoverflow_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_ic_menu_moreoverflow_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::TFG.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::com.refractored.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_ic_search_api_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_ic_search_api_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_ic_star_black_16dp = global::TFG.Droid.Resource.Drawable.abc_ic_star_black_16dp;
+			global::com.refractored.Resource.Drawable.abc_ic_star_black_36dp = global::TFG.Droid.Resource.Drawable.abc_ic_star_black_36dp;
+			global::com.refractored.Resource.Drawable.abc_ic_star_half_black_16dp = global::TFG.Droid.Resource.Drawable.abc_ic_star_half_black_16dp;
+			global::com.refractored.Resource.Drawable.abc_ic_star_half_black_36dp = global::TFG.Droid.Resource.Drawable.abc_ic_star_half_black_36dp;
+			global::com.refractored.Resource.Drawable.abc_ic_voice_search_api_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_ic_voice_search_api_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_item_background_holo_dark = global::TFG.Droid.Resource.Drawable.abc_item_background_holo_dark;
+			global::com.refractored.Resource.Drawable.abc_item_background_holo_light = global::TFG.Droid.Resource.Drawable.abc_item_background_holo_light;
+			global::com.refractored.Resource.Drawable.abc_list_divider_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_list_focused_holo = global::TFG.Droid.Resource.Drawable.abc_list_focused_holo;
+			global::com.refractored.Resource.Drawable.abc_list_longpressed_holo = global::TFG.Droid.Resource.Drawable.abc_list_longpressed_holo;
+			global::com.refractored.Resource.Drawable.abc_list_pressed_holo_dark = global::TFG.Droid.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::com.refractored.Resource.Drawable.abc_list_pressed_holo_light = global::TFG.Droid.Resource.Drawable.abc_list_pressed_holo_light;
+			global::com.refractored.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::TFG.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::com.refractored.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::TFG.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::com.refractored.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::TFG.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::com.refractored.Resource.Drawable.abc_list_selector_disabled_holo_light = global::TFG.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::com.refractored.Resource.Drawable.abc_list_selector_holo_dark = global::TFG.Droid.Resource.Drawable.abc_list_selector_holo_dark;
+			global::com.refractored.Resource.Drawable.abc_list_selector_holo_light = global::TFG.Droid.Resource.Drawable.abc_list_selector_holo_light;
+			global::com.refractored.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::TFG.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::com.refractored.Resource.Drawable.abc_popup_background_mtrl_mult = global::TFG.Droid.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::com.refractored.Resource.Drawable.abc_ratingbar_full_material = global::TFG.Droid.Resource.Drawable.abc_ratingbar_full_material;
+			global::com.refractored.Resource.Drawable.abc_ratingbar_indicator_material = global::TFG.Droid.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::com.refractored.Resource.Drawable.abc_ratingbar_small_material = global::TFG.Droid.Resource.Drawable.abc_ratingbar_small_material;
+			global::com.refractored.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::TFG.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::com.refractored.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::TFG.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::com.refractored.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_seekbar_thumb_material = global::TFG.Droid.Resource.Drawable.abc_seekbar_thumb_material;
+			global::com.refractored.Resource.Drawable.abc_seekbar_track_material = global::TFG.Droid.Resource.Drawable.abc_seekbar_track_material;
+			global::com.refractored.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::TFG.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::com.refractored.Resource.Drawable.abc_spinner_textfield_background_material = global::TFG.Droid.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::com.refractored.Resource.Drawable.abc_switch_thumb_material = global::TFG.Droid.Resource.Drawable.abc_switch_thumb_material;
+			global::com.refractored.Resource.Drawable.abc_switch_track_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_tab_indicator_material = global::TFG.Droid.Resource.Drawable.abc_tab_indicator_material;
+			global::com.refractored.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_text_cursor_material = global::TFG.Droid.Resource.Drawable.abc_text_cursor_material;
+			global::com.refractored.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::TFG.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_textfield_search_material = global::TFG.Droid.Resource.Drawable.abc_textfield_search_material;
+			global::com.refractored.Resource.Drawable.notification_template_icon_bg = global::TFG.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::com.refractored.Resource.Drawable.psts_background_tab = global::TFG.Droid.Resource.Drawable.psts_background_tab;
+			global::com.refractored.Resource.Id.action0 = global::TFG.Droid.Resource.Id.action0;
+			global::com.refractored.Resource.Id.action_bar = global::TFG.Droid.Resource.Id.action_bar;
+			global::com.refractored.Resource.Id.action_bar_activity_content = global::TFG.Droid.Resource.Id.action_bar_activity_content;
+			global::com.refractored.Resource.Id.action_bar_container = global::TFG.Droid.Resource.Id.action_bar_container;
+			global::com.refractored.Resource.Id.action_bar_root = global::TFG.Droid.Resource.Id.action_bar_root;
+			global::com.refractored.Resource.Id.action_bar_spinner = global::TFG.Droid.Resource.Id.action_bar_spinner;
+			global::com.refractored.Resource.Id.action_bar_subtitle = global::TFG.Droid.Resource.Id.action_bar_subtitle;
+			global::com.refractored.Resource.Id.action_bar_title = global::TFG.Droid.Resource.Id.action_bar_title;
+			global::com.refractored.Resource.Id.action_context_bar = global::TFG.Droid.Resource.Id.action_context_bar;
+			global::com.refractored.Resource.Id.action_divider = global::TFG.Droid.Resource.Id.action_divider;
+			global::com.refractored.Resource.Id.action_menu_divider = global::TFG.Droid.Resource.Id.action_menu_divider;
+			global::com.refractored.Resource.Id.action_menu_presenter = global::TFG.Droid.Resource.Id.action_menu_presenter;
+			global::com.refractored.Resource.Id.action_mode_bar = global::TFG.Droid.Resource.Id.action_mode_bar;
+			global::com.refractored.Resource.Id.action_mode_bar_stub = global::TFG.Droid.Resource.Id.action_mode_bar_stub;
+			global::com.refractored.Resource.Id.action_mode_close_button = global::TFG.Droid.Resource.Id.action_mode_close_button;
+			global::com.refractored.Resource.Id.activity_chooser_view_content = global::TFG.Droid.Resource.Id.activity_chooser_view_content;
+			global::com.refractored.Resource.Id.alertTitle = global::TFG.Droid.Resource.Id.alertTitle;
+			global::com.refractored.Resource.Id.always = global::TFG.Droid.Resource.Id.always;
+			global::com.refractored.Resource.Id.beginning = global::TFG.Droid.Resource.Id.beginning;
+			global::com.refractored.Resource.Id.bold = global::TFG.Droid.Resource.Id.bold;
+			global::com.refractored.Resource.Id.buttonPanel = global::TFG.Droid.Resource.Id.buttonPanel;
+			global::com.refractored.Resource.Id.cancel_action = global::TFG.Droid.Resource.Id.cancel_action;
+			global::com.refractored.Resource.Id.checkbox = global::TFG.Droid.Resource.Id.checkbox;
+			global::com.refractored.Resource.Id.chronometer = global::TFG.Droid.Resource.Id.chronometer;
+			global::com.refractored.Resource.Id.collapseActionView = global::TFG.Droid.Resource.Id.collapseActionView;
+			global::com.refractored.Resource.Id.contentPanel = global::TFG.Droid.Resource.Id.contentPanel;
+			global::com.refractored.Resource.Id.custom = global::TFG.Droid.Resource.Id.custom;
+			global::com.refractored.Resource.Id.customPanel = global::TFG.Droid.Resource.Id.customPanel;
+			global::com.refractored.Resource.Id.decor_content_parent = global::TFG.Droid.Resource.Id.decor_content_parent;
+			global::com.refractored.Resource.Id.default_activity_button = global::TFG.Droid.Resource.Id.default_activity_button;
+			global::com.refractored.Resource.Id.disableHome = global::TFG.Droid.Resource.Id.disableHome;
+			global::com.refractored.Resource.Id.edit_query = global::TFG.Droid.Resource.Id.edit_query;
+			global::com.refractored.Resource.Id.end = global::TFG.Droid.Resource.Id.end;
+			global::com.refractored.Resource.Id.end_padder = global::TFG.Droid.Resource.Id.end_padder;
+			global::com.refractored.Resource.Id.expand_activities_button = global::TFG.Droid.Resource.Id.expand_activities_button;
+			global::com.refractored.Resource.Id.expanded_menu = global::TFG.Droid.Resource.Id.expanded_menu;
+			global::com.refractored.Resource.Id.home = global::TFG.Droid.Resource.Id.home;
+			global::com.refractored.Resource.Id.homeAsUp = global::TFG.Droid.Resource.Id.homeAsUp;
+			global::com.refractored.Resource.Id.icon = global::TFG.Droid.Resource.Id.icon;
+			global::com.refractored.Resource.Id.ifRoom = global::TFG.Droid.Resource.Id.ifRoom;
+			global::com.refractored.Resource.Id.image = global::TFG.Droid.Resource.Id.image;
+			global::com.refractored.Resource.Id.info = global::TFG.Droid.Resource.Id.info;
+			global::com.refractored.Resource.Id.italic = global::TFG.Droid.Resource.Id.italic;
+			global::com.refractored.Resource.Id.line1 = global::TFG.Droid.Resource.Id.line1;
+			global::com.refractored.Resource.Id.line3 = global::TFG.Droid.Resource.Id.line3;
+			global::com.refractored.Resource.Id.listMode = global::TFG.Droid.Resource.Id.listMode;
+			global::com.refractored.Resource.Id.list_item = global::TFG.Droid.Resource.Id.list_item;
+			global::com.refractored.Resource.Id.media_actions = global::TFG.Droid.Resource.Id.media_actions;
+			global::com.refractored.Resource.Id.middle = global::TFG.Droid.Resource.Id.middle;
+			global::com.refractored.Resource.Id.multiply = global::TFG.Droid.Resource.Id.multiply;
+			global::com.refractored.Resource.Id.never = global::TFG.Droid.Resource.Id.never;
+			global::com.refractored.Resource.Id.none = global::TFG.Droid.Resource.Id.none;
+			global::com.refractored.Resource.Id.normal = global::TFG.Droid.Resource.Id.normal;
+			global::com.refractored.Resource.Id.parentPanel = global::TFG.Droid.Resource.Id.parentPanel;
+			global::com.refractored.Resource.Id.progress_circular = global::TFG.Droid.Resource.Id.progress_circular;
+			global::com.refractored.Resource.Id.progress_horizontal = global::TFG.Droid.Resource.Id.progress_horizontal;
+			global::com.refractored.Resource.Id.psts_tab_title = global::TFG.Droid.Resource.Id.psts_tab_title;
+			global::com.refractored.Resource.Id.radio = global::TFG.Droid.Resource.Id.radio;
+			global::com.refractored.Resource.Id.screen = global::TFG.Droid.Resource.Id.screen;
+			global::com.refractored.Resource.Id.scrollIndicatorDown = global::TFG.Droid.Resource.Id.scrollIndicatorDown;
+			global::com.refractored.Resource.Id.scrollIndicatorUp = global::TFG.Droid.Resource.Id.scrollIndicatorUp;
+			global::com.refractored.Resource.Id.scrollView = global::TFG.Droid.Resource.Id.scrollView;
+			global::com.refractored.Resource.Id.search_badge = global::TFG.Droid.Resource.Id.search_badge;
+			global::com.refractored.Resource.Id.search_bar = global::TFG.Droid.Resource.Id.search_bar;
+			global::com.refractored.Resource.Id.search_button = global::TFG.Droid.Resource.Id.search_button;
+			global::com.refractored.Resource.Id.search_close_btn = global::TFG.Droid.Resource.Id.search_close_btn;
+			global::com.refractored.Resource.Id.search_edit_frame = global::TFG.Droid.Resource.Id.search_edit_frame;
+			global::com.refractored.Resource.Id.search_go_btn = global::TFG.Droid.Resource.Id.search_go_btn;
+			global::com.refractored.Resource.Id.search_mag_icon = global::TFG.Droid.Resource.Id.search_mag_icon;
+			global::com.refractored.Resource.Id.search_plate = global::TFG.Droid.Resource.Id.search_plate;
+			global::com.refractored.Resource.Id.search_src_text = global::TFG.Droid.Resource.Id.search_src_text;
+			global::com.refractored.Resource.Id.search_voice_btn = global::TFG.Droid.Resource.Id.search_voice_btn;
+			global::com.refractored.Resource.Id.select_dialog_listview = global::TFG.Droid.Resource.Id.select_dialog_listview;
+			global::com.refractored.Resource.Id.shortcut = global::TFG.Droid.Resource.Id.shortcut;
+			global::com.refractored.Resource.Id.showCustom = global::TFG.Droid.Resource.Id.showCustom;
+			global::com.refractored.Resource.Id.showHome = global::TFG.Droid.Resource.Id.showHome;
+			global::com.refractored.Resource.Id.showTitle = global::TFG.Droid.Resource.Id.showTitle;
+			global::com.refractored.Resource.Id.spacer = global::TFG.Droid.Resource.Id.spacer;
+			global::com.refractored.Resource.Id.split_action_bar = global::TFG.Droid.Resource.Id.split_action_bar;
+			global::com.refractored.Resource.Id.src_atop = global::TFG.Droid.Resource.Id.src_atop;
+			global::com.refractored.Resource.Id.src_in = global::TFG.Droid.Resource.Id.src_in;
+			global::com.refractored.Resource.Id.src_over = global::TFG.Droid.Resource.Id.src_over;
+			global::com.refractored.Resource.Id.status_bar_latest_event_content = global::TFG.Droid.Resource.Id.status_bar_latest_event_content;
+			global::com.refractored.Resource.Id.submit_area = global::TFG.Droid.Resource.Id.submit_area;
+			global::com.refractored.Resource.Id.tabMode = global::TFG.Droid.Resource.Id.tabMode;
+			global::com.refractored.Resource.Id.text = global::TFG.Droid.Resource.Id.text;
+			global::com.refractored.Resource.Id.text2 = global::TFG.Droid.Resource.Id.text2;
+			global::com.refractored.Resource.Id.textSpacerNoButtons = global::TFG.Droid.Resource.Id.textSpacerNoButtons;
+			global::com.refractored.Resource.Id.time = global::TFG.Droid.Resource.Id.time;
+			global::com.refractored.Resource.Id.title = global::TFG.Droid.Resource.Id.title;
+			global::com.refractored.Resource.Id.title_template = global::TFG.Droid.Resource.Id.title_template;
+			global::com.refractored.Resource.Id.topPanel = global::TFG.Droid.Resource.Id.topPanel;
+			global::com.refractored.Resource.Id.up = global::TFG.Droid.Resource.Id.up;
+			global::com.refractored.Resource.Id.useLogo = global::TFG.Droid.Resource.Id.useLogo;
+			global::com.refractored.Resource.Id.withText = global::TFG.Droid.Resource.Id.withText;
+			global::com.refractored.Resource.Id.wrap_content = global::TFG.Droid.Resource.Id.wrap_content;
+			global::com.refractored.Resource.Integer.abc_config_activityDefaultDur = global::TFG.Droid.Resource.Integer.abc_config_activityDefaultDur;
+			global::com.refractored.Resource.Integer.abc_config_activityShortDur = global::TFG.Droid.Resource.Integer.abc_config_activityShortDur;
+			global::com.refractored.Resource.Integer.abc_max_action_buttons = global::TFG.Droid.Resource.Integer.abc_max_action_buttons;
+			global::com.refractored.Resource.Integer.cancel_button_image_alpha = global::TFG.Droid.Resource.Integer.cancel_button_image_alpha;
+			global::com.refractored.Resource.Integer.status_bar_notification_info_maxnum = global::TFG.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::com.refractored.Resource.Layout.abc_action_bar_title_item = global::TFG.Droid.Resource.Layout.abc_action_bar_title_item;
+			global::com.refractored.Resource.Layout.abc_action_bar_up_container = global::TFG.Droid.Resource.Layout.abc_action_bar_up_container;
+			global::com.refractored.Resource.Layout.abc_action_bar_view_list_nav_layout = global::TFG.Droid.Resource.Layout.abc_action_bar_view_list_nav_layout;
+			global::com.refractored.Resource.Layout.abc_action_menu_item_layout = global::TFG.Droid.Resource.Layout.abc_action_menu_item_layout;
+			global::com.refractored.Resource.Layout.abc_action_menu_layout = global::TFG.Droid.Resource.Layout.abc_action_menu_layout;
+			global::com.refractored.Resource.Layout.abc_action_mode_bar = global::TFG.Droid.Resource.Layout.abc_action_mode_bar;
+			global::com.refractored.Resource.Layout.abc_action_mode_close_item_material = global::TFG.Droid.Resource.Layout.abc_action_mode_close_item_material;
+			global::com.refractored.Resource.Layout.abc_activity_chooser_view = global::TFG.Droid.Resource.Layout.abc_activity_chooser_view;
+			global::com.refractored.Resource.Layout.abc_activity_chooser_view_list_item = global::TFG.Droid.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::com.refractored.Resource.Layout.abc_alert_dialog_button_bar_material = global::TFG.Droid.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::com.refractored.Resource.Layout.abc_alert_dialog_material = global::TFG.Droid.Resource.Layout.abc_alert_dialog_material;
+			global::com.refractored.Resource.Layout.abc_dialog_title_material = global::TFG.Droid.Resource.Layout.abc_dialog_title_material;
+			global::com.refractored.Resource.Layout.abc_expanded_menu_layout = global::TFG.Droid.Resource.Layout.abc_expanded_menu_layout;
+			global::com.refractored.Resource.Layout.abc_list_menu_item_checkbox = global::TFG.Droid.Resource.Layout.abc_list_menu_item_checkbox;
+			global::com.refractored.Resource.Layout.abc_list_menu_item_icon = global::TFG.Droid.Resource.Layout.abc_list_menu_item_icon;
+			global::com.refractored.Resource.Layout.abc_list_menu_item_layout = global::TFG.Droid.Resource.Layout.abc_list_menu_item_layout;
+			global::com.refractored.Resource.Layout.abc_list_menu_item_radio = global::TFG.Droid.Resource.Layout.abc_list_menu_item_radio;
+			global::com.refractored.Resource.Layout.abc_popup_menu_item_layout = global::TFG.Droid.Resource.Layout.abc_popup_menu_item_layout;
+			global::com.refractored.Resource.Layout.abc_screen_content_include = global::TFG.Droid.Resource.Layout.abc_screen_content_include;
+			global::com.refractored.Resource.Layout.abc_screen_simple = global::TFG.Droid.Resource.Layout.abc_screen_simple;
+			global::com.refractored.Resource.Layout.abc_screen_simple_overlay_action_mode = global::TFG.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::com.refractored.Resource.Layout.abc_screen_toolbar = global::TFG.Droid.Resource.Layout.abc_screen_toolbar;
+			global::com.refractored.Resource.Layout.abc_search_dropdown_item_icons_2line = global::TFG.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::com.refractored.Resource.Layout.abc_search_view = global::TFG.Droid.Resource.Layout.abc_search_view;
+			global::com.refractored.Resource.Layout.abc_select_dialog_material = global::TFG.Droid.Resource.Layout.abc_select_dialog_material;
+			global::com.refractored.Resource.Layout.notification_media_action = global::TFG.Droid.Resource.Layout.notification_media_action;
+			global::com.refractored.Resource.Layout.notification_media_cancel_action = global::TFG.Droid.Resource.Layout.notification_media_cancel_action;
+			global::com.refractored.Resource.Layout.notification_template_big_media = global::TFG.Droid.Resource.Layout.notification_template_big_media;
+			global::com.refractored.Resource.Layout.notification_template_big_media_narrow = global::TFG.Droid.Resource.Layout.notification_template_big_media_narrow;
+			global::com.refractored.Resource.Layout.notification_template_lines = global::TFG.Droid.Resource.Layout.notification_template_lines;
+			global::com.refractored.Resource.Layout.notification_template_media = global::TFG.Droid.Resource.Layout.notification_template_media;
+			global::com.refractored.Resource.Layout.notification_template_part_chronometer = global::TFG.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::com.refractored.Resource.Layout.notification_template_part_time = global::TFG.Droid.Resource.Layout.notification_template_part_time;
+			global::com.refractored.Resource.Layout.psts_tab = global::TFG.Droid.Resource.Layout.psts_tab;
+			global::com.refractored.Resource.Layout.select_dialog_item_material = global::TFG.Droid.Resource.Layout.select_dialog_item_material;
+			global::com.refractored.Resource.Layout.select_dialog_multichoice_material = global::TFG.Droid.Resource.Layout.select_dialog_multichoice_material;
+			global::com.refractored.Resource.Layout.select_dialog_singlechoice_material = global::TFG.Droid.Resource.Layout.select_dialog_singlechoice_material;
+			global::com.refractored.Resource.Layout.support_simple_spinner_dropdown_item = global::TFG.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::com.refractored.Resource.String.abc_action_bar_home_description = global::TFG.Droid.Resource.String.abc_action_bar_home_description;
+			global::com.refractored.Resource.String.abc_action_bar_home_description_format = global::TFG.Droid.Resource.String.abc_action_bar_home_description_format;
+			global::com.refractored.Resource.String.abc_action_bar_home_subtitle_description_format = global::TFG.Droid.Resource.String.abc_action_bar_home_subtitle_description_format;
+			global::com.refractored.Resource.String.abc_action_bar_up_description = global::TFG.Droid.Resource.String.abc_action_bar_up_description;
+			global::com.refractored.Resource.String.abc_action_menu_overflow_description = global::TFG.Droid.Resource.String.abc_action_menu_overflow_description;
+			global::com.refractored.Resource.String.abc_action_mode_done = global::TFG.Droid.Resource.String.abc_action_mode_done;
+			global::com.refractored.Resource.String.abc_activity_chooser_view_see_all = global::TFG.Droid.Resource.String.abc_activity_chooser_view_see_all;
+			global::com.refractored.Resource.String.abc_activitychooserview_choose_application = global::TFG.Droid.Resource.String.abc_activitychooserview_choose_application;
+			global::com.refractored.Resource.String.abc_capital_off = global::TFG.Droid.Resource.String.abc_capital_off;
+			global::com.refractored.Resource.String.abc_capital_on = global::TFG.Droid.Resource.String.abc_capital_on;
+			global::com.refractored.Resource.String.abc_search_hint = global::TFG.Droid.Resource.String.abc_search_hint;
+			global::com.refractored.Resource.String.abc_searchview_description_clear = global::TFG.Droid.Resource.String.abc_searchview_description_clear;
+			global::com.refractored.Resource.String.abc_searchview_description_query = global::TFG.Droid.Resource.String.abc_searchview_description_query;
+			global::com.refractored.Resource.String.abc_searchview_description_search = global::TFG.Droid.Resource.String.abc_searchview_description_search;
+			global::com.refractored.Resource.String.abc_searchview_description_submit = global::TFG.Droid.Resource.String.abc_searchview_description_submit;
+			global::com.refractored.Resource.String.abc_searchview_description_voice = global::TFG.Droid.Resource.String.abc_searchview_description_voice;
+			global::com.refractored.Resource.String.abc_shareactionprovider_share_with = global::TFG.Droid.Resource.String.abc_shareactionprovider_share_with;
+			global::com.refractored.Resource.String.abc_shareactionprovider_share_with_application = global::TFG.Droid.Resource.String.abc_shareactionprovider_share_with_application;
+			global::com.refractored.Resource.String.abc_toolbar_collapse_description = global::TFG.Droid.Resource.String.abc_toolbar_collapse_description;
+			global::com.refractored.Resource.String.status_bar_notification_info_overflow = global::TFG.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::com.refractored.Resource.Style.AlertDialog_AppCompat = global::TFG.Droid.Resource.Style.AlertDialog_AppCompat;
+			global::com.refractored.Resource.Style.AlertDialog_AppCompat_Light = global::TFG.Droid.Resource.Style.AlertDialog_AppCompat_Light;
+			global::com.refractored.Resource.Style.Animation_AppCompat_Dialog = global::TFG.Droid.Resource.Style.Animation_AppCompat_Dialog;
+			global::com.refractored.Resource.Style.Animation_AppCompat_DropDownUp = global::TFG.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::com.refractored.Resource.Style.Base_AlertDialog_AppCompat = global::TFG.Droid.Resource.Style.Base_AlertDialog_AppCompat;
+			global::com.refractored.Resource.Style.Base_AlertDialog_AppCompat_Light = global::TFG.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::com.refractored.Resource.Style.Base_Animation_AppCompat_Dialog = global::TFG.Droid.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::com.refractored.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::TFG.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::com.refractored.Resource.Style.Base_DialogWindowTitle_AppCompat = global::TFG.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::com.refractored.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::TFG.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Button = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Large = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Small = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Title = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::TFG.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::com.refractored.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::TFG.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::com.refractored.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::TFG.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::com.refractored.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::TFG.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat = global::TFG.Droid.Resource.Style.Base_Theme_AppCompat;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::TFG.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Dialog = global::TFG.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::TFG.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::TFG.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::TFG.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::TFG.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Light = global::TFG.Droid.Resource.Style.Base_Theme_AppCompat_Light;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::TFG.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::TFG.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::TFG.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::TFG.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::TFG.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::TFG.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::com.refractored.Resource.Style.Base_ThemeOverlay_AppCompat = global::TFG.Droid.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::com.refractored.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::TFG.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::com.refractored.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::TFG.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::com.refractored.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::TFG.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::com.refractored.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::TFG.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::com.refractored.Resource.Style.Base_V11_Theme_AppCompat_Dialog = global::TFG.Droid.Resource.Style.Base_V11_Theme_AppCompat_Dialog;
+			global::com.refractored.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog = global::TFG.Droid.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog;
+			global::com.refractored.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView = global::TFG.Droid.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView;
+			global::com.refractored.Resource.Style.Base_V12_Widget_AppCompat_EditText = global::TFG.Droid.Resource.Style.Base_V12_Widget_AppCompat_EditText;
+			global::com.refractored.Resource.Style.Base_V21_Theme_AppCompat = global::TFG.Droid.Resource.Style.Base_V21_Theme_AppCompat;
+			global::com.refractored.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::TFG.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::com.refractored.Resource.Style.Base_V21_Theme_AppCompat_Light = global::TFG.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::com.refractored.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::TFG.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::com.refractored.Resource.Style.Base_V22_Theme_AppCompat = global::TFG.Droid.Resource.Style.Base_V22_Theme_AppCompat;
+			global::com.refractored.Resource.Style.Base_V22_Theme_AppCompat_Light = global::TFG.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::com.refractored.Resource.Style.Base_V23_Theme_AppCompat = global::TFG.Droid.Resource.Style.Base_V23_Theme_AppCompat;
+			global::com.refractored.Resource.Style.Base_V23_Theme_AppCompat_Light = global::TFG.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::com.refractored.Resource.Style.Base_V7_Theme_AppCompat = global::TFG.Droid.Resource.Style.Base_V7_Theme_AppCompat;
+			global::com.refractored.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::TFG.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::com.refractored.Resource.Style.Base_V7_Theme_AppCompat_Light = global::TFG.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::com.refractored.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::TFG.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::com.refractored.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::TFG.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::com.refractored.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::TFG.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ActionBar = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ActionButton = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ActionMode = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Button = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_Button;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Button_Small = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_EditText = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ImageButton = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ListView = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_RatingBar = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_SearchView = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_SeekBar = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Spinner = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Toolbar = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::TFG.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::com.refractored.Resource.Style.Platform_AppCompat = global::TFG.Droid.Resource.Style.Platform_AppCompat;
+			global::com.refractored.Resource.Style.Platform_AppCompat_Light = global::TFG.Droid.Resource.Style.Platform_AppCompat_Light;
+			global::com.refractored.Resource.Style.Platform_ThemeOverlay_AppCompat = global::TFG.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::com.refractored.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::TFG.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::com.refractored.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::TFG.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::com.refractored.Resource.Style.Platform_V11_AppCompat = global::TFG.Droid.Resource.Style.Platform_V11_AppCompat;
+			global::com.refractored.Resource.Style.Platform_V11_AppCompat_Light = global::TFG.Droid.Resource.Style.Platform_V11_AppCompat_Light;
+			global::com.refractored.Resource.Style.Platform_V14_AppCompat = global::TFG.Droid.Resource.Style.Platform_V14_AppCompat;
+			global::com.refractored.Resource.Style.Platform_V14_AppCompat_Light = global::TFG.Droid.Resource.Style.Platform_V14_AppCompat_Light;
+			global::com.refractored.Resource.Style.Platform_Widget_AppCompat_Spinner = global::TFG.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::com.refractored.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::TFG.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::TFG.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::TFG.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::TFG.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::TFG.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::TFG.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::TFG.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::TFG.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::TFG.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::TFG.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::TFG.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::TFG.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::com.refractored.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::TFG.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::com.refractored.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::TFG.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Body1 = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Body2 = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Button = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Button;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Caption = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Display1 = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Display2 = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Display3 = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Display4 = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Headline = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Inverse = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Large = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Large;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Medium = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Menu = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Small = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Small;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Subhead = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Title = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Title;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::TFG.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::com.refractored.Resource.Style.TextAppearance_StatusBar_EventContent = global::TFG.Droid.Resource.Style.TextAppearance_StatusBar_EventContent;
+			global::com.refractored.Resource.Style.TextAppearance_StatusBar_EventContent_Info = global::TFG.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Info;
+			global::com.refractored.Resource.Style.TextAppearance_StatusBar_EventContent_Line2 = global::TFG.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Line2;
+			global::com.refractored.Resource.Style.TextAppearance_StatusBar_EventContent_Time = global::TFG.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Time;
+			global::com.refractored.Resource.Style.TextAppearance_StatusBar_EventContent_Title = global::TFG.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Title;
+			global::com.refractored.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::TFG.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::com.refractored.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::TFG.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::com.refractored.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::TFG.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::com.refractored.Resource.Style.Theme_AppCompat = global::TFG.Droid.Resource.Style.Theme_AppCompat;
+			global::com.refractored.Resource.Style.Theme_AppCompat_CompactMenu = global::TFG.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::com.refractored.Resource.Style.Theme_AppCompat_DayNight = global::TFG.Droid.Resource.Style.Theme_AppCompat_DayNight;
+			global::com.refractored.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::TFG.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::com.refractored.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::TFG.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::com.refractored.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::TFG.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::com.refractored.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::TFG.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::com.refractored.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::TFG.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::com.refractored.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::TFG.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::com.refractored.Resource.Style.Theme_AppCompat_Dialog = global::TFG.Droid.Resource.Style.Theme_AppCompat_Dialog;
+			global::com.refractored.Resource.Style.Theme_AppCompat_Dialog_Alert = global::TFG.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::com.refractored.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::TFG.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::com.refractored.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::TFG.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::com.refractored.Resource.Style.Theme_AppCompat_Light = global::TFG.Droid.Resource.Style.Theme_AppCompat_Light;
+			global::com.refractored.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::TFG.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::com.refractored.Resource.Style.Theme_AppCompat_Light_Dialog = global::TFG.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::com.refractored.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::TFG.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::com.refractored.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::TFG.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::com.refractored.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::TFG.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::com.refractored.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::TFG.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::com.refractored.Resource.Style.Theme_AppCompat_NoActionBar = global::TFG.Droid.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::com.refractored.Resource.Style.ThemeOverlay_AppCompat = global::TFG.Droid.Resource.Style.ThemeOverlay_AppCompat;
+			global::com.refractored.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::TFG.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::com.refractored.Resource.Style.ThemeOverlay_AppCompat_Dark = global::TFG.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::com.refractored.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::TFG.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::com.refractored.Resource.Style.ThemeOverlay_AppCompat_Light = global::TFG.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ActionBar = global::TFG.Droid.Resource.Style.Widget_AppCompat_ActionBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::TFG.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::TFG.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::TFG.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::TFG.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ActionButton = global::TFG.Droid.Resource.Style.Widget_AppCompat_ActionButton;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::TFG.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::TFG.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ActionMode = global::TFG.Droid.Resource.Style.Widget_AppCompat_ActionMode;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ActivityChooserView = global::TFG.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::com.refractored.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::TFG.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Button = global::TFG.Droid.Resource.Style.Widget_AppCompat_Button;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Button_Borderless = global::TFG.Droid.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::TFG.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::TFG.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Button_Colored = global::TFG.Droid.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Button_Small = global::TFG.Droid.Resource.Style.Widget_AppCompat_Button_Small;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ButtonBar = global::TFG.Droid.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::TFG.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::com.refractored.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::TFG.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::com.refractored.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::TFG.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::com.refractored.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::TFG.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::com.refractored.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::TFG.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::com.refractored.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::TFG.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::com.refractored.Resource.Style.Widget_AppCompat_EditText = global::TFG.Droid.Resource.Style.Widget_AppCompat_EditText;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ImageButton = global::TFG.Droid.Resource.Style.Widget_AppCompat_ImageButton;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionBar = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionButton = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_SearchView = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::TFG.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ListPopupWindow = global::TFG.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ListView = global::TFG.Droid.Resource.Style.Widget_AppCompat_ListView;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ListView_DropDown = global::TFG.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ListView_Menu = global::TFG.Droid.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::com.refractored.Resource.Style.Widget_AppCompat_PopupMenu = global::TFG.Droid.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::com.refractored.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::TFG.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::com.refractored.Resource.Style.Widget_AppCompat_PopupWindow = global::TFG.Droid.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ProgressBar = global::TFG.Droid.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::TFG.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::com.refractored.Resource.Style.Widget_AppCompat_RatingBar = global::TFG.Droid.Resource.Style.Widget_AppCompat_RatingBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::TFG.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::com.refractored.Resource.Style.Widget_AppCompat_RatingBar_Small = global::TFG.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::com.refractored.Resource.Style.Widget_AppCompat_SearchView = global::TFG.Droid.Resource.Style.Widget_AppCompat_SearchView;
+			global::com.refractored.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::TFG.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_SeekBar = global::TFG.Droid.Resource.Style.Widget_AppCompat_SeekBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Spinner = global::TFG.Droid.Resource.Style.Widget_AppCompat_Spinner;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::TFG.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::TFG.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::TFG.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::com.refractored.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::TFG.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Toolbar = global::TFG.Droid.Resource.Style.Widget_AppCompat_Toolbar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::TFG.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::com.refractored.Resource.Styleable.ActionBar = global::TFG.Droid.Resource.Styleable.ActionBar;
+			global::com.refractored.Resource.Styleable.ActionBar_background = global::TFG.Droid.Resource.Styleable.ActionBar_background;
+			global::com.refractored.Resource.Styleable.ActionBar_backgroundSplit = global::TFG.Droid.Resource.Styleable.ActionBar_backgroundSplit;
+			global::com.refractored.Resource.Styleable.ActionBar_backgroundStacked = global::TFG.Droid.Resource.Styleable.ActionBar_backgroundStacked;
+			global::com.refractored.Resource.Styleable.ActionBar_contentInsetEnd = global::TFG.Droid.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::com.refractored.Resource.Styleable.ActionBar_contentInsetLeft = global::TFG.Droid.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::com.refractored.Resource.Styleable.ActionBar_contentInsetRight = global::TFG.Droid.Resource.Styleable.ActionBar_contentInsetRight;
+			global::com.refractored.Resource.Styleable.ActionBar_contentInsetStart = global::TFG.Droid.Resource.Styleable.ActionBar_contentInsetStart;
+			global::com.refractored.Resource.Styleable.ActionBar_customNavigationLayout = global::TFG.Droid.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::com.refractored.Resource.Styleable.ActionBar_displayOptions = global::TFG.Droid.Resource.Styleable.ActionBar_displayOptions;
+			global::com.refractored.Resource.Styleable.ActionBar_divider = global::TFG.Droid.Resource.Styleable.ActionBar_divider;
+			global::com.refractored.Resource.Styleable.ActionBar_elevation = global::TFG.Droid.Resource.Styleable.ActionBar_elevation;
+			global::com.refractored.Resource.Styleable.ActionBar_height = global::TFG.Droid.Resource.Styleable.ActionBar_height;
+			global::com.refractored.Resource.Styleable.ActionBar_hideOnContentScroll = global::TFG.Droid.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::com.refractored.Resource.Styleable.ActionBar_homeAsUpIndicator = global::TFG.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::com.refractored.Resource.Styleable.ActionBar_homeLayout = global::TFG.Droid.Resource.Styleable.ActionBar_homeLayout;
+			global::com.refractored.Resource.Styleable.ActionBar_icon = global::TFG.Droid.Resource.Styleable.ActionBar_icon;
+			global::com.refractored.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::TFG.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::com.refractored.Resource.Styleable.ActionBar_itemPadding = global::TFG.Droid.Resource.Styleable.ActionBar_itemPadding;
+			global::com.refractored.Resource.Styleable.ActionBar_logo = global::TFG.Droid.Resource.Styleable.ActionBar_logo;
+			global::com.refractored.Resource.Styleable.ActionBar_navigationMode = global::TFG.Droid.Resource.Styleable.ActionBar_navigationMode;
+			global::com.refractored.Resource.Styleable.ActionBar_popupTheme = global::TFG.Droid.Resource.Styleable.ActionBar_popupTheme;
+			global::com.refractored.Resource.Styleable.ActionBar_progressBarPadding = global::TFG.Droid.Resource.Styleable.ActionBar_progressBarPadding;
+			global::com.refractored.Resource.Styleable.ActionBar_progressBarStyle = global::TFG.Droid.Resource.Styleable.ActionBar_progressBarStyle;
+			global::com.refractored.Resource.Styleable.ActionBar_subtitle = global::TFG.Droid.Resource.Styleable.ActionBar_subtitle;
+			global::com.refractored.Resource.Styleable.ActionBar_subtitleTextStyle = global::TFG.Droid.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::com.refractored.Resource.Styleable.ActionBar_title = global::TFG.Droid.Resource.Styleable.ActionBar_title;
+			global::com.refractored.Resource.Styleable.ActionBar_titleTextStyle = global::TFG.Droid.Resource.Styleable.ActionBar_titleTextStyle;
+			global::com.refractored.Resource.Styleable.ActionBarLayout = global::TFG.Droid.Resource.Styleable.ActionBarLayout;
+			global::com.refractored.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::TFG.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::com.refractored.Resource.Styleable.ActionMenuItemView = global::TFG.Droid.Resource.Styleable.ActionMenuItemView;
+			global::com.refractored.Resource.Styleable.ActionMenuItemView_android_minWidth = global::TFG.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::com.refractored.Resource.Styleable.ActionMenuView = global::TFG.Droid.Resource.Styleable.ActionMenuView;
+			global::com.refractored.Resource.Styleable.ActionMode = global::TFG.Droid.Resource.Styleable.ActionMode;
+			global::com.refractored.Resource.Styleable.ActionMode_background = global::TFG.Droid.Resource.Styleable.ActionMode_background;
+			global::com.refractored.Resource.Styleable.ActionMode_backgroundSplit = global::TFG.Droid.Resource.Styleable.ActionMode_backgroundSplit;
+			global::com.refractored.Resource.Styleable.ActionMode_closeItemLayout = global::TFG.Droid.Resource.Styleable.ActionMode_closeItemLayout;
+			global::com.refractored.Resource.Styleable.ActionMode_height = global::TFG.Droid.Resource.Styleable.ActionMode_height;
+			global::com.refractored.Resource.Styleable.ActionMode_subtitleTextStyle = global::TFG.Droid.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::com.refractored.Resource.Styleable.ActionMode_titleTextStyle = global::TFG.Droid.Resource.Styleable.ActionMode_titleTextStyle;
+			global::com.refractored.Resource.Styleable.ActivityChooserView = global::TFG.Droid.Resource.Styleable.ActivityChooserView;
+			global::com.refractored.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::TFG.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::com.refractored.Resource.Styleable.ActivityChooserView_initialActivityCount = global::TFG.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::com.refractored.Resource.Styleable.AlertDialog = global::TFG.Droid.Resource.Styleable.AlertDialog;
+			global::com.refractored.Resource.Styleable.AlertDialog_android_layout = global::TFG.Droid.Resource.Styleable.AlertDialog_android_layout;
+			global::com.refractored.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::TFG.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::com.refractored.Resource.Styleable.AlertDialog_listItemLayout = global::TFG.Droid.Resource.Styleable.AlertDialog_listItemLayout;
+			global::com.refractored.Resource.Styleable.AlertDialog_listLayout = global::TFG.Droid.Resource.Styleable.AlertDialog_listLayout;
+			global::com.refractored.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::TFG.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::com.refractored.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::TFG.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::com.refractored.Resource.Styleable.AppCompatImageView = global::TFG.Droid.Resource.Styleable.AppCompatImageView;
+			global::com.refractored.Resource.Styleable.AppCompatImageView_android_src = global::TFG.Droid.Resource.Styleable.AppCompatImageView_android_src;
+			global::com.refractored.Resource.Styleable.AppCompatImageView_srcCompat = global::TFG.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::com.refractored.Resource.Styleable.AppCompatTextView = global::TFG.Droid.Resource.Styleable.AppCompatTextView;
+			global::com.refractored.Resource.Styleable.AppCompatTextView_android_textAppearance = global::TFG.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::com.refractored.Resource.Styleable.AppCompatTextView_textAllCaps = global::TFG.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::com.refractored.Resource.Styleable.AppCompatTheme = global::TFG.Droid.Resource.Styleable.AppCompatTheme;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarDivider = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarSize = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarTheme = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeBackground = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::TFG.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::TFG.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::TFG.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_buttonStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::TFG.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_checkboxStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_colorAccent = global::TFG.Droid.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::TFG.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_colorControlActivated = global::TFG.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::TFG.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_colorControlNormal = global::TFG.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_colorPrimary = global::TFG.Droid.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::TFG.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::TFG.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_controlBackground = global::TFG.Droid.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::TFG.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_dialogTheme = global::TFG.Droid.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::TFG.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_dividerVertical = global::TFG.Droid.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::TFG.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_editTextBackground = global::TFG.Droid.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_editTextColor = global::TFG.Droid.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_editTextStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::TFG.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::TFG.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::TFG.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::TFG.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::TFG.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::TFG.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::TFG.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::TFG.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_panelBackground = global::TFG.Droid.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::TFG.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::TFG.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::TFG.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::TFG.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_searchViewStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_seekBarStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::TFG.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::TFG.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_spinnerStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_switchStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::TFG.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::TFG.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::TFG.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::TFG.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::TFG.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::TFG.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_toolbarStyle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_windowActionBar = global::TFG.Droid.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::TFG.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::TFG.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::TFG.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::TFG.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::TFG.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::TFG.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::TFG.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::TFG.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_windowNoTitle = global::TFG.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::com.refractored.Resource.Styleable.ButtonBarLayout = global::TFG.Droid.Resource.Styleable.ButtonBarLayout;
+			global::com.refractored.Resource.Styleable.ButtonBarLayout_allowStacking = global::TFG.Droid.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::com.refractored.Resource.Styleable.CompoundButton = global::TFG.Droid.Resource.Styleable.CompoundButton;
+			global::com.refractored.Resource.Styleable.CompoundButton_android_button = global::TFG.Droid.Resource.Styleable.CompoundButton_android_button;
+			global::com.refractored.Resource.Styleable.CompoundButton_buttonTint = global::TFG.Droid.Resource.Styleable.CompoundButton_buttonTint;
+			global::com.refractored.Resource.Styleable.CompoundButton_buttonTintMode = global::TFG.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::com.refractored.Resource.Styleable.DrawerArrowToggle = global::TFG.Droid.Resource.Styleable.DrawerArrowToggle;
+			global::com.refractored.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::TFG.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::com.refractored.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::TFG.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::com.refractored.Resource.Styleable.DrawerArrowToggle_barLength = global::TFG.Droid.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::com.refractored.Resource.Styleable.DrawerArrowToggle_color = global::TFG.Droid.Resource.Styleable.DrawerArrowToggle_color;
+			global::com.refractored.Resource.Styleable.DrawerArrowToggle_drawableSize = global::TFG.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::com.refractored.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::TFG.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::com.refractored.Resource.Styleable.DrawerArrowToggle_spinBars = global::TFG.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::com.refractored.Resource.Styleable.DrawerArrowToggle_thickness = global::TFG.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat = global::TFG.Droid.Resource.Styleable.LinearLayoutCompat;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::TFG.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::TFG.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_android_gravity = global::TFG.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_android_orientation = global::TFG.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::TFG.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_divider = global::TFG.Droid.Resource.Styleable.LinearLayoutCompat_divider;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::TFG.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::TFG.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_showDividers = global::TFG.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_Layout = global::TFG.Droid.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::TFG.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::TFG.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::TFG.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::TFG.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::com.refractored.Resource.Styleable.ListPopupWindow = global::TFG.Droid.Resource.Styleable.ListPopupWindow;
+			global::com.refractored.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::TFG.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::com.refractored.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::TFG.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::com.refractored.Resource.Styleable.MenuGroup = global::TFG.Droid.Resource.Styleable.MenuGroup;
+			global::com.refractored.Resource.Styleable.MenuGroup_android_checkableBehavior = global::TFG.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::com.refractored.Resource.Styleable.MenuGroup_android_enabled = global::TFG.Droid.Resource.Styleable.MenuGroup_android_enabled;
+			global::com.refractored.Resource.Styleable.MenuGroup_android_id = global::TFG.Droid.Resource.Styleable.MenuGroup_android_id;
+			global::com.refractored.Resource.Styleable.MenuGroup_android_menuCategory = global::TFG.Droid.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::com.refractored.Resource.Styleable.MenuGroup_android_orderInCategory = global::TFG.Droid.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::com.refractored.Resource.Styleable.MenuGroup_android_visible = global::TFG.Droid.Resource.Styleable.MenuGroup_android_visible;
+			global::com.refractored.Resource.Styleable.MenuItem = global::TFG.Droid.Resource.Styleable.MenuItem;
+			global::com.refractored.Resource.Styleable.MenuItem_actionLayout = global::TFG.Droid.Resource.Styleable.MenuItem_actionLayout;
+			global::com.refractored.Resource.Styleable.MenuItem_actionProviderClass = global::TFG.Droid.Resource.Styleable.MenuItem_actionProviderClass;
+			global::com.refractored.Resource.Styleable.MenuItem_actionViewClass = global::TFG.Droid.Resource.Styleable.MenuItem_actionViewClass;
+			global::com.refractored.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::TFG.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::com.refractored.Resource.Styleable.MenuItem_android_checkable = global::TFG.Droid.Resource.Styleable.MenuItem_android_checkable;
+			global::com.refractored.Resource.Styleable.MenuItem_android_checked = global::TFG.Droid.Resource.Styleable.MenuItem_android_checked;
+			global::com.refractored.Resource.Styleable.MenuItem_android_enabled = global::TFG.Droid.Resource.Styleable.MenuItem_android_enabled;
+			global::com.refractored.Resource.Styleable.MenuItem_android_icon = global::TFG.Droid.Resource.Styleable.MenuItem_android_icon;
+			global::com.refractored.Resource.Styleable.MenuItem_android_id = global::TFG.Droid.Resource.Styleable.MenuItem_android_id;
+			global::com.refractored.Resource.Styleable.MenuItem_android_menuCategory = global::TFG.Droid.Resource.Styleable.MenuItem_android_menuCategory;
+			global::com.refractored.Resource.Styleable.MenuItem_android_numericShortcut = global::TFG.Droid.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::com.refractored.Resource.Styleable.MenuItem_android_onClick = global::TFG.Droid.Resource.Styleable.MenuItem_android_onClick;
+			global::com.refractored.Resource.Styleable.MenuItem_android_orderInCategory = global::TFG.Droid.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::com.refractored.Resource.Styleable.MenuItem_android_title = global::TFG.Droid.Resource.Styleable.MenuItem_android_title;
+			global::com.refractored.Resource.Styleable.MenuItem_android_titleCondensed = global::TFG.Droid.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::com.refractored.Resource.Styleable.MenuItem_android_visible = global::TFG.Droid.Resource.Styleable.MenuItem_android_visible;
+			global::com.refractored.Resource.Styleable.MenuItem_showAsAction = global::TFG.Droid.Resource.Styleable.MenuItem_showAsAction;
+			global::com.refractored.Resource.Styleable.MenuView = global::TFG.Droid.Resource.Styleable.MenuView;
+			global::com.refractored.Resource.Styleable.MenuView_android_headerBackground = global::TFG.Droid.Resource.Styleable.MenuView_android_headerBackground;
+			global::com.refractored.Resource.Styleable.MenuView_android_horizontalDivider = global::TFG.Droid.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::com.refractored.Resource.Styleable.MenuView_android_itemBackground = global::TFG.Droid.Resource.Styleable.MenuView_android_itemBackground;
+			global::com.refractored.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::TFG.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::com.refractored.Resource.Styleable.MenuView_android_itemTextAppearance = global::TFG.Droid.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::com.refractored.Resource.Styleable.MenuView_android_verticalDivider = global::TFG.Droid.Resource.Styleable.MenuView_android_verticalDivider;
+			global::com.refractored.Resource.Styleable.MenuView_android_windowAnimationStyle = global::TFG.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::com.refractored.Resource.Styleable.MenuView_preserveIconSpacing = global::TFG.Droid.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip = global::TFG.Droid.Resource.Styleable.PagerSlidingTabStrip;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsDividerColor = global::TFG.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsDividerColor;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsDividerPadding = global::TFG.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsDividerPadding;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsDividerWidth = global::TFG.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsDividerWidth;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsIndicatorColor = global::TFG.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsIndicatorColor;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsIndicatorHeight = global::TFG.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsIndicatorHeight;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsPaddingMiddle = global::TFG.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsPaddingMiddle;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsScrollOffset = global::TFG.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsScrollOffset;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsShouldExpand = global::TFG.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsShouldExpand;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsTabBackground = global::TFG.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsTabBackground;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsTabPaddingLeftRight = global::TFG.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsTabPaddingLeftRight;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsTextAllCaps = global::TFG.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsTextAllCaps;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsTextAlpha = global::TFG.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsTextAlpha;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsTextColorSelected = global::TFG.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsTextColorSelected;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsTextSelectedStyle = global::TFG.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsTextSelectedStyle;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsTextStyle = global::TFG.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsTextStyle;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsUnderlineColor = global::TFG.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsUnderlineColor;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsUnderlineHeight = global::TFG.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsUnderlineHeight;
+			global::com.refractored.Resource.Styleable.PopupWindow = global::TFG.Droid.Resource.Styleable.PopupWindow;
+			global::com.refractored.Resource.Styleable.PopupWindow_android_popupBackground = global::TFG.Droid.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::com.refractored.Resource.Styleable.PopupWindow_overlapAnchor = global::TFG.Droid.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::com.refractored.Resource.Styleable.PopupWindowBackgroundState = global::TFG.Droid.Resource.Styleable.PopupWindowBackgroundState;
+			global::com.refractored.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::TFG.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::com.refractored.Resource.Styleable.SearchView = global::TFG.Droid.Resource.Styleable.SearchView;
+			global::com.refractored.Resource.Styleable.SearchView_android_focusable = global::TFG.Droid.Resource.Styleable.SearchView_android_focusable;
+			global::com.refractored.Resource.Styleable.SearchView_android_imeOptions = global::TFG.Droid.Resource.Styleable.SearchView_android_imeOptions;
+			global::com.refractored.Resource.Styleable.SearchView_android_inputType = global::TFG.Droid.Resource.Styleable.SearchView_android_inputType;
+			global::com.refractored.Resource.Styleable.SearchView_android_maxWidth = global::TFG.Droid.Resource.Styleable.SearchView_android_maxWidth;
+			global::com.refractored.Resource.Styleable.SearchView_closeIcon = global::TFG.Droid.Resource.Styleable.SearchView_closeIcon;
+			global::com.refractored.Resource.Styleable.SearchView_commitIcon = global::TFG.Droid.Resource.Styleable.SearchView_commitIcon;
+			global::com.refractored.Resource.Styleable.SearchView_defaultQueryHint = global::TFG.Droid.Resource.Styleable.SearchView_defaultQueryHint;
+			global::com.refractored.Resource.Styleable.SearchView_goIcon = global::TFG.Droid.Resource.Styleable.SearchView_goIcon;
+			global::com.refractored.Resource.Styleable.SearchView_iconifiedByDefault = global::TFG.Droid.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::com.refractored.Resource.Styleable.SearchView_layout = global::TFG.Droid.Resource.Styleable.SearchView_layout;
+			global::com.refractored.Resource.Styleable.SearchView_queryBackground = global::TFG.Droid.Resource.Styleable.SearchView_queryBackground;
+			global::com.refractored.Resource.Styleable.SearchView_queryHint = global::TFG.Droid.Resource.Styleable.SearchView_queryHint;
+			global::com.refractored.Resource.Styleable.SearchView_searchHintIcon = global::TFG.Droid.Resource.Styleable.SearchView_searchHintIcon;
+			global::com.refractored.Resource.Styleable.SearchView_searchIcon = global::TFG.Droid.Resource.Styleable.SearchView_searchIcon;
+			global::com.refractored.Resource.Styleable.SearchView_submitBackground = global::TFG.Droid.Resource.Styleable.SearchView_submitBackground;
+			global::com.refractored.Resource.Styleable.SearchView_suggestionRowLayout = global::TFG.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::com.refractored.Resource.Styleable.SearchView_voiceIcon = global::TFG.Droid.Resource.Styleable.SearchView_voiceIcon;
+			global::com.refractored.Resource.Styleable.Spinner = global::TFG.Droid.Resource.Styleable.Spinner;
+			global::com.refractored.Resource.Styleable.Spinner_android_dropDownWidth = global::TFG.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::com.refractored.Resource.Styleable.Spinner_android_entries = global::TFG.Droid.Resource.Styleable.Spinner_android_entries;
+			global::com.refractored.Resource.Styleable.Spinner_android_popupBackground = global::TFG.Droid.Resource.Styleable.Spinner_android_popupBackground;
+			global::com.refractored.Resource.Styleable.Spinner_android_prompt = global::TFG.Droid.Resource.Styleable.Spinner_android_prompt;
+			global::com.refractored.Resource.Styleable.Spinner_popupTheme = global::TFG.Droid.Resource.Styleable.Spinner_popupTheme;
+			global::com.refractored.Resource.Styleable.SwitchCompat = global::TFG.Droid.Resource.Styleable.SwitchCompat;
+			global::com.refractored.Resource.Styleable.SwitchCompat_android_textOff = global::TFG.Droid.Resource.Styleable.SwitchCompat_android_textOff;
+			global::com.refractored.Resource.Styleable.SwitchCompat_android_textOn = global::TFG.Droid.Resource.Styleable.SwitchCompat_android_textOn;
+			global::com.refractored.Resource.Styleable.SwitchCompat_android_thumb = global::TFG.Droid.Resource.Styleable.SwitchCompat_android_thumb;
+			global::com.refractored.Resource.Styleable.SwitchCompat_showText = global::TFG.Droid.Resource.Styleable.SwitchCompat_showText;
+			global::com.refractored.Resource.Styleable.SwitchCompat_splitTrack = global::TFG.Droid.Resource.Styleable.SwitchCompat_splitTrack;
+			global::com.refractored.Resource.Styleable.SwitchCompat_switchMinWidth = global::TFG.Droid.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::com.refractored.Resource.Styleable.SwitchCompat_switchPadding = global::TFG.Droid.Resource.Styleable.SwitchCompat_switchPadding;
+			global::com.refractored.Resource.Styleable.SwitchCompat_switchTextAppearance = global::TFG.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::com.refractored.Resource.Styleable.SwitchCompat_thumbTextPadding = global::TFG.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::com.refractored.Resource.Styleable.SwitchCompat_track = global::TFG.Droid.Resource.Styleable.SwitchCompat_track;
+			global::com.refractored.Resource.Styleable.TextAppearance = global::TFG.Droid.Resource.Styleable.TextAppearance;
+			global::com.refractored.Resource.Styleable.TextAppearance_android_shadowColor = global::TFG.Droid.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::com.refractored.Resource.Styleable.TextAppearance_android_shadowDx = global::TFG.Droid.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::com.refractored.Resource.Styleable.TextAppearance_android_shadowDy = global::TFG.Droid.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::com.refractored.Resource.Styleable.TextAppearance_android_shadowRadius = global::TFG.Droid.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::com.refractored.Resource.Styleable.TextAppearance_android_textColor = global::TFG.Droid.Resource.Styleable.TextAppearance_android_textColor;
+			global::com.refractored.Resource.Styleable.TextAppearance_android_textSize = global::TFG.Droid.Resource.Styleable.TextAppearance_android_textSize;
+			global::com.refractored.Resource.Styleable.TextAppearance_android_textStyle = global::TFG.Droid.Resource.Styleable.TextAppearance_android_textStyle;
+			global::com.refractored.Resource.Styleable.TextAppearance_android_typeface = global::TFG.Droid.Resource.Styleable.TextAppearance_android_typeface;
+			global::com.refractored.Resource.Styleable.TextAppearance_textAllCaps = global::TFG.Droid.Resource.Styleable.TextAppearance_textAllCaps;
+			global::com.refractored.Resource.Styleable.Toolbar = global::TFG.Droid.Resource.Styleable.Toolbar;
+			global::com.refractored.Resource.Styleable.Toolbar_android_gravity = global::TFG.Droid.Resource.Styleable.Toolbar_android_gravity;
+			global::com.refractored.Resource.Styleable.Toolbar_android_minHeight = global::TFG.Droid.Resource.Styleable.Toolbar_android_minHeight;
+			global::com.refractored.Resource.Styleable.Toolbar_collapseContentDescription = global::TFG.Droid.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::com.refractored.Resource.Styleable.Toolbar_collapseIcon = global::TFG.Droid.Resource.Styleable.Toolbar_collapseIcon;
+			global::com.refractored.Resource.Styleable.Toolbar_contentInsetEnd = global::TFG.Droid.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::com.refractored.Resource.Styleable.Toolbar_contentInsetLeft = global::TFG.Droid.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::com.refractored.Resource.Styleable.Toolbar_contentInsetRight = global::TFG.Droid.Resource.Styleable.Toolbar_contentInsetRight;
+			global::com.refractored.Resource.Styleable.Toolbar_contentInsetStart = global::TFG.Droid.Resource.Styleable.Toolbar_contentInsetStart;
+			global::com.refractored.Resource.Styleable.Toolbar_logo = global::TFG.Droid.Resource.Styleable.Toolbar_logo;
+			global::com.refractored.Resource.Styleable.Toolbar_logoDescription = global::TFG.Droid.Resource.Styleable.Toolbar_logoDescription;
+			global::com.refractored.Resource.Styleable.Toolbar_maxButtonHeight = global::TFG.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::com.refractored.Resource.Styleable.Toolbar_navigationContentDescription = global::TFG.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::com.refractored.Resource.Styleable.Toolbar_navigationIcon = global::TFG.Droid.Resource.Styleable.Toolbar_navigationIcon;
+			global::com.refractored.Resource.Styleable.Toolbar_popupTheme = global::TFG.Droid.Resource.Styleable.Toolbar_popupTheme;
+			global::com.refractored.Resource.Styleable.Toolbar_subtitle = global::TFG.Droid.Resource.Styleable.Toolbar_subtitle;
+			global::com.refractored.Resource.Styleable.Toolbar_subtitleTextAppearance = global::TFG.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::com.refractored.Resource.Styleable.Toolbar_subtitleTextColor = global::TFG.Droid.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::com.refractored.Resource.Styleable.Toolbar_title = global::TFG.Droid.Resource.Styleable.Toolbar_title;
+			global::com.refractored.Resource.Styleable.Toolbar_titleMarginBottom = global::TFG.Droid.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::com.refractored.Resource.Styleable.Toolbar_titleMarginEnd = global::TFG.Droid.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::com.refractored.Resource.Styleable.Toolbar_titleMarginStart = global::TFG.Droid.Resource.Styleable.Toolbar_titleMarginStart;
+			global::com.refractored.Resource.Styleable.Toolbar_titleMarginTop = global::TFG.Droid.Resource.Styleable.Toolbar_titleMarginTop;
+			global::com.refractored.Resource.Styleable.Toolbar_titleMargins = global::TFG.Droid.Resource.Styleable.Toolbar_titleMargins;
+			global::com.refractored.Resource.Styleable.Toolbar_titleTextAppearance = global::TFG.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::com.refractored.Resource.Styleable.Toolbar_titleTextColor = global::TFG.Droid.Resource.Styleable.Toolbar_titleTextColor;
+			global::com.refractored.Resource.Styleable.View = global::TFG.Droid.Resource.Styleable.View;
+			global::com.refractored.Resource.Styleable.View_android_focusable = global::TFG.Droid.Resource.Styleable.View_android_focusable;
+			global::com.refractored.Resource.Styleable.View_android_theme = global::TFG.Droid.Resource.Styleable.View_android_theme;
+			global::com.refractored.Resource.Styleable.View_paddingEnd = global::TFG.Droid.Resource.Styleable.View_paddingEnd;
+			global::com.refractored.Resource.Styleable.View_paddingStart = global::TFG.Droid.Resource.Styleable.View_paddingStart;
+			global::com.refractored.Resource.Styleable.View_theme = global::TFG.Droid.Resource.Styleable.View_theme;
+			global::com.refractored.Resource.Styleable.ViewBackgroundHelper = global::TFG.Droid.Resource.Styleable.ViewBackgroundHelper;
+			global::com.refractored.Resource.Styleable.ViewBackgroundHelper_android_background = global::TFG.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::com.refractored.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::TFG.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::com.refractored.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::TFG.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::com.refractored.Resource.Styleable.ViewStubCompat = global::TFG.Droid.Resource.Styleable.ViewStubCompat;
+			global::com.refractored.Resource.Styleable.ViewStubCompat_android_id = global::TFG.Droid.Resource.Styleable.ViewStubCompat_android_id;
+			global::com.refractored.Resource.Styleable.ViewStubCompat_android_inflatedId = global::TFG.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::com.refractored.Resource.Styleable.ViewStubCompat_android_layout = global::TFG.Droid.Resource.Styleable.ViewStubCompat_android_layout;
 		}
 		
 		public partial class Animation
@@ -436,23 +1724,23 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f01002d
 			public const int expandActivityOverflowButtonDrawable = 2130772013;
 			
-			// aapt resource value: 0x7f0100e2
-			public const int fab_colorDisabled = 2130772194;
+			// aapt resource value: 0x7f0100f3
+			public const int fab_colorDisabled = 2130772211;
 			
-			// aapt resource value: 0x7f0100e1
-			public const int fab_colorNormal = 2130772193;
+			// aapt resource value: 0x7f0100f2
+			public const int fab_colorNormal = 2130772210;
 			
-			// aapt resource value: 0x7f0100e0
-			public const int fab_colorPressed = 2130772192;
+			// aapt resource value: 0x7f0100f1
+			public const int fab_colorPressed = 2130772209;
 			
-			// aapt resource value: 0x7f0100e3
-			public const int fab_colorRipple = 2130772195;
+			// aapt resource value: 0x7f0100f4
+			public const int fab_colorRipple = 2130772212;
 			
-			// aapt resource value: 0x7f0100e4
-			public const int fab_shadow = 2130772196;
+			// aapt resource value: 0x7f0100f5
+			public const int fab_shadow = 2130772213;
 			
-			// aapt resource value: 0x7f0100e5
-			public const int fab_size = 2130772197;
+			// aapt resource value: 0x7f0100f6
+			public const int fab_size = 2130772214;
 			
 			// aapt resource value: 0x7f0100a9
 			public const int gapBetweenBars = 2130772137;
@@ -588,6 +1876,57 @@ namespace TFG.Droid
 			
 			// aapt resource value: 0x7f010020
 			public const int progressBarStyle = 2130772000;
+			
+			// aapt resource value: 0x7f0100e2
+			public const int pstsDividerColor = 2130772194;
+			
+			// aapt resource value: 0x7f0100e6
+			public const int pstsDividerPadding = 2130772198;
+			
+			// aapt resource value: 0x7f0100e3
+			public const int pstsDividerWidth = 2130772195;
+			
+			// aapt resource value: 0x7f0100e0
+			public const int pstsIndicatorColor = 2130772192;
+			
+			// aapt resource value: 0x7f0100e4
+			public const int pstsIndicatorHeight = 2130772196;
+			
+			// aapt resource value: 0x7f0100ec
+			public const int pstsPaddingMiddle = 2130772204;
+			
+			// aapt resource value: 0x7f0100e8
+			public const int pstsScrollOffset = 2130772200;
+			
+			// aapt resource value: 0x7f0100ea
+			public const int pstsShouldExpand = 2130772202;
+			
+			// aapt resource value: 0x7f0100e9
+			public const int pstsTabBackground = 2130772201;
+			
+			// aapt resource value: 0x7f0100e7
+			public const int pstsTabPaddingLeftRight = 2130772199;
+			
+			// aapt resource value: 0x7f0100eb
+			public const int pstsTextAllCaps = 2130772203;
+			
+			// aapt resource value: 0x7f0100ee
+			public const int pstsTextAlpha = 2130772206;
+			
+			// aapt resource value: 0x7f0100ed
+			public const int pstsTextColorSelected = 2130772205;
+			
+			// aapt resource value: 0x7f0100f0
+			public const int pstsTextSelectedStyle = 2130772208;
+			
+			// aapt resource value: 0x7f0100ef
+			public const int pstsTextStyle = 2130772207;
+			
+			// aapt resource value: 0x7f0100e1
+			public const int pstsUnderlineColor = 2130772193;
+			
+			// aapt resource value: 0x7f0100e5
+			public const int pstsUnderlineHeight = 2130772197;
 			
 			// aapt resource value: 0x7f0100c3
 			public const int queryBackground = 2130772163;
@@ -849,32 +2188,32 @@ namespace TFG.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f080054
-			public const int abc_background_cache_hint_selector_material_dark = 2131230804;
-			
 			// aapt resource value: 0x7f080055
-			public const int abc_background_cache_hint_selector_material_light = 2131230805;
+			public const int abc_background_cache_hint_selector_material_dark = 2131230805;
 			
 			// aapt resource value: 0x7f080056
-			public const int abc_color_highlight_material = 2131230806;
+			public const int abc_background_cache_hint_selector_material_light = 2131230806;
+			
+			// aapt resource value: 0x7f080057
+			public const int abc_color_highlight_material = 2131230807;
 			
 			// aapt resource value: 0x7f080004
 			public const int abc_input_method_navigation_guard = 2131230724;
 			
-			// aapt resource value: 0x7f080057
-			public const int abc_primary_text_disable_only_material_dark = 2131230807;
-			
 			// aapt resource value: 0x7f080058
-			public const int abc_primary_text_disable_only_material_light = 2131230808;
+			public const int abc_primary_text_disable_only_material_dark = 2131230808;
 			
 			// aapt resource value: 0x7f080059
-			public const int abc_primary_text_material_dark = 2131230809;
+			public const int abc_primary_text_disable_only_material_light = 2131230809;
 			
 			// aapt resource value: 0x7f08005a
-			public const int abc_primary_text_material_light = 2131230810;
+			public const int abc_primary_text_material_dark = 2131230810;
 			
 			// aapt resource value: 0x7f08005b
-			public const int abc_search_url_text = 2131230811;
+			public const int abc_primary_text_material_light = 2131230811;
+			
+			// aapt resource value: 0x7f08005c
+			public const int abc_search_url_text = 2131230812;
 			
 			// aapt resource value: 0x7f080005
 			public const int abc_search_url_text_normal = 2131230725;
@@ -885,11 +2224,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f080007
 			public const int abc_search_url_text_selected = 2131230727;
 			
-			// aapt resource value: 0x7f08005c
-			public const int abc_secondary_text_material_dark = 2131230812;
-			
 			// aapt resource value: 0x7f08005d
-			public const int abc_secondary_text_material_light = 2131230813;
+			public const int abc_secondary_text_material_dark = 2131230813;
+			
+			// aapt resource value: 0x7f08005e
+			public const int abc_secondary_text_material_light = 2131230814;
 			
 			// aapt resource value: 0x7f080008
 			public const int accent_material_dark = 2131230728;
@@ -909,11 +2248,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f08000d
 			public const int background_material_light = 2131230733;
 			
-			// aapt resource value: 0x7f080053
-			public const int black = 2131230803;
+			// aapt resource value: 0x7f080054
+			public const int black = 2131230804;
 			
-			// aapt resource value: 0x7f08004c
-			public const int blue = 2131230796;
+			// aapt resource value: 0x7f08004d
+			public const int blue = 2131230797;
 			
 			// aapt resource value: 0x7f08000e
 			public const int bright_foreground_disabled_material_dark = 2131230734;
@@ -951,20 +2290,20 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f080003
 			public const int cardview_shadow_start_color = 2131230723;
 			
+			// aapt resource value: 0x7f080047
+			public const int dark_green = 2131230791;
+			
+			// aapt resource value: 0x7f080049
+			public const int dark_grey = 2131230793;
+			
 			// aapt resource value: 0x7f080046
-			public const int dark_green = 2131230790;
+			public const int dark_orange = 2131230790;
 			
-			// aapt resource value: 0x7f080048
-			public const int dark_grey = 2131230792;
+			// aapt resource value: 0x7f080044
+			public const int dark_purple = 2131230788;
 			
-			// aapt resource value: 0x7f080045
-			public const int dark_orange = 2131230789;
-			
-			// aapt resource value: 0x7f080043
-			public const int dark_purple = 2131230787;
-			
-			// aapt resource value: 0x7f08004e
-			public const int dark_yellow = 2131230798;
+			// aapt resource value: 0x7f08004f
+			public const int dark_yellow = 2131230799;
 			
 			// aapt resource value: 0x7f080016
 			public const int dim_foreground_disabled_material_dark = 2131230742;
@@ -978,8 +2317,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f080019
 			public const int dim_foreground_material_light = 2131230745;
 			
-			// aapt resource value: 0x7f08003e
-			public const int fab_material_blue_500 = 2131230782;
+			// aapt resource value: 0x7f08003f
+			public const int fab_material_blue_500 = 2131230783;
 			
 			// aapt resource value: 0x7f08001a
 			public const int foreground_material_dark = 2131230746;
@@ -987,11 +2326,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f08001b
 			public const int foreground_material_light = 2131230747;
 			
-			// aapt resource value: 0x7f080052
-			public const int green = 2131230802;
+			// aapt resource value: 0x7f080053
+			public const int green = 2131230803;
 			
-			// aapt resource value: 0x7f080051
-			public const int grey = 2131230801;
+			// aapt resource value: 0x7f080052
+			public const int grey = 2131230802;
 			
 			// aapt resource value: 0x7f08001c
 			public const int highlighted_text_material_dark = 2131230748;
@@ -1005,17 +2344,17 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f08001f
 			public const int hint_foreground_material_light = 2131230751;
 			
-			// aapt resource value: 0x7f08004d
-			public const int light_blue = 2131230797;
+			// aapt resource value: 0x7f08004e
+			public const int light_blue = 2131230798;
 			
-			// aapt resource value: 0x7f080047
-			public const int light_green = 2131230791;
+			// aapt resource value: 0x7f080048
+			public const int light_green = 2131230792;
 			
-			// aapt resource value: 0x7f080049
-			public const int light_grey = 2131230793;
+			// aapt resource value: 0x7f08004a
+			public const int light_grey = 2131230794;
 			
-			// aapt resource value: 0x7f08004f
-			public const int light_yellow = 2131230799;
+			// aapt resource value: 0x7f080050
+			public const int light_yellow = 2131230800;
 			
 			// aapt resource value: 0x7f080020
 			public const int material_blue_grey_800 = 2131230752;
@@ -1053,14 +2392,14 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f08002b
 			public const int material_grey_900 = 2131230763;
 			
-			// aapt resource value: 0x7f080044
-			public const int orange = 2131230788;
-			
-			// aapt resource value: 0x7f08003f
-			public const int primary = 2131230783;
+			// aapt resource value: 0x7f080045
+			public const int orange = 2131230789;
 			
 			// aapt resource value: 0x7f080040
-			public const int primary_dark = 2131230784;
+			public const int primary = 2131230784;
+			
+			// aapt resource value: 0x7f080041
+			public const int primary_dark = 2131230785;
 			
 			// aapt resource value: 0x7f08002c
 			public const int primary_dark_material_dark = 2131230764;
@@ -1086,14 +2425,17 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f080033
 			public const int primary_text_disabled_material_light = 2131230771;
 			
+			// aapt resource value: 0x7f08003e
+			public const int psts_background_tab_pressed = 2131230782;
+			
+			// aapt resource value: 0x7f080043
+			public const int purple = 2131230787;
+			
+			// aapt resource value: 0x7f080051
+			public const int red = 2131230801;
+			
 			// aapt resource value: 0x7f080042
-			public const int purple = 2131230786;
-			
-			// aapt resource value: 0x7f080050
-			public const int red = 2131230800;
-			
-			// aapt resource value: 0x7f080041
-			public const int ripple = 2131230785;
+			public const int ripple = 2131230786;
 			
 			// aapt resource value: 0x7f080034
 			public const int ripple_material_dark = 2131230772;
@@ -1119,11 +2461,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f08003b
 			public const int switch_thumb_disabled_material_light = 2131230779;
 			
-			// aapt resource value: 0x7f08005e
-			public const int switch_thumb_material_dark = 2131230814;
-			
 			// aapt resource value: 0x7f08005f
-			public const int switch_thumb_material_light = 2131230815;
+			public const int switch_thumb_material_dark = 2131230815;
+			
+			// aapt resource value: 0x7f080060
+			public const int switch_thumb_material_light = 2131230816;
 			
 			// aapt resource value: 0x7f08003c
 			public const int switch_thumb_normal_material_dark = 2131230780;
@@ -1131,11 +2473,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f08003d
 			public const int switch_thumb_normal_material_light = 2131230781;
 			
-			// aapt resource value: 0x7f08004b
-			public const int transparent = 2131230795;
+			// aapt resource value: 0x7f08004c
+			public const int transparent = 2131230796;
 			
-			// aapt resource value: 0x7f08004a
-			public const int white = 2131230794;
+			// aapt resource value: 0x7f08004b
+			public const int white = 2131230795;
 			
 			static Color()
 			{
@@ -1763,11 +3105,14 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f02006a
 			public const int ishihara_38 = 2130837610;
 			
-			// aapt resource value: 0x7f02006c
-			public const int notification_template_icon_bg = 2130837612;
+			// aapt resource value: 0x7f02006d
+			public const int notification_template_icon_bg = 2130837613;
 			
 			// aapt resource value: 0x7f02006b
-			public const int ripple = 2130837611;
+			public const int psts_background_tab = 2130837611;
+			
+			// aapt resource value: 0x7f02006c
+			public const int ripple = 2130837612;
 			
 			static Drawable()
 			{
@@ -1782,35 +3127,35 @@ namespace TFG.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060071
-			public const int action0 = 2131099761;
+			// aapt resource value: 0x7f060075
+			public const int action0 = 2131099765;
 			
-			// aapt resource value: 0x7f060043
-			public const int action_bar = 2131099715;
+			// aapt resource value: 0x7f060045
+			public const int action_bar = 2131099717;
 			
 			// aapt resource value: 0x7f060001
 			public const int action_bar_activity_content = 2131099649;
 			
-			// aapt resource value: 0x7f060042
-			public const int action_bar_container = 2131099714;
+			// aapt resource value: 0x7f060044
+			public const int action_bar_container = 2131099716;
 			
-			// aapt resource value: 0x7f06003e
-			public const int action_bar_root = 2131099710;
+			// aapt resource value: 0x7f060040
+			public const int action_bar_root = 2131099712;
 			
 			// aapt resource value: 0x7f060002
 			public const int action_bar_spinner = 2131099650;
 			
-			// aapt resource value: 0x7f060024
-			public const int action_bar_subtitle = 2131099684;
+			// aapt resource value: 0x7f060026
+			public const int action_bar_subtitle = 2131099686;
 			
-			// aapt resource value: 0x7f060023
-			public const int action_bar_title = 2131099683;
+			// aapt resource value: 0x7f060025
+			public const int action_bar_title = 2131099685;
 			
-			// aapt resource value: 0x7f060044
-			public const int action_context_bar = 2131099716;
+			// aapt resource value: 0x7f060046
+			public const int action_context_bar = 2131099718;
 			
-			// aapt resource value: 0x7f060075
-			public const int action_divider = 2131099765;
+			// aapt resource value: 0x7f060079
+			public const int action_divider = 2131099769;
 			
 			// aapt resource value: 0x7f060003
 			public const int action_menu_divider = 2131099651;
@@ -1818,116 +3163,119 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060004
 			public const int action_menu_presenter = 2131099652;
 			
-			// aapt resource value: 0x7f060040
-			public const int action_mode_bar = 2131099712;
+			// aapt resource value: 0x7f060042
+			public const int action_mode_bar = 2131099714;
 			
-			// aapt resource value: 0x7f06003f
-			public const int action_mode_bar_stub = 2131099711;
+			// aapt resource value: 0x7f060041
+			public const int action_mode_bar_stub = 2131099713;
 			
-			// aapt resource value: 0x7f060025
-			public const int action_mode_close_button = 2131099685;
+			// aapt resource value: 0x7f060027
+			public const int action_mode_close_button = 2131099687;
 			
-			// aapt resource value: 0x7f060026
-			public const int activity_chooser_view_content = 2131099686;
+			// aapt resource value: 0x7f060028
+			public const int activity_chooser_view_content = 2131099688;
 			
-			// aapt resource value: 0x7f060032
-			public const int alertTitle = 2131099698;
+			// aapt resource value: 0x7f060034
+			public const int alertTitle = 2131099700;
 			
 			// aapt resource value: 0x7f06001d
 			public const int always = 2131099677;
 			
-			// aapt resource value: 0x7f06007f
-			public const int answer = 2131099775;
-			
-			// aapt resource value: 0x7f060054
-			public const int answer1 = 2131099732;
-			
-			// aapt resource value: 0x7f060055
-			public const int answer2 = 2131099733;
+			// aapt resource value: 0x7f060084
+			public const int answer = 2131099780;
 			
 			// aapt resource value: 0x7f060056
-			public const int answer3 = 2131099734;
+			public const int answer1 = 2131099734;
 			
 			// aapt resource value: 0x7f060057
-			public const int answer4 = 2131099735;
+			public const int answer2 = 2131099735;
+			
+			// aapt resource value: 0x7f060058
+			public const int answer3 = 2131099736;
+			
+			// aapt resource value: 0x7f060059
+			public const int answer4 = 2131099737;
 			
 			// aapt resource value: 0x7f06001a
 			public const int beginning = 2131099674;
 			
-			// aapt resource value: 0x7f06002d
-			public const int buttonPanel = 2131099693;
+			// aapt resource value: 0x7f060022
+			public const int bold = 2131099682;
 			
-			// aapt resource value: 0x7f060065
-			public const int calories = 2131099749;
+			// aapt resource value: 0x7f06002f
+			public const int buttonPanel = 2131099695;
 			
-			// aapt resource value: 0x7f060061
-			public const int calories_last_week = 2131099745;
+			// aapt resource value: 0x7f060067
+			public const int calories = 2131099751;
 			
-			// aapt resource value: 0x7f06005e
-			public const int calories_yesterday = 2131099742;
+			// aapt resource value: 0x7f060063
+			public const int calories_last_week = 2131099747;
 			
-			// aapt resource value: 0x7f060072
-			public const int cancel_action = 2131099762;
+			// aapt resource value: 0x7f060060
+			public const int calories_yesterday = 2131099744;
 			
-			// aapt resource value: 0x7f06003b
-			public const int checkbox = 2131099707;
+			// aapt resource value: 0x7f060076
+			public const int cancel_action = 2131099766;
 			
-			// aapt resource value: 0x7f060078
-			public const int chronometer = 2131099768;
+			// aapt resource value: 0x7f06003d
+			public const int checkbox = 2131099709;
+			
+			// aapt resource value: 0x7f06007c
+			public const int chronometer = 2131099772;
 			
 			// aapt resource value: 0x7f06001e
 			public const int collapseActionView = 2131099678;
 			
-			// aapt resource value: 0x7f060033
-			public const int contentPanel = 2131099699;
+			// aapt resource value: 0x7f060035
+			public const int contentPanel = 2131099701;
 			
-			// aapt resource value: 0x7f060080
-			public const int correct_answer = 2131099776;
+			// aapt resource value: 0x7f060085
+			public const int correct_answer = 2131099781;
 			
-			// aapt resource value: 0x7f060039
-			public const int custom = 2131099705;
+			// aapt resource value: 0x7f06003b
+			public const int custom = 2131099707;
 			
-			// aapt resource value: 0x7f060038
-			public const int customPanel = 2131099704;
+			// aapt resource value: 0x7f06003a
+			public const int customPanel = 2131099706;
 			
-			// aapt resource value: 0x7f060041
-			public const int decor_content_parent = 2131099713;
+			// aapt resource value: 0x7f060043
+			public const int decor_content_parent = 2131099715;
 			
-			// aapt resource value: 0x7f060029
-			public const int default_activity_button = 2131099689;
+			// aapt resource value: 0x7f06002b
+			public const int default_activity_button = 2131099691;
 			
 			// aapt resource value: 0x7f06000d
 			public const int disableHome = 2131099661;
 			
-			// aapt resource value: 0x7f060066
-			public const int distance = 2131099750;
+			// aapt resource value: 0x7f060068
+			public const int distance = 2131099752;
 			
-			// aapt resource value: 0x7f060062
-			public const int distance_last_week = 2131099746;
+			// aapt resource value: 0x7f060064
+			public const int distance_last_week = 2131099748;
 			
-			// aapt resource value: 0x7f06005f
-			public const int distance_yesterday = 2131099743;
+			// aapt resource value: 0x7f060061
+			public const int distance_yesterday = 2131099745;
 			
-			// aapt resource value: 0x7f060045
-			public const int edit_query = 2131099717;
+			// aapt resource value: 0x7f060047
+			public const int edit_query = 2131099719;
 			
 			// aapt resource value: 0x7f06001b
 			public const int end = 2131099675;
 			
-			// aapt resource value: 0x7f06007d
-			public const int end_padder = 2131099773;
+			// aapt resource value: 0x7f060081
+			public const int end_padder = 2131099777;
 			
-			// aapt resource value: 0x7f060027
-			public const int expand_activities_button = 2131099687;
+			// aapt resource value: 0x7f060029
+			public const int expand_activities_button = 2131099689;
 			
-			// aapt resource value: 0x7f06003a
-			public const int expanded_menu = 2131099706;
+			// aapt resource value: 0x7f06003c
+			public const int expanded_menu = 2131099708;
 			
-			// aapt resource value: 0x7f06006b
-			public const int fab = 2131099755;
+			// aapt resource value: 0x7f06006f
+			public const int fab = 2131099759;
 			
-			// aapt resource value: 0x7f06006c
-			public const int fragments_container = 2131099756;
+			// aapt resource value: 0x7f060070
+			public const int fragments_container = 2131099760;
 			
 			// aapt resource value: 0x7f060005
 			public const int home = 2131099653;
@@ -1935,62 +3283,65 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06000e
 			public const int homeAsUp = 2131099662;
 			
-			// aapt resource value: 0x7f06002b
-			public const int icon = 2131099691;
+			// aapt resource value: 0x7f06002d
+			public const int icon = 2131099693;
 			
 			// aapt resource value: 0x7f06001f
 			public const int ifRoom = 2131099679;
 			
-			// aapt resource value: 0x7f060028
-			public const int image = 2131099688;
+			// aapt resource value: 0x7f06002a
+			public const int image = 2131099690;
 			
-			// aapt resource value: 0x7f06007c
-			public const int info = 2131099772;
+			// aapt resource value: 0x7f060080
+			public const int info = 2131099776;
 			
-			// aapt resource value: 0x7f06005c
-			public const int info_text = 2131099740;
+			// aapt resource value: 0x7f06005e
+			public const int info_text = 2131099742;
+			
+			// aapt resource value: 0x7f060023
+			public const int italic = 2131099683;
 			
 			// aapt resource value: 0x7f060000
 			public const int item_touch_helper_previous_elevation = 2131099648;
 			
-			// aapt resource value: 0x7f060076
-			public const int line1 = 2131099766;
-			
 			// aapt resource value: 0x7f06007a
-			public const int line3 = 2131099770;
+			public const int line1 = 2131099770;
+			
+			// aapt resource value: 0x7f06007e
+			public const int line3 = 2131099774;
 			
 			// aapt resource value: 0x7f06000a
 			public const int listMode = 2131099658;
 			
-			// aapt resource value: 0x7f060070
-			public const int listView = 2131099760;
-			
-			// aapt resource value: 0x7f06002a
-			public const int list_item = 2131099690;
-			
 			// aapt resource value: 0x7f060074
-			public const int media_actions = 2131099764;
+			public const int listView = 2131099764;
+			
+			// aapt resource value: 0x7f06002c
+			public const int list_item = 2131099692;
+			
+			// aapt resource value: 0x7f060078
+			public const int media_actions = 2131099768;
 			
 			// aapt resource value: 0x7f06001c
 			public const int middle = 2131099676;
 			
-			// aapt resource value: 0x7f060022
-			public const int mini = 2131099682;
+			// aapt resource value: 0x7f060024
+			public const int mini = 2131099684;
 			
-			// aapt resource value: 0x7f06006f
-			public const int module_addbutton = 2131099759;
+			// aapt resource value: 0x7f060073
+			public const int module_addbutton = 2131099763;
 			
-			// aapt resource value: 0x7f06006e
-			public const int module_description = 2131099758;
+			// aapt resource value: 0x7f060072
+			public const int module_description = 2131099762;
 			
-			// aapt resource value: 0x7f06006d
-			public const int module_icon = 2131099757;
+			// aapt resource value: 0x7f060071
+			public const int module_icon = 2131099761;
 			
-			// aapt resource value: 0x7f060067
-			public const int module_image = 2131099751;
+			// aapt resource value: 0x7f06006b
+			public const int module_image = 2131099755;
 			
-			// aapt resource value: 0x7f060068
-			public const int module_name = 2131099752;
+			// aapt resource value: 0x7f06006c
+			public const int module_name = 2131099756;
 			
 			// aapt resource value: 0x7f060015
 			public const int multiply = 2131099669;
@@ -2004,8 +3355,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06000b
 			public const int normal = 2131099659;
 			
-			// aapt resource value: 0x7f06002f
-			public const int parentPanel = 2131099695;
+			// aapt resource value: 0x7f06006a
+			public const int pager = 2131099754;
+			
+			// aapt resource value: 0x7f060031
+			public const int parentPanel = 2131099697;
 			
 			// aapt resource value: 0x7f060006
 			public const int progress_circular = 2131099654;
@@ -2013,71 +3367,74 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060007
 			public const int progress_horizontal = 2131099655;
 			
-			// aapt resource value: 0x7f060053
-			public const int question = 2131099731;
+			// aapt resource value: 0x7f060082
+			public const int psts_tab_title = 2131099778;
 			
-			// aapt resource value: 0x7f06007e
-			public const int question_number = 2131099774;
+			// aapt resource value: 0x7f060055
+			public const int question = 2131099733;
 			
-			// aapt resource value: 0x7f060052
-			public const int questions_layout = 2131099730;
+			// aapt resource value: 0x7f060083
+			public const int question_number = 2131099779;
 			
-			// aapt resource value: 0x7f06003d
-			public const int radio = 2131099709;
+			// aapt resource value: 0x7f060054
+			public const int questions_layout = 2131099732;
 			
-			// aapt resource value: 0x7f06006a
-			public const int recycler_view = 2131099754;
+			// aapt resource value: 0x7f06003f
+			public const int radio = 2131099711;
 			
-			// aapt resource value: 0x7f060058
-			public const int results_layout = 2131099736;
+			// aapt resource value: 0x7f06006e
+			public const int recycler_view = 2131099758;
+			
+			// aapt resource value: 0x7f06005a
+			public const int results_layout = 2131099738;
 			
 			// aapt resource value: 0x7f060016
 			public const int screen = 2131099670;
 			
+			// aapt resource value: 0x7f060039
+			public const int scrollIndicatorDown = 2131099705;
+			
+			// aapt resource value: 0x7f060036
+			public const int scrollIndicatorUp = 2131099702;
+			
 			// aapt resource value: 0x7f060037
-			public const int scrollIndicatorDown = 2131099703;
-			
-			// aapt resource value: 0x7f060034
-			public const int scrollIndicatorUp = 2131099700;
-			
-			// aapt resource value: 0x7f060035
-			public const int scrollView = 2131099701;
-			
-			// aapt resource value: 0x7f060047
-			public const int search_badge = 2131099719;
-			
-			// aapt resource value: 0x7f060046
-			public const int search_bar = 2131099718;
-			
-			// aapt resource value: 0x7f060048
-			public const int search_button = 2131099720;
-			
-			// aapt resource value: 0x7f06004d
-			public const int search_close_btn = 2131099725;
+			public const int scrollView = 2131099703;
 			
 			// aapt resource value: 0x7f060049
-			public const int search_edit_frame = 2131099721;
+			public const int search_badge = 2131099721;
 			
-			// aapt resource value: 0x7f06004f
-			public const int search_go_btn = 2131099727;
+			// aapt resource value: 0x7f060048
+			public const int search_bar = 2131099720;
 			
 			// aapt resource value: 0x7f06004a
-			public const int search_mag_icon = 2131099722;
+			public const int search_button = 2131099722;
+			
+			// aapt resource value: 0x7f06004f
+			public const int search_close_btn = 2131099727;
 			
 			// aapt resource value: 0x7f06004b
-			public const int search_plate = 2131099723;
-			
-			// aapt resource value: 0x7f06004c
-			public const int search_src_text = 2131099724;
-			
-			// aapt resource value: 0x7f060050
-			public const int search_voice_btn = 2131099728;
+			public const int search_edit_frame = 2131099723;
 			
 			// aapt resource value: 0x7f060051
-			public const int select_dialog_listview = 2131099729;
+			public const int search_go_btn = 2131099729;
 			
-			// aapt resource value: 0x7f06003c
-			public const int shortcut = 2131099708;
+			// aapt resource value: 0x7f06004c
+			public const int search_mag_icon = 2131099724;
+			
+			// aapt resource value: 0x7f06004d
+			public const int search_plate = 2131099725;
+			
+			// aapt resource value: 0x7f06004e
+			public const int search_src_text = 2131099726;
+			
+			// aapt resource value: 0x7f060052
+			public const int search_voice_btn = 2131099730;
+			
+			// aapt resource value: 0x7f060053
+			public const int select_dialog_listview = 2131099731;
+			
+			// aapt resource value: 0x7f06003e
+			public const int shortcut = 2131099710;
 			
 			// aapt resource value: 0x7f060010
 			public const int showCustom = 2131099664;
@@ -2088,8 +3445,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060012
 			public const int showTitle = 2131099666;
 			
-			// aapt resource value: 0x7f06002e
-			public const int spacer = 2131099694;
+			// aapt resource value: 0x7f060030
+			public const int spacer = 2131099696;
 			
 			// aapt resource value: 0x7f060008
 			public const int split_action_bar = 2131099656;
@@ -2103,59 +3460,62 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060019
 			public const int src_over = 2131099673;
 			
-			// aapt resource value: 0x7f060073
-			public const int status_bar_latest_event_content = 2131099763;
+			// aapt resource value: 0x7f060077
+			public const int status_bar_latest_event_content = 2131099767;
 			
-			// aapt resource value: 0x7f060064
-			public const int steps = 2131099748;
+			// aapt resource value: 0x7f060066
+			public const int steps = 2131099750;
 			
-			// aapt resource value: 0x7f060060
-			public const int steps_last_week = 2131099744;
+			// aapt resource value: 0x7f060062
+			public const int steps_last_week = 2131099746;
 			
-			// aapt resource value: 0x7f060063
-			public const int steps_layout = 2131099747;
+			// aapt resource value: 0x7f060065
+			public const int steps_layout = 2131099749;
 			
-			// aapt resource value: 0x7f06005d
-			public const int steps_yesterday = 2131099741;
+			// aapt resource value: 0x7f06005f
+			public const int steps_yesterday = 2131099743;
 			
-			// aapt resource value: 0x7f06004e
-			public const int submit_area = 2131099726;
+			// aapt resource value: 0x7f060050
+			public const int submit_area = 2131099728;
 			
 			// aapt resource value: 0x7f06000c
 			public const int tabMode = 2131099660;
 			
-			// aapt resource value: 0x7f060059
-			public const int table_header = 2131099737;
-			
-			// aapt resource value: 0x7f06005a
-			public const int table_results = 2131099738;
-			
 			// aapt resource value: 0x7f06005b
-			public const int test_image = 2131099739;
+			public const int table_header = 2131099739;
 			
-			// aapt resource value: 0x7f06007b
-			public const int text = 2131099771;
-			
-			// aapt resource value: 0x7f060079
-			public const int text2 = 2131099769;
-			
-			// aapt resource value: 0x7f060036
-			public const int textSpacerNoButtons = 2131099702;
-			
-			// aapt resource value: 0x7f060077
-			public const int time = 2131099767;
-			
-			// aapt resource value: 0x7f06002c
-			public const int title = 2131099692;
-			
-			// aapt resource value: 0x7f060031
-			public const int title_template = 2131099697;
+			// aapt resource value: 0x7f06005c
+			public const int table_results = 2131099740;
 			
 			// aapt resource value: 0x7f060069
-			public const int toolbar = 2131099753;
+			public const int tabs = 2131099753;
 			
-			// aapt resource value: 0x7f060030
-			public const int topPanel = 2131099696;
+			// aapt resource value: 0x7f06005d
+			public const int test_image = 2131099741;
+			
+			// aapt resource value: 0x7f06007f
+			public const int text = 2131099775;
+			
+			// aapt resource value: 0x7f06007d
+			public const int text2 = 2131099773;
+			
+			// aapt resource value: 0x7f060038
+			public const int textSpacerNoButtons = 2131099704;
+			
+			// aapt resource value: 0x7f06007b
+			public const int time = 2131099771;
+			
+			// aapt resource value: 0x7f06002e
+			public const int title = 2131099694;
+			
+			// aapt resource value: 0x7f060033
+			public const int title_template = 2131099699;
+			
+			// aapt resource value: 0x7f06006d
+			public const int toolbar = 2131099757;
+			
+			// aapt resource value: 0x7f060032
+			public const int topPanel = 2131099698;
 			
 			// aapt resource value: 0x7f060009
 			public const int up = 2131099657;
@@ -2292,67 +3652,73 @@ namespace TFG.Droid
 			public const int fragment_cbt_header = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int fragment_stepcounter_body = 2130903067;
+			public const int fragment_stepcounter_body_quick_results = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
 			public const int fragment_stepcounter_header = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public const int health_card = 2130903069;
+			public const int fragment_tabs = 2130903069;
 			
 			// aapt resource value: 0x7f03001e
-			public const int Main = 2130903070;
+			public const int health_card = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public const int module_detail = 2130903071;
+			public const int Main = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public const int module_viewcell = 2130903072;
+			public const int module_detail = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public const int modules_list = 2130903073;
+			public const int module_viewcell = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public const int notification_media_action = 2130903074;
+			public const int modules_list = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public const int notification_media_cancel_action = 2130903075;
+			public const int notification_media_action = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public const int notification_template_big_media = 2130903076;
+			public const int notification_media_cancel_action = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public const int notification_template_big_media_narrow = 2130903077;
+			public const int notification_template_big_media = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int notification_template_lines = 2130903078;
+			public const int notification_template_big_media_narrow = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int notification_template_media = 2130903079;
+			public const int notification_template_lines = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int notification_template_part_chronometer = 2130903080;
+			public const int notification_template_media = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int notification_template_part_time = 2130903081;
+			public const int notification_template_part_chronometer = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int result_row = 2130903082;
+			public const int notification_template_part_time = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int select_dialog_item_material = 2130903083;
+			public const int psts_tab = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int select_dialog_multichoice_material = 2130903084;
+			public const int result_row = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public const int select_dialog_singlechoice_material = 2130903085;
+			public const int select_dialog_item_material = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public const int support_simple_spinner_dropdown_item = 2130903086;
+			public const int select_dialog_multichoice_material = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public const int toolbar = 2130903087;
+			public const int select_dialog_singlechoice_material = 2130903087;
+			
+			// aapt resource value: 0x7f030030
+			public const int support_simple_spinner_dropdown_item = 2130903088;
+			
+			// aapt resource value: 0x7f030031
+			public const int toolbar = 2130903089;
 			
 			static Layout()
 			{
@@ -4238,12 +5604,12 @@ namespace TFG.Droid
 			public const int DrawerArrowToggle_thickness = 7;
 			
 			public static int[] FloatingActionButton = new int[] {
-					2130772192,
-					2130772193,
-					2130772194,
-					2130772195,
-					2130772196,
-					2130772197};
+					2130772209,
+					2130772210,
+					2130772211,
+					2130772212,
+					2130772213,
+					2130772214};
 			
 			// aapt resource value: 2
 			public const int FloatingActionButton_fab_colorDisabled = 2;
@@ -4458,6 +5824,76 @@ namespace TFG.Droid
 			
 			// aapt resource value: 7
 			public const int MenuView_preserveIconSpacing = 7;
+			
+			public static int[] PagerSlidingTabStrip = new int[] {
+					2130772192,
+					2130772193,
+					2130772194,
+					2130772195,
+					2130772196,
+					2130772197,
+					2130772198,
+					2130772199,
+					2130772200,
+					2130772201,
+					2130772202,
+					2130772203,
+					2130772204,
+					2130772205,
+					2130772206,
+					2130772207,
+					2130772208};
+			
+			// aapt resource value: 2
+			public const int PagerSlidingTabStrip_pstsDividerColor = 2;
+			
+			// aapt resource value: 6
+			public const int PagerSlidingTabStrip_pstsDividerPadding = 6;
+			
+			// aapt resource value: 3
+			public const int PagerSlidingTabStrip_pstsDividerWidth = 3;
+			
+			// aapt resource value: 0
+			public const int PagerSlidingTabStrip_pstsIndicatorColor = 0;
+			
+			// aapt resource value: 4
+			public const int PagerSlidingTabStrip_pstsIndicatorHeight = 4;
+			
+			// aapt resource value: 12
+			public const int PagerSlidingTabStrip_pstsPaddingMiddle = 12;
+			
+			// aapt resource value: 8
+			public const int PagerSlidingTabStrip_pstsScrollOffset = 8;
+			
+			// aapt resource value: 10
+			public const int PagerSlidingTabStrip_pstsShouldExpand = 10;
+			
+			// aapt resource value: 9
+			public const int PagerSlidingTabStrip_pstsTabBackground = 9;
+			
+			// aapt resource value: 7
+			public const int PagerSlidingTabStrip_pstsTabPaddingLeftRight = 7;
+			
+			// aapt resource value: 11
+			public const int PagerSlidingTabStrip_pstsTextAllCaps = 11;
+			
+			// aapt resource value: 14
+			public const int PagerSlidingTabStrip_pstsTextAlpha = 14;
+			
+			// aapt resource value: 13
+			public const int PagerSlidingTabStrip_pstsTextColorSelected = 13;
+			
+			// aapt resource value: 16
+			public const int PagerSlidingTabStrip_pstsTextSelectedStyle = 16;
+			
+			// aapt resource value: 15
+			public const int PagerSlidingTabStrip_pstsTextStyle = 15;
+			
+			// aapt resource value: 1
+			public const int PagerSlidingTabStrip_pstsUnderlineColor = 1;
+			
+			// aapt resource value: 5
+			public const int PagerSlidingTabStrip_pstsUnderlineHeight = 5;
 			
 			public static int[] PopupWindow = new int[] {
 					16843126,

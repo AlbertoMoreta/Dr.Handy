@@ -7,72 +7,36 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V4.View;
+using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using com.refractored;
+using TFG.Droid.Adapters;
 using TFG.Droid.Custom_Views;
 using TFG.Droid.Interfaces;
 
 namespace TFG.Droid.Fragments.StepCounter {
     class StepCounterBodyFragment: Fragment, IHealthFragment {
 
-        private CustomTextView _stepsYesterday;
-        private CustomTextView _caloriesYesterday;
-        private CustomTextView _distanceYesterday;
-
-        private CustomTextView _stepsLastWeek;
-        private CustomTextView _caloriesLastWeek;
-        private CustomTextView _distanceLastWeek;
-
-
+        
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            var view = inflater.Inflate(Resource.Layout.fragment_stepcounter_body, container, false);
+            var view = inflater.Inflate(Resource.Layout.fragment_tabs, container, false);
 
-            _stepsYesterday = view.FindViewById<CustomTextView>(Resource.Id.steps_yesterday);
-            _caloriesYesterday = view.FindViewById<CustomTextView>(Resource.Id.calories_yesterday);
-            _distanceYesterday = view.FindViewById<CustomTextView>(Resource.Id.distance_yesterday);
+            var pager = view.FindViewById<ViewPager>(Resource.Id.pager); 
+            var adapter = new HealthModulePagerAdapter(((AppCompatActivity) Activity).SupportFragmentManager);
+            adapter.AddItem(new StepCounterQuickResultsFragment());
+            pager.Adapter = adapter;
 
-            _stepsLastWeek = view.FindViewById<CustomTextView>(Resource.Id.steps_last_week);
-            _caloriesLastWeek = view.FindViewById<CustomTextView>(Resource.Id.calories_last_week);
-            _distanceLastWeek = view.FindViewById<CustomTextView>(Resource.Id.distance_last_week);
+            var tabs = view.FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
+            tabs.SetViewPager(pager); 
 
-            UpdateYesterdayInfo();
-            UpdateLastWeekInfo();
+           
+
             return view;
         }
 
 
-        private void UpdateYesterdayInfo() {
-            var yesterday =
-                DBHelper.Instance.GetStepCounterItemFromDate(DateTime.Now.AddDays(-1));
-
-            if (yesterday.Count > 0) {
-                var item = yesterday.ElementAt(0);
-                _stepsYesterday.Text = item.Steps.ToString();
-                _caloriesYesterday.Text = item.Calories.ToString();
-                _distanceYesterday.Text = item.Distance.ToString();
-            } else {
-                _stepsYesterday.Text = "-";
-                _caloriesYesterday.Text = "-";
-                _distanceYesterday.Text = "-";
-            }
-
-
-        }
-
-        private void UpdateLastWeekInfo()  {
-            var lastWeek =
-                DBHelper.Instance.GetStepCounterItemFromDate(DateTime.Now.AddDays(-7));
-
-            if (lastWeek.Count > 0) {
-                var item = lastWeek.ElementAt(0);
-                _stepsLastWeek.Text = item.Steps.ToString();
-                _caloriesLastWeek.Text = item.Calories.ToString();
-                _distanceLastWeek.Text = item.Distance.ToString();
-            } else {
-                _stepsLastWeek.Text = "-";
-                _caloriesLastWeek.Text = "-";
-                _distanceLastWeek.Text = "-";
-            }
-        }
+        
     }
 }
