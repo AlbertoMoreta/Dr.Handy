@@ -107,7 +107,9 @@ namespace TFG.Droid.Services {
 
             DBHelper.Instance.UpdateSteps(DateTime.Now, Steps, Calories, Distance);
 
-            _listener.StepDetected();
+            if (_listener != null) {
+                _listener.StepDetected();
+            }
         }
 
         public override void OnDestroy() {
