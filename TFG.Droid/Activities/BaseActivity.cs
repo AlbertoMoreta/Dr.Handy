@@ -17,6 +17,7 @@ namespace TFG.Droid {
     [Activity(Label = "BaseActivity", Theme ="@style/AppTheme")]
     public class BaseActivity : AppCompatActivity{
 
+        public Toolbar ToolBar { get; set; }
         public CustomTextView ToolbarTitle { get; set; }
 
         protected override void OnCreate(Bundle savedInstanceState) {
@@ -24,10 +25,9 @@ namespace TFG.Droid {
         }
 
 
-        protected void SetUpToolBar() {
-            Toolbar toolBar = FindViewById<Toolbar>(Resource.Id.toolbar);
+        protected void SetUpToolBar() { 
+            var toolBar = ToolBar = FindViewById<Toolbar>(Resource.Id.toolbar);
             
-
             if (toolBar != null) {  
                 SetSupportActionBar(toolBar);
                 SupportActionBar.SetDisplayShowTitleEnabled(false);

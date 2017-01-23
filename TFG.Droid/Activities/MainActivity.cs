@@ -10,25 +10,34 @@ using TFG.Droid.Custom_Views;
 using TFG.Droid.Adapters;
 using System.Collections.Generic;
 using Android.Content.PM;
+using Android.Support.Design.Widget;
+using Android.Support.V4.Content;
 using Android.Support.V7.Widget;
 using TFG.Droid.Callbacks;
 using Android.Support.V7.Widget.Helper;
-using com.refractored.fab;
+using Android.Util;
 using TFG.Droid.Activities;
 using TFG.Droid.Listeners;
 using TFG.Model;
+using FloatingActionButton = com.refractored.fab.FloatingActionButton;
 
 namespace TFG.Droid{
 	[Activity (Label = "MainActivity", MainLauncher = true, Icon = "@drawable/icon", Theme="@style/AppTheme", LaunchMode = LaunchMode.SingleTask)]
 	public class MainActivity : BaseActivity, HealthCardClickListener {
 
         private HealthCardAdapter _adapter;
+	    private RecyclerView _recyclerView;
 
 		protected override void OnCreate (Bundle bundle){
-			base.OnCreate (bundle);           
-			SetContentView (Resource.Layout.Main);
+			base.OnCreate (bundle);
 
-            SetUpToolBar();
+
+            var theme = Resources.GetIdentifier("AppTheme_purple", "style", PackageName);
+            if (theme != -1) { SetTheme(theme); }
+
+            SetContentView (Resource.Layout.Main);
+
+            SetUpToolBar();  
 
 
             //DBHelper.Instance.DropTable(DBHelper.TABLE_NAME);
@@ -36,21 +45,21 @@ namespace TFG.Droid{
 
             List<HealthCard> cards = GetCardList();
 
-            RecyclerView recyclerView = FindViewById<RecyclerView>(Resource.Id.recycler_view);
+            _recyclerView = FindViewById<RecyclerView>(Resource.Id.recycler_view);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
             linearLayoutManager.Orientation = (int) Orientation.Vertical;
-            recyclerView.SetLayoutManager(linearLayoutManager);
+            _recyclerView.SetLayoutManager(linearLayoutManager);
 
             _adapter = new HealthCardAdapter(cards);
             _adapter.SetHealthCardClickListener(this);
-            recyclerView.SetAdapter(_adapter);
+            _recyclerView.SetAdapter(_adapter);
 
             ItemTouchHelper.Callback callback = new HealthCardCallback(_adapter);
             ItemTouchHelper helper = new ItemTouchHelper(callback);
-            helper.AttachToRecyclerView(recyclerView);
+            helper.AttachToRecyclerView(_recyclerView);
 
             var fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.AttachToRecyclerView(recyclerView);
+            fab.AttachToRecyclerView(_recyclerView);
 
             fab.Click += delegate { StartActivity(typeof(ModuleListActivity)); };
 
@@ -60,6 +69,9 @@ namespace TFG.Droid{
             base.OnStart();
             _adapter.SetCards(GetCardList());
             _adapter.NotifyDataSetChanged();
+
+            
+            SetScrollIfNeeded();
         }
 
         private List<HealthCard> GetCardList() {
@@ -69,7 +81,9 @@ namespace TFG.Droid{
             foreach(HealthModule module in modules) { 
                 cards.Add(new HealthCard(this, module) { Name = module.Name });
             }
-
+            cards.Add(new HealthCard(this, new HealthModule()) { Name = "asd" });
+            cards.Add(new HealthCard(this, new HealthModule()) { Name = "asd" });
+            cards.Add(new HealthCard(this, new HealthModule()) { Name = "asd"});
             return cards;
         }
 
@@ -79,6 +93,19 @@ namespace TFG.Droid{
 	        intent.PutExtra("description", healthModule.Description);
 	        StartActivity(intent);
 	    }
+
+        private void SetScrollIfNeeded() {
+            var viewItemHeight = Resources.GetDimensionPixelSize(Resource.Dimension.card_height);
+            var totalCount = _recyclerView.GetAdapter().ItemCount;  
+
+            var displayMetrics = new DisplayMetrics();
+            WindowManager.DefaultDisplay.GetMetrics(displayMetrics);
+            var height = displayMetrics.HeightPixels;
+            var width = displayMetrics.WidthPixels;
+
+            var listHeight = viewItemHeight * totalCount;
+            _recyclerView.NestedScrollingEnabled = listHeight > height; 
+        }  
 	}
 }
 

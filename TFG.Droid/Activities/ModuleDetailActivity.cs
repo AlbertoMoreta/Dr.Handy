@@ -33,8 +33,7 @@ namespace TFG.Droid.Activities {
             var moduleName = Intent.GetStringExtra("name");
             ToolbarTitle.Text = moduleName;
 
-            var moduleColorSufix = HealthModulesInfo.GetHealthModuleColorFromHealthModuleName(moduleName);
-            if (moduleColorSufix == null) { moduleColorSufix = "purple"; }
+            var moduleColorSufix = HealthModulesInfo.GetHealthModuleColorFromHealthModuleName(moduleName) ?? "purple";
 
             Window.DecorView.Background = ContextCompat.GetDrawable(this, 
                                                 Resources.GetIdentifier("background_" + moduleColorSufix, 
