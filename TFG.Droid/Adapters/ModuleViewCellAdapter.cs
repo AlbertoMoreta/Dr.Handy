@@ -5,8 +5,10 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V4.Content;
 using Android.Views;
 using Android.Widget;
 using TFG.Droid.Custom_Views;
@@ -69,7 +71,13 @@ namespace TFG.Droid.Adapters {
                 viewHolder = convertView.Tag as ViewHolder;
             }
 
+            var drawable = (LayerDrawable) ContextCompat.GetDrawable(_context, Resource.Drawable.module_icon).Mutate();
+            var moduleColorName = module.HealthModuleColor();
+            var background = (GradientDrawable) drawable.FindDrawableByLayerId(Resource.Id.background).Mutate();
+            background.SetColor(ContextCompat.GetColor(_context, _context.Resources.GetIdentifier(moduleColorName, "color", _context.PackageName)));
+            //drawable.SetDrawableByLayerId(Resource.Id.icon, );
 
+            viewHolder.ViewCell.IconDrawable = drawable;
             viewHolder.ViewCell.Name = module.HealthModuleName();
             viewHolder.ViewCell.Description = module.HealthModuleDescription();
             viewHolder.ViewCell.AddButtonImage = DBHelper.Instance.CheckIfExists(module) &&

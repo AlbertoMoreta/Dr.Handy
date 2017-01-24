@@ -35,6 +35,16 @@ namespace TFG.Model {
             }
         }
 
+        public static string HealthModuleColor(this HealthModuleType module) {
+            switch (module) {
+                case HealthModuleType.ColorBlindnessTest: return "purple";
+                case HealthModuleType.StepCounter: return "orange";
+                case HealthModuleType.Module3: return "purple";
+                default: return "purple";
+            }
+
+        }
+
         public static string GetHealthModuleColorFromHealthModuleName(string moduleName){
             if (HealthModuleType.ColorBlindnessTest.HealthModuleName().Equals(moduleName)) { return "purple"; }
             if (HealthModuleType.StepCounter.HealthModuleName().Equals(moduleName)) { return "orange"; }

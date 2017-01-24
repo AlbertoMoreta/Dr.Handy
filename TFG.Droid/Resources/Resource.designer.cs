@@ -3077,6 +3077,9 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f05006e
 			public const int fab_size_normal = 2131034222;
 			
+			// aapt resource value: 0x7f050080
+			public const int health_module_icon_size = 2131034240;
+			
 			// aapt resource value: 0x7f05004b
 			public const int highlight_alpha_material_colored = 2131034187;
 			
@@ -3131,8 +3134,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f05007a
 			public const int toolbar_header_height = 2131034234;
 			
-			// aapt resource value: 0x7f050080
-			public const int toolbar_top_padding = 2131034240;
+			// aapt resource value: 0x7f050081
+			public const int toolbar_top_padding = 2131034241;
 			
 			static Dimension()
 			{
@@ -3474,14 +3477,17 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f02006c
 			public const int ishihara_38 = 2130837612;
 			
-			// aapt resource value: 0x7f02006f
-			public const int notification_template_icon_bg = 2130837615;
-			
 			// aapt resource value: 0x7f02006d
-			public const int psts_background_tab = 2130837613;
+			public const int module_icon = 2130837613;
+			
+			// aapt resource value: 0x7f020070
+			public const int notification_template_icon_bg = 2130837616;
 			
 			// aapt resource value: 0x7f02006e
-			public const int ripple = 2130837614;
+			public const int psts_background_tab = 2130837614;
+			
+			// aapt resource value: 0x7f02006f
+			public const int ripple = 2130837615;
 			
 			static Drawable()
 			{
@@ -3564,6 +3570,9 @@ namespace TFG.Droid
 			
 			// aapt resource value: 0x7f060079
 			public const int answer4 = 2131099769;
+			
+			// aapt resource value: 0x7f0600a7
+			public const int background = 2131099815;
 			
 			// aapt resource value: 0x7f06001b
 			public const int beginning = 2131099675;

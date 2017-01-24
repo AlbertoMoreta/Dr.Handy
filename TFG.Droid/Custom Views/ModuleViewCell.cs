@@ -30,6 +30,12 @@ namespace TFG.Droid.Custom_Views {
             get { return _moduleDescription.Text; }
         }
 
+        public Drawable IconDrawable {
+            set { _moduleIcon.SetImageDrawable(value); }
+            get { return _moduleIcon.Drawable; }
+
+        }
+
         public ImageView AddButton{
             get { return _addButton; }
         }
