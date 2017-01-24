@@ -94,17 +94,13 @@ namespace TFG.Droid{
 	        StartActivity(intent);
 	    }
 
+        //Allow Toolbar animation if there are views off the screen
         private void SetScrollIfNeeded() {
-            var viewItemHeight = Resources.GetDimensionPixelSize(Resource.Dimension.card_height);
-            var totalCount = _recyclerView.GetAdapter().ItemCount;  
+            var layoutManager = (LinearLayoutManager) _recyclerView.GetLayoutManager();
+            var adapter = _recyclerView.GetAdapter(); 
 
-            var displayMetrics = new DisplayMetrics();
-            WindowManager.DefaultDisplay.GetMetrics(displayMetrics);
-            var height = displayMetrics.HeightPixels;
-            var width = displayMetrics.WidthPixels;
-
-            var listHeight = viewItemHeight * totalCount;
-            _recyclerView.NestedScrollingEnabled = listHeight > height; 
+            _recyclerView.NestedScrollingEnabled = layoutManager != null && adapter != null
+                && layoutManager.FindLastCompletelyVisibleItemPosition() < (adapter.ItemCount - 1); 
         }  
 	}
 }
