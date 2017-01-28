@@ -6,17 +6,20 @@
     android:layout_height="@dimen/actionbar_height"
     android:paddingTop="@dimen/toolbar_top_padding"
     android:minHeight="@dimen/actionbar_height"
-    android:elevation="4dp"
+    android:elevation="4dp" 
     android:gravity="center" 
+    app:contentInsetLeft="0dp"
+    app:contentInsetStart="0dp"
     app:layout_collapseMode="pin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
 
     <TFG.Droid.Custom_Views.CustomTextView
         android:id="@+id/title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" 
-        android:layout_gravity="center" 
+        android:layout_gravity="center_vertical" 
+        android:gravity="center"
         android:textSize="@dimen/text_size_toolbar"
         android:textColor="@color/white"/>
 </android.support.v7.widget.Toolbar>
