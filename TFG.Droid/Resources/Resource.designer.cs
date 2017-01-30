@@ -4318,8 +4318,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f090012
 			public const int abc_toolbar_collapse_description = 2131296274;
 			
-			// aapt resource value: 0x7f09001a
-			public const int answer = 2131296282;
+			// aapt resource value: 0x7f090018
+			public const int add = 2131296280;
+			
+			// aapt resource value: 0x7f09001c
+			public const int answer = 2131296284;
 			
 			// aapt resource value: 0x7f090017
 			public const int app_name = 2131296279;
@@ -4330,47 +4333,50 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f090015
 			public const int bottom_sheet_behavior = 2131296277;
 			
-			// aapt resource value: 0x7f090021
-			public const int calories = 2131296289;
+			// aapt resource value: 0x7f090023
+			public const int calories = 2131296291;
 			
 			// aapt resource value: 0x7f090016
 			public const int character_counter_pattern = 2131296278;
 			
-			// aapt resource value: 0x7f090018
-			public const int color_blindness_test_name = 2131296280;
-			
-			// aapt resource value: 0x7f09001b
-			public const int correct_answer = 2131296283;
-			
-			// aapt resource value: 0x7f090022
-			public const int kilometers = 2131296290;
-			
-			// aapt resource value: 0x7f09001c
-			public const int no_daltonism = 2131296284;
-			
-			// aapt resource value: 0x7f090019
-			public const int question_number = 2131296281;
+			// aapt resource value: 0x7f09001a
+			public const int color_blindness_test_name = 2131296282;
 			
 			// aapt resource value: 0x7f09001d
-			public const int red_and_green_daltonism = 2131296285;
+			public const int correct_answer = 2131296285;
 			
 			// aapt resource value: 0x7f090024
-			public const int same_day_last_week = 2131296292;
+			public const int kilometers = 2131296292;
+			
+			// aapt resource value: 0x7f09001e
+			public const int no_daltonism = 2131296286;
+			
+			// aapt resource value: 0x7f09001b
+			public const int question_number = 2131296283;
+			
+			// aapt resource value: 0x7f09001f
+			public const int red_and_green_daltonism = 2131296287;
+			
+			// aapt resource value: 0x7f090019
+			public const int remove = 2131296281;
+			
+			// aapt resource value: 0x7f090026
+			public const int same_day_last_week = 2131296294;
 			
 			// aapt resource value: 0x7f090013
 			public const int status_bar_notification_info_overflow = 2131296275;
 			
-			// aapt resource value: 0x7f09001f
-			public const int step_counter_name = 2131296287;
+			// aapt resource value: 0x7f090021
+			public const int step_counter_name = 2131296289;
+			
+			// aapt resource value: 0x7f090022
+			public const int steps = 2131296290;
 			
 			// aapt resource value: 0x7f090020
-			public const int steps = 2131296288;
+			public const int total_daltonism = 2131296288;
 			
-			// aapt resource value: 0x7f09001e
-			public const int total_daltonism = 2131296286;
-			
-			// aapt resource value: 0x7f090023
-			public const int yesterday = 2131296291;
+			// aapt resource value: 0x7f090025
+			public const int yesterday = 2131296293;
 			
 			static String()
 			{

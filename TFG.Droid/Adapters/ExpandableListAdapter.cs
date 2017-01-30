@@ -85,9 +85,9 @@ namespace TFG.Droid.Adapters {
             viewHolder.ViewCell.IconDrawable = drawable;*/
             viewHolder.ViewCell.Name = module.HealthModuleName();
             viewHolder.ViewCell.Description = module.HealthModuleDescription();
-            viewHolder.ViewCell.AddButtonImage = DBHelper.Instance.CheckIfExists(module) &&
-                                                 DBHelper.Instance.CheckIfVisible(module) ? ContextCompat.GetDrawable(_context, Resource.Drawable.ic_remove)
-                                                                                          : ContextCompat.GetDrawable(_context, Resource.Drawable.ic_add);
+            viewHolder.ViewCell.AddButton.Text = DBHelper.Instance.CheckIfExists(module) &&
+                                                 DBHelper.Instance.CheckIfVisible(module) ? _context.GetString(Resource.String.remove)
+                                                                                          : _context.GetString(Resource.String.add);
 
 
             return convertView;

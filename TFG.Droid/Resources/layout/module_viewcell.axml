@@ -24,25 +24,28 @@
           android:scaleType="centerCrop"
           android:background="@drawable/icon"/>
   
-        <TextView
+        <TFG.Droid.Custom_Views.CustomTextView
           android:id="@+id/module_name"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content" 
-          android:layout_toRightOf="@+id/module_icon"/>
+          android:layout_toRightOf="@+id/module_icon"
+          android:gravity="left"/>
 
-        <TextView
+        <TFG.Droid.Custom_Views.CustomTextView
           android:id="@+id/module_description"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_toRightOf="@+id/module_icon"
           android:layout_below="@+id/module_name"/> 
 
-      <ImageView
+        <Button
           android:id="@+id/module_addbutton"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content" 
-          android:layout_alignParentRight="true"
-          android:scaleType="centerCrop" />
+          android:layout_alignParentRight="true" 
+          android:layout_alignParentBottom="true" 
+          android:visibility="gone"
+          android:focusable="false"/>
   
 
   

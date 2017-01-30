@@ -35,34 +35,42 @@ namespace TFG.Droid.Utils {
             anim.AnimationEnd += delegate { v.Visibility = ViewStates.Gone; };
 
 
-        }
+        } 
 
-        public static void AnimateIcon(View v, int x2, int y2, float scaleFactor){
+        public static void StartTranslateAndScaleAnimation(View v, int endX, int endY, float scaleFactor) {
 
             //Translate Animation
             var path = new Path();
-            var x1 = v.GetX();
-            var y1 = v.GetY();
+            var startX = v.GetX();
+            var startY = v.GetY();
 
-            path.MoveTo(x1, y1);
-            path.QuadTo(x1,y1,x2,y2);
+            path.MoveTo(startX, startY);
+            path.QuadTo(startX, startY, endX, endY);
 
             var pathAnimator = ObjectAnimator.OfFloat(v, "x", "y", path);
 
-            pathAnimator.SetDuration(500);  
-            pathAnimator.AnimationEnd += delegate { v.SetX(x2); v.SetY(y2);};
+            pathAnimator.SetDuration(500); 
 
             //Scale Animation
             var scaleAnimatorX = ObjectAnimator.OfFloat(v, "scaleX", scaleFactor);
-            var scaleAnimatorY = ObjectAnimator.OfFloat(v, "scaleY", scaleFactor); 
-            
+            var scaleAnimatorY = ObjectAnimator.OfFloat(v, "scaleY", scaleFactor);
+
 
             pathAnimator.Start();
             scaleAnimatorX.Start();
             scaleAnimatorY.Start();
 
 
-        } 
+        }
+
+        public static void FadeAnimation(View v, float alpha) {
+            //Fade Animation   
+            var fadeAnimator = ObjectAnimator.OfFloat(v, "alpha", alpha);
+            fadeAnimator.SetDuration(500);  
+            fadeAnimator.AnimationStart += delegate { if(alpha != 0) {  v.Visibility = ViewStates.Visible;} };
+            fadeAnimator.AnimationEnd += delegate { if(alpha == 0) { v.Visibility = ViewStates.Gone;} };
+            fadeAnimator.Start();
+        }
 
 
     }

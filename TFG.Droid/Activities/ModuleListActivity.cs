@@ -14,6 +14,7 @@ using Android.Support.Design.Widget;
 using Android.Views;
 using Android.Widget;
 using TFG.Droid.Adapters;
+using TFG.Droid.Custom_Views;
 using AnimationUtils = TFG.Droid.Utils.AnimationUtils;
 
 namespace TFG.Droid {
@@ -21,6 +22,8 @@ namespace TFG.Droid {
     public class ModuleListActivity : BaseActivity {
 
         private ExpandableListView _modulesList;
+        private int _titleStartX;
+        private int _titleStartY;
 
         protected override void OnCreate(Bundle savedInstanceState) {
             base.OnCreate(savedInstanceState);
@@ -47,9 +50,15 @@ namespace TFG.Droid {
             _modulesList.SmoothScrollToPositionFromTop(e.GroupPosition, offset, duration);
             _modulesList.SetSelection(e.GroupPosition);
 
-            //Background View
+            //View Cell Background
             var reveal = e.ClickedView.FindViewById<View>(Resource.Id.reveal);
+            var title = e.ClickedView.FindViewById<CustomTextView>(Resource.Id.module_name);
+            if (_titleStartX == 0) _titleStartX = title.Left;
+            if (_titleStartY == 0) _titleStartY = title.Top;
 
+            var description = e.ClickedView.FindViewById<TextView>(Resource.Id.module_description);
+            var addButton = e.ClickedView.FindViewById<Button>(Resource.Id.module_addbutton);
+            //Icon Background
             var background = e.ClickedView.FindViewById<View>(Resource.Id.background);
             //Calculate icon center
             var icon = e.ClickedView.FindViewById<ImageView>(Resource.Id.module_icon);
@@ -60,12 +69,18 @@ namespace TFG.Droid {
 
             if (_modulesList.IsGroupExpanded(e.GroupPosition)) {
                 AnimationUtils.HideViewCircular(reveal, cx, cy, radius);
-                AnimationUtils.AnimateIcon(icon, cx, cy, 1f);
+                AnimationUtils.StartTranslateAndScaleAnimation(icon, icon.Left, icon.Top, 1f);
+                AnimationUtils.FadeAnimation(description, 1f);
+                AnimationUtils.FadeAnimation(addButton, 0f);
+                AnimationUtils.StartTranslateAndScaleAnimation(title, title.Left, title.Top, 1f);
                 AnimationUtils.RevealViewCircular(background, cx, cy, 50);
                 _modulesList.CollapseGroup(e.GroupPosition);
             }  else { 
                 AnimationUtils.HideViewCircular(background, cx, cy, 50); 
-                AnimationUtils.AnimateIcon(icon, _modulesList.Width / 2, 30, 1.5f);
+                AnimationUtils.StartTranslateAndScaleAnimation(icon, (_modulesList.Width / 2) - cx, e.ClickedView.Height / 5, 1.5f);
+                AnimationUtils.FadeAnimation(description, 0f);
+                AnimationUtils.FadeAnimation(addButton, 1f);
+                AnimationUtils.StartTranslateAndScaleAnimation(title, (_modulesList.Width / 2) - cx, (int) (e.ClickedView.Height /1.2), 1.5f);
                 AnimationUtils.RevealViewCircular(reveal, cx, cy, radius);
                 _modulesList.ExpandGroup(e.GroupPosition);
             }

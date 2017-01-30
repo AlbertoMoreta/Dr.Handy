@@ -18,7 +18,7 @@ namespace TFG.Droid.Custom_Views {
         private TextView _moduleName;
         private TextView _moduleDescription;
         private ImageView _moduleIcon;
-        private ImageView _addButton;
+        private Button _addButton;
 
         public string Name {
             set { _moduleName.Text = value; }
@@ -36,14 +36,9 @@ namespace TFG.Droid.Custom_Views {
 
         }
 
-        public ImageView AddButton{
+        public Button AddButton{
             get { return _addButton; }
-        }
-
-        public Drawable AddButtonImage {
-            set { _addButton.SetImageDrawable(value); }
-            get { return _addButton.Drawable; }
-        }
+        } 
 
 
         public ModuleViewCell(Context context) : base(context) {
@@ -57,7 +52,7 @@ namespace TFG.Droid.Custom_Views {
             _moduleName = FindViewById<TextView>(Resource.Id.module_name);
             _moduleDescription = FindViewById<TextView>(Resource.Id.module_description);
             _moduleIcon = FindViewById<ImageView>(Resource.Id.module_icon);
-            _addButton = FindViewById<ImageView>(Resource.Id.module_addbutton);
+            _addButton = FindViewById<Button>(Resource.Id.module_addbutton);
         }
 
     }
