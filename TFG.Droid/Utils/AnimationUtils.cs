@@ -2,12 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Android.Animation;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
+using Android.Views.Animations;
 using Android.Widget;
 
 namespace TFG.Droid.Utils {
@@ -33,6 +36,34 @@ namespace TFG.Droid.Utils {
 
 
         }
+
+        public static void AnimateIcon(View v, int x2, int y2, float scaleFactor){
+
+            //Translate Animation
+            var path = new Path();
+            var x1 = v.GetX();
+            var y1 = v.GetY();
+
+            path.MoveTo(x1, y1);
+            path.QuadTo(x1,y1,x2,y2);
+
+            var pathAnimator = ObjectAnimator.OfFloat(v, "x", "y", path);
+
+            pathAnimator.SetDuration(500);  
+            pathAnimator.AnimationEnd += delegate { v.SetX(x2); v.SetY(y2);};
+
+            //Scale Animation
+            var scaleAnimatorX = ObjectAnimator.OfFloat(v, "scaleX", scaleFactor);
+            var scaleAnimatorY = ObjectAnimator.OfFloat(v, "scaleY", scaleFactor); 
+            
+
+            pathAnimator.Start();
+            scaleAnimatorX.Start();
+            scaleAnimatorY.Start();
+
+
+        } 
+
 
     }
 }

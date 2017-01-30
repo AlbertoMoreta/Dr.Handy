@@ -50,6 +50,7 @@ namespace TFG.Droid {
             //Background View
             var reveal = e.ClickedView.FindViewById<View>(Resource.Id.reveal);
 
+            var background = e.ClickedView.FindViewById<View>(Resource.Id.background);
             //Calculate icon center
             var icon = e.ClickedView.FindViewById<ImageView>(Resource.Id.module_icon);
              
@@ -59,9 +60,12 @@ namespace TFG.Droid {
 
             if (_modulesList.IsGroupExpanded(e.GroupPosition)) {
                 AnimationUtils.HideViewCircular(reveal, cx, cy, radius);
-
+                AnimationUtils.AnimateIcon(icon, cx, cy, 1f);
+                AnimationUtils.RevealViewCircular(background, cx, cy, 50);
                 _modulesList.CollapseGroup(e.GroupPosition);
-            }  else {
+            }  else { 
+                AnimationUtils.HideViewCircular(background, cx, cy, 50); 
+                AnimationUtils.AnimateIcon(icon, _modulesList.Width / 2, 30, 1.5f);
                 AnimationUtils.RevealViewCircular(reveal, cx, cy, radius);
                 _modulesList.ExpandGroup(e.GroupPosition);
             }

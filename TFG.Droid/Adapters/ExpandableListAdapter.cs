@@ -76,13 +76,13 @@ namespace TFG.Droid.Adapters {
                 viewHolder = convertView.Tag as GroupViewHolder;
             }
 
-            var drawable = (LayerDrawable) ContextCompat.GetDrawable(_context, Resource.Drawable.module_icon).Mutate();
+            /*var drawable = (LayerDrawable) ContextCompat.GetDrawable(_context, Resource.Drawable.module_icon).Mutate();
             var moduleColorName = module.HealthModuleColor();
             var background = (GradientDrawable) drawable.FindDrawableByLayerId(Resource.Id.background).Mutate();
             background.SetColor(ContextCompat.GetColor(_context, _context.Resources.GetIdentifier(moduleColorName, "color", _context.PackageName)));
             //drawable.SetDrawableByLayerId(Resource.Id.icon, );
 
-            viewHolder.ViewCell.IconDrawable = drawable;
+            viewHolder.ViewCell.IconDrawable = drawable;*/
             viewHolder.ViewCell.Name = module.HealthModuleName();
             viewHolder.ViewCell.Description = module.HealthModuleDescription();
             viewHolder.ViewCell.AddButtonImage = DBHelper.Instance.CheckIfExists(module) &&
