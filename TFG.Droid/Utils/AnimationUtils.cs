@@ -8,6 +8,7 @@ using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V4.View;
 using Android.Util;
 using Android.Views;
 using Android.Views.Animations;
@@ -25,7 +26,6 @@ namespace TFG.Droid.Utils {
             anim.Start();
         }
 
-
         public static void HideViewCircular(View v, int centerX, int centerY, int radius) { 
             var anim = ViewAnimationUtils.CreateCircularReveal(v, centerX, centerY,
               radius, 0);
@@ -37,7 +37,7 @@ namespace TFG.Droid.Utils {
 
         } 
 
-        public static void StartTranslateAndScaleAnimation(View v, int endX, int endY, float scaleFactor) {
+        public static void StartTranslateAnimation(View v, int endX, int endY) {
 
             //Translate Animation
             var path = new Path();
@@ -50,17 +50,27 @@ namespace TFG.Droid.Utils {
             var pathAnimator = ObjectAnimator.OfFloat(v, "x", "y", path);
 
             pathAnimator.SetDuration(500); 
-
-            //Scale Animation
-            var scaleAnimatorX = ObjectAnimator.OfFloat(v, "scaleX", scaleFactor);
-            var scaleAnimatorY = ObjectAnimator.OfFloat(v, "scaleY", scaleFactor);
-
-
             pathAnimator.Start();
+
+
+        }
+
+        public static void StartScaleAnimation(View v, int width, int height) {
+            //Scale Animation
+            var scaleAnimatorX = ObjectAnimator.OfInt(v, "scaleX", width);
+            var scaleAnimatorY = ObjectAnimator.OfInt(v, "scaleY", height);
+
             scaleAnimatorX.Start();
             scaleAnimatorY.Start();
+        }
 
+        public static void StartScaleAnimation(View v, float scaleFactorX, float scaleFactorY) {
+            //Scale Animation
+            var scaleAnimatorX = ObjectAnimator.OfFloat(v, "scaleX", scaleFactorX);
+            var scaleAnimatorY = ObjectAnimator.OfFloat(v, "scaleY", scaleFactorY); 
 
+            scaleAnimatorX.Start();
+            scaleAnimatorY.Start();
         }
 
         public static void FadeAnimation(View v, float alpha) {
@@ -70,8 +80,7 @@ namespace TFG.Droid.Utils {
             fadeAnimator.AnimationStart += delegate { if(alpha != 0) {  v.Visibility = ViewStates.Visible;} };
             fadeAnimator.AnimationEnd += delegate { if(alpha == 0) { v.Visibility = ViewStates.Gone;} };
             fadeAnimator.Start();
-        }
-
+        } 
 
     }
 }

@@ -50,7 +50,7 @@ namespace TFG.Droid.Custom_Views {
             inflater.Inflate(Resource.Layout.module_viewcell, this);
 
             _moduleName = FindViewById<TextView>(Resource.Id.module_name);
-            _moduleDescription = FindViewById<TextView>(Resource.Id.module_description);
+            _moduleDescription = FindViewById<TextView>(Resource.Id.module_description_short);
             _moduleIcon = FindViewById<ImageView>(Resource.Id.module_icon);
             _addButton = FindViewById<Button>(Resource.Id.module_addbutton);
         }

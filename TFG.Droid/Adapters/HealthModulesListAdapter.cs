@@ -16,17 +16,12 @@ using TFG.Model;
 using Object = Java.Lang.Object;
 
 namespace TFG.Droid.Adapters {
-    class ExpandableListAdapter : BaseExpandableListAdapter {  
+    class HealthModulesListAdapter : BaseAdapter {  
 
         //ViewHolder For The Health Modules
-        private class GroupViewHolder : Java.Lang.Object {
+        private class ViewHolder : Java.Lang.Object {
             public ModuleViewCell ViewCell { get; set; }
-        }
-
-        //ViewHolder For The Detailed Description
-        private class ChildViewHolder : Java.Lang.Object {
-            public CustomTextView ModuleDescription { get; set; }
-        }
+        } 
 
 
         private Context _context;
@@ -34,7 +29,7 @@ namespace TFG.Droid.Adapters {
         private List<HealthModuleType> _modules = HealthModulesInfo.GetHealthModules;
         private List<ModuleViewCell> _viewCells = new List<ModuleViewCell>();
 
-        public ExpandableListAdapter(Context context) {
+        public HealthModulesListAdapter(Context context) {
             _context = context;
             _inflater = (LayoutInflater) context.GetSystemService(Context.LayoutInflaterService);
         } 
@@ -46,34 +41,31 @@ namespace TFG.Droid.Adapters {
 
         public void SetModules(List<HealthModuleType> modules) {
             _modules = modules;
+        } 
+
+        public override Object GetItem(int position) {
+            return _viewCells.ElementAt(position);
         }
 
-
-
-        public override int GroupCount { get { return _modules.Count; } }
-        public override bool HasStableIds { get; } = true; 
-
-        public override Object GetGroup(int groupPosition) {
-            return _viewCells.ElementAt(groupPosition);
+        public override long GetItemId(int position) {
+            return position;
         }
 
-        public override long GetGroupId(int groupPosition) { 
-            return groupPosition;
-        }
+        public override int Count { get { return _modules.Count;  } }
 
-        public override View GetGroupView(int groupPosition, bool isExpanded, View convertView, ViewGroup parent) { 
+        public override View GetView(int position, View convertView, ViewGroup parent) {
 
-            GroupViewHolder viewHolder = null;
-            HealthModuleType module = _modules.ElementAt(groupPosition);
+            ViewHolder viewHolder = null;
+            HealthModuleType module = _modules.ElementAt(position);
 
             if (convertView == null) {
-                viewHolder = new GroupViewHolder();
+                viewHolder = new ViewHolder();
                 convertView = new ModuleViewCell(_context);
                 viewHolder.ViewCell = convertView as ModuleViewCell;
                 convertView.Tag = viewHolder;
                 viewHolder.ViewCell.AddButton.Click += delegate { OnAddButtonClick(module); };
             } else {
-                viewHolder = convertView.Tag as GroupViewHolder;
+                viewHolder = convertView.Tag as ViewHolder;
             }
 
             /*var drawable = (LayerDrawable) ContextCompat.GetDrawable(_context, Resource.Drawable.module_icon).Mutate();
@@ -92,7 +84,7 @@ namespace TFG.Droid.Adapters {
 
             return convertView;
 
-        }  
+        }
 
         private void OnAddButtonClick(HealthModuleType module) {
             if (DBHelper.Instance.CheckIfExists(module)) {
@@ -107,42 +99,6 @@ namespace TFG.Droid.Adapters {
 
             NotifyDataSetChanged();
 
-        }
-
-
-        public override Object GetChild(int groupPosition, int childPosition) {
-            throw new NotImplementedException();
-        }
-
-        public override long GetChildId(int groupPosition, int childPosition) {
-            return childPosition;
-        }
-
-        public override int GetChildrenCount(int groupPosition) {
-            return 1;
-        }
-
-        public override View GetChildView(int groupPosition, int childPosition, bool isLastChild, View convertView, ViewGroup parent) {
-            ChildViewHolder viewHolder;
-            HealthModuleType module = _modules.ElementAt(groupPosition);
-
-            if (convertView == null) {
-                viewHolder = new ChildViewHolder();
-                convertView = _inflater.Inflate(Resource.Layout.expandable_listview_child, parent, false);
-                viewHolder.ModuleDescription = convertView.FindViewById<CustomTextView>(Resource.Id.description);
-                viewHolder.ModuleDescription.Text = _modules.ElementAt(groupPosition).HealthModuleDescription(); 
-                convertView.Tag = viewHolder;
-            } else {
-                viewHolder = convertView.Tag as ChildViewHolder;
-            }
-
-            viewHolder.ModuleDescription.Text = _modules.ElementAt(groupPosition).HealthModuleDescription();
-
-            return convertView;
-        }
-
-        public override bool IsChildSelectable(int groupPosition, int childPosition) {
-            return false;
-        }
+        }  
     }
 }
