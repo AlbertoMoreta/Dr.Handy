@@ -16,7 +16,8 @@ namespace TFG.Droid.Custom_Views {
     class ModuleViewCell : RelativeLayout{
 
         private TextView _moduleName;
-        private TextView _moduleDescription;
+        private TextView _moduleDescriptionShort;
+        private CustomTextView _moduleDescriptionLong;
         private ImageView _moduleIcon;
         private Button _addButton;
 
@@ -26,8 +27,11 @@ namespace TFG.Droid.Custom_Views {
         }
 
         public string Description {
-            set { _moduleDescription.Text = value; }
-            get { return _moduleDescription.Text; }
+            set {
+                _moduleDescriptionShort.Text = value;
+                _moduleDescriptionLong.Text = value;
+            }
+            get { return _moduleDescriptionShort.Text; }
         }
 
         public Drawable IconDrawable {
@@ -50,7 +54,8 @@ namespace TFG.Droid.Custom_Views {
             inflater.Inflate(Resource.Layout.module_viewcell, this);
 
             _moduleName = FindViewById<TextView>(Resource.Id.module_name);
-            _moduleDescription = FindViewById<TextView>(Resource.Id.module_description_short);
+            _moduleDescriptionShort = FindViewById<TextView>(Resource.Id.module_description_short);
+            _moduleDescriptionLong = FindViewById<CustomTextView>(Resource.Id.module_description_long);
             _moduleIcon = FindViewById<ImageView>(Resource.Id.module_icon);
             _addButton = FindViewById<Button>(Resource.Id.module_addbutton);
         }

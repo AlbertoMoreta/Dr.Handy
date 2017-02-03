@@ -57,7 +57,7 @@ namespace TFG.Droid {
             if (_titleStartY == 0) _titleStartY = title.Top;
 
             var descriptionShort = e.View.FindViewById<TextView>(Resource.Id.module_description_short);
-            var detailPanel = e.View.FindViewById<LinearLayout>(Resource.Id.detail_panel);
+            var descriptionLong = e.View.FindViewById<CustomTextView>(Resource.Id.module_description_long);
             var addButton = e.View.FindViewById<Button>(Resource.Id.module_addbutton);
             //Icon Background
             var background = e.View.FindViewById<View>(Resource.Id.background);
@@ -68,9 +68,9 @@ namespace TFG.Droid {
             var cy = (icon.Top + icon.Bottom) / 2;
             var radius = _modulesList.Width;
 
-            if (detailPanel.Visibility == ViewStates.Visible) { 
-                AnimationUtils.FadeAnimation(detailPanel, 0f);
-                AnimationUtils.StartScaleAnimation(detailPanel,0,0);
+            if (descriptionLong.Visibility == ViewStates.Visible) { 
+                AnimationUtils.FadeAnimation(descriptionLong, 0f);
+                AnimationUtils.StartScaleAnimation(descriptionLong, 0,0);
                 AnimationUtils.HideViewCircular(reveal, cx, cy, radius);
                 AnimationUtils.StartTranslateAnimation(icon, icon.Left, icon.Top);
                 AnimationUtils.StartScaleAnimation(icon, 1f, 1f);
@@ -78,12 +78,11 @@ namespace TFG.Droid {
                 AnimationUtils.FadeAnimation(addButton, 0f);
                 AnimationUtils.StartTranslateAnimation(title, title.Left, title.Top);
                 AnimationUtils.StartScaleAnimation(title, 1f, 1f);
-                AnimationUtils.RevealViewCircular(background, cx, cy, 50);
-                detailPanel.Visibility = ViewStates.Gone;
+                AnimationUtils.RevealViewCircular(background, cx, cy, 50); 
                 // _modulesList.CollapseGroup(e.Position);
             }  else {
-                AnimationUtils.FadeAnimation(detailPanel, 1f);
-                AnimationUtils.StartScaleAnimation(detailPanel, 0, detailPanel.Height);
+                AnimationUtils.FadeAnimation(descriptionLong, 1f);
+                AnimationUtils.StartScaleAnimation(descriptionLong, 0, descriptionLong.Height);
                 AnimationUtils.HideViewCircular(background, cx, cy, 50); 
                 AnimationUtils.StartTranslateAnimation(icon, (_modulesList.Width / 2) - cx, e.View.Height / 5);
                 AnimationUtils.StartScaleAnimation(icon, 1.5f, 1.5f);
@@ -91,8 +90,7 @@ namespace TFG.Droid {
                 AnimationUtils.FadeAnimation(addButton, 1f);
                 AnimationUtils.StartTranslateAnimation(title, (_modulesList.Width / 2) - cx, (int) (e.View.Height /1.2));
                 AnimationUtils.StartScaleAnimation(title, 1.5f, 1.5f);
-                AnimationUtils.RevealViewCircular(reveal, cx, cy, radius);
-                detailPanel.Visibility = ViewStates.Visible;
+                AnimationUtils.RevealViewCircular(reveal, cx, cy, radius); 
                 //_modulesList.ExpandGroup(e.Position);
             }
 

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+  <RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="100dp"> 
           
       <View
           android:id="@+id/reveal"
@@ -46,21 +51,17 @@
           android:layout_alignParentBottom="true" 
           android:visibility="gone"
           android:focusable="false"/>
-
-        <LinearLayout
-            android:id="@+id/detail_panel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone">
   
-            <TFG.Droid.Custom_Views.CustomTextView
-              android:id="@+id/module_description_long"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content" 
-              android:gravity="center"
-              android:textSize="@dimen/text_size_xlarge"
-              android:textColor="@color/purple"/>
+  </RelativeLayout>
+    
+ 
   
-        </LinearLayout>
-  
-</RelativeLayout>
+      <TFG.Droid.Custom_Views.CustomTextView
+        android:id="@+id/module_description_long"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:gravity="center"
+        android:textSize="@dimen/text_size_xlarge"
+        android:textColor="@color/purple"
+        android:visibility="gone"/> 
+</LinearLayout>
