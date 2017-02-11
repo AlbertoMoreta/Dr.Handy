@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using Android.Util;
 using Android.Graphics.Drawables;
+using com.refractored.fab;
 
 namespace TFG.Droid.Custom_Views {
     class ModuleViewCell : RelativeLayout{
@@ -19,7 +20,7 @@ namespace TFG.Droid.Custom_Views {
         private TextView _moduleDescriptionShort;
         private CustomTextView _moduleDescriptionLong;
         private ImageView _moduleIcon;
-        private Button _addButton;
+        private FloatingActionButton _addButton;
 
         public string Name {
             set { _moduleName.Text = value; }
@@ -40,7 +41,7 @@ namespace TFG.Droid.Custom_Views {
 
         }
 
-        public Button AddButton{
+        public FloatingActionButton AddButton{
             get { return _addButton; }
         } 
 
@@ -57,7 +58,7 @@ namespace TFG.Droid.Custom_Views {
             _moduleDescriptionShort = FindViewById<TextView>(Resource.Id.module_description_short);
             _moduleDescriptionLong = FindViewById<CustomTextView>(Resource.Id.module_description_long);
             _moduleIcon = FindViewById<ImageView>(Resource.Id.module_icon);
-            _addButton = FindViewById<Button>(Resource.Id.module_addbutton);
+            _addButton = FindViewById<FloatingActionButton>(Resource.Id.module_addbutton);
         }
 
     }

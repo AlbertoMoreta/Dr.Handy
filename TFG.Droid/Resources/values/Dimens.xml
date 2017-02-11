@@ -16,5 +16,7 @@
   <dimen name="appbarlayout_height">192dp</dimen>
   <dimen name="recycler_view_overlap">64dp</dimen>
   <dimen name="health_module_icon_size">64dp</dimen>
+  <dimen name="fab_size">50dp</dimen>
+  <dimen name="fab_offset">-40dp</dimen>
 
 </resources>
