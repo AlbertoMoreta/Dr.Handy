@@ -91,9 +91,18 @@ namespace TFG.Droid.Adapters {
                 convertView.Tag = viewHolder;
                 viewHolder.AddButton.Click += delegate { OnAddButtonClick(module); };
                 viewHolder.Header.Click += delegate {
-                    if (ExpandedView != null && ExpandedView != viewHolder) { OnHeaderClick(ExpandedView); }
-                    ExpandedView = viewHolder;
-                    OnHeaderClick(viewHolder);
+                    if (ExpandedView != null) {
+                        if (ExpandedView != viewHolder)  { 
+                            OnHeaderClick(ExpandedView);    //Collapse previous HealthModule
+                            ExpandedView = viewHolder;
+                        } else  {
+                            ExpandedView = null; 
+                        }
+                    } else { 
+                        ExpandedView = viewHolder;
+                    }
+
+                    OnHeaderClick(viewHolder);  //Expand selected HealthModule
                 };
                  
             } else {
