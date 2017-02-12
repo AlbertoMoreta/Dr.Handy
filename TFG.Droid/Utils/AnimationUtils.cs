@@ -86,7 +86,7 @@ namespace TFG.Droid.Utils {
             fadeAnimator.Start();
         } 
 
-        public static void ExpandView(View v, int finalHeight, bool wrapContent, long duration = 500, long delay = 0) {
+        public static void ExpandView(View v, int finalHeight, bool wrapContent = false, long duration = 500, long delay = 0) {
             var expandAnimator = ValueAnimator.OfInt(v.MeasuredHeight, finalHeight);
             expandAnimator.Update += (s, e) => { 
             
@@ -100,7 +100,7 @@ namespace TFG.Droid.Utils {
             };
 
             expandAnimator.SetDuration(duration);
-            expandAnimator.StartDelay = delay
+            expandAnimator.StartDelay = delay;
             expandAnimator.Start();
         }
     }

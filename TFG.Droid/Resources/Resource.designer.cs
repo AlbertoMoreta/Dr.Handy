@@ -3403,10 +3403,10 @@ namespace TFG.Droid
 			public const int ic_add = 2130837585;
 			
 			// aapt resource value: 0x7f020052
-			public const int ic_edit = 2130837586;
+			public const int ic_clear = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int ic_remove = 2130837587;
+			public const int ic_edit = 2130837587;
 			
 			// aapt resource value: 0x7f020054
 			public const int Icon = 2130837588;

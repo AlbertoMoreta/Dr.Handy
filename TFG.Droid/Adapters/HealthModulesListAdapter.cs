@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Content.Res;
 using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
@@ -63,6 +65,8 @@ namespace TFG.Droid.Adapters {
 
         public override int Count { get { return _modules.Count;  } }
 
+        private ViewHolder ExpandedView { get; set; }
+
         public override View GetView(int position, View convertView, ViewGroup parent) {
 
             ViewHolder viewHolder = null;
@@ -86,7 +90,12 @@ namespace TFG.Droid.Adapters {
 
                 convertView.Tag = viewHolder;
                 viewHolder.AddButton.Click += delegate { OnAddButtonClick(module); };
-                viewHolder.Header.Click += delegate { OnHeaderClick(viewHolder); };
+                viewHolder.Header.Click += delegate {
+                    if (ExpandedView != null && ExpandedView != viewHolder) { OnHeaderClick(ExpandedView); }
+                    ExpandedView = viewHolder;
+                    OnHeaderClick(viewHolder);
+                };
+                 
             } else {
                 viewHolder = convertView.Tag as ViewHolder;
             }
@@ -98,11 +107,18 @@ namespace TFG.Droid.Adapters {
             //drawable.SetDrawableByLayerId(Resource.Id.icon, );
 
             viewHolder.ViewCell.IconDrawable = drawable;*/
+
             viewHolder.ModuleName.Text = module.HealthModuleName();
-            viewHolder.ModuleDescriptionShort.Text = viewHolder.ModuleDescriptionLong.Text = module.HealthModuleDescription();  
-            /* viewHolder.ViewCell.AddButton.Text = DBHelper.Instance.CheckIfExists(module) &&
-                                                  DBHelper.Instance.CheckIfVisible(module) ? _context.GetString(Resource.String.remove)
-                                                                                           : _context.GetString(Resource.String.add);*/
+            viewHolder.ModuleDescriptionShort.Text = viewHolder.ModuleDescriptionLong.Text = module.HealthModuleDescription();
+            if (DBHelper.Instance.CheckIfExists(module) && DBHelper.Instance.CheckIfVisible(module)) {
+                viewHolder.AddButton.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.ic_clear));
+                viewHolder.AddButton.BackgroundTintList = ContextCompat.GetColorStateList(_context, Resource.Color.red);
+
+
+            } else {
+                viewHolder.AddButton.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.ic_add));
+                viewHolder.AddButton.BackgroundTintList = ContextCompat.GetColorStateList(_context, Resource.Color.green);
+            } 
 
 
             return convertView;
@@ -124,8 +140,7 @@ namespace TFG.Droid.Adapters {
 
         }
 
-        private void OnHeaderClick(ViewHolder v)
-        {
+        private void OnHeaderClick(ViewHolder v) {
             var iconMarginLeft = ((ViewGroup.MarginLayoutParams) v.ModuleIcon.LayoutParameters).LeftMargin;
             var iconMarginTop = ((ViewGroup.MarginLayoutParams) v.ModuleIcon.LayoutParameters).TopMargin;
             var cx = (v.ModuleIcon.Left + v.ModuleIcon.Right - iconMarginLeft) / 2;
@@ -139,14 +154,11 @@ namespace TFG.Droid.Adapters {
                 AnimationUtils.RevealViewCircular(v.Background, cx, cy, v.Background.MeasuredHeight);
                 AnimationUtils.StartTranslateAnimation(v.ModuleName, v.ModuleName.Left, v.ModuleName.Top);
                 AnimationUtils.StartScaleAnimation(v.ModuleName, 1f, 1f); 
-                AnimationUtils.ExpandView(v.Header, v.Header.MeasuredHeight - v.ModuleIcon.MeasuredHeight - v.ModuleName.MeasuredHeight * 2, false);
+                AnimationUtils.ExpandView(v.Header, v.Header.MeasuredHeight - v.ModuleIcon.MeasuredHeight - v.ModuleName.MeasuredHeight * 2);
                 AnimationUtils.FadeAnimation(v.ModuleDescriptionLong, 0f);
-                AnimationUtils.ExpandView(v.ModuleDescriptionLong, 0, false);
-
-
+                AnimationUtils.ExpandView(v.ModuleDescriptionLong, 0);
                 AnimationUtils.FadeAnimation(v.ModuleDescriptionShort, 1f);
-                AnimationUtils.FadeAnimation(v.AddButton, 0f);
-                // _modulesList.CollapseGroup(e.Position);
+                AnimationUtils.FadeAnimation(v.AddButton, 0f); 
             } else {
                 AnimationUtils.HideViewCircular(v.Background, cx, cy, v.Background.MeasuredHeight, 300);
                 AnimationUtils.RevealViewCircular(v.RevealView, cx, cy, radius);
@@ -155,14 +167,11 @@ namespace TFG.Droid.Adapters {
                 var finalX = (v.Header.Width - v.ModuleName.Width) / 2;
                 AnimationUtils.StartTranslateAnimation(v.ModuleName, finalX, v.ModuleIcon.Height * 2);
                 AnimationUtils.StartScaleAnimation(v.ModuleName, 1.5f, 1.5f);
-                AnimationUtils.ExpandView(v.Header, v.Header.MeasuredHeight + v.ModuleIcon.MeasuredHeight + v.ModuleName.MeasuredHeight * 2, false);
+                AnimationUtils.ExpandView(v.Header, v.Header.MeasuredHeight + v.ModuleIcon.MeasuredHeight + v.ModuleName.MeasuredHeight * 2);
                 AnimationUtils.FadeAnimation(v.ModuleDescriptionLong, 1f);
                 AnimationUtils.ExpandView(v.ModuleDescriptionLong, v.ModuleDescriptionHeight, true);
-
-
                 AnimationUtils.FadeAnimation(v.ModuleDescriptionShort, 0f);
-                AnimationUtils.FadeAnimation(v.AddButton, 1f);
-                //_modulesList.ExpandGroup(e.Position);
+                AnimationUtils.FadeAnimation(v.AddButton, 1f); 
             }
         }
     }
