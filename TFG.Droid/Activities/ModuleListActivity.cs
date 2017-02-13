@@ -21,9 +21,7 @@ namespace TFG.Droid {
     [Activity(Label = "ModuleListActivity", Theme = "@style/AppTheme", LaunchMode = LaunchMode.SingleTask)]
     public class ModuleListActivity : BaseActivity {
 
-        private ListView _modulesList;
-        private int _titleStartX;
-        private int _titleStartY;
+        private ListView _modulesList; 
 
         protected override void OnCreate(Bundle savedInstanceState) {
             base.OnCreate(savedInstanceState);
