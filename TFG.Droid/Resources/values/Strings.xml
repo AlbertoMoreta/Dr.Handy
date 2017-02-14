@@ -21,6 +21,9 @@
   <string name="kilometers">km</string>
   <string name="yesterday">AYER</string>
   <string name="same_day_last_week">MISMO DÍA DE LA SEMANA PASADA</string>
+  <string name="quick_results">Resultados Rápidos</string>
+  <string name="weekly_results">Resultados Semanales</string>
+  <string name="yearly_results">Resultados Anuales</string>
 
 
   <string name="weekday">Día</string>
