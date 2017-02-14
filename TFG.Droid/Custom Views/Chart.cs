@@ -15,10 +15,10 @@ using MikePhil.Charting.Components;
 using MikePhil.Charting.Data;
 
 namespace TFG.Droid.Custom_Views {
-    class Chart : RelativeLayout {
+    public class Chart : RelativeLayout {
 
         public enum VisualizationMetric {
-            Weekly, Monthly, Yearly
+            Weekly, Yearly
         }
 
         private Context _context;
@@ -81,7 +81,7 @@ namespace TFG.Droid.Custom_Views {
                 case VisualizationMetric.Yearly: label = "month"; break;
             } 
 
-            if (XLabel != null) { XLabel.Text = _context.GetString(_context.Resources.GetIdentifier(label, "string", _context.PackageName)); ; }
+            if (XLabel != null) { XLabel.Text = _context.GetString(_context.Resources.GetIdentifier(label, "string", _context.PackageName)); }
 
         } 
     }

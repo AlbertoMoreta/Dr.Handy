@@ -164,8 +164,14 @@ namespace TFG {
         public List<StepCounterItem> GetStepCounterItemFromDate(DateTime date) {
             var stringDate = date.ToString(DATE_FORMAT);
 
-
             var sql = "SELECT * FROM " + STEPCOUNTER_TABLE + " WHERE " + COL_DATE + " = '" + stringDate + "'";
+
+            return Connection.Query<StepCounterItem>(sql);
+        }
+
+        public List<StepCounterItem> GetStepCounterItemsFromDateRange(DateTime startDate, DateTime endDate) {
+            var sql = "SELECT " + COL_STEPS + ", " + COL_DATE + " = DATEADD(Day,Number," + startDate + ") " +
+                      "FROM " + STEPCOUNTER_TABLE + " WHERE DATEADD(day,Number," + startDate + ") <= " + endDate;
 
             return Connection.Query<StepCounterItem>(sql);
         }
