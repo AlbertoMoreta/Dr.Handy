@@ -26,17 +26,16 @@ namespace TFG.Droid.Custom_Views {
         public CustomTextView XLabel { get; set; }
         public CustomTextView YLabel { get; set; }
 
-        public Chart(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer) { Init(); } 
         public Chart(Context context) : base(context) { _context = context; Init(); } 
         public Chart(Context context, IAttributeSet attrs) : base(context, attrs) { _context = context; Init(); } 
 
         private void Init() {
             LayoutInflater inflater = LayoutInflater.From(Context);
-            inflater.Inflate(Resource.Layout.chart_layout , this);
+            View v = inflater.Inflate(Resource.Layout.chart_layout , this);
 
-            ChartView = FindViewById<BarChart>(Resource.Id.chart);
-            XLabel = FindViewById<CustomTextView>(Resource.Id.xLabel);
-            YLabel = FindViewById<CustomTextView>(Resource.Id.yLabel);
+            ChartView = v.FindViewById<BarChart>(Resource.Id.chart);
+            XLabel = v.FindViewById<CustomTextView>(Resource.Id.xLabel);
+            YLabel = v.FindViewById<CustomTextView>(Resource.Id.yLabel);
 
             //Chart Properties
             ChartView.SetDrawBarShadow(true);
@@ -68,8 +67,8 @@ namespace TFG.Droid.Custom_Views {
 
         public void PopulateChart(List<BarEntry> values, VisualizationMetric metric)  { 
 
-            if (ChartView != null) {
-                ChartView.Data = new BarDataSet(values, "");
+            if (ChartView != null) { 
+                ChartView.Data = new BarData(new BarDataSet(values, ""));
                 ChartView.AnimateY(700);
                 ChartView.NotifyDataSetChanged();
                 ChartView.Invalidate();
