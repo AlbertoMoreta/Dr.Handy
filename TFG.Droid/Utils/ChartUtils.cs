@@ -24,8 +24,8 @@ namespace TFG.Droid.Utils {
             DateTime endDate = new DateTime(); 
             switch (metric) {
                 case Chart.VisualizationMetric.Weekly:
-                    startDate = date.AddDays(0 - (int) GetFirstDayOfWeek(date, CultureInfo.CurrentCulture).DayOfWeek);
-                    endDate = date.AddDays(7 - (int) GetFirstDayOfWeek(date, CultureInfo.CurrentCulture).DayOfWeek);
+                    startDate = date.AddDays(0 - (int) date.DayOfWeek);
+                    endDate = date.AddDays(6 - (int) date.DayOfWeek);
                     break;
                 case Chart.VisualizationMetric.Yearly:
                     startDate = new DateTime(date.Year, 0, 0);
