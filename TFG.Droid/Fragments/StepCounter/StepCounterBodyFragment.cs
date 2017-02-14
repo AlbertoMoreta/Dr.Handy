@@ -26,6 +26,7 @@ namespace TFG.Droid.Fragments.StepCounter {
             var pager = view.FindViewById<ViewPager>(Resource.Id.pager); 
             var adapter = new HealthModulePagerAdapter(((AppCompatActivity) Activity).SupportFragmentManager);
             adapter.AddItem(new StepCounterQuickResultsFragment());
+            adapter.AddItem(new StepCounterChartFragment(Chart.VisualizationMetric.Weekly));
             pager.Adapter = adapter;
 
             var tabs = view.FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);

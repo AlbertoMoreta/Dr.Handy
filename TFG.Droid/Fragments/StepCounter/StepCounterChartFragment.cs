@@ -10,27 +10,24 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using Java.Lang;
 using TFG.Droid.Custom_Views;
 using TFG.Droid.Interfaces;
+using TFG.Droid.Utils;
+using Fragment = Android.Support.V4.App.Fragment;
 
 namespace TFG.Droid.Fragments.StepCounter {
     public class StepCounterChartFragment : Fragment, IHealthFragmentTabItem {
-        public string Title { get; }
+        public string Title { get; private set; }
 
         private Chart _chart;
         private DateTime _date = DateTime.Now;
+        private Chart.VisualizationMetric _metric;
 
         public StepCounterChartFragment(Chart.VisualizationMetric metric) {
+            _metric = metric;
 
-            switch (metric)
-            {
-                case Chart.VisualizationMetric.Weekly:
-                    Title = Activity.GetString(Activity.Resources.GetIdentifier("weekly_results", "string", Activity.PackageName));
-                    break;
-                case Chart.VisualizationMetric.Yearly:
-                    Title = Activity.GetString(Activity.Resources.GetIdentifier("yearly_results", "string", Activity.PackageName));
-                    break;
-            }
+            
 
         } 
         public StepCounterChartFragment(Chart.VisualizationMetric metric, DateTime date) : this(metric) {
@@ -38,9 +35,18 @@ namespace TFG.Droid.Fragments.StepCounter {
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            var view = inflater.Inflate(Resource.Layout.fragment_stepcounter_body_quick_results, container, false);
 
-            _chart = view.FindViewById<Chart>(Resource.Id.chart); 
+            View view = null;
+            try {
+                view =  inflater.Inflate(Resource.Layout.fragment_stepcounter_body_weekly_results, container, false);
+
+                Title =
+                    Activity.GetString(Activity.Resources.GetIdentifier(_metric.ToString().ToLower() + "_results",
+                        "string", Activity.PackageName));
+
+                _chart = view.FindViewById<Chart>(Resource.Id.chartView);
+                _chart.PopulateChart(ChartUtils.StepCounter_StepsToBarEntries(_metric, DateTime.Now), _metric);
+            }catch(NullPointerException npe) { }
 
             return view;
         }
