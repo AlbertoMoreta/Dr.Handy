@@ -26,7 +26,7 @@ namespace TFG.Droid.Utils {
             List<BarEntry> entries = new List<BarEntry>(); 
 
             for (int i = 0; i < items.Count; i++) {
-                entries.Add(new BarEntry(items.ElementAt(i).Steps, i));
+                entries.Add(new BarEntry(i, items.ElementAt(i).Steps));
             }
 
             return entries; 
