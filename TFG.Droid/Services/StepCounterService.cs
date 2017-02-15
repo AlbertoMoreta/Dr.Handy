@@ -70,9 +70,7 @@ namespace TFG.Droid.Services {
             var items = DBHelper.Instance.GetStepCounterItemFromDate(DateTime.Now);
             if (items.Count > 0) {
                 var item = items.ElementAt(0);
-                DateLastStep = DateTime.ParseExact(item.Date,
-                    DBHelper.DATE_FORMAT,
-                    System.Globalization.CultureInfo.InvariantCulture);
+                DateLastStep = item.Date.Date;
 
                 Steps = item.Steps;
                 Calories = item.Calories;
