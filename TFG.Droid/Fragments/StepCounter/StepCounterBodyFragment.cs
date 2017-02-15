@@ -15,6 +15,7 @@ using com.refractored;
 using TFG.Droid.Adapters;
 using TFG.Droid.Custom_Views;
 using TFG.Droid.Interfaces;
+using TFG.Droid.Utils;
 
 namespace TFG.Droid.Fragments.StepCounter {
     class StepCounterBodyFragment: Fragment, IHealthFragment {
@@ -26,7 +27,7 @@ namespace TFG.Droid.Fragments.StepCounter {
             var pager = view.FindViewById<ViewPager>(Resource.Id.pager); 
             var adapter = new HealthModulePagerAdapter(((AppCompatActivity) Activity).SupportFragmentManager);
             adapter.AddItem(new StepCounterQuickResultsFragment());
-            adapter.AddItem(new StepCounterChartFragment(Chart.VisualizationMetric.Weekly));
+            adapter.AddItem(new StepCounterChartFragment(ChartUtils.VisualizationMetric.Weekly));
             pager.Adapter = adapter;
 
             var tabs = view.FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
