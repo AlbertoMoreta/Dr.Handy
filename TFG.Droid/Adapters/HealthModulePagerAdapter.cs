@@ -22,9 +22,11 @@ namespace TFG.Droid.Adapters {
     class HealthModulePagerAdapter : FragmentPagerAdapter  {
 
         private readonly List<Fragment> _fragments;
+        private readonly List<string> _titles;
 
         public HealthModulePagerAdapter(FragmentManager fm) : base(fm) {
             _fragments = new List<Fragment>();
+            _titles = new List<string>();
         }
 
         public override int Count { get { return _fragments.Count; } }
@@ -34,15 +36,17 @@ namespace TFG.Droid.Adapters {
         }
 
         public override ICharSequence GetPageTitleFormatted(int position){
-            return new String(((IHealthFragmentTabItem) _fragments.ElementAt(position)).Title);
+            return new String(_titles.ElementAt(position));
         }
 
-        public void AddItem(Fragment f) {
+        public void AddItem(Fragment f, string title) {
             _fragments.Add(f);
+            _titles.Add(title);
         }
 
         public void RemoveFragment(Fragment f) { 
-            _fragments.Remove(f); 
+            _fragments.Remove(f);
+            _titles.RemoveAt(_fragments.IndexOf(f));
         }
     }
 }

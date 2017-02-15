@@ -18,8 +18,7 @@ using TFG.Droid.Utils;
 using Fragment = Android.Support.V4.App.Fragment;
 
 namespace TFG.Droid.Fragments.StepCounter {
-    public class StepCounterChartFragment : Fragment, IHealthFragmentTabItem {
-        public string Title { get; private set; }
+    public class StepCounterChartFragment : Fragment{ 
 
         private BarChart _chart;
         private DateTime _date = DateTime.Now;
@@ -38,11 +37,7 @@ namespace TFG.Droid.Fragments.StepCounter {
 
             View view = null;
             try {
-                view =  inflater.Inflate(Resource.Layout.fragment_stepcounter_body_chart_results, container, false);
-
-                Title =
-                    Activity.GetString(Activity.Resources.GetIdentifier(_metric.ToString().ToLower() + "_results",
-                        "string", Activity.PackageName));
+                view =  inflater.Inflate(Resource.Layout.fragment_stepcounter_body_chart_results, container, false); 
 
                 _chart = view.FindViewById<BarChart>(Resource.Id.chart);
                 _chart.SetDrawBarShadow(true);

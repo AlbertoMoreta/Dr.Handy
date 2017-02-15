@@ -15,9 +15,7 @@ using TFG.Droid.Interfaces;
 using Fragment = Android.Support.V4.App.Fragment;
 
 namespace TFG.Droid.Fragments.StepCounter {
-    public class StepCounterQuickResultsFragment : Fragment, IHealthFragmentTabItem {
-
-        public string Title { get; } = "Quick Results";
+    public class StepCounterQuickResultsFragment : Fragment {
 
         private CustomTextView _stepsYesterday;
         private CustomTextView _caloriesYesterday;
