@@ -3,6 +3,7 @@ using SQLite;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using TFG.Logic;
 using TFG.Model;
 
 namespace TFG {
@@ -176,6 +177,26 @@ namespace TFG {
                       "AND date('" + endDate.ToString(DATE_FORMAT) + "');";
 
             return Connection.Query<StepCounterItem>(sql);
+        }
+
+        private void FillStepCounterTable() {
+            DropTable(STEPCOUNTER_TABLE);
+            CreateStepCounterTable();
+
+            var startDate = new DateTime(2017, 2, 1);
+            var endDate = new DateTime(2017, 2, 15);
+
+            var rnd = new Random();
+            var logic = StepCounterLogic.Instance();
+
+            for (var day = startDate.Date; day.Date <= endDate.Date; day = day.AddDays(1)) {
+                var steps = rnd.Next(3000);
+                 
+                UpdateSteps(day, steps, logic.GetCaloriesFromSteps(steps), logic.GetDistanceFromSteps(steps));
+
+            } 
+            
+
         }
     }
 
