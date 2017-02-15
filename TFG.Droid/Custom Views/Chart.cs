@@ -46,7 +46,8 @@ namespace TFG.Droid.Custom_Views {
             ChartView.HighlightPerTapEnabled = false;
             ChartView.ScaleYEnabled = false;
             ChartView.AnimateY(700);
-            ChartView.ScaleX = 1; 
+            ChartView.ScaleX = 1;
+            ChartView.Description.Text = "";
 
             //X Axis Properties
             var xAxis = ChartView.XAxis;
