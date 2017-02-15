@@ -24,7 +24,7 @@ namespace TFG {
         public static readonly string COL_STEPS = "Steps";
         public static readonly string COL_CALORIES = "Calories";
         public static readonly string COL_DISTANCE = "Distance";
-        public static readonly string DATE_FORMAT = "yy-MM-dd";
+        public static readonly string DATE_FORMAT = "yyyy-MM-dd";
 
 
         private static DBHelper _instance;
@@ -145,7 +145,7 @@ namespace TFG {
 
 
         public void CreateStepCounterTable() {
-            var sql = "CREATE TABLE IF NOT EXISTS " + STEPCOUNTER_TABLE + " (" + COL_DATE + " text primary key, "
+            var sql = "CREATE TABLE IF NOT EXISTS " + STEPCOUNTER_TABLE + " (" + COL_DATE + " date primary key, "
                 + COL_STEPS + " integer, " + COL_CALORIES + " integer, " + COL_DISTANCE + " integer)";
 
             Connection.Execute(sql);
@@ -172,8 +172,8 @@ namespace TFG {
         public List<StepCounterItem> GetStepCounterItemsFromDateRange(DateTime startDate, DateTime endDate) {
             var sql = "SELECT " + COL_STEPS + ", " + COL_DATE + " " +
                       "FROM " + STEPCOUNTER_TABLE + " " +
-                      "WHERE " + COL_DATE + " >= " + startDate.ToString(DATE_FORMAT) + " " +
-                      "AND " + COL_DATE + " <= " + endDate.ToString(DATE_FORMAT);
+                      "WHERE date(" + COL_DATE + ") BETWEEN date('" + startDate.ToString(DATE_FORMAT) + "') " +
+                      "AND date('" + endDate.ToString(DATE_FORMAT) + "');";
 
             return Connection.Query<StepCounterItem>(sql);
         }
