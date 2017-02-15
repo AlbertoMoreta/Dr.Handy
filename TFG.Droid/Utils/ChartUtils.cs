@@ -10,24 +10,29 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using MikePhil.Charting.Charts;
 using MikePhil.Charting.Data;
-using TFG.Droid.Custom_Views;
-using TFG.Model;
+using TFG.Model; 
 
 namespace TFG.Droid.Utils {
-    class ChartUtils {
-        public static List<BarEntry> StepCounter_StepsToBarEntries(Chart.VisualizationMetric metric, DateTime date) {
+    public static class ChartUtils {
+
+        public enum VisualizationMetric {
+            Weekly, Yearly
+        }
+
+        public static List<BarEntry> StepCounter_StepsToBarEntries(VisualizationMetric metric, DateTime date) {
 
             List<BarEntry> entries = new List<BarEntry>();
 
             DateTime startDate = new DateTime();
             DateTime endDate = new DateTime(); 
             switch (metric) {
-                case Chart.VisualizationMetric.Weekly:
+                case VisualizationMetric.Weekly:
                     startDate = date.AddDays(0 - (int) date.DayOfWeek);
                     endDate = date.AddDays(6 - (int) date.DayOfWeek);
                     break;
-                case Chart.VisualizationMetric.Yearly:
+                case VisualizationMetric.Yearly:
                     startDate = new DateTime(date.Year, 0, 0);
                     endDate = new DateTime(date.Year, 11, 31);
                     break;
@@ -48,6 +53,23 @@ namespace TFG.Droid.Utils {
 
             return firstDayInWeek;
         }
+
+        public static void PopulateChart(this BarChart chart, List<BarEntry> values, VisualizationMetric metric)  { 
+
+            if (chart != null) {
+                chart.Data = new BarData(new BarDataSet(values, ""));
+                chart.AnimateY(700);
+                chart.NotifyDataSetChanged();
+                chart.Invalidate();
+            }
+
+            var label = "";
+            switch (metric) {
+                case VisualizationMetric.Weekly: label = "weekday"; break; 
+                case VisualizationMetric.Yearly: label = "month"; break;
+            }  
+
+        } 
 
 
     }
