@@ -21,12 +21,43 @@ namespace TFG.Droid.Utils {
             Weekly, Yearly
         }
 
-        public static List<BarEntry> StepCounter_StepsToBarEntries(VisualizationMetric metric, DateTime date) {
+        public static List<BarEntry> StepCounter_StepsToBarEntries(List<StepCounterItem> items) {
 
-            List<BarEntry> entries = new List<BarEntry>();
+            List<BarEntry> entries = new List<BarEntry>(); 
 
-            DateTime startDate = new DateTime();
-            DateTime endDate = new DateTime(); 
+            for (int i = 0; i < items.Count; i++) {
+                entries.Add(new BarEntry(items.ElementAt(i).Steps, i));
+            }
+
+            return entries; 
+        }
+
+        public static List<BarEntry> StepCounter_CaloriesToBarEntries(List<StepCounterItem> items) {
+
+            List<BarEntry> entries = new List<BarEntry>(); 
+
+            for (int i = 0; i < items.Count; i++) {
+                entries.Add(new BarEntry(items.ElementAt(i).Steps, i));
+            }
+
+            return entries;
+        }
+
+        public static List<BarEntry> StepCounter_DistanceToBarEntries(List<StepCounterItem> items) {
+
+            List<BarEntry> entries = new List<BarEntry>(); 
+
+            for (int i = 0; i < items.Count; i++) {
+                entries.Add(new BarEntry((float) items.ElementAt(i).Distance, i));
+            }
+
+            return entries;
+        }
+
+        public static List<StepCounterItem> GetStepCounterItemsFromMetric(VisualizationMetric metric, DateTime date) {
+
+            var startDate = new DateTime();
+            var endDate = new DateTime();
             switch (metric) {
                 case VisualizationMetric.Weekly:
                     startDate = date.AddDays(0 - (int) date.DayOfWeek);
@@ -37,22 +68,11 @@ namespace TFG.Droid.Utils {
                     endDate = new DateTime(date.Year, 11, 31);
                     break;
             }
-            List<StepCounterItem> items = DBHelper.Instance.GetStepCounterItemsFromDateRange(startDate, endDate); 
-            for(int i = 0; i < items.Count; i++) {
-                entries.Add(new BarEntry(items.ElementAt(i).Steps, i));
-            }
 
-            return entries; 
+            return DBHelper.Instance.GetStepCounterItemsFromDateRange(startDate, endDate);
         }
 
-        private static DateTime GetFirstDayOfWeek(DateTime dayInWeek, CultureInfo cultureInfo) {
-            DayOfWeek firstDay = cultureInfo.DateTimeFormat.FirstDayOfWeek;
-            DateTime firstDayInWeek = dayInWeek.Date;
-            while (firstDayInWeek.DayOfWeek != firstDay)
-                firstDayInWeek = firstDayInWeek.AddDays(-1);
 
-            return firstDayInWeek;
-        }
 
         public static void PopulateChart(this BarChart chart, List<BarEntry> values, VisualizationMetric metric)  { 
 
