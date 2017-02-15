@@ -66,7 +66,8 @@ namespace TFG.Droid.Fragments.StepCounter {
                 //Disable Right Axis
                 var rightAxis = _chart.AxisRight;
                 rightAxis.Enabled = false;
-                _chart.PopulateChart(ChartUtils.StepCounter_StepsToBarEntries(_metric, DateTime.Now), _metric);
+
+                _chart.PopulateChart(ChartUtils.StepCounter_StepsToBarEntries(ChartUtils.GetStepCounterItemsFromMetric(_metric, DateTime.Now)), _metric);
             }catch(NullPointerException npe) { }
 
             return view;
