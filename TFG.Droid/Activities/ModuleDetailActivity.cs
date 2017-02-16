@@ -21,6 +21,7 @@ namespace TFG.Droid.Activities {
     [Activity(Label = "ModuleDetailActivity", LaunchMode = LaunchMode.SingleTask)]
     public class ModuleDetailActivity : BaseActivity {
 
+        public string CurrentHealthModule { get; private set; }
         public IHealthFragment HeaderFragment { get; private set; }
         public IHealthFragment BodyFragment { get; private set; }
 
@@ -31,7 +32,7 @@ namespace TFG.Droid.Activities {
             SetUpToolBar();
 
             var moduleName = Intent.GetStringExtra("name");
-            ToolbarTitle.Text = moduleName;
+            ToolbarTitle.Text = CurrentHealthModule = moduleName;
 
             var moduleColorSufix = HealthModulesInfo.GetHealthModuleColorFromHealthModuleName(moduleName) ?? "purple";
 
