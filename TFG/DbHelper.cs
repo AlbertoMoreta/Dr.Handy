@@ -171,7 +171,7 @@ namespace TFG {
         }
 
         public List<StepCounterItem> GetStepCounterItemsFromDateRange(DateTime startDate, DateTime endDate) {
-            var sql = "SELECT " + COL_STEPS + ", " + COL_DATE + " " +
+            var sql = "SELECT * " +
                       "FROM " + STEPCOUNTER_TABLE + " " +
                       "WHERE date(" + COL_DATE + ") BETWEEN date('" + startDate.ToString(DATE_FORMAT) + "') " +
                       "AND date('" + endDate.ToString(DATE_FORMAT) + "');";
