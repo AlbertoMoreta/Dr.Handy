@@ -36,7 +36,7 @@ namespace TFG.Droid.Fragments.StepCounter {
 
             var tabs = view.FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
             tabs.SetViewPager(pager);
-            tabs.TabTextColor = ColorStateList.ValueOf(Color.WhiteSmoke);
+            tabs.TabTextColor = ColorStateList.ValueOf(Color.AntiqueWhite);
             tabs.TabTextColorSelected = ColorStateList.ValueOf(Color.White);
             tabs.IndicatorColor = Color.White;
 
