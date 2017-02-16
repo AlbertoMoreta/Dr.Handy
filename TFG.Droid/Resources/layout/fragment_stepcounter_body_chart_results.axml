@@ -7,19 +7,14 @@
     android:background="@color/white"
     android:padding="10dp">
 
-  <android.support.v7.widget.CardView
+  <TFG.Droid.Custom_Views.CardViewBarChart 
+    android:id="@+id/steps_chart"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    cardview:cardElevation="4dp"
-    android:layout_margin="5dp" >
+    android:layout_height="wrap_content" />
 
-    <com.github.mikephil.charting.charts.BarChart
-          android:id="@+id/chart"
-          android:layout_width="match_parent"
-          android:layout_height="150dp"
-          android:layout_centerHorizontal="true" 
-          android:layout_margin="10dp"/>
+  <TFG.Droid.Custom_Views.CardViewBarChart
+    android:id="@+id/calories_chart"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
 
-  </android.support.v7.widget.CardView>
-  
 </LinearLayout>
