@@ -5,6 +5,8 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Content.Res;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V4.View;
@@ -33,7 +35,10 @@ namespace TFG.Droid.Fragments.StepCounter {
             pager.Adapter = adapter;
 
             var tabs = view.FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
-            tabs.SetViewPager(pager); 
+            tabs.SetViewPager(pager);
+            tabs.TabTextColor = ColorStateList.ValueOf(Color.WhiteSmoke);
+            tabs.TabTextColorSelected = ColorStateList.ValueOf(Color.White);
+            tabs.IndicatorColor = Color.White;
 
            
 
