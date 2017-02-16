@@ -24,6 +24,29 @@
   <string name="quick_results">Resultados Rápidos</string>
   <string name="weekly_results">Resultados Semanales</string>
   <string name="yearly_results">Resultados Anuales</string>
+  <string-array name="week_labels">
+    <item>L</item>
+    <item>M</item>
+    <item>X</item>
+    <item>J</item>
+    <item>V</item>
+    <item>S</item>
+    <item>D</item>
+  </string-array>
+  <string-array name="year_labels">
+    <item>E</item>
+    <item>F</item>
+    <item>M</item>
+    <item>A</item>
+    <item>M</item>
+    <item>J</item>
+    <item>J</item>
+    <item>A</item>
+    <item>S</item>
+    <item>O</item>
+    <item>N</item>
+    <item>D</item>
+  </string-array>
 
 
   <string name="weekday">Día</string>
