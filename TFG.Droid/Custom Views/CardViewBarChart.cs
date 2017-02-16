@@ -21,16 +21,21 @@ namespace TFG.Droid.Custom_Views {
     class CardViewBarChart : CardView {
 
         private Context _context;
+        private int _color;
         public BarChart Chart { get; set; }
         public CustomTextView Title { get; set; } 
         public int Color {
+            get { return _color; }
             set {
-                if (Chart != null) {
+
+                if (Chart != null && Chart.BarData != null) {
                     foreach (DataSet dataSet in Chart.BarData.DataSets)  {
                         dataSet.Color = value;
                     }
                     Chart.Invalidate();
                 }
+
+                _color = value;
             }
         }
 
@@ -85,7 +90,9 @@ namespace TFG.Droid.Custom_Views {
 
         public void PopulateChart(List<BarEntry> barEntries) {
             if (Chart != null) {
-                Chart.Data = new BarData(new BarDataSet(barEntries, ""));
+                var barDataSet = new BarDataSet(barEntries, "");
+                barDataSet.Color = _color;
+                Chart.Data = new BarData(barDataSet);
                 //Chart.AnimateY(700);
                 Chart.NotifyDataSetChanged();
                 Chart.Invalidate();
