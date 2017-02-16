@@ -38,11 +38,16 @@ namespace TFG.Droid.Fragments.StepCounter {
             var itemsForMetric = ChartUtils.GetStepCounterItemsFromMetric(_metric, DateTime.Now);
 
             var stepsChart = view.FindViewById<CardViewBarChart>(Resource.Id.steps_chart);
+            stepsChart.Title.Text = Activity.GetString(Activity.Resources.GetIdentifier("steps", "string", Activity.PackageName));
             stepsChart.PopulateChart(ChartUtils.StepCounter_StepsToBarEntries(itemsForMetric));
 
-
             var caloriesChart = view.FindViewById<CardViewBarChart>(Resource.Id.calories_chart);
+            caloriesChart.Title.Text = Activity.GetString(Activity.Resources.GetIdentifier("calories", "string", Activity.PackageName));
             caloriesChart.PopulateChart(ChartUtils.StepCounter_CaloriesToBarEntries(itemsForMetric));
+
+            var distanceChart = view.FindViewById<CardViewBarChart>(Resource.Id.distance_chart);
+            distanceChart.Title.Text = Activity.GetString(Activity.Resources.GetIdentifier("kilometers", "string", Activity.PackageName));
+            caloriesChart.PopulateChart(ChartUtils.StepCounter_DistanceToBarEntries(itemsForMetric));
 
             return view;
         }
