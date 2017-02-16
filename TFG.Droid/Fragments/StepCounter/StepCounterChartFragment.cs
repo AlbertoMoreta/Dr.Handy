@@ -44,21 +44,24 @@ namespace TFG.Droid.Fragments.StepCounter {
                     ((ModuleDetailActivity) Activity).CurrentHealthModule);
             var colorRes = ContextCompat.GetColor(Activity, Activity.Resources.GetIdentifier(colorName, "color", Activity.PackageName));
 
+            var labels = _metric == ChartUtils.VisualizationMetric.Weekly
+                ? Resources.GetStringArray(Resource.Array.week_labels)
+                : Resources.GetStringArray(Resource.Array.year_labels);
 
             var stepsChart = view.FindViewById<CardViewBarChart>(Resource.Id.steps_chart);
             stepsChart.Title.Text = Activity.GetString(Activity.Resources.GetIdentifier("steps", "string", Activity.PackageName));
             stepsChart.Color = colorRes;
-            stepsChart.PopulateChart(ChartUtils.StepCounter_StepsToBarEntries(itemsForMetric));
+            stepsChart.PopulateChart(ChartUtils.StepCounter_StepsToBarEntries(itemsForMetric), labels);
 
             var caloriesChart = view.FindViewById<CardViewBarChart>(Resource.Id.calories_chart);
             caloriesChart.Title.Text = Activity.GetString(Activity.Resources.GetIdentifier("calories", "string", Activity.PackageName));
             caloriesChart.Color = colorRes;
-            caloriesChart.PopulateChart(ChartUtils.StepCounter_CaloriesToBarEntries(itemsForMetric));
+            caloriesChart.PopulateChart(ChartUtils.StepCounter_CaloriesToBarEntries(itemsForMetric), labels);
 
             var distanceChart = view.FindViewById<CardViewBarChart>(Resource.Id.distance_chart);
             distanceChart.Title.Text = Activity.GetString(Activity.Resources.GetIdentifier("kilometers", "string", Activity.PackageName));
             distanceChart.Color = colorRes;
-            distanceChart.PopulateChart(ChartUtils.StepCounter_DistanceToBarEntries(itemsForMetric));
+            distanceChart.PopulateChart(ChartUtils.StepCounter_DistanceToBarEntries(itemsForMetric), labels);
 
             return view;
         }

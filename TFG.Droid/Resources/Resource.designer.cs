@@ -1412,6 +1412,25 @@ namespace TFG.Droid
 			}
 		}
 		
+		public partial class Array
+		{
+			
+			// aapt resource value: 0x7f0c0000
+			public const int week_labels = 2131492864;
+			
+			// aapt resource value: 0x7f0c0001
+			public const int year_labels = 2131492865;
+			
+			static Array()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Array()
+			{
+			}
+		}
+		
 		public partial class Attribute
 		{
 			
