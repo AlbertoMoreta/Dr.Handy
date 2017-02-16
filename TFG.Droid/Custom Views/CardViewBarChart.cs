@@ -15,6 +15,7 @@ using Android.Widget;
 using MikePhil.Charting.Charts;
 using MikePhil.Charting.Components;
 using MikePhil.Charting.Data;
+using MikePhil.Charting.Formatter;
 using TFG.Droid.Utils;
 
 namespace TFG.Droid.Custom_Views {
@@ -74,6 +75,7 @@ namespace TFG.Droid.Custom_Views {
             //X Axis Properties
             var xAxis = Chart.XAxis;
             xAxis.Position = XAxis.XAxisPosition.Bottom;
+            xAxis.Granularity = 1f;
             xAxis.SetDrawGridLines(false);
 
             //Left Axis Properties
@@ -88,15 +90,31 @@ namespace TFG.Droid.Custom_Views {
             rightAxis.Enabled = false; 
         }
 
-        public void PopulateChart(List<BarEntry> barEntries) {
-            if (Chart != null) {
+        public void PopulateChart(List<BarEntry> barEntries, string[] labels = null) {
+            if (Chart != null) { 
                 var barDataSet = new BarDataSet(barEntries, "");
-                barDataSet.Color = _color;
+                barDataSet.Color = _color; 
                 Chart.Data = new BarData(barDataSet);
-                //Chart.AnimateY(700);
+                if (labels != null) {
+                    Chart.XAxis.ValueFormatter = new CustomAxisValueFormatter(labels);
+                }
                 Chart.NotifyDataSetChanged();
                 Chart.Invalidate();
             }
         }
+    }
+
+    public class CustomAxisValueFormatter : IndexAxisValueFormatter {
+
+        private string[] _labels;
+
+        public CustomAxisValueFormatter(string[] labels) {
+            _labels = labels;
+        }
+
+        public override string GetFormattedValue(float value, AxisBase axis) {
+            return _labels[(int) value];
+        } 
+        
     }
 }
