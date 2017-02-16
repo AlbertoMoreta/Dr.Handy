@@ -20,6 +20,7 @@ namespace TFG.Droid.Custom_Views {
     class CardViewBarChart : CardView{
 
         public BarChart Chart { get; set; }
+        public CustomTextView Title { get; set; }
 
         public CardViewBarChart(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer) { Init(); }
         public CardViewBarChart(Context context, IAttributeSet attrs, int defStyleAttr) : base(context, attrs, defStyleAttr) { Init(); }
@@ -29,6 +30,8 @@ namespace TFG.Droid.Custom_Views {
         private void Init() {
             var inflater = LayoutInflater.From(Context);
             inflater.Inflate(Resource.Layout.cardview_barchart, this);
+
+            Title = FindViewById<CustomTextView>(Resource.Id.title);
 
             Chart = FindViewById<BarChart>(Resource.Id.chart);
             Chart.SetDrawBarShadow(true);
