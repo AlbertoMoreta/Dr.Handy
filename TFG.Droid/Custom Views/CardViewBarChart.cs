@@ -7,6 +7,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V4.Content;
 using Android.Support.V7.Widget;
 using Android.Util;
 using Android.Views;
@@ -17,15 +18,35 @@ using MikePhil.Charting.Data;
 using TFG.Droid.Utils;
 
 namespace TFG.Droid.Custom_Views {
-    class CardViewBarChart : CardView{
+    class CardViewBarChart : CardView {
 
+        private Context _context;
         public BarChart Chart { get; set; }
-        public CustomTextView Title { get; set; }
+        public CustomTextView Title { get; set; } 
+        public int Color {
+            set {
+                if (Chart != null) {
+                    foreach (DataSet dataSet in Chart.BarData.DataSets)  {
+                        dataSet.Color = value;
+                    }
+                    Chart.Invalidate();
+                }
+            }
+        }
 
         public CardViewBarChart(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer) { Init(); }
-        public CardViewBarChart(Context context, IAttributeSet attrs, int defStyleAttr) : base(context, attrs, defStyleAttr) { Init(); }
-        public CardViewBarChart(Context context, IAttributeSet attrs) : base(context, attrs) { Init(); }
-        public CardViewBarChart(Context context) : base(context) { Init(); }
+        public CardViewBarChart(Context context, IAttributeSet attrs, int defStyleAttr) : base(context, attrs, defStyleAttr) {
+            _context = context;
+            Init();
+        }
+        public CardViewBarChart(Context context, IAttributeSet attrs) : base(context, attrs) {
+            _context = context;
+            Init();
+        }
+        public CardViewBarChart(Context context) : base(context) {
+            _context = context;
+            Init();
+        }
 
         private void Init() {
             var inflater = LayoutInflater.From(Context);
