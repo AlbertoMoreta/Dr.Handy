@@ -7,13 +7,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <TFG.Droid.Custom_Views.CustomTextView
           android:id="@+id/title"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content" 
-          android:layout_margin="10dp"
           android:gravity="center"
           android:layout_gravity="center"
           android:textColor="?colorPrimary"
@@ -25,7 +25,7 @@
               android:layout_width="match_parent"
               android:layout_height="150dp"
               android:layout_centerHorizontal="true"
-              android:layout_margin="10dp" />
+              android:layout_marginTop="10dp" />
 
 
     </LinearLayout>

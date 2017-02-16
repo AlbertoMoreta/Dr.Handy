@@ -80,10 +80,7 @@ namespace TFG.Droid.Custom_Views {
 
             //Left Axis Properties
             var leftAxis = Chart.AxisLeft;
-            leftAxis.AxisMaximum = 100f;
-            leftAxis.AxisMinimum = 0f;
             leftAxis.SetDrawGridLines(false);
-            leftAxis.SetLabelCount(5, true);
 
             //Disable Right Axis
             var rightAxis = Chart.AxisRight;
@@ -91,7 +88,11 @@ namespace TFG.Droid.Custom_Views {
         }
 
         public void PopulateChart(List<BarEntry> barEntries, string[] labels = null) {
-            if (Chart != null) { 
+            if (Chart != null)  {
+
+                Chart.AxisLeft.AxisMaximum = barEntries.Select(x => x.GetY()).Max();    //Maximum Y axis value
+                Chart.AxisLeft.AxisMinimum = barEntries.Select(x => x.GetY()).Min();    //Minimum Y axis value
+
                 var barDataSet = new BarDataSet(barEntries, "");
                 barDataSet.Color = _color; 
                 Chart.Data = new BarData(barDataSet);
@@ -104,9 +105,10 @@ namespace TFG.Droid.Custom_Views {
         }
     }
 
+    //Value formater for XAxis labels
     public class CustomAxisValueFormatter : IndexAxisValueFormatter {
 
-        private string[] _labels;
+        private readonly string[] _labels;
 
         public CustomAxisValueFormatter(string[] labels) {
             _labels = labels;
