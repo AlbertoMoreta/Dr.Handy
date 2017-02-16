@@ -73,24 +73,5 @@ namespace TFG.Droid.Utils {
         }
 
 
-
-        public static void PopulateChart(this BarChart chart, List<BarEntry> values, VisualizationMetric metric)  { 
-
-            if (chart != null) {
-                chart.Data = new BarData(new BarDataSet(values, ""));
-                chart.AnimateY(700);
-                chart.NotifyDataSetChanged();
-                chart.Invalidate();
-            }
-
-            var label = "";
-            switch (metric) {
-                case VisualizationMetric.Weekly: label = "weekday"; break; 
-                case VisualizationMetric.Yearly: label = "month"; break;
-            }  
-
-        } 
-
-
     }
 }
