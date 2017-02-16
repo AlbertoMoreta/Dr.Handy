@@ -47,7 +47,7 @@ namespace TFG.Droid.Fragments.StepCounter {
 
             var distanceChart = view.FindViewById<CardViewBarChart>(Resource.Id.distance_chart);
             distanceChart.Title.Text = Activity.GetString(Activity.Resources.GetIdentifier("kilometers", "string", Activity.PackageName));
-            caloriesChart.PopulateChart(ChartUtils.StepCounter_DistanceToBarEntries(itemsForMetric));
+            distanceChart.PopulateChart(ChartUtils.StepCounter_DistanceToBarEntries(itemsForMetric));
 
             return view;
         }
