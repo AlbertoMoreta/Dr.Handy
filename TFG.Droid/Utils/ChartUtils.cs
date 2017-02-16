@@ -37,7 +37,7 @@ namespace TFG.Droid.Utils {
             List<BarEntry> entries = new List<BarEntry>(); 
 
             for (int i = 0; i < items.Count; i++) {
-                entries.Add(new BarEntry(i, items.ElementAt(i).Steps));
+                entries.Add(new BarEntry(i, items.ElementAt(i).Calories));
             }
 
             return entries;
