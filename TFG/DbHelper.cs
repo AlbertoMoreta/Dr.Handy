@@ -179,6 +179,15 @@ namespace TFG {
             return Connection.Query<StepCounterItem>(sql);
         }
 
+        public List<StepCounterItem> GetStepCounterItemsMonthly(string year) {
+            var sql = "SELECT " + COL_DATE + ", SUM(" + COL_STEPS +") as " + COL_STEPS + 
+                      ", SUM(" + COL_CALORIES + ") as " + COL_CALORIES + ", SUM(" + COL_DISTANCE + ") as " + COL_DISTANCE +
+                      " FROM " + STEPCOUNTER_TABLE + " " +
+                      "WHERE strftime('%Y', " + COL_DATE + ") = '" + year + "' GROUP BY strftime('%m', " + COL_DATE + ");";
+
+            return Connection.Query<StepCounterItem>(sql);
+        }
+
         private void FillStepCounterTable() {
             DropTable(STEPCOUNTER_TABLE);
             CreateStepCounterTable();

@@ -21,7 +21,6 @@ using TFG.Droid.Utils;
 namespace TFG.Droid.Custom_Views {
     class CardViewBarChart : CardView {
 
-        private Context _context;
         private int _color;
         public BarChart Chart { get; set; }
         public CustomTextView Title { get; set; } 
@@ -30,7 +29,7 @@ namespace TFG.Droid.Custom_Views {
             set {
 
                 if (Chart != null && Chart.BarData != null) {
-                    foreach (DataSet dataSet in Chart.BarData.DataSets)  {
+                    foreach (BarDataSet dataSet in Chart.BarData.DataSets)  {
                         dataSet.Color = value;
                     }
                     Chart.Invalidate();
@@ -41,18 +40,9 @@ namespace TFG.Droid.Custom_Views {
         }
 
         public CardViewBarChart(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer) { Init(); }
-        public CardViewBarChart(Context context, IAttributeSet attrs, int defStyleAttr) : base(context, attrs, defStyleAttr) {
-            _context = context;
-            Init();
-        }
-        public CardViewBarChart(Context context, IAttributeSet attrs) : base(context, attrs) {
-            _context = context;
-            Init();
-        }
-        public CardViewBarChart(Context context) : base(context) {
-            _context = context;
-            Init();
-        }
+        public CardViewBarChart(Context context, IAttributeSet attrs, int defStyleAttr) : base(context, attrs, defStyleAttr) { Init(); }
+        public CardViewBarChart(Context context, IAttributeSet attrs) : base(context, attrs) { Init(); }
+        public CardViewBarChart(Context context) : base(context) { Init(); }
 
         private void Init() {
             var inflater = LayoutInflater.From(Context);
@@ -89,9 +79,13 @@ namespace TFG.Droid.Custom_Views {
 
         public void PopulateChart(List<BarEntry> barEntries, string[] labels = null) {
             if (Chart != null)  {
-
+                 
                 Chart.AxisLeft.AxisMaximum = barEntries.Select(x => x.GetY()).Max();    //Maximum Y axis value
                 Chart.AxisLeft.AxisMinimum = barEntries.Select(x => x.GetY()).Min();    //Minimum Y axis value
+                Chart.AxisLeft.AxisMaximum *= (float) 1.3;
+                Chart.AxisLeft.AxisMinimum /= (float) 1.3; 
+                if (Chart.AxisLeft.AxisMinimum < 0) { Chart.AxisLeft.AxisMinimum = 0; }
+
 
                 var barDataSet = new BarDataSet(barEntries, "");
                 barDataSet.Color = _color; 
