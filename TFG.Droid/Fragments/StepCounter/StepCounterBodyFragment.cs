@@ -32,6 +32,9 @@ namespace TFG.Droid.Fragments.StepCounter {
             var weeklyResultsTitle = Activity.GetString(Activity.Resources.GetIdentifier("weekly_results",
                 "string", Activity.PackageName));
             adapter.AddItem(new StepCounterChartFragment(ChartUtils.VisualizationMetric.Weekly), weeklyResultsTitle);
+            var yearlyResultsTitle = Activity.GetString(Activity.Resources.GetIdentifier("yearly_results",
+                "string", Activity.PackageName));
+            adapter.AddItem(new StepCounterChartFragment(ChartUtils.VisualizationMetric.Yearly), yearlyResultsTitle);
             pager.Adapter = adapter;
 
             var tabs = view.FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);

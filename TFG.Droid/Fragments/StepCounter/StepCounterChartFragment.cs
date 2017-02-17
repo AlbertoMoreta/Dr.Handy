@@ -51,17 +51,17 @@ namespace TFG.Droid.Fragments.StepCounter {
             var stepsChart = view.FindViewById<CardViewBarChart>(Resource.Id.steps_chart);
             stepsChart.Title.Text = Activity.GetString(Activity.Resources.GetIdentifier("steps", "string", Activity.PackageName));
             stepsChart.Color = colorRes;
-            stepsChart.PopulateChart(ChartUtils.StepCounter_StepsToBarEntries(itemsForMetric), labels);
+            stepsChart.PopulateChart(ChartUtils.StepCounter_StepsToBarEntries(itemsForMetric, labels.Length), labels);
 
             var caloriesChart = view.FindViewById<CardViewBarChart>(Resource.Id.calories_chart);
             caloriesChart.Title.Text = Activity.GetString(Activity.Resources.GetIdentifier("calories", "string", Activity.PackageName));
             caloriesChart.Color = colorRes;
-            caloriesChart.PopulateChart(ChartUtils.StepCounter_CaloriesToBarEntries(itemsForMetric), labels);
+            caloriesChart.PopulateChart(ChartUtils.StepCounter_CaloriesToBarEntries(itemsForMetric, labels.Length), labels);
 
             var distanceChart = view.FindViewById<CardViewBarChart>(Resource.Id.distance_chart);
             distanceChart.Title.Text = Activity.GetString(Activity.Resources.GetIdentifier("kilometers", "string", Activity.PackageName));
             distanceChart.Color = colorRes;
-            distanceChart.PopulateChart(ChartUtils.StepCounter_DistanceToBarEntries(itemsForMetric), labels);
+            distanceChart.PopulateChart(ChartUtils.StepCounter_DistanceToBarEntries(itemsForMetric, labels.Length), labels);
 
             return view;
         }
