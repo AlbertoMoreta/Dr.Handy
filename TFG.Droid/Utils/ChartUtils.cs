@@ -21,40 +21,59 @@ namespace TFG.Droid.Utils {
             Weekly, Yearly
         }
 
-        public static List<BarEntry> StepCounter_StepsToBarEntries(List<StepCounterItem> items) {
+        public static List<BarEntry> StepCounter_StepsToBarEntries(List<StepCounterItem> items, int labelsCount = -1) {
 
-            List<BarEntry> entries = new List<BarEntry>(); 
+            List<BarEntry> entries = new List<BarEntry>();
 
-            for (int i = 0; i < items.Count; i++) {
-                entries.Add(new BarEntry(i, items.ElementAt(i).Steps));
+            if(labelsCount == -1) { labelsCount = items.Count; } 
+
+            for (int i = 0; i < labelsCount; i++) {
+                if (i < items.Count) {
+                    entries.Add(new BarEntry(i, items.ElementAt(i).Steps));
+                } else { 
+                    entries.Add(new BarEntry(i, null));
+                }
             }
 
             return entries; 
         }
 
-        public static List<BarEntry> StepCounter_CaloriesToBarEntries(List<StepCounterItem> items) {
+        public static List<BarEntry> StepCounter_CaloriesToBarEntries(List<StepCounterItem> items, int labelsCount = -1) {
 
-            List<BarEntry> entries = new List<BarEntry>(); 
+            List<BarEntry> entries = new List<BarEntry>();
 
-            for (int i = 0; i < items.Count; i++) {
-                entries.Add(new BarEntry(i, items.ElementAt(i).Calories));
+            if (labelsCount == -1) { labelsCount = items.Count; }
+
+            for (int i = 0; i < labelsCount; i++) {
+                if (i < items.Count) {
+                    entries.Add(new BarEntry(i, items.ElementAt(i).Calories));
+                } else {
+                    entries.Add(new BarEntry(i, null));
+                }
             }
 
             return entries;
         }
 
-        public static List<BarEntry> StepCounter_DistanceToBarEntries(List<StepCounterItem> items) {
+        public static List<BarEntry> StepCounter_DistanceToBarEntries(List<StepCounterItem> items, int labelsCount = -1) {
 
-            List<BarEntry> entries = new List<BarEntry>(); 
+            List<BarEntry> entries = new List<BarEntry>();
 
-            for (int i = 0; i < items.Count; i++) {
-                entries.Add(new BarEntry(i, (float) items.ElementAt(i).Distance));
+            if (labelsCount == -1) { labelsCount = items.Count; }
+
+            for (int i = 0; i < labelsCount; i++) {
+                if (i < items.Count) {
+                    entries.Add(new BarEntry(i, (float) items.ElementAt(i).Distance));
+                } else {
+                    entries.Add(new BarEntry(i, null));
+                }
             }
 
             return entries;
         }
 
         public static List<StepCounterItem> GetStepCounterItemsFromMetric(VisualizationMetric metric, DateTime date) {
+            List<StepCounterItem> items = null;
 
             var startDate = new DateTime();
             var endDate = new DateTime();
@@ -62,14 +81,14 @@ namespace TFG.Droid.Utils {
                 case VisualizationMetric.Weekly:
                     startDate = date.AddDays(0 - (int) date.DayOfWeek);
                     endDate = date.AddDays(6 - (int) date.DayOfWeek);
+                    items = DBHelper.Instance.GetStepCounterItemsFromDateRange(startDate, endDate);
                     break;
                 case VisualizationMetric.Yearly:
-                    startDate = new DateTime(date.Year, 0, 0);
-                    endDate = new DateTime(date.Year, 11, 31);
+                    items = DBHelper.Instance.GetStepCounterItemsMonthly(date.Year.ToString());
                     break;
-            }
+            } 
 
-            return DBHelper.Instance.GetStepCounterItemsFromDateRange(startDate, endDate);
+            return items;
         }
 
 

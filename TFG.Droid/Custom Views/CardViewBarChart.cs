@@ -79,9 +79,11 @@ namespace TFG.Droid.Custom_Views {
 
         public void PopulateChart(List<BarEntry> barEntries, string[] labels = null) {
             if (Chart != null)  {
+                 
+                Chart.AxisLeft.AxisMaximum = barEntries.Select(x => x.GetY()).Max() + 100;    //Maximum Y axis value
+                Chart.AxisLeft.AxisMinimum = barEntries.Select(x => x.GetY()).Min() - 100;    //Minimum Y axis value
+                if (Chart.AxisLeft.AxisMinimum < 0) { Chart.AxisLeft.AxisMinimum = 0; }
 
-                Chart.AxisLeft.AxisMaximum = barEntries.Select(x => x.GetY()).Max();    //Maximum Y axis value
-                Chart.AxisLeft.AxisMinimum = barEntries.Select(x => x.GetY()).Min();    //Minimum Y axis value
 
                 var barDataSet = new BarDataSet(barEntries, "");
                 barDataSet.Color = _color; 
