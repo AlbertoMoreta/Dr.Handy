@@ -1,6 +1,9 @@
+*.sln
 bin
 obj
 *.suo
 packages
 *.config
 *.csproj
+*.proj
+*/Resource.Designer.cs
