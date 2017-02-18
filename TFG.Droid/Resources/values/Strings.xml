@@ -6,13 +6,6 @@
 
   <!-- Color Blindness Test Strings -->
   <string name="color_blindness_test_name">Test de Daltonismo</string>
-  <string name="question_number">Pregunta</string>
-  <string name="answer">Tu Respuesta</string>
-  <string name="correct_answer">Respuesta Correcta</string>
-
-  <string name="no_daltonism">No hay de que preocuparse, no sufres ningún tipo de daltonismo</string>
-  <string name="red_and_green_daltonism">En base a tus respuestas es posible que padezcas daltonismo de rojo y verde</string>
-  <string name="total_daltonism">En base a tus respuestas es posible que padezcas daltonismo total</string>
 
   <!-- Step Counter Strings -->
   <string name="step_counter_name">Podómetro</string>
