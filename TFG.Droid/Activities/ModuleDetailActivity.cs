@@ -13,7 +13,6 @@ using Android.Support.V7.App;
 using Android.Text.Style;
 using Android.Views;
 using Android.Widget;
-using TFG.Droid.Fragments.ColorBlindnessTest;
 using TFG.Droid.Interfaces;
 using TFG.Model;
 

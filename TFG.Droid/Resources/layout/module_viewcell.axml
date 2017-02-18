@@ -7,19 +7,18 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp" >
+        android:layout_marginBottom="10dp">
         <View
             android:id="@+id/reveal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" 
-            android:visibility="gone"
-            android:background="@drawable/background_purple" />
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
         <View
             android:id="@+id/background"
             android:layout_width="@dimen/fab_size"
             android:layout_height="@dimen/fab_size"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp" 
+            android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/module_icon" />
         <ImageView
@@ -47,9 +46,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/module_icon"
-            android:layout_below="@+id/module_name" /> 
+            android:layout_below="@+id/module_name" />
     </RelativeLayout>
-
     <com.refractored.fab.FloatingActionButton
         android:id="@+id/module_addbutton"
         android:layout_width="wrap_content"
@@ -58,8 +56,7 @@
         android:layout_marginTop="@dimen/fab_offset"
         android:layout_marginRight="10dp"
         android:visibility="gone"
-        android:focusable="false"  />
-  
+        android:focusable="false" />
     <TFG.Droid.Custom_Views.CustomTextView
         android:id="@+id/module_description_long"
         android:layout_width="match_parent"
