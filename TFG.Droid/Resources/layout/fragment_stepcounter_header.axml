@@ -1,83 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp">
-  
-  <LinearLayout
-    android:id="@+id/steps_layout"
-    android:orientation="vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true" >
-    
-    <TFG.Droid.Custom_Views.CustomTextView
-        android:id="@+id/steps"
+    <LinearLayout
+        android:id="@+id/steps_layout"
+        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center" 
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_size_xxxlarge" />
-
-    <TFG.Droid.Custom_Views.CustomTextView
-        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true">
+        <TFG.Droid.Custom_Views.CustomTextView
+            android:id="@+id/steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_xxxlarge" />
+        <TFG.Droid.Custom_Views.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/steps"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_xlarge" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="@string/steps"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_size_xlarge" />
-  </LinearLayout>
-  
-  <LinearLayout  
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" 
-    android:layout_toLeftOf="@+id/steps_layout"
-    android:layout_alignBottom="@+id/steps_layout">
-    <TFG.Droid.Custom_Views.CustomTextView
-        android:id="@+id/calories"
-        android:layout_width="wrap_content"
+        android:layout_toLeftOf="@+id/steps_layout"
+        android:layout_alignBottom="@+id/steps_layout">
+        <TFG.Droid.Custom_Views.CustomTextView
+            android:id="@+id/calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_xlarge" />
+        <TFG.Droid.Custom_Views.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/calories_short"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_normal" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center" 
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_size_xlarge" />
-
-    <TFG.Droid.Custom_Views.CustomTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="@string/calories"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_size_normal" />
-  </LinearLayout>
-
-  <LinearLayout
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" 
-    android:layout_gravity="bottom"
-    android:layout_toRightOf="@+id/steps_layout"
-    android:layout_alignBottom="@+id/steps_layout">
-    <TFG.Droid.Custom_Views.CustomTextView
-        android:id="@+id/distance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center" 
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_size_xlarge" />
-
-    <TFG.Droid.Custom_Views.CustomTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="@string/kilometers"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_size_normal" />
-  </LinearLayout>
+        android:layout_gravity="bottom"
+        android:layout_toRightOf="@+id/steps_layout"
+        android:layout_alignBottom="@+id/steps_layout">
+        <TFG.Droid.Custom_Views.CustomTextView
+            android:id="@+id/distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_xlarge" />
+        <TFG.Droid.Custom_Views.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/kilometers"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_normal" />
+    </LinearLayout>
 </RelativeLayout>

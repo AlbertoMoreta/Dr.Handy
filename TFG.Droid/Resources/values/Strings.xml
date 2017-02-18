@@ -10,9 +10,9 @@
   <!-- Step Counter Strings -->
   <string name="step_counter_name">Podómetro</string>
   <string name="steps">Pasos</string>
-  <string name="calories">calorías</string>
+  <string name="calories">Calorías</string>
   <string name="calories_short">cal.</string>
-  <string name="distance">distance</string>
+  <string name="distance">Distancia</string>
   <string name="kilometers">km</string>
   <string name="yesterday">AYER</string>
   <string name="same_day_last_week">MISMO DÍA DE LA SEMANA PASADA</string>
