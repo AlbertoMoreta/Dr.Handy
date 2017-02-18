@@ -3533,11 +3533,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060079
 			public const int calories_chart = 2131099769;
 			
-			// aapt resource value: 0x7f06007f
-			public const int calories_last_week = 2131099775;
+			// aapt resource value: 0x7f060080
+			public const int calories_last_week = 2131099776;
 			
-			// aapt resource value: 0x7f06007c
-			public const int calories_yesterday = 2131099772;
+			// aapt resource value: 0x7f06007d
+			public const int calories_yesterday = 2131099773;
 			
 			// aapt resource value: 0x7f060096
 			public const int cancel_action = 2131099798;
@@ -3614,11 +3614,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06007a
 			public const int distance_chart = 2131099770;
 			
-			// aapt resource value: 0x7f060080
-			public const int distance_last_week = 2131099776;
+			// aapt resource value: 0x7f060081
+			public const int distance_last_week = 2131099777;
 			
-			// aapt resource value: 0x7f06007d
-			public const int distance_yesterday = 2131099773;
+			// aapt resource value: 0x7f06007e
+			public const int distance_yesterday = 2131099774;
 			
 			// aapt resource value: 0x7f06005e
 			public const int edit_query = 2131099742;
@@ -3887,14 +3887,14 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060078
 			public const int steps_chart = 2131099768;
 			
-			// aapt resource value: 0x7f06007e
-			public const int steps_last_week = 2131099774;
-			
-			// aapt resource value: 0x7f060081
-			public const int steps_layout = 2131099777;
+			// aapt resource value: 0x7f06007f
+			public const int steps_last_week = 2131099775;
 			
 			// aapt resource value: 0x7f06007b
-			public const int steps_yesterday = 2131099771;
+			public const int steps_layout = 2131099771;
+			
+			// aapt resource value: 0x7f06007c
+			public const int steps_yesterday = 2131099772;
 			
 			// aapt resource value: 0x7f060067
 			public const int submit_area = 2131099751;

@@ -18,7 +18,21 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true">
+        android:layout_centerVertical="true">  
+      <LinearLayout
+        android:id="@+id/steps_layout"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+        <TFG.Droid.Custom_Views.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/steps"
+            android:textSize="@dimen/text_size_xlarge" />
         <TFG.Droid.Custom_Views.CustomTextView
             android:id="@+id/steps_yesterday"
             android:layout_width="wrap_content"
@@ -26,6 +40,20 @@
             android:gravity="center"
             android:layout_centerHorizontal="true"
             android:textSize="@dimen/text_size_xxlarge" />
+      </LinearLayout>
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_toLeftOf="@+id/steps_layout"
+          android:layout_centerVertical="true" >
+        <TFG.Droid.Custom_Views.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/calories_short"
+            android:textSize="@dimen/text_size_normal" />
         <TFG.Droid.Custom_Views.CustomTextView
             android:id="@+id/calories_yesterday"
             android:layout_width="match_parent"
@@ -34,6 +62,20 @@
             android:layout_centerVertical="true"
             android:textSize="@dimen/text_size_xlarge"
             android:layout_toLeftOf="@+id/steps_yesterday" />
+      </LinearLayout>
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@+id/steps_layout"
+          android:layout_centerVertical="true" >
+        <TFG.Droid.Custom_Views.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/kilometers"
+            android:textSize="@dimen/text_size_normal" />
         <TFG.Droid.Custom_Views.CustomTextView
             android:id="@+id/distance_yesterday"
             android:layout_width="match_parent"
@@ -42,6 +84,7 @@
             android:layout_centerVertical="true"
             android:textSize="@dimen/text_size_xlarge"
             android:layout_toRightOf="@+id/steps_yesterday" />
+      </LinearLayout> 
     </RelativeLayout>
     <TFG.Droid.Custom_Views.CustomTextView
         android:layout_width="match_parent"
@@ -56,14 +99,42 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true">
+        android:layout_centerVertical="true">  
+      <LinearLayout
+        android:id="@+id/steps_layout"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
         <TFG.Droid.Custom_Views.CustomTextView
-            android:id="@+id/steps_last_week"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:gravity="center"
-            android:layout_centerHorizontal="true"
-            android:textSize="@dimen/text_size_xxlarge" />
+            android:text="@string/steps"
+            android:textSize="@dimen/text_size_xlarge" />
+        <TFG.Droid.Custom_Views.CustomTextView
+           android:id="@+id/steps_last_week"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:gravity="center"
+           android:layout_centerHorizontal="true"
+           android:textSize="@dimen/text_size_xxlarge" />
+      </LinearLayout>
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_toLeftOf="@+id/steps_layout" 
+          android:layout_centerVertical="true">
+        <TFG.Droid.Custom_Views.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/calories_short"
+            android:textSize="@dimen/text_size_normal" />
         <TFG.Droid.Custom_Views.CustomTextView
             android:id="@+id/calories_last_week"
             android:layout_width="match_parent"
@@ -72,6 +143,21 @@
             android:layout_centerVertical="true"
             android:textSize="@dimen/text_size_xlarge"
             android:layout_toLeftOf="@+id/steps_last_week" />
+      </LinearLayout>
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="bottom"
+          android:layout_toRightOf="@+id/steps_layout" 
+          android:layout_centerVertical="true">
+        <TFG.Droid.Custom_Views.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/kilometers"
+            android:textSize="@dimen/text_size_normal" />
         <TFG.Droid.Custom_Views.CustomTextView
             android:id="@+id/distance_last_week"
             android:layout_width="match_parent"
@@ -80,5 +166,6 @@
             android:layout_centerVertical="true"
             android:textSize="@dimen/text_size_xlarge"
             android:layout_toRightOf="@+id/steps_last_week" />
+      </LinearLayout> 
     </RelativeLayout>
 </LinearLayout>

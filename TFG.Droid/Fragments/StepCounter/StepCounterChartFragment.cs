@@ -106,6 +106,10 @@ namespace TFG.Droid.Fragments.StepCounter {
             _caloriesChart.PopulateChart(ChartUtils.StepCounter_CaloriesToBarEntries(itemsForMetric, _labels.Length), _labels); 
             _distanceChart.PopulateChart(ChartUtils.StepCounter_DistanceToBarEntries(itemsForMetric, _labels.Length), _labels);
 
+            _stepsChart.Chart.AnimateY(700);
+            _caloriesChart.Chart.AnimateY(700);
+            _distanceChart.Chart.AnimateY(700);
+
             _stepsChart.Chart.NotifyDataSetChanged();
             _caloriesChart.Chart.NotifyDataSetChanged();
             _distanceChart.Chart.NotifyDataSetChanged();
@@ -121,7 +125,7 @@ namespace TFG.Droid.Fragments.StepCounter {
                 case ChartUtils.VisualizationMetric.Weekly: { 
                     var startDate = _date.AddDays(0 - (int) _date.DayOfWeek);
                     var endDate = _date.AddDays(6 - (int) _date.DayOfWeek);
-                    _dateText.Text = startDate.ToString("dd MMMM") + " - " + endDate.ToString("dd MMMM");
+                    _dateText.Text = startDate.ToString("dd MMM") + " - " + endDate.ToString("dd MMM");
                     _dateText.TextSize = (int) Resources.GetDimension(Resource.Dimension.text_size_large) /
                                          Resources.DisplayMetrics.Density;
                     break;
