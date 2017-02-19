@@ -90,12 +90,12 @@ namespace TFG.Droid.Fragments.StepCounter {
         public void RefreshCharts(bool animate = false) {
             if (_stepsChart != null && _caloriesChart != null && _distanceChart != null) {
                 var itemsForMetric = ChartUtils.GetStepCounterItemsFromMetric(_metric, _date);
-                _stepsChart.PopulateChart(ChartUtils.StepCounter_StepsToBarEntries(itemsForMetric, _labels.Length),
-                    _labels);
+                _stepsChart.PopulateChart(
+                    ChartUtils.StepCounter_StepsToBarEntries(itemsForMetric, _metric, _labels.Length), _labels);
                 _caloriesChart.PopulateChart(
-                    ChartUtils.StepCounter_CaloriesToBarEntries(itemsForMetric, _labels.Length), _labels);
+                    ChartUtils.StepCounter_CaloriesToBarEntries(itemsForMetric, _metric, _labels.Length), _labels);
                 _distanceChart.PopulateChart(
-                    ChartUtils.StepCounter_DistanceToBarEntries(itemsForMetric, _labels.Length), _labels);
+                    ChartUtils.StepCounter_DistanceToBarEntries(itemsForMetric, _metric, _labels.Length), _labels);
 
                 if (animate) {
                     _stepsChart.Chart.AnimateY(700);
