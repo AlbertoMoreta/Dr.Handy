@@ -119,6 +119,8 @@ namespace TFG.Droid.Adapters {
 
             viewHolder.ModuleName.Text = module.HealthModuleName();
             viewHolder.ModuleDescriptionShort.Text = viewHolder.ModuleDescriptionLong.Text = module.HealthModuleDescription();
+            viewHolder.RevealView.Background =
+                HealthModulesInfoExtension.GetHealthModuleHeaderFromHealthModuleName(_context, module.HealthModuleName());
             if (DBHelper.Instance.CheckIfExists(module) && DBHelper.Instance.CheckIfVisible(module)) {
                 viewHolder.AddButton.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.ic_clear));
                 viewHolder.AddButton.BackgroundTintList = ContextCompat.GetColorStateList(_context, Resource.Color.red);

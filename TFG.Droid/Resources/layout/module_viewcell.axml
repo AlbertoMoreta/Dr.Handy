@@ -12,7 +12,7 @@
             android:id="@+id/reveal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"/>
+            android:visibility="gone" />
         <View
             android:id="@+id/background"
             android:layout_width="@dimen/fab_size"

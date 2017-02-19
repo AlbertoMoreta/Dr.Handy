@@ -3382,118 +3382,136 @@ namespace TFG.Droid
 			public const int abc_textfield_search_material = 2130837578;
 			
 			// aapt resource value: 0x7f02004b
-			public const int background_orange = 2130837579;
+			public const int background_blue = 2130837579;
 			
 			// aapt resource value: 0x7f02004c
-			public const int background_purple = 2130837580;
+			public const int background_orange = 2130837580;
 			
 			// aapt resource value: 0x7f02004d
-			public const int design_fab_background = 2130837581;
+			public const int background_purple = 2130837581;
 			
 			// aapt resource value: 0x7f02004e
-			public const int design_snackbar_background = 2130837582;
+			public const int background_red = 2130837582;
 			
 			// aapt resource value: 0x7f02004f
-			public const int fab_shadow = 2130837583;
+			public const int design_fab_background = 2130837583;
 			
 			// aapt resource value: 0x7f020050
-			public const int fab_shadow_mini = 2130837584;
+			public const int design_snackbar_background = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int ic_add = 2130837585;
+			public const int fab_shadow = 2130837585;
 			
 			// aapt resource value: 0x7f020052
-			public const int ic_clear = 2130837586;
+			public const int fab_shadow_mini = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int ic_edit = 2130837587;
+			public const int header_blue = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int Icon = 2130837588;
+			public const int header_orange = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int ishihara_01 = 2130837589;
+			public const int header_purple = 2130837589;
 			
 			// aapt resource value: 0x7f020056
-			public const int ishihara_02 = 2130837590;
+			public const int header_red = 2130837590;
 			
 			// aapt resource value: 0x7f020057
-			public const int ishihara_04 = 2130837591;
+			public const int ic_add = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public const int ishihara_06 = 2130837592;
+			public const int ic_clear = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int ishihara_07 = 2130837593;
+			public const int ic_edit = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public const int ishihara_08 = 2130837594;
+			public const int Icon = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int ishihara_09 = 2130837595;
+			public const int ishihara_01 = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int ishihara_11 = 2130837596;
+			public const int ishihara_02 = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int ishihara_13 = 2130837597;
+			public const int ishihara_04 = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int ishihara_14 = 2130837598;
+			public const int ishihara_06 = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int ishihara_15 = 2130837599;
+			public const int ishihara_07 = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int ishihara_16 = 2130837600;
+			public const int ishihara_08 = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int ishihara_17 = 2130837601;
+			public const int ishihara_09 = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int ishihara_18 = 2130837602;
+			public const int ishihara_11 = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int ishihara_20 = 2130837603;
+			public const int ishihara_13 = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int ishihara_22 = 2130837604;
+			public const int ishihara_14 = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int ishihara_23 = 2130837605;
+			public const int ishihara_15 = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int ishihara_26 = 2130837606;
+			public const int ishihara_16 = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int ishihara_29 = 2130837607;
+			public const int ishihara_17 = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int ishihara_30 = 2130837608;
+			public const int ishihara_18 = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int ishihara_32 = 2130837609;
+			public const int ishihara_20 = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int ishihara_35 = 2130837610;
+			public const int ishihara_22 = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int ishihara_37 = 2130837611;
+			public const int ishihara_23 = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int ishihara_38 = 2130837612;
+			public const int ishihara_26 = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int module_icon = 2130837613;
-			
-			// aapt resource value: 0x7f020070
-			public const int notification_template_icon_bg = 2130837616;
+			public const int ishihara_29 = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int psts_background_tab = 2130837614;
+			public const int ishihara_30 = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int ripple = 2130837615;
+			public const int ishihara_32 = 2130837615;
+			
+			// aapt resource value: 0x7f020070
+			public const int ishihara_35 = 2130837616;
+			
+			// aapt resource value: 0x7f020071
+			public const int ishihara_37 = 2130837617;
+			
+			// aapt resource value: 0x7f020072
+			public const int ishihara_38 = 2130837618;
+			
+			// aapt resource value: 0x7f020073
+			public const int module_icon = 2130837619;
+			
+			// aapt resource value: 0x7f020076
+			public const int notification_template_icon_bg = 2130837622;
+			
+			// aapt resource value: 0x7f020074
+			public const int psts_background_tab = 2130837620;
+			
+			// aapt resource value: 0x7f020075
+			public const int ripple = 2130837621;
 			
 			static Drawable()
 			{
