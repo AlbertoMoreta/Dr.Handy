@@ -3382,46 +3382,64 @@ namespace TFG.Droid
 			public const int abc_textfield_search_material = 2130837578;
 			
 			// aapt resource value: 0x7f02004b
-			public const int background_orange = 2130837579;
+			public const int background_blue = 2130837579;
 			
 			// aapt resource value: 0x7f02004c
-			public const int background_purple = 2130837580;
+			public const int background_orange = 2130837580;
 			
 			// aapt resource value: 0x7f02004d
-			public const int design_fab_background = 2130837581;
+			public const int background_purple = 2130837581;
 			
 			// aapt resource value: 0x7f02004e
-			public const int design_snackbar_background = 2130837582;
+			public const int background_red = 2130837582;
 			
 			// aapt resource value: 0x7f02004f
-			public const int fab_shadow = 2130837583;
+			public const int design_fab_background = 2130837583;
 			
 			// aapt resource value: 0x7f020050
-			public const int fab_shadow_mini = 2130837584;
+			public const int design_snackbar_background = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int ic_add = 2130837585;
+			public const int fab_shadow = 2130837585;
 			
 			// aapt resource value: 0x7f020052
-			public const int ic_clear = 2130837586;
+			public const int fab_shadow_mini = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int ic_edit = 2130837587;
+			public const int header_blue = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int Icon = 2130837588;
+			public const int header_orange = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int module_icon = 2130837589;
-			
-			// aapt resource value: 0x7f020058
-			public const int notification_template_icon_bg = 2130837592;
+			public const int header_purple = 2130837589;
 			
 			// aapt resource value: 0x7f020056
-			public const int psts_background_tab = 2130837590;
+			public const int header_red = 2130837590;
 			
 			// aapt resource value: 0x7f020057
-			public const int ripple = 2130837591;
+			public const int ic_add = 2130837591;
+			
+			// aapt resource value: 0x7f020058
+			public const int ic_clear = 2130837592;
+			
+			// aapt resource value: 0x7f020059
+			public const int ic_edit = 2130837593;
+			
+			// aapt resource value: 0x7f02005a
+			public const int Icon = 2130837594;
+			
+			// aapt resource value: 0x7f02005b
+			public const int module_icon = 2130837595;
+			
+			// aapt resource value: 0x7f02005e
+			public const int notification_template_icon_bg = 2130837598;
+			
+			// aapt resource value: 0x7f02005c
+			public const int psts_background_tab = 2130837596;
+			
+			// aapt resource value: 0x7f02005d
+			public const int ripple = 2130837597;
 			
 			static Drawable()
 			{
