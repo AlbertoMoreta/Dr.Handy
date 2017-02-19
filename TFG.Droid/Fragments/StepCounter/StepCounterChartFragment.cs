@@ -1,25 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
+using System; 
 using Android.Graphics;
-using Android.OS;
-using Android.Runtime;
-using Android.Support.V4.Content;
-using Android.Util;
+using Android.OS; 
+using Android.Support.V4.Content; 
 using Android.Views;
-using Android.Widget;
-using Java.Lang;
-using MikePhil.Charting.Charts;
-using MikePhil.Charting.Components;
+using Android.Widget; 
 using TFG.Droid.Activities;
-using TFG.Droid.Custom_Views;
-using TFG.Droid.Interfaces;
+using TFG.Droid.Custom_Views; 
 using TFG.Droid.Utils;
-using TFG.Model;
+using TFG.Model; 
 using Fragment = Android.Support.V4.App.Fragment;
 
 namespace TFG.Droid.Fragments.StepCounter {
@@ -35,15 +23,14 @@ namespace TFG.Droid.Fragments.StepCounter {
         private CardViewBarChart _distanceChart;
 
         public StepCounterChartFragment(ChartUtils.VisualizationMetric metric) {
-            _metric = metric;
-            
-
+            _metric = metric; 
         } 
         public StepCounterChartFragment(ChartUtils.VisualizationMetric metric, DateTime date) : this(metric) {
             _date = date;
         }
 
-        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {  
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {   
+
             var view =  inflater.Inflate(Resource.Layout.fragment_stepcounter_body_chart_results, container, false); 
 
             //Chart color
@@ -69,7 +56,7 @@ namespace TFG.Droid.Fragments.StepCounter {
             _distanceChart.Title.Text = Activity.GetString(Activity.Resources.GetIdentifier("distance", "string", Activity.PackageName));
             _distanceChart.Color = colorRes; 
 
-            RefreshCharts();
+            RefreshCharts(true);
 
             var colorFilter = new PorterDuffColorFilter(new Color(colorRes), PorterDuff.Mode.Multiply); //Arrows color
             var previousBtn = view.FindViewById<ImageView>(Resource.Id.previous);
@@ -95,28 +82,35 @@ namespace TFG.Droid.Fragments.StepCounter {
             }
 
             RefreshDateText();
-            RefreshCharts();
+            RefreshCharts(true);
             
         }
 
         //Refresh Data of charts
-        private void RefreshCharts() {
-            var itemsForMetric = ChartUtils.GetStepCounterItemsFromMetric(_metric, _date);
-            _stepsChart.PopulateChart(ChartUtils.StepCounter_StepsToBarEntries(itemsForMetric, _labels.Length), _labels);
-            _caloriesChart.PopulateChart(ChartUtils.StepCounter_CaloriesToBarEntries(itemsForMetric, _labels.Length), _labels); 
-            _distanceChart.PopulateChart(ChartUtils.StepCounter_DistanceToBarEntries(itemsForMetric, _labels.Length), _labels);
+        public void RefreshCharts(bool animate = false) {
+            if (_stepsChart != null && _caloriesChart != null && _distanceChart != null) {
+                var itemsForMetric = ChartUtils.GetStepCounterItemsFromMetric(_metric, _date);
+                _stepsChart.PopulateChart(ChartUtils.StepCounter_StepsToBarEntries(itemsForMetric, _labels.Length),
+                    _labels);
+                _caloriesChart.PopulateChart(
+                    ChartUtils.StepCounter_CaloriesToBarEntries(itemsForMetric, _labels.Length), _labels);
+                _distanceChart.PopulateChart(
+                    ChartUtils.StepCounter_DistanceToBarEntries(itemsForMetric, _labels.Length), _labels);
 
-            _stepsChart.Chart.AnimateY(700);
-            _caloriesChart.Chart.AnimateY(700);
-            _distanceChart.Chart.AnimateY(700);
+                if (animate) {
+                    _stepsChart.Chart.AnimateY(700);
+                    _caloriesChart.Chart.AnimateY(700);
+                    _distanceChart.Chart.AnimateY(700);
+                }
 
-            _stepsChart.Chart.NotifyDataSetChanged();
-            _caloriesChart.Chart.NotifyDataSetChanged();
-            _distanceChart.Chart.NotifyDataSetChanged();
+                _stepsChart.Chart.NotifyDataSetChanged();
+                _caloriesChart.Chart.NotifyDataSetChanged();
+                _distanceChart.Chart.NotifyDataSetChanged();
 
-            _stepsChart.Chart.Invalidate();
-            _caloriesChart.Chart.Invalidate();
-            _distanceChart.Chart.Invalidate();
+                _stepsChart.Chart.Invalidate();
+                _caloriesChart.Chart.Invalidate();
+                _distanceChart.Chart.Invalidate();
+            }
         }
 
         //Refresh date text for charts

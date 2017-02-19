@@ -28,7 +28,7 @@ namespace TFG.Droid.Services {
         public DateTime DateLastStep { get; set; }
         public StepCounterServiceBinder Binder { get; set; }
         private bool _isRunning;
-        private StepDetectedListener _listener;
+        private List<IStepDetectedListener> _listeners = new List<IStepDetectedListener>();
 
         private StepCounterLogic _logic;
 
@@ -105,9 +105,9 @@ namespace TFG.Droid.Services {
 
             DBHelper.Instance.UpdateSteps(DateTime.Now, Steps, Calories, Distance);
 
-            if (_listener != null) {
-                _listener.StepDetected();
-            }
+            foreach (var listener in _listeners) {
+                listener.StepDetected();
+            } 
         }
 
         public override void OnDestroy() {
@@ -121,8 +121,12 @@ namespace TFG.Droid.Services {
             } 
         }
 
-        public void SetListener(StepDetectedListener listener) {
-            _listener = listener;
+        public void AddListener(IStepDetectedListener listener) {
+            _listeners.Add(listener);
+        }
+
+        public void RemoveListener(IStepDetectedListener listener) {
+            _listeners.Remove(listener);
         }
     }
 }

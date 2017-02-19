@@ -19,7 +19,7 @@ namespace TFG.Droid.Fragments.StepCounter {
     /// <summary>
     /// Header fragment for the Step Counter health module
     /// </summary>
-    class StepCounterHeaderFragment : Fragment, IHealthFragment, StepDetectedListener {
+    public class StepCounterHeaderFragment : Fragment, IHealthFragment, IStepDetectedListener {
 
         public bool IsBound { get; set; }
         public StepCounterServiceBinder Binder { get; set; }
@@ -136,7 +136,7 @@ namespace TFG.Droid.Fragments.StepCounter {
         public override void OnDestroy() {
             base.OnDestroy(); 
             if (IsBound) {
-                Binder.GetStepCounterService().SetListener(null);
+                Binder.GetStepCounterService().RemoveListener(this);
                 UnbindService();
             } 
         }
@@ -144,7 +144,7 @@ namespace TFG.Droid.Fragments.StepCounter {
         public override void OnStop() {
             base.OnStop();
             if (IsBound) {
-                Binder.GetStepCounterService().SetListener(null);
+                Binder.GetStepCounterService().RemoveListener(this);
                 UnbindService();
             } 
         }
