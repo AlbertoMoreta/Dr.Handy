@@ -16,14 +16,19 @@ using MikePhil.Charting.Charts;
 using MikePhil.Charting.Components;
 using MikePhil.Charting.Data;
 using MikePhil.Charting.Formatter;
+using MikePhil.Charting.Listener;
 using TFG.Droid.Utils;
 
 namespace TFG.Droid.Custom_Views {
-    class CardViewBarChart : CardView {
+    class CardViewBarChart : CardView, GestureDetector.IOnGestureListener, View.IOnTouchListener {
+
+        private Context _context;
+        private GestureDetector _gestureDetector;
+
+        public BarChart Chart { get; set; }
+        public CustomTextView Title { get; set; }
 
         private int _color;
-        public BarChart Chart { get; set; }
-        public CustomTextView Title { get; set; } 
         public int Color {
             get { return _color; }
             set {
@@ -40,9 +45,9 @@ namespace TFG.Droid.Custom_Views {
         }
 
         public CardViewBarChart(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer) { Init(); }
-        public CardViewBarChart(Context context, IAttributeSet attrs, int defStyleAttr) : base(context, attrs, defStyleAttr) { Init(); }
-        public CardViewBarChart(Context context, IAttributeSet attrs) : base(context, attrs) { Init(); }
-        public CardViewBarChart(Context context) : base(context) { Init(); }
+        public CardViewBarChart(Context context, IAttributeSet attrs, int defStyleAttr) : base(context, attrs, defStyleAttr) { Init(); _context = context; }
+        public CardViewBarChart(Context context, IAttributeSet attrs) : base(context, attrs) { Init(); _context = context; }
+        public CardViewBarChart(Context context) : base(context) { Init(); _context = context; }
 
         private void Init() {
             var inflater = LayoutInflater.From(Context);
@@ -60,7 +65,10 @@ namespace TFG.Droid.Custom_Views {
             Chart.ScaleYEnabled = false;
             Chart.AnimateY(700);
             Chart.ScaleX = 1;
-            Chart.Description.Text = "";
+            Chart.Description.Text = ""; 
+            Chart.SetOnTouchListener(this); 
+            _gestureDetector = new GestureDetector(_context, this);
+
 
             //X Axis Properties
             var xAxis = Chart.XAxis;
@@ -97,6 +105,30 @@ namespace TFG.Droid.Custom_Views {
                 Chart.Invalidate();
             }
         }
+
+          
+        public bool OnDown(MotionEvent e) { return true; }
+        //Prevent parent to steal horizontal scroll events 
+        public bool OnFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+            return true;
+        } 
+        public void OnLongPress(MotionEvent e) {  }
+        //Prevent parent to steal horizontal scroll events 
+        public bool OnScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+            if (Math.Abs(e1.GetX() - e2.GetX()) > Math.Abs(e1.GetY() - e2.GetY())) {
+                Chart.Parent.RequestDisallowInterceptTouchEvent(true);
+            }
+            return true;
+        } 
+        public void OnShowPress(MotionEvent e) {} 
+        public bool OnSingleTapUp(MotionEvent e) {
+            return true;
+        } 
+        public bool OnTouch(View v, MotionEvent e) {
+            _gestureDetector.OnTouchEvent(e);
+            return false;
+        }
+
     }
 
     //Value formater for XAxis labels
