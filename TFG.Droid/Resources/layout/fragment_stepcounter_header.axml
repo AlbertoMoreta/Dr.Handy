@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:textSize="@dimen/text_size_xxxlarge" />
         <TFG.Droid.Custom_Views.CustomTextView
             android:layout_width="wrap_content"
@@ -23,7 +23,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="@string/steps"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:textSize="@dimen/text_size_xlarge" />
     </LinearLayout>
     <LinearLayout
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:textSize="@dimen/text_size_xlarge" />
         <TFG.Droid.Custom_Views.CustomTextView
             android:layout_width="wrap_content"
@@ -46,7 +46,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="@string/calories_short"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:textSize="@dimen/text_size_normal" />
     </LinearLayout>
     <LinearLayout
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:textSize="@dimen/text_size_xlarge" />
         <TFG.Droid.Custom_Views.CustomTextView
             android:layout_width="wrap_content"
@@ -70,7 +70,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="@string/kilometers"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:textSize="@dimen/text_size_normal" />
     </LinearLayout>
 </RelativeLayout>
