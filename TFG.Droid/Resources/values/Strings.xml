@@ -10,4 +10,7 @@
   <!-- Step Counter Strings -->
   <string name="step_counter_name">Podómetro</string> 
 
+  <!-- Sintrom Strings -->
+  <string name="sintrom_name">Sintrom</string>
+
 </resources>

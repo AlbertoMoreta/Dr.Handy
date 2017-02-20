@@ -4201,6 +4201,9 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f090019
 			public const int remove = 2131296281;
 			
+			// aapt resource value: 0x7f09001c
+			public const int sintrom_name = 2131296284;
+			
 			// aapt resource value: 0x7f090013
 			public const int status_bar_notification_info_overflow = 2131296275;
 			
