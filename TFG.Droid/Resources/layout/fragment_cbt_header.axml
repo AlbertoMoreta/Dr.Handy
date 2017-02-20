@@ -16,6 +16,6 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:padding="10dp"
-        android:textColor="@color/white"
+        android:textColor="@android:color/white"
         android:textSize="@dimen/text_size_xlarge" />
 </LinearLayout>
