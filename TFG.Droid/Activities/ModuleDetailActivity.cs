@@ -31,15 +31,12 @@ namespace TFG.Droid.Activities {
             SetUpToolBar();
 
             var moduleName = Intent.GetStringExtra("name");
-            ToolbarTitle.Text = CurrentHealthModule = moduleName;
+            ToolbarTitle.Text = CurrentHealthModule = moduleName; 
 
-            var moduleColorSufix = HealthModulesInfo.GetHealthModuleColorFromHealthModuleName(moduleName) ?? "purple";
+            Window.DecorView.Background =
+                HealthModulesInfoExtension.GetHealthModuleBackgroundFromHealthModuleName(this, moduleName);
 
-            Window.DecorView.Background = ContextCompat.GetDrawable(this, 
-                                                Resources.GetIdentifier("background_" + moduleColorSufix, 
-                                                "drawable", PackageName));
-
-            var theme = Resources.GetIdentifier("AppTheme_" + moduleColorSufix, "style", PackageName);
+            var theme = HealthModulesInfoExtension.GetHealthModuleThemeFromHealthModuleName(this, moduleName);
             if (theme != -1) { SetTheme(theme);} 
 
             FragmentManager fragmentManager = FragmentManager;

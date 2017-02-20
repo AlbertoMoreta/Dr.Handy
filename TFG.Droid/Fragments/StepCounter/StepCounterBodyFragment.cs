@@ -1,40 +1,49 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+using System; 
 using Android.App;
 using Android.Content;
 using Android.Content.Res;
 using Android.Graphics;
-using Android.OS;
-using Android.Runtime;
+using Android.OS; 
 using Android.Support.V4.View;
 using Android.Support.V7.App;
-using Android.Views;
-using Android.Widget;
+using Android.Views; 
 using com.refractored;
-using TFG.Droid.Adapters;
-using TFG.Droid.Custom_Views;
+using TFG.Droid.Adapters; 
 using TFG.Droid.Interfaces;
+using TFG.Droid.Listeners;
+using TFG.Droid.Services;
 using TFG.Droid.Utils;
 
 namespace TFG.Droid.Fragments.StepCounter {
-    class StepCounterBodyFragment: Fragment, IHealthFragment {
+    /// <summary>
+    /// Body fragment for the Step Counter health module
+    /// </summary>
+    class StepCounterBodyFragment : Fragment, IHealthFragment, IStepDetectedListener { 
 
-        
+        public bool IsBound { get; set; }
+        public StepCounterServiceBinder Binder { get; set; }
+        private StepCounterServiceConnection _serviceConnection;
+
+        private StepCounterChartFragment _weeklyResultsFragment;
+        private StepCounterChartFragment _yearlyResultsFragment;
+
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             var view = inflater.Inflate(Resource.Layout.fragment_tabs, container, false);
 
             var pager = view.FindViewById<ViewPager>(Resource.Id.pager); 
             var adapter = new HealthModulePagerAdapter(((AppCompatActivity) Activity).SupportFragmentManager);
             adapter.AddItem(new StepCounterQuickResultsFragment(), "Quick Results");
+
             var weeklyResultsTitle = Activity.GetString(Activity.Resources.GetIdentifier("weekly_results",
                 "string", Activity.PackageName));
-            adapter.AddItem(new StepCounterChartFragment(ChartUtils.VisualizationMetric.Weekly), weeklyResultsTitle);
+            _weeklyResultsFragment = new StepCounterChartFragment(ChartUtils.VisualizationMetric.Weekly);
+            adapter.AddItem(_weeklyResultsFragment, weeklyResultsTitle);
+
             var yearlyResultsTitle = Activity.GetString(Activity.Resources.GetIdentifier("yearly_results",
                 "string", Activity.PackageName));
-            adapter.AddItem(new StepCounterChartFragment(ChartUtils.VisualizationMetric.Yearly), yearlyResultsTitle);
+            _yearlyResultsFragment = new StepCounterChartFragment(ChartUtils.VisualizationMetric.Yearly);
+            adapter.AddItem(_yearlyResultsFragment, yearlyResultsTitle);
+
             pager.Adapter = adapter;
 
             var tabs = view.FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
@@ -43,12 +52,49 @@ namespace TFG.Droid.Fragments.StepCounter {
             tabs.TabTextColorSelected = ColorStateList.ValueOf(Color.White);
             tabs.IndicatorColor = Color.White;
 
-           
+            BindService();
 
             return view;
         }
 
+        private void BindService() {
+            try {
+#if DEBUG
+                Console.WriteLine("Binding client to the service...");
+#endif
+                var serviceIntent = new Intent(Activity, typeof(StepCounterService));
+                _serviceConnection = new StepCounterServiceConnection(this);
+                Activity.ApplicationContext.BindService(serviceIntent, _serviceConnection, Bind.AutoCreate);
+            } catch (Exception e) { }
+        }
 
-        
+        private void UnbindService() {
+#if DEBUG
+            Console.WriteLine("Unbinding client from the service...");
+#endif
+            Activity.ApplicationContext.UnbindService(_serviceConnection);
+            IsBound = false;
+        }
+
+        public override void OnDestroy() {
+            base.OnDestroy();
+            if (IsBound) {
+                Binder.GetStepCounterService().RemoveListener(this);
+                UnbindService();
+            }
+        }
+
+        public override void OnStop() {
+            base.OnStop();
+            if (IsBound) {
+                Binder.GetStepCounterService().RemoveListener(this);
+                UnbindService();
+            }
+        }
+
+        public void StepDetected() {
+            _weeklyResultsFragment.RefreshCharts();
+            _yearlyResultsFragment.RefreshCharts();
+        }
     }
 }

@@ -21,52 +21,92 @@ namespace TFG.Droid.Utils {
             Weekly, Yearly
         }
 
-        public static List<BarEntry> StepCounter_StepsToBarEntries(List<StepCounterItem> items, int labelsCount = -1) {
+        public static List<BarEntry> StepCounter_StepsToBarEntries(List<StepCounterItem> items, VisualizationMetric metric, int labelsCount = -1) {
 
             List<BarEntry> entries = new List<BarEntry>();
 
-            if(labelsCount == -1) { labelsCount = items.Count; } 
+            if(labelsCount == -1) { labelsCount = items.Count; }
+
+            var count = 0; //Iterate over StepCounterItems
 
             for (int i = 0; i < labelsCount; i++) {
-                if (i < items.Count) {
-                    entries.Add(new BarEntry(i, items.ElementAt(i).Steps));
-                } else { 
-                    entries.Add(new BarEntry(i, null));
-                }
+                var steps = -1;
+
+                if (count < items.Count) {
+                    var item = items.ElementAt(count);
+
+                    var currentDate = metric == VisualizationMetric.Weekly
+                        ? (int) item.Date.DayOfWeek == i
+                        : (item.Date.Month) - 1 == i;
+
+                    if (currentDate) {
+                        steps = items.ElementAt(count).Steps; 
+                        count++;
+                    } 
+                }  
+
+                entries.Add(steps != -1 ? new BarEntry(i, steps) : new BarEntry(i, null));
             }
 
             return entries; 
         }
 
-        public static List<BarEntry> StepCounter_CaloriesToBarEntries(List<StepCounterItem> items, int labelsCount = -1) {
+        public static List<BarEntry> StepCounter_CaloriesToBarEntries(List<StepCounterItem> items, VisualizationMetric metric, int labelsCount = -1) {
 
             List<BarEntry> entries = new List<BarEntry>();
 
             if (labelsCount == -1) { labelsCount = items.Count; }
 
+            var count = 0; //Iterate over StepCounterItems
+
             for (int i = 0; i < labelsCount; i++) {
-                if (i < items.Count) {
-                    entries.Add(new BarEntry(i, items.ElementAt(i).Calories));
-                } else {
-                    entries.Add(new BarEntry(i, null));
+                var calories = -1;
+
+                if (count < items.Count) {
+                    var item = items.ElementAt(count);
+
+                    var currentDate = metric == VisualizationMetric.Weekly
+                        ? (int) item.Date.DayOfWeek == i
+                        : (item.Date.Month) - 1 == i;
+
+                    if (currentDate) {
+                        calories = items.ElementAt(count).Calories;
+                        count++;
+                    }
                 }
+
+
+                entries.Add(calories != -1 ? new BarEntry(i, calories) : new BarEntry(i, null));
             }
 
             return entries;
         }
 
-        public static List<BarEntry> StepCounter_DistanceToBarEntries(List<StepCounterItem> items, int labelsCount = -1) {
+        public static List<BarEntry> StepCounter_DistanceToBarEntries(List<StepCounterItem> items, VisualizationMetric metric, int labelsCount = -1) {
 
             List<BarEntry> entries = new List<BarEntry>();
 
             if (labelsCount == -1) { labelsCount = items.Count; }
 
-            for (int i = 0; i < labelsCount; i++) {
-                if (i < items.Count) {
-                    entries.Add(new BarEntry(i, (float) items.ElementAt(i).Distance));
-                } else {
-                    entries.Add(new BarEntry(i, null));
+            var count = 0; //Iterate over StepCounterItems
+
+            for (int i = 0; i < labelsCount; i++) { 
+                var distance = -1.0;
+
+                if (count < items.Count) {
+                    var item = items.ElementAt(count);
+
+                    var currentDate = metric == VisualizationMetric.Weekly
+                        ? (int) item.Date.DayOfWeek == i
+                        : (item.Date.Month) - 1 == i;
+
+                    if (currentDate) {
+                        distance = items.ElementAt(count).Distance;
+                        count++;
+                    } 
                 }
+
+                entries.Add(distance != -1.0 ? new BarEntry(i, (float) distance) : new BarEntry(i, null));
             }
 
             return entries;

@@ -51,9 +51,9 @@ namespace TFG.Droid.Fragments.StepCounter {
                 _caloriesYesterday.Text = item.Calories.ToString();
                 _distanceYesterday.Text = item.Distance.ToString();
             } else {
-                _stepsYesterday.Text = "-";
-                _caloriesYesterday.Text = "-";
-                _distanceYesterday.Text = "-";
+                _stepsYesterday.Text = "0";
+                _caloriesYesterday.Text = "0";
+                _distanceYesterday.Text = "0";
             }
 
 
@@ -69,9 +69,9 @@ namespace TFG.Droid.Fragments.StepCounter {
                 _caloriesLastWeek.Text = item.Calories.ToString();
                 _distanceLastWeek.Text = item.Distance.ToString();
             } else {
-                _stepsLastWeek.Text = "-";
-                _caloriesLastWeek.Text = "-";
-                _distanceLastWeek.Text = "-";
+                _stepsLastWeek.Text = "0";
+                _caloriesLastWeek.Text = "0";
+                _distanceLastWeek.Text = "0";
             }
         }
     }

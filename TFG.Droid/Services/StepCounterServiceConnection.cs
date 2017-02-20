@@ -1,26 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-using Android.App;
 using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using TFG.Droid.Fragments.StepCounter;
-using TFG.Droid.Interfaces;
+using Android.OS; 
+using TFG.Droid.Listeners;
 
 namespace TFG.Droid.Services {
     /// <summary>
     /// What to do when a client is connected or disconnected from the service
     /// </summary>
-    class StepCounterServiceConnection : Java.Lang.Object, IServiceConnection {
+    public class StepCounterServiceConnection : Java.Lang.Object, IServiceConnection {
 
-        private StepCounterHeaderFragment _fragment;
+        private IStepDetectedListener _fragment;
 
-        public StepCounterServiceConnection(StepCounterHeaderFragment fragment) {
+        public StepCounterServiceConnection(IStepDetectedListener fragment) {
             _fragment = fragment;
         }
 
@@ -29,7 +20,7 @@ namespace TFG.Droid.Services {
             if (serviceBinder != null) {
                 _fragment.Binder = serviceBinder;
                 _fragment.IsBound = true;
-                serviceBinder.GetStepCounterService().SetListener(_fragment);
+                serviceBinder.GetStepCounterService().AddListener(_fragment);
             }
         }
 
