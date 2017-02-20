@@ -11,13 +11,25 @@
   <style name="AppTheme_purple" parent="MyTheme.Base">
     <item name="colorPrimary">@color/purple</item>
     <item name="colorPrimaryDark">@color/dark_purple</item>
-    <item name="colorAccent">@color/light_green</item>
+    <item name="colorAccent">@color/light_purple</item>
   </style>
 
   <style name="AppTheme_orange" parent="MyTheme.Base">
     <item name="colorPrimary">@color/orange</item>
     <item name="colorPrimaryDark">@color/dark_orange</item>
-    <item name="colorAccent">@color/light_green</item>
+    <item name="colorAccent">@color/light_orange</item>
+  </style>
+
+  <style name="AppTheme_blue" parent="MyTheme.Base">
+    <item name="colorPrimary">@color/blue</item>
+    <item name="colorPrimaryDark">@color/dark_blue</item>
+    <item name="colorAccent">@color/light_blue</item>
+  </style>
+
+  <style name="AppTheme_red" parent="MyTheme.Base">
+    <item name="colorPrimary">@color/red</item>
+    <item name="colorPrimaryDark">@color/dark_red</item>
+    <item name="colorAccent">@color/light_red</item>
   </style>
 
 </resources>

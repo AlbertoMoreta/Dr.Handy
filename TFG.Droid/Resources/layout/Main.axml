@@ -31,7 +31,7 @@
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
         android:src="@drawable/ic_edit"
-        app:fab_colorNormal="?attr/colorPrimary"
-        app:fab_colorPressed="?attr/colorPrimaryDark"
-        app:fab_colorRipple="?attr/colorAccent" />
+        app:fab_colorNormal="?colorPrimary"
+        app:fab_colorPressed="?colorPrimaryDark"
+        app:fab_colorRipple="?colorAccent" />
 </android.support.design.widget.CoordinatorLayout>
