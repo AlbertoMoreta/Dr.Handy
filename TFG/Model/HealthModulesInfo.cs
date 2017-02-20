@@ -46,13 +46,14 @@ namespace TFG.Model {
         }
 
         public static string GetHealthModuleColorFromHealthModuleName(string moduleName){
-            switch (moduleName) {
-                case HealthModuleType.ColorBlindnessTest:
-                    return HealthModuleColor(HealthModuleType.ColorBlindnessTest);
-                case HealthModuleType.StepCounter:
-                    return HealthModuleColor(HealthModuleType.StepCounter);
-                case HealthModuleType.Module3:
-                    return HealthModuleColor(HealthModuleType.Module3);
+            if (HealthModuleType.ColorBlindnessTest.HealthModuleName().Equals(moduleName)) {
+                return HealthModuleColor(HealthModuleType.ColorBlindnessTest);
+            }
+            if (HealthModuleType.StepCounter.HealthModuleName().Equals(moduleName)) {
+                return HealthModuleColor(HealthModuleType.StepCounter);
+            }
+            if (HealthModuleType.Module3.HealthModuleName().Equals(moduleName)) {
+                return HealthModuleColor(HealthModuleType.Module3);
             } 
             return null;
         }
