@@ -8,6 +8,6 @@
     </shape>
   </item>
 
-  <item android:id="@+id/icon" android:drawable="@color/transparent"/>
+  <item android:id="@+id/icon" android:drawable="@android:color/transparent"/>
 
 </layer-list>
