@@ -7,6 +7,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V4.Content;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
@@ -22,12 +23,26 @@ namespace TFG.Droid.Fragments.Sintrom {
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             var view = inflater.Inflate(Resource.Layout.fragment_sintrom_header, container, false);
 
-            var _medicine = view.FindViewById<CustomTextView>(Resource.Id.medicine);
-            var _icon = view.FindViewById<ImageView>(Resource.Id.icon);
-            var _fraction = view.FindViewById<CustomTextView>(Resource.Id.fraction); 
+            var medicine = view.FindViewById<CustomTextView>(Resource.Id.medicine);
+            var icon = view.FindViewById<ImageView>(Resource.Id.icon);
+            var fraction = view.FindViewById<CustomTextView>(Resource.Id.fraction); 
 
             //UpdateSteps();
             (Activity as BaseActivity).ToolbarTitle.Text = DateTime.Now.ToString("dd / MM / yyyy");
+
+
+            //Get Sintrom treatment for today
+            var items =
+                    DBHelper.Instance.GetSintromItemFromDate(DateTime.Now);
+
+            if (items.Count > 0) {
+                var item = items.ElementAt(0);
+                medicine.Text = item.Medicine;
+                icon.SetImageDrawable(ContextCompat.GetDrawable(Activity,
+                                                Activity.Resources.GetIdentifier(item.ImageName,
+                                                "drawable", Activity.PackageName)));
+                fraction.Text = item.Fraction;
+            }
 
             return view;
         }
