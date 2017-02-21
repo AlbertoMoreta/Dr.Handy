@@ -17,15 +17,22 @@ namespace TFG {
         private static readonly string COL_DESCRIPTION = "Description";
         private static readonly string COL_POSITION = "Position";
         private static readonly string COL_VISIBLE = "Visible";
+        public static readonly string DATE_FORMAT = "yyyy-MM-dd";
 
 
-        //Step Counter Module
+        //Step Counter Health Module
         public static readonly string STEPCOUNTER_TABLE = "STEPCOUNTER";
         public static readonly string COL_DATE = "Date";
         public static readonly string COL_STEPS = "Steps";
         public static readonly string COL_CALORIES = "Calories";
         public static readonly string COL_DISTANCE = "Distance";
-        public static readonly string DATE_FORMAT = "yyyy-MM-dd";
+
+        //Sintrom Health Module
+        public static readonly string SINTROM_TABLE = "SINRTOM";
+        public static readonly string COL_DATE = "Date";
+        public static readonly string COL_IMAGENAME = "ImageName";
+        public static readonly string COL_FRACTION = "Fraction";
+        public static readonly string COL_MEDICINE = "Medicine";  
 
 
         private static DBHelper _instance;
@@ -206,6 +213,40 @@ namespace TFG {
             } 
             
 
+        }
+
+        public void CreateSintromTable() {
+            var sql = "CREATE TABLE IF NOT EXISTS " + SINTROM_TABLE + " (" + COL_DATE + " date primary key, "
+                + COL_IMAGENAME + " text, " + COL_FRACTION + " text, " + COL_MEDICINE + " text)";
+
+            Connection.Execute(sql);
+        }
+
+        public void InsertSintromItem(SintromTreatmentItem sintromItem) {
+            var sql = "INSERT INTO " + SINTROM_TABLE + " (" + COL_DATE + ", " + COL_IMAGENAME + ", " + COL_FRACTION + ", " + COL_MEDICINE + ") VALUES "
+                + "('" + sintromItem.Date + "', '" + sintromItem.ImageName + "', " + sintromItem.Fraction+ ", " + sintromItem.Medicine + ")";
+
+            Connection.Execute(sql);
+
+            InitHealthModule(module);
+        }
+
+        //Get Sintrom Treatment Item from a specific date
+        public List<SintromTreatmentItem> GetSintromItemFromDate(DateTime date) {
+            var stringDate = date.ToString(DATE_FORMAT);
+
+            var sql = "SELECT * FROM " + SINTROM_TABLE + " WHERE " + COL_DATE + " = '" + stringDate + "'";
+
+            return Connection.Query<SintromTreatmentItem>(sql);
+        }
+
+        //Get Sintrom Treatment Item from this date onwards
+        public List<SintromTreatmentItem> GetSintromItemsStartingFromDate(DateTime date) {
+            var stringDate = date.ToString(DATE_FORMAT);
+
+            var sql = "SELECT * FROM " + SINTROM_TABLE + " WHERE " + COL_DATE + " = '" + stringDate + "'";
+
+            return Connection.Query<SintromTreatmentItem>(sql);
         }
     }
 
