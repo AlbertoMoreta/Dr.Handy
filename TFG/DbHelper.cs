@@ -29,7 +29,6 @@ namespace TFG {
 
         //Sintrom Health Module
         public static readonly string SINTROM_TABLE = "SINRTOM";
-        public static readonly string COL_DATE = "Date";
         public static readonly string COL_IMAGENAME = "ImageName";
         public static readonly string COL_FRACTION = "Fraction";
         public static readonly string COL_MEDICINE = "Medicine";  
@@ -233,8 +232,6 @@ namespace TFG {
                 + "('" + sintromItem.Date + "', '" + sintromItem.ImageName + "', " + sintromItem.Fraction+ ", " + sintromItem.Medicine + ")";
 
             Connection.Execute(sql);
-
-            InitHealthModule(module);
         }
 
         //Get Sintrom Treatment Item from a specific date
