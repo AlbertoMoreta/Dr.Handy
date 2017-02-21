@@ -3,6 +3,7 @@ using Android.Content;
 using Android.Content.Res;
 using Android.Graphics.Drawables;
 using Android.Support.V4.Content;
+using TFG.Droid.Fragments.Sintrom;
 using TFG.Droid.Interfaces;
 using TFG.Model;
 
@@ -10,10 +11,12 @@ namespace TFG.Droid{
     public static class HealthModulesInfoExtension {
 
         public static IHealthFragment GetHeaderFragmentFromHealthModuleName(string moduleName) { 
+            if (HealthModuleType.Sintrom.HealthModuleName().Equals(moduleName)) { return new SintromHeaderFragment(); }
             return null;
         }
 
         public static IHealthFragment GetBodyFragmentFromHealthModuleName(string moduleName) { 
+            if (HealthModuleType.Sintrom.HealthModuleName().Equals(moduleName)) { return new SintromBodyFragment(); }
             return null;
         }
 
