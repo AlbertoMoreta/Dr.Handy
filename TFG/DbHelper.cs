@@ -28,7 +28,7 @@ namespace TFG {
         public static readonly string COL_DISTANCE = "Distance";
 
         //Sintrom Health Module
-        public static readonly string SINTROM_TABLE = "SINRTOM";
+        public static readonly string SINTROM_TABLE = "SINTROM";
         public static readonly string COL_IMAGENAME = "ImageName";
         public static readonly string COL_FRACTION = "Fraction";
         public static readonly string COL_MEDICINE = "Medicine";  
@@ -92,6 +92,12 @@ namespace TFG {
             Connection.Execute(sql);
 
             InitHealthModule(module);
+        }
+
+        public void DeleteHealthModule(HealthModuleType module) {
+            var sql = "DELETE FROM " + TABLE_NAME + " WHERE " + COL_NAME + " = '" + module.HealthModuleName() + "'";
+
+            Connection.Execute(sql);
         }
 
         public void InitHealthModule(HealthModuleType module) {
@@ -229,8 +235,11 @@ namespace TFG {
         }
 
         public void InsertSintromItem(SintromTreatmentItem sintromItem) {
+
+            var stringDate = sintromItem.Date.ToString(DATE_FORMAT);
+
             var sql = "INSERT INTO " + SINTROM_TABLE + " (" + COL_DATE + ", " + COL_IMAGENAME + ", " + COL_FRACTION + ", " + COL_MEDICINE + ") VALUES "
-                + "('" + sintromItem.Date + "', '" + sintromItem.ImageName + "', " + sintromItem.Fraction+ ", " + sintromItem.Medicine + ")";
+                + "('" + stringDate + "', '" + sintromItem.ImageName + "', '" + sintromItem.Fraction+ "', '" + sintromItem.Medicine + "')";
 
             Connection.Execute(sql);
         }
@@ -248,10 +257,11 @@ namespace TFG {
         public List<SintromTreatmentItem> GetSintromItemsStartingFromDate(DateTime date) {
             var stringDate = date.ToString(DATE_FORMAT);
 
-            var sql = "SELECT * FROM " + SINTROM_TABLE + " WHERE " + COL_DATE + " > '" + stringDate + "'";
+            var sql = "SELECT * FROM " + SINTROM_TABLE + " WHERE " + COL_DATE + " >= '" + stringDate + "'";
 
             return Connection.Query<SintromTreatmentItem>(sql);
         }
+
     }
 
 
