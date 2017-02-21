@@ -86,7 +86,6 @@ namespace TFG {
             }
         }
         
-        
         public void AddHealthModule(HealthModuleType module) {
             var sql = "INSERT INTO " + TABLE_NAME + " (" + COL_NAME + ", " + COL_DESCRIPTION + ", " + COL_POSITION + ", " + COL_VISIBLE + ") VALUES " 
                 + "('" + module.HealthModuleName() + "', '" + module.HealthModuleDescription() + "', " + Count() + ", 1)" ;
@@ -152,6 +151,9 @@ namespace TFG {
         }
 
 
+
+        //Step Counter Health Module Queries
+
         public void CreateStepCounterTable() {
             var sql = "CREATE TABLE IF NOT EXISTS " + STEPCOUNTER_TABLE + " (" + COL_DATE + " date primary key, "
                 + COL_STEPS + " integer, " + COL_CALORIES + " integer, " + COL_DISTANCE + " integer)";
@@ -215,6 +217,10 @@ namespace TFG {
 
         }
 
+
+
+        //Sintrom Health Module Queries
+
         public void CreateSintromTable() {
             var sql = "CREATE TABLE IF NOT EXISTS " + SINTROM_TABLE + " (" + COL_DATE + " date primary key, "
                 + COL_IMAGENAME + " text, " + COL_FRACTION + " text, " + COL_MEDICINE + " text)";
@@ -244,7 +250,7 @@ namespace TFG {
         public List<SintromTreatmentItem> GetSintromItemsStartingFromDate(DateTime date) {
             var stringDate = date.ToString(DATE_FORMAT);
 
-            var sql = "SELECT * FROM " + SINTROM_TABLE + " WHERE " + COL_DATE + " = '" + stringDate + "'";
+            var sql = "SELECT * FROM " + SINTROM_TABLE + " WHERE " + COL_DATE + " > '" + stringDate + "'";
 
             return Connection.Query<SintromTreatmentItem>(sql);
         }
