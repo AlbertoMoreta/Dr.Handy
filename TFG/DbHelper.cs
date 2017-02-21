@@ -98,6 +98,7 @@ namespace TFG {
             switch (module) {
                 case HealthModuleType.ColorBlindnessTest: break;
                 case HealthModuleType.StepCounter: CreateStepCounterTable(); break;
+                case HealthModuleType.Sintrom: CreateSintromTable(); break;
             }
         }
 
