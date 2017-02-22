@@ -207,8 +207,8 @@ namespace TFG {
             DropTable(STEPCOUNTER_TABLE);
             CreateStepCounterTable();
 
-            var startDate = new DateTime(2017, 2, 1);
-            var endDate = new DateTime(2017, 2, 15);
+            var startDate = DateTime.Now.AddMonths(-5);
+            var endDate = DateTime.Now.AddMonths(5);
 
             var rnd = new Random();
             var logic = StepCounterLogic.Instance();
@@ -218,8 +218,7 @@ namespace TFG {
                  
                 UpdateSteps(day, steps, logic.GetCaloriesFromSteps(steps), logic.GetDistanceFromSteps(steps));
 
-            } 
-            
+            }  
 
         }
 
@@ -260,6 +259,46 @@ namespace TFG {
             var sql = "SELECT * FROM " + SINTROM_TABLE + " WHERE " + COL_DATE + " >= '" + stringDate + "'";
 
             return Connection.Query<SintromTreatmentItem>(sql);
+        }
+
+        private void FillSintromTable() {
+            DropTable(SINTROM_TABLE);
+            CreateSintromTable();
+
+            var startDate = DateTime.Now.AddMonths(-5);
+            var endDate = DateTime.Now.AddMonths(5);
+
+            var rnd = new Random();
+
+            for (var day = startDate.Date; day.Date <= endDate.Date; day = day.AddDays(1)) {
+                var medicine = "Sintrom ";
+                var medicineRnd = rnd.Next(3);
+                switch (medicineRnd) {
+                    case 0: medicine += "1 mg"; break;
+                    case 1: medicine += "2 mg"; break;
+                    case 2: medicine += "4 mg"; break;
+                }
+
+                string fraction;
+                var imageName = "sintrom_";
+                var fractionRnd = rnd.Next(5);
+                switch (fractionRnd) {
+                    case 0: fraction = "1"; imageName += "1"; break;
+                    case 1: fraction = "3/4"; imageName += "3_4"; break;
+                    case 2: fraction = "1/2"; imageName += "1_2"; break;
+                    case 3: fraction = "1/4"; imageName += "1_4"; break;
+                    case 4: fraction = "1/8"; imageName += "1_8"; break;
+                }
+
+                InsertSintromItem(new SintromTreatmentItem() {
+                    Date = day,
+                    Fraction = fraction,
+                    Medicine = medicine,
+                    ImageName = imageName
+                });
+
+            }
+
         }
 
     }
