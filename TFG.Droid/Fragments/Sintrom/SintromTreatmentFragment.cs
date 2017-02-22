@@ -5,9 +5,9 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using com.refractored.fab;
+using TFG.Droid.Activities.Sintrom;
 using TFG.Droid.Adapters;
-using TFG.Model;
-using TFG.Droid.Custom_Views;
+using TFG.Model; 
 using Fragment = Android.Support.V4.App.Fragment;
 
 namespace TFG.Droid.Fragments.Sintrom {
@@ -29,7 +29,7 @@ namespace TFG.Droid.Fragments.Sintrom {
             var fab = view.FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.AttachToRecyclerView(_recyclerView);
 
-            fab.Click += delegate { /*StartActivity(typeof(ModuleListActivity));*/ };
+            fab.Click += delegate { Activity.StartActivity(typeof(SintromConfigureTreatmentFragment)); };
 
             return view;
         }

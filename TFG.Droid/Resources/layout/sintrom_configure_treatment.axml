@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+  <com.refractored.PagerSlidingTabStrip
+      android:id="@+id/tabs"
+      android:layout_width="match_parent"
+      android:layout_height="?attr/actionBarSize"
+      app:pstsPaddingMiddle="true" /> 
+
+    <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="?colorPrimary">
+
+      <TFG.Droid.Custom_Views.CustomTextView
+        android:id="@+id/day_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.14"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_large" />
+      <TFG.Droid.Custom_Views.CustomTextView
+        android:id="@+id/day_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.14"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_large" />
+      <TFG.Droid.Custom_Views.CustomTextView
+        android:id="@+id/day_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.14"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_large" />
+      <TFG.Droid.Custom_Views.CustomTextView
+        android:id="@+id/day_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.14"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_large" />
+      <TFG.Droid.Custom_Views.CustomTextView
+        android:id="@+id/day_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.14"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_large" />
+      <TFG.Droid.Custom_Views.CustomTextView
+        android:id="@+id/day_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.14"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_large" />
+      <TFG.Droid.Custom_Views.CustomTextView
+        android:id="@+id/day_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.14"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_large" /> 
+      
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:layout_weight="0.7" />
+</LinearLayout>
