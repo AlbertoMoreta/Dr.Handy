@@ -279,7 +279,7 @@ namespace TFG {
                     case 2: medicine += "4 mg"; break;
                 }
 
-                string fraction;
+                string fraction = "1";
                 var imageName = "sintrom_";
                 var fractionRnd = rnd.Next(5);
                 switch (fractionRnd) {
