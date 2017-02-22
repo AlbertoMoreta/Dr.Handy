@@ -18,7 +18,7 @@
       android:background="?colorPrimary">
 
       <TFG.Droid.Custom_Views.CustomTextView
-        android:id="@+id/day_1"
+        android:id="@+id/day0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.14"
@@ -28,7 +28,7 @@
         android:textColor="@android:color/white"
         android:textSize="@dimen/text_size_large" />
       <TFG.Droid.Custom_Views.CustomTextView
-        android:id="@+id/day_2"
+        android:id="@+id/day1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.14"
@@ -38,7 +38,7 @@
         android:textColor="@android:color/white"
         android:textSize="@dimen/text_size_large" />
       <TFG.Droid.Custom_Views.CustomTextView
-        android:id="@+id/day_3"
+        android:id="@+id/day2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.14"
@@ -48,7 +48,7 @@
         android:textColor="@android:color/white"
         android:textSize="@dimen/text_size_large" />
       <TFG.Droid.Custom_Views.CustomTextView
-        android:id="@+id/day_4"
+        android:id="@+id/day3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.14"
@@ -58,7 +58,7 @@
         android:textColor="@android:color/white"
         android:textSize="@dimen/text_size_large" />
       <TFG.Droid.Custom_Views.CustomTextView
-        android:id="@+id/day_5"
+        android:id="@+id/day4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.14"
@@ -68,7 +68,7 @@
         android:textColor="@android:color/white"
         android:textSize="@dimen/text_size_large" />
       <TFG.Droid.Custom_Views.CustomTextView
-        android:id="@+id/day_6"
+        android:id="@+id/day5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.14"
@@ -78,7 +78,7 @@
         android:textColor="@android:color/white"
         android:textSize="@dimen/text_size_large" />
       <TFG.Droid.Custom_Views.CustomTextView
-        android:id="@+id/day_7"
+        android:id="@+id/day6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.14"

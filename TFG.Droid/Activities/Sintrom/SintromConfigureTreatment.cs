@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 
@@ -15,8 +16,10 @@ using Android.Views;
 using Android.Widget;
 using com.refractored;
 using TFG.Droid.Adapters;
+using TFG.Droid.Custom_Views;
 using TFG.Droid.Fragments.Sintrom;
 using TFG.Model;
+using DayOfWeek = Android.Text.Format.DayOfWeek;
 
 namespace TFG.Droid.Activities.Sintrom {
     
@@ -24,8 +27,7 @@ namespace TFG.Droid.Activities.Sintrom {
     public class SintromConfigureTreatmentFragment : AppCompatActivity {
          
         protected override void OnCreate(Bundle savedInstanceState)  {
-            base.OnCreate(savedInstanceState);
-             
+            base.OnCreate(savedInstanceState); 
 
             var theme = HealthModulesInfoExtension.GetHealthModuleThemeFromHealthModuleName(this, HealthModuleType.Sintrom.HealthModuleName());
             if (theme != -1) { SetTheme(theme);} 
@@ -37,14 +39,26 @@ namespace TFG.Droid.Activities.Sintrom {
 
              var treatmentTitle = GetString(Resources.GetIdentifier("sintrom_treatment",
                 "string", PackageName));
-            adapter.AddItem(new SintromCalendarFragment(), treatmentTitle);
+            adapter.AddItem(new SintromCalendarFragment(DateTime.Now), treatmentTitle);
 
             pager.Adapter = adapter;
 
             var tabs = FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
-            tabs.SetViewPager(pager); 
-        } 
+            tabs.SetViewPager(pager);
 
+            InitDays();
+        }
+
+        private void InitDays() {
+            
+            var names = CultureInfo.CurrentCulture.DateTimeFormat.AbbreviatedDayNames;
+
+            for (var i = 0; i < names.Length; i++) {
+                FindViewById<CustomTextView>(Resources.GetIdentifier("day" + i, "id", PackageName)).Text = names[i];
+            }  
+             
+
+        }
         
     }
 }

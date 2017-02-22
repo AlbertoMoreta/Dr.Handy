@@ -3571,29 +3571,29 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060051
 			public const int customPanel = 2131099729;
 			
-			// aapt resource value: 0x7f06009e
-			public const int date = 2131099806;
-			
 			// aapt resource value: 0x7f060097
-			public const int day_1 = 2131099799;
+			public const int date = 2131099799;
 			
 			// aapt resource value: 0x7f060098
-			public const int day_2 = 2131099800;
+			public const int day0 = 2131099800;
 			
 			// aapt resource value: 0x7f060099
-			public const int day_3 = 2131099801;
+			public const int day1 = 2131099801;
 			
 			// aapt resource value: 0x7f06009a
-			public const int day_4 = 2131099802;
+			public const int day2 = 2131099802;
 			
 			// aapt resource value: 0x7f06009b
-			public const int day_5 = 2131099803;
+			public const int day3 = 2131099803;
 			
 			// aapt resource value: 0x7f06009c
-			public const int day_6 = 2131099804;
+			public const int day4 = 2131099804;
 			
 			// aapt resource value: 0x7f06009d
-			public const int day_7 = 2131099805;
+			public const int day5 = 2131099805;
+			
+			// aapt resource value: 0x7f06009e
+			public const int day6 = 2131099806;
 			
 			// aapt resource value: 0x7f06005a
 			public const int decor_content_parent = 2131099738;
@@ -4162,16 +4162,19 @@ namespace TFG.Droid
 			public const int sintrom_calendar = 2130903098;
 			
 			// aapt resource value: 0x7f03003b
-			public const int sintrom_configure_treatment = 2130903099;
+			public const int sintrom_calendar_item = 2130903099;
 			
 			// aapt resource value: 0x7f03003c
-			public const int sintrom_treatment_row = 2130903100;
+			public const int sintrom_configure_treatment = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int support_simple_spinner_dropdown_item = 2130903101;
+			public const int sintrom_treatment_row = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int toolbar = 2130903102;
+			public const int support_simple_spinner_dropdown_item = 2130903102;
+			
+			// aapt resource value: 0x7f03003f
+			public const int toolbar = 2130903103;
 			
 			static Layout()
 			{
