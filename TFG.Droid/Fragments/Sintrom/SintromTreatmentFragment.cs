@@ -29,7 +29,7 @@ namespace TFG.Droid.Fragments.Sintrom {
             var fab = view.FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.AttachToRecyclerView(_recyclerView);
 
-            fab.Click += delegate { Activity.StartActivity(typeof(SintromConfigureTreatmentFragment)); };
+            fab.Click += delegate { Activity.StartActivity(typeof(SintromConfigureTreatment)); };
 
             return view;
         }

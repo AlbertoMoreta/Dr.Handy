@@ -23,14 +23,20 @@ using DayOfWeek = Android.Text.Format.DayOfWeek;
 
 namespace TFG.Droid.Activities.Sintrom {
     
-    [Activity(Label = "SintromConfigureTreatmentFragment", LaunchMode = LaunchMode.SingleTask)]
-    public class SintromConfigureTreatmentFragment : AppCompatActivity {
+    [Activity(Label = "SintromConfigureTreatment", LaunchMode = LaunchMode.SingleTask)]
+    public class SintromConfigureTreatment : BaseActivity {
          
         protected override void OnCreate(Bundle savedInstanceState)  {
             base.OnCreate(savedInstanceState); 
+            SetUpToolBar();
 
-            var theme = HealthModulesInfoExtension.GetHealthModuleThemeFromHealthModuleName(this, HealthModuleType.Sintrom.HealthModuleName());
+            var moduleName = HealthModuleType.Sintrom.HealthModuleName();
+            var theme = HealthModulesInfoExtension.GetHealthModuleThemeFromHealthModuleName(this, moduleName);
             if (theme != -1) { SetTheme(theme);} 
+
+            Window.DecorView.Background =
+                HealthModulesInfoExtension.GetHealthModuleBackgroundFromHealthModuleName(this, moduleName);
+  
 
             SetContentView (Resource.Layout.sintrom_configure_treatment);
 
@@ -42,9 +48,6 @@ namespace TFG.Droid.Activities.Sintrom {
             adapter.AddItem(new SintromCalendarFragment(DateTime.Now), treatmentTitle);
 
             pager.Adapter = adapter;
-
-            var tabs = FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
-            tabs.SetViewPager(pager);
 
             InitDays();
         }

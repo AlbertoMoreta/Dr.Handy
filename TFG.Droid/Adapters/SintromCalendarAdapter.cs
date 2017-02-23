@@ -6,6 +6,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V4.Content;
@@ -20,11 +21,13 @@ namespace TFG.Droid.Adapters {
 
         //ViewHolder for the calendar cells
         public class ViewHolder : RecyclerView.ViewHolder { 
+            public View ItemView { get; private set; }
             public CustomTextView Date { get; set; }
             public ImageView Icon { get; set; }
             public CustomTextView Fraction { get; set; }
 
             public ViewHolder(View itemView) : base(itemView) {
+                ItemView = itemView;
                 Date = itemView.FindViewById<CustomTextView>(Resource.Id.date);
                 Icon = itemView.FindViewById<ImageView>(Resource.Id.icon);
                 Fraction = itemView.FindViewById<CustomTextView>(Resource.Id.fraction);
@@ -33,15 +36,17 @@ namespace TFG.Droid.Adapters {
 
         private Context _context; 
         private DateTime _date;
-        private int _offset;
+        private int _firstDayMonth;
         private int _totalDays;
 
         public SintromCalendarAdapter(Context context, DateTime date) {
             _context = context;
-            _date = date;
-            _offset = - (int) date.DayOfWeek;
+            _date = date; 
             var daysInMonth = DateTime.DaysInMonth(_date.Year, _date.Month);
-            _totalDays = daysInMonth + date.DayOfWeek + 6 - new DateTime(_date.Year, _date.Month, daysInMonth).DayOfWeek;
+            _firstDayMonth = (int) new DateTime(_date.Year, _date.Month, 1).DayOfWeek; 
+            var lastDayMonth = new DateTime(_date.Year, _date.Month, daysInMonth).DayOfWeek;
+            //Get total days to show counting the last days of the previous month and the first days of the next month 
+            _totalDays = daysInMonth + _firstDayMonth + 6 - (int) lastDayMonth;
         }
 
         public override int ItemCount {
@@ -56,19 +61,25 @@ namespace TFG.Droid.Adapters {
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             ViewHolder viewHolder = holder as ViewHolder;
-            var date = new DateTime(_date.Year, _date.Month, 1).AddDays(_offset); 
-            _offset++;
+            var date = new DateTime(_date.Year, _date.Month, 1).AddDays(position - _firstDayMonth);  
             var item = DBHelper.Instance.GetSintromItemFromDate(date);
             viewHolder.Date.Text = date.ToString("dd/MM/yyyy");
 
-            if (item != null) {
-                viewHolder.Icon.SetImageDrawable(ContextCompat.GetDrawable(_context,
-                                                _context.Resources.GetIdentifier(item[0].ImageName,
-                                                "drawable", _context.PackageName))); 
-                viewHolder.Fraction.Text = item[0].Fraction;
+            if (date.Month == _date.Month) {
+                if (item != null) {
+                    viewHolder.Icon.SetImageDrawable(ContextCompat.GetDrawable(_context,
+                        _context.Resources.GetIdentifier(item[0].ImageName,
+                            "drawable", _context.PackageName)));
+                    viewHolder.Fraction.Text = item[0].Fraction;
+                }
+                
+                viewHolder.ItemView.SetBackgroundColor(Color.White);
+                viewHolder.ItemView.Click += delegate { };
+            } else {
+                viewHolder.ItemView.SetBackgroundColor(Color.LightGray);
+                viewHolder.Icon.SetImageDrawable(null);
+                viewHolder.Fraction.Text = null;
             }
-
-            viewHolder.ItemView.Click += delegate { };
         }
          
        

@@ -2939,17 +2939,17 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f05000a
 			public const int abc_text_size_title_material_toolbar = 2131034122;
 			
-			// aapt resource value: 0x7f050079
-			public const int actionbar_height = 2131034233;
+			// aapt resource value: 0x7f05007a
+			public const int actionbar_height = 2131034234;
 			
-			// aapt resource value: 0x7f05007f
-			public const int appbarlayout_height = 2131034239;
-			
-			// aapt resource value: 0x7f05007d
-			public const int card_height = 2131034237;
+			// aapt resource value: 0x7f050080
+			public const int appbarlayout_height = 2131034240;
 			
 			// aapt resource value: 0x7f05007e
-			public const int card_padding = 2131034238;
+			public const int card_height = 2131034238;
+			
+			// aapt resource value: 0x7f05007f
+			public const int card_padding = 2131034239;
 			
 			// aapt resource value: 0x7f050003
 			public const int cardview_compat_inset_shadow = 2131034115;
@@ -3056,8 +3056,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f050072
 			public const int fab_elevation_lollipop = 2131034226;
 			
-			// aapt resource value: 0x7f050083
-			public const int fab_offset = 2131034243;
+			// aapt resource value: 0x7f050084
+			public const int fab_offset = 2131034244;
 			
 			// aapt resource value: 0x7f050071
 			public const int fab_scroll_threshold = 2131034225;
@@ -3065,8 +3065,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f050070
 			public const int fab_shadow_size = 2131034224;
 			
-			// aapt resource value: 0x7f050082
-			public const int fab_size = 2131034242;
+			// aapt resource value: 0x7f050083
+			public const int fab_size = 2131034243;
 			
 			// aapt resource value: 0x7f05006f
 			public const int fab_size_mini = 2131034223;
@@ -3074,8 +3074,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f05006e
 			public const int fab_size_normal = 2131034222;
 			
-			// aapt resource value: 0x7f050081
-			public const int health_module_icon_size = 2131034241;
+			// aapt resource value: 0x7f050082
+			public const int health_module_icon_size = 2131034242;
 			
 			// aapt resource value: 0x7f05004b
 			public const int highlight_alpha_material_colored = 2131034187;
@@ -3095,8 +3095,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f050002
 			public const int item_touch_helper_swipe_escape_velocity = 2131034114;
 			
-			// aapt resource value: 0x7f05007c
-			public const int main_screen_padding_top = 2131034236;
+			// aapt resource value: 0x7f05007d
+			public const int main_screen_padding_top = 2131034237;
 			
 			// aapt resource value: 0x7f05004e
 			public const int notification_large_icon_height = 2131034190;
@@ -3107,32 +3107,35 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f050050
 			public const int notification_subtext_size = 2131034192;
 			
-			// aapt resource value: 0x7f050080
-			public const int recycler_view_overlap = 2131034240;
-			
-			// aapt resource value: 0x7f050074
-			public const int text_size_large = 2131034228;
-			
-			// aapt resource value: 0x7f050073
-			public const int text_size_normal = 2131034227;
-			
-			// aapt resource value: 0x7f050078
-			public const int text_size_toolbar = 2131034232;
+			// aapt resource value: 0x7f050081
+			public const int recycler_view_overlap = 2131034241;
 			
 			// aapt resource value: 0x7f050075
-			public const int text_size_xlarge = 2131034229;
+			public const int text_size_large = 2131034229;
+			
+			// aapt resource value: 0x7f050073
+			public const int text_size_medium = 2131034227;
+			
+			// aapt resource value: 0x7f050074
+			public const int text_size_normal = 2131034228;
+			
+			// aapt resource value: 0x7f050079
+			public const int text_size_toolbar = 2131034233;
 			
 			// aapt resource value: 0x7f050076
-			public const int text_size_xxlarge = 2131034230;
+			public const int text_size_xlarge = 2131034230;
 			
 			// aapt resource value: 0x7f050077
-			public const int text_size_xxxlarge = 2131034231;
+			public const int text_size_xxlarge = 2131034231;
 			
-			// aapt resource value: 0x7f05007a
-			public const int toolbar_header_height = 2131034234;
+			// aapt resource value: 0x7f050078
+			public const int text_size_xxxlarge = 2131034232;
 			
 			// aapt resource value: 0x7f05007b
-			public const int toolbar_top_padding = 2131034235;
+			public const int toolbar_header_height = 2131034235;
+			
+			// aapt resource value: 0x7f05007c
+			public const int toolbar_top_padding = 2131034236;
 			
 			static Dimension()
 			{

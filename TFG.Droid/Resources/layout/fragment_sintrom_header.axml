@@ -3,36 +3,33 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-
-
-  <TFG.Droid.Custom_Views.CustomTextView
-      android:id="@+id/medicine"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:gravity="center"
-      android:layout_gravity="center"
-      android:paddingTop="10dp"
-      android:textColor="@android:color/white"
-      android:textSize="@dimen/text_size_xlarge" />
-  
+    <TFG.Droid.Custom_Views.CustomTextView
+        android:id="@+id/medicine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:paddingTop="10dp"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_xlarge" />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/icon"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" 
-            android:layout_weight="0.3"
-            android:scaleType="centerCrop"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:scaleType="centerInside"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_gravity="center"  />
+            android:layout_gravity="center" />
         <TFG.Droid.Custom_Views.CustomTextView
             android:id="@+id/fraction"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" 
-            android:layout_weight="0.7"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:gravity="center"
             android:layout_gravity="center"
             android:textColor="@android:color/white"
