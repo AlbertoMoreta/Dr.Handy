@@ -54,4 +54,8 @@
   <string name="weekday">Día</string>
   <string name="month">Mes</string>
 
+  <!-- Sintrom Strings -->
+  <string name="sintrom_name">Sintrom</string>
+  <string name="sintrom_treatment">Tratamiento</string>
+
 </resources>

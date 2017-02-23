@@ -15,6 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\ColorBlindnessQuestion.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\HealthModule.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\HealthModulesInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\SintromTreatmentItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\StepCounterItem.cs" />
   </ItemGroup>
 </Project>

@@ -17,15 +17,21 @@ namespace TFG {
         private static readonly string COL_DESCRIPTION = "Description";
         private static readonly string COL_POSITION = "Position";
         private static readonly string COL_VISIBLE = "Visible";
+        public static readonly string DATE_FORMAT = "yyyy-MM-dd";
 
 
-        //Step Counter Module
+        //Step Counter Health Module
         public static readonly string STEPCOUNTER_TABLE = "STEPCOUNTER";
         public static readonly string COL_DATE = "Date";
         public static readonly string COL_STEPS = "Steps";
         public static readonly string COL_CALORIES = "Calories";
         public static readonly string COL_DISTANCE = "Distance";
-        public static readonly string DATE_FORMAT = "yyyy-MM-dd";
+
+        //Sintrom Health Module
+        public static readonly string SINTROM_TABLE = "SINTROM";
+        public static readonly string COL_IMAGENAME = "ImageName";
+        public static readonly string COL_FRACTION = "Fraction";
+        public static readonly string COL_MEDICINE = "Medicine";  
 
 
         private static DBHelper _instance;
@@ -79,7 +85,6 @@ namespace TFG {
             }
         }
         
-        
         public void AddHealthModule(HealthModuleType module) {
             var sql = "INSERT INTO " + TABLE_NAME + " (" + COL_NAME + ", " + COL_DESCRIPTION + ", " + COL_POSITION + ", " + COL_VISIBLE + ") VALUES " 
                 + "('" + module.HealthModuleName() + "', '" + module.HealthModuleDescription() + "', " + Count() + ", 1)" ;
@@ -89,10 +94,17 @@ namespace TFG {
             InitHealthModule(module);
         }
 
+        public void DeleteHealthModule(HealthModuleType module) {
+            var sql = "DELETE FROM " + TABLE_NAME + " WHERE " + COL_NAME + " = '" + module.HealthModuleName() + "'";
+
+            Connection.Execute(sql);
+        }
+
         public void InitHealthModule(HealthModuleType module) {
             switch (module) {
                 case HealthModuleType.ColorBlindnessTest: break;
                 case HealthModuleType.StepCounter: CreateStepCounterTable(); break;
+                case HealthModuleType.Sintrom: CreateSintromTable(); break;
             }
         }
 
@@ -145,6 +157,9 @@ namespace TFG {
         }
 
 
+
+        //Step Counter Health Module Queries
+
         public void CreateStepCounterTable() {
             var sql = "CREATE TABLE IF NOT EXISTS " + STEPCOUNTER_TABLE + " (" + COL_DATE + " date primary key, "
                 + COL_STEPS + " integer, " + COL_CALORIES + " integer, " + COL_DISTANCE + " integer)";
@@ -192,8 +207,8 @@ namespace TFG {
             DropTable(STEPCOUNTER_TABLE);
             CreateStepCounterTable();
 
-            var startDate = new DateTime(2017, 2, 1);
-            var endDate = new DateTime(2017, 2, 15);
+            var startDate = DateTime.Now.AddMonths(-5);
+            var endDate = DateTime.Now.AddMonths(5);
 
             var rnd = new Random();
             var logic = StepCounterLogic.Instance();
@@ -203,10 +218,89 @@ namespace TFG {
                  
                 UpdateSteps(day, steps, logic.GetCaloriesFromSteps(steps), logic.GetDistanceFromSteps(steps));
 
-            } 
-            
+            }  
 
         }
+
+
+
+        //Sintrom Health Module Queries
+
+        public void CreateSintromTable() {
+            var sql = "CREATE TABLE IF NOT EXISTS " + SINTROM_TABLE + " (" + COL_DATE + " date primary key, "
+                + COL_IMAGENAME + " text, " + COL_FRACTION + " text, " + COL_MEDICINE + " text)";
+
+            Connection.Execute(sql);
+        }
+
+        public void InsertSintromItem(SintromTreatmentItem sintromItem) {
+
+            var stringDate = sintromItem.Date.ToString(DATE_FORMAT);
+
+            var sql = "INSERT INTO " + SINTROM_TABLE + " (" + COL_DATE + ", " + COL_IMAGENAME + ", " + COL_FRACTION + ", " + COL_MEDICINE + ") VALUES "
+                + "('" + stringDate + "', '" + sintromItem.ImageName + "', '" + sintromItem.Fraction+ "', '" + sintromItem.Medicine + "')";
+
+            Connection.Execute(sql);
+        }
+
+        //Get Sintrom Treatment Item from a specific date
+        public List<SintromTreatmentItem> GetSintromItemFromDate(DateTime date) {
+            var stringDate = date.ToString(DATE_FORMAT);
+
+            var sql = "SELECT * FROM " + SINTROM_TABLE + " WHERE " + COL_DATE + " = '" + stringDate + "'";
+
+            return Connection.Query<SintromTreatmentItem>(sql);
+        }
+
+        //Get Sintrom Treatment Item from this date onwards
+        public List<SintromTreatmentItem> GetSintromItemsStartingFromDate(DateTime date) {
+            var stringDate = date.ToString(DATE_FORMAT);
+
+            var sql = "SELECT * FROM " + SINTROM_TABLE + " WHERE " + COL_DATE + " >= '" + stringDate + "'";
+
+            return Connection.Query<SintromTreatmentItem>(sql);
+        }
+
+        private void FillSintromTable() {
+            DropTable(SINTROM_TABLE);
+            CreateSintromTable();
+
+            var startDate = DateTime.Now.AddMonths(-5);
+            var endDate = DateTime.Now.AddMonths(5);
+
+            var rnd = new Random();
+
+            for (var day = startDate.Date; day.Date <= endDate.Date; day = day.AddDays(1)) {
+                var medicine = "Sintrom ";
+                var medicineRnd = rnd.Next(3);
+                switch (medicineRnd) {
+                    case 0: medicine += "1 mg"; break;
+                    case 1: medicine += "2 mg"; break;
+                    case 2: medicine += "4 mg"; break;
+                }
+
+                string fraction = "1";
+                var imageName = "sintrom_";
+                var fractionRnd = rnd.Next(5);
+                switch (fractionRnd) {
+                    case 0: fraction = "1"; imageName += "1"; break;
+                    case 1: fraction = "3/4"; imageName += "3_4"; break;
+                    case 2: fraction = "1/2"; imageName += "1_2"; break;
+                    case 3: fraction = "1/4"; imageName += "1_4"; break;
+                    case 4: fraction = "1/8"; imageName += "1_8"; break;
+                }
+
+                InsertSintromItem(new SintromTreatmentItem() {
+                    Date = day,
+                    Fraction = fraction,
+                    Medicine = medicine,
+                    ImageName = imageName
+                });
+
+            }
+
+        }
+
     }
 
 

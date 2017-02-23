@@ -10,6 +10,7 @@ using Android.Widget;
 
 using TFG.Droid.Fragments.ColorBlindnessTest;
 using TFG.Droid.Fragments.StepCounter;
+using TFG.Droid.Fragments.Sintrom;
 using TFG.Droid.Interfaces;
 using TFG.Model;
 
@@ -19,12 +20,14 @@ namespace TFG.Droid{
         public static IHealthFragment GetHeaderFragmentFromHealthModuleName(string moduleName) {
 	    if (HealthModuleType.ColorBlindnessTest.HealthModuleName().Equals(moduleName)) { return new CBTHeaderFragment(); }
             if (HealthModuleType.StepCounter.HealthModuleName().Equals(moduleName)) { return new StepCounterHeaderFragment(); }
+if (HealthModuleType.Sintrom.HealthModuleName().Equals(moduleName)) { return new SintromHeaderFragment(); }
             return null;
         }
 
         public static IHealthFragment GetBodyFragmentFromHealthModuleName(string moduleName) {
             if (HealthModuleType.ColorBlindnessTest.HealthModuleName().Equals(moduleName)) { return new CBTBodyFragment(); }
             if (HealthModuleType.StepCounter.HealthModuleName().Equals(moduleName)) { return new StepCounterBodyFragment(); } 
+if (HealthModuleType.Sintrom.HealthModuleName().Equals(moduleName)) { return new SintromBodyFragment(); }
             return null;
         }
 
