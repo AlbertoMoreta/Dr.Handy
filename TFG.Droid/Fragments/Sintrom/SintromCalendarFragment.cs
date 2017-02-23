@@ -10,13 +10,14 @@ using Fragment = Android.Support.V4.App.Fragment;
 
 namespace TFG.Droid.Fragments.Sintrom {
     public class SintromCalendarFragment : Fragment {
-
+         
         public DateTime Date { get; set; }
+        private SintromCalendarAdapter _adapter;
 
         public SintromCalendarFragment() { }
 
         public SintromCalendarFragment(DateTime date) {
-            Date = date;
+            Date = date; 
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -25,19 +26,31 @@ namespace TFG.Droid.Fragments.Sintrom {
             if (savedInstanceState != null)  { 
                 Date = new DateTime(savedInstanceState.GetLong("date"));
             }
+            _adapter = new SintromCalendarAdapter(Activity, Date); 
 
             var recyclerView = view.FindViewById<RecyclerView>(Resource.Id.recycler_view);
             recyclerView.SetLayoutManager(new GridLayoutManager(Activity, 7));
 
-            var adapter = new SintromCalendarAdapter(Activity, Date); 
-            recyclerView.SetAdapter(adapter);
+            recyclerView.SetAdapter(_adapter);
 
             return view;
         }
 
         public override void OnSaveInstanceState(Bundle outState) {
             base.OnSaveInstanceState(outState); 
-            outState.PutLong("date", Date.Ticks);
+            outState.PutLong("date", Date.Ticks); 
+        }
+
+        public void SetPreviousMonth() {
+            Date = Date.AddMonths(-1);
+            _adapter.Date = Date;
+            _adapter.NotifyDataSetChanged();
+        }
+
+        public void SetNextMonth() {
+            Date = Date.AddMonths(1);
+            _adapter.Date = Date;
+            _adapter.NotifyDataSetChanged();
         }
     }
 }

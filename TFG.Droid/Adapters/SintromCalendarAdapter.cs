@@ -15,6 +15,7 @@ using Android.Views;
 using Android.Widget;
 using TFG.Droid.Custom_Views;
 using TFG.Droid.Listeners;
+using TFG.Model;
 
 namespace TFG.Droid.Adapters {
     class SintromCalendarAdapter : RecyclerView.Adapter {
@@ -36,21 +37,29 @@ namespace TFG.Droid.Adapters {
 
         private Context _context; 
         private DateTime _date;
+
+        public DateTime Date {
+            get { return _date; }
+            set { _date = value; UpdateCalendarInfo(); }
+        }
         private int _firstDayMonth;
         private int _totalDays;
 
         public SintromCalendarAdapter(Context context, DateTime date) {
             _context = context;
-            _date = date; 
+            Date = date;  
+        }
+
+        public override int ItemCount {
+            get { return _totalDays; }
+        }
+
+        private void UpdateCalendarInfo() {
             var daysInMonth = DateTime.DaysInMonth(_date.Year, _date.Month);
             _firstDayMonth = (int) new DateTime(_date.Year, _date.Month, 1).DayOfWeek; 
             var lastDayMonth = new DateTime(_date.Year, _date.Month, daysInMonth).DayOfWeek;
             //Get total days to show counting the last days of the previous month and the first days of the next month 
             _totalDays = daysInMonth + _firstDayMonth + 6 - (int) lastDayMonth;
-        }
-
-        public override int ItemCount {
-            get { return _totalDays; }
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
@@ -62,15 +71,16 @@ namespace TFG.Droid.Adapters {
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             ViewHolder viewHolder = holder as ViewHolder;
             var date = new DateTime(_date.Year, _date.Month, 1).AddDays(position - _firstDayMonth);  
-            var item = DBHelper.Instance.GetSintromItemFromDate(date);
+            var items = DBHelper.Instance.GetSintromItemFromDate(date);
+
             viewHolder.Date.Text = date.ToString("dd/MM/yyyy");
 
             if (date.Month == _date.Month) {
-                if (item != null) {
+                if (items.Count != 0) {
                     viewHolder.Icon.SetImageDrawable(ContextCompat.GetDrawable(_context,
-                        _context.Resources.GetIdentifier(item[0].ImageName,
+                        _context.Resources.GetIdentifier(items[0].ImageName,
                             "drawable", _context.PackageName)));
-                    viewHolder.Fraction.Text = item[0].Fraction;
+                    viewHolder.Fraction.Text = items[0].Fraction;
                 }
                 
                 viewHolder.ItemView.SetBackgroundColor(Color.White);

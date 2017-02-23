@@ -3568,6 +3568,9 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06004c
 			public const int contentPanel = 2131099724;
 			
+			// aapt resource value: 0x7f060096
+			public const int current_date = 2131099798;
+			
 			// aapt resource value: 0x7f060052
 			public const int custom = 2131099730;
 			
@@ -3577,26 +3580,26 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060095
 			public const int date = 2131099797;
 			
-			// aapt resource value: 0x7f060096
-			public const int day0 = 2131099798;
-			
 			// aapt resource value: 0x7f060097
-			public const int day1 = 2131099799;
+			public const int day0 = 2131099799;
 			
 			// aapt resource value: 0x7f060098
-			public const int day2 = 2131099800;
+			public const int day1 = 2131099800;
 			
 			// aapt resource value: 0x7f060099
-			public const int day3 = 2131099801;
+			public const int day2 = 2131099801;
 			
 			// aapt resource value: 0x7f06009a
-			public const int day4 = 2131099802;
+			public const int day3 = 2131099802;
 			
 			// aapt resource value: 0x7f06009b
-			public const int day5 = 2131099803;
+			public const int day4 = 2131099803;
 			
 			// aapt resource value: 0x7f06009c
-			public const int day6 = 2131099804;
+			public const int day5 = 2131099804;
+			
+			// aapt resource value: 0x7f06009d
+			public const int day6 = 2131099805;
 			
 			// aapt resource value: 0x7f06005a
 			public const int decor_content_parent = 2131099738;
@@ -3910,8 +3913,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06004a
 			public const int title_template = 2131099722;
 			
-			// aapt resource value: 0x7f06009d
-			public const int toolbar = 2131099805;
+			// aapt resource value: 0x7f06009e
+			public const int toolbar = 2131099806;
 			
 			// aapt resource value: 0x7f060032
 			public const int top = 2131099698;
