@@ -1,22 +1,13 @@
 using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-
 using Android.App;
 using Android.Content;
-using Android.Graphics;
-using Android.OS;
-using Android.Runtime;
+using Android.Graphics; 
 using Android.Support.V4.Content;
-using Android.Support.V7.Widget;
-using Android.Util;
+using Android.Support.V7.Widget; 
 using Android.Views;
 using Android.Widget;
-using TFG.Droid.Custom_Views;
-using TFG.Droid.Listeners;
-using TFG.Model;
+using TFG.Droid.Custom_Views; 
 
 namespace TFG.Droid.Adapters {
     class SintromCalendarAdapter : RecyclerView.Adapter {
@@ -45,6 +36,8 @@ namespace TFG.Droid.Adapters {
         }
         private int _firstDayMonth;
         private int _totalDays;
+        private List<ImageView> _pillImages;
+
 
         public SintromCalendarAdapter(Context context, DateTime date) {
             _context = context;
@@ -102,23 +95,45 @@ namespace TFG.Droid.Adapters {
             currentDate.Text = date.ToString("dd MMMM yyyy");
 
             var control = v.FindViewById<SwitchCompat>(Resource.Id.control);
+            var medicine = v.FindViewById<Spinner>(Resource.Id.medicine);
+            medicine.Adapter = new ArrayAdapter<string>(_context, Android.Resource.Layout.SimpleSpinnerDropDownItem,
+                _context.Resources.GetStringArray(Resource.Array.sintrom_array));
 
+            _pillImages = new List<ImageView>(); 
             var sintrom1 = v.FindViewById<ImageView>(Resource.Id.sintrom1);
             sintrom1.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_1));
-            sintrom1.Click += PillClicked;
+            _pillImages.Add(sintrom1); 
             var sintrom3_4 = v.FindViewById<ImageView>(Resource.Id.sintrom3_4);
             sintrom3_4.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_3_4));
+            _pillImages.Add(sintrom3_4);
             var sintrom1_2 = v.FindViewById<ImageView>(Resource.Id.sintrom1_2);
             sintrom1_2.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_1_2));
+            _pillImages.Add(sintrom1_2);
             var sintrom1_4 = v.FindViewById<ImageView>(Resource.Id.sintrom1_4);
             sintrom1_4.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_1_4));
+            _pillImages.Add(sintrom1_4);
             var sintrom1_8 = v.FindViewById<ImageView>(Resource.Id.sintrom1_8);
             sintrom1_8.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_1_8)); 
+            _pillImages.Add(sintrom1_8);
+
+            foreach (var image in _pillImages) { image.Click += PillClicked; }
             
             builder.SetView(v).Create().Show(); 
         } 
 
         private void PillClicked(object sender, EventArgs e) {
+            var clickedImage = ((ImageView) sender);
+            var clickedImageBackground = clickedImage.Background;
+
+            foreach (var image in _pillImages) {
+                if (clickedImageBackground == null) {
+                    image.Background = image.Equals(clickedImage)
+                        ? ContextCompat.GetDrawable(_context, Resource.Drawable.background_selector)
+                        : null;
+                } else {
+                    image.Background = null;
+                } 
+            }
         }
          
        

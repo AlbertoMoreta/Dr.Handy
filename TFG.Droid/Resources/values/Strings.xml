@@ -13,5 +13,11 @@
   <!-- Sintrom Strings -->
   <string name="sintrom_name">Sintrom</string>
   <string name="sintrom_treatment">Tratamiento</string>
+  <string name="set_control">Establecer Control</string>
+  <string-array name="sintrom_array">
+  <item>1 mg</item>
+  <item>2 mg</item>
+  <item>4 mg</item> 
+  </string-array>
 
 </resources>
