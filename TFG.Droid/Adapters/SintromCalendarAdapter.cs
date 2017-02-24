@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Android.App;
 using Android.Content;
-using Android.Graphics; 
+using Android.Graphics;
+using Android.Graphics.Drawables;
 using Android.Support.V4.Content;
 using Android.Support.V7.Widget; 
 using Android.Views;
@@ -30,7 +31,8 @@ namespace TFG.Droid.Adapters {
         }
 
         private Context _context; 
-        private DateTime _date; 
+        private DateTime _date;
+        private AlertDialog _dialog;
 
         public DateTime Date {
             get { return _date; }
@@ -39,6 +41,10 @@ namespace TFG.Droid.Adapters {
         private int _firstDayMonth;
         private int _totalDays;
         private List<ImageView> _pillImages;
+
+        private DateTime _selectedDate;
+        private string _selectedImageName;
+        private string _selectedMedicine;
 
 
         public SintromCalendarAdapter(Context context, DateTime date) {
@@ -73,9 +79,12 @@ namespace TFG.Droid.Adapters {
 
             if (date.Month == _date.Month) {
                 if (items.Count != 0) {
-                    viewHolder.Icon.SetImageDrawable(ContextCompat.GetDrawable(_context,
-                        _context.Resources.GetIdentifier(items[0].ImageName,
-                            "drawable", _context.PackageName)));
+                    try {
+                        viewHolder.Icon.SetImageDrawable(ContextCompat.GetDrawable(_context,
+                            _context.Resources.GetIdentifier(items[0].ImageName,
+                                "drawable", _context.PackageName)));
+                    } catch (Android.Content.Res.Resources.NotFoundException) { }
+
                     viewHolder.Fraction.Text = items[0].Fraction;
                 }
                 
@@ -89,9 +98,11 @@ namespace TFG.Droid.Adapters {
         }
 
         private void CreateConfigurationDialog(DateTime date) {
+            _selectedDate = date;
             var builder = new AlertDialog.Builder(_context);
 
-            var currentItem = DBHelper.Instance.GetSintromItemFromDate(date);
+            var items = DBHelper.Instance.GetSintromItemFromDate(date);
+            var currentItem = items.Count > 0 ? items[0] : null;
 
             var v = ((Activity) _context).LayoutInflater.Inflate(Resource.Layout.sintrom_configuration_dialog, null);
 
@@ -107,9 +118,9 @@ namespace TFG.Droid.Adapters {
             var sintromArray = _context.Resources.GetStringArray(Resource.Array.sintrom_array);
             medicineSpinner.Adapter = new ArrayAdapter<string>(_context,
                 Android.Resource.Layout.SimpleSpinnerDropDownItem, sintromArray);
-            if(currentItem[0] != null) {
+            if(currentItem != null) {
                 //Set initial value if exists
-                medicineSpinner.SetSelection(sintromArray.ToList().IndexOf(currentItem[0].Medicine.Split(new char[] {' '}, 2)[1]));
+                medicineSpinner.SetSelection(sintromArray.ToList().IndexOf(currentItem.Medicine.Split(new char[] {' '}, 2)[1]));
             }
 
 
@@ -117,26 +128,30 @@ namespace TFG.Droid.Adapters {
             _pillImages = new List<ImageView>(); 
             var sintrom1 = v.FindViewById<ImageView>(Resource.Id.sintrom1);
             sintrom1.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_1));
+            sintrom1.Tag = "sintrom_1";
             _pillImages.Add(sintrom1); 
             var sintrom3_4 = v.FindViewById<ImageView>(Resource.Id.sintrom3_4);
             sintrom3_4.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_3_4));
+            sintrom3_4.Tag = "sintrom_3_4";
             _pillImages.Add(sintrom3_4);
             var sintrom1_2 = v.FindViewById<ImageView>(Resource.Id.sintrom1_2);
             sintrom1_2.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_1_2));
+            sintrom1_2.Tag = "sintrom_1_2";
             _pillImages.Add(sintrom1_2);
             var sintrom1_4 = v.FindViewById<ImageView>(Resource.Id.sintrom1_4);
             sintrom1_4.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_1_4));
+            sintrom1_4.Tag = "sintrom_1_4";
             _pillImages.Add(sintrom1_4);
             var sintrom1_8 = v.FindViewById<ImageView>(Resource.Id.sintrom1_8);
-            sintrom1_8.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_1_8)); 
+            sintrom1_8.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_1_8));
+            sintrom1_8.Tag = "sintrom_1_8";
             _pillImages.Add(sintrom1_8);
 
             foreach (var image in _pillImages) {
                 //Set initial value if exists
-                if (currentItem[0] != null)  {
-                    var drawable = ContextCompat.GetDrawable(_context,
-                        _context.Resources.GetIdentifier(currentItem[0].ImageName, "drawable", _context.PackageName));
-                    if (image.Drawable.GetConstantState().Equals(drawable.GetConstantState())) {
+                if (currentItem != null)  {
+                    if (image.Tag.Equals(currentItem.ImageName)) {
+                        _selectedImageName = currentItem.ImageName;
                         image.Background = ContextCompat.GetDrawable(_context, Resource.Drawable.background_selector);
                     }
                 }
@@ -149,7 +164,9 @@ namespace TFG.Droid.Adapters {
             acceptBtn.Click += SaveInfo;
             
             //Show dialog
-            builder.SetView(v).Create().Show(); 
+            _dialog = builder.SetView(v).Create();
+            _dialog.Show();
+
         } 
 
         private void PillClicked(object sender, EventArgs e) {
@@ -158,17 +175,25 @@ namespace TFG.Droid.Adapters {
 
             foreach (var image in _pillImages) {
                 if (clickedImageBackground == null) {
+                    _selectedImageName = clickedImage.Tag.ToString();
                     image.Background = image.Equals(clickedImage)
                         ? ContextCompat.GetDrawable(_context, Resource.Drawable.background_selector)
                         : null;
-                } else {
+                } else  {
+                    _selectedImageName = "";
                     image.Background = null;
                 } 
             }
         }
 
         private void SaveInfo(object sender, EventArgs e) {
+            DBHelper.Instance.InsertSintromItem(new SintromTreatmentItem(_selectedDate, _selectedImageName, "Sintrom 1 mg"));
+            
+            NotifyDataSetChanged();
 
+            _dialog.Hide();
+
+            Toast.MakeText(_context, _context.GetString(Resource.String.sintrom_updateinfo_success), ToastLength.Short).Show();
         }
 
     }

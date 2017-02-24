@@ -4346,6 +4346,9 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f09001e
 			public const int sintrom_treatment = 2131296286;
 			
+			// aapt resource value: 0x7f090020
+			public const int sintrom_updateinfo_success = 2131296288;
+			
 			// aapt resource value: 0x7f090013
 			public const int status_bar_notification_info_overflow = 2131296275;
 			
