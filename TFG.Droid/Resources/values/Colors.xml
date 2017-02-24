@@ -4,25 +4,31 @@
   <item name="grey" type="color">#9E9E9E</item>
   <item name="light_grey" type="color">#E0E0E0</item>
   <item name="dark_grey" type="color">#757575</item>
+  <item name="translucent_grey" type="color">#609E9E9E</item>
   
   <item name="purple" type="color">#9C27B0</item>
   <item name="dark_purple" type="color">#6A1B9A</item>
   <item name="light_purple" type="color">#BA68C8</item>
+  <item name="translucent_purple" type="color">#609C27B0</item>
 
   <item name="orange" type="color">#FF9800</item>
   <item name="dark_orange" type="color">#EF6C00</item>
   <item name="light_orange" type="color">#FFB74D</item> 
+  <item name="translucent_orange" type="color">#60FF9800</item>
   
   <item name="blue" type="color">#2196F3</item>
   <item name="dark_blue" type="color">#1E88E5</item>
-  <item name="light_blue" type="color">#64B5F6</item> 
+  <item name="light_blue" type="color">#64B5F6</item>
+  <item name="translucent_blue" type="color">#602196F3</item>
   
   <item name="red" type="color">#F44336</item>
   <item name="dark_red" type="color">#E53935</item>
   <item name="light_red" type="color">#E57373</item>
+  <item name="translucent_red" type="color">#60F44336</item>
 
   <item name="green" type="color">#4CAF50</item>
   <item name="dark_green" type="color">#43A047</item>
   <item name="light_green" type="color">#81C784</item>
+  <item name="translucent_green" type="color">#604CAF50</item>
 
 </resources>
