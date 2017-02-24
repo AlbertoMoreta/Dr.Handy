@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Android.App;
 using Android.Content;
 using Android.Graphics; 
@@ -7,7 +8,8 @@ using Android.Support.V4.Content;
 using Android.Support.V7.Widget; 
 using Android.Views;
 using Android.Widget;
-using TFG.Droid.Custom_Views; 
+using TFG.Droid.Custom_Views;
+using TFG.Model;
 
 namespace TFG.Droid.Adapters {
     class SintromCalendarAdapter : RecyclerView.Adapter {
@@ -89,16 +91,29 @@ namespace TFG.Droid.Adapters {
         private void CreateConfigurationDialog(DateTime date) {
             var builder = new AlertDialog.Builder(_context);
 
+            var currentItem = DBHelper.Instance.GetSintromItemFromDate(date);
+
             var v = ((Activity) _context).LayoutInflater.Inflate(Resource.Layout.sintrom_configuration_dialog, null);
 
+            //Title date
             var currentDate = v.FindViewById<CustomTextView>(Resource.Id.current_date);
             currentDate.Text = date.ToString("dd MMMM yyyy");
 
+            //Set if it is control day
             var control = v.FindViewById<SwitchCompat>(Resource.Id.control);
-            var medicine = v.FindViewById<Spinner>(Resource.Id.medicine);
-            medicine.Adapter = new ArrayAdapter<string>(_context, Android.Resource.Layout.SimpleSpinnerDropDownItem,
-                _context.Resources.GetStringArray(Resource.Array.sintrom_array));
 
+            //Set sintrom quantity
+            var medicineSpinner = v.FindViewById<Spinner>(Resource.Id.medicine);
+            var sintromArray = _context.Resources.GetStringArray(Resource.Array.sintrom_array);
+            medicineSpinner.Adapter = new ArrayAdapter<string>(_context,
+                Android.Resource.Layout.SimpleSpinnerDropDownItem, sintromArray);
+            if(currentItem[0] != null) {
+                //Set initial value if exists
+                medicineSpinner.SetSelection(sintromArray.ToList().IndexOf(currentItem[0].Medicine.Split(new char[] {' '}, 2)[1]));
+            }
+
+
+            //Initialize sintrom pill images
             _pillImages = new List<ImageView>(); 
             var sintrom1 = v.FindViewById<ImageView>(Resource.Id.sintrom1);
             sintrom1.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_1));
@@ -116,8 +131,24 @@ namespace TFG.Droid.Adapters {
             sintrom1_8.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_1_8)); 
             _pillImages.Add(sintrom1_8);
 
-            foreach (var image in _pillImages) { image.Click += PillClicked; }
+            foreach (var image in _pillImages) {
+                //Set initial value if exists
+                if (currentItem[0] != null)  {
+                    var drawable = ContextCompat.GetDrawable(_context,
+                        _context.Resources.GetIdentifier(currentItem[0].ImageName, "drawable", _context.PackageName));
+                    if (image.Drawable.GetConstantState().Equals(drawable.GetConstantState())) {
+                        image.Background = ContextCompat.GetDrawable(_context, Resource.Drawable.background_selector);
+                    }
+                }
+
+                image.Click += PillClicked;
+            }
+
+            //Accept button
+            var acceptBtn = v.FindViewById<Button>(Resource.Id.accept_button);
+            acceptBtn.Click += SaveInfo;
             
+            //Show dialog
             builder.SetView(v).Create().Show(); 
         } 
 
@@ -135,8 +166,10 @@ namespace TFG.Droid.Adapters {
                 } 
             }
         }
-         
-       
+
+        private void SaveInfo(object sender, EventArgs e) {
+
+        }
 
     }
 }
