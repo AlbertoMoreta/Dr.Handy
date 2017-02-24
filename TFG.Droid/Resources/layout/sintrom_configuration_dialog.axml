@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:padding="10dp" >
+
+  <TFG.Droid.Custom_Views.CustomTextView
+    android:id="@+id/current_date"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:layout_centerHorizontal="true"
+    android:textColor="?colorPrimary"
+    android:textSize="@dimen/text_size_normal" />
+
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:checked="false"
+        android:text="Control" />
+
+    <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" >
+
+      <TFG.Droid.Custom_Views.CustomTextView
+          android:id="@+id/sintrom1mg"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="0.33"  
+          android:checked="false"
+          android:text="Sintrom 1 mg" />
+
+      <TFG.Droid.Custom_Views.CustomTextView
+          android:id="@+id/sintrom2mg"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="0.33" 
+          android:checked="false"
+          android:text="Sintrom 2 mg" />
+
+      <TFG.Droid.Custom_Views.CustomTextView
+          android:id="@+id/sintrom4mg"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="0.33" 
+          android:checked="false"
+          android:text="Sintrom 4 mg" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:id="@+id/sintrom1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" 
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:layout_weight="0.2"
+            android:padding="2dp" />
+
+        <ImageView
+            android:id="@+id/sintrom3_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" 
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:layout_weight="0.2"
+            android:padding="2dp"/>
+
+        <ImageView
+            android:id="@+id/sintrom1_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" 
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:layout_weight="0.2"
+            android:padding="2dp"/>
+
+        <ImageView
+            android:id="@+id/sintrom1_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:layout_weight="0.2"
+            android:padding="2dp"/>
+
+        <ImageView
+            android:id="@+id/sintrom1_8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:layout_weight="0.2"
+            android:padding="2dp"/>
+
+    </LinearLayout> 
+
+
+</LinearLayout>

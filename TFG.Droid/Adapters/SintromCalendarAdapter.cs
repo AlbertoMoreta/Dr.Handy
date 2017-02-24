@@ -11,6 +11,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Support.V4.Content;
 using Android.Support.V7.Widget;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 using TFG.Droid.Custom_Views;
@@ -36,7 +37,7 @@ namespace TFG.Droid.Adapters {
         }
 
         private Context _context; 
-        private DateTime _date;
+        private DateTime _date; 
 
         public DateTime Date {
             get { return _date; }
@@ -47,7 +48,7 @@ namespace TFG.Droid.Adapters {
 
         public SintromCalendarAdapter(Context context, DateTime date) {
             _context = context;
-            Date = date;  
+            Date = date; 
         }
 
         public override int ItemCount {
@@ -84,12 +85,40 @@ namespace TFG.Droid.Adapters {
                 }
                 
                 viewHolder.ItemView.SetBackgroundColor(Color.White);
-                viewHolder.ItemView.Click += delegate { };
+                viewHolder.ItemView.Click += delegate { CreateConfigurationDialog(date); };
             } else {
                 viewHolder.ItemView.SetBackgroundColor(Color.LightGray);
                 viewHolder.Icon.SetImageDrawable(null);
                 viewHolder.Fraction.Text = null;
             }
+        }
+
+        private void CreateConfigurationDialog(DateTime date) {
+            var builder = new AlertDialog.Builder(_context);
+
+            var v = ((Activity) _context).LayoutInflater.Inflate(Resource.Layout.sintrom_configuration_dialog, null);
+
+            var currentDate = v.FindViewById<CustomTextView>(Resource.Id.current_date);
+            currentDate.Text = date.ToString("dd MMMM yyyy");
+
+            var control = v.FindViewById<SwitchCompat>(Resource.Id.control);
+
+            var sintrom1 = v.FindViewById<ImageView>(Resource.Id.sintrom1);
+            sintrom1.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_1));
+            sintrom1.Click += PillClicked;
+            var sintrom3_4 = v.FindViewById<ImageView>(Resource.Id.sintrom3_4);
+            sintrom3_4.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_3_4));
+            var sintrom1_2 = v.FindViewById<ImageView>(Resource.Id.sintrom1_2);
+            sintrom1_2.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_1_2));
+            var sintrom1_4 = v.FindViewById<ImageView>(Resource.Id.sintrom1_4);
+            sintrom1_4.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_1_4));
+            var sintrom1_8 = v.FindViewById<ImageView>(Resource.Id.sintrom1_8);
+            sintrom1_8.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_1_8)); 
+            
+            builder.SetView(v).Create().Show(); 
+        } 
+
+        private void PillClicked(object sender, EventArgs e) {
         }
          
        
