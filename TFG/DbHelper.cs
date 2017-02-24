@@ -279,23 +279,17 @@ namespace TFG {
                     case 2: medicine += "4 mg"; break;
                 }
 
-                string fraction = "1";
                 var imageName = "sintrom_";
                 var fractionRnd = rnd.Next(5);
                 switch (fractionRnd) {
-                    case 0: fraction = "1"; imageName += "1"; break;
-                    case 1: fraction = "3/4"; imageName += "3_4"; break;
-                    case 2: fraction = "1/2"; imageName += "1_2"; break;
-                    case 3: fraction = "1/4"; imageName += "1_4"; break;
-                    case 4: fraction = "1/8"; imageName += "1_8"; break;
+                    case 0: imageName += "1"; break;
+                    case 1: imageName += "3_4"; break;
+                    case 2: imageName += "1_2"; break;
+                    case 3: imageName += "1_4"; break;
+                    case 4: imageName += "1_8"; break;
                 }
 
-                InsertSintromItem(new SintromTreatmentItem() {
-                    Date = day,
-                    Fraction = fraction,
-                    Medicine = medicine,
-                    ImageName = imageName
-                });
+                InsertSintromItem(new SintromTreatmentItem(day, imageName, medicine));
 
             }
 
