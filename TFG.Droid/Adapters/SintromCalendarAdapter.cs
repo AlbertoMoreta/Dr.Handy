@@ -32,19 +32,14 @@ namespace TFG.Droid.Adapters {
 
         private Context _context; 
         private DateTime _date;
-        private AlertDialog _dialog;
+        private SintromConfigureTreatmentDialog _dialog;
 
         public DateTime Date {
             get { return _date; }
             set { _date = value; UpdateCalendarInfo(); }
         }
         private int _firstDayMonth;
-        private int _totalDays;
-        private List<ImageView> _pillImages;
-
-        private DateTime _selectedDate;
-        private string _selectedImageName;
-        private string _selectedMedicine;
+        private int _totalDays;  
 
 
         public SintromCalendarAdapter(Context context, DateTime date) {
@@ -89,7 +84,7 @@ namespace TFG.Droid.Adapters {
                 }
                 
                 viewHolder.ItemView.SetBackgroundColor(Color.White);
-                viewHolder.ItemView.Click += delegate { CreateConfigurationDialog(date); };
+                viewHolder.ItemView.Click += delegate { ShowConfigurationDialog(date); };
             } else {
                 viewHolder.ItemView.SetBackgroundColor(Color.LightGray);
                 viewHolder.Icon.SetImageDrawable(null);
@@ -97,101 +92,44 @@ namespace TFG.Droid.Adapters {
             }
         }
 
-        private void CreateConfigurationDialog(DateTime date) {
-            _selectedDate = date;
-            var builder = new AlertDialog.Builder(_context);
+        private void ShowConfigurationDialog(DateTime date) {
+
+            _dialog = new SintromConfigureTreatmentDialog(_context);
+            _dialog.SelectedDate = date;  
 
             var items = DBHelper.Instance.GetSintromItemFromDate(date);
-            var currentItem = items.Count > 0 ? items[0] : null;
+            var currentItem = items.Count > 0 ? items[0] : null;  
 
-            var v = ((Activity) _context).LayoutInflater.Inflate(Resource.Layout.sintrom_configuration_dialog, null);
-
-            //Title date
-            var currentDate = v.FindViewById<CustomTextView>(Resource.Id.current_date);
-            currentDate.Text = date.ToString("dd MMMM yyyy");
-
-            //Set if it is control day
-            var control = v.FindViewById<SwitchCompat>(Resource.Id.control);
-
-            //Set sintrom quantity
-            var medicineSpinner = v.FindViewById<Spinner>(Resource.Id.medicine);
-            var sintromArray = _context.Resources.GetStringArray(Resource.Array.sintrom_array);
-            medicineSpinner.Adapter = new ArrayAdapter<string>(_context,
-                Android.Resource.Layout.SimpleSpinnerDropDownItem, sintromArray);
             if(currentItem != null) {
-                //Set initial value if exists
-                medicineSpinner.SetSelection(sintromArray.ToList().IndexOf(currentItem.Medicine.Split(new char[] {' '}, 2)[1]));
+                //Set initial quantity value if exists
+                var sintromArray = _context.Resources.GetStringArray(Resource.Array.sintrom_array);
+                _dialog.SelectedMedicine = currentItem.Medicine;
+                _dialog.Medicine.SetSelection(sintromArray.ToList().IndexOf(currentItem.Medicine.Split(new char[] {' '}, 2)[1]));
             }
+            
 
-
-            //Initialize sintrom pill images
-            _pillImages = new List<ImageView>(); 
-            var sintrom1 = v.FindViewById<ImageView>(Resource.Id.sintrom1);
-            sintrom1.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_1));
-            sintrom1.Tag = "sintrom_1";
-            _pillImages.Add(sintrom1); 
-            var sintrom3_4 = v.FindViewById<ImageView>(Resource.Id.sintrom3_4);
-            sintrom3_4.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_3_4));
-            sintrom3_4.Tag = "sintrom_3_4";
-            _pillImages.Add(sintrom3_4);
-            var sintrom1_2 = v.FindViewById<ImageView>(Resource.Id.sintrom1_2);
-            sintrom1_2.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_1_2));
-            sintrom1_2.Tag = "sintrom_1_2";
-            _pillImages.Add(sintrom1_2);
-            var sintrom1_4 = v.FindViewById<ImageView>(Resource.Id.sintrom1_4);
-            sintrom1_4.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_1_4));
-            sintrom1_4.Tag = "sintrom_1_4";
-            _pillImages.Add(sintrom1_4);
-            var sintrom1_8 = v.FindViewById<ImageView>(Resource.Id.sintrom1_8);
-            sintrom1_8.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.sintrom_1_8));
-            sintrom1_8.Tag = "sintrom_1_8";
-            _pillImages.Add(sintrom1_8);
-
-            foreach (var image in _pillImages) {
+            foreach (var image in _dialog.PillImages) {
                 //Set initial value if exists
                 if (currentItem != null)  {
                     if (image.Tag.Equals(currentItem.ImageName)) {
-                        _selectedImageName = currentItem.ImageName;
+                        _dialog.SelectedImageName = currentItem.ImageName;
                         image.Background = ContextCompat.GetDrawable(_context, Resource.Drawable.background_selector);
                     }
-                }
-
-                image.Click += PillClicked;
-            }
-
-            //Accept button
-            var acceptBtn = v.FindViewById<Button>(Resource.Id.accept_button);
-            acceptBtn.Click += SaveInfo;
-            
-            //Show dialog
-            _dialog = builder.SetView(v).Create();
-            _dialog.Show();
-
-        } 
-
-        private void PillClicked(object sender, EventArgs e) {
-            var clickedImage = ((ImageView) sender);
-            var clickedImageBackground = clickedImage.Background;
-
-            foreach (var image in _pillImages) {
-                if (clickedImageBackground == null) {
-                    _selectedImageName = clickedImage.Tag.ToString();
-                    image.Background = image.Equals(clickedImage)
-                        ? ContextCompat.GetDrawable(_context, Resource.Drawable.background_selector)
-                        : null;
-                } else  {
-                    _selectedImageName = "";
-                    image.Background = null;
                 } 
             }
-        }
+ 
+            _dialog.AcceptButton.Click += SaveInfo; 
 
+            _dialog.Dialog.Show();
+        }  
+
+        //Save Sintrom configuration
         private void SaveInfo(object sender, EventArgs e) {
-            DBHelper.Instance.InsertSintromItem(new SintromTreatmentItem(_selectedDate, _selectedImageName, "Sintrom 1 mg"));
+            DBHelper.Instance.InsertSintromItem(new SintromTreatmentItem(_dialog.SelectedDate, _dialog.SelectedImageName, _dialog.SelectedMedicine));
             
             NotifyDataSetChanged();
 
-            _dialog.Hide();
+            _dialog.Dialog.Hide();
 
             Toast.MakeText(_context, _context.GetString(Resource.String.sintrom_updateinfo_success), ToastLength.Short).Show();
         }
