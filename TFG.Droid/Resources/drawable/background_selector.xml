@@ -4,7 +4,6 @@
   
   <corners android:radius="4dp"/>
   
-  <solid android:color="@color/translucent_orange" />
   
   <stroke android:width="2dp" 
           android:color="?attr/colorPrimary"/>

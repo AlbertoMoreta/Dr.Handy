@@ -74,16 +74,28 @@ namespace TFG.Droid.Adapters {
 
             if (date.Month == _date.Month) {
                 if (items.Count != 0) {
-                    try {
-                        viewHolder.Icon.SetImageDrawable(ContextCompat.GetDrawable(_context,
+                    viewHolder.Icon.SetImageDrawable(items[0].ImageName.Equals("")
+                        ? null
+                        : ContextCompat.GetDrawable(_context,
                             _context.Resources.GetIdentifier(items[0].ImageName,
                                 "drawable", _context.PackageName)));
-                    } catch (Android.Content.Res.Resources.NotFoundException) { }
 
                     viewHolder.Fraction.Text = items[0].Fraction;
+                } else {
+                    viewHolder.Icon.SetImageDrawable(null);
+                    viewHolder.Fraction.Text = null;
+                }
+
+                if (date.Date.Equals(Date.Date))
+                {
+                    viewHolder.ItemView.Background = ContextCompat.GetDrawable(_context,
+                        Resource.Drawable.background_selector);
+                }
+                else
+                {
+                    viewHolder.ItemView.SetBackgroundColor(Color.White);
                 }
                 
-                viewHolder.ItemView.SetBackgroundColor(Color.White);
                 viewHolder.ItemView.Click += delegate { ShowConfigurationDialog(date); };
             } else {
                 viewHolder.ItemView.SetBackgroundColor(Color.LightGray);
