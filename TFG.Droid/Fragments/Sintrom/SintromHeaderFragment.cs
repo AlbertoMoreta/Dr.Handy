@@ -36,13 +36,18 @@ namespace TFG.Droid.Fragments.Sintrom {
                 //Toolbar title with today's date 
                 (Activity as BaseActivity).ToolbarTitle.Text = DateTime.Now.ToString("dd / MM / yyyy");
 
-                var item = items.ElementAt(0); 
-                medicine.Text = item.Medicine; 
-                icon.SetImageDrawable(ContextCompat.GetDrawable(Activity,
-                    Activity.Resources.GetIdentifier(item.ImageName,
-                        "drawable", Activity.PackageName))); 
-                fraction.Text = item.Fraction;
-
+                var item = items.ElementAt(0);
+                if (item.Control) {
+                    var layout = (ViewGroup) view;
+                    layout.RemoveAllViews();
+                    layout.AddView(inflater.Inflate(Resource.Layout.fragment_sintrom_header_control, container, false)); 
+                }else { 
+                    medicine.Text = item.Medicine; 
+                    icon.SetImageDrawable(ContextCompat.GetDrawable(Activity,
+                        Activity.Resources.GetIdentifier(item.ImageName,
+                            "drawable", Activity.PackageName))); 
+                    fraction.Text = item.Fraction;
+                }
             } else  {
                 //If there is no treatment, set the toolbar title as the name of the health module
                 (Activity as BaseActivity).ToolbarTitle.Text = HealthModuleType.Sintrom.HealthModuleName();

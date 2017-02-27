@@ -24,12 +24,12 @@ namespace TFG.Droid.Adapters {
             
             public CustomTextView Date { get; set; }
             public ImageView Icon { get; set; }
-            public CustomTextView Fraction { get; set; }
+            public CustomTextView Info { get; set; }
 
             public ViewHolder(View itemView) : base(itemView) {
                 Date = itemView.FindViewById<CustomTextView>(Resource.Id.date);
                 Icon = itemView.FindViewById<ImageView>(Resource.Id.icon);
-                Fraction = itemView.FindViewById<CustomTextView>(Resource.Id.fraction);
+                Info = itemView.FindViewById<CustomTextView>(Resource.Id.info);
             }
         }
 
@@ -58,13 +58,21 @@ namespace TFG.Droid.Adapters {
             var viewHolder = holder as ViewHolder;
             var item = _items.ElementAt(position);
             viewHolder.Date.Text = item.Date.ToString("ddd \n dd MMM");
-            viewHolder.Icon.SetImageDrawable(item.ImageName.Equals("")
-                        ? null
-                        : ContextCompat.GetDrawable(_context,
-                            _context.Resources.GetIdentifier(item.ImageName,
-                                "drawable", _context.PackageName)));
 
-            viewHolder.Fraction.Text = item.Fraction;
+            if (item.Control) {
+                viewHolder.Icon.Visibility = ViewStates.Gone;
+                
+                viewHolder.Info.Text = _context.Resources.GetString(Resource.String.sintrom_control);
+            } else { 
+                viewHolder.Icon.Visibility = ViewStates.Visible;
+                viewHolder.Icon.SetImageDrawable(item.ImageName.Equals("")
+                            ? null
+                            : ContextCompat.GetDrawable(_context,
+                                _context.Resources.GetIdentifier(item.ImageName,
+                                    "drawable", _context.PackageName)));
+
+                viewHolder.Info.Text = item.Fraction;
+            }   
         }  
 
     }

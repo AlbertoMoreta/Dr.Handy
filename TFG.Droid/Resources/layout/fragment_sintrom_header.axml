@@ -18,8 +18,9 @@
         android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/icon"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="0.6"
             android:padding="10dp"
             android:scaleType="centerInside"
             android:layout_centerHorizontal="true"
@@ -27,9 +28,9 @@
             android:layout_gravity="center" />
         <TFG.Droid.Custom_Views.CustomTextView
             android:id="@+id/fraction"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.4" 
             android:gravity="center"
             android:layout_gravity="center"
             android:textColor="@android:color/white"
