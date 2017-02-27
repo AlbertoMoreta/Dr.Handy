@@ -16,15 +16,22 @@ namespace TFG.Droid.Adapters {
     class SintromCalendarAdapter : RecyclerView.Adapter {
 
         //ViewHolder for the calendar cells
-        public class ViewHolder : RecyclerView.ViewHolder { 
-            public View ItemView { get; private set; }
-            public CustomTextView Date { get; set; }
+        public class ViewHolder : RecyclerView.ViewHolder {
+            private DateTime _date;
+
+            public DateTime Date {
+                get { return _date; }
+                set {
+                    _date = value;
+                    DateText.Text = _date.ToString("dd/MM/yyyy");
+                }
+            } 
+            public CustomTextView DateText { get; set; }
             public ImageView Icon { get; set; }
             public CustomTextView Fraction { get; set; }
 
             public ViewHolder(View itemView) : base(itemView) {
-                ItemView = itemView;
-                Date = itemView.FindViewById<CustomTextView>(Resource.Id.date);
+                DateText = itemView.FindViewById<CustomTextView>(Resource.Id.date);
                 Icon = itemView.FindViewById<ImageView>(Resource.Id.icon);
                 Fraction = itemView.FindViewById<CustomTextView>(Resource.Id.fraction);
             }
@@ -62,7 +69,12 @@ namespace TFG.Droid.Adapters {
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
             var itemView = LayoutInflater.From(parent.Context).
                             Inflate(Resource.Layout.sintrom_calendar_item, parent, false);  
-            return new ViewHolder(itemView);
+
+            var viewHolder = new ViewHolder(itemView);
+
+            itemView.Click += delegate { ShowConfigurationDialog(viewHolder.Date); };
+
+            return viewHolder;
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position) {
@@ -70,9 +82,10 @@ namespace TFG.Droid.Adapters {
             var date = new DateTime(_date.Year, _date.Month, 1).AddDays(position - _firstDayMonth);  
             var items = DBHelper.Instance.GetSintromItemFromDate(date);
 
-            viewHolder.Date.Text = date.ToString("dd/MM/yyyy");
+            viewHolder.Date = date;
 
             if (date.Month == _date.Month) {
+                viewHolder.ItemView.Clickable = true;
                 if (items.Count != 0) {
                     viewHolder.Icon.SetImageDrawable(items[0].ImageName.Equals("")
                         ? null
@@ -86,18 +99,14 @@ namespace TFG.Droid.Adapters {
                     viewHolder.Fraction.Text = null;
                 }
 
-                if (date.Date.Equals(Date.Date))
-                {
+                if (date.Date.Equals(Date.Date)) {
                     viewHolder.ItemView.Background = ContextCompat.GetDrawable(_context,
                         Resource.Drawable.background_selector);
-                }
-                else
-                {
+                } else {
                     viewHolder.ItemView.SetBackgroundColor(Color.White);
-                }
-                
-                viewHolder.ItemView.Click += delegate { ShowConfigurationDialog(date); };
+                } 
             } else {
+                viewHolder.ItemView.Clickable = false;
                 viewHolder.ItemView.SetBackgroundColor(Color.LightGray);
                 viewHolder.Icon.SetImageDrawable(null);
                 viewHolder.Fraction.Text = null;
@@ -137,7 +146,7 @@ namespace TFG.Droid.Adapters {
 
         //Save Sintrom configuration
         private void SaveInfo(object sender, EventArgs e) {
-            DBHelper.Instance.InsertSintromItem(new SintromTreatmentItem(_dialog.SelectedDate, _dialog.SelectedImageName, _dialog.SelectedMedicine));
+            DBHelper.Instance.InsertSintromItem(new SintromTreatmentItem(_dialog.SelectedDate, _dialog.SelectedImageName, _dialog.SelectedMedicine, _dialog.Control.Checked));
             
             NotifyDataSetChanged();
 

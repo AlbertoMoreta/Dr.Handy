@@ -58,9 +58,12 @@ namespace TFG.Droid.Adapters {
             var viewHolder = holder as ViewHolder;
             var item = _items.ElementAt(position);
             viewHolder.Date.Text = item.Date.ToString("ddd \n dd MMM");
-            viewHolder.Icon.SetImageDrawable(ContextCompat.GetDrawable(_context,
-                                                _context.Resources.GetIdentifier(item.ImageName,
-                                                "drawable", _context.PackageName))); 
+            viewHolder.Icon.SetImageDrawable(item.ImageName.Equals("")
+                        ? null
+                        : ContextCompat.GetDrawable(_context,
+                            _context.Resources.GetIdentifier(item.ImageName,
+                                "drawable", _context.PackageName)));
+
             viewHolder.Fraction.Text = item.Fraction;
         }  
 
