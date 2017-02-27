@@ -31,7 +31,8 @@ namespace TFG {
         public static readonly string SINTROM_TABLE = "SINTROM";
         public static readonly string COL_IMAGENAME = "ImageName";
         public static readonly string COL_FRACTION = "Fraction";
-        public static readonly string COL_MEDICINE = "Medicine";  
+        public static readonly string COL_MEDICINE = "Medicine";
+        public static readonly string COL_CONTROL = "Control";  
 
 
         private static DBHelper _instance;
@@ -228,7 +229,7 @@ namespace TFG {
 
         public void CreateSintromTable() {
             var sql = "CREATE TABLE IF NOT EXISTS " + SINTROM_TABLE + " (" + COL_DATE + " date primary key, "
-                + COL_IMAGENAME + " text, " + COL_FRACTION + " text, " + COL_MEDICINE + " text)";
+                + COL_IMAGENAME + " text, " + COL_FRACTION + " text, " + COL_MEDICINE + " text, " + COL_CONTROL  + " boolean)";
 
             Connection.Execute(sql);
         }
@@ -237,8 +238,8 @@ namespace TFG {
 
             var stringDate = sintromItem.Date.ToString(DATE_FORMAT);
 
-            var sql = "INSERT OR REPLACE INTO " + SINTROM_TABLE + " (" + COL_DATE + ", " + COL_IMAGENAME + ", " + COL_FRACTION + ", " + COL_MEDICINE + ") VALUES "
-                + "('" + stringDate + "', '" + sintromItem.ImageName + "', '" + sintromItem.Fraction+ "', '" + sintromItem.Medicine + "')";
+            var sql = "INSERT OR REPLACE INTO " + SINTROM_TABLE + " (" + COL_DATE + ", " + COL_IMAGENAME + ", " + COL_FRACTION + ", " + COL_MEDICINE + ", " + COL_CONTROL + ") VALUES "
+                + "('" + stringDate + "', '" + sintromItem.ImageName + "', '" + sintromItem.Fraction + "', '" + sintromItem.Medicine + "', '" + sintromItem.Control + "')";
 
             Connection.Execute(sql);
         }
@@ -270,27 +271,31 @@ namespace TFG {
 
             var rnd = new Random();
 
-            for (var day = startDate.Date; day.Date <= endDate.Date; day = day.AddDays(1)) {
-                var medicine = "Sintrom ";
-                var medicineRnd = rnd.Next(3);
-                switch (medicineRnd) {
-                    case 0: medicine += "1 mg"; break;
-                    case 1: medicine += "2 mg"; break;
-                    case 2: medicine += "4 mg"; break;
+            for (var day = startDate.Date; day.Date <= endDate.Date; day = day.AddDays(1))  {
+                if (rnd.Next(10) == 1) {
+                    //Control day
+                    InsertSintromItem(new SintromTreatmentItem(day, "", "", true));
+                } else {
+                    var medicine = "Sintrom ";
+                    var medicineRnd = rnd.Next(3);
+                    switch (medicineRnd) {
+                        case 0: medicine += "1 mg"; break;
+                        case 1: medicine += "2 mg"; break;
+                        case 2: medicine += "4 mg"; break;
+                    }
+
+                    var imageName = "sintrom_";
+                    var fractionRnd = rnd.Next(5);
+                    switch (fractionRnd) {
+                        case 0: imageName += "1"; break;
+                        case 1: imageName += "3_4"; break;
+                        case 2: imageName += "1_2"; break;
+                        case 3: imageName += "1_4"; break;
+                        case 4: imageName += "1_8"; break;
+                    }
+
+                    InsertSintromItem(new SintromTreatmentItem(day, imageName, medicine, false));
                 }
-
-                var imageName = "sintrom_";
-                var fractionRnd = rnd.Next(5);
-                switch (fractionRnd) {
-                    case 0: imageName += "1"; break;
-                    case 1: imageName += "3_4"; break;
-                    case 2: imageName += "1_2"; break;
-                    case 3: imageName += "1_4"; break;
-                    case 4: imageName += "1_8"; break;
-                }
-
-                InsertSintromItem(new SintromTreatmentItem(day, imageName, medicine));
-
             }
 
         }
