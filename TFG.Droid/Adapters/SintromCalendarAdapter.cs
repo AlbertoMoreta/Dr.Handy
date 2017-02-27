@@ -28,12 +28,14 @@ namespace TFG.Droid.Adapters {
             } 
             public CustomTextView DateText { get; set; }
             public ImageView Icon { get; set; }
-            public CustomTextView Fraction { get; set; }
+            public CustomTextView Control { get; set; }
+            public CustomTextView Info { get; set; }
 
             public ViewHolder(View itemView) : base(itemView) {
                 DateText = itemView.FindViewById<CustomTextView>(Resource.Id.date);
                 Icon = itemView.FindViewById<ImageView>(Resource.Id.icon);
-                Fraction = itemView.FindViewById<CustomTextView>(Resource.Id.fraction);
+                Control = itemView.FindViewById<CustomTextView>(Resource.Id.control);
+                Info = itemView.FindViewById<CustomTextView>(Resource.Id.info);
             }
         }
 
@@ -86,17 +88,28 @@ namespace TFG.Droid.Adapters {
 
             if (date.Month == _date.Month) {
                 viewHolder.ItemView.Clickable = true;
-                if (items.Count != 0) {
-                    viewHolder.Icon.SetImageDrawable(items[0].ImageName.Equals("")
-                        ? null
-                        : ContextCompat.GetDrawable(_context,
-                            _context.Resources.GetIdentifier(items[0].ImageName,
-                                "drawable", _context.PackageName)));
 
-                    viewHolder.Fraction.Text = items[0].Fraction;
+                if (items.Count != 0) {
+                    var item = items[0];
+
+                    if (item.Control) {
+                        viewHolder.Control.Visibility = ViewStates.Visible;
+                        viewHolder.Icon.Visibility = ViewStates.Gone;
+                    } else {
+                        viewHolder.Control.Visibility = ViewStates.Gone;
+                        viewHolder.Icon.Visibility = ViewStates.Visible;
+                        viewHolder.Icon.SetImageDrawable(item.ImageName.Equals("")
+                            ? null
+                            : ContextCompat.GetDrawable(_context,
+                                _context.Resources.GetIdentifier(item.ImageName,
+                                    "drawable", _context.PackageName)));
+
+                        viewHolder.Info.Text = item.Fraction;
+                    }
                 } else {
                     viewHolder.Icon.SetImageDrawable(null);
-                    viewHolder.Fraction.Text = null;
+                    viewHolder.Control.Visibility = ViewStates.Gone;
+                    viewHolder.Info.Text = null;
                 }
 
                 if (date.Date.Equals(Date.Date)) {
@@ -109,23 +122,29 @@ namespace TFG.Droid.Adapters {
                 viewHolder.ItemView.Clickable = false;
                 viewHolder.ItemView.SetBackgroundColor(Color.LightGray);
                 viewHolder.Icon.SetImageDrawable(null);
-                viewHolder.Fraction.Text = null;
+                viewHolder.Control.Visibility = ViewStates.Gone;
+                viewHolder.Info.Text = null;
             }
         }
 
         private void ShowConfigurationDialog(DateTime date) {
 
             _dialog = new SintromConfigureTreatmentDialog(_context);
-            _dialog.SelectedDate = date;  
+            _dialog.SelectedDate = date;
 
             var items = DBHelper.Instance.GetSintromItemFromDate(date);
-            var currentItem = items.Count > 0 ? items[0] : null;  
+            var currentItem = items.Count > 0 ? items[0] : null;   
+
+            _dialog.Control.Checked = currentItem.Control;  
 
             if(currentItem != null) {
                 //Set initial quantity value if exists
                 var sintromArray = _context.Resources.GetStringArray(Resource.Array.sintrom_array);
                 _dialog.SelectedMedicine = currentItem.Medicine;
-                _dialog.Medicine.SetSelection(sintromArray.ToList().IndexOf(currentItem.Medicine.Split(new char[] {' '}, 2)[1]));
+                if(!currentItem.Medicine.Equals("")) {
+                    _dialog.Medicine.SetSelection(
+                        sintromArray.ToList().IndexOf(currentItem.Medicine.Split(new char[] {' '}, 2)[1]));
+                }
             }
             
 

@@ -3608,11 +3608,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06004c
 			public const int contentPanel = 2131099724;
 			
-			// aapt resource value: 0x7f060097
-			public const int control = 2131099799;
-			
 			// aapt resource value: 0x7f060096
-			public const int current_date = 2131099798;
+			public const int control = 2131099798;
+			
+			// aapt resource value: 0x7f060097
+			public const int current_date = 2131099799;
 			
 			// aapt resource value: 0x7f060052
 			public const int custom = 2131099730;
@@ -4340,14 +4340,17 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f09001f
 			public const int set_control = 2131296287;
 			
+			// aapt resource value: 0x7f090020
+			public const int sintrom_control = 2131296288;
+			
 			// aapt resource value: 0x7f09001d
 			public const int sintrom_name = 2131296285;
 			
 			// aapt resource value: 0x7f09001e
 			public const int sintrom_treatment = 2131296286;
 			
-			// aapt resource value: 0x7f090020
-			public const int sintrom_updateinfo_success = 2131296288;
+			// aapt resource value: 0x7f090021
+			public const int sintrom_updateinfo_success = 2131296289;
 			
 			// aapt resource value: 0x7f090013
 			public const int status_bar_notification_info_overflow = 2131296275;
