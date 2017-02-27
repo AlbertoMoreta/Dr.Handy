@@ -239,7 +239,7 @@ namespace TFG {
             var stringDate = sintromItem.Date.ToString(DATE_FORMAT);
 
             var sql = "INSERT OR REPLACE INTO " + SINTROM_TABLE + " (" + COL_DATE + ", " + COL_IMAGENAME + ", " + COL_FRACTION + ", " + COL_MEDICINE + ", " + COL_CONTROL + ") VALUES "
-                + "('" + stringDate + "', '" + sintromItem.ImageName + "', '" + sintromItem.Fraction + "', '" + sintromItem.Medicine + "', '" + sintromItem.Control + "')";
+                + "('" + stringDate + "', '" + sintromItem.ImageName + "', '" + sintromItem.Fraction + "', '" + sintromItem.Medicine + "', " + (sintromItem.Control ? "1" : "0") + ")";
 
             Connection.Execute(sql);
         }
