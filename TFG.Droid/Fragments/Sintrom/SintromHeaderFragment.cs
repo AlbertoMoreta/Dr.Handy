@@ -42,10 +42,12 @@ namespace TFG.Droid.Fragments.Sintrom {
                     layout.RemoveAllViews();
                     layout.AddView(inflater.Inflate(Resource.Layout.fragment_sintrom_header_control, container, false)); 
                 }else { 
-                    medicine.Text = item.Medicine; 
-                    icon.SetImageDrawable(ContextCompat.GetDrawable(Activity,
-                        Activity.Resources.GetIdentifier(item.ImageName,
-                            "drawable", Activity.PackageName))); 
+                    medicine.Text = item.Medicine;
+                    icon.SetImageDrawable(item.ImageName.Equals("")
+                            ? null
+                            : ContextCompat.GetDrawable(Activity,
+                                Activity.Resources.GetIdentifier(item.ImageName,
+                                    "drawable", Activity.PackageName)));
                     fraction.Text = item.Fraction;
                 }
             } else  {
