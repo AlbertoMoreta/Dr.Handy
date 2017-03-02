@@ -8,11 +8,14 @@ using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V4.Content;
+using Android.Text;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using Java.Text;
 using TFG.Droid.Custom_Views;
 using TFG.Droid.Interfaces;
+using TFG.Droid.Utils;
 using TFG.Model;
 
 namespace TFG.Droid.Fragments.Sintrom {
@@ -40,7 +43,19 @@ namespace TFG.Droid.Fragments.Sintrom {
                 if (item.Control) {
                     var layout = (ViewGroup) view;
                     layout.RemoveAllViews();
-                    layout.AddView(inflater.Inflate(Resource.Layout.fragment_sintrom_header_control, container, false)); 
+                    var controlDayView = inflater.Inflate(Resource.Layout.fragment_sintrom_header_control, container, false);
+                    layout.AddView(controlDayView);
+                    var inputINR = controlDayView.FindViewById<EditText>(Resource.Id.input_inr);
+                    inputINR.TextChanged += (s, e) => {
+                        var editText = (EditText) s;
+                        if (e.Text.Count() == 2 && !e.Text.ElementAt(0).Equals('.') && !e.Text.ElementAt(1).Equals('.')) {
+                            editText.Text = e.Text.ElementAt(0) + "." + e.Text.ElementAt(1);
+                            editText.SetSelection(editText.Text.Length);
+                        } else if (e.Text.Count() == 1 && e.Text.ElementAt(0).Equals('.')) {
+                            editText.Text = "";
+                        }
+                    };
+
                 }else { 
                     medicine.Text = item.Medicine;
                     icon.SetImageDrawable(item.ImageName.Equals("")
