@@ -111,7 +111,7 @@ namespace TFG.Droid.Adapters {
                     viewHolder.Info.Text = null;
                 }
 
-                if (date.Date.Equals(Date.Date)) {
+                if (date.Date.Equals(DateTime.Now.Date)) {
                     viewHolder.ItemView.Background = ContextCompat.GetDrawable(_context,
                         Resource.Drawable.background_selector);
                 } else {
