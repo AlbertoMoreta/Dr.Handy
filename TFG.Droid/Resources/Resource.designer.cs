@@ -3500,8 +3500,8 @@ namespace TFG.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f06009f
-			public const int accept_button = 2131099807;
+			// aapt resource value: 0x7f0600a0
+			public const int accept_button = 2131099808;
 			
 			// aapt resource value: 0x7f060088
 			public const int action0 = 2131099784;
@@ -3623,26 +3623,26 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060096
 			public const int date = 2131099798;
 			
-			// aapt resource value: 0x7f0600a0
-			public const int day0 = 2131099808;
-			
 			// aapt resource value: 0x7f0600a1
-			public const int day1 = 2131099809;
+			public const int day0 = 2131099809;
 			
 			// aapt resource value: 0x7f0600a2
-			public const int day2 = 2131099810;
+			public const int day1 = 2131099810;
 			
 			// aapt resource value: 0x7f0600a3
-			public const int day3 = 2131099811;
+			public const int day2 = 2131099811;
 			
 			// aapt resource value: 0x7f0600a4
-			public const int day4 = 2131099812;
+			public const int day3 = 2131099812;
 			
 			// aapt resource value: 0x7f0600a5
-			public const int day5 = 2131099813;
+			public const int day4 = 2131099813;
 			
 			// aapt resource value: 0x7f0600a6
-			public const int day6 = 2131099814;
+			public const int day5 = 2131099814;
+			
+			// aapt resource value: 0x7f0600a7
+			public const int day6 = 2131099815;
 			
 			// aapt resource value: 0x7f06005a
 			public const int decor_content_parent = 2131099738;
@@ -3737,6 +3737,9 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060077
 			public const int input_inr = 2131099767;
 			
+			// aapt resource value: 0x7f060099
+			public const int inr = 2131099801;
+			
 			// aapt resource value: 0x7f06003b
 			public const int italic = 2131099707;
 			
@@ -3800,8 +3803,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060021
 			public const int never = 2131099681;
 			
-			// aapt resource value: 0x7f060099
-			public const int no_control_layout = 2131099801;
+			// aapt resource value: 0x7f06009a
+			public const int no_control_layout = 2131099802;
 			
 			// aapt resource value: 0x7f060010
 			public const int none = 2131099664;
@@ -3905,20 +3908,20 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060013
 			public const int showTitle = 2131099667;
 			
-			// aapt resource value: 0x7f06009a
-			public const int sintrom1 = 2131099802;
-			
-			// aapt resource value: 0x7f06009c
-			public const int sintrom1_2 = 2131099804;
+			// aapt resource value: 0x7f06009b
+			public const int sintrom1 = 2131099803;
 			
 			// aapt resource value: 0x7f06009d
-			public const int sintrom1_4 = 2131099805;
+			public const int sintrom1_2 = 2131099805;
 			
 			// aapt resource value: 0x7f06009e
-			public const int sintrom1_8 = 2131099806;
+			public const int sintrom1_4 = 2131099806;
 			
-			// aapt resource value: 0x7f06009b
-			public const int sintrom3_4 = 2131099803;
+			// aapt resource value: 0x7f06009f
+			public const int sintrom1_8 = 2131099807;
+			
+			// aapt resource value: 0x7f06009c
+			public const int sintrom3_4 = 2131099804;
 			
 			// aapt resource value: 0x7f06006f
 			public const int snackbar_action = 2131099759;
@@ -3977,8 +3980,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06004a
 			public const int title_template = 2131099722;
 			
-			// aapt resource value: 0x7f0600a7
-			public const int toolbar = 2131099815;
+			// aapt resource value: 0x7f0600a8
+			public const int toolbar = 2131099816;
 			
 			// aapt resource value: 0x7f060032
 			public const int top = 2131099698;
@@ -4340,6 +4343,9 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f09001b
 			public const int color_blindness_test_name = 2131296283;
 			
+			// aapt resource value: 0x7f090022
+			public const int input_inr = 2131296290;
+			
 			// aapt resource value: 0x7f090019
 			public const int remove = 2131296281;
 			
@@ -4358,8 +4364,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f09001e
 			public const int sintrom_treatment = 2131296286;
 			
-			// aapt resource value: 0x7f090022
-			public const int sintrom_updateinfo_success = 2131296290;
+			// aapt resource value: 0x7f090023
+			public const int sintrom_updateinfo_success = 2131296291;
 			
 			// aapt resource value: 0x7f090013
 			public const int status_bar_notification_info_overflow = 2131296275;
@@ -4395,8 +4401,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f070143
 			public const int Animation_Design_BottomSheetDialog = 2131165507;
 			
-			// aapt resource value: 0x7f070161
-			public const int AppTheme = 2131165537;
+			// aapt resource value: 0x7f070162
+			public const int AppTheme = 2131165538;
 			
 			// aapt resource value: 0x7f07015e
 			public const int AppTheme_blue = 2131165534;
@@ -4853,6 +4859,9 @@ namespace TFG.Droid
 			
 			// aapt resource value: 0x7f070003
 			public const int CardView_Light = 2131165187;
+			
+			// aapt resource value: 0x7f070161
+			public const int EditTextWhite = 2131165537;
 			
 			// aapt resource value: 0x7f07015b
 			public const int MyTheme_Base = 2131165531;

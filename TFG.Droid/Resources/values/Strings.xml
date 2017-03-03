@@ -17,6 +17,7 @@
   <string name="set_control">Establecer Control</string>
   <string name="sintrom_control">Control</string>
   <string name="sintrom_inr">INR</string>
+  <string name="input_inr">Introduzca el valor de INR proporcionado por su doctor</string>
   <string name="sintrom_updateinfo_success">Información actualizada correctamente</string>
   <string-array name="sintrom_array">
   <item>1 mg</item>

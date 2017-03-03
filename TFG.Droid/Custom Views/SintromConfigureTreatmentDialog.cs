@@ -48,8 +48,13 @@ namespace TFG.Droid.Custom_Views {
 
             CurrentDate = v.FindViewById<CustomTextView>(Resource.Id.current_date);
 
+            var noControlLayout = v.FindViewById<LinearLayout>(Resource.Id.no_control_layout);
+            var inputINR = v.FindViewById<RelativeLayout>(Resource.Id.input_inr); 
             Control = v.FindViewById<SwitchCompat>(Resource.Id.control);
-             
+            Control.CheckedChange += (s, e) => {
+                noControlLayout.Visibility = e.IsChecked ? ViewStates.Gone : ViewStates.Visible;
+                inputINR.Visibility = e.IsChecked ? ViewStates.Visible : ViewStates.Gone;
+            };
             Medicine = v.FindViewById<Spinner>(Resource.Id.medicine);
             var sintromArray = _context.Resources.GetStringArray(Resource.Array.sintrom_array);
             Medicine.Adapter = new ArrayAdapter<string>(_context,
