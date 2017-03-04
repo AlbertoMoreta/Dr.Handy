@@ -13,15 +13,13 @@ namespace TFG.Model {
         } 
         public string Fraction { get; private set; }
         public string Medicine { get; set; }
-        public bool Control { get; set; }
 
         public SintromTreatmentItem() { }
 
-        public SintromTreatmentItem(DateTime date, string imageName, string medicine, bool control) {
+        public SintromTreatmentItem(DateTime date, string imageName, string medicine) {
             Date = date;
             ImageName = imageName;
             Medicine = medicine;
-            Control = control;
         }
 
         private void ImageNameToFraction() {
