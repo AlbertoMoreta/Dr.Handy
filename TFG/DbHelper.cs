@@ -29,10 +29,12 @@ namespace TFG {
 
         //Sintrom Health Module
         public static readonly string SINTROM_TABLE = "SINTROM";
+        public static readonly string INR_TABLE = "INR_VALUES";
         public static readonly string COL_IMAGENAME = "ImageName";
         public static readonly string COL_FRACTION = "Fraction";
         public static readonly string COL_MEDICINE = "Medicine";
-        public static readonly string COL_CONTROL = "Control";  
+        public static readonly string COL_CONTROL = "Control";
+        public static readonly string COL_INR = "Inr";
 
 
         private static DBHelper _instance;
@@ -105,7 +107,7 @@ namespace TFG {
             switch (module) {
                 case HealthModuleType.ColorBlindnessTest: break;
                 case HealthModuleType.StepCounter: CreateStepCounterTable(); break;
-                case HealthModuleType.Sintrom: CreateSintromTable(); break;
+                case HealthModuleType.Sintrom: CreateSintromTable(); CreateINRTable(); break;
             }
         }
 
@@ -229,7 +231,14 @@ namespace TFG {
 
         public void CreateSintromTable() {
             var sql = "CREATE TABLE IF NOT EXISTS " + SINTROM_TABLE + " (" + COL_DATE + " date primary key, "
-                + COL_IMAGENAME + " text, " + COL_FRACTION + " text, " + COL_MEDICINE + " text, " + COL_CONTROL  + " boolean)";
+                + COL_IMAGENAME + " text, " + COL_FRACTION + " text, " + COL_MEDICINE + " text)";
+
+            Connection.Execute(sql);
+        }
+
+        public void CreateINRTable() {
+            var sql = "CREATE TABLE IF NOT EXISTS " + INR_TABLE + " (" + COL_DATE + " date primary key, "
+                + COL_CONTROL + " boolean, " + COL_INR + " integer)";
 
             Connection.Execute(sql);
         }
@@ -238,8 +247,8 @@ namespace TFG {
 
             var stringDate = sintromItem.Date.ToString(DATE_FORMAT);
 
-            var sql = "INSERT OR REPLACE INTO " + SINTROM_TABLE + " (" + COL_DATE + ", " + COL_IMAGENAME + ", " + COL_FRACTION + ", " + COL_MEDICINE + ", " + COL_CONTROL + ") VALUES "
-                + "('" + stringDate + "', '" + sintromItem.ImageName + "', '" + sintromItem.Fraction + "', '" + sintromItem.Medicine + "', " + (sintromItem.Control ? "1" : "0") + ")";
+            var sql = "INSERT OR REPLACE INTO " + SINTROM_TABLE + " (" + COL_DATE + ", " + COL_IMAGENAME + ", " + COL_FRACTION + ", " + COL_MEDICINE + ", ) VALUES "
+                + "('" + stringDate + "', '" + sintromItem.ImageName + "', '" + sintromItem.Fraction + "', '" + sintromItem.Medicine + "', " + ")";
 
             Connection.Execute(sql);
         }
@@ -262,6 +271,22 @@ namespace TFG {
             return Connection.Query<SintromTreatmentItem>(sql);
         }
 
+
+        public void InsertSintromINRItem(SintromINRItem sintromInrItem) {
+            var stringDate = sintromInrItem.Date.ToString(DATE_FORMAT);
+
+            var sql = "INSERT OR REPLACE INTO " + INR_TABLE + " (" + COL_DATE + ", " + COL_CONTROL + ", " + COL_INR + ") VALUES "
+                + "('" + stringDate + "', '" + (sintromItem.Control ? "1" : "0")  + "', '" + sintromInrItem.INR + ")";
+
+            Connection.Execute(sql);
+        }
+
+        public List<SintromINRItem> GetSintromINRItems() {
+            var sql = "SELECT * FROM " + INR_TABLE;
+
+            return Connection.Query<SintromTreatmentItem>(sql); 
+        }
+
         private void FillSintromTable() {
             DropTable(SINTROM_TABLE);
             CreateSintromTable();
@@ -274,7 +299,7 @@ namespace TFG {
             for (var day = startDate.Date; day.Date <= endDate.Date; day = day.AddDays(1))  {
                 if (rnd.Next(10) == 1) {
                     //Control day
-                    InsertSintromItem(new SintromTreatmentItem(day, "", "", true));
+                    InsertSintromINRItem(new SintromINRItem(day, true, "1.4"));
                 } else {
                     var medicine = "Sintrom ";
                     var medicineRnd = rnd.Next(3);
@@ -294,7 +319,7 @@ namespace TFG {
                         case 4: imageName += "1_8"; break;
                     }
 
-                    InsertSintromItem(new SintromTreatmentItem(day, imageName, medicine, false));
+                    InsertSintromItem(new SintromTreatmentItem(day, imageName, medicine));
                 }
             }
 
