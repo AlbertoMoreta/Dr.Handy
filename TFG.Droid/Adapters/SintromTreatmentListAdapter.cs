@@ -59,7 +59,10 @@ namespace TFG.Droid.Adapters {
             var item = _items.ElementAt(position);
             viewHolder.Date.Text = item.Date.ToString("ddd \n dd MMM");
 
-            if (item.Control) {
+            var inrItems = DBHelper.Instance.GetSintromINRItemFromDate(item.Date);
+            var inrItem = inrItems.Count > 0 ? inrItems[0] : null;
+
+            if (inrItem != null && inrItem.Control) {
                 viewHolder.Icon.Visibility = ViewStates.Gone;
                 
                 viewHolder.Info.Text = _context.Resources.GetString(Resource.String.sintrom_control);

@@ -33,14 +33,16 @@ namespace TFG.Droid.Fragments.Sintrom {
 
             //Get Sintrom treatment for today
             var items =
-                    DBHelper.Instance.GetSintromItemFromDate(DateTime.Now); 
+                    DBHelper.Instance.GetSintromItemFromDate(DateTime.Now);
+
+            var inrItems = DBHelper.Instance.GetSintromINRItemFromDate(DateTime.Now);
 
             if (items.Count > 0) {
                 //Toolbar title with today's date 
                 (Activity as BaseActivity).ToolbarTitle.Text = DateTime.Now.ToString("dd / MM / yyyy");
 
                 var item = items.ElementAt(0);
-                if (item.Control) {
+                if (inrItems.Count > 0 && inrItems[0].Control) {
                     var layout = (ViewGroup) view;
                     layout.RemoveAllViews();
                     var controlDayView = inflater.Inflate(Resource.Layout.fragment_sintrom_header_control, container, false);

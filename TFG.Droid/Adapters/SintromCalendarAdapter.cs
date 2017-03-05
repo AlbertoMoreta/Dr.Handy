@@ -82,41 +82,46 @@ namespace TFG.Droid.Adapters {
             ViewHolder viewHolder = holder as ViewHolder;
             var date = new DateTime(_date.Year, _date.Month, 1).AddDays(position - _firstDayMonth);  
             var items = DBHelper.Instance.GetSintromItemFromDate(date);
+            var inrItems = DBHelper.Instance.GetSintromINRItemFromDate(date);
 
             viewHolder.Date = date;
 
             if (date.Month == _date.Month) {
-                viewHolder.ItemView.Clickable = true;
-
-                if (items.Count != 0) {
-                    var item = items[0];
-
-                    if (item.Control) {
-                        viewHolder.Control.Visibility = ViewStates.Visible;
-                        viewHolder.Icon.Visibility = ViewStates.Gone;
-                    } else {
-                        viewHolder.Control.Visibility = ViewStates.Gone;
-                        viewHolder.Icon.Visibility = ViewStates.Visible;
-                        viewHolder.Icon.SetImageDrawable(item.ImageName.Equals("")
-                            ? null
-                            : ContextCompat.GetDrawable(_context,
-                                _context.Resources.GetIdentifier(item.ImageName,
-                                    "drawable", _context.PackageName)));
-
-                        viewHolder.Info.Text = item.Fraction;
-                    }
-                } else {
-                    viewHolder.Icon.SetImageDrawable(null);
-                    viewHolder.Control.Visibility = ViewStates.Gone;
-                    viewHolder.Info.Text = null;
-                }
-
+                viewHolder.ItemView.Clickable = true; 
                 if (date.Date.Equals(DateTime.Now.Date)) {
                     viewHolder.ItemView.Background = ContextCompat.GetDrawable(_context,
                         Resource.Drawable.background_selector);
                 } else {
                     viewHolder.ItemView.SetBackgroundColor(Color.White);
                 } 
+
+                if (inrItems.Count != 0) {
+                    var item = inrItems[0];
+                    if (item.Control) {
+                        viewHolder.Control.Visibility = ViewStates.Visible;
+                        viewHolder.Icon.Visibility = ViewStates.Gone;
+                        return;
+                    }
+                }
+
+                if (items.Count != 0) {
+                    var item = items[0];
+                     
+                    viewHolder.Control.Visibility = ViewStates.Gone;
+                    viewHolder.Icon.Visibility = ViewStates.Visible;
+                    viewHolder.Icon.SetImageDrawable(item.ImageName.Equals("")
+                        ? null
+                        : ContextCompat.GetDrawable(_context,
+                            _context.Resources.GetIdentifier(item.ImageName,
+                                "drawable", _context.PackageName)));
+
+                    viewHolder.Info.Text = item.Fraction; 
+                } else {
+                    viewHolder.Icon.SetImageDrawable(null);
+                    viewHolder.Control.Visibility = ViewStates.Gone;
+                    viewHolder.Info.Text = null;
+                }
+
             } else {
                 viewHolder.ItemView.Clickable = false;
                 viewHolder.ItemView.SetBackgroundColor(Color.LightGray);
@@ -132,9 +137,14 @@ namespace TFG.Droid.Adapters {
             _dialog.SelectedDate = date;
 
             var items = DBHelper.Instance.GetSintromItemFromDate(date);
-            var currentItem = items.Count > 0 ? items[0] : null;   
+            var currentItem = items.Count > 0 ? items[0] : null;
 
-            _dialog.Control.Checked = currentItem.Control;  
+            var inrItems = DBHelper.Instance.GetSintromINRItemFromDate(date);
+            var currentINRItem = inrItems.Count > 0 ? inrItems[0] : null;
+            if (currentINRItem != null)  { 
+                _dialog.Control.Checked = currentINRItem.Control;
+                _dialog.INR.Text = currentINRItem.INR.ToString();
+            } 
 
             if(currentItem != null) {
                 //Set initial quantity value if exists
@@ -164,8 +174,12 @@ namespace TFG.Droid.Adapters {
 
         //Save Sintrom configuration
         private void SaveInfo(object sender, EventArgs e) {
-            DBHelper.Instance.InsertSintromItem(new SintromTreatmentItem(_dialog.SelectedDate, _dialog.SelectedImageName, _dialog.SelectedMedicine, _dialog.Control.Checked));
-            
+            if (!_dialog.Control.Checked) { 
+                DBHelper.Instance.InsertSintromItem(new SintromTreatmentItem(_dialog.SelectedDate,
+                    _dialog.SelectedImageName, _dialog.SelectedMedicine));
+            }
+            DBHelper.Instance.InsertSintromINRItem(new SintromINRItem(_dialog.SelectedDate, _dialog.Control.Checked, _dialog.INR.Text.Equals("") ? 0 : double.Parse(_dialog.INR.Text)));
+
             NotifyDataSetChanged();
 
             _dialog.Dialog.Hide();

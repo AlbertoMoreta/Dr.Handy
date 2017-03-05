@@ -20,6 +20,7 @@ namespace TFG.Droid.Custom_Views {
         public AlertDialog Dialog { get; set; }
         public CustomTextView CurrentDate { get; set; }
         public SwitchCompat Control { get; set; }
+        public EditText INR { get; set; }
         public Spinner Medicine { get; set; }
         public Button AcceptButton { get; set; }
 
@@ -49,7 +50,8 @@ namespace TFG.Droid.Custom_Views {
             CurrentDate = v.FindViewById<CustomTextView>(Resource.Id.current_date);
 
             var noControlLayout = v.FindViewById<LinearLayout>(Resource.Id.no_control_layout);
-            var inputINR = v.FindViewById<RelativeLayout>(Resource.Id.input_inr); 
+            var inputINR = v.FindViewById<RelativeLayout>(Resource.Id.input_inr);
+            INR = v.FindViewById<EditText>(Resource.Id.inr);
             Control = v.FindViewById<SwitchCompat>(Resource.Id.control);
             Control.CheckedChange += (s, e) => {
                 noControlLayout.Visibility = e.IsChecked ? ViewStates.Gone : ViewStates.Visible;
