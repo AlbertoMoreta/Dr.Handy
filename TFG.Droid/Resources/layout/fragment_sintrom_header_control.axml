@@ -21,6 +21,7 @@
         android:hint="@string/sintrom_inr"
         android:maxLength="4"
         android:singleLine="true"
+        android:imeOptions="actionDone"
         android:theme="@style/EditTextWhite"
         android:textColorHint="@android:color/white"
         android:textColor="@android:color/white"

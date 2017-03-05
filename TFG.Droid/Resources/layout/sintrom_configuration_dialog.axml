@@ -35,7 +35,6 @@
             android:checked="false"
             android:textSize="@dimen/text_size_normal" />
     </RelativeLayout>
-  
     <RelativeLayout
         android:id="@+id/input_inr"
         android:layout_width="match_parent"
@@ -63,7 +62,6 @@
             android:textSize="@dimen/text_size_normal"
             android:inputType="numberDecimal" />
     </RelativeLayout>
-  
     <LinearLayout
         android:id="@+id/no_control_layout"
         android:orientation="vertical"

@@ -143,7 +143,7 @@ namespace TFG.Droid.Adapters {
             var currentINRItem = inrItems.Count > 0 ? inrItems[0] : null;
             if (currentINRItem != null)  { 
                 _dialog.Control.Checked = currentINRItem.Control;
-                _dialog.INR.Text = currentINRItem.INR.ToString();
+                _dialog.INR.Text = currentINRItem.INR != 0 ? currentINRItem.INR.ToString() : "";
             } 
 
             if(currentItem != null) {

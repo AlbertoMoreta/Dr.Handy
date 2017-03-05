@@ -11,6 +11,7 @@ using Android.Support.V4.Content;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+using TFG.Droid.Utils;
 
 namespace TFG.Droid.Custom_Views {
     public class SintromConfigureTreatmentDialog : AlertDialog {
@@ -52,6 +53,7 @@ namespace TFG.Droid.Custom_Views {
             var noControlLayout = v.FindViewById<LinearLayout>(Resource.Id.no_control_layout);
             var inputINR = v.FindViewById<RelativeLayout>(Resource.Id.input_inr);
             INR = v.FindViewById<EditText>(Resource.Id.inr);
+            INR.TextChanged += SintromUtils.INRTextChanged;
             Control = v.FindViewById<SwitchCompat>(Resource.Id.control);
             Control.CheckedChange += (s, e) => {
                 noControlLayout.Visibility = e.IsChecked ? ViewStates.Gone : ViewStates.Visible;
