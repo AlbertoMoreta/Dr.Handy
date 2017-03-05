@@ -34,7 +34,7 @@ namespace TFG {
         public static readonly string COL_FRACTION = "Fraction";
         public static readonly string COL_MEDICINE = "Medicine";
         public static readonly string COL_CONTROL = "Control";
-        public static readonly string COL_INR = "Inr";
+        public static readonly string COL_INR = "INR";
 
 
         private static DBHelper _instance;
@@ -247,8 +247,8 @@ namespace TFG {
 
             var stringDate = sintromItem.Date.ToString(DATE_FORMAT);
 
-            var sql = "INSERT OR REPLACE INTO " + SINTROM_TABLE + " (" + COL_DATE + ", " + COL_IMAGENAME + ", " + COL_FRACTION + ", " + COL_MEDICINE + ", ) VALUES "
-                + "('" + stringDate + "', '" + sintromItem.ImageName + "', '" + sintromItem.Fraction + "', '" + sintromItem.Medicine + "', " + ")";
+            var sql = "INSERT OR REPLACE INTO " + SINTROM_TABLE + " (" + COL_DATE + ", " + COL_IMAGENAME + ", " + COL_FRACTION + ", " + COL_MEDICINE + ") VALUES "
+                + "('" + stringDate + "', '" + sintromItem.ImageName + "', '" + sintromItem.Fraction + "', '" + sintromItem.Medicine + "')";
 
             Connection.Execute(sql);
         }
@@ -276,20 +276,32 @@ namespace TFG {
             var stringDate = sintromInrItem.Date.ToString(DATE_FORMAT);
 
             var sql = "INSERT OR REPLACE INTO " + INR_TABLE + " (" + COL_DATE + ", " + COL_CONTROL + ", " + COL_INR + ") VALUES "
-                + "('" + stringDate + "', '" + (sintromItem.Control ? "1" : "0")  + "', '" + sintromInrItem.INR + ")";
+                + "('" + stringDate + "', '" + (sintromInrItem.Control ? "1" : "0")  + "', " + sintromInrItem.INR + ")";
 
             Connection.Execute(sql);
+
+            var items = GetSintromINRItems();
         }
 
         public List<SintromINRItem> GetSintromINRItems() {
             var sql = "SELECT * FROM " + INR_TABLE;
 
-            return Connection.Query<SintromTreatmentItem>(sql); 
+            return Connection.Query<SintromINRItem>(sql); 
+        }
+
+        public List<SintromINRItem> GetSintromINRItemFromDate(DateTime date) {
+            var stringDate = date.ToString(DATE_FORMAT);
+
+            var sql = "SELECT * FROM " + INR_TABLE + " WHERE " + COL_DATE + " = '" + stringDate + "'";
+
+            return Connection.Query<SintromINRItem>(sql);
         }
 
         private void FillSintromTable() {
             DropTable(SINTROM_TABLE);
+            DropTable(INR_TABLE);
             CreateSintromTable();
+            CreateINRTable();
 
             var startDate = DateTime.Now.AddMonths(-5);
             var endDate = DateTime.Now.AddMonths(5);
@@ -299,7 +311,7 @@ namespace TFG {
             for (var day = startDate.Date; day.Date <= endDate.Date; day = day.AddDays(1))  {
                 if (rnd.Next(10) == 1) {
                     //Control day
-                    InsertSintromINRItem(new SintromINRItem(day, true, "1.4"));
+                    InsertSintromINRItem(new SintromINRItem(day, true, 1.4));
                 } else {
                     var medicine = "Sintrom ";
                     var medicineRnd = rnd.Next(3);
