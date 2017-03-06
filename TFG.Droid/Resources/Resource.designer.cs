@@ -4361,6 +4361,9 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f09001d
 			public const int sintrom_name = 2131296285;
 			
+			// aapt resource value: 0x7f090024
+			public const int sintrom_notification_description = 2131296292;
+			
 			// aapt resource value: 0x7f09001e
 			public const int sintrom_treatment = 2131296286;
 			

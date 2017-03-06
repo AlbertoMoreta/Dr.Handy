@@ -32,7 +32,7 @@ namespace TFG.Droid.Fragments.Sintrom {
             calendar.TimeInMillis = DateTime.Now.Ticks/TimeSpan.TicksPerMillisecond;
             calendar.Set(CalendarField.HourOfDay, 12);
 
-            NotificationsUtils.ScheduleNotification(Activity, HealthModuleType.Sintrom.HealthModuleName(), "Title", "Descripcion", calendar.TimeInMillis, true);
+            NotificationsUtils.ScheduleNotification(Activity, HealthModuleType.Sintrom.HealthModuleId(), 10000);
         }
  
 
