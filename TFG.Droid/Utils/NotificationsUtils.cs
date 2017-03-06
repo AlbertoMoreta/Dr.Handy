@@ -8,7 +8,7 @@ using TFG.Model;
 namespace TFG.Droid.Utils {
     class NotificationsUtils {
 
-        public static void ScheduleNotification(Context ctx, int moduleId, NotificationItem notificationItem, long time) {
+        public static void ScheduleNotification(Context ctx, int moduleId, long time) {
             var alarmIntent = new Intent(ctx, typeof(NotificationReceiver));
             alarmIntent.PutExtra("moduleId", moduleId);
 
