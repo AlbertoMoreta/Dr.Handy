@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TFG.Logic;
 
 namespace TFG.Model {
 
@@ -81,7 +82,7 @@ namespace TFG.Model {
             switch (module) {
                 case HealthModuleType.ColorBlindnessTest: return null;
                 case HealthModuleType.StepCounter: return null;
-                case HealthModuleType.Sintrom: return SintromLogic.Instance.GetNotificationitem(); 
+                case HealthModuleType.Sintrom: return SintromLogic.Instance().GetNotificationitem(); 
                 default: return null;
             }
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TFG.Model;
 
 namespace TFG.Logic {
     public class SintromLogic {
@@ -18,12 +19,18 @@ namespace TFG.Logic {
         private SintromLogic() { }
 
         public NotificationItem GetNotificationitem() {
-            var sintromItem = DBHelper.Instance.GetSintromItemFromDate(DateTime.Now); 
+            var sintromItems = DBHelper.Instance.GetSintromItemFromDate(DateTime.Now);
+            if (sintromItems.Count > 0) {
+                var sintromItem = sintromItems[0];
+                var title = HealthModulesInfo.GetStringFromResourceName("sintrom_name");
+                var description =
+                    string.Format(HealthModulesInfo.GetStringFromResourceName("sintrom_notification_description"),
+                        sintromItem.Fraction, sintromItem.Medicine);
 
-            var title = HealthModulesInfo.GetStringFromResourceName("sintrom_name");
-            var description = String.format(HealthModulesInfo.GetStringFromResourceName("sintrom_notification_description"), sintromItem.Fraction, Medicine);
+                return new NotificationItem(title, description, true);
+            }
 
-            return new NotificationItem(title, description, true);
+            return null;
         }
 
     }
