@@ -13,6 +13,7 @@ using Android.Views;
 using Android.Widget;
 using Java.Lang;
 using TFG.Droid.Activities;
+using TFG.Model;
 
 namespace TFG.Droid.Receivers {
     [BroadcastReceiver]
@@ -20,43 +21,44 @@ namespace TFG.Droid.Receivers {
     public class NotificationReceiver : BroadcastReceiver { 
 
         public override void OnReceive(Context context, Intent intent) {
-            var moduleName = intent.GetStringExtra("moduleName");
-
-            if
-            var title = intent.GetStringExtra("title");
-            var description = intent.GetStringExtra("description");
-            var audio = intent.GetBooleanExtra("audio", false);
+            var moduleId = intent.GetIntExtra("moduleId", -1); 
             var requestCode = intent.GetIntExtra("requestCode", -1);
 
-            var clickIntent = new Intent(context, typeof(ModuleDetailActivity));
-            clickIntent.PutExtra("name", moduleName);
-            var contentIntent = PendingIntent.GetActivity(context, requestCode, clickIntent, PendingIntentFlags.CancelCurrent);
 
-            var manager = NotificationManagerCompat.From(context);
+            var notificationItem = HealthModulesInfo.GetHealthModuleTypeById(moduleId).GetNotificationItem();
 
-            var style = new NotificationCompat.BigTextStyle();
-            style.BigText(description);
+            if (notificationItem != null) {
+                var clickIntent = new Intent(context, typeof(ModuleDetailActivity));
+                clickIntent.PutExtra("name", moduleId);
+                var contentIntent = PendingIntent.GetActivity(context, requestCode, clickIntent,
+                    PendingIntentFlags.CancelCurrent);
 
-            var wearableExtender = new NotificationCompat.WearableExtender()
-                .SetBackground(BitmapFactory.DecodeResource(context.Resources, Resource.Drawable.Icon));
+                var manager = NotificationManagerCompat.From(context);
+
+                var style = new NotificationCompat.BigTextStyle();
+                style.BigText(notificationItem.Description);
+
+                var wearableExtender = new NotificationCompat.WearableExtender()
+                    .SetBackground(BitmapFactory.DecodeResource(context.Resources, Resource.Drawable.Icon));
 
 
-            var builder = new NotificationCompat.Builder(context)
-                .SetContentIntent(contentIntent)
-                .SetAutoCancel(true)
-                .SetContentTitle(title)
-                .SetContentText(description)
-                .SetStyle(style)
-                .SetWhen(JavaSystem.CurrentTimeMillis())
-                .Extend(wearableExtender)
-                .SetSmallIcon(Resource.Drawable.Icon); 
+                var builder = new NotificationCompat.Builder(context)
+                    .SetContentIntent(contentIntent)
+                    .SetAutoCancel(true)
+                    .SetContentTitle(notificationItem.Title)
+                    .SetContentText(notificationItem.Description)
+                    .SetStyle(style)
+                    .SetWhen(JavaSystem.CurrentTimeMillis())
+                    .Extend(wearableExtender)
+                    .SetSmallIcon(Resource.Drawable.Icon);
 
-            if (audio) {
-                builder.SetSound(Android.Media.RingtoneManager.GetDefaultUri(Android.Media.RingtoneType.Notification));
+                if (notificationItem.Audio) {
+                    builder.SetSound(Android.Media.RingtoneManager.GetDefaultUri(Android.Media.RingtoneType.Notification));
+                }
+
+                var notification = builder.Build();
+                manager.Notify(0, notification);
             }
-
-            var notification = builder.Build();
-            manager.Notify(0, notification);
         }
     }
 }
