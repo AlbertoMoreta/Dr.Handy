@@ -1,26 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Java.Util;
 using TFG.Droid.Receivers;
+using TFG.Model;
 
 namespace TFG.Droid.Utils {
     class NotificationsUtils {
 
-        public static void ScheduleNotification(Context ctx, string moduleName, string title, string description, long time, bool audio) {
+        public static void ScheduleNotification(Context ctx, int moduleId, NotificationItem notificationItem, long time) {
             var alarmIntent = new Intent(ctx, typeof(NotificationReceiver));
-            alarmIntent.PutExtra("moduleName", moduleName);
-            alarmIntent.PutExtra("title", title);
-            alarmIntent.PutExtra("description", description);
-            alarmIntent.PutExtra("audio", audio); 
+            alarmIntent.PutExtra("moduleId", moduleId);
 
             var pendingIntent = PendingIntent.GetBroadcast(ctx, 1, alarmIntent, PendingIntentFlags.CancelCurrent);
 

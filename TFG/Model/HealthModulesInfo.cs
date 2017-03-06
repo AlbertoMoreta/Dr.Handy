@@ -16,6 +16,14 @@ namespace TFG.Model {
             HealthModuleType.Sintrom
         };
 
+        public static int HealthModuleId(this HealthModuleType module) {
+            return (int) module;
+        }
+
+        public static HealthModuleType GetHealthModuleTypeById(int id) {
+            return (HealthModuleType) id;
+        }
+
         public static string HealthModuleName(this HealthModuleType module) {
             switch (module) {
                 case HealthModuleType.ColorBlindnessTest: return GetStringFromResourceName("color_blindness_test_name");
@@ -67,6 +75,15 @@ namespace TFG.Model {
 
 #endif
             return null;
+        }
+
+        public static NotificationItem GetNotificationItem(this HealthModuleType module) {
+            switch (module) {
+                case HealthModuleType.ColorBlindnessTest: return null;
+                case HealthModuleType.StepCounter: return null;
+                case HealthModuleType.Sintrom: return SintromLogic.Instance.GetNotificationitem(); 
+                default: return null;
+            }
         }
     }
 }
