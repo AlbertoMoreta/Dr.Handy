@@ -13,6 +13,7 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Java.Text;
+using Java.Util;
 using TFG.Droid.Custom_Views;
 using TFG.Droid.Interfaces;
 using TFG.Droid.Utils;
@@ -22,7 +23,18 @@ namespace TFG.Droid.Fragments.Sintrom {
     /// <summary>
     /// Header fragment for the Sintrom health module
     /// </summary>
-    public class SintromHeaderFragment : Fragment, IHealthFragment { 
+    public class SintromHeaderFragment : Fragment, IHealthFragment {
+         
+        public override void OnCreate(Bundle savedInstanceState) {
+            base.OnCreate(savedInstanceState);
+
+            Calendar calendar = Calendar.Instance;
+            calendar.TimeInMillis = DateTime.Now.Ticks/TimeSpan.TicksPerMillisecond;
+            calendar.Set(CalendarField.HourOfDay, 12);
+
+            NotificationsUtils.ScheduleNotification(Activity, HealthModuleType.Sintrom.HealthModuleName(), "Title", "Descripcion", calendar.TimeInMillis, true);
+        }
+ 
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             var view = inflater.Inflate(Resource.Layout.fragment_sintrom_header, container, false);
