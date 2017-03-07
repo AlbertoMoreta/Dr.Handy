@@ -29,13 +29,13 @@ namespace TFG.Droid.Fragments.Sintrom {
             base.OnCreate(savedInstanceState);
              
             //Set alarm at 12 pm
-            int dayOffset = DateTime.UtcNow.ToLocalTime().Hour < 12 ? 0 : 1;
+            int dayOffset = DateTime.UtcNow.ToLocalTime().Hour < 12 ? 0 : 1; 
             var time =
                 (long)
-                DateTime.UtcNow.Date.ToLocalTime()
+                DateTime.UtcNow.Date.ToUniversalTime()
                     .AddDays(dayOffset)
                     .AddHours(12)
-                    .Subtract(DateTime.UtcNow.ToLocalTime())
+                    .Subtract(DateTime.UtcNow.ToUniversalTime())
                     .TotalMilliseconds;
 
             NotificationsUtils.ScheduleNotification(Activity, HealthModuleType.Sintrom.HealthModuleId(), time);
