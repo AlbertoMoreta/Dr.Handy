@@ -27,12 +27,18 @@ namespace TFG.Droid.Fragments.Sintrom {
          
         public override void OnCreate(Bundle savedInstanceState) {
             base.OnCreate(savedInstanceState);
+             
+            //Set alarm at 12 pm
+            int dayOffset = DateTime.UtcNow.ToLocalTime().Hour < 12 ? 0 : 1;
+            var time =
+                (long)
+                DateTime.UtcNow.Date.ToLocalTime()
+                    .AddDays(dayOffset)
+                    .AddHours(12)
+                    .Subtract(DateTime.UtcNow.ToLocalTime())
+                    .TotalMilliseconds;
 
-            Calendar calendar = Calendar.Instance;
-            calendar.TimeInMillis = DateTime.Now.Ticks/TimeSpan.TicksPerMillisecond;
-            calendar.Set(CalendarField.HourOfDay, 12);
-
-            NotificationsUtils.ScheduleNotification(Activity, HealthModuleType.Sintrom.HealthModuleId(), 10000);
+            NotificationsUtils.ScheduleNotification(Activity, HealthModuleType.Sintrom.HealthModuleId(), time);
         }
  
 
