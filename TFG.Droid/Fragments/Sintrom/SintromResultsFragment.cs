@@ -83,7 +83,10 @@ namespace TFG.Droid.Fragments.Sintrom {
             var inrItems = DBHelper.Instance.GetSintromINRItems(); 
 
             for(var i = 0; i < inrItems.Count; i++) {
-                entries[new BarEntry(i, (float) inrItems.ElementAt(i).INR)] = inrItems.ElementAt(i).Date.ToString("dd MMM");
+                if (inrItems[i].INR != 0) {
+                    entries[new BarEntry(i, (float) inrItems.ElementAt(i).INR)] =
+                        inrItems.ElementAt(i).Date.ToString("dd MMM");
+                }
             }
 
             return entries;
@@ -107,7 +110,11 @@ namespace TFG.Droid.Fragments.Sintrom {
         }
 
         public override string GetFormattedValue(float value, AxisBase axis) {
-            return _labels[(int) value];
+            if (value.Equals((int) value) && (int) value < _labels.Length) {
+                return _labels[(int) value];
+            }
+
+            return "";
         } 
         
     }
