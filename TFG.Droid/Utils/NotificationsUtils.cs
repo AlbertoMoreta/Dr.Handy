@@ -15,7 +15,7 @@ namespace TFG.Droid.Utils {
             var pendingIntent = PendingIntent.GetBroadcast(ctx, 1, alarmIntent, PendingIntentFlags.CancelCurrent);
 
             var alarmManager = (AlarmManager) ctx.GetSystemService(Context.AlarmService); 
-            alarmManager.SetInexactRepeating(AlarmType.ElapsedRealtime, SystemClock.ElapsedRealtime() + time, AlarmManager.IntervalDay, pendingIntent);
+            alarmManager.SetInexactRepeating(AlarmType.ElapsedRealtime, time, AlarmManager.IntervalDay, pendingIntent);
         }
     }
 }
