@@ -16,6 +16,7 @@ using Android.Support.V7.Widget;
 using TFG.Droid.Callbacks;
 using Android.Support.V7.Widget.Helper;
 using Android.Util;
+using TFG.DataBase;
 using TFG.Droid.Activities;
 using TFG.Droid.Listeners;
 using TFG.Model;

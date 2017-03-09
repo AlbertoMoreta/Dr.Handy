@@ -6,6 +6,7 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using com.refractored.fab;
+using TFG.DataBase;
 using TFG.Droid.Activities.Sintrom;
 using TFG.Droid.Adapters;
 using TFG.Model; 
