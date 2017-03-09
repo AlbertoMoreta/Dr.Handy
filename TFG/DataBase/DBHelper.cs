@@ -2,11 +2,10 @@
 using SQLite;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using TFG.Logic;
+using System.IO; 
 using TFG.Model;
 
-namespace TFG {
+namespace TFG.DataBase {
     public partial class DBHelper {
          
         public static readonly string DB_NAME = "HealthApp.db3";
