@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace TFG.Model {
-    public class SintromTreatmentItem { 
+    public class SintromTreatmentItem : SintromItem { 
 
         public DateTime Date { get; set; }
         private string _imageName;
