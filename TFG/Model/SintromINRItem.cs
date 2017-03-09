@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace TFG.Model {
-    public class SintromINRItem {
+    public class SintromINRItem : SintromItem {
 
         public DateTime Date { get; set; } 
         public bool Control { get; set; }
