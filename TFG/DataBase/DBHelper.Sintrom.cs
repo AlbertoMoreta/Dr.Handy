@@ -66,9 +66,31 @@ namespace TFG.DataBase {
                 + "('" + stringDate + "', '" + (sintromInrItem.Control ? "1" : "0")  + "', " + sintromInrItem.INR + ")";
 
             Connection.Execute(sql);
-
-            var items = GetSintromINRItems();
         }
+
+        public void RemoveINRItemFromDate(DateTime date) {
+			var stringDate = date.ToString(DATE_FORMAT);
+
+            var sql = "DELETE FROM " + INR_TABLE + " WHERE " + COL_DATE + " = '" + date + "'";
+
+			Connection.Execute(sql);
+        }
+
+
+        public void RemoveOrHideSintromINRItem(DateTime date) {
+            var item = GetSintromINRItemFromDate(date);
+            if (item != null) {
+                if (item.INR == 0) {
+                    RemoveINRItemFromDate(date);
+                } else {
+					var stringDate = date.ToString(DATE_FORMAT);
+                    var sql = "UPDATE " + INR_TABLE + " SET " + COL_CONTROL + "= '0' WHERE " + COL_DATE + " = '" + date + "'";
+					Connection.Execute(sql);
+                }
+                
+            }
+        }
+		
 
         public List<SintromINRItem> GetSintromINRItems() {
             var sql = "SELECT * FROM " + INR_TABLE;
@@ -80,6 +102,15 @@ namespace TFG.DataBase {
             var stringDate = date.ToString(DATE_FORMAT);
 
             var sql = "SELECT * FROM " + INR_TABLE + " WHERE " + COL_DATE + " = '" + stringDate + "'";
+
+            return Connection.Query<SintromINRItem>(sql);
+        }
+
+		//Get Sintrom INR Item from this date onwards
+        public List<SintromTreatmentItem> GetSintromINRItemsStartingFromDate(DateTime date) {
+            var stringDate = date.ToString(DATE_FORMAT);
+
+            var sql = "SELECT * FROM " + INR_TABLE + " WHERE " + COL_DATE + " >= '" + stringDate + "'";
 
             return Connection.Query<SintromINRItem>(sql);
         }
