@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TFG.Model;
 
 namespace TFG.DataBase {
     public partial class DBHelper {
@@ -78,8 +79,9 @@ namespace TFG.DataBase {
 
 
         public void RemoveOrHideSintromINRItem(DateTime date) {
-            var item = GetSintromINRItemFromDate(date);
-            if (item != null) {
+            var items = GetSintromINRItemFromDate(date);
+            if (items != null && items.Count > 0) {
+                var item = items[0];
                 if (item.INR == 0) {
                     RemoveINRItemFromDate(date);
                 } else {
@@ -107,7 +109,7 @@ namespace TFG.DataBase {
         }
 
 		//Get Sintrom INR Item from this date onwards
-        public List<SintromTreatmentItem> GetSintromINRItemsStartingFromDate(DateTime date) {
+        public List<SintromINRItem> GetSintromINRItemsStartingFromDate(DateTime date) {
             var stringDate = date.ToString(DATE_FORMAT);
 
             var sql = "SELECT * FROM " + INR_TABLE + " WHERE " + COL_DATE + " >= '" + stringDate + "'";

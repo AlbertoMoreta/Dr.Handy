@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TFG.Logic;
+using TFG.Model;
 
 namespace TFG.DataBase {
     public partial class DBHelper {
