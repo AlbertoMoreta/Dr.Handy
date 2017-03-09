@@ -11,6 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)DataBase\DBHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataBase\DBHelper.StepCounter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataBase\DBHelper.Sintrom.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Logic\ColorBlindnessLogic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Logic\SintromLogic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Logic\StepCounterLogic.cs" />
@@ -22,8 +23,5 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\SintromINRItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\SintromItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\StepCounterItem.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)DataBase\DBHelper.Sintrom.cs" />
-  </ItemGroup>
+  </ItemGroup> 
 </Project>
