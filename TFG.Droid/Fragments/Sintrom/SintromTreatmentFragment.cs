@@ -1,5 +1,6 @@
 using System;
-using System.Collections.Generic; 
+using System.Collections.Generic;
+using System.Linq;
 using Android.OS; 
 using Android.Support.V7.Widget; 
 using Android.Views;
@@ -16,7 +17,7 @@ namespace TFG.Droid.Fragments.Sintrom {
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             var view = inflater.Inflate(Resource.Layout.fragment_sintrom_treatment, container, false);    
 
-            List<SintromTreatmentItem> items = GetTreatmentItems();
+            List<SintromItem> items = GetTreatmentItems();
 
             var _recyclerView = view.FindViewById<RecyclerView>(Resource.Id.recycler_view);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(Activity);
@@ -34,8 +35,11 @@ namespace TFG.Droid.Fragments.Sintrom {
             return view;
         }
 
-        private List<SintromTreatmentItem> GetTreatmentItems() {
-            return DBHelper.Instance.GetSintromItemsStartingFromDate(DateTime.Now.AddDays(1));
+        private List<SintromItem> GetTreatmentItems() {
+            var sintromItems = new List<SintromItem>(DBHelper.Instance.GetSintromItemsStartingFromDate(DateTime.Now.AddDays(1)));
+            var l = DBHelper.Instance.GetSintromINRItems();
+            return sintromItems.Concat(
+                new List<SintromItem>(l)).ToList();
         }
     }
 }

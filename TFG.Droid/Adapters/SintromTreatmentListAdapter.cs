@@ -34,10 +34,10 @@ namespace TFG.Droid.Adapters {
         }
 
         private Context _context;
-        private List<SintromTreatmentItem> _items = new List<SintromTreatmentItem>(); 
+        private List<SintromItem> _items = new List<SintromItem>(); 
 
 
-        public SintromTreatmentListAdapter(Context context, List<SintromTreatmentItem> items) {
+        public SintromTreatmentListAdapter(Context context, List<SintromItem> items) {
             _context = context;
             _items = items;
         }
@@ -66,15 +66,16 @@ namespace TFG.Droid.Adapters {
                 viewHolder.Icon.Visibility = ViewStates.Gone;
                 
                 viewHolder.Info.Text = _context.Resources.GetString(Resource.String.sintrom_control);
-            } else { 
+            } else {
+                var treatmentItem = ((SintromTreatmentItem) item); 
                 viewHolder.Icon.Visibility = ViewStates.Visible;
-                viewHolder.Icon.SetImageDrawable(item.ImageName.Equals("")
+                viewHolder.Icon.SetImageDrawable(treatmentItem.ImageName.Equals("")
                             ? null
                             : ContextCompat.GetDrawable(_context,
-                                _context.Resources.GetIdentifier(item.ImageName,
+                                _context.Resources.GetIdentifier(treatmentItem.ImageName,
                                     "drawable", _context.PackageName)));
 
-                viewHolder.Info.Text = item.Fraction;
+                viewHolder.Info.Text = treatmentItem.Fraction;
             }   
         }  
 
