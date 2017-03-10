@@ -17,7 +17,6 @@ using TFG.Model;
 
 namespace TFG.Droid.Receivers {
     [BroadcastReceiver]
-     [IntentFilter(new[] { Intent.ActionMain })]
     public class NotificationReceiver : BroadcastReceiver { 
 
         public override void OnReceive(Context context, Intent intent) {

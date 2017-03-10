@@ -31,15 +31,15 @@ namespace TFG.Droid.Fragments.Sintrom {
              
             //Set alarm at 12 pm
             int dayOffset = DateTime.UtcNow.ToLocalTime().Hour < 12 ? 0 : 1; 
-            var time =
-                (long)
-                DateTime.UtcNow.Date.ToUniversalTime()
+            var origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+            var time = DateTime.UtcNow.Date.ToLocalTime()
                     .AddDays(dayOffset)
                     .AddHours(12)
-                    .Subtract(DateTime.UtcNow.ToUniversalTime())
-                    .TotalMilliseconds;
-
-            NotificationsUtils.ScheduleNotification(Activity, HealthModuleType.Sintrom.HealthModuleId(), time);
+                    .AddMinutes(0)
+                    .AddSeconds(0);
+            var offset = System.TimeZone.CurrentTimeZone.GetUtcOffset(time);
+            var diff = time.ToUniversalTime() - origin - offset; 
+            NotificationsUtils.ScheduleNotification(Activity, HealthModuleType.Sintrom.HealthModuleId(), (long) diff.TotalMilliseconds);
         }
  
 
