@@ -63,10 +63,12 @@ namespace TFG.Droid.Adapters {
             var inrItems = DBHelper.Instance.GetSintromINRItemFromDate(item.Date);
             var inrItem = inrItems.Count > 0 ? inrItems[0] : null;
 
-            if (inrItem != null && inrItem.Control) {
-                viewHolder.Icon.Visibility = ViewStates.Gone;
-                
-                viewHolder.Info.Text = _context.Resources.GetString(Resource.String.sintrom_control);
+            if (inrItem != null) {
+                if (inrItem.Control) {
+                    viewHolder.Icon.Visibility = ViewStates.Gone;
+
+                    viewHolder.Info.Text = _context.Resources.GetString(Resource.String.sintrom_control);
+                }
             } else {
                 var treatmentItem = ((SintromTreatmentItem) item); 
                 viewHolder.Icon.Visibility = ViewStates.Visible;
