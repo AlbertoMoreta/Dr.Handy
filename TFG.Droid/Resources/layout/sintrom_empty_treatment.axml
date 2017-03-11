@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    android:layout_marginBottom="10dp"
     android:gravity="center">
 
     <TFG.Droid.Custom_Views.CustomTextView

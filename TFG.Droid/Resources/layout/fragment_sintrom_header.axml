@@ -20,7 +20,7 @@
             android:id="@+id/icon"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.6"
+            android:layout_weight="0.5"
             android:padding="10dp"
             android:scaleType="centerInside"
             android:layout_centerHorizontal="true"

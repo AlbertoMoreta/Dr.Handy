@@ -14,39 +14,54 @@ using TFG.Model;
 using Fragment = Android.Support.V4.App.Fragment;
 
 namespace TFG.Droid.Fragments.Sintrom {
-    public class SintromTreatmentFragment : Fragment { 
+    public class SintromTreatmentFragment : Fragment {
+
+        private FloatingActionButton _fab;
+        private RecyclerView _recyclerView;
+        private LayoutInflater _inflater;
+        private ViewGroup _container;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            var view = inflater.Inflate(Resource.Layout.fragment_sintrom_treatment, container, false);    
+            var view = inflater.Inflate(Resource.Layout.fragment_sintrom_treatment, container, false);
+            _inflater = inflater;
+            _container = container;  
 
             FloatingActionButton fab;
-            RecyclerView recyclerView = null;
+            _recyclerView = view.FindViewById<RecyclerView>(Resource.Id.recycler_view); 
+            
+            
+            
 
+            return view;
+        }
+
+        public override void OnStart() {
+            base.OnStart();
+            RefreshTreatment();
+        }
+
+        private void RefreshTreatment()  {
             List<SintromItem> items = GetTreatmentItems(); 
 
-            if (items.Count > 0) {
-
-                recyclerView = view.FindViewById<RecyclerView>(Resource.Id.recycler_view);
+            if (items.Count > 0) { 
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(Activity);
                 linearLayoutManager.Orientation = (int) Orientation.Vertical;
-                recyclerView.SetLayoutManager(linearLayoutManager);
-                recyclerView.HasFixedSize = true;
+                _recyclerView.SetLayoutManager(linearLayoutManager);
+                _recyclerView.HasFixedSize = true;
 
-                recyclerView.SetAdapter(new SintromTreatmentListAdapter(Activity, items)); 
+                _recyclerView.SetAdapter(new SintromTreatmentListAdapter(Activity, items)); 
 
             } else {
                 //Replace layout with empty treatment layout
-                var layout = (ViewGroup) view;
+                var layout = (ViewGroup) View;
                 layout.RemoveAllViews();
-                var emptyTreatment = inflater.Inflate(Resource.Layout.sintrom_empty_treatment, container, false);
+                var emptyTreatment = _inflater.Inflate(Resource.Layout.sintrom_empty_treatment, _container, false);
                 layout.AddView(emptyTreatment);
             }  
-            
-            fab = view.FindViewById<FloatingActionButton>(Resource.Id.fab);
-            if(recyclerView != null) { fab.AttachToRecyclerView(recyclerView); }
-            fab.Click += delegate { Activity.StartActivity(typeof(SintromConfigureTreatment)); };
 
-            return view;
+            _fab = View.FindViewById<FloatingActionButton>(Resource.Id.fab);
+            if(_recyclerView != null) { _fab.AttachToRecyclerView(_recyclerView); }
+            _fab.Click += delegate { Activity.StartActivity(typeof(SintromConfigureTreatment)); };
         }
 
         private List<SintromItem> GetTreatmentItems() {
