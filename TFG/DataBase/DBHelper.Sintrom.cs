@@ -40,6 +40,22 @@ namespace TFG.DataBase {
             Connection.Execute(sql);
         }
 
+        public void UpdateSintromItem(SintromTreatmentItem sintromItem) {
+            if (sintromItem.ImageName.Equals("")) {
+                if (SintromItemExistsForDate(sintromItem.Date)) {
+                    RemoveSintromItemFromDate(sintromItem.Date);
+                }
+            } else {
+                InsertSintromItem(sintromItem);
+            }
+            
+        }
+
+        public bool SintromItemExistsForDate(DateTime date) {
+            return GetSintromItemFromDate(date).Count > 0;
+
+        }
+
         //Get Sintrom Treatment Item from a specific date
         public List<SintromTreatmentItem> GetSintromItemFromDate(DateTime date) {
             var stringDate = date.ToString(DATE_FORMAT);
@@ -47,6 +63,14 @@ namespace TFG.DataBase {
             var sql = "SELECT * FROM " + SINTROM_TABLE + " WHERE " + COL_DATE + " = '" + stringDate + "'";
 
             return Connection.Query<SintromTreatmentItem>(sql);
+        }
+
+        public void RemoveSintromItemFromDate(DateTime date) {
+			var stringDate = date.ToString(DATE_FORMAT);
+
+            var sql = "DELETE FROM " + SINTROM_TABLE + " WHERE " + COL_DATE + " = '" + stringDate + "'";
+
+			Connection.Execute(sql);
         }
 
         //Get Sintrom Treatment Item from this date onwards
@@ -71,7 +95,7 @@ namespace TFG.DataBase {
         public void RemoveINRItemFromDate(DateTime date) {
 			var stringDate = date.ToString(DATE_FORMAT);
 
-            var sql = "DELETE FROM " + INR_TABLE + " WHERE " + COL_DATE + " = '" + date + "'";
+            var sql = "DELETE FROM " + INR_TABLE + " WHERE " + COL_DATE + " = '" + stringDate + "'";
 
 			Connection.Execute(sql);
         }
@@ -85,7 +109,7 @@ namespace TFG.DataBase {
                     RemoveINRItemFromDate(date);
                 } else {
 					var stringDate = date.ToString(DATE_FORMAT);
-                    var sql = "UPDATE " + INR_TABLE + " SET " + COL_CONTROL + "= '0' WHERE " + COL_DATE + " = '" + date + "'";
+                    var sql = "UPDATE " + INR_TABLE + " SET " + COL_CONTROL + "= '0' WHERE " + COL_DATE + " = '" + stringDate + "'";
 					Connection.Execute(sql);
                 }
                 
