@@ -23,10 +23,16 @@ using Fragment = Android.Support.V4.App.Fragment;
 namespace TFG.Droid.Fragments.Sintrom {
     public class SintromResultsFragment : Fragment {
         private LineChart Chart { get; set; }
+        private LinearLayout _inrInfo;
+        private RelativeLayout _emptyINR;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) { 
             
             var view =  inflater.Inflate(Resource.Layout.fragment_sintrom_results, container, false);
+
+            _inrInfo = view.FindViewById<LinearLayout>(Resource.Id.inr_info);
+            _emptyINR = view.FindViewById<RelativeLayout>(Resource.Id.sintrom_empty_inr);
+
             Chart = view.FindViewById<LineChart>(Resource.Id.chart);
             Chart.SetDrawGridBackground(false);
             Chart.Legend.Enabled = false;
@@ -51,12 +57,15 @@ namespace TFG.Droid.Fragments.Sintrom {
                 var lineEntries = GetLineEntries();
 
                 if (lineEntries.Count > 0) {
+                    _inrInfo.Visibility = ViewStates.Visible;
+                    _emptyINR.Visibility = ViewStates.Gone;
 
                     Chart.AxisLeft.AxisMaximum = lineEntries.Select(x => x.Key.GetY()).Max(); //Maximum Y axis value
                     Chart.AxisLeft.AxisMinimum = lineEntries.Select(x => x.Key.GetY()).Min(); //Minimum Y axis value
                     Chart.AxisLeft.AxisMaximum *= (float) 1.3;
                     Chart.AxisLeft.AxisMinimum /= (float) 1.3;
-                    if (Chart.AxisLeft.AxisMinimum < 0) {
+                    if (Chart.AxisLeft.AxisMinimum < 0)
+                    {
                         Chart.AxisLeft.AxisMinimum = 0;
                     }
 
@@ -70,11 +79,15 @@ namespace TFG.Droid.Fragments.Sintrom {
                     lineDataSet.SetDrawCircles(false);
                     lineDataSet.FillColor = color;
                     Chart.Data = new LineData(lineDataSet);
-                    if (lineEntries.Values != null) {
+                    if (lineEntries.Values != null)
+                    {
                         Chart.XAxis.ValueFormatter = new CustomAxisValueFormatter(lineEntries.Values.ToArray());
                     }
                     Chart.NotifyDataSetChanged();
                     Chart.Invalidate();
+                } else {
+                    _inrInfo.Visibility = ViewStates.Gone;
+                    _emptyINR.Visibility = ViewStates.Visible;
                 }
             }
         }
