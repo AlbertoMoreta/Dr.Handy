@@ -57,20 +57,19 @@ namespace TFG.Droid.Adapters {
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             var viewHolder = holder as ViewHolder;
-            var item = _items.ElementAt(position);
-            viewHolder.Date.Text = item.Date.ToString("ddd \n dd MMM");
+            var sintromItem = _items.ElementAt(position);
 
-            var inrItems = DBHelper.Instance.GetSintromINRItemFromDate(item.Date);
-            var inrItem = inrItems.Count > 0 ? inrItems[0] : null;
+            viewHolder.Date.Text = sintromItem.Date.ToString("ddd \n dd MMM"); 
 
-            if (inrItem != null) {
+            if (sintromItem is SintromINRItem) {
+                var inrItem = (SintromINRItem) sintromItem; 
                 if (inrItem.Control) {
                     viewHolder.Icon.Visibility = ViewStates.Gone;
 
                     viewHolder.Info.Text = _context.Resources.GetString(Resource.String.sintrom_control);
                 }
             } else {
-                var treatmentItem = ((SintromTreatmentItem) item); 
+                var treatmentItem = ((SintromTreatmentItem) sintromItem); 
                 viewHolder.Icon.Visibility = ViewStates.Visible;
                 viewHolder.Icon.SetImageDrawable(treatmentItem.ImageName.Equals("")
                             ? null

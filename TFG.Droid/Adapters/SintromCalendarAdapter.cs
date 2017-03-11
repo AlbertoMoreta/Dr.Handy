@@ -175,11 +175,15 @@ namespace TFG.Droid.Adapters {
 
         //Save Sintrom configuration
         private void SaveInfo(object sender, EventArgs e) {
-            if (!_dialog.Control.Checked) { 
-                DBHelper.Instance.InsertSintromItem(new SintromTreatmentItem(_dialog.SelectedDate,
+            if (!_dialog.Control.Checked) {
+                DBHelper.Instance.UpdateSintromItem(new SintromTreatmentItem(_dialog.SelectedDate,
                     _dialog.SelectedImageName, _dialog.SelectedMedicine));
+
+                DBHelper.Instance.RemoveOrHideSintromINRItem(_dialog.SelectedDate);
+            } else {
+                DBHelper.Instance.InsertSintromINRItem(new SintromINRItem(_dialog.SelectedDate, _dialog.Control.Checked,
+                    _dialog.INR.Text.Equals("") ? 0 : double.Parse(_dialog.INR.Text)));
             }
-            DBHelper.Instance.InsertSintromINRItem(new SintromINRItem(_dialog.SelectedDate, _dialog.Control.Checked, _dialog.INR.Text.Equals("") ? 0 : double.Parse(_dialog.INR.Text)));
 
             NotifyDataSetChanged();
 

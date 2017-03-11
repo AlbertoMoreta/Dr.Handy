@@ -37,10 +37,10 @@ namespace TFG.Droid.Fragments.Sintrom {
         }
 
         private List<SintromItem> GetTreatmentItems() {
+            var sintromINRItems = new List<SintromItem>(DBHelper.Instance.GetSintromINRItemsStartingFromDate(DateTime.Now.AddDays(1)));
             var sintromItems = new List<SintromItem>(DBHelper.Instance.GetSintromItemsStartingFromDate(DateTime.Now.AddDays(1)));
-            var l = DBHelper.Instance.GetSintromINRItems();
-            return sintromItems.Concat(
-                new List<SintromItem>(l)).ToList();
+
+            return sintromINRItems.Concat(sintromItems).GroupBy(x => x.Date).Select(group => group.First()).OrderBy(x => x.Date).ToList(); 
         }
     }
 }
