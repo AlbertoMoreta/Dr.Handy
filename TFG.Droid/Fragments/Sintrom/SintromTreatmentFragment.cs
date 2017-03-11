@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using com.refractored.fab;
 using TFG.DataBase;
+using TFG.Droid.Activities;
 using TFG.Droid.Activities.Sintrom;
 using TFG.Droid.Adapters;
 using TFG.Model; 
@@ -18,19 +19,31 @@ namespace TFG.Droid.Fragments.Sintrom {
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             var view = inflater.Inflate(Resource.Layout.fragment_sintrom_treatment, container, false);    
 
-            List<SintromItem> items = GetTreatmentItems();
+            FloatingActionButton fab;
+            RecyclerView recyclerView = null;
 
-            var _recyclerView = view.FindViewById<RecyclerView>(Resource.Id.recycler_view);
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(Activity);
-             linearLayoutManager.Orientation = (int) Orientation.Vertical;
-             _recyclerView.SetLayoutManager(linearLayoutManager);
-            _recyclerView.HasFixedSize = true;
+            List<SintromItem> items = GetTreatmentItems(); 
 
-            _recyclerView.SetAdapter(new SintromTreatmentListAdapter(Activity, items));
+            if (items.Count > 0) {
 
-            var fab = view.FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.AttachToRecyclerView(_recyclerView);
+                recyclerView = view.FindViewById<RecyclerView>(Resource.Id.recycler_view);
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(Activity);
+                linearLayoutManager.Orientation = (int) Orientation.Vertical;
+                recyclerView.SetLayoutManager(linearLayoutManager);
+                recyclerView.HasFixedSize = true;
 
+                recyclerView.SetAdapter(new SintromTreatmentListAdapter(Activity, items)); 
+
+            } else {
+                //Replace layout with empty treatment layout
+                var layout = (ViewGroup) view;
+                layout.RemoveAllViews();
+                var emptyTreatment = inflater.Inflate(Resource.Layout.sintrom_empty_treatment, container, false);
+                layout.AddView(emptyTreatment);
+            }  
+            
+            fab = view.FindViewById<FloatingActionButton>(Resource.Id.fab);
+            if(recyclerView != null) { fab.AttachToRecyclerView(recyclerView); }
             fab.Click += delegate { Activity.StartActivity(typeof(SintromConfigureTreatment)); };
 
             return view;

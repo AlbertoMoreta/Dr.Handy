@@ -59,6 +59,7 @@ namespace TFG.Droid.Fragments.Sintrom {
             if (items.Count > 0) {
                 //Toolbar title with today's date 
                 (Activity as BaseActivity).ToolbarTitle.Text = DateTime.Now.ToString("dd / MM / yyyy");
+                view.Visibility = ViewStates.Visible;
 
                 var item = items.ElementAt(0);
                 if (inrItems.Count > 0 && inrItems[0].Control) {
@@ -86,6 +87,7 @@ namespace TFG.Droid.Fragments.Sintrom {
             } else  {
                 //If there is no treatment, set the toolbar title as the name of the health module
                 (Activity as BaseActivity).ToolbarTitle.Text = HealthModuleType.Sintrom.HealthModuleName();
+                view.Visibility = ViewStates.Gone;
             }
 
             return view;

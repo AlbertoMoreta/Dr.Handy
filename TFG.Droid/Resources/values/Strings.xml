@@ -26,5 +26,6 @@
   </string-array>
   <string name="sintrom_notification_description">Recuerda tomar la dosis de hoy: {0} {1}</string>
   <string name="sintrom_notification_control_description">Hoy es día de control. Recuerda anotar el valor de INR proporcionado por tu médico.</string>
+  <string name="sintrom_empty_treatment">Parece que no tienes un tratamiento configurado.\n\n Pulsa en el botón y configúralo cuanto antes.</string>
 
 </resources>

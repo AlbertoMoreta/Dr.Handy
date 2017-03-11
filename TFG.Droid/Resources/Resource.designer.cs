@@ -3923,6 +3923,9 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06009c
 			public const int sintrom3_4 = 2131099804;
 			
+			// aapt resource value: 0x7f0600a8
+			public const int sintrom_empty_treatment = 2131099816;
+			
 			// aapt resource value: 0x7f06006f
 			public const int snackbar_action = 2131099759;
 			
@@ -3980,8 +3983,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f06004a
 			public const int title_template = 2131099722;
 			
-			// aapt resource value: 0x7f0600a8
-			public const int toolbar = 2131099816;
+			// aapt resource value: 0x7f0600a9
+			public const int toolbar = 2131099817;
 			
 			// aapt resource value: 0x7f060032
 			public const int top = 2131099698;
@@ -4247,13 +4250,16 @@ namespace TFG.Droid
 			public const int sintrom_configure_treatment = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int sintrom_treatment_row = 2130903104;
+			public const int sintrom_empty_treatment = 2130903104;
 			
 			// aapt resource value: 0x7f030041
-			public const int support_simple_spinner_dropdown_item = 2130903105;
+			public const int sintrom_treatment_row = 2130903105;
 			
 			// aapt resource value: 0x7f030042
-			public const int toolbar = 2130903106;
+			public const int support_simple_spinner_dropdown_item = 2130903106;
+			
+			// aapt resource value: 0x7f030043
+			public const int toolbar = 2130903107;
 			
 			static Layout()
 			{
@@ -4357,6 +4363,9 @@ namespace TFG.Droid
 			
 			// aapt resource value: 0x7f090020
 			public const int sintrom_control = 2131296288;
+			
+			// aapt resource value: 0x7f090026
+			public const int sintrom_empty_treatment = 2131296294;
 			
 			// aapt resource value: 0x7f090021
 			public const int sintrom_inr = 2131296289;
