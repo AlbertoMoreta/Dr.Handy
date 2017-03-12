@@ -37,10 +37,8 @@ namespace TFG.Droid.Fragments.Sintrom {
             base.OnCreate(savedInstanceState);
              
             //Set alarm at 12 pm
-            int dayOffset = DateTime.UtcNow.ToLocalTime().Hour < 12 ? 0 : 1; 
             var origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
             var time = DateTime.UtcNow.Date.ToLocalTime()
-                    .AddDays(dayOffset)
                     .AddHours(12)
                     .AddMinutes(0)
                     .AddSeconds(0);
