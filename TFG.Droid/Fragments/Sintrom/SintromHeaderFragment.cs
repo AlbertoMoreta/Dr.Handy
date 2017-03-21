@@ -24,8 +24,7 @@ namespace TFG.Droid.Fragments.Sintrom {
     /// <summary>
     /// Header fragment for the Sintrom health module
     /// </summary>
-    public class SintromHeaderFragment : Fragment, IHealthFragment
-    {
+    public class SintromHeaderFragment : Fragment, IHealthFragment {
 
         private CustomTextView _medicine;
         private ImageView _icon;
@@ -37,14 +36,15 @@ namespace TFG.Droid.Fragments.Sintrom {
             base.OnCreate(savedInstanceState);
              
             //Set alarm at 12 pm
-            var origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-            var time = DateTime.UtcNow.Date.ToLocalTime()
-                    .AddHours(12)
-                    .AddMinutes(0)
-                    .AddSeconds(0);
-            var offset = System.TimeZone.CurrentTimeZone.GetUtcOffset(time);
-            var diff = time.ToUniversalTime() - origin - offset; 
-            NotificationsUtils.ScheduleNotification(Activity, HealthModuleType.Sintrom.HealthModuleId(), (long) diff.TotalMilliseconds);
+            int dayOffset = DateTime.UtcNow.ToLocalTime().Hour < 12 ? 0 : 1;  
+            var calendar = Calendar.Instance;
+
+            calendar.Set(CalendarField.Date, calendar.Get(CalendarField.Date) + dayOffset);
+            calendar.Set(CalendarField.HourOfDay, 12);
+            calendar.Set(CalendarField.Minute, 0);
+            calendar.Set(CalendarField.Second, 0);  
+          
+            NotificationsUtils.ScheduleNotification(Activity, HealthModuleType.Sintrom.HealthModuleId(), calendar.TimeInMillis);
         }
  
 
