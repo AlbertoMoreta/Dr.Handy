@@ -12,7 +12,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
-            app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
             android:fitsSystemWindows="true">
             <include
                 layout="@layout/toolbar" />
@@ -22,8 +22,7 @@
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        app:behavior_overlapTop="@dimen/recycler_view_overlap" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
     <com.refractored.fab.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"

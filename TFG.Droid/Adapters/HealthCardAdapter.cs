@@ -12,6 +12,7 @@ using Android.Widget;
 using Android.Support.V7.Widget; 
 using TFG.Droid.Custom_Views;
 using Java.Util;
+using TFG.DataBase;
 using TFG.Droid.Listeners;
 
 namespace TFG.Droid.Adapters {

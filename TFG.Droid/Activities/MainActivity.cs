@@ -16,6 +16,7 @@ using Android.Support.V7.Widget;
 using TFG.Droid.Callbacks;
 using Android.Support.V7.Widget.Helper;
 using Android.Util;
+using TFG.DataBase;
 using TFG.Droid.Activities;
 using TFG.Droid.Listeners;
 using TFG.Model;
@@ -48,7 +49,8 @@ namespace TFG.Droid{
             _recyclerView = FindViewById<RecyclerView>(Resource.Id.recycler_view);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
             linearLayoutManager.Orientation = (int) Orientation.Vertical;
-            _recyclerView.SetLayoutManager(linearLayoutManager);
+             _recyclerView.SetLayoutManager(new GridLayoutManager(this, 2));
+
 
             _adapter = new HealthCardAdapter(cards);
             _adapter.SetHealthCardClickListener(this);

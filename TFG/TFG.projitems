@@ -19,8 +19,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\HealthModule.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\HealthModulesInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\NotificationItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\SintromTreatmentItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\SintromINRItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\SintromItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\StepCounterItem.cs" />
-  </ItemGroup> 
+  </ItemGroup>
 </Project>
