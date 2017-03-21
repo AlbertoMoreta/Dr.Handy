@@ -12,10 +12,10 @@ namespace TFG.Droid.Utils {
             var alarmIntent = new Intent(ctx, typeof(NotificationReceiver));
             alarmIntent.PutExtra("moduleId", moduleId);
 
-            var pendingIntent = PendingIntent.GetBroadcast(ctx, 0, alarmIntent, 0);
+            var pendingIntent = PendingIntent.GetBroadcast(ctx, 0, alarmIntent, PendingIntentFlags.CancelCurrent);
 
             var alarmManager = (AlarmManager) ctx.GetSystemService(Context.AlarmService); 
-            alarmManager.SetRepeating(AlarmType.ElapsedRealtime, time, AlarmManager.IntervalDay, pendingIntent);
+            alarmManager.SetRepeating(AlarmType.RtcWakeup, time, AlarmManager.IntervalDay, pendingIntent); 
         }
     }
 }
