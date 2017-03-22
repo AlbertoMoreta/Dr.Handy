@@ -48,7 +48,7 @@ namespace TFG.Droid{
             _recyclerView.SetLayoutManager(new GridLayoutManager(this, 2));
 
 
-            _adapter = new HealthCardAdapter(cards);
+            _adapter = new HealthCardAdapter(this, cards);
             _adapter.SetHealthCardClickListener(this);
             _recyclerView.SetAdapter(_adapter);
 

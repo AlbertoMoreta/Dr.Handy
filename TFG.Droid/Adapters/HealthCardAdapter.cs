@@ -14,6 +14,7 @@ using TFG.Droid.Custom_Views;
 using Java.Util;
 using TFG.DataBase;
 using TFG.Droid.Listeners;
+using TFG.Model;
 
 namespace TFG.Droid.Adapters {
     class HealthCardAdapter : RecyclerView.Adapter {
@@ -21,19 +22,22 @@ namespace TFG.Droid.Adapters {
         //ViewHolder for the Cards
         public class CardViewHolder : RecyclerView.ViewHolder {
 
-            //Name of the Module
-            public TextView Name { get; set; }
+            //Fragment for the Module
+            public LinearLayout Fragment{ get; set; }
 
             public CardViewHolder(View itemView) : base(itemView) {
-                Name = itemView.FindViewById<TextView>(Resource.Id.module_name);
+                Fragment = itemView.FindViewById<LinearLayout>(Resource.Id.fragment_container);
             }
         }
 
+        private Context _context;
         private List<HealthCard> _cards = new List<HealthCard>();
         private HealthCardClickListener _listener;
+        private CardView _cardView;
 
 
-        public HealthCardAdapter(List<HealthCard> cards) {
+        public HealthCardAdapter(Context context, List<HealthCard> cards) {
+            _context = context;
             _cards = cards;
         }
 
@@ -45,14 +49,28 @@ namespace TFG.Droid.Adapters {
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
             var itemView = LayoutInflater.From(parent.Context).
-                            Inflate(Resource.Layout.health_card, parent, false);  
+                            Inflate(Resource.Layout.health_card, parent, false);
+
+            _cardView = itemView.FindViewById<CardView>(Resource.Id.cardview);
+             
             return new CardViewHolder(itemView);
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             CardViewHolder viewHolder = holder as CardViewHolder;
             var item = _cards[position];
-            viewHolder.Name.Text = item.Name;
+
+            FragmentManager fragmentManager = ((Activity) _context).FragmentManager;
+            FragmentTransaction fragmentTransaction = fragmentManager.BeginTransaction();
+
+            var fragment = HealthModulesInfoExtension.GetHealthCardFragmentFromHealthModuleName(item.Name);
+            if (fragment != null) {
+                fragmentTransaction.Add(Resource.Id.fragment_container, fragment as Fragment);
+            } 
+
+            fragmentTransaction.Commit();
+
+            _cardView.Background = HealthModulesInfoExtension.GetHealthModuleHeaderFromHealthModuleName(_context, item.Name); 
 
             viewHolder.ItemView.Click += delegate { _listener.OnHealthCardClick(item.HealthModule); };
         }
