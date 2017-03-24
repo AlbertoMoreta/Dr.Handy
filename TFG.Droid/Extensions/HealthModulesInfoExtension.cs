@@ -11,6 +11,7 @@ namespace TFG.Droid{
     public static class HealthModulesInfoExtension {
 
         public static IHealthFragment GetHealthCardFragmentFromHealthModuleName(string moduleName) {
+            if (HealthModuleType.Sintrom.HealthModuleName().Equals(moduleName)) { return new SintromCardFragment(); }
             return null;
         }
 
