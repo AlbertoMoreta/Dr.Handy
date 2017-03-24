@@ -26,17 +26,21 @@ namespace TFG.Droid.Fragments.Sintrom {
             var view = inflater.Inflate(Resource.Layout.fragment_sintrom_card, container, false);
 
             var moduleName = view.FindViewById<CustomTextView>(Resource.Id.module_name);
-            var sintromImage = view.FindViewById<ImageView>(Resource.Id.module_image);
+            var sintromImage = view.FindViewById<ImageView>(Resource.Id.sintrom_image);
+            var sintromDate = view.FindViewById<CustomTextView>(Resource.Id.sintrom_date);
 
             moduleName.Text = HealthModuleType.Sintrom.HealthModuleName();
 
             var sintromItems = DBHelper.Instance.GetSintromItemFromDate(DateTime.Now);
 
-            if (sintromItems.Count > 1) {
+            if (sintromItems.Count > 0) {
                 sintromImage.SetImageDrawable(ContextCompat.GetDrawable(Activity,
                                 Activity.Resources.GetIdentifier(sintromItems[0].ImageName,
                                     "drawable", Activity.PackageName)));
+
+                sintromDate.Text = sintromItems[0].Date.ToString("dd - MMM - yyyy");
             }
+
 
             return view;
         }
