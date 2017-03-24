@@ -24,6 +24,7 @@ namespace TFG.Droid.Adapters {
 
             //Fragment for the Module
             public LinearLayout Fragment{ get; set; }
+            public HealthCard HealthCard { get; set; }
 
             public CardViewHolder(View itemView) : base(itemView) {
                 Fragment = itemView.FindViewById<LinearLayout>(Resource.Id.fragment_container);
@@ -33,7 +34,7 @@ namespace TFG.Droid.Adapters {
         private Context _context;
         private List<HealthCard> _cards = new List<HealthCard>();
         private HealthCardClickListener _listener;
-        private CardView _cardView;
+        private LinearLayout _fragmentContainer;
 
 
         public HealthCardAdapter(Context context, List<HealthCard> cards) {
@@ -51,14 +52,20 @@ namespace TFG.Droid.Adapters {
             var itemView = LayoutInflater.From(parent.Context).
                             Inflate(Resource.Layout.health_card, parent, false);
 
-            _cardView = itemView.FindViewById<CardView>(Resource.Id.cardview);
-             
-            return new CardViewHolder(itemView);
+            _fragmentContainer = itemView.FindViewById<LinearLayout>(Resource.Id.fragment_container);
+
+            var viewHolder = new CardViewHolder(itemView);
+
+            viewHolder.ItemView.Click += delegate { _listener.OnHealthCardClick(viewHolder.HealthCard.HealthModule); };
+
+            return viewHolder;
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             CardViewHolder viewHolder = holder as CardViewHolder;
             var item = _cards[position];
+
+            viewHolder.HealthCard = item;
 
             FragmentManager fragmentManager = ((Activity) _context).FragmentManager;
             FragmentTransaction fragmentTransaction = fragmentManager.BeginTransaction();
@@ -70,9 +77,9 @@ namespace TFG.Droid.Adapters {
 
             fragmentTransaction.Commit();
 
-            _cardView.Background = HealthModulesInfoExtension.GetHealthModuleHeaderFromHealthModuleName(_context, item.Name); 
+            _fragmentContainer.Background = HealthModulesInfoExtension.GetHealthModuleHeaderFromHealthModuleName(_context, item.Name); 
 
-            viewHolder.ItemView.Click += delegate { _listener.OnHealthCardClick(item.HealthModule); };
+            
         }
 
         public bool OnItemMove(int fromPosition, int toPosition) {
