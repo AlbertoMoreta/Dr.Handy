@@ -14,10 +14,10 @@
   <dimen name="main_screen_padding_top">40dp</dimen>
   <dimen name="card_height">120dp</dimen>
   <dimen name="card_padding">50dp</dimen>
-  <dimen name="appbarlayout_height">192dp</dimen>
-  <dimen name="recycler_view_overlap">64dp</dimen>
+  <dimen name="appbarlayout_height">130dp</dimen> 
   <dimen name="health_module_icon_size">64dp</dimen>
   <dimen name="fab_size">50dp</dimen>
   <dimen name="fab_offset">-40dp</dimen>
+  <dimen name="image_final_size">32dp</dimen>
 
 </resources>

@@ -10,6 +10,10 @@ using TFG.Model;
 namespace TFG.Droid{
     public static class HealthModulesInfoExtension {
 
+        public static IHealthFragment GetHealthCardFragmentFromHealthModuleName(string moduleName) {
+            return null;
+        }
+
         public static IHealthFragment GetHeaderFragmentFromHealthModuleName(string moduleName) { 
             if (HealthModuleType.Sintrom.HealthModuleName().Equals(moduleName)) { return new SintromHeaderFragment(); }
             return null;

@@ -38,20 +38,17 @@ namespace TFG.Droid{
 
             SetContentView (Resource.Layout.Main);
 
-            SetUpToolBar();  
-
 
             //DBHelper.Instance.DropTable(DBHelper.TABLE_NAME);
             DBHelper.Instance.Init(); 
 
             List<HealthCard> cards = GetCardList();
 
-            _recyclerView = FindViewById<RecyclerView>(Resource.Id.recycler_view);
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-            linearLayoutManager.Orientation = (int) Orientation.Vertical;
-            _recyclerView.SetLayoutManager(linearLayoutManager);
+            _recyclerView = FindViewById<RecyclerView>(Resource.Id.recycler_view); 
+            _recyclerView.SetLayoutManager(new GridLayoutManager(this, 2));
 
-            _adapter = new HealthCardAdapter(cards);
+
+            _adapter = new HealthCardAdapter(this, cards);
             _adapter.SetHealthCardClickListener(this);
             _recyclerView.SetAdapter(_adapter);
 
@@ -82,9 +79,6 @@ namespace TFG.Droid{
             foreach(HealthModule module in modules) { 
                 cards.Add(new HealthCard(this, module) { Name = module.Name });
             }
-            cards.Add(new HealthCard(this, new HealthModule()) { Name = "asd" });
-            cards.Add(new HealthCard(this, new HealthModule()) { Name = "asd" });
-            cards.Add(new HealthCard(this, new HealthModule()) { Name = "asd"});
             return cards;
         }
 
