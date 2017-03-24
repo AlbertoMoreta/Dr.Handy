@@ -3,7 +3,6 @@ using Android.Content;
 using Android.Content.Res;
 using Android.Graphics.Drawables;
 using Android.Support.V4.Content; 
-using TFG.Droid.Fragments;
 using TFG.Droid.Interfaces;
 using TFG.Model;
 
@@ -11,15 +10,6 @@ namespace TFG.Droid{
     public static class HealthModulesInfoExtension {
 
         public static IHealthFragment GetHealthCardFragmentFromHealthModuleName(string moduleName) {
-            if (HealthModuleType.ColorBlindnessTest.HealthModuleName().Equals(moduleName)) {
-                return new DefaultHealthCardFragment();
-            }
-            if (HealthModuleType.StepCounter.HealthModuleName().Equals(moduleName)) {
-                return new DefaultHealthCardFragment();
-            }
-            if (HealthModuleType.Sintrom.HealthModuleName().Equals(moduleName)) {
-                return new DefaultHealthCardFragment();
-            } 
             return null;
         }
 

@@ -15,7 +15,7 @@ using TFG.Model;
 namespace TFG.Droid.Custom_Views {
     class HealthCard : LinearLayout{ 
 
-        public String Name { set; get; }
+        public string Name { set; get; }
 
         public HealthModule HealthModule { get; set; }
 

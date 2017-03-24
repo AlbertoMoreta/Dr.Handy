@@ -23,18 +23,20 @@ namespace TFG.Droid.Adapters {
         public class CardViewHolder : RecyclerView.ViewHolder {
 
             //Fragment for the Module
-            public LinearLayout Fragment{ get; set; }
+            public CustomTextView ModuleName { get; set; }
+            public ImageView ModuleImage { get; set; }
             public HealthCard HealthCard { get; set; }
 
             public CardViewHolder(View itemView) : base(itemView) {
-                Fragment = itemView.FindViewById<LinearLayout>(Resource.Id.fragment_container);
+                ModuleName = itemView.FindViewById<CustomTextView>(Resource.Id.module_name);
+                ModuleImage = itemView.FindViewById<ImageView>(Resource.Id.module_image);
             }
         }
 
         private Context _context;
         private List<HealthCard> _cards = new List<HealthCard>();
         private HealthCardClickListener _listener;
-        private LinearLayout _fragmentContainer;
+        private RelativeLayout _moduleLayout;
 
 
         public HealthCardAdapter(Context context, List<HealthCard> cards) {
@@ -52,7 +54,7 @@ namespace TFG.Droid.Adapters {
             var itemView = LayoutInflater.From(parent.Context).
                             Inflate(Resource.Layout.health_card, parent, false);
 
-            _fragmentContainer = itemView.FindViewById<LinearLayout>(Resource.Id.fragment_container);
+            _moduleLayout = itemView.FindViewById<RelativeLayout>(Resource.Id.module_layout);
 
             var viewHolder = new CardViewHolder(itemView);
 
@@ -72,12 +74,14 @@ namespace TFG.Droid.Adapters {
 
             var fragment = HealthModulesInfoExtension.GetHealthCardFragmentFromHealthModuleName(item.Name);
             if (fragment != null) {
-                fragmentTransaction.Add(Resource.Id.fragment_container, fragment as Fragment);
-            } 
+                fragmentTransaction.Replace(Resource.Id.module_layout, fragment as Fragment);
+                fragmentTransaction.Commit();
+            } else {
+                viewHolder.ModuleName.Text = item.Name;
+            }
 
-            fragmentTransaction.Commit();
 
-            _fragmentContainer.Background = HealthModulesInfoExtension.GetHealthModuleHeaderFromHealthModuleName(_context, item.Name); 
+            _moduleLayout.Background = HealthModulesInfoExtension.GetHealthModuleHeaderFromHealthModuleName(_context, item.Name);  
 
             
         }
