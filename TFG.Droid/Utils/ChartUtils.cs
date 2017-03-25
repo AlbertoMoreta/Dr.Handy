@@ -12,6 +12,7 @@ using Android.Views;
 using Android.Widget;
 using MikePhil.Charting.Charts;
 using MikePhil.Charting.Data;
+using TFG.DataBase;
 using TFG.Model; 
 
 namespace TFG.Droid.Utils {

@@ -3631,8 +3631,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060053
 			public const int expanded_menu = 2131099731;
 			
-			// aapt resource value: 0x7f06007f
-			public const int fab = 2131099775;
+			// aapt resource value: 0x7f060080
+			public const int fab = 2131099776;
 			
 			// aapt resource value: 0x7f060035
 			public const int fill = 2131099701;
@@ -3646,8 +3646,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060038
 			public const int @fixed = 2131099704;
 			
-			// aapt resource value: 0x7f060080
-			public const int fragments_container = 2131099776;
+			// aapt resource value: 0x7f06007b
+			public const int fragments_container = 2131099771;
 			
 			// aapt resource value: 0x7f060081
 			public const int header = 2131099777;
@@ -3763,8 +3763,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f060056
 			public const int radio = 2131099734;
 			
-			// aapt resource value: 0x7f06007b
-			public const int recycler_view = 2131099771;
+			// aapt resource value: 0x7f06007f
+			public const int recycler_view = 2131099775;
 			
 			// aapt resource value: 0x7f060082
 			public const int reveal = 2131099778;
