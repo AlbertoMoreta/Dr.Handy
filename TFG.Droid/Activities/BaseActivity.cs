@@ -25,7 +25,7 @@ namespace TFG.Droid {
         }
 
 
-        protected void SetUpToolBar() { 
+        protected void SetUpToolBar(bool isTransparent = true) { 
             var toolBar = ToolBar = FindViewById<Toolbar>(Resource.Id.toolbar);
             
             if (toolBar != null) {  
@@ -33,6 +33,7 @@ namespace TFG.Droid {
                 SupportActionBar.SetDisplayShowTitleEnabled(false);
                 ToolbarTitle = toolBar.FindViewById<CustomTextView>(Resource.Id.title);
                 ToolbarTitle.Text = Title;
+                if (isTransparent) { toolBar.Background = null; }
 
             }
         }

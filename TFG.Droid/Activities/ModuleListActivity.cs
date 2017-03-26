@@ -30,7 +30,7 @@ namespace TFG.Droid {
             if (theme != -1) { SetTheme(theme); }
 
             SetContentView(Resource.Layout.modules_list);
-            SetUpToolBar();
+            SetUpToolBar(false);
 
             HealthModulesListAdapter adapter = new HealthModulesListAdapter(this);
             

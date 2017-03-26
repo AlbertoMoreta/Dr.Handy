@@ -7,6 +7,7 @@ using System.Text;
 using Android.App;
 using Android.Content;
 using Android.Content.Res;
+using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
@@ -119,6 +120,7 @@ namespace TFG.Droid.Adapters {
             viewHolder.ViewCell.IconDrawable = drawable;*/
 
             viewHolder.ModuleName.Text = module.HealthModuleName();
+            viewHolder.ModuleName.SetTextColor(Color.DimGray); 
             viewHolder.ModuleDescriptionShort.Text = viewHolder.ModuleDescriptionLong.Text = module.HealthModuleDescription();
             viewHolder.RevealView.Background =
                 HealthModulesInfoExtension.GetHealthModuleHeaderFromHealthModuleName(_context, module.HealthModuleName());
@@ -171,6 +173,7 @@ namespace TFG.Droid.Adapters {
                 AnimationUtils.ExpandView(v.ModuleDescriptionLong, 0);
                 AnimationUtils.FadeAnimation(v.ModuleDescriptionShort, 1f);
                 AnimationUtils.FadeAnimation(v.AddButton, 0f); 
+                v.ModuleName.SetTextColor(Color.DimGray); 
             } else {
                 AnimationUtils.HideViewCircular(v.Background, cx, cy, v.Background.MeasuredHeight, 300);
                 AnimationUtils.RevealViewCircular(v.RevealView, cx, cy, radius);
@@ -184,6 +187,7 @@ namespace TFG.Droid.Adapters {
                 AnimationUtils.ExpandView(v.ModuleDescriptionLong, v.ModuleDescriptionHeight, true);
                 AnimationUtils.FadeAnimation(v.ModuleDescriptionShort, 0f);
                 AnimationUtils.FadeAnimation(v.AddButton, 1f); 
+                v.ModuleName.SetTextColor(Color.White); 
             }
         }
     }
