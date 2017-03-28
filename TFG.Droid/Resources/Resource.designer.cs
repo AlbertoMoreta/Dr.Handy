@@ -3737,11 +3737,11 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f020072
 			public const int notification_icon_background = 2130837618;
 			
-			// aapt resource value: 0x7f020077
-			public const int notification_template_icon_bg = 2130837623;
-			
 			// aapt resource value: 0x7f020078
-			public const int notification_template_icon_low_bg = 2130837624;
+			public const int notification_template_icon_bg = 2130837624;
+			
+			// aapt resource value: 0x7f020079
+			public const int notification_template_icon_low_bg = 2130837625;
 			
 			// aapt resource value: 0x7f020073
 			public const int notification_tile_bg = 2130837619;
@@ -3754,6 +3754,9 @@ namespace TFG.Droid
 			
 			// aapt resource value: 0x7f020076
 			public const int ripple = 2130837622;
+			
+			// aapt resource value: 0x7f020077
+			public const int title_logo_1 = 2130837623;
 			
 			static Drawable()
 			{

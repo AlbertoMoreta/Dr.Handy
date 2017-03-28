@@ -3,51 +3,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-  
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/appbarlayout_height" 
+        android:layout_height="@dimen/appbarlayout_height"
         android:fitsSystemWindows="true">
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed" 
-            app:contentScrim="?attr/colorPrimary" >
-            
-        </android.support.design.widget.CollapsingToolbarLayout> 
-
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="?attr/colorPrimary" />
     </android.support.design.widget.AppBarLayout>
-
-    <android.support.v7.widget.Toolbar  
-      android:id="@+id/toolbar"
-      android:layout_width="match_parent"
-      android:layout_height="@dimen/actionbar_height"
-      android:background="?colorPrimary"
-      app:layout_anchor="@+id/recycler_view" 
-      android:gravity="center"
-      android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-      app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
-    </android.support.v7.widget.Toolbar>
-  
-  
-          
-      <android.support.v7.widget.RecyclerView
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbar_height"
+        android:background="?colorPrimary"
+        app:layout_anchor="@+id/recycler_view"
+        android:gravity="center"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/toolbar_top_padding"
         android:paddingTop="@dimen/toolbar_top_padding"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
- 
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/Icon"
+        android:layout_gravity="center"
+        android:src="@drawable/title_logo_1"
         app:layout_behavior="CustomBehaviors.LogoImageBehaviour" />
-  
     <com.refractored.fab.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -58,6 +47,4 @@
         app:fab_colorNormal="?colorPrimary"
         app:fab_colorPressed="?colorPrimaryDark"
         app:fab_colorRipple="?colorAccent" />
-
-  
 </android.support.design.widget.CoordinatorLayout>
