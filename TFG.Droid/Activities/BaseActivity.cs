@@ -21,7 +21,10 @@ namespace TFG.Droid {
         public CustomTextView ToolbarTitle { get; set; }
 
         protected override void OnCreate(Bundle savedInstanceState) {
-            base.OnCreate(savedInstanceState);  
+            base.OnCreate(savedInstanceState);
+
+            var theme = Resources.GetIdentifier("AppTheme_red", "style", PackageName);
+            if (theme != -1) { SetTheme(theme); }
         }
 
 

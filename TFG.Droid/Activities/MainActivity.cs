@@ -30,14 +30,9 @@ namespace TFG.Droid{
 	    private RecyclerView _recyclerView;
 
 		protected override void OnCreate (Bundle bundle){
-			base.OnCreate (bundle);
+			base.OnCreate (bundle); 
 
-
-            var theme = Resources.GetIdentifier("AppTheme_purple", "style", PackageName);
-            if (theme != -1) { SetTheme(theme); }
-
-            SetContentView (Resource.Layout.Main);
-
+            SetContentView (Resource.Layout.Main); 
 
             //DBHelper.Instance.DropTable(DBHelper.TABLE_NAME);
             DBHelper.Instance.Init(); 

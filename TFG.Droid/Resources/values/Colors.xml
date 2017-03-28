@@ -21,8 +21,8 @@
   <item name="light_blue" type="color">#64B5F6</item>
   <item name="translucent_blue" type="color">#602196F3</item>
   
-  <item name="red" type="color">#F44336</item>
-  <item name="dark_red" type="color">#E53935</item>
+  <item name="red" type="color">#EF5350</item>
+  <item name="dark_red" type="color">#F44336</item>
   <item name="light_red" type="color">#E57373</item>
   <item name="translucent_red" type="color">#60F44336</item>
 
