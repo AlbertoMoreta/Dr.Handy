@@ -29,7 +29,7 @@ namespace TFG.Droid.Adapters {
 
             public CardViewHolder(View itemView) : base(itemView) {
                 ModuleName = itemView.FindViewById<CustomTextView>(Resource.Id.module_name);
-                ModuleImage = itemView.FindViewById<ImageView>(Resource.Id.module_image);
+                ModuleImage = itemView.FindViewById<ImageView>(Resource.Id.module_icon);
             }
         }
 
@@ -86,6 +86,7 @@ namespace TFG.Droid.Adapters {
                 _moduleLayout.Visibility = ViewStates.Visible;
                 _fragmentContainer.Visibility = ViewStates.Gone;
                 viewHolder.ModuleName.Text = item.Name;
+                viewHolder.ModuleImage.Background = item.Icon;
                 _moduleLayout.Background = backgroundImage;
             }
   

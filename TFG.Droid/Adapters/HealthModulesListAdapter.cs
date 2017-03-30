@@ -110,18 +110,18 @@ namespace TFG.Droid.Adapters {
             } else {
                 viewHolder = convertView.Tag as ViewHolder;
             }
+             
 
-            /*var drawable = (LayerDrawable) ContextCompat.GetDrawable(_context, Resource.Drawable.module_icon).Mutate();
-            var moduleColorName = module.HealthModuleColor();
-            var background = (GradientDrawable) drawable.FindDrawableByLayerId(Resource.Id.background).Mutate();
-            background.SetColor(ContextCompat.GetColor(_context, _context.Resources.GetIdentifier(moduleColorName, "color", _context.PackageName)));
-            //drawable.SetDrawableByLayerId(Resource.Id.icon, );
-
-            viewHolder.ViewCell.IconDrawable = drawable;*/
+            var drawable = (LayerDrawable) viewHolder.Background.Background; 
+            var background = (GradientDrawable)drawable.FindDrawableByLayerId(Resource.Id.background); 
+            var moduleColor = ContextCompat.GetColorStateList(_context, _context.Resources.GetIdentifier(module.HealthModuleColor(), "color", _context.PackageName));
+            background.SetColor(moduleColor);
 
             viewHolder.ModuleName.Text = module.HealthModuleName();
+            viewHolder.ModuleIcon.Background = module.GetHealthModuleIconFromHealthModuleType(_context);
             viewHolder.ModuleName.SetTextColor(Color.DimGray); 
             viewHolder.ModuleDescriptionShort.Text = viewHolder.ModuleDescriptionLong.Text = module.HealthModuleDescription();
+            viewHolder.ModuleDescriptionLong.SetTextColor(moduleColor);
             viewHolder.RevealView.Background =
                 HealthModulesInfoExtension.GetHealthModuleHeaderFromHealthModuleName(_context, module.HealthModuleName());
             if (DBHelper.Instance.CheckIfExists(module) && DBHelper.Instance.CheckIfVisible(module)) {

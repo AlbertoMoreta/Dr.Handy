@@ -28,22 +28,24 @@
             android:visibility="gone" />
         <View
             android:id="@+id/background"
-            android:layout_width="@dimen/fab_size"
-            android:layout_height="@dimen/fab_size"
+            android:layout_width="@dimen/health_module_icon_size"
+            android:layout_height="@dimen/health_module_icon_size"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/module_icon" />
         <ImageView
             android:id="@+id/module_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/health_module_icon_size"
+            android:layout_height="@dimen/health_module_icon_size"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="10dp" 
             android:layout_alignParentLeft="true"
             android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
             android:background="@drawable/icon" />
+        
         <TFG.Droid.Custom_Views.CustomTextView
             android:id="@+id/module_name"
             android:layout_width="wrap_content"
