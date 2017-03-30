@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using TFG.Logic;
 
@@ -11,18 +12,15 @@ namespace TFG.Model {
 
     public static class HealthModulesInfo {
 
-        public static List<HealthModuleType> GetHealthModules { get; private set; } = new List<HealthModuleType> {
-            HealthModuleType.ColorBlindnessTest,
-            HealthModuleType.StepCounter,
-            HealthModuleType.Sintrom
-        };
+        public static List<HealthModuleType> GetHealthModules { get; private set; } =
+            Enum.GetValues(typeof(HealthModuleType)).Cast<HealthModuleType>().ToList();
 
         public static int HealthModuleId(this HealthModuleType module) {
             return (int) module;
         }
 
         public static HealthModuleType GetHealthModuleTypeById(int id) {
-            return (HealthModuleType) id;
+            return (HealthModuleType) (id - 1);
         }
 
         public static string HealthModuleName(this HealthModuleType module) {
