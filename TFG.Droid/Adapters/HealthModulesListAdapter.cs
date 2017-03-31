@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-
+using Android.Animation;
 using Android.App;
 using Android.Content;
 using Android.Content.Res;
@@ -42,6 +42,7 @@ namespace TFG.Droid.Adapters {
         private LayoutInflater _inflater;
         private List<HealthModuleType> _modules = HealthModulesInfo.GetHealthModules;
         private List<ModuleViewCell> _viewCells = new List<ModuleViewCell>();
+        private bool Enabled { get; set; } = true;
 
         public HealthModulesListAdapter(Context context) {
             _context = context;
@@ -66,6 +67,9 @@ namespace TFG.Droid.Adapters {
         }
 
         public override int Count { get { return _modules.Count;  } }
+        public override bool IsEnabled(int position) {
+            return Enabled;
+        }
 
         private ViewHolder ExpandedView { get; set; }
 
@@ -93,18 +97,20 @@ namespace TFG.Droid.Adapters {
                 convertView.Tag = viewHolder;
                 viewHolder.AddButton.Click += delegate { OnAddButtonClick(module); };
                 viewHolder.Header.Click += delegate {
-                    if (ExpandedView != null) {
-                        if (ExpandedView != viewHolder)  { 
-                            OnHeaderClick(ExpandedView);    //Collapse previous HealthModule
+                    if (Enabled) {
+                        if (ExpandedView != null) {
+                            if (ExpandedView != viewHolder) {
+                                OnHeaderClick(ExpandedView); //Collapse previous HealthModule
+                                ExpandedView = viewHolder;
+                            } else {
+                                ExpandedView = null;
+                            }
+                        } else {
                             ExpandedView = viewHolder;
-                        } else  {
-                            ExpandedView = null; 
                         }
-                    } else { 
-                        ExpandedView = viewHolder;
-                    }
 
-                    OnHeaderClick(viewHolder);  //Expand selected HealthModule
+                        OnHeaderClick(viewHolder); //Expand selected HealthModule
+                    }
                 };
                  
             } else {
@@ -155,39 +161,54 @@ namespace TFG.Droid.Adapters {
         }
 
         private void OnHeaderClick(ViewHolder v) {
+
             var iconMarginLeft = ((ViewGroup.MarginLayoutParams) v.ModuleIcon.LayoutParameters).LeftMargin;
             var iconMarginTop = ((ViewGroup.MarginLayoutParams) v.ModuleIcon.LayoutParameters).TopMargin;
             var cx = (v.ModuleIcon.Left + v.ModuleIcon.Right - iconMarginLeft) / 2;
             var cy = (v.ModuleIcon.Top + v.ModuleIcon.Bottom - iconMarginTop) / 2;
             var radius = v.Header.Width;
+            ValueAnimator headerAnimator = null;
 
-            if (v.ModuleDescriptionLong.Visibility == ViewStates.Visible) {
-                AnimationUtils.StartTranslateAnimation(v.ModuleIcon, v.ModuleIcon.Left, v.ModuleIcon.Top);
-                AnimationUtils.StartScaleAnimation(v.ModuleIcon, 1f, 1f);
-                AnimationUtils.HideViewCircular(v.RevealView, cx, cy, radius);
-                AnimationUtils.RevealViewCircular(v.Background, cx, cy, v.Background.MeasuredHeight);
-                AnimationUtils.StartTranslateAnimation(v.ModuleName, v.ModuleName.Left, v.ModuleName.Top);
-                AnimationUtils.StartScaleAnimation(v.ModuleName, 1f, 1f); 
-                AnimationUtils.ExpandView(v.Header, v.Header.MeasuredHeight - v.ModuleIcon.MeasuredHeight - v.ModuleName.MeasuredHeight * 2);
-                AnimationUtils.FadeAnimation(v.ModuleDescriptionLong, 0f);
-                AnimationUtils.ExpandView(v.ModuleDescriptionLong, 0);
-                AnimationUtils.FadeAnimation(v.ModuleDescriptionShort, 1f);
-                AnimationUtils.FadeAnimation(v.AddButton, 0f); 
-                v.ModuleName.SetTextColor(Color.DimGray); 
+            if (v.ModuleDescriptionLong.Visibility == ViewStates.Visible) { 
+
+                if (Enabled) {
+                    AnimationUtils.StartTranslateAnimation(v.ModuleIcon, v.ModuleIcon.Left, v.ModuleIcon.Top);
+                    AnimationUtils.StartScaleAnimation(v.ModuleIcon, 1f, 1f);
+                    AnimationUtils.HideViewCircular(v.RevealView, cx, cy, radius);
+                    AnimationUtils.RevealViewCircular(v.Background, cx, cy, v.Background.MeasuredHeight);
+                    AnimationUtils.StartTranslateAnimation(v.ModuleName, v.ModuleName.Left, v.ModuleName.Top);
+                    AnimationUtils.StartScaleAnimation(v.ModuleName, 1f, 1f);
+                    headerAnimator = AnimationUtils.ExpandView(v.Header,
+                        v.Header.MeasuredHeight - v.ModuleIcon.MeasuredHeight - v.ModuleName.MeasuredHeight * 2);
+                    AnimationUtils.FadeAnimation(v.ModuleDescriptionLong, 0f);
+                    AnimationUtils.ExpandView(v.ModuleDescriptionLong, 0).Start();
+                    AnimationUtils.FadeAnimation(v.ModuleDescriptionShort, 1f);
+                    AnimationUtils.FadeAnimation(v.AddButton, 0f);
+                    v.ModuleName.SetTextColor(Color.DimGray);
+                }
+
             } else {
-                AnimationUtils.HideViewCircular(v.Background, cx, cy, v.Background.MeasuredHeight, 300);
-                AnimationUtils.RevealViewCircular(v.RevealView, cx, cy, radius);
-                AnimationUtils.StartTranslateAnimation(v.ModuleIcon, (v.Header.Width - v.ModuleIcon.Width) / 2, (v.ModuleIcon.Height / 2));
-                AnimationUtils.StartScaleAnimation(v.ModuleIcon, 1.5f, 1.5f); 
-                var finalX = (v.Header.Width - v.ModuleName.Width) / 2;
-                AnimationUtils.StartTranslateAnimation(v.ModuleName, finalX, v.ModuleIcon.Height * 2);
-                AnimationUtils.StartScaleAnimation(v.ModuleName, 1.5f, 1.5f);
-                AnimationUtils.ExpandView(v.Header, v.Header.MeasuredHeight + v.ModuleIcon.MeasuredHeight + v.ModuleName.MeasuredHeight * 2);
-                AnimationUtils.FadeAnimation(v.ModuleDescriptionLong, 1f);
-                AnimationUtils.ExpandView(v.ModuleDescriptionLong, v.ModuleDescriptionHeight, true);
-                AnimationUtils.FadeAnimation(v.ModuleDescriptionShort, 0f);
-                AnimationUtils.FadeAnimation(v.AddButton, 1f); 
-                v.ModuleName.SetTextColor(Color.White); 
+                    AnimationUtils.HideViewCircular(v.Background, cx, cy, v.Background.MeasuredHeight, 300);
+                    AnimationUtils.RevealViewCircular(v.RevealView, cx, cy, radius);
+                    AnimationUtils.StartTranslateAnimation(v.ModuleIcon, (v.Header.Width - v.ModuleIcon.Width) / 2,
+                        (v.ModuleIcon.Height / 2));
+                    AnimationUtils.StartScaleAnimation(v.ModuleIcon, 1.5f, 1.5f);
+                    var finalX = (v.Header.Width - v.ModuleName.Width) / 2;
+                    AnimationUtils.StartTranslateAnimation(v.ModuleName, finalX, v.ModuleIcon.Height * 2);
+                    AnimationUtils.StartScaleAnimation(v.ModuleName, 1.5f, 1.5f);
+                    headerAnimator = AnimationUtils.ExpandView(v.Header,
+                        v.Header.MeasuredHeight + v.ModuleIcon.MeasuredHeight + v.ModuleName.MeasuredHeight * 2);
+                    AnimationUtils.FadeAnimation(v.ModuleDescriptionLong, 1f);
+                    AnimationUtils.ExpandView(v.ModuleDescriptionLong, v.ModuleDescriptionHeight, true).Start();
+                    AnimationUtils.FadeAnimation(v.ModuleDescriptionShort, 0f);
+                    AnimationUtils.FadeAnimation(v.AddButton, 1f);
+                    v.ModuleName.SetTextColor(Color.White); 
+            }
+
+            if (headerAnimator != null) {
+                headerAnimator.AnimationStart += delegate { Enabled = false; };
+                headerAnimator.AnimationEnd += delegate { Enabled = true; };
+                headerAnimator.Start();
             }
         }
     }
