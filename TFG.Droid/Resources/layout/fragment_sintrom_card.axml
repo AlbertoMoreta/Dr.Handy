@@ -1,36 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?> 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
+    android:layout_height="match_parent">
     <TFG.Droid.Custom_Views.CustomTextView
         android:id="@+id/module_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
         android:gravity="center"
         android:textSize="@dimen/text_size_large"
-        android:textColor="@android:color/white"/>
-
-    <ImageView
-        android:id="@+id/sintrom_image"
+        android:textColor="@android:color/white" />
+     <RelativeLayout
+        android:id="@+id/sintrom_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/module_name"  
-        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/module_name"
         android:layout_margin="10dp"
-        android:maxWidth="70dp"
-        android:maxHeight="70dp"
-        android:scaleType="centerInside"
-        android:adjustViewBounds="true" /> 
-
+        android:layout_centerHorizontal="true">
+      <TFG.Droid.Custom_Views.CustomTextView
+          android:id="@+id/control_day"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:gravity="center" 
+          android:text="@string/sintrom_control"
+          android:textSize="@dimen/text_size_xxlarge"
+          android:textColor="@android:color/white" />
+      <ImageView
+          android:id="@+id/sintrom_image"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:maxWidth="70dp"
+          android:maxHeight="70dp"
+          android:scaleType="centerInside"
+          android:adjustViewBounds="true" />
+    </RelativeLayout>
+    
     <TFG.Droid.Custom_Views.CustomTextView
         android:id="@+id/sintrom_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/sintrom_image"
+        android:layout_below="@+id/sintrom_info" 
         android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
         android:gravity="center"
         android:textSize="@dimen/text_size_normal"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white" />
 </RelativeLayout>
