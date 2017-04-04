@@ -24,13 +24,10 @@ namespace TFG.Droid {
         private ListView _modulesList; 
 
         protected override void OnCreate(Bundle savedInstanceState) {
-            base.OnCreate(savedInstanceState);
-
-            var theme = Resources.GetIdentifier("AppTheme_purple", "style", PackageName);
-            if (theme != -1) { SetTheme(theme); }
+            base.OnCreate(savedInstanceState); 
 
             SetContentView(Resource.Layout.modules_list);
-            SetUpToolBar();
+            SetUpToolBar(false);
 
             HealthModulesListAdapter adapter = new HealthModulesListAdapter(this);
             

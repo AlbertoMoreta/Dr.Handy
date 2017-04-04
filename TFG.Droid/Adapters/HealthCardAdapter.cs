@@ -29,7 +29,7 @@ namespace TFG.Droid.Adapters {
 
             public CardViewHolder(View itemView) : base(itemView) {
                 ModuleName = itemView.FindViewById<CustomTextView>(Resource.Id.module_name);
-                ModuleImage = itemView.FindViewById<ImageView>(Resource.Id.module_image);
+                ModuleImage = itemView.FindViewById<ImageView>(Resource.Id.module_icon);
             }
         }
 
@@ -37,6 +37,7 @@ namespace TFG.Droid.Adapters {
         private List<HealthCard> _cards = new List<HealthCard>();
         private HealthCardClickListener _listener;
         private RelativeLayout _moduleLayout;
+        private LinearLayout _fragmentContainer;
 
 
         public HealthCardAdapter(Context context, List<HealthCard> cards) {
@@ -55,6 +56,7 @@ namespace TFG.Droid.Adapters {
                             Inflate(Resource.Layout.health_card, parent, false);
 
             _moduleLayout = itemView.FindViewById<RelativeLayout>(Resource.Id.module_layout);
+            _fragmentContainer = itemView.FindViewById<LinearLayout>(Resource.Id.fragments_container);
 
             var viewHolder = new CardViewHolder(itemView);
 
@@ -73,15 +75,21 @@ namespace TFG.Droid.Adapters {
             FragmentTransaction fragmentTransaction = fragmentManager.BeginTransaction();
 
             var fragment = HealthModulesInfoExtension.GetHealthCardFragmentFromHealthModuleName(item.Name);
+            var backgroundImage = HealthModulesInfoExtension.GetHealthModuleHeaderFromHealthModuleName(_context, item.Name);
             if (fragment != null) {
-                fragmentTransaction.Replace(Resource.Id.module_layout, fragment as Fragment);
+                _fragmentContainer.Visibility = ViewStates.Visible;
+                _moduleLayout.Visibility = ViewStates.Gone;
+                fragmentTransaction.Replace(Resource.Id.fragments_container, fragment as Fragment);
                 fragmentTransaction.Commit();
+                _fragmentContainer.Background = backgroundImage;
             } else {
+                _moduleLayout.Visibility = ViewStates.Visible;
+                _fragmentContainer.Visibility = ViewStates.Gone;
                 viewHolder.ModuleName.Text = item.Name;
+                viewHolder.ModuleImage.Background = item.Icon;
+                _moduleLayout.Background = backgroundImage;
             }
-
-
-            _moduleLayout.Background = HealthModulesInfoExtension.GetHealthModuleHeaderFromHealthModuleName(_context, item.Name);  
+  
 
             
         }

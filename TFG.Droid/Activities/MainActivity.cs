@@ -30,14 +30,9 @@ namespace TFG.Droid{
 	    private RecyclerView _recyclerView;
 
 		protected override void OnCreate (Bundle bundle){
-			base.OnCreate (bundle);
+			base.OnCreate (bundle); 
 
-
-            var theme = Resources.GetIdentifier("AppTheme_purple", "style", PackageName);
-            if (theme != -1) { SetTheme(theme); }
-
-            SetContentView (Resource.Layout.Main);
-
+            SetContentView (Resource.Layout.Main); 
 
             //DBHelper.Instance.DropTable(DBHelper.TABLE_NAME);
             DBHelper.Instance.Init(); 
@@ -77,7 +72,11 @@ namespace TFG.Droid{
 
             List<HealthModule> modules = DBHelper.Instance.GetModules();
             foreach(HealthModule module in modules) { 
-                cards.Add(new HealthCard(this, module) { Name = module.Name });
+                cards.Add(new HealthCard(this, module) {
+                    Name = module.Name,
+                    Icon = HealthModulesInfo.GetHealthModuleTypeById(module.Id)
+                                .GetHealthModuleIconFromHealthModuleType(this)
+                });
             }
             return cards;
         }

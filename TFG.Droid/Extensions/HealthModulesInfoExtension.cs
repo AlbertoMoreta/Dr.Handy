@@ -23,6 +23,17 @@ namespace TFG.Droid{
         public static IHealthFragment GetBodyFragmentFromHealthModuleName(string moduleName) { 
             if (HealthModuleType.Sintrom.HealthModuleName().Equals(moduleName)) { return new SintromBodyFragment(); }
             return null;
+        } 
+
+        public static Drawable GetHealthModuleIconFromHealthModuleType(this HealthModuleType type, Context context) { 
+            try {
+                var resName = type.ToString().ToLower() + "_icon";
+                return ContextCompat.GetDrawable(context,
+                    context.Resources.GetIdentifier(resName,
+                        "drawable", context.PackageName));
+            } catch (Resources.NotFoundException) {
+                return null;
+            }
         }
 
         public static Drawable GetHealthModuleBackgroundFromHealthModuleName(Context context, string moduleName) {

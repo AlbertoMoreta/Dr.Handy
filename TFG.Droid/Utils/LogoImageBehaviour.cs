@@ -50,7 +50,7 @@ namespace TFG.Droid.Utils {
             if (expandedPercentageFactor < _changeBehaviorPoint) {
                 var heightFactor = (_changeBehaviorPoint - expandedPercentageFactor) / _changeBehaviorPoint;
 
-                var distanceXToSubtract = ((_startXPosition - _finalXPosition) * heightFactor) + (image.Height/2);
+                var distanceXToSubtract = ((_startXPosition - _finalXPosition) * heightFactor) + (image.Width/2);
                 var distanceYToSubtract = ((_startYPosition - _finalYPosition) * (1f - expandedPercentageFactor)) + (image.Height/2);
 
                 image.SetX(_startXPosition - distanceXToSubtract);
@@ -62,35 +62,34 @@ namespace TFG.Droid.Utils {
                 lp.Width = (int) (_startHeight - heightToSubtract);
                 lp.Height = (int) (_startHeight - heightToSubtract);
                 image.LayoutParameters = lp;
-            } else {
-                float distanceYToSubtract = ((_startYPosition - _finalYPosition) * (1f - expandedPercentageFactor)) + (_startHeight/2);
-
-                image.SetX(_startXPosition - image.Width/2);
-                image.SetY(_startYPosition - distanceYToSubtract);
-
-                CoordinatorLayout.LayoutParams lp = (CoordinatorLayout.LayoutParams) image.LayoutParameters;
-                lp.Width = (int) (_startHeight);
-                lp.Height = (int) (_startHeight);
-                image.LayoutParameters = lp; 
-            }
+            }  
             return true;
         }
 
         private void InitProperties(ImageView image, View dependency) {
 
+            var imageHeight = image.Height;
+            var imageWidth = image.Width;
+            var imageX = image.GetX();
+            var imageY = image.GetY();
+            var imageLeft = image.Left;
+            var imageTop = image.Top;
+            var imageRight = image.Right;
+            var imageBottom = image.Bottom;
+
             if (_customFinalHeight == 0) { _customFinalHeight = _context.Resources.GetDimensionPixelOffset(Resource.Dimension.image_final_size); }
             if (_startYPosition == 0) { _startYPosition = (int) dependency.GetY(); }
-            if (_finalYPosition == 0) { _finalYPosition = (int) (_customFinalHeight + dependency.Height) /2; }
+            if (_finalYPosition == 0) { _finalYPosition = (int)(_customFinalHeight / 2) + dependency.Height/2; }
             if (_startHeight == 0) { _startHeight = image.Height; }
-            if (_startXPosition == 0) { _startXPosition = (int) (image.GetX() + (image.Width / 2)); }
+            if (_startXPosition == 0) { _startXPosition = (int) TypedValue.ApplyDimension(ComplexUnitType.Dip, dependency.Width / 2, _context.Resources.DisplayMetrics); }
             if (_finalXPosition == 0) {
-                _finalXPosition =
+                _finalXPosition = 
                     _context.Resources.GetDimensionPixelOffset(
-                        Resource.Dimension.abc_action_bar_content_inset_material) + ((int) _customFinalHeight/2) - (int) _customFinalHeight;
+                        Resource.Dimension.abc_action_bar_content_inset_material) + (int) (_customFinalHeight / 2);
             }
-            if (_startToolbarPosition == 0) { _startToolbarPosition = dependency.GetY(); }
+            if (_startToolbarPosition == 0) { _startToolbarPosition = dependency.GetY() + (dependency.Height / 2); }
             if (_changeBehaviorPoint == 0) {
-                _changeBehaviorPoint = (image.Height + 2f*_customFinalHeight)/(2f*(_startYPosition - _finalYPosition));
+                _changeBehaviorPoint = (image.Height - _customFinalHeight)/(2f*(_startYPosition - _finalYPosition));
             }
 
         }

@@ -5,6 +5,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -16,6 +17,7 @@ namespace TFG.Droid.Custom_Views {
     class HealthCard : LinearLayout{ 
 
         public string Name { set; get; }
+        public Drawable Icon { set; get; }
 
         public HealthModule HealthModule { get; set; }
 
