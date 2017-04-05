@@ -1,26 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using TFG.Logic;
 
 namespace TFG.Model {
 
     public enum HealthModuleType {
-        ColorBlindnessTest, StepCounter, Module3
+        ColorBlindnessTest, StepCounter, Sintrom
     }
 
     public static class HealthModulesInfo {
 
-        public static List<HealthModuleType> GetHealthModules { get; private set; } = new List<HealthModuleType> {
-            HealthModuleType.ColorBlindnessTest,
-            HealthModuleType.StepCounter,
-            HealthModuleType.Module3
-        };
+        public static List<HealthModuleType> GetHealthModules { get; private set; } =
+            Enum.GetValues(typeof(HealthModuleType)).Cast<HealthModuleType>().ToList();
+
+        public static int HealthModuleId(this HealthModuleType module) {
+            return (int) module;
+        }
+
+        public static HealthModuleType GetHealthModuleTypeById(int id) {
+            return (HealthModuleType) (id - 1);
+        }
 
         public static string HealthModuleName(this HealthModuleType module) {
             switch (module) {
                 case HealthModuleType.ColorBlindnessTest: return GetStringFromResourceName("color_blindness_test_name");
                 case HealthModuleType.StepCounter: return GetStringFromResourceName("step_counter_name");
-                case HealthModuleType.Module3: return "Module3";
+                case HealthModuleType.Sintrom: return GetStringFromResourceName("sintrom_name");
                 default: return "Error";
             }
             
@@ -30,7 +37,7 @@ namespace TFG.Model {
             switch (module) {
                 case HealthModuleType.ColorBlindnessTest: return "Module1 Description";
                 case HealthModuleType.StepCounter: return "Module2 Description";
-                case HealthModuleType.Module3: return "Module3 Description";
+                case HealthModuleType.Sintrom: return "Module3 Description";
                 default: return "Error";
             }
         }
@@ -39,7 +46,7 @@ namespace TFG.Model {
             switch (module) {
                 case HealthModuleType.ColorBlindnessTest: return "purple";
                 case HealthModuleType.StepCounter: return "blue";
-                case HealthModuleType.Module3: return "orange";
+                case HealthModuleType.Sintrom: return "orange";
                 default: return "purple";
             }
 
@@ -52,8 +59,8 @@ namespace TFG.Model {
             if (HealthModuleType.StepCounter.HealthModuleName().Equals(moduleName)) {
                 return HealthModuleColor(HealthModuleType.StepCounter);
             }
-            if (HealthModuleType.Module3.HealthModuleName().Equals(moduleName)) {
-                return HealthModuleColor(HealthModuleType.Module3);
+            if (HealthModuleType.Sintrom.HealthModuleName().Equals(moduleName)) {
+                return HealthModuleColor(HealthModuleType.Sintrom);
             } 
             return null;
         }
@@ -67,6 +74,15 @@ namespace TFG.Model {
 
 #endif
             return null;
+        }
+
+        public static NotificationItem GetNotificationItem(this HealthModuleType module) {
+            switch (module) {
+                case HealthModuleType.ColorBlindnessTest: return null;
+                case HealthModuleType.StepCounter: return null;
+                case HealthModuleType.Sintrom: return SintromLogic.Instance().GetNotificationitem(); 
+                default: return null;
+            }
         }
     }
 }

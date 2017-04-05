@@ -3,6 +3,7 @@
 	<string name="app_name">TFG.Droid</string>
   <string name="add">Add</string>
   <string name="remove">Remove</string>
+  <string name="accept">Aceptar</string>
 
   <!-- Color Blindness Test Strings -->
   <string name="color_blindness_test_name">Test de Daltonismo</string>
@@ -46,5 +47,8 @@
 
   <string name="weekday">Día</string>
   <string name="month">Mes</string>
+
+  <!-- Sintrom Strings -->
+  <string name="sintrom_name">Sintrom</string>
 
 </resources>

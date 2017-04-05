@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using TFG.DataBase;
 using TFG.Droid.Custom_Views;
 using TFG.Droid.Interfaces;
 using Fragment = Android.Support.V4.App.Fragment;
