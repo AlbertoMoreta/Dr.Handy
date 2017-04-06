@@ -11,11 +11,12 @@ namespace TFG.Droid{
     public static class HealthModulesInfoExtension {
 
         public static IHealthFragment GetHealthCardFragmentFromHealthModuleName(string moduleName) {
+            if (HealthModuleType.StepCounter.HealthModuleName().Equals(moduleName)) { return new StepCounterCardFragment(); }
             return null;
         }
 
         public static IHealthFragment GetHeaderFragmentFromHealthModuleName(string moduleName) { 
-	    if (HealthModuleType.StepCounter.HealthModuleName().Equals(moduleName)) { return new StepCounterHeaderFragment(); }
+	        if (HealthModuleType.StepCounter.HealthModuleName().Equals(moduleName)) { return new StepCounterHeaderFragment(); }
             return null;
         }
 

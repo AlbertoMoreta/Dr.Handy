@@ -124,6 +124,7 @@
     <Compile Include="Custom Views\ModuleViewCell.cs" />
     <Compile Include="Extensions\HealthModulesInfoExtension.cs" />
     <Compile Include="Fragments\StepCounter\StepCounterBodyFragment.cs" />
+    <Compile Include="Fragments\StepCounter\StepCounterCardFragment.cs" />
     <Compile Include="Fragments\StepCounter\StepCounterChartFragment.cs" />
     <Compile Include="Fragments\StepCounter\StepCounterHeaderFragment.cs" />
     <Compile Include="Fragments\StepCounter\StepCounterQuickResultsFragment.cs" />
@@ -168,6 +169,9 @@
     <AndroidResource Include="Resources\layout\fragment_stepcounter_body_quick_results.axml" />
     <AndroidResource Include="Resources\layout\fragment_stepcounter_header.axml" />
     <AndroidResource Include="Resources\layout\fragment_stepcounter_body_chart_results.axml" />
+    <AndroidResource Include="Resources\layout\fragment_stepcounter_card.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\module_icon.xml" />
