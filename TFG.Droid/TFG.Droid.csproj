@@ -136,6 +136,7 @@
     <Compile Include="Fragments\Sintrom\SintromResultsFragment.cs" />
     <Compile Include="Fragments\Sintrom\SintromTreatmentFragment.cs" />
     <Compile Include="Fragments\StepCounter\StepCounterBodyFragment.cs" />
+    <Compile Include="Fragments\StepCounter\StepCounterCardFragment.cs" />
     <Compile Include="Fragments\StepCounter\StepCounterChartFragment.cs" />
     <Compile Include="Fragments\StepCounter\StepCounterHeaderFragment.cs" />
     <Compile Include="Fragments\StepCounter\StepCounterQuickResultsFragment.cs" />
@@ -197,6 +198,7 @@
     <AndroidResource Include="Resources\layout\fragment_stepcounter_body_chart_results.axml" />
     <AndroidResource Include="Resources\layout\fragment_stepcounter_body_quick_results.axml" />
     <AndroidResource Include="Resources\layout\fragment_stepcounter_header.axml" />
+    <AndroidResource Include="Resources\layout\fragment_stepcounter_card.axml" />
     <AndroidResource Include="Resources\layout\result_row.axml" />
   </ItemGroup>
   <ItemGroup>
