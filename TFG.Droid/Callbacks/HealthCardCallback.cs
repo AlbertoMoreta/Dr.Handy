@@ -5,6 +5,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -41,6 +42,21 @@ namespace TFG.Droid.Callbacks {
 
         public override void OnSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
             //Do nothing on swipe
+        }
+
+        public override void OnChildDraw(Canvas cValue, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState,
+            bool isCurrentlyActive) {
+
+            if (actionState == ItemTouchHelper.ActionStateDrag && isCurrentlyActive) {
+                viewHolder.ItemView.Alpha = 0.7f;
+            }
+
+            base.OnChildDraw(cValue, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+        }
+
+        public override void ClearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+             viewHolder.ItemView.Alpha = 1.0f;
+            base.ClearView(recyclerView, viewHolder);
         }
 
         //Start drag event from long press

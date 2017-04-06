@@ -1,50 +1,56 @@
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
+using System; 
+using System.Globalization; 
 
-using Android.App;
-using Android.Content;
-using Android.Content.PM;
-using Android.OS;
-using Android.Runtime;
-using Android.Support.V4.View;
-using Android.Support.V7.App;
-using Android.Util;
-using Android.Views;
-using Android.Widget;
-using com.refractored;
+using Android.App; 
+using Android.Content.PM; 
+using Android.OS; 
+using Android.Support.V4.View; 
 using TFG.Droid.Adapters;
 using TFG.Droid.Custom_Views;
 using TFG.Droid.Fragments.Sintrom;
-using TFG.Model;
-using DayOfWeek = Android.Text.Format.DayOfWeek;
+using TFG.Model; 
 
 namespace TFG.Droid.Activities.Sintrom {
     
-    [Activity(Label = "SintromConfigureTreatmentFragment", LaunchMode = LaunchMode.SingleTask)]
-    public class SintromConfigureTreatmentFragment : AppCompatActivity {
+    [Activity(Label = "SintromConfigureTreatment", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Landscape)]
+    public class SintromConfigureTreatment : BaseActivity {
+
+        private readonly int CENTER_POS = 1;
+        private HealthModulePagerAdapter _adapter;
+        private ViewPager _pager;
+        private CustomTextView _currentDate;
+
+        public SintromCalendarFragment CurrentMonth { get; private set; }
+        public SintromCalendarFragment PreviousMonth { get; private set; }
+        public SintromCalendarFragment NextMonth { get; private set; }
          
         protected override void OnCreate(Bundle savedInstanceState)  {
-            base.OnCreate(savedInstanceState); 
+            base.OnCreate(savedInstanceState);  
 
-            var theme = HealthModulesInfoExtension.GetHealthModuleThemeFromHealthModuleName(this, HealthModuleType.Sintrom.HealthModuleName());
+            var moduleName = HealthModuleType.Sintrom.HealthModuleName();
+            var theme = HealthModulesInfoExtension.GetHealthModuleThemeFromHealthModuleName(this, moduleName);
             if (theme != -1) { SetTheme(theme);} 
+
+            Window.DecorView.Background =
+                HealthModulesInfoExtension.GetHealthModuleBackgroundFromHealthModuleName(this, moduleName);
+  
 
             SetContentView (Resource.Layout.sintrom_configure_treatment);
 
-            var pager = FindViewById<ViewPager>(Resource.Id.pager);
-            var adapter = new HealthModulePagerAdapter(SupportFragmentManager);  
+            _currentDate = FindViewById<CustomTextView>(Resource.Id.current_date);
+            _currentDate.Text = DateTime.Now.ToString("MMMM yyyy");
 
-             var treatmentTitle = GetString(Resources.GetIdentifier("sintrom_treatment",
-                "string", PackageName));
-            adapter.AddItem(new SintromCalendarFragment(DateTime.Now), treatmentTitle);
+            _pager = FindViewById<ViewPager>(Resource.Id.pager);
+            _pager.PageSelected += ScrollChange;
+            _adapter = new HealthModulePagerAdapter(SupportFragmentManager);  
 
-            pager.Adapter = adapter;
+            _adapter.AddItem(PreviousMonth = new SintromCalendarFragment(DateTime.Now.AddMonths(-1)));
+            _adapter.AddItem(CurrentMonth = new SintromCalendarFragment(DateTime.Now));
+            _adapter.AddItem(NextMonth = new SintromCalendarFragment(DateTime.Now.AddMonths(1))); 
+            _adapter.NotifyDataSetChanged();
 
-            var tabs = FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
-            tabs.SetViewPager(pager);
+            _pager.Adapter = _adapter;
+            _pager.SetCurrentItem(CENTER_POS, false); 
 
             InitDays();
         }
@@ -59,6 +65,25 @@ namespace TFG.Droid.Activities.Sintrom {
              
 
         }
-        
+
+        private void ScrollChange(object sender, ViewPager.PageSelectedEventArgs e) {
+            if (CENTER_POS > e.Position) {
+                //Left Scroll
+                PreviousMonth.SetPreviousMonth();
+                CurrentMonth.SetPreviousMonth();
+                NextMonth.SetPreviousMonth();  
+            } else if(CENTER_POS < e.Position) {
+                //Right Scroll
+                PreviousMonth.SetNextMonth();
+                CurrentMonth.SetNextMonth();
+                NextMonth.SetNextMonth(); 
+            }
+            _adapter.NotifyDataSetChanged();
+           
+            _pager.SetCurrentItem(CENTER_POS, false);
+
+            
+             _currentDate.Text = CurrentMonth.Date.ToString("MMMM yyyy");
+        }
     }
 }

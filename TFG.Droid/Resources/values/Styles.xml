@@ -32,4 +32,13 @@
     <item name="colorAccent">@color/light_red</item>
   </style>
 
+  <style name="ButtonTheme" parent="Widget.AppCompat.Button.Colored">
+    <item name="colorButtonNormal">?colorPrimary</item>
+    <item name="android:textColor">@android:color/white</item>
+  </style>
+
+  <style name="EditTextWhite"> 
+    <item name="colorAccent">@android:color/white</item>
+  </style>
+
 </resources>

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using TFG.Logic;
 
 namespace TFG.Model {
 
@@ -10,11 +12,16 @@ namespace TFG.Model {
 
     public static class HealthModulesInfo {
 
-        public static List<HealthModuleType> GetHealthModules { get; private set; } = new List<HealthModuleType> {
-            HealthModuleType.ColorBlindnessTest,
-            HealthModuleType.StepCounter,
-            HealthModuleType.Sintrom
-        };
+        public static List<HealthModuleType> GetHealthModules { get; private set; } =
+            Enum.GetValues(typeof(HealthModuleType)).Cast<HealthModuleType>().ToList();
+
+        public static int HealthModuleId(this HealthModuleType module) {
+            return (int) module;
+        }
+
+        public static HealthModuleType GetHealthModuleTypeById(int id) {
+            return (HealthModuleType) (id - 1);
+        }
 
         public static string HealthModuleName(this HealthModuleType module) {
             switch (module) {
@@ -67,6 +74,15 @@ namespace TFG.Model {
 
 #endif
             return null;
+        }
+
+        public static NotificationItem GetNotificationItem(this HealthModuleType module) {
+            switch (module) {
+                case HealthModuleType.ColorBlindnessTest: return null;
+                case HealthModuleType.StepCounter: return null;
+                case HealthModuleType.Sintrom: return SintromLogic.Instance().GetNotificationitem(); 
+                default: return null;
+            }
         }
     }
 }

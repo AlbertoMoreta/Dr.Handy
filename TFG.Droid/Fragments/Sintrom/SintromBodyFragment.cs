@@ -31,6 +31,9 @@ namespace TFG.Droid.Fragments.Sintrom {
             var treatmentTitle = Activity.GetString(Activity.Resources.GetIdentifier("sintrom_treatment",
                 "string", Activity.PackageName));
             adapter.AddItem(new SintromTreatmentFragment(), treatmentTitle);
+            var inrTitle = Activity.GetString(Activity.Resources.GetIdentifier("sintrom_inr",
+                "string", Activity.PackageName));
+            adapter.AddItem(new SintromResultsFragment(), inrTitle);
 
             pager.Adapter = adapter;
 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"> 
+    <TFG.Droid.Custom_Views.CustomTextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_xxxlarge"
+        android:text="@string/sintrom_control"/> 
+
+    <EditText
+        android:id="@+id/input_inr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:hint="@string/sintrom_inr"
+        android:maxLength="4"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
+        android:theme="@style/EditTextWhite"
+        android:textColorHint="@android:color/white"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_xxlarge"
+        android:inputType="numberDecimal" />
+
+ 
+</LinearLayout> 

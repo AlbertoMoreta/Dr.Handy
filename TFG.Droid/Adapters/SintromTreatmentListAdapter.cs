@@ -13,6 +13,7 @@ using Android.Widget;
 using Android.Support.V7.Widget;
 using TFG.Droid.Custom_Views;
 using Java.Util;
+using TFG.DataBase;
 using TFG.Droid.Listeners;
 using TFG.Model;
 
@@ -24,20 +25,20 @@ namespace TFG.Droid.Adapters {
             
             public CustomTextView Date { get; set; }
             public ImageView Icon { get; set; }
-            public CustomTextView Fraction { get; set; }
+            public CustomTextView Info { get; set; }
 
             public ViewHolder(View itemView) : base(itemView) {
                 Date = itemView.FindViewById<CustomTextView>(Resource.Id.date);
                 Icon = itemView.FindViewById<ImageView>(Resource.Id.icon);
-                Fraction = itemView.FindViewById<CustomTextView>(Resource.Id.fraction);
+                Info = itemView.FindViewById<CustomTextView>(Resource.Id.info);
             }
         }
 
         private Context _context;
-        private List<SintromTreatmentItem> _items = new List<SintromTreatmentItem>(); 
+        private List<SintromItem> _items = new List<SintromItem>(); 
 
 
-        public SintromTreatmentListAdapter(Context context, List<SintromTreatmentItem> items) {
+        public SintromTreatmentListAdapter(Context context, List<SintromItem> items) {
             _context = context;
             _items = items;
         }
@@ -56,12 +57,28 @@ namespace TFG.Droid.Adapters {
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             var viewHolder = holder as ViewHolder;
-            var item = _items.ElementAt(position);
-            viewHolder.Date.Text = item.Date.ToString("ddd \n dd MMM");
-            viewHolder.Icon.SetImageDrawable(ContextCompat.GetDrawable(_context,
-                                                _context.Resources.GetIdentifier(item.ImageName,
-                                                "drawable", _context.PackageName))); 
-            viewHolder.Fraction.Text = item.Fraction;
+            var sintromItem = _items.ElementAt(position);
+
+            viewHolder.Date.Text = sintromItem.Date.ToString("ddd \n dd MMM"); 
+
+            if (sintromItem is SintromINRItem) {
+                var inrItem = (SintromINRItem) sintromItem; 
+                if (inrItem.Control) {
+                    viewHolder.Icon.Visibility = ViewStates.Gone;
+
+                    viewHolder.Info.Text = _context.Resources.GetString(Resource.String.sintrom_control);
+                }
+            } else {
+                var treatmentItem = ((SintromTreatmentItem) sintromItem); 
+                viewHolder.Icon.Visibility = ViewStates.Visible;
+                viewHolder.Icon.SetImageDrawable(treatmentItem.ImageName.Equals("")
+                            ? null
+                            : ContextCompat.GetDrawable(_context,
+                                _context.Resources.GetIdentifier(treatmentItem.ImageName,
+                                    "drawable", _context.PackageName)));
+
+                viewHolder.Info.Text = treatmentItem.Fraction;
+            }   
         }  
 
     }

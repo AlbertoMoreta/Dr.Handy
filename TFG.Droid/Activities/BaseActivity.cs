@@ -21,11 +21,14 @@ namespace TFG.Droid {
         public CustomTextView ToolbarTitle { get; set; }
 
         protected override void OnCreate(Bundle savedInstanceState) {
-            base.OnCreate(savedInstanceState);  
+            base.OnCreate(savedInstanceState);
+
+            var theme = Resources.GetIdentifier("AppTheme_red", "style", PackageName);
+            if (theme != -1) { SetTheme(theme); }
         }
 
 
-        protected void SetUpToolBar() { 
+        protected void SetUpToolBar(bool isTransparent = true) { 
             var toolBar = ToolBar = FindViewById<Toolbar>(Resource.Id.toolbar);
             
             if (toolBar != null) {  
@@ -33,6 +36,7 @@ namespace TFG.Droid {
                 SupportActionBar.SetDisplayShowTitleEnabled(false);
                 ToolbarTitle = toolBar.FindViewById<CustomTextView>(Resource.Id.title);
                 ToolbarTitle.Text = Title;
+                if (isTransparent) { toolBar.Background = null; }
 
             }
         }

@@ -16,6 +16,7 @@ using Android.Support.V7.Widget;
 using TFG.Droid.Callbacks;
 using Android.Support.V7.Widget.Helper;
 using Android.Util;
+using TFG.DataBase;
 using TFG.Droid.Activities;
 using TFG.Droid.Listeners;
 using TFG.Model;
@@ -29,28 +30,20 @@ namespace TFG.Droid{
 	    private RecyclerView _recyclerView;
 
 		protected override void OnCreate (Bundle bundle){
-			base.OnCreate (bundle);
+			base.OnCreate (bundle); 
 
-
-            var theme = Resources.GetIdentifier("AppTheme_purple", "style", PackageName);
-            if (theme != -1) { SetTheme(theme); }
-
-            SetContentView (Resource.Layout.Main);
-
-            SetUpToolBar();  
-
+            SetContentView (Resource.Layout.Main); 
 
             //DBHelper.Instance.DropTable(DBHelper.TABLE_NAME);
             DBHelper.Instance.Init(); 
 
             List<HealthCard> cards = GetCardList();
 
-            _recyclerView = FindViewById<RecyclerView>(Resource.Id.recycler_view);
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-            linearLayoutManager.Orientation = (int) Orientation.Vertical;
-            _recyclerView.SetLayoutManager(linearLayoutManager);
+            _recyclerView = FindViewById<RecyclerView>(Resource.Id.recycler_view); 
+            _recyclerView.SetLayoutManager(new GridLayoutManager(this, 2));
 
-            _adapter = new HealthCardAdapter(cards);
+
+            _adapter = new HealthCardAdapter(this, cards);
             _adapter.SetHealthCardClickListener(this);
             _recyclerView.SetAdapter(_adapter);
 
@@ -79,11 +72,12 @@ namespace TFG.Droid{
 
             List<HealthModule> modules = DBHelper.Instance.GetModules();
             foreach(HealthModule module in modules) { 
-                cards.Add(new HealthCard(this, module) { Name = module.Name });
+                cards.Add(new HealthCard(this, module) {
+                    Name = module.Name,
+                    Icon = HealthModulesInfo.GetHealthModuleTypeById(module.Id)
+                                .GetHealthModuleIconFromHealthModuleType(this)
+                });
             }
-            cards.Add(new HealthCard(this, new HealthModule()) { Name = "asd" });
-            cards.Add(new HealthCard(this, new HealthModule()) { Name = "asd" });
-            cards.Add(new HealthCard(this, new HealthModule()) { Name = "asd"});
             return cards;
         }
 
