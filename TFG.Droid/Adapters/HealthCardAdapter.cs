@@ -23,21 +23,19 @@ namespace TFG.Droid.Adapters {
         public class CardViewHolder : RecyclerView.ViewHolder {
 
             //Fragment for the Module
-            public CustomTextView ModuleName { get; set; }
-            public ImageView ModuleImage { get; set; }
+            public RelativeLayout ModuleLayout { get; set; }
+            public LinearLayout FragmentContainer { get; set; }
             public HealthCard HealthCard { get; set; }
 
             public CardViewHolder(View itemView) : base(itemView) {
-                ModuleName = itemView.FindViewById<CustomTextView>(Resource.Id.module_name);
-                ModuleImage = itemView.FindViewById<ImageView>(Resource.Id.module_icon);
+                ModuleLayout = itemView.FindViewById<RelativeLayout>(Resource.Id.module_layout);
+                FragmentContainer = itemView.FindViewById<LinearLayout>(Resource.Id.fragments_container);
             }
         }
 
         private Context _context;
         private List<HealthCard> _cards = new List<HealthCard>();
-        private HealthCardClickListener _listener;
-        private RelativeLayout _moduleLayout;
-        private LinearLayout _fragmentContainer;
+        private HealthCardClickListener _listener; 
 
 
         public HealthCardAdapter(Context context, List<HealthCard> cards) {
@@ -53,10 +51,7 @@ namespace TFG.Droid.Adapters {
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
             var itemView = LayoutInflater.From(parent.Context).
-                            Inflate(Resource.Layout.health_card, parent, false);
-
-            _moduleLayout = itemView.FindViewById<RelativeLayout>(Resource.Id.module_layout);
-            _fragmentContainer = itemView.FindViewById<LinearLayout>(Resource.Id.fragments_container);
+                            Inflate(Resource.Layout.health_card, parent, false); 
 
             var viewHolder = new CardViewHolder(itemView);
 
@@ -76,18 +71,25 @@ namespace TFG.Droid.Adapters {
 
             var fragment = HealthModulesInfoExtension.GetHealthCardFragmentFromHealthModuleName(item.Name);
             var backgroundImage = HealthModulesInfoExtension.GetHealthModuleHeaderFromHealthModuleName(_context, item.Name);
-            if (fragment != null) {
-                _fragmentContainer.Visibility = ViewStates.Visible;
-                _moduleLayout.Visibility = ViewStates.Gone;
-                fragmentTransaction.Replace(Resource.Id.fragments_container, fragment as Fragment);
+            if (fragment != null) {     //If the module has a custom card fragment
+                viewHolder.FragmentContainer.Visibility = ViewStates.Visible;
+                viewHolder.ModuleLayout.Visibility = ViewStates.Gone;
+                var oldFragment = fragmentManager.FindFragmentById(viewHolder.FragmentContainer.Id);
+                if (oldFragment != null) {
+                    fragmentTransaction.Remove(oldFragment);    //Remove previous fragment if exists
+                }
+                viewHolder.FragmentContainer.Id = (int)SystemClock.CurrentThreadTimeMillis();   //Give unique ID
+                fragmentTransaction.Replace(viewHolder.FragmentContainer.Id, fragment as Fragment); 
                 fragmentTransaction.Commit();
-                _fragmentContainer.Background = backgroundImage;
-            } else {
-                _moduleLayout.Visibility = ViewStates.Visible;
-                _fragmentContainer.Visibility = ViewStates.Gone;
-                viewHolder.ModuleName.Text = item.Name;
-                viewHolder.ModuleImage.Background = item.Icon;
-                _moduleLayout.Background = backgroundImage;
+                viewHolder.FragmentContainer.Background = backgroundImage;
+            } else {    //Show default fragment
+                viewHolder.ModuleLayout.Visibility = ViewStates.Visible;
+                viewHolder.FragmentContainer.Visibility = ViewStates.Gone;
+                var moduleName = viewHolder.ModuleLayout.FindViewById<CustomTextView>(Resource.Id.module_name);
+                var moduleImage = viewHolder.ModuleLayout.FindViewById<ImageView>(Resource.Id.module_icon);
+                moduleName.Text = item.Name;
+                moduleImage.Background = item.Icon;
+                viewHolder.ModuleLayout.Background = backgroundImage;
             }
   
 
