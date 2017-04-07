@@ -18,7 +18,7 @@ using TFG.Droid.Custom_Views;
 using AnimationUtils = TFG.Droid.Utils.AnimationUtils;
 
 namespace TFG.Droid {
-    [Activity(Label = "ModuleListActivity", Theme = "@style/AppTheme", LaunchMode = LaunchMode.SingleTask)]
+    [Activity(Label = "ModuleListActivity", Theme = "@style/AppTheme", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
     public class ModuleListActivity : BaseActivity {
 
         private ListView _modulesList; 

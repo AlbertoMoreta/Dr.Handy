@@ -17,7 +17,7 @@ using TFG.Droid.Interfaces;
 using TFG.Model;
 
 namespace TFG.Droid.Activities {
-    [Activity(Label = "ModuleDetailActivity", LaunchMode = LaunchMode.SingleTask)]
+    [Activity(Label = "ModuleDetailActivity", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
     public class ModuleDetailActivity : BaseActivity {
 
         public string CurrentHealthModule { get; private set; }
