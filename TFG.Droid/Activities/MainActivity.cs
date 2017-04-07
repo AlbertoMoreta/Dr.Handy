@@ -23,7 +23,7 @@ using TFG.Model;
 using FloatingActionButton = com.refractored.fab.FloatingActionButton;
 
 namespace TFG.Droid{
-	[Activity (Label = "MainActivity", MainLauncher = true, Icon = "@drawable/icon", Theme="@style/AppTheme", LaunchMode = LaunchMode.SingleTask)]
+	[Activity (Label = "MainActivity", MainLauncher = true, Icon = "@drawable/icon", Theme="@style/AppTheme", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
 	public class MainActivity : BaseActivity, HealthCardClickListener {
 
         private HealthCardAdapter _adapter;
