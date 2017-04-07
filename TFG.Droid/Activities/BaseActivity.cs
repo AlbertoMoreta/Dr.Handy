@@ -5,6 +5,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -14,7 +15,7 @@ using TFG.Droid.Custom_Views;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace TFG.Droid {
-    [Activity(Label = "BaseActivity", Theme ="@style/AppTheme")]
+    [Activity(Label = "BaseActivity", Theme ="@style/AppTheme", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
     public class BaseActivity : AppCompatActivity{
 
         public Toolbar ToolBar { get; set; }
