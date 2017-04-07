@@ -242,6 +242,7 @@
     <AndroidResource Include="Resources\values\Styles.xml" />
     <AndroidResource Include="Resources\values-v21\Dimens.xml" />
     <AndroidResource Include="Resources\values-v21\Styles.xml" />
+    <AndroidResource Include="Resources\values-xhdpi\Dimens.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\AboutAssets.txt" />
@@ -259,6 +260,9 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\colorblindnesstest_icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\values-xxhdpi\Dimens.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\drawable\background_selector.xml" />
   </ItemGroup>
   <ItemGroup>
