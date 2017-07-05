@@ -12,7 +12,8 @@ namespace TFG.DataBase {
 
         public static readonly string TABLE_NAME = "HEALTH_MODULE";
         private static readonly string COL_KEY_ID = "Id";
-        private static readonly string COL_NAME = "Name";
+        private static readonly string COL_NAME = "Name"; 
+        private static readonly string COL_DATE = "Date";
         private static readonly string COL_DESCRIPTION = "Description";
         private static readonly string COL_POSITION = "Position";
         private static readonly string COL_VISIBLE = "Visible";
