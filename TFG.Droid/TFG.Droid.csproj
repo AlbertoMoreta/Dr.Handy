@@ -130,7 +130,6 @@
     <Compile Include="Receivers\NotificationReceiver.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Utils\AnimationUtils.cs" />
-    <Compile Include="Utils\ChartUtils.cs" />
     <Compile Include="Utils\LogoImageBehaviour.cs" />
     <Compile Include="Utils\NotificationsUtils.cs" />
     <Compile Include="Utils\SQLite.cs" />
@@ -204,15 +203,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\title_logo_1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\stepcounter_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\sintrom_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\colorblindnesstest_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values-xxhdpi\Dimens.xml" />

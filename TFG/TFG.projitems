@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
@@ -10,18 +10,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)DataBase\DBHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)DataBase\DBHelper.StepCounter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)DataBase\DBHelper.Sintrom.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Logic\ColorBlindnessLogic.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Logic\SintromLogic.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Logic\StepCounterLogic.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\ColorBlindnessQuestion.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\HealthModule.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\HealthModulesInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\NotificationItem.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\SintromTreatmentItem.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\SintromINRItem.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\SintromItem.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\StepCounterItem.cs" />
   </ItemGroup>
 </Project>
