@@ -114,15 +114,26 @@
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\ModuleDetailActivity.cs" />
     <Compile Include="Activities\ModuleListActivity.cs" />
+    <Compile Include="Activities\Sintrom\SintromConfigureTreatment.cs" />
     <Compile Include="Adapters\HealthCardAdapter.cs" />
     <Compile Include="Adapters\HealthModulePagerAdapter.cs" />
     <Compile Include="Adapters\HealthModulesListAdapter.cs" />
+    <Compile Include="Adapters\SintromCalendarAdapter.cs" />
+    <Compile Include="Adapters\SintromTreatmentListAdapter.cs" />
     <Compile Include="Callbacks\HealthCardCallback.cs" />
     <Compile Include="Custom Views\CardViewBarChart.cs" />
     <Compile Include="Custom Views\CustomTextView.cs" />
     <Compile Include="Custom Views\HealthCard.cs" />
     <Compile Include="Custom Views\ModuleViewCell.cs" />
+    <Compile Include="Custom Views\SintromCalendar.cs" />
+    <Compile Include="Custom Views\SintromConfigureTreatmentDialog.cs" />
     <Compile Include="Extensions\HealthModulesInfoExtension.cs" />
+    <Compile Include="Fragments\Sintrom\SintromBodyFragment.cs" />
+    <Compile Include="Fragments\Sintrom\SintromCalendarFragment.cs" />
+    <Compile Include="Fragments\Sintrom\SintromCardFragment.cs" />
+    <Compile Include="Fragments\Sintrom\SintromHeaderFragment.cs" />
+    <Compile Include="Fragments\Sintrom\SintromResultsFragment.cs" />
+    <Compile Include="Fragments\Sintrom\SintromTreatmentFragment.cs" />
     <Compile Include="Interfaces\IHealthFragment.cs" />
     <Compile Include="Interfaces\IHealthFragmentTabItem.cs" />
     <Compile Include="Listeners\HealthCardClickListener.cs" />
@@ -130,9 +141,9 @@
     <Compile Include="Receivers\NotificationReceiver.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Utils\AnimationUtils.cs" />
-    <Compile Include="Utils\ChartUtils.cs" />
     <Compile Include="Utils\LogoImageBehaviour.cs" />
     <Compile Include="Utils\NotificationsUtils.cs" />
+    <Compile Include="Utils\SintromUtils.cs" />
     <Compile Include="Utils\SQLite.cs" />
     <Compile Include="Utils\SQLiteAsync.cs" />
   </ItemGroup>
@@ -155,6 +166,17 @@
     <AndroidResource Include="Resources\layout\toolbar.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_sintrom_header_control.axml" />
+    <AndroidResource Include="Resources\layout\fragment_sintrom_results.axml" />
+    <AndroidResource Include="Resources\layout\fragment_sintrom_treatment.axml" />
+    <AndroidResource Include="Resources\layout\sintrom_calendar.axml" />
+    <AndroidResource Include="Resources\layout\sintrom_calendar_item.axml" />
+    <AndroidResource Include="Resources\layout\sintrom_configuration_dialog.axml" />
+    <AndroidResource Include="Resources\layout\sintrom_configure_treatment.axml" />
+    <AndroidResource Include="Resources\layout\sintrom_empty_treatment.axml" />
+    <AndroidResource Include="Resources\layout\sintrom_treatment_row.axml" />
+    <AndroidResource Include="Resources\layout\fragment_sintrom_card.axml" />
+    <AndroidResource Include="Resources\layout\fragment_sintrom_header.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\module_icon.xml" />
@@ -206,16 +228,28 @@
     <AndroidResource Include="Resources\drawable\title_logo_1.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\stepcounter_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\sintrom_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\colorblindnesstest_icon.png" />
+    <AndroidResource Include="Resources\values-xxhdpi\Dimens.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\values-xxhdpi\Dimens.xml" />
+    <AndroidResource Include="Resources\drawable\background_selector.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\sintrom_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\sintrom_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\sintrom_1_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\sintrom_1_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\sintrom_3_4.png" />
   </ItemGroup>
   <Import Project="..\TFG\TFG.projitems" Label="Shared" Condition="Exists('..\TFG\TFG.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
