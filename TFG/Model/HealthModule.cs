@@ -13,8 +13,8 @@ using Android.Support.V4.Content;
 
 namespace TFG.Model {
     public partial class HealthModule  {
-
-        public int Id { get; set; }
+        [JsonProperty(Required = Newtonsoft.Json.Required.Always)]
+        public string ShortName { get; set; }
 
         [JsonProperty(Required = Newtonsoft.Json.Required.Always)]
         [JsonConverter(typeof(CurrentLanguageConverter))]
