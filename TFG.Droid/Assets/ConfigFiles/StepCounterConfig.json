@@ -1,0 +1,22 @@
+{
+   "shortname" : "step_counter",
+   "name":[
+      {
+         "en":"Step Counter"
+      },
+      {
+         "es":"Podómetro"
+      }
+   ],
+   "description":[
+      {
+         "en":"Step Counter Description"
+      },
+      {
+         "es":"Descripción de Podómetro"
+      }
+   ],
+   "color":"blue",
+   "loginRequired":false,
+   "utils-class":"StepCounterUtils"
+}

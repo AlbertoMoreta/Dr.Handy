@@ -9,7 +9,6 @@ namespace TFG.DataBase {
 
         //Step Counter Health Module
         public static readonly string STEPCOUNTER_TABLE = "STEPCOUNTER";
-        public static readonly string COL_DATE = "Date";
         public static readonly string COL_STEPS = "Steps";
         public static readonly string COL_CALORIES = "Calories";
         public static readonly string COL_DISTANCE = "Distance";

@@ -6,13 +6,16 @@ using System.Text;
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
+using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using TFG.Droid.Fragments.StepCounter;
+using TFG.Droid.Interfaces;
 
 namespace TFG.Droid.Utils {
-    class StepCounterUtils {
+    class StepCounterUtils : HealthModuleUtils {
 
         public static bool IsKitKatWithStepCounter(PackageManager pm) {
 
@@ -24,6 +27,22 @@ namespace TFG.Droid.Utils {
             return currentApiVersion >= 19 
                 && pm.HasSystemFeature(PackageManager.FeatureSensorStepDetector);
 
+        }
+
+        public override Drawable GetHealthModuleIcon(Context context) {
+            return GetDrawableFromResources(context, "stepcounter_icon");
+        } 
+
+        public override IHealthFragment GetHeaderFragment() {
+            return new StepCounterHeaderFragment();
+        }
+
+        public override IHealthFragment GetBodyFragment() {
+            return new StepCounterBodyFragment();
+        }
+
+        public override IHealthFragment GetHealthCardFragment() {
+            return new StepCounterCardFragment();
         }
     }
 }
