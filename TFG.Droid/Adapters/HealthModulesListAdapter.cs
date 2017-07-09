@@ -12,6 +12,7 @@ using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V4.Content;
+using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using com.refractored.fab;
@@ -22,10 +23,10 @@ using TFG.Model;
 using Object = Java.Lang.Object;
 
 namespace TFG.Droid.Adapters {
-    class HealthModulesListAdapter : BaseAdapter {  
+    class HealthModulesListAdapter : RecyclerView.Adapter {  
 
         //ViewHolder For The Health Modules
-        private class ViewHolder : Java.Lang.Object {
+        private class ViewHolder : RecyclerView.ViewHolder {
             public RelativeLayout Header { get; set; }
             public TextView ModuleName { get; set; }
             public TextView ModuleDescriptionShort { get; set; }
@@ -35,117 +36,115 @@ namespace TFG.Droid.Adapters {
             public FloatingActionButton AddButton { get; set; }
             public View RevealView { get; set; }
             public View Background { get; set; }
+
+            public ViewHolder(View itemView) : base(itemView) {
+                Header = itemView.FindViewById<RelativeLayout>(Resource.Id.header);
+                ModuleName = itemView.FindViewById<TextView>(Resource.Id.module_name);
+                ModuleDescriptionShort = itemView.FindViewById<TextView>(Resource.Id.module_description_short);
+                ModuleDescriptionLong = itemView.FindViewById<CustomTextView>(Resource.Id.module_description_long);
+                ModuleIcon = itemView.FindViewById<ImageView>(Resource.Id.module_icon);
+                AddButton = itemView.FindViewById<FloatingActionButton>(Resource.Id.module_addbutton);
+                RevealView = itemView.FindViewById<View>(Resource.Id.reveal);
+                Background = itemView.FindViewById<View>(Resource.Id.background);
+            }
         } 
 
 
         private Context _context;
         private LayoutInflater _inflater;
-        private List<HealthModuleType> _modules = HealthModulesInfo.GetHealthModules;
+        private List<HealthModule> _modules;
         private List<ModuleViewCell> _viewCells = new List<ModuleViewCell>();
         private bool Enabled { get; set; } = true;
 
-        public HealthModulesListAdapter(Context context) {
+        public HealthModulesListAdapter(Context context, List<HealthModule> healthModules) {
             _context = context;
             _inflater = (LayoutInflater) context.GetSystemService(Context.LayoutInflaterService);
+            _modules = healthModules;
         } 
          
 
-        public void AddModule(HealthModuleType module) {
+        public void AddModule(HealthModule module) {
             _modules.Add(module);
         }
 
-        public void SetModules(List<HealthModuleType> modules) {
+        public void SetModules(List<HealthModule> modules) {
             _modules = modules;
-        } 
-
-        public override Object GetItem(int position) {
-            return _viewCells.ElementAt(position);
         }
 
-        public override long GetItemId(int position) {
-            return position;
+        public override int ItemCount {
+            get {
+                return _modules.Count;
+            }
         }
 
-        public override int Count { get { return _modules.Count;  } }
-        public override bool IsEnabled(int position) {
+        public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
+            var itemView = LayoutInflater.From(parent.Context).
+                            Inflate(Resource.Layout.module_viewcell, parent, false);
+
+            var viewHolder = new ViewHolder(itemView);
+
+            viewHolder.AddButton.Click += delegate { OnAddButtonClick(viewHolder); };
+            viewHolder.ItemView.Click += delegate {
+                if (Enabled) {
+                    if (ExpandedView != null) {
+                        if (ExpandedView != viewHolder) {
+                            OnHeaderClick(ExpandedView); //Collapse previous HealthModule
+                            ExpandedView = viewHolder;
+                        } else {
+                            ExpandedView = null;
+                        }
+                    } else {
+                        ExpandedView = viewHolder;
+                    }
+
+                    OnHeaderClick(viewHolder); //Expand selected HealthModule
+                }
+            };
+
+            return viewHolder;
+        }
+
+
+        public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+            HealthModulesListAdapter.ViewHolder viewHolder = holder as HealthModulesListAdapter.ViewHolder;
+            var item = _modules[position];
+
+            var moduleColor = ContextCompat.GetColorStateList(_context, _context.Resources.GetIdentifier(item.Color, "color", _context.PackageName));
+
+            if (viewHolder != null) {
+                var drawable = (LayerDrawable) viewHolder.Background.Background;
+                var background = (GradientDrawable) drawable.FindDrawableByLayerId(Resource.Id.background);
+                background.SetColor(moduleColor);
+            }
+
+            viewHolder.ModuleName.Text = item.Name;
+            viewHolder.ModuleIcon.Background = item.GetIcon(_context);
+            viewHolder.ModuleName.SetTextColor(Color.DimGray);
+            viewHolder.ModuleDescriptionShort.Text = viewHolder.ModuleDescriptionLong.Text = item.Description;
+            viewHolder.ModuleDescriptionLong.SetTextColor(moduleColor);
+            viewHolder.RevealView.Background = item.GetHeader(_context);
+
+            if (DBHelper.Instance.CheckIfExists(item) && DBHelper.Instance.CheckIfVisible(item)) {
+                viewHolder.AddButton.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.ic_clear));
+                viewHolder.AddButton.BackgroundTintList = ContextCompat.GetColorStateList(_context, Resource.Color.red);
+
+            } else {
+                viewHolder.AddButton.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.ic_add));
+                viewHolder.AddButton.BackgroundTintList = ContextCompat.GetColorStateList(_context, Resource.Color.green);
+            }
+
+        }
+
+        public bool IsEnabled(int position) {
             return Enabled;
         }
 
         private ViewHolder ExpandedView { get; set; }
 
-        public override View GetView(int position, View convertView, ViewGroup parent) {
+        private void OnAddButtonClick(ViewHolder viewHolder)  {
 
-            ViewHolder viewHolder = null;
-            HealthModuleType module = _modules.ElementAt(position);
+            var module = _modules.Find(x => x.Name == viewHolder.ModuleName.Text);
 
-            if (convertView == null) {
-                viewHolder = new ViewHolder(); 
-                convertView = _inflater.Inflate(Resource.Layout.module_viewcell, null);
-
-                viewHolder.Header = convertView.FindViewById<RelativeLayout>(Resource.Id.header);
-                viewHolder.ModuleName = convertView.FindViewById<TextView>(Resource.Id.module_name);
-                viewHolder.ModuleDescriptionShort = convertView.FindViewById<TextView>(Resource.Id.module_description_short);
-                viewHolder.ModuleDescriptionLong = convertView.FindViewById<CustomTextView>(Resource.Id.module_description_long);
-                viewHolder.ModuleDescriptionLong.Measure(View.MeasureSpec.MakeMeasureSpec(0, MeasureSpecMode.Unspecified),
-                    View.MeasureSpec.MakeMeasureSpec(0, MeasureSpecMode.Unspecified));
-                viewHolder.ModuleDescriptionHeight = viewHolder.ModuleDescriptionLong.MeasuredHeight;
-                viewHolder.ModuleIcon = convertView.FindViewById<ImageView>(Resource.Id.module_icon);
-                viewHolder.AddButton = convertView.FindViewById<FloatingActionButton>(Resource.Id.module_addbutton); 
-                viewHolder.RevealView = convertView.FindViewById<View>(Resource.Id.reveal);
-                viewHolder.Background = convertView.FindViewById<View>(Resource.Id.background);
-
-                convertView.Tag = viewHolder;
-                viewHolder.AddButton.Click += delegate { OnAddButtonClick(module); };
-                viewHolder.Header.Click += delegate {
-                    if (Enabled) {
-                        if (ExpandedView != null) {
-                            if (ExpandedView != viewHolder) {
-                                OnHeaderClick(ExpandedView); //Collapse previous HealthModule
-                                ExpandedView = viewHolder;
-                            } else {
-                                ExpandedView = null;
-                            }
-                        } else {
-                            ExpandedView = viewHolder;
-                        }
-
-                        OnHeaderClick(viewHolder); //Expand selected HealthModule
-                    }
-                };
-                 
-            } else {
-                viewHolder = convertView.Tag as ViewHolder;
-            }
-             
-
-            var drawable = (LayerDrawable) viewHolder.Background.Background; 
-            var background = (GradientDrawable)drawable.FindDrawableByLayerId(Resource.Id.background); 
-            var moduleColor = ContextCompat.GetColorStateList(_context, _context.Resources.GetIdentifier(module.HealthModuleColor(), "color", _context.PackageName));
-            background.SetColor(moduleColor);
-
-            viewHolder.ModuleName.Text = module.HealthModuleName();
-            viewHolder.ModuleIcon.Background = module.GetHealthModuleIconFromHealthModuleType(_context);
-            viewHolder.ModuleName.SetTextColor(Color.DimGray); 
-            viewHolder.ModuleDescriptionShort.Text = viewHolder.ModuleDescriptionLong.Text = module.HealthModuleDescription();
-            viewHolder.ModuleDescriptionLong.SetTextColor(moduleColor);
-            viewHolder.RevealView.Background =
-                HealthModulesInfoExtension.GetHealthModuleHeaderFromHealthModuleName(_context, module.HealthModuleName());
-            if (DBHelper.Instance.CheckIfExists(module) && DBHelper.Instance.CheckIfVisible(module)) {
-                viewHolder.AddButton.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.ic_clear));
-                viewHolder.AddButton.BackgroundTintList = ContextCompat.GetColorStateList(_context, Resource.Color.red);
-
-
-            } else {
-                viewHolder.AddButton.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.ic_add));
-                viewHolder.AddButton.BackgroundTintList = ContextCompat.GetColorStateList(_context, Resource.Color.green);
-            } 
-
-
-            return convertView;
-
-        }
-
-        private void OnAddButtonClick(HealthModuleType module) {
             if (DBHelper.Instance.CheckIfExists(module)) {
                 if (DBHelper.Instance.CheckIfVisible(module)) {
                     DBHelper.Instance.ChangeModuleVisibility(module, false);
