@@ -23,11 +23,11 @@ namespace TFG.Model {
         }
 
         public Drawable GetBackground(Context context) { 
-            return GetUtilsClass().GetHealthModuleBackground(context);
+            return GetUtilsClass().GetHealthModuleBackground(context, Color);
         }
 
         public Drawable GetHeader(Context context) { 
-            return GetUtilsClass().GetHealthModuleHeader(context);
+            return GetUtilsClass().GetHealthModuleHeader(context, Color);
         }
 
         public int GetTheme(Context context)  {

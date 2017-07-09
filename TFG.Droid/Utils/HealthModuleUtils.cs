@@ -18,14 +18,21 @@ using TFG.Model;
 namespace TFG.Droid.Utils {
     public abstract class HealthModuleUtils {
 
-        public abstract Drawable GetHealthModuleIcon(Context context);
-        public abstract Drawable GetHealthModuleBackground(Context context);
-        public abstract Drawable GetHealthModuleHeader(Context context);
+        public abstract Drawable GetHealthModuleIcon(Context context); 
+       
 
         public abstract IHealthFragment GetHeaderFragment();
         public abstract IHealthFragment GetBodyFragment();
         public abstract IHealthFragment GetHealthCardFragment();
 
+        public Drawable GetHealthModuleBackground(Context context, string color) {
+            return GetDrawableFromResources(context, "background_" + color);
+        }
+
+
+        public Drawable GetHealthModuleHeader(Context context, string color) { 
+            return GetDrawableFromResources(context, "header_" + color);
+        }
 
         public int GetHealthModuleTheme(Context context, string color) {
             var resName = "AppTheme_" + color;

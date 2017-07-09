@@ -82,7 +82,7 @@ namespace TFG.Droid{
 
 	    public void OnHealthCardClick(HealthModule healthModule)  {
             var intent = new Intent(this, typeof(ModuleDetailActivity)); 
-	        intent.PutExtra("id", healthModule.Id);
+	        intent.PutExtra("ShortName", healthModule.ShortName);
 	        StartActivity(intent);
 	    }
 
