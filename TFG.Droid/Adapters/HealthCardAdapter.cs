@@ -69,8 +69,8 @@ namespace TFG.Droid.Adapters {
             FragmentManager fragmentManager = ((Activity) _context).FragmentManager;
             FragmentTransaction fragmentTransaction = fragmentManager.BeginTransaction();
 
-            var fragment = HealthModulesInfoExtension.GetHealthCardFragmentFromHealthModuleName(item.Name);
-            var backgroundImage = HealthModulesInfoExtension.GetHealthModuleHeaderFromHealthModuleName(_context, item.Name);
+            var fragment = item.HealthModule.GetHealthCardFragment();
+            var backgroundImage = item.HealthModule.GetHeader(_context);
             if (fragment != null) {     //If the module has a custom card fragment
                 viewHolder.FragmentContainer.Visibility = ViewStates.Visible;
                 viewHolder.ModuleLayout.Visibility = ViewStates.Gone;

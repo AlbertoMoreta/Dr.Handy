@@ -122,14 +122,15 @@
     <Compile Include="Custom Views\CustomTextView.cs" />
     <Compile Include="Custom Views\HealthCard.cs" />
     <Compile Include="Custom Views\ModuleViewCell.cs" />
-    <Compile Include="Extensions\HealthModulesInfoExtension.cs" />
     <Compile Include="Interfaces\IHealthFragment.cs" />
     <Compile Include="Interfaces\IHealthFragmentTabItem.cs" />
     <Compile Include="Listeners\HealthCardClickListener.cs" />
+    <Compile Include="Model\HealthModule.Android.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receivers\NotificationReceiver.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Utils\AnimationUtils.cs" />
+    <Compile Include="Utils\HealthModuleUtils.cs" />
     <Compile Include="Utils\LogoImageBehaviour.cs" />
     <Compile Include="Utils\NotificationsUtils.cs" />
     <Compile Include="Utils\SQLite.cs" />
