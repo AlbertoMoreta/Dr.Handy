@@ -122,7 +122,6 @@
     <Compile Include="Custom Views\CustomTextView.cs" />
     <Compile Include="Custom Views\HealthCard.cs" />
     <Compile Include="Custom Views\ModuleViewCell.cs" />
-    <Compile Include="Extensions\HealthModulesInfoExtension.cs" />
     <Compile Include="Fragments\StepCounter\StepCounterBodyFragment.cs" />
     <Compile Include="Fragments\StepCounter\StepCounterCardFragment.cs" />
     <Compile Include="Fragments\StepCounter\StepCounterChartFragment.cs" />
@@ -132,6 +131,7 @@
     <Compile Include="Interfaces\IHealthFragmentTabItem.cs" />
     <Compile Include="Listeners\HealthCardClickListener.cs" />
     <Compile Include="Listeners\IStepDetectedListener.cs" />
+    <Compile Include="Model\HealthModule.Android.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receivers\NotificationReceiver.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -141,15 +141,17 @@
     <Compile Include="Services\StepCounterServiceConnection.cs" />
     <Compile Include="Utils\AnimationUtils.cs" />
     <Compile Include="Utils\ChartUtils.cs" />
+    <Compile Include="Utils\HealthModuleUtils.cs" />
     <Compile Include="Utils\LogoImageBehaviour.cs" />
     <Compile Include="Utils\NotificationsUtils.cs" />
     <Compile Include="Utils\SQLite.cs" />
     <Compile Include="Utils\SQLiteAsync.cs" />
-    <Compile Include="Utils\StepCounterUtils.cs" />
+    <Compile Include="Utils\StepCounter\StepCounterUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Fonts\DroidSerif-Bold.ttf" />
     <AndroidAsset Include="Assets\Fonts\DroidSerif-Regular.ttf" />
+    <AndroidAsset Include="Assets\ConfigFiles\StepCounterConfig.json" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

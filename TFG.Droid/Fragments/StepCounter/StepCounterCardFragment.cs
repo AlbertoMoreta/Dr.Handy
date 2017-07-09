@@ -34,7 +34,7 @@ namespace TFG.Droid.Fragments.StepCounter {
             _steps = view.FindViewById<CustomTextView>(Resource.Id.step_count); 
             var stepCounterDate = view.FindViewById<CustomTextView>(Resource.Id.stepcounter_date);
 
-            moduleName.Text = HealthModuleType.StepCounter.HealthModuleName();
+            moduleName.Text = ""; //HealthModuleType.StepCounter.HealthModuleName();
 
             var stepCounterItems = DBHelper.Instance.GetStepCounterItemFromDate(DateTime.Now);
  
