@@ -20,11 +20,16 @@ using TFG.Model;
 namespace TFG.Droid.Fragments.StepCounter {
     public class StepCounterCardFragment : Fragment, IHealthFragment, IStepDetectedListener {
 
+        public string ModuleName { get; set; }
         public bool IsBound { get; set; }
         public StepCounterServiceBinder Binder { get; set; }
         private StepCounterServiceConnection _serviceConnection;
 
         private CustomTextView _steps;
+
+        public StepCounterCardFragment(string moduleName) {
+            ModuleName = moduleName;
+        }
 
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -34,7 +39,7 @@ namespace TFG.Droid.Fragments.StepCounter {
             _steps = view.FindViewById<CustomTextView>(Resource.Id.step_count); 
             var stepCounterDate = view.FindViewById<CustomTextView>(Resource.Id.stepcounter_date);
 
-            moduleName.Text = ""; //HealthModuleType.StepCounter.HealthModuleName();
+            moduleName.Text = ModuleName;
 
             var stepCounterItems = DBHelper.Instance.GetStepCounterItemFromDate(DateTime.Now);
  
