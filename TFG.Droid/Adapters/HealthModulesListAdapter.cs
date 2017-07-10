@@ -153,6 +153,7 @@ namespace TFG.Droid.Adapters {
                 }
             }else {
                 DBHelper.Instance.AddHealthModule(module);
+                module.GetUtilsClass().InitModuleDB();
             }
 
             NotifyDataSetChanged();

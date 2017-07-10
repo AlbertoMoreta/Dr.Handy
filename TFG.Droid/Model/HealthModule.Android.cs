@@ -9,7 +9,7 @@ namespace TFG.Model {
     public partial class HealthModule {
         
 
-        private HealthModuleUtils GetUtilsClass() {
+        public HealthModuleUtils GetUtilsClass() {
             var utilsClass = "TFG.Droid.Utils." + UtilsClass;
             Type t = Type.GetType(utilsClass);
             if (t == null) {
@@ -41,7 +41,7 @@ namespace TFG.Model {
             return GetUtilsClass().GetBodyFragment();
         }
         public IHealthFragment GetHealthCardFragment() {
-            return GetUtilsClass().GetHealthCardFragment();
+            return GetUtilsClass().GetHealthCardFragment(Name);
         }
     }
 }
