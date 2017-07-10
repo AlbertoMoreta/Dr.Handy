@@ -1,0 +1,22 @@
+{
+   "shortname" : "color_blindness_test",
+   "name":[
+      {
+         "en":"Color Blindness Test"
+      },
+      {
+         "es":"Test de Daltonismo"
+      }
+   ],
+   "description":[
+      {
+         "en":"Color Blindness Test Description"
+      },
+      {
+         "es":"Descripción de Test de Daltonismo"
+      }
+   ],
+   "color":"purple",
+   "loginRequired":false,
+   "utils-class":"ColorBlindnessTestUtils"
+}

@@ -122,6 +122,8 @@
     <Compile Include="Custom Views\CustomTextView.cs" />
     <Compile Include="Custom Views\HealthCard.cs" />
     <Compile Include="Custom Views\ModuleViewCell.cs" />
+    <Compile Include="Fragments\ColorBlindnessTest\CBTBodyFragment.cs" />
+    <Compile Include="Fragments\ColorBlindnessTest\CBTHeaderFragment.cs" />
     <Compile Include="Interfaces\IHealthFragment.cs" />
     <Compile Include="Interfaces\IHealthFragmentTabItem.cs" />
     <Compile Include="Listeners\HealthCardClickListener.cs" />
@@ -130,6 +132,7 @@
     <Compile Include="Receivers\NotificationReceiver.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Utils\AnimationUtils.cs" />
+    <Compile Include="Utils\ColorBlindnessTest\ColorBlindnessTestUtils.cs" />
     <Compile Include="Utils\HealthModuleUtils.cs" />
     <Compile Include="Utils\LogoImageBehaviour.cs" />
     <Compile Include="Utils\NotificationsUtils.cs" />
@@ -139,6 +142,8 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\Fonts\DroidSerif-Bold.ttf" />
     <AndroidAsset Include="Assets\Fonts\DroidSerif-Regular.ttf" />
+    <AndroidAsset Include="Assets\JSON\ColorBlindnessTest.json" />
+    <AndroidAsset Include="Assets\ConfigFiles\ColorBlindnessConfig.json" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -155,6 +160,9 @@
     <AndroidResource Include="Resources\layout\toolbar.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\result_row.axml" />
+    <AndroidResource Include="Resources\layout\fragment_cbt_body.axml" />
+    <AndroidResource Include="Resources\layout\fragment_cbt_header.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\module_icon.xml" />
@@ -207,6 +215,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values-xxhdpi\Dimens.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\colorblindnesstest_icon.png" />
   </ItemGroup>
   <Import Project="..\TFG\TFG.projitems" Label="Shared" Condition="Exists('..\TFG\TFG.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
