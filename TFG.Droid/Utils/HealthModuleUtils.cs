@@ -16,14 +16,15 @@ using TFG.Droid.Interfaces;
 using TFG.Model;
 
 namespace TFG.Droid.Utils {
-    public abstract class HealthModuleUtils {
+    public abstract class HealthModuleUtils { 
+        public abstract void InitModuleDB();
 
-        public abstract Drawable GetHealthModuleIcon(Context context); 
-       
+        public abstract Drawable GetHealthModuleIcon(Context context);  
 
         public abstract IHealthFragment GetHeaderFragment();
         public abstract IHealthFragment GetBodyFragment();
-        public abstract IHealthFragment GetHealthCardFragment();
+        public abstract IHealthFragment GetHealthCardFragment(string name);
+
 
         public Drawable GetHealthModuleBackground(Context context, string color) {
             return GetDrawableFromResources(context, "background_" + color);
