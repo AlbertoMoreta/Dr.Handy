@@ -24,8 +24,8 @@ namespace TFG.Droid.Receivers {
             var moduleId = intent.GetIntExtra("moduleId", -1); 
             var requestCode = intent.GetIntExtra("requestCode", -1);
 
-
-            var notificationItem = HealthModulesInfo.GetHealthModuleTypeById(moduleId).GetNotificationItem();
+            //TODO
+            var notificationItem = new NotificationItem("Title", "Description", true); //HealthModulesInfo.GetHealthModuleTypeById(moduleId).GetNotificationItem());
 
             if (notificationItem != null) {
                 var clickIntent = new Intent(context, typeof(ModuleDetailActivity));
