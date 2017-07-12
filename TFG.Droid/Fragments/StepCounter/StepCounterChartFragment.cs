@@ -3,7 +3,8 @@ using Android.Graphics;
 using Android.OS; 
 using Android.Support.V4.Content; 
 using Android.Views;
-using Android.Widget; 
+using Android.Widget;
+using TFG.DataBase;
 using TFG.Droid.Activities;
 using TFG.Droid.Custom_Views; 
 using TFG.Droid.Utils;
@@ -34,9 +35,7 @@ namespace TFG.Droid.Fragments.StepCounter {
             var view =  inflater.Inflate(Resource.Layout.fragment_stepcounter_body_chart_results, container, false); 
 
             //Chart color
-            var colorName =
-                HealthModulesInfo.GetHealthModuleColorFromHealthModuleName(
-                    ((ModuleDetailActivity) Activity).CurrentHealthModule);
+            var colorName = DBHelper.Instance.GetHealthModuleByShortName(((ModuleDetailActivity) Activity).HealthModuleShortName).Color;
             var colorRes = ContextCompat.GetColor(Activity, Activity.Resources.GetIdentifier(colorName, "color", Activity.PackageName));
 
             //X Axis labels
