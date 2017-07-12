@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Android.Content;
 using Android.OS; 
 using Android.Support.V7.Widget; 
 using Android.Views;
@@ -61,7 +62,13 @@ namespace TFG.Droid.Fragments.Sintrom {
 
             _fab = View.FindViewById<FloatingActionButton>(Resource.Id.fab);
             if(_recyclerView != null) { _fab.AttachToRecyclerView(_recyclerView); }
-            _fab.Click += delegate { Activity.StartActivity(typeof(SintromConfigureTreatment)); };
+            _fab.Click += delegate { 
+                var intent = new Intent(Activity, typeof(SintromConfigureTreatment));
+                intent.PutExtra("ShortName", ((ModuleDetailActivity) Activity).CurrentHealthModule.ShortName);
+                StartActivity(intent);
+
+                Activity.StartActivity(typeof(SintromConfigureTreatment));
+            };
         }
 
         private List<SintromItem> GetTreatmentItems() {

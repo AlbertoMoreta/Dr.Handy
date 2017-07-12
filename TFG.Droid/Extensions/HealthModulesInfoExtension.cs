@@ -2,6 +2,7 @@
 using Android.Content;
 using Android.Graphics.Drawables; 
 using Android.Content.Res;
+<<<<<<< HEAD
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V4.Content;
@@ -10,6 +11,10 @@ using Android.Widget;
 
 using TFG.Droid.Fragments.ColorBlindnessTest;
 using TFG.Droid.Fragments.StepCounter;
+=======
+using Android.Graphics.Drawables;
+using Android.Support.V4.Content;
+>>>>>>> android-sintrom
 using TFG.Droid.Fragments.Sintrom;
 using TFG.Droid.Interfaces;
 using TFG.Model;
@@ -18,21 +23,31 @@ namespace TFG.Droid{
     public static class HealthModulesInfoExtension {
 
         public static IHealthFragment GetHealthCardFragmentFromHealthModuleName(string moduleName) {
+<<<<<<< HEAD
 	    if (HealthModuleType.StepCounter.HealthModuleName().Equals(moduleName)) { return new StepCounterCardFragment(); }
+=======
+>>>>>>> android-sintrom
             if (HealthModuleType.Sintrom.HealthModuleName().Equals(moduleName)) { return new SintromCardFragment(); }
             return null;
         }
 
         public static IHealthFragment GetHeaderFragmentFromHealthModuleName(string moduleName) { 
+<<<<<<< HEAD
 	    if (HealthModuleType.ColorBlindnessTest.HealthModuleName().Equals(moduleName)) { return new CBTHeaderFragment(); }
             if (HealthModuleType.StepCounter.HealthModuleName().Equals(moduleName)) { return new StepCounterHeaderFragment(); }
+=======
+>>>>>>> android-sintrom
             if (HealthModuleType.Sintrom.HealthModuleName().Equals(moduleName)) { return new SintromHeaderFragment(); }
             return null;
         }
 
+<<<<<<< HEAD
         public static IHealthFragment GetBodyFragmentFromHealthModuleName(string moduleName) {
             if (HealthModuleType.ColorBlindnessTest.HealthModuleName().Equals(moduleName)) { return new CBTBodyFragment(); }
             if (HealthModuleType.StepCounter.HealthModuleName().Equals(moduleName)) { return new StepCounterBodyFragment(); } 
+=======
+        public static IHealthFragment GetBodyFragmentFromHealthModuleName(string moduleName) { 
+>>>>>>> android-sintrom
             if (HealthModuleType.Sintrom.HealthModuleName().Equals(moduleName)) { return new SintromBodyFragment(); }
             return null;
         } 
