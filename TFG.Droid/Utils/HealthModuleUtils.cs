@@ -23,7 +23,7 @@ namespace TFG.Droid.Utils {
 
         public abstract IHealthFragment GetHeaderFragment();
         public abstract IHealthFragment GetBodyFragment();
-        public abstract IHealthFragment GetHealthCardFragment(string name);
+        public abstract IHealthFragment GetHealthCardFragment(string shortName);
 
 
         public Drawable GetHealthModuleBackground(Context context, string color) {
