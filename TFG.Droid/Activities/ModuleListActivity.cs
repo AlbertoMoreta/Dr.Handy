@@ -11,29 +11,37 @@ using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
+using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using TFG.Droid.Adapters;
 using TFG.Droid.Custom_Views;
+using TFG.Logic;
 using AnimationUtils = TFG.Droid.Utils.AnimationUtils;
 
 namespace TFG.Droid {
     [Activity(Label = "ModuleListActivity", Theme = "@style/AppTheme", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
     public class ModuleListActivity : BaseActivity {
 
-        private ListView _modulesList; 
+        private RecyclerView _modulesList;
+        private RecyclerView.Adapter _adapter;
+        private RecyclerView.LayoutManager _layoutManager;
 
         protected override void OnCreate(Bundle savedInstanceState) {
             base.OnCreate(savedInstanceState); 
 
             SetContentView(Resource.Layout.modules_list);
-            SetUpToolBar(false);
-
-            HealthModulesListAdapter adapter = new HealthModulesListAdapter(this);
+            SetUpToolBar(false); 
             
-            _modulesList = FindViewById<ListView>(Resource.Id.listView);
-            _modulesList.Adapter = adapter;
+            _modulesList = FindViewById<RecyclerView>(Resource.Id.recycler_view);
+            _modulesList.HasFixedSize = true; //TODO
 
+            _layoutManager = new LinearLayoutManager(this);
+            _modulesList.SetLayoutManager(_layoutManager);
+
+            _adapter = new HealthModulesListAdapter(this, HealthModulesConfigReader.GetHealthModules());
+            _modulesList.SetAdapter(_adapter); 
+            
         }
 
         

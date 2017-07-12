@@ -74,8 +74,7 @@ namespace TFG.Droid{
             foreach(HealthModule module in modules) { 
                 cards.Add(new HealthCard(this, module) {
                     Name = module.Name,
-                    Icon = HealthModulesInfo.GetHealthModuleTypeById(module.Id)
-                                .GetHealthModuleIconFromHealthModuleType(this)
+                    Icon = module.GetIcon(this)
                 });
             }
             return cards;
@@ -83,8 +82,7 @@ namespace TFG.Droid{
 
 	    public void OnHealthCardClick(HealthModule healthModule)  {
             var intent = new Intent(this, typeof(ModuleDetailActivity)); 
-	        intent.PutExtra("name", healthModule.Name);
-	        intent.PutExtra("description", healthModule.Description);
+	        intent.PutExtra("ShortName", healthModule.ShortName);
 	        StartActivity(intent);
 	    }
 

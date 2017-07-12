@@ -2,7 +2,9 @@
 using SQLite;
 using System;
 using System.Collections.Generic;
-using System.IO; 
+using System.IO;
+using System.Linq;
+using TFG.Logic;
 using TFG.Model;
 
 namespace TFG.DataBase {
@@ -11,11 +13,11 @@ namespace TFG.DataBase {
         public static readonly string DB_NAME = "HealthApp.db3";
 
         public static readonly string TABLE_NAME = "HEALTH_MODULE";
-        private static readonly string COL_KEY_ID = "Id";
-        private static readonly string COL_NAME = "Name";
-        private static readonly string COL_DESCRIPTION = "Description";
+        private static readonly string COL_KEY_SHORTNAME = "Shortname";
+        private static readonly string COL_CONFIG_FILE_PATH = "ConfigFilePath";
         private static readonly string COL_POSITION = "Position";
         private static readonly string COL_VISIBLE = "Visible";
+        private static readonly string COL_DATE = "Date";
         public static readonly string DATE_FORMAT = "yyyy-MM-dd";
          
 
@@ -54,8 +56,8 @@ namespace TFG.DataBase {
 
 
         private void CreateHealthModulesTable() {
-            var sql = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " (" + COL_KEY_ID + " integer primary key autoincrement, "
-                + COL_NAME + " text," + COL_DESCRIPTION + " text," + COL_POSITION + " int," + COL_VISIBLE + " boolean)";
+            var sql = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " (" + COL_KEY_SHORTNAME + " text primary key, "
+                + COL_CONFIG_FILE_PATH + " text," + COL_POSITION + " int," + COL_VISIBLE + " boolean)";
 
             Connection.Execute(sql);
         }
@@ -70,32 +72,22 @@ namespace TFG.DataBase {
             }
         }
         
-        public void AddHealthModule(HealthModuleType module) {
-            var sql = "INSERT INTO " + TABLE_NAME + " (" + COL_NAME + ", " + COL_DESCRIPTION + ", " + COL_POSITION + ", " + COL_VISIBLE + ") VALUES " 
-                + "('" + module.HealthModuleName() + "', '" + module.HealthModuleDescription() + "', " + Count() + ", 1)" ;
+        public void AddHealthModule(HealthModule module) {
+            var sql = "INSERT INTO " + TABLE_NAME + " (" + COL_KEY_SHORTNAME + ", " + COL_CONFIG_FILE_PATH + ", " + COL_POSITION + ", " + COL_VISIBLE + ") VALUES " 
+                + "('" + module.ShortName + "', '" + module.ConfigFilePath + "', " + Count() + ", 1)" ;
 
-            Connection.Execute(sql);
-
-            InitHealthModule(module);
+            Connection.Execute(sql); 
         }
 
-        public void DeleteHealthModule(HealthModuleType module) {
-            var sql = "DELETE FROM " + TABLE_NAME + " WHERE " + COL_NAME + " = '" + module.HealthModuleName() + "'";
+        public void DeleteHealthModule(HealthModule module) {
+            var sql = "DELETE FROM " + TABLE_NAME + " WHERE " + COL_KEY_SHORTNAME + " = '" + module.ShortName + "'";
 
             Connection.Execute(sql);
         }
 
-        public void InitHealthModule(HealthModuleType module) {
-            switch (module) {
-                case HealthModuleType.ColorBlindnessTest: break;
-                case HealthModuleType.StepCounter: CreateStepCounterTable(); break;
-                case HealthModuleType.Sintrom: CreateSintromTable(); CreateINRTable(); break;
-            }
-        }
-
-        public bool CheckIfExists(HealthModuleType module) {
+        public bool CheckIfExists(HealthModule module) {
             try {
-                var sql = "SELECT COUNT(*) FROM " + TABLE_NAME + " WHERE " + COL_NAME + " = '" + module.HealthModuleName() + "'";
+                var sql = "SELECT COUNT(*) FROM " + TABLE_NAME + " WHERE " + COL_KEY_SHORTNAME + " = '" + module.ShortName + "'";
                 var count = Connection.ExecuteScalar<int>(sql);
                 return count > 0;
             } catch(SQLite.SQLiteException e) {
@@ -104,9 +96,9 @@ namespace TFG.DataBase {
 
         }
 
-        public bool CheckIfVisible(HealthModuleType module) {
+        public bool CheckIfVisible(HealthModule module) {
             try {
-                var sql = "SELECT COUNT(*) FROM " + TABLE_NAME + " WHERE " + COL_NAME + " = '" + module.HealthModuleName() 
+                var sql = "SELECT COUNT(*) FROM " + TABLE_NAME + " WHERE " + COL_KEY_SHORTNAME + " = '" + module.ShortName 
                     + "' AND " + COL_VISIBLE + " = 1";
                 var count = Connection.ExecuteScalar<int>(sql);
                 return count > 0;
@@ -115,16 +107,16 @@ namespace TFG.DataBase {
             }
         }
 
-        public void ChangeModuleVisibility(HealthModuleType module, bool value) {
+        public void ChangeModuleVisibility(HealthModule module, bool value) {
             var sql = "UPDATE " + TABLE_NAME + " SET " + COL_VISIBLE + " = " + (value ? 1 : 0) 
-                + " WHERE " + COL_NAME + " = '" + module.HealthModuleName() + "'";
+                + " WHERE " + COL_KEY_SHORTNAME + " = '" + module.ShortName + "'";
 
             Connection.Execute(sql);
         }
 
         public void ChangeModulePosition(HealthModule module, int position) {
             var sql = "UPDATE " + TABLE_NAME + " SET " + COL_POSITION + " = " + position
-                + " WHERE " + COL_NAME + " = '" + module.Name + "'";
+                + " WHERE " + COL_KEY_SHORTNAME + " = '" + module.ShortName + "'";
 
             Connection.Execute(sql);
         }
@@ -132,9 +124,21 @@ namespace TFG.DataBase {
         public List<HealthModule> GetModules() {
             var sql = "SELECT * FROM " + TABLE_NAME 
                 + " WHERE " + COL_VISIBLE + " = 1 ORDER BY " + COL_POSITION + " ASC";
-            return Connection.Query<HealthModule>(sql);
+            var healthModules = Connection.Query<HealthModule>(sql);
+            foreach (HealthModule hm in healthModules) {
+                HealthModulesConfigReader.PopulateHealthModule(hm); 
+            }
+            return healthModules;
 
-        } 
+        }
+
+        public HealthModule GetHealthModuleByShortName(string shortName) {
+            var sql = "SELECT * FROM " + TABLE_NAME
+                + " WHERE " + COL_KEY_SHORTNAME + " = '" + shortName + "' AND " + COL_VISIBLE + " = 1 LIMIT 1";
+            var healthModule = Connection.Query<HealthModule>(sql).ElementAt(0);
+            HealthModulesConfigReader.PopulateHealthModule(healthModule);
+            return healthModule;
+        }
 
         public void DropTable(string tableName) {
             var sql = "DROP TABLE IF EXISTS " + tableName;
