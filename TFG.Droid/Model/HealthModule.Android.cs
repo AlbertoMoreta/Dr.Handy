@@ -41,7 +41,7 @@ namespace TFG.Model {
             return GetUtilsClass().GetBodyFragment();
         }
         public IHealthFragment GetHealthCardFragment() {
-            return GetUtilsClass().GetHealthCardFragment(Name);
+            return GetUtilsClass().GetHealthCardFragment(ShortName);
         }
     }
 }
