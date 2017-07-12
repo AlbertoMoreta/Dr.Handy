@@ -21,9 +21,8 @@ using TFG.Model;
 namespace TFG.Droid.Activities {
     [Activity(Label = "ModuleDetailActivity", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
     public class ModuleDetailActivity : BaseActivity {
-
-        public string HealthModuleShortName { get; private set; }
-        public string CurrentHealthModule { get; private set; }
+         
+        public HealthModule CurrentHealthModule { get; private set; }
         public IHealthFragment HeaderFragment { get; private set; }
         public IHealthFragment BodyFragment { get; private set; }
 
@@ -33,10 +32,11 @@ namespace TFG.Droid.Activities {
 
             SetUpToolBar();
 
-            HealthModuleShortName = Intent.GetStringExtra("ShortName");
-            var healthModule = DBHelper.Instance.GetHealthModuleByShortName(HealthModuleShortName);
+            var shortName = Intent.GetStringExtra("ShortName");
+            var healthModule = DBHelper.Instance.GetHealthModuleByShortName(shortName);
 
-            ToolbarTitle.Text = CurrentHealthModule = healthModule.Name;
+            CurrentHealthModule = healthModule;
+            ToolbarTitle.Text = healthModule.Name;
 
             Window.DecorView.Background = healthModule.GetBackground(this); 
 
