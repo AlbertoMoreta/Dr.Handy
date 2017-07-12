@@ -18,6 +18,13 @@ using TFG.Model;
 
 namespace TFG.Droid.Fragments.Sintrom {
     public class SintromCardFragment : Fragment, IHealthFragment  {
+
+        public string ShortName { get; set; }
+
+        public SintromCardFragment(string shortName) {
+            ShortName = shortName;
+        }
+
         public override void OnCreate(Bundle savedInstanceState) {
             base.OnCreate(savedInstanceState); 
         }
@@ -30,7 +37,9 @@ namespace TFG.Droid.Fragments.Sintrom {
             var sintromImage = view.FindViewById<ImageView>(Resource.Id.sintrom_image);
             var sintromDate = view.FindViewById<CustomTextView>(Resource.Id.sintrom_date);
 
-            moduleName.Text = HealthModuleType.Sintrom.HealthModuleName();
+            var module = DBHelper.Instance.GetHealthModuleByShortName(ShortName);
+
+            moduleName.Text = module.Name;
 
             var inrItems = DBHelper.Instance.GetSintromINRItemFromDate(DateTime.Now);
             var sintromItems = DBHelper.Instance.GetSintromItemFromDate(DateTime.Now);
@@ -52,7 +61,7 @@ namespace TFG.Droid.Fragments.Sintrom {
 
                 sintromDate.Text = sintromItems[0].Date.ToString("dd - MMM - yyyy");
             } else {
-                sintromImage.SetImageDrawable(HealthModuleType.Sintrom.GetHealthModuleIconFromHealthModuleType(Activity)); 
+                sintromImage.SetImageDrawable(module.GetIcon(Activity)); 
 
                 controlDayText.Visibility = ViewStates.Gone;
                 sintromDate.Visibility = ViewStates.Gone;

@@ -1,0 +1,22 @@
+{
+    "shortname" : "sintrom",
+	"name":[
+      {
+         "en":"Sintrom"
+      },
+      {
+         "es":"Sintrom"
+      }
+   ],
+   "description":[
+      {
+         "en":"Sintrom Description"
+      },
+      {
+         "es":"Descripción de Sintrom"
+      }
+   ],
+   "color":"orange",
+   "loginRequired":false,
+   "utils-class":"SintromUtils"
+}

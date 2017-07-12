@@ -15,6 +15,7 @@ using Android.Widget;
 using Java.Text;
 using Java.Util;
 using TFG.DataBase;
+using TFG.Droid.Activities;
 using TFG.Droid.Custom_Views;
 using TFG.Droid.Interfaces;
 using TFG.Droid.Utils;
@@ -44,7 +45,7 @@ namespace TFG.Droid.Fragments.Sintrom {
             calendar.Set(CalendarField.Minute, 0);
             calendar.Set(CalendarField.Second, 0);  
           
-            NotificationsUtils.ScheduleNotification(Activity, HealthModuleType.Sintrom.HealthModuleId(), calendar.TimeInMillis);
+            NotificationsUtils.ScheduleNotification(Activity, 1, calendar.TimeInMillis);
         }
  
 
@@ -103,7 +104,7 @@ namespace TFG.Droid.Fragments.Sintrom {
                 }
             } else  {
                 //If there is no treatment, set the toolbar title as the name of the health module
-                (Activity as BaseActivity).ToolbarTitle.Text = HealthModuleType.Sintrom.HealthModuleName();
+                (Activity as BaseActivity).ToolbarTitle.Text = ((ModuleDetailActivity) Activity).CurrentHealthModule.Name;
                 View.Visibility = ViewStates.Gone;
             }
 

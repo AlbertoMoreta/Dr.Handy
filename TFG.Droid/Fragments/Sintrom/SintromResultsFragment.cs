@@ -68,12 +68,10 @@ namespace TFG.Droid.Fragments.Sintrom {
                     {
                         Chart.AxisLeft.AxisMinimum = 0;
                     }
-
+                    
 
                     var lineDataSet = new LineDataSet(lineEntries.Keys.ToList(), "");
-                    var color = ContextCompat.GetColor(Activity,
-                        Activity.Resources.GetIdentifier(HealthModuleType.Sintrom.HealthModuleColor(), "color",
-                            Activity.PackageName));
+                    var color = Activity.TitleColor;
                     lineDataSet.Color = color;
                     lineDataSet.SetDrawFilled(true);
                     lineDataSet.SetDrawCircles(false);

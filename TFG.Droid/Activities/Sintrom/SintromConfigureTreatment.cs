@@ -4,7 +4,8 @@ using System.Globalization;
 using Android.App; 
 using Android.Content.PM; 
 using Android.OS; 
-using Android.Support.V4.View; 
+using Android.Support.V4.View;
+using TFG.DataBase;
 using TFG.Droid.Adapters;
 using TFG.Droid.Custom_Views;
 using TFG.Droid.Fragments.Sintrom;
@@ -25,14 +26,16 @@ namespace TFG.Droid.Activities.Sintrom {
         public SintromCalendarFragment NextMonth { get; private set; }
          
         protected override void OnCreate(Bundle savedInstanceState)  {
-            base.OnCreate(savedInstanceState);  
+            base.OnCreate(savedInstanceState); 
 
-            var moduleName = HealthModuleType.Sintrom.HealthModuleName();
-            var theme = HealthModulesInfoExtension.GetHealthModuleThemeFromHealthModuleName(this, moduleName);
-            if (theme != -1) { SetTheme(theme);} 
+            var shortName = Intent.GetStringExtra("ShortName"); 
+            var module = DBHelper.Instance.GetHealthModuleByShortName(shortName);
 
-            Window.DecorView.Background =
-                HealthModulesInfoExtension.GetHealthModuleBackgroundFromHealthModuleName(this, moduleName);
+            var moduleName = module.Name;
+            var theme = module.GetTheme(this);
+            if (theme != -1) { SetTheme(theme);}
+
+            Window.DecorView.Background = module.GetBackground(this); 
   
 
             SetContentView (Resource.Layout.sintrom_configure_treatment);
