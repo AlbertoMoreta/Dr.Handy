@@ -34,8 +34,8 @@ namespace TFG.Droid.Utils {
             return new StepCounterBodyFragment();
         }
 
-        public override IHealthFragment GetHealthCardFragment(string moduleName) {
-            return new StepCounterCardFragment(moduleName);
+        public override IHealthFragment GetHealthCardFragment(string shortName) {
+            return new StepCounterCardFragment(shortName);
         } 
 
         public static bool IsKitKatWithStepCounter(PackageManager pm) {
