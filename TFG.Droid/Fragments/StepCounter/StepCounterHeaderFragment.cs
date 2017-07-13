@@ -48,11 +48,18 @@ namespace TFG.Droid.Fragments.StepCounter {
             _calories = view.FindViewById<CustomTextView>(Resource.Id.calories);
             _distance = view.FindViewById<CustomTextView>(Resource.Id.distance);
             UpdateSteps();
-            (Activity as BaseActivity).ToolbarTitle.Text = DateTime.Now.ToString("dd / MM / yyyy"); 
+
 
             return view;
         }
 
+        public override void OnResume() {
+            base.OnResume();
+
+            (Activity as BaseActivity).ToolbarTitle.Text = DateTime.Now.ToString("D");
+
+            _firstRun = false;
+        }
 
         public void StepDetected() { 
             UpdateSteps();
@@ -149,12 +156,6 @@ namespace TFG.Droid.Fragments.StepCounter {
                 UnbindService();
             } 
         }
-
-        public override void OnResume() {
-            base.OnResume(); 
-
-            _firstRun = false;
-        }
-
+         
     }
 }
