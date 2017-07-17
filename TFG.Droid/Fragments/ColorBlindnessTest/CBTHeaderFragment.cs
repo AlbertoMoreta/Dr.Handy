@@ -11,6 +11,7 @@ using Android.Support.V4.Content;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using TFG.Droid.Activities;
 using TFG.Droid.Custom_Views;
 using TFG.Droid.Interfaces;
 using TFG.Logic;
@@ -32,7 +33,11 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
 
         private void Init() { 
             _logic = ColorBlindnessLogic.Instance();
-            if (_logic.CurrentQuestion >= 24) { _logic.CurrentQuestion = 0; }
+            if (_logic.CurrentQuestion >= 24) { _logic.CurrentQuestion = 0;
+                _logic.CorrectAnswersCount = 0;
+                _logic.RGColorBlindnessCount = 0;
+                _logic.TotalColorBlindnessCount = 0;
+            }
             _questions = _logic.GetQuestions();
            
         }
@@ -48,18 +53,15 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
 
 
         public void UpdateQuestion(int plate) {
-            var a = _logic.CurrentQuestion;
-            UpdateImage(plate);
-            UpdateQuestionNumber(plate);
-        }
+            ((ModuleDetailActivity) Activity).ToolbarTitle.Text = _questions.ElementAt(plate).Question;
 
-        public void UpdateImage(int plate) { 
+            //Update Question Image
             _questionImage.SetImageResource(Resources.GetIdentifier(_questions.ElementAt(plate).ImageName, "drawable", Activity.PackageName));
-        }
 
-        private void UpdateQuestionNumber(int plate) {
+            //Update Question Number
             _infoText.Text = (plate + 1) + " / " + ColorBlindnessLogic.TOTAL_QUESTIONS;
         }
+         
 
         public void ShowResult()  {
             _questionImage.Visibility = ViewStates.Gone;
