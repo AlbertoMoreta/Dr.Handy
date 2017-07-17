@@ -52,9 +52,11 @@ namespace TFG.Logic {
             if(CurrentQuestion < TOTAL_QUESTIONS) {
                 var question = Questions.ElementAt(CurrentQuestion);
                 question.UserAnswer = answer;
+                var correctAnswer = question.Answers.ElementAt(question.CorrectAnswerPos);
+                var RGColorBlindnessAnswer = question.Answers.ElementAt(question.RGColorBlindnessPos);
 
-                if (answer.Equals(question.CorrectAnswer)) { CorrectAnswersCount++; }
-                else if (answer.Equals(question.RGColorBlindness)) { RGColorBlindnessCount++;}
+                if (answer.Equals(correctAnswer)) { CorrectAnswersCount++; }
+                else if (answer.Equals(RGColorBlindnessAnswer)) { RGColorBlindnessCount++;}
                 else { TotalColorBlindnessCount++; }
             }
         } 

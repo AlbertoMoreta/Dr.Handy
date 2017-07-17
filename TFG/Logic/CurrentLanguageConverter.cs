@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Collections.Generic; 
+using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Java.Util;
@@ -21,10 +22,14 @@ namespace TFG.Logic {
                 foreach (var objs in token.Children<JObject>()) { 
                     foreach (var pair in objs) {
                         var loc = new Locale(pair.Key);
-                        Console.WriteLine(pair.Key);
                         var language = loc.GetDisplayLanguage(loc);
                         if (language.Equals(currentLanguage)) {
-                            return pair.Value.ToObject<string>();
+                            if (pair.Value.Type == JTokenType.String)  {
+                                return pair.Value.ToString();
+                            }
+                            if (pair.Value.Type == JTokenType.Array) { 
+                                return pair.Value.ToObject<string[]>();
+                            }
                         }else if (language.Equals(DEFAULT_LANGUAGE)) {
                             defaultValue = pair.Value.ToString();
                         }
