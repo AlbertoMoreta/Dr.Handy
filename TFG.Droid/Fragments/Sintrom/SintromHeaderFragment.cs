@@ -62,10 +62,14 @@ namespace TFG.Droid.Fragments.Sintrom {
             return view;
         }
 
-        public override void OnStart() {
-            base.OnStart();
+        public override void OnResume() {
+            base.OnResume();
+             
+            //Toolbar title with today's date 
+            (Activity as BaseActivity).ToolbarTitle.Text = DateTime.Now.ToString("D");
             RefreshHeader();
         }
+         
 
         private void RefreshHeader() {
              //Get Sintrom treatment for today
@@ -75,8 +79,6 @@ namespace TFG.Droid.Fragments.Sintrom {
             var inrItems = DBHelper.Instance.GetSintromINRItemFromDate(DateTime.Now);
 
             if (items.Count > 0) {
-                //Toolbar title with today's date 
-                (Activity as BaseActivity).ToolbarTitle.Text = DateTime.Now.ToString("dd / MM / yyyy");
                 View.Visibility = ViewStates.Visible;
 
                 var item = items.ElementAt(0);

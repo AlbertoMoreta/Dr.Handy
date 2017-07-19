@@ -30,6 +30,7 @@ namespace TFG.Droid.Adapters {
             public ViewHolder(View itemView) : base(itemView) {
                 Date = itemView.FindViewById<CustomTextView>(Resource.Id.date);
                 Icon = itemView.FindViewById<ImageView>(Resource.Id.icon);
+                //Could be Dose or Control text
                 Info = itemView.FindViewById<CustomTextView>(Resource.Id.info);
             }
         }
@@ -77,7 +78,7 @@ namespace TFG.Droid.Adapters {
                                 _context.Resources.GetIdentifier(treatmentItem.ImageName,
                                     "drawable", _context.PackageName)));
 
-                viewHolder.Info.Text = treatmentItem.Fraction;
+                viewHolder.Info.Text = treatmentItem.Medicine.Split(new[] { ' ' }, 2)[1];
             }   
         }  
 

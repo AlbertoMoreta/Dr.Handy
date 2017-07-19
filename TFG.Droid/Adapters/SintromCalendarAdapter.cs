@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using Android.App;
 using Android.Content;
@@ -23,7 +24,7 @@ namespace TFG.Droid.Adapters {
                 get { return _date; }
                 set {
                     _date = value;
-                    DateText.Text = _date.ToString("dd/MM/yyyy");
+                    DateText.Text = _date.ToString("d");
                 }
             } 
             public CustomTextView DateText { get; set; }
@@ -81,7 +82,8 @@ namespace TFG.Droid.Adapters {
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             ViewHolder viewHolder = holder as ViewHolder;
-            var date = new DateTime(_date.Year, _date.Month, 1).AddDays(position - _firstDayMonth);  
+            var firstDayOfWeek = (int) CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek;
+            var date = new DateTime(_date.Year, _date.Month, 1).AddDays(position - _firstDayMonth + firstDayOfWeek);  
             var items = DBHelper.Instance.GetSintromItemFromDate(date);
             var inrItems = DBHelper.Instance.GetSintromINRItemFromDate(date);
 

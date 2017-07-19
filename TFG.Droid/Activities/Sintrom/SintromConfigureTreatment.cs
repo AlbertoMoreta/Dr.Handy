@@ -60,12 +60,18 @@ namespace TFG.Droid.Activities.Sintrom {
 
         private void InitDays() {
             
-            var names = CultureInfo.CurrentCulture.DateTimeFormat.AbbreviatedDayNames;
+            var days = CultureInfo.CurrentCulture.DateTimeFormat.AbbreviatedDayNames;
 
-            for (var i = 0; i < names.Length; i++) {
-                FindViewById<CustomTextView>(Resources.GetIdentifier("day" + i, "id", PackageName)).Text = names[i];
-            }  
-             
+            //Reorganize days based on current culture 
+            string[] currentCultureDays = new string[7];
+            for (var i = 0; i < days.Length; i++) {
+                currentCultureDays[i] = days[((int)CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek + i) % days.Length];
+            }
+
+            for (var i = 0; i < currentCultureDays.Length; i++) {
+                FindViewById<CustomTextView>(Resources.GetIdentifier("day" + i, "id", PackageName)).Text = currentCultureDays[i];
+            } 
+
 
         }
 

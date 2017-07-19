@@ -16,6 +16,7 @@ using MikePhil.Charting.Components;
 using MikePhil.Charting.Data;
 using MikePhil.Charting.Formatter;
 using TFG.DataBase;
+using TFG.Droid.Activities;
 using TFG.Droid.Custom_Views;
 using TFG.Model;
 using Fragment = Android.Support.V4.App.Fragment;
@@ -71,11 +72,12 @@ namespace TFG.Droid.Fragments.Sintrom {
                     
 
                     var lineDataSet = new LineDataSet(lineEntries.Keys.ToList(), "");
-                    var color = Activity.TitleColor;
-                    lineDataSet.Color = color;
+                    var colorName = DBHelper.Instance.GetHealthModuleByShortName(((ModuleDetailActivity)Activity).CurrentHealthModule.ShortName).Color;
+                    var colorRes = ContextCompat.GetColor(Activity, Activity.Resources.GetIdentifier(colorName, "color", Activity.PackageName)); 
+                    lineDataSet.Color = colorRes;
                     lineDataSet.SetDrawFilled(true);
                     lineDataSet.SetDrawCircles(false);
-                    lineDataSet.FillColor = color;
+                    lineDataSet.FillColor = colorRes;
                     Chart.Data = new LineData(lineDataSet);
                     if (lineEntries.Values != null)
                     {

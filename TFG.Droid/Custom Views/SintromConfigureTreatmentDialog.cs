@@ -31,7 +31,7 @@ namespace TFG.Droid.Custom_Views {
             set {
                 _selectedDate = value;
                 //Set Dialog title
-                CurrentDate.Text = value.ToString("dd MMMM yyyy");
+                CurrentDate.Text = value.ToString("D");
             }
         }
         public string SelectedImageName { get; set; }
