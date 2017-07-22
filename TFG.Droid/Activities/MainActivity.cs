@@ -62,10 +62,7 @@ namespace TFG.Droid{
         protected override void OnStart() {
             base.OnStart();
             _adapter.SetCards(GetCardList());
-            _adapter.NotifyDataSetChanged();
-
-            
-            SetScrollIfNeeded();
+            _adapter.NotifyDataSetChanged(); 
         }
 
         private List<HealthCard> GetCardList() {
@@ -86,15 +83,7 @@ namespace TFG.Droid{
 	        intent.PutExtra("ShortName", healthModule.ShortName);
 	        StartActivity(intent);
 	    }
-
-        //Allow Toolbar animation if there are views off the screen
-        private void SetScrollIfNeeded() {
-            var layoutManager = (LinearLayoutManager) _recyclerView.GetLayoutManager();
-            var adapter = _recyclerView.GetAdapter(); 
-
-            _recyclerView.NestedScrollingEnabled = layoutManager != null && adapter != null
-                && layoutManager.FindLastCompletelyVisibleItemPosition() < (adapter.ItemCount - 1); 
-        }  
+ 
 	}
 }
 
