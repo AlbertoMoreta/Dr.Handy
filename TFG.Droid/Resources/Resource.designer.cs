@@ -4164,8 +4164,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f0a0051
 			public const int list_item = 2131361873;
 			
-			// aapt resource value: 0x7f0a00b2
-			public const int masked = 2131361970;
+			// aapt resource value: 0x7f0a00b3
+			public const int masked = 2131361971;
 			
 			// aapt resource value: 0x7f0a009f
 			public const int media_actions = 2131361951;
@@ -4320,6 +4320,9 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f0a001f
 			public const int showTitle = 2131361823;
 			
+			// aapt resource value: 0x7f0a00b1
+			public const int sign_in_button = 2131361969;
+			
 			// aapt resource value: 0x7f0a007d
 			public const int smallLabel = 2131361917;
 			
@@ -4428,8 +4431,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f0a000e
 			public const int view_offset_helper = 2131361806;
 			
-			// aapt resource value: 0x7f0a00b1
-			public const int visible = 2131361969;
+			// aapt resource value: 0x7f0a00b2
+			public const int visible = 2131361970;
 			
 			// aapt resource value: 0x7f0a0014
 			public const int wide = 2131361812;
@@ -4698,10 +4701,13 @@ namespace TFG.Droid
 			public const int select_dialog_singlechoice_material = 2130903106;
 			
 			// aapt resource value: 0x7f030043
-			public const int support_simple_spinner_dropdown_item = 2130903107;
+			public const int sign_in = 2130903107;
 			
 			// aapt resource value: 0x7f030044
-			public const int toolbar = 2130903108;
+			public const int support_simple_spinner_dropdown_item = 2130903108;
+			
+			// aapt resource value: 0x7f030045
+			public const int toolbar = 2130903109;
 			
 			static Layout()
 			{
@@ -4809,14 +4815,14 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f070023
 			public const int abc_toolbar_collapse_description = 2131165219;
 			
-			// aapt resource value: 0x7f07003d
-			public const int accept = 2131165245;
+			// aapt resource value: 0x7f070044
+			public const int accept = 2131165252;
 			
-			// aapt resource value: 0x7f07003b
-			public const int add = 2131165243;
+			// aapt resource value: 0x7f070042
+			public const int add = 2131165250;
 			
-			// aapt resource value: 0x7f07003a
-			public const int app_name = 2131165242;
+			// aapt resource value: 0x7f070041
+			public const int app_name = 2131165249;
 			
 			// aapt resource value: 0x7f070032
 			public const int appbar_scrolling_view_behavior = 2131165234;
@@ -4827,8 +4833,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f070034
 			public const int character_counter_pattern = 2131165236;
 			
-			// aapt resource value: 0x7f07003e
-			public const int color_blindness_test_name = 2131165246;
+			// aapt resource value: 0x7f070045
+			public const int color_blindness_test_name = 2131165253;
 			
 			// aapt resource value: 0x7f070001
 			public const int common_google_play_services_enable_button = 2131165185;
@@ -4881,6 +4887,27 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f070010
 			public const int common_signin_button_text_long = 2131165200;
 			
+			// aapt resource value: 0x7f07003c
+			public const int default_web_client_id = 2131165244;
+			
+			// aapt resource value: 0x7f07003d
+			public const int firebase_database_url = 2131165245;
+			
+			// aapt resource value: 0x7f07003a
+			public const int gcm_defaultSenderId = 2131165242;
+			
+			// aapt resource value: 0x7f07003e
+			public const int google_api_key = 2131165246;
+			
+			// aapt resource value: 0x7f07003b
+			public const int google_app_id = 2131165243;
+			
+			// aapt resource value: 0x7f07003f
+			public const int google_crash_reporting_api_key = 2131165247;
+			
+			// aapt resource value: 0x7f070040
+			public const int google_storage_bucket = 2131165248;
+			
 			// aapt resource value: 0x7f070035
 			public const int password_toggle_content_description = 2131165237;
 			
@@ -4896,20 +4923,20 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f070039
 			public const int path_password_strike_through = 2131165241;
 			
-			// aapt resource value: 0x7f07003c
-			public const int remove = 2131165244;
+			// aapt resource value: 0x7f070043
+			public const int remove = 2131165251;
 			
 			// aapt resource value: 0x7f070024
 			public const int search_menu_title = 2131165220;
 			
-			// aapt resource value: 0x7f070040
-			public const int sintrom_name = 2131165248;
+			// aapt resource value: 0x7f070047
+			public const int sintrom_name = 2131165255;
 			
 			// aapt resource value: 0x7f070025
 			public const int status_bar_notification_info_overflow = 2131165221;
 			
-			// aapt resource value: 0x7f07003f
-			public const int step_counter_name = 2131165247;
+			// aapt resource value: 0x7f070046
+			public const int step_counter_name = 2131165254;
 			
 			static String()
 			{

@@ -117,6 +117,12 @@
     <Reference Include="Xamarin.Firebase.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Firebase.Common.42.1021.1\lib\MonoAndroid70\Xamarin.Firebase.Common.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Auth, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Auth.42.1021.1\lib\MonoAndroid70\Xamarin.GooglePlayServices.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Auth.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Auth.Base.42.1021.1\lib\MonoAndroid70\Xamarin.GooglePlayServices.Auth.Base.dll</HintPath>
+    </Reference>
     <Reference Include="Xamarin.GooglePlayServices.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.GooglePlayServices.Base.42.1021.1\lib\MonoAndroid70\Xamarin.GooglePlayServices.Base.dll</HintPath>
     </Reference>
@@ -132,6 +138,7 @@
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\ModuleDetailActivity.cs" />
     <Compile Include="Activities\ModuleListActivity.cs" />
+    <Compile Include="Activities\SignInActivity.cs" />
     <Compile Include="Adapters\HealthCardAdapter.cs" />
     <Compile Include="Adapters\HealthModulePagerAdapter.cs" />
     <Compile Include="Adapters\HealthModulesListAdapter.cs" />
@@ -157,6 +164,7 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\Fonts\DroidSerif-Bold.ttf" />
     <AndroidAsset Include="Assets\Fonts\DroidSerif-Regular.ttf" />
+    <GoogleServicesJson Include="google-services.json" />
     <None Include="packages.config" />
     <None Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\layout\cardview_barchart.axml" />
@@ -169,6 +177,9 @@
     <AndroidResource Include="Resources\layout\module_viewcell.axml" />
     <AndroidResource Include="Resources\layout\modules_list.axml" />
     <AndroidResource Include="Resources\layout\toolbar.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\sign_in.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -248,4 +259,13 @@
   <Import Project="..\packages\Xamarin.Firebase.Common.42.1021.1\build\MonoAndroid70\Xamarin.Firebase.Common.targets" Condition="Exists('..\packages\Xamarin.Firebase.Common.42.1021.1\build\MonoAndroid70\Xamarin.Firebase.Common.targets')" />
   <Import Project="..\packages\Xamarin.GooglePlayServices.Base.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Base.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Base.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Base.targets')" />
   <Import Project="..\packages\Xamarin.Firebase.Auth.42.1021.1\build\MonoAndroid70\Xamarin.Firebase.Auth.targets" Condition="Exists('..\packages\Xamarin.Firebase.Auth.42.1021.1\build\MonoAndroid70\Xamarin.Firebase.Auth.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Auth.Base.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Auth.Base.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Auth.Base.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Auth.Base.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Xamarin.GooglePlayServices.Auth.Base.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Auth.Base.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.GooglePlayServices.Auth.Base.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Auth.Base.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.GooglePlayServices.Auth.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Auth.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.GooglePlayServices.Auth.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Auth.targets'))" />
+  </Target>
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Auth.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Auth.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Auth.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Auth.targets')" />
 </Project>

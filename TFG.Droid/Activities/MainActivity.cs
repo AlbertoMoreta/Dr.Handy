@@ -79,10 +79,16 @@ namespace TFG.Droid{
         }
 
 	    public void OnHealthCardClick(HealthModule healthModule)  {
-            var intent = new Intent(this, typeof(ModuleDetailActivity)); 
-	        intent.PutExtra("ShortName", healthModule.ShortName);
-	        StartActivity(intent);
-	    }
+            if (healthModule.LoginRequired) {
+                var intent = new Intent(this, typeof(SignInActivity));
+                intent.PutExtra("ShortName", healthModule.ShortName);
+                StartActivity(intent);
+            } else {
+                var intent = new Intent(this, typeof(ModuleDetailActivity)); 
+	            intent.PutExtra("ShortName", healthModule.ShortName);
+	            StartActivity(intent); 
+            }
+        }
  
 	}
 }
