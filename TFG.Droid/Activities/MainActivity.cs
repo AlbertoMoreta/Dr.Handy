@@ -32,7 +32,8 @@ namespace TFG.Droid{
 		protected override void OnCreate (Bundle bundle){
 			base.OnCreate (bundle); 
 
-            SetContentView (Resource.Layout.Main); 
+            SetContentView (Resource.Layout.Main);
+            SetUpToolBar(false);
 
             //DBHelper.Instance.DropTable(DBHelper.TABLE_NAME);
             DBHelper.Instance.Init(); 
