@@ -4,6 +4,7 @@ obj
 *.suo
 packages
 *.config
+*.csproj
 *.csproj.bak
 *.proj
 */Resource.Designer.cs
