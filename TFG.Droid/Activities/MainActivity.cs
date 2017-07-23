@@ -21,6 +21,7 @@ using TFG.Droid.Activities;
 using TFG.Droid.Listeners;
 using TFG.Model;
 using FloatingActionButton = com.refractored.fab.FloatingActionButton;
+using Android.Preferences;
 
 namespace TFG.Droid{
 	[Activity (Label = "MainActivity", MainLauncher = true, Icon = "@drawable/icon", Theme="@style/AppTheme", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
@@ -32,7 +33,7 @@ namespace TFG.Droid{
 		protected override void OnCreate (Bundle bundle){
 			base.OnCreate (bundle); 
 
-            SetContentView (Resource.Layout.Main);
+            SetContentView (Resource.Layout.Main); 
             SetUpToolBar(false);
 
             //DBHelper.Instance.DropTable(DBHelper.TABLE_NAME);
@@ -79,15 +80,21 @@ namespace TFG.Droid{
         }
 
 	    public void OnHealthCardClick(HealthModule healthModule)  {
+            Intent intent;
             if (healthModule.LoginRequired) {
-                var intent = new Intent(this, typeof(SignInActivity));
-                intent.PutExtra("ShortName", healthModule.ShortName);
-                StartActivity(intent);
+                var prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+                var idToken = prefs.GetString("IdToken", null);
+                if (idToken != null) {
+                    intent = new Intent(this, typeof(ModuleDetailActivity));
+                } else {
+                    intent = new Intent(this, typeof(SignInActivity));
+                }
             } else {
-                var intent = new Intent(this, typeof(ModuleDetailActivity)); 
-	            intent.PutExtra("ShortName", healthModule.ShortName);
-	            StartActivity(intent); 
+                intent = new Intent(this, typeof(ModuleDetailActivity));
             }
+
+            intent.PutExtra("ShortName", healthModule.ShortName);
+            StartActivity(intent);
         }
  
 	}

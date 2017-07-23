@@ -18,6 +18,7 @@ using Android.Gms.Auth.Api;
 using Android.Support.V4.App; 
 using static Android.Gms.Common.Apis.GoogleApiClient;
 using TFG.Model;
+using TFG.Droid.Custom_Views;
 
 namespace TFG.Droid.Activities { 
     [Activity(Label = "SignInActivity", Theme = "@style/AppTheme", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
@@ -35,8 +36,14 @@ namespace TFG.Droid.Activities {
             SetContentView(Resource.Layout.sign_in);
 
             var shortName = Intent.GetStringExtra("ShortName");
-            _healthModule = DBHelper.Instance.GetHealthModuleByShortName(shortName); 
+            _healthModule = DBHelper.Instance.GetHealthModuleByShortName(shortName);
 
+            //Set background image
+            Window.DecorView.Background = _healthModule.GetBackground(this);
+
+            //Set text description
+            var description = FindViewById<CustomTextView>(Resource.Id.sign_in_description);
+            description.Text = String.Format(Resources.GetString(Resource.String.sign_in_description), _healthModule.Name); 
 
             // Set the dimensions of the sign-in button.
             var signInButton = FindViewById<SignInButton>(Resource.Id.sign_in_button);
