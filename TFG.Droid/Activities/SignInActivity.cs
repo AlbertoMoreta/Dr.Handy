@@ -23,7 +23,7 @@ using TFG.Droid.Custom_Views;
 namespace TFG.Droid.Activities { 
     [Activity(Label = "SignInActivity", Theme = "@style/AppTheme", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
 
-    public class SignInActivity : FragmentActivity{
+    public class SignInActivity : BaseActivity{
 
         private static readonly int RC_SIGN_IN = 9001;
 
@@ -34,6 +34,8 @@ namespace TFG.Droid.Activities {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.sign_in);
+            SetUpToolBar();
+            ToolbarTitle.Text = Resources.GetString(Resource.String.access);
 
             var shortName = Intent.GetStringExtra("ShortName");
             _healthModule = DBHelper.Instance.GetHealthModuleByShortName(shortName);
