@@ -18,12 +18,12 @@ using Android.Gms.Auth.Api;
 using Android.Support.V4.App; 
 using static Android.Gms.Common.Apis.GoogleApiClient;
 using TFG.Model;
-using Android.Preferences;
+using TFG.Droid.Custom_Views;
 
 namespace TFG.Droid.Activities { 
     [Activity(Label = "SignInActivity", Theme = "@style/AppTheme", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
 
-    public class SignInActivity : FragmentActivity, IConnectionCallbacks{
+    public class SignInActivity : BaseActivity{
 
         private static readonly int RC_SIGN_IN = 9001;
 
@@ -34,9 +34,18 @@ namespace TFG.Droid.Activities {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.sign_in);
+            SetUpToolBar();
+            ToolbarTitle.Text = Resources.GetString(Resource.String.access);
 
             var shortName = Intent.GetStringExtra("ShortName");
-            _healthModule = DBHelper.Instance.GetHealthModuleByShortName(shortName); 
+            _healthModule = DBHelper.Instance.GetHealthModuleByShortName(shortName);
+
+            //Set background image
+            Window.DecorView.Background = _healthModule.GetBackground(this);
+
+            //Set text description
+            var description = FindViewById<CustomTextView>(Resource.Id.sign_in_description);
+            description.Text = String.Format(Resources.GetString(Resource.String.sign_in_description), _healthModule.Name); 
 
             // Set the dimensions of the sign-in button.
             var signInButton = FindViewById<SignInButton>(Resource.Id.sign_in_button);
@@ -44,7 +53,6 @@ namespace TFG.Droid.Activities {
 
 
             GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DefaultSignIn)
-                    .RequestIdToken(Resources.GetString(Resource.String.default_web_client_id))
                     .RequestEmail()
                     .Build();
 
@@ -52,17 +60,20 @@ namespace TFG.Droid.Activities {
             // options specified by gso.
             _googleApiClient = new GoogleApiClient.Builder(this)  
                 .AddApi(Auth.GOOGLE_SIGN_IN_API, gso) 
-                .AddConnectionCallbacks(this)
                 .Build();
-           
-          
+
             signInButton.Click += delegate { GoogleSignIn(); };
         }
 
-        protected override void OnStart()  {
-            base.OnStart();
-        }
 
+        protected override void OnResume() {
+            base.OnResume();
+            _googleApiClient.Disconnect();
+
+            if(_googleApiClient != null && _googleApiClient.IsConnected) { 
+                StartModuleDetailActivity();
+            }
+        }
 
         private void GoogleSignIn() { 
             var signInIntent = Auth.GoogleSignInApi.GetSignInIntent(_googleApiClient);
@@ -76,11 +87,6 @@ namespace TFG.Droid.Activities {
                 var result = Auth.GoogleSignInApi.GetSignInResultFromIntent(data);
 
                 if (result.IsSuccess) {
-                    var prefs = PreferenceManager.GetDefaultSharedPreferences(this);
-                    var editor = prefs.Edit();
-                    editor.PutString("IdToken", result.SignInAccount.IdToken); 
-                    editor.Apply();
-                    
                     StartModuleDetailActivity();
                 }
             }
@@ -90,19 +96,7 @@ namespace TFG.Droid.Activities {
             var intent = new Intent(this, typeof(ModuleDetailActivity));
             intent.PutExtra("ShortName", _healthModule.ShortName);
             StartActivity(intent);
-            Finish();
 
-        }
-
-        public void OnConnected(Bundle connectionHint) {
-
-            if (_googleApiClient.IsConnected) {
-                StartModuleDetailActivity();
-            }
-        }
-
-        public void OnConnectionSuspended(int cause) {
-            throw new NotImplementedException();
         }
     }
 }
