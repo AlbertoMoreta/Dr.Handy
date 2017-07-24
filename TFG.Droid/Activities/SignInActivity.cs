@@ -19,6 +19,7 @@ using Android.Support.V4.App;
 using static Android.Gms.Common.Apis.GoogleApiClient;
 using TFG.Model;
 using TFG.Droid.Custom_Views;
+using Android.Preferences;
 
 namespace TFG.Droid.Activities { 
     [Activity(Label = "SignInActivity", Theme = "@style/AppTheme", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
@@ -35,17 +36,23 @@ namespace TFG.Droid.Activities {
 
             SetContentView(Resource.Layout.sign_in);
             SetUpToolBar();
-            ToolbarTitle.Text = Resources.GetString(Resource.String.access);
 
             var shortName = Intent.GetStringExtra("ShortName");
             _healthModule = DBHelper.Instance.GetHealthModuleByShortName(shortName);
 
+            //Toolbar title
+            ToolbarTitle.Text = Resources.GetString(Resource.String.access, _healthModule.Name);
+
             //Set background image
             Window.DecorView.Background = _healthModule.GetBackground(this);
 
+            //Set module icon
+            var icon = FindViewById<ImageView>(Resource.Id.module_icon); 
+            icon.Background = _healthModule.GetIcon(this);
+
             //Set text description
             var description = FindViewById<CustomTextView>(Resource.Id.sign_in_description);
-            description.Text = String.Format(Resources.GetString(Resource.String.sign_in_description), _healthModule.Name); 
+            description.Text = Resources.GetString(Resource.String.sign_in_description, _healthModule.Name); 
 
             // Set the dimensions of the sign-in button.
             var signInButton = FindViewById<SignInButton>(Resource.Id.sign_in_button);
@@ -54,6 +61,7 @@ namespace TFG.Droid.Activities {
 
             GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DefaultSignIn)
                     .RequestEmail()
+                    .RequestIdToken(Resources.GetString(Resource.String.default_web_client_id)) 
                     .Build();
 
             // Build a GoogleApiClient with access to the Google Sign-In API and the
@@ -87,6 +95,12 @@ namespace TFG.Droid.Activities {
                 var result = Auth.GoogleSignInApi.GetSignInResultFromIntent(data);
 
                 if (result.IsSuccess) {
+                    //Put User Id Token in Shared Preferences
+                    var prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+                    var editor = prefs.Edit();
+                    editor.PutString("IdToken", result.SignInAccount.IdToken);
+                    editor.Apply();
+                     
                     StartModuleDetailActivity();
                 }
             }
@@ -96,6 +110,7 @@ namespace TFG.Droid.Activities {
             var intent = new Intent(this, typeof(ModuleDetailActivity));
             intent.PutExtra("ShortName", _healthModule.ShortName);
             StartActivity(intent);
+            Finish();
 
         }
     }
