@@ -14,22 +14,25 @@ using Android.Widget;
 using Java.Lang;
 using TFG.Droid.Activities;
 using TFG.Model;
+using TFG.DataBase;
 
 namespace TFG.Droid.Receivers {
     [BroadcastReceiver]
-     [IntentFilter(new[] { Intent.ActionMain })]
     public class NotificationReceiver : BroadcastReceiver { 
 
         public override void OnReceive(Context context, Intent intent) {
-            var moduleId = intent.GetIntExtra("moduleId", -1); 
+            var moduleShortName = intent.GetStringExtra("moduleShortName"); 
             var requestCode = intent.GetIntExtra("requestCode", -1);
 
+            var healthModule = DBHelper.Instance.GetHealthModuleByShortName(moduleShortName);
+
             //TODO
-            var notificationItem = new NotificationItem("Title", "Description", true); //HealthModulesInfo.GetHealthModuleTypeById(moduleId).GetNotificationItem());
+            var notificationItem = healthModule.GetNotificationItem(context, healthModule);
+
 
             if (notificationItem != null) {
                 var clickIntent = new Intent(context, typeof(ModuleDetailActivity));
-                clickIntent.PutExtra("name", moduleId);
+                clickIntent.PutExtra("moduleShortName", moduleShortName);
                 var contentIntent = PendingIntent.GetActivity(context, requestCode, clickIntent,
                     PendingIntentFlags.CancelCurrent);
 
