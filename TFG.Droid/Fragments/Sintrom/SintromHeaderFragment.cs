@@ -43,9 +43,10 @@ namespace TFG.Droid.Fragments.Sintrom {
             calendar.Set(CalendarField.Date, calendar.Get(CalendarField.Date) + dayOffset);
             calendar.Set(CalendarField.HourOfDay, 12);
             calendar.Set(CalendarField.Minute, 0);
-            calendar.Set(CalendarField.Second, 0);  
-          
-            NotificationsUtils.ScheduleNotification(Activity, 1, calendar.TimeInMillis);
+            calendar.Set(CalendarField.Second, 0);
+
+            var moduleShortName = ((ModuleDetailActivity)Activity).CurrentHealthModule.ShortName;
+            NotificationsUtils.ScheduleNotification(Activity, moduleShortName, calendar.TimeInMillis);
         }
  
 
