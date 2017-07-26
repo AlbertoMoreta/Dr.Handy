@@ -1648,6 +1648,18 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f010002
 			public const int circleCrop = 2130771970;
 			
+			// aapt resource value: 0x7f010163
+			public const int civ_border_color = 2130772323;
+			
+			// aapt resource value: 0x7f010164
+			public const int civ_border_overlay = 2130772324;
+			
+			// aapt resource value: 0x7f010162
+			public const int civ_border_width = 2130772322;
+			
+			// aapt resource value: 0x7f010165
+			public const int civ_fill_color = 2130772325;
+			
 			// aapt resource value: 0x7f0100cf
 			public const int closeIcon = 2130772175;
 			
@@ -4164,8 +4176,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f0a0051
 			public const int list_item = 2131361873;
 			
-			// aapt resource value: 0x7f0a00b4
-			public const int masked = 2131361972;
+			// aapt resource value: 0x7f0a00b5
+			public const int masked = 2131361973;
 			
 			// aapt resource value: 0x7f0a009f
 			public const int media_actions = 2131361951;
@@ -4326,6 +4338,9 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f0a00b1
 			public const int sign_in_description = 2131361969;
 			
+			// aapt resource value: 0x7f0a00b6
+			public const int sign_out = 2131361974;
+			
 			// aapt resource value: 0x7f0a007d
 			public const int smallLabel = 2131361917;
 			
@@ -4431,11 +4446,14 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f0a0020
 			public const int useLogo = 2131361824;
 			
+			// aapt resource value: 0x7f0a00b3
+			public const int user_image = 2131361971;
+			
 			// aapt resource value: 0x7f0a000e
 			public const int view_offset_helper = 2131361806;
 			
-			// aapt resource value: 0x7f0a00b3
-			public const int visible = 2131361971;
+			// aapt resource value: 0x7f0a00b4
+			public const int visible = 2131361972;
 			
 			// aapt resource value: 0x7f0a0014
 			public const int wide = 2131361812;
@@ -4722,6 +4740,22 @@ namespace TFG.Droid
 			}
 		}
 		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f0d0000
+			public const int sign_out_popup_menu = 2131558400;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
+			{
+			}
+		}
+		
 		public partial class String
 		{
 			
@@ -4818,17 +4852,17 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f070023
 			public const int abc_toolbar_collapse_description = 2131165219;
 			
-			// aapt resource value: 0x7f07003d
-			public const int accept = 2131165245;
+			// aapt resource value: 0x7f070044
+			public const int accept = 2131165252;
 			
-			// aapt resource value: 0x7f07003e
-			public const int access = 2131165246;
+			// aapt resource value: 0x7f070045
+			public const int access = 2131165253;
 			
-			// aapt resource value: 0x7f07003b
-			public const int add = 2131165243;
+			// aapt resource value: 0x7f070042
+			public const int add = 2131165250;
 			
-			// aapt resource value: 0x7f07003a
-			public const int app_name = 2131165242;
+			// aapt resource value: 0x7f070041
+			public const int app_name = 2131165249;
 			
 			// aapt resource value: 0x7f070032
 			public const int appbar_scrolling_view_behavior = 2131165234;
@@ -4890,6 +4924,27 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f070010
 			public const int common_signin_button_text_long = 2131165200;
 			
+			// aapt resource value: 0x7f07003c
+			public const int default_web_client_id = 2131165244;
+			
+			// aapt resource value: 0x7f07003d
+			public const int firebase_database_url = 2131165245;
+			
+			// aapt resource value: 0x7f07003a
+			public const int gcm_defaultSenderId = 2131165242;
+			
+			// aapt resource value: 0x7f07003e
+			public const int google_api_key = 2131165246;
+			
+			// aapt resource value: 0x7f07003b
+			public const int google_app_id = 2131165243;
+			
+			// aapt resource value: 0x7f07003f
+			public const int google_crash_reporting_api_key = 2131165247;
+			
+			// aapt resource value: 0x7f070040
+			public const int google_storage_bucket = 2131165248;
+			
 			// aapt resource value: 0x7f070035
 			public const int password_toggle_content_description = 2131165237;
 			
@@ -4905,14 +4960,14 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f070039
 			public const int path_password_strike_through = 2131165241;
 			
-			// aapt resource value: 0x7f07003c
-			public const int remove = 2131165244;
+			// aapt resource value: 0x7f070043
+			public const int remove = 2131165251;
 			
 			// aapt resource value: 0x7f070024
 			public const int search_menu_title = 2131165220;
 			
-			// aapt resource value: 0x7f07003f
-			public const int sign_in_description = 2131165247;
+			// aapt resource value: 0x7f070046
+			public const int sign_in_description = 2131165254;
 			
 			// aapt resource value: 0x7f070025
 			public const int status_bar_notification_info_overflow = 2131165221;
@@ -6970,6 +7025,24 @@ namespace TFG.Droid
 			
 			// aapt resource value: 11
 			public const int CardView_contentPaddingTop = 11;
+			
+			public static int[] CircleImageView = new int[] {
+					2130772322,
+					2130772323,
+					2130772324,
+					2130772325};
+			
+			// aapt resource value: 1
+			public const int CircleImageView_civ_border_color = 1;
+			
+			// aapt resource value: 2
+			public const int CircleImageView_civ_border_overlay = 2;
+			
+			// aapt resource value: 0
+			public const int CircleImageView_civ_border_width = 0;
+			
+			// aapt resource value: 3
+			public const int CircleImageView_civ_fill_color = 3;
 			
 			public static int[] CollapsingToolbarLayout = new int[] {
 					2130771992,

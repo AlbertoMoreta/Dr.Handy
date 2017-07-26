@@ -81,14 +81,8 @@ namespace TFG.Droid{
 
 	    public void OnHealthCardClick(HealthModule healthModule)  {
             Intent intent;
-            if (healthModule.LoginRequired) {
-                var prefs = PreferenceManager.GetDefaultSharedPreferences(this);
-                var idToken = prefs.GetString("IdToken", null);
-                if (idToken != null) {
-                    intent = new Intent(this, typeof(ModuleDetailActivity));
-                } else {
-                    intent = new Intent(this, typeof(SignInActivity));
-                }
+            if (healthModule.LoginRequired) { 
+                intent = new Intent(this, typeof(SignInActivity));
             } else {
                 intent = new Intent(this, typeof(ModuleDetailActivity));
             }
