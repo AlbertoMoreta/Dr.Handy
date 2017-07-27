@@ -10,16 +10,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)DataBase\DBHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)DataBase\DBHelper.StepCounter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataBase\DBHelper.Sintrom.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Logic\ColorBlindnessLogic.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Logic\StepCounterLogic.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\ColorBlindnessQuestion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logic\CurrentLanguageConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Logic\HealthModulesConfigReader.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\HealthModule.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\HealthModulesInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\NotificationItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\SintromINRItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\SintromItem.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\StepCounterItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\SintromTreatmentItem.cs" />
   </ItemGroup>
 </Project>

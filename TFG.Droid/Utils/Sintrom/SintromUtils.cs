@@ -67,8 +67,8 @@ namespace TFG.Droid.Utils {
             var sintromItems = DBHelper.Instance.GetSintromItemFromDate(DateTime.Now);
             if (sintromItems.Count > 0) {
                 var sintromItem = sintromItems[0];
-                var description = context.GetString(context.Resources.GetIdentifier("sintrom_notification_description",
-                "string", context.PackageName));
+                var description = string.Format(context.GetString(context.Resources.GetIdentifier("sintrom_notification_description",
+                "string", context.PackageName)), sintromItem.Fraction, sintromItem.Medicine);
 
                 notificationItem = new NotificationItem(title, description, true);
             }
