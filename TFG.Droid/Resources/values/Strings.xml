@@ -5,6 +5,7 @@
   <string name="remove">Remove</string>
   <string name="accept">Aceptar</string>
   <string name="access">Acceso %1$s</string> 
+  <string name="sign_out">Cerrar Sesión</string>
   <string name="sign_in_description">Para utilizar la herramienta de %1$s es necesario autentificarse. Pulse en el botón de abajo para acceder a su cuenta de Google y empezar a utilizar la herramienta.</string>
 
 </resources>
