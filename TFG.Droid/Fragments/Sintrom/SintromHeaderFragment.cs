@@ -73,11 +73,13 @@ namespace TFG.Droid.Fragments.Sintrom {
          
 
         private void RefreshHeader() {
-             //Get Sintrom treatment for today
-            var items =
-                    DBHelper.Instance.GetSintromItemFromDate(DateTime.Now);
+            var userId = HealthModuleUtils.GetCurrentUserId(Context);
 
-            var inrItems = DBHelper.Instance.GetSintromINRItemFromDate(DateTime.Now);
+            //Get Sintrom treatment for today
+            var items =
+                    DBHelper.Instance.GetSintromItemFromDate(DateTime.Now, userId);
+
+            var inrItems = DBHelper.Instance.GetSintromINRItemFromDate(DateTime.Now, userId);
 
             if (items.Count > 0) {
                 View.Visibility = ViewStates.Visible;
@@ -92,7 +94,7 @@ namespace TFG.Droid.Fragments.Sintrom {
                     inputINR.Text = inrItems[0].INR.ToString();
                     inputINR.TextChanged += SintromUtils.INRTextChanged;
                     inputINR.AfterTextChanged += (s, e) => {
-                        DBHelper.Instance.InsertSintromINRItem(new SintromINRItem(DateTime.Now, true,
+                        DBHelper.Instance.InsertSintromINRItem(new SintromINRItem(userId, DateTime.Now, true,
                             ((EditText) s).Text.Equals("") ? 0 : double.Parse(((EditText) s).Text)));
                     };
 

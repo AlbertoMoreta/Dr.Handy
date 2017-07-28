@@ -13,6 +13,7 @@ using TFG.Droid.Activities.Sintrom;
 using TFG.Droid.Adapters;
 using TFG.Model; 
 using Fragment = Android.Support.V4.App.Fragment;
+using TFG.Droid.Utils;
 
 namespace TFG.Droid.Fragments.Sintrom {
     public class SintromTreatmentFragment : Fragment {
@@ -72,8 +73,9 @@ namespace TFG.Droid.Fragments.Sintrom {
         }
 
         private List<SintromItem> GetTreatmentItems() {
-            var sintromINRItems = new List<SintromItem>(DBHelper.Instance.GetSintromINRItemsStartingFromDate(DateTime.Now.AddDays(1)));
-            var sintromItems = new List<SintromItem>(DBHelper.Instance.GetSintromItemsStartingFromDate(DateTime.Now.AddDays(1)));
+            var userId = HealthModuleUtils.GetCurrentUserId(Context);
+            var sintromINRItems = new List<SintromItem>(DBHelper.Instance.GetSintromINRItemsStartingFromDate(DateTime.Now.AddDays(1), userId));
+            var sintromItems = new List<SintromItem>(DBHelper.Instance.GetSintromItemsStartingFromDate(DateTime.Now.AddDays(1), userId));
 
             return sintromINRItems.Concat(sintromItems).GroupBy(x => x.Date).Select(group => group.First()).OrderBy(x => x.Date).ToList(); 
         }

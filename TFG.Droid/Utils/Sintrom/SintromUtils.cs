@@ -53,7 +53,8 @@ namespace TFG.Droid.Utils {
 
         public override NotificationItem GetNotificationItem(Context context, HealthModule healthModule) {
             NotificationItem notificationItem = null;
-            var controlday = DBHelper.Instance.GetSintromINRItemFromDate(DateTime.Now);
+
+            var controlday = DBHelper.Instance.GetSintromINRItemFromDate(DateTime.Now, GetCurrentUserId(context));
             var title = healthModule.Name;
             //Control Day Notification
             if (controlday.Count > 0 && controlday[0].Control) { 
@@ -64,7 +65,7 @@ namespace TFG.Droid.Utils {
             }
 
             //Treatment Day Notification
-            var sintromItems = DBHelper.Instance.GetSintromItemFromDate(DateTime.Now);
+            var sintromItems = DBHelper.Instance.GetSintromItemFromDate(DateTime.Now, GetCurrentUserId(context));
             if (sintromItems.Count > 0) {
                 var sintromItem = sintromItems[0];
                 var description = string.Format(context.GetString(context.Resources.GetIdentifier("sintrom_notification_description",
