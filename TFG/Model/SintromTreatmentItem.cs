@@ -5,6 +5,7 @@ using System.Text;
 namespace TFG.Model {
     public class SintromTreatmentItem : SintromItem { 
 
+        public string UserId { get; set; }
         public DateTime Date { get; set; }
         private string _imageName;
         public string ImageName {
@@ -16,7 +17,8 @@ namespace TFG.Model {
 
         public SintromTreatmentItem() { }
 
-        public SintromTreatmentItem(DateTime date, string imageName, string medicine) {
+        public SintromTreatmentItem(string userId, DateTime date, string imageName, string medicine) {
+            UserId = userId;
             Date = date;
             ImageName = imageName;
             Medicine = medicine;
