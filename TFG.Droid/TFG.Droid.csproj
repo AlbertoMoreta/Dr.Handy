@@ -167,7 +167,8 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Fonts\DroidSerif-Bold.ttf" />
-    <AndroidAsset Include="Assets\Fonts\DroidSerif-Regular.ttf" />
+    <AndroidAsset Include="Assets\Fonts\DroidSerif-Regular.ttf" />    
+    <AndroidAsset Include="Assets\Fonts\Futura Medium.otf" /> 
     <GoogleServicesJson Include="google-services.json" />
     <None Include="packages.config" />
     <None Include="Properties\AndroidManifest.xml" />
