@@ -10,7 +10,7 @@ namespace TFG.Droid.Utils {
 
         public static void ScheduleNotification(Context ctx, string moduleShortName, long time) {
             var alarmIntent = new Intent(ctx, typeof(NotificationReceiver));
-            alarmIntent.PutExtra("moduleShortName", moduleShortName);
+            alarmIntent.PutExtra("ShortName", moduleShortName);
 
             var pendingIntent = PendingIntent.GetBroadcast(ctx, 0, alarmIntent, PendingIntentFlags.CancelCurrent);
 
