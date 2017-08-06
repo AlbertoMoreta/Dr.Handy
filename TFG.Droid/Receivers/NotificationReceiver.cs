@@ -21,7 +21,7 @@ namespace TFG.Droid.Receivers {
     public class NotificationReceiver : BroadcastReceiver { 
 
         public override void OnReceive(Context context, Intent intent) {
-            var moduleShortName = intent.GetStringExtra("moduleShortName"); 
+            var moduleShortName = intent.GetStringExtra("ShortName"); 
             var requestCode = intent.GetIntExtra("requestCode", -1);
 
             var healthModule = DBHelper.Instance.GetHealthModuleByShortName(moduleShortName);
@@ -32,7 +32,7 @@ namespace TFG.Droid.Receivers {
 
             if (notificationItem != null) {
                 var clickIntent = new Intent(context, typeof(ModuleDetailActivity));
-                clickIntent.PutExtra("moduleShortName", moduleShortName);
+                clickIntent.PutExtra("ShortName", moduleShortName);
                 var contentIntent = PendingIntent.GetActivity(context, requestCode, clickIntent,
                     PendingIntentFlags.CancelCurrent);
 
