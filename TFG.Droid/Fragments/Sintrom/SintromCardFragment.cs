@@ -42,7 +42,7 @@ namespace TFG.Droid.Fragments.Sintrom {
 
             moduleName.Text = module.Name;
 
-            var userId = HealthModuleUtils.GetCurrentUserId(Context);
+            var userId = HealthModuleUtils.GetCurrentUserId(Activity);
             var inrItems = DBHelper.Instance.GetSintromINRItemFromDate(DateTime.Now, userId);
             var sintromItems = DBHelper.Instance.GetSintromItemFromDate(DateTime.Now, userId);
 

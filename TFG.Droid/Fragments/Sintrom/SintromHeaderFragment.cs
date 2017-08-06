@@ -66,7 +66,7 @@ namespace TFG.Droid.Fragments.Sintrom {
          
 
         private void RefreshHeader() {
-            var userId = HealthModuleUtils.GetCurrentUserId(Context);
+            var userId = HealthModuleUtils.GetCurrentUserId(Activity);
 
             //Get Sintrom treatment for today
             var items = DBHelper.Instance.GetSintromItemFromDate(DateTime.Now, userId);

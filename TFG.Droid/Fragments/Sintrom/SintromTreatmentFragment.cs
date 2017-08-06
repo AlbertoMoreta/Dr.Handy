@@ -69,7 +69,7 @@ namespace TFG.Droid.Fragments.Sintrom {
         }
 
         private List<SintromItem> GetTreatmentItems() {
-            var userId = HealthModuleUtils.GetCurrentUserId(Context);
+            var userId = HealthModuleUtils.GetCurrentUserId(Activity);
             var sintromINRItems = new List<SintromItem>(DBHelper.Instance.GetSintromINRItemsStartingFromDate(DateTime.Now.AddDays(1), userId));
             var sintromItems = new List<SintromItem>(DBHelper.Instance.GetSintromItemsStartingFromDate(DateTime.Now.AddDays(1), userId));
 

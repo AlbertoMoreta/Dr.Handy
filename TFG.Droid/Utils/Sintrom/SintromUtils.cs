@@ -62,18 +62,18 @@ namespace TFG.Droid.Utils {
                 "string", context.PackageName));
 
                 notificationItem = new NotificationItem(title, description, true);
+            } else {
+
+                //Treatment Day Notification
+                var sintromItems = DBHelper.Instance.GetSintromItemFromDate(DateTime.Now, GetCurrentUserId(context));
+                if (sintromItems.Count > 0) {
+                    var sintromItem = sintromItems[0];
+                    var description = string.Format(context.GetString(context.Resources.GetIdentifier("sintrom_notification_description",
+                    "string", context.PackageName)), sintromItem.Fraction, sintromItem.Medicine);
+
+                    notificationItem = new NotificationItem(title, description, true);
+                }
             }
-
-            //Treatment Day Notification
-            var sintromItems = DBHelper.Instance.GetSintromItemFromDate(DateTime.Now, GetCurrentUserId(context));
-            if (sintromItems.Count > 0) {
-                var sintromItem = sintromItems[0];
-                var description = string.Format(context.GetString(context.Resources.GetIdentifier("sintrom_notification_description",
-                "string", context.PackageName)), sintromItem.Fraction, sintromItem.Medicine);
-
-                notificationItem = new NotificationItem(title, description, true);
-            }
-
             //No Notification
             return notificationItem;
         }
