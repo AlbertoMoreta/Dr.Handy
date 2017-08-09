@@ -58,7 +58,7 @@ namespace TFG.Droid.Utils {
             if (Client.IsConnected) {
                 var prefs = PreferenceManager.GetDefaultSharedPreferences(_context);
                 var editor = prefs.Edit();
-                editor.PutString("IdToken", null);
+                editor.PutString("Id", null);
                 editor.PutString("UserImage", null);
                 editor.Apply();
                 await Auth.GoogleSignInApi.RevokeAccess(Client);

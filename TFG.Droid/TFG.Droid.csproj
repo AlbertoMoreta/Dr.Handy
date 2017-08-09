@@ -170,7 +170,6 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Utils\AnimationUtils.cs" />
     <Compile Include="Utils\HealthModuleUtils.cs" />
-    <Compile Include="Utils\LogoImageBehaviour.cs" />
     <Compile Include="Utils\NotificationsUtils.cs" />
     <Compile Include="Utils\SignInUtils.cs" />
     <Compile Include="Utils\Sintrom\SintromUtils.cs" />
@@ -179,8 +178,8 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Fonts\DroidSerif-Bold.ttf" />
-    <AndroidAsset Include="Assets\Fonts\DroidSerif-Regular.ttf" />    
-    <AndroidAsset Include="Assets\Fonts\Futura Medium.otf" /> 
+    <AndroidAsset Include="Assets\Fonts\DroidSerif-Regular.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Futura Medium.otf" />
     <GoogleServicesJson Include="google-services.json" />
     <AndroidAsset Include="Assets\ConfigFiles\SintromConfig.json" />
     <None Include="packages.config" />
