@@ -3707,26 +3707,26 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f02008f
-			public const int avd_hide_password_1 = 2130837647;
-			
 			// aapt resource value: 0x7f020090
-			public const int avd_hide_password_2 = 2130837648;
+			public const int avd_hide_password_1 = 2130837648;
 			
 			// aapt resource value: 0x7f020091
-			public const int avd_hide_password_3 = 2130837649;
+			public const int avd_hide_password_2 = 2130837649;
+			
+			// aapt resource value: 0x7f020092
+			public const int avd_hide_password_3 = 2130837650;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f020092
-			public const int avd_show_password_1 = 2130837650;
-			
 			// aapt resource value: 0x7f020093
-			public const int avd_show_password_2 = 2130837651;
+			public const int avd_show_password_1 = 2130837651;
 			
 			// aapt resource value: 0x7f020094
-			public const int avd_show_password_3 = 2130837652;
+			public const int avd_show_password_2 = 2130837652;
+			
+			// aapt resource value: 0x7f020095
+			public const int avd_show_password_3 = 2130837653;
 			
 			// aapt resource value: 0x7f020055
 			public const int background_blue = 2130837589;
@@ -3843,64 +3843,67 @@ namespace TFG.Droid
 			public const int ic_add = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int ic_clear = 2130837627;
+			public const int ic_arrow = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int ic_edit = 2130837628;
+			public const int ic_clear = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int Icon = 2130837629;
+			public const int ic_edit = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int module_icon = 2130837630;
+			public const int Icon = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int navigation_empty_icon = 2130837631;
+			public const int module_icon = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int notification_action_background = 2130837632;
+			public const int navigation_empty_icon = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int notification_bg = 2130837633;
+			public const int notification_action_background = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int notification_bg_low = 2130837634;
+			public const int notification_bg = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int notification_bg_low_normal = 2130837635;
+			public const int notification_bg_low = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int notification_bg_low_pressed = 2130837636;
+			public const int notification_bg_low_normal = 2130837636;
 			
 			// aapt resource value: 0x7f020085
-			public const int notification_bg_normal = 2130837637;
+			public const int notification_bg_low_pressed = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int notification_bg_normal_pressed = 2130837638;
+			public const int notification_bg_normal = 2130837638;
 			
 			// aapt resource value: 0x7f020087
-			public const int notification_icon_background = 2130837639;
-			
-			// aapt resource value: 0x7f02008d
-			public const int notification_template_icon_bg = 2130837645;
-			
-			// aapt resource value: 0x7f02008e
-			public const int notification_template_icon_low_bg = 2130837646;
+			public const int notification_bg_normal_pressed = 2130837639;
 			
 			// aapt resource value: 0x7f020088
-			public const int notification_tile_bg = 2130837640;
+			public const int notification_icon_background = 2130837640;
+			
+			// aapt resource value: 0x7f02008e
+			public const int notification_template_icon_bg = 2130837646;
+			
+			// aapt resource value: 0x7f02008f
+			public const int notification_template_icon_low_bg = 2130837647;
 			
 			// aapt resource value: 0x7f020089
-			public const int notify_panel_notification_icon_bg = 2130837641;
+			public const int notification_tile_bg = 2130837641;
 			
 			// aapt resource value: 0x7f02008a
-			public const int psts_background_tab = 2130837642;
+			public const int notify_panel_notification_icon_bg = 2130837642;
 			
 			// aapt resource value: 0x7f02008b
-			public const int ripple = 2130837643;
+			public const int psts_background_tab = 2130837643;
 			
 			// aapt resource value: 0x7f02008c
-			public const int title_logo_1 = 2130837644;
+			public const int ripple = 2130837644;
+			
+			// aapt resource value: 0x7f02008d
+			public const int title_logo_1 = 2130837645;
 			
 			static Drawable()
 			{
@@ -4852,17 +4855,17 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f070023
 			public const int abc_toolbar_collapse_description = 2131165219;
 			
-			// aapt resource value: 0x7f070044
-			public const int accept = 2131165252;
+			// aapt resource value: 0x7f07003d
+			public const int accept = 2131165245;
 			
-			// aapt resource value: 0x7f070045
-			public const int access = 2131165253;
+			// aapt resource value: 0x7f07003e
+			public const int access = 2131165246;
 			
-			// aapt resource value: 0x7f070042
-			public const int add = 2131165250;
+			// aapt resource value: 0x7f07003b
+			public const int add = 2131165243;
 			
-			// aapt resource value: 0x7f070041
-			public const int app_name = 2131165249;
+			// aapt resource value: 0x7f07003a
+			public const int app_name = 2131165242;
 			
 			// aapt resource value: 0x7f070032
 			public const int appbar_scrolling_view_behavior = 2131165234;
@@ -4924,27 +4927,6 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f070010
 			public const int common_signin_button_text_long = 2131165200;
 			
-			// aapt resource value: 0x7f07003c
-			public const int default_web_client_id = 2131165244;
-			
-			// aapt resource value: 0x7f07003d
-			public const int firebase_database_url = 2131165245;
-			
-			// aapt resource value: 0x7f07003a
-			public const int gcm_defaultSenderId = 2131165242;
-			
-			// aapt resource value: 0x7f07003e
-			public const int google_api_key = 2131165246;
-			
-			// aapt resource value: 0x7f07003b
-			public const int google_app_id = 2131165243;
-			
-			// aapt resource value: 0x7f07003f
-			public const int google_crash_reporting_api_key = 2131165247;
-			
-			// aapt resource value: 0x7f070040
-			public const int google_storage_bucket = 2131165248;
-			
 			// aapt resource value: 0x7f070035
 			public const int password_toggle_content_description = 2131165237;
 			
@@ -4960,17 +4942,17 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f070039
 			public const int path_password_strike_through = 2131165241;
 			
-			// aapt resource value: 0x7f070043
-			public const int remove = 2131165251;
+			// aapt resource value: 0x7f07003c
+			public const int remove = 2131165244;
 			
 			// aapt resource value: 0x7f070024
 			public const int search_menu_title = 2131165220;
 			
-			// aapt resource value: 0x7f070047
-			public const int sign_in_description = 2131165255;
+			// aapt resource value: 0x7f070040
+			public const int sign_in_description = 2131165248;
 			
-			// aapt resource value: 0x7f070046
-			public const int sign_out = 2131165254;
+			// aapt resource value: 0x7f07003f
+			public const int sign_out = 2131165247;
 			
 			// aapt resource value: 0x7f070025
 			public const int status_bar_notification_info_overflow = 2131165221;
