@@ -70,8 +70,8 @@ namespace TFG.Droid.Activities {
 
             //Check if the user is already signed in
             var prefs = PreferenceManager.GetDefaultSharedPreferences(this);
-            var idToken = prefs.GetString("IdToken", null);
-            if (idToken != null) {
+            var id = prefs.GetString("Id", null);
+            if (id != null) {
                 StartModuleDetailActivity();
             }
         } 
@@ -86,7 +86,7 @@ namespace TFG.Droid.Activities {
                     //Put User Id Token in Shared Preferences
                     var prefs = PreferenceManager.GetDefaultSharedPreferences(this);
                     var editor = prefs.Edit();
-                    editor.PutString("IdToken", result.SignInAccount.IdToken);
+                    editor.PutString("Id", result.SignInAccount.Id);
                     editor.PutString("UserImage", result.SignInAccount.PhotoUrl.ToString());
                     editor.Apply();
                     SignInUtils.Instance.Connect();
