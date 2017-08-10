@@ -9,7 +9,8 @@ using TFG.DataBase;
 using TFG.Droid.Adapters;
 using TFG.Droid.Custom_Views;
 using TFG.Droid.Fragments.Sintrom;
-using TFG.Model; 
+using TFG.Model;
+using Android.Widget;
 
 namespace TFG.Droid.Activities.Sintrom {
     
@@ -35,13 +36,18 @@ namespace TFG.Droid.Activities.Sintrom {
             var theme = module.GetTheme(this);
             if (theme != -1) { SetTheme(theme);}
 
-            Window.DecorView.Background = module.GetBackground(this); 
-  
+            Window.DecorView.Background = module.GetBackground(this);  
 
             SetContentView (Resource.Layout.sintrom_configure_treatment);
 
             _currentDate = FindViewById<CustomTextView>(Resource.Id.current_date);
             _currentDate.Text = DateTime.Now.ToString("MMMM yyyy");
+
+            //Show previous month when the user clicks the left arrow
+            FindViewById<ImageView>(Resource.Id.previous).Click += delegate { GoToPreviousMonth(); };
+            //Show next month when the user clicks the right arrow
+            FindViewById<ImageView>(Resource.Id.next).Click += delegate { GoToNextMonth(); };
+
 
             _pager = FindViewById<ViewPager>(Resource.Id.pager);
             _pager.PageSelected += ScrollChange;
@@ -78,21 +84,35 @@ namespace TFG.Droid.Activities.Sintrom {
         private void ScrollChange(object sender, ViewPager.PageSelectedEventArgs e) {
             if (CENTER_POS > e.Position) {
                 //Left Scroll
-                PreviousMonth.SetPreviousMonth();
-                CurrentMonth.SetPreviousMonth();
-                NextMonth.SetPreviousMonth();  
+                GoToPreviousMonth();
             } else if(CENTER_POS < e.Position) {
                 //Right Scroll
-                PreviousMonth.SetNextMonth();
-                CurrentMonth.SetNextMonth();
-                NextMonth.SetNextMonth(); 
+                GoToNextMonth();
             }
-            _adapter.NotifyDataSetChanged();
-           
-            _pager.SetCurrentItem(CENTER_POS, false);
-
             
-             _currentDate.Text = CurrentMonth.Date.ToString("MMMM yyyy");
         }
+
+        private void GoToPreviousMonth() {
+            PreviousMonth.SetPreviousMonth();
+            CurrentMonth.SetPreviousMonth();
+            NextMonth.SetPreviousMonth();
+
+            _adapter.NotifyDataSetChanged(); 
+            _pager.SetCurrentItem(CENTER_POS, false); 
+            _currentDate.Text = CurrentMonth.Date.ToString("MMMM yyyy");
+
+        }
+
+        private void GoToNextMonth() {
+            PreviousMonth.SetNextMonth();
+            CurrentMonth.SetNextMonth();
+            NextMonth.SetNextMonth();
+
+            _adapter.NotifyDataSetChanged(); 
+            _pager.SetCurrentItem(CENTER_POS, false); 
+            _currentDate.Text = CurrentMonth.Date.ToString("MMMM yyyy");
+
+        }
+
     }
 }
