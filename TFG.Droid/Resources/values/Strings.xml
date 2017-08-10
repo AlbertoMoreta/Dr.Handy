@@ -4,11 +4,11 @@
   <string name="add">Add</string>
   <string name="remove">Remove</string>
   <string name="accept">Aceptar</string>
+  <string name="access">Acceso %1$s</string> 
+  <string name="sign_out">Cerrar Sesión</string>
+  <string name="sign_in_description">Para utilizar la herramienta de %1$s es necesario autentificarse. Pulse en el botón de abajo para acceder a su cuenta de Google y empezar a utilizar la herramienta.</string>
 
-  <!-- Color Blindness Test Strings -->
-  <string name="color_blindness_test_name">Test de Daltonismo</string>
-
-  <!-- Step Counter Strings -->
+    <!-- Step Counter Strings -->
   <string name="step_counter_name">Podómetro</string>
   <string name="steps">Pasos</string>
   <string name="calories">Calorías</string>
@@ -24,8 +24,5 @@
 
   <string name="weekday">Día</string>
   <string name="month">Mes</string>
-
-  <!-- Sintrom Strings -->
-  <string name="sintrom_name">Sintrom</string>
 
 </resources>

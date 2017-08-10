@@ -25,7 +25,7 @@ namespace TFG.Droid.Custom_Views {
 
 
         private void Init()  {
-            Typeface = Typeface.CreateFromAsset(Context.Assets, "Fonts/DroidSerif-Bold.ttf");
+            Typeface = Typeface.CreateFromAsset(Context.Assets, "Fonts/Futura Medium.otf");
         }
     }
 }

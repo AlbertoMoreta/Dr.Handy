@@ -21,6 +21,7 @@ using TFG.Droid.Activities;
 using TFG.Droid.Listeners;
 using TFG.Model;
 using FloatingActionButton = com.refractored.fab.FloatingActionButton;
+using Android.Preferences;
 
 namespace TFG.Droid{
 	[Activity (Label = "MainActivity", MainLauncher = true, Icon = "@drawable/icon", Theme="@style/AppTheme", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
@@ -33,6 +34,7 @@ namespace TFG.Droid{
 			base.OnCreate (bundle); 
 
             SetContentView (Resource.Layout.Main); 
+            SetUpToolBar(false);
 
             //DBHelper.Instance.DropTable(DBHelper.TABLE_NAME);
             DBHelper.Instance.Init(); 
@@ -61,10 +63,7 @@ namespace TFG.Droid{
         protected override void OnStart() {
             base.OnStart();
             _adapter.SetCards(GetCardList());
-            _adapter.NotifyDataSetChanged();
-
-            
-            SetScrollIfNeeded();
+            _adapter.NotifyDataSetChanged(); 
         }
 
         private List<HealthCard> GetCardList() {
@@ -81,19 +80,17 @@ namespace TFG.Droid{
         }
 
 	    public void OnHealthCardClick(HealthModule healthModule)  {
-            var intent = new Intent(this, typeof(ModuleDetailActivity)); 
-	        intent.PutExtra("ShortName", healthModule.ShortName);
-	        StartActivity(intent);
-	    }
+            Intent intent;
+            if (healthModule.LoginRequired) { 
+                intent = new Intent(this, typeof(SignInActivity));
+            } else {
+                intent = new Intent(this, typeof(ModuleDetailActivity));
+            }
 
-        //Allow Toolbar animation if there are views off the screen
-        private void SetScrollIfNeeded() {
-            var layoutManager = (LinearLayoutManager) _recyclerView.GetLayoutManager();
-            var adapter = _recyclerView.GetAdapter(); 
-
-            _recyclerView.NestedScrollingEnabled = layoutManager != null && adapter != null
-                && layoutManager.FindLastCompletelyVisibleItemPosition() < (adapter.ItemCount - 1); 
-        }  
+            intent.PutExtra("ShortName", healthModule.ShortName);
+            StartActivity(intent);
+        }
+ 
 	}
 }
 

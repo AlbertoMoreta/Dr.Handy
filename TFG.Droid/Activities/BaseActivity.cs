@@ -13,6 +13,16 @@ using Android.Widget;
 using Android.Support.V7.App;
 using TFG.Droid.Custom_Views;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
+using Uri = Android.Net.Uri; 
+using Android.Preferences;
+using Android.Graphics;
+using System.Net;
+using Refractored.Controls;
+using TFG.Droid.Utils;
+using Android.Gms.Common.Apis;
+using Android.Gms.Auth.Api;
+using Android.Gms.Auth.Api.SignIn;
+using TFG.Droid.Activities;
 
 namespace TFG.Droid {
     [Activity(Label = "BaseActivity", Theme ="@style/AppTheme", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
@@ -29,7 +39,7 @@ namespace TFG.Droid {
         }
 
 
-        protected void SetUpToolBar(bool isTransparent = true) { 
+        protected void SetUpToolBar(bool isTransparent = true, bool showLoginInfo = false) { 
             var toolBar = ToolBar = FindViewById<Toolbar>(Resource.Id.toolbar);
             
             if (toolBar != null) {  
@@ -38,8 +48,44 @@ namespace TFG.Droid {
                 ToolbarTitle = toolBar.FindViewById<CustomTextView>(Resource.Id.title);
                 ToolbarTitle.Text = Title;
                 if (isTransparent) { toolBar.Background = null; }
+                if (showLoginInfo) {
+                    var iv = FindViewById<CircleImageView>(Resource.Id.user_image);
+                    var prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+                    var userImage = prefs.GetString("UserImage", null);
+                    iv.Click += OnAccountImageClicked;
+                    iv.SetImageBitmap(GetImageBitmapFromUrl(userImage));
+                    iv.Invalidate();
+                }
 
             }
+        }
+
+        private Bitmap GetImageBitmapFromUrl(string url) {
+            Bitmap imageBitmap = null;
+
+            using (var webClient = new WebClient()) {
+                var imageBytes = webClient.DownloadData(url);
+                if (imageBytes != null && imageBytes.Length > 0) {
+                    imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
+                }
+            }
+
+            return imageBitmap;
+        }
+
+        private void OnAccountImageClicked(object sender, EventArgs e){
+            var popup = new PopupMenu(this, ((CircleImageView) sender));  
+            popup.MenuInflater.Inflate(Resource.Menu.sign_out_popup_menu, popup.Menu);
+
+            //Sign Out user
+            popup.MenuItemClick += delegate {
+
+                SignInUtils.Instance.SignOut();
+                Finish();
+            };
+
+            popup.Show();
+
         }
     }
 }
