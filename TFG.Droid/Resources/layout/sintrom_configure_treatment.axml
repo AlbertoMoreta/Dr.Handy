@@ -4,35 +4,35 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <RelativeLayout 
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/toolbar_top_padding"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:layout_gravity="center"
         android:gravity="center">
         <ImageView
-          android:id="@+id/previous"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_toLeftOf="@+id/current_date"
-          android:scaleType="centerCrop"
-          android:cropToPadding="true"
-          android:rotation="180" 
-          android:src="@drawable/ic_arrow" />
+            android:id="@+id/previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/current_date"
+            android:layout_marginRight="10dp" 
+            android:rotation="180"
+            android:src="@drawable/ic_arrow" />
         <TFG.Droid.Custom_Views.CustomTextView
-          android:id="@+id/current_date"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content" 
-          android:layout_centerHorizontal="true"
-          android:layout_gravity="center"
-          android:textColor="@android:color/white"
-          android:textSize="@dimen/text_size_xlarge" />
+            android:id="@+id/current_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_xlarge" />
         <ImageView
-          android:id="@+id/next"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content" 
-          android:layout_toRightOf="@+id/current_date"  
-          android:src="@drawable/ic_arrow" />
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/current_date"
+            android:layout_marginLeft="10dp" 
+            android:src="@drawable/ic_arrow" />
     </RelativeLayout>
     <LinearLayout
         android:orientation="horizontal"
