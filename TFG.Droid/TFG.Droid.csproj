@@ -150,19 +150,31 @@
     <Compile Include="Custom Views\CustomTextView.cs" />
     <Compile Include="Custom Views\HealthCard.cs" />
     <Compile Include="Custom Views\ModuleViewCell.cs" />
+    <Compile Include="Fragments\StepCounter\StepCounterBodyFragment.cs" />
+    <Compile Include="Fragments\StepCounter\StepCounterCardFragment.cs" />
+    <Compile Include="Fragments\StepCounter\StepCounterChartFragment.cs" />
+    <Compile Include="Fragments\StepCounter\StepCounterHeaderFragment.cs" />
+    <Compile Include="Fragments\StepCounter\StepCounterQuickResultsFragment.cs" />
     <Compile Include="Interfaces\IHealthFragment.cs" />
     <Compile Include="Interfaces\IHealthFragmentTabItem.cs" />
     <Compile Include="Listeners\HealthCardClickListener.cs" />
+    <Compile Include="Listeners\IStepDetectedListener.cs" />
     <Compile Include="Model\HealthModule.Android.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receivers\NotificationReceiver.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Services\BootUpReceiver.cs" />
+    <Compile Include="Services\StepCounterService.cs" />
+    <Compile Include="Services\StepCounterServiceBinder.cs" />
+    <Compile Include="Services\StepCounterServiceConnection.cs" />
     <Compile Include="Utils\AnimationUtils.cs" />
+    <Compile Include="Utils\ChartUtils.cs" />
     <Compile Include="Utils\HealthModuleUtils.cs" />
     <Compile Include="Utils\NotificationsUtils.cs" />
     <Compile Include="Utils\SignInUtils.cs" />
     <Compile Include="Utils\SQLite.cs" />
     <Compile Include="Utils\SQLiteAsync.cs" />
+    <Compile Include="Utils\StepCounter\StepCounterUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Fonts\DroidSerif-Bold.ttf" />
@@ -187,6 +199,10 @@
     <AndroidResource Include="Resources\layout\sign_in.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_stepcounter_body_chart_results.axml" />
+    <AndroidResource Include="Resources\layout\fragment_stepcounter_body_quick_results.axml" />
+    <AndroidResource Include="Resources\layout\fragment_stepcounter_card.axml" />
+    <AndroidResource Include="Resources\layout\fragment_stepcounter_header.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\module_icon.xml">
@@ -246,6 +262,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\sign_out_popup_menu.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_arrow.9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\stepcounter_icon.png" />
   </ItemGroup>
   <Import Project="..\TFG\TFG.projitems" Label="Shared" Condition="Exists('..\TFG\TFG.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
