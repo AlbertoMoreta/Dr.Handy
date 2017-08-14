@@ -43,5 +43,8 @@ namespace TFG.Model {
         public IHealthFragment GetHealthCardFragment() {
             return GetUtilsClass().GetHealthCardFragment(ShortName);
         }
+        public NotificationItem GetNotificationItem(Context context, HealthModule healthModule) {
+            return GetUtilsClass().GetNotificationItem(context, healthModule);
+        }
     }
 }
