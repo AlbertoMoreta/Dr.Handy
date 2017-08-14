@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources> 
-	<string name="app_name">TFG.Droid</string>
+<resources>
+ <string name="app_name">TFG.Droid</string>
   <string name="add">Add</string>
   <string name="remove">Remove</string>
-  <string name="accept">Aceptar</string>
-  <string name="access">Acceso %1$s</string> 
-  <string name="sign_out">Cerrar Sesión</string>
-  <string name="sign_in_description">Para utilizar la herramienta de %1$s es necesario autentificarse. Pulse en el botón de abajo para acceder a su cuenta de Google y empezar a utilizar la herramienta.</string>
+  <string name="accept">Accept</string>
+  <string name="access">%1$s Access</string>
+  <string name="sign_out">Sign Out</string>
+  <string name="sign_in_description">For using the %1$s tool authentication is required. Press the button below to access your Google account and begin to use the tool.</string> 
+  <string name="no_modules">Looks like you don't have any activated tool. Press the button below to go to the tools list.</string>
 
 
   <!-- Sintrom Strings -->
