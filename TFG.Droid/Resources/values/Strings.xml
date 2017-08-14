@@ -3,27 +3,21 @@
   <string name="app_name">TFG.Droid</string>
   <string name="add">Add</string>
   <string name="remove">Remove</string>
-  <string name="accept">Aceptar</string>
-  <string name="access">%1$s Access</string>
+  <string name="accept">Accept</string>
+  <string name="access">%1$s Access</string> 
   <string name="sign_out">Sign Out</string>
-  <string name="sign_in_description">For using the %1$s tool authentication is required. Press the button below to access your Google account and begin to use the tool.</string> 
+  <string name="sign_in_description">For using the %1$s tool authentication is required. Press the button below to access your Google account and begin to use the tool.</string>
   <string name="no_modules">Looks like you don\'t have any activated tool. Press the button below to go to the tools list.</string>
 
 
   <!-- Color Blindness Test Strings -->
-  <string name="color_blindness_test_name">Test de Daltonismo</string>
-  <string name="question_number">Pregunta</string>
-  <string name="answer">Tu Respuesta</string>
-  <string name="correct_answer">Respuesta Correcta</string>
+  <string name="color_blindness_test_name">Color Blindness Test</string>
+  <string name="question_number">Question</string>
+  <string name="answer">Your Answer</string>
+  <string name="correct_answer">Correct Answer</string>
 
-  <string name="no_daltonism">No hay de que preocuparse, no sufres ningún tipo de daltonismo</string>
-  <string name="red_and_green_daltonism">En base a tus respuestas es posible que padezcas daltonismo de rojo y verde</string>
-  <string name="total_daltonism">En base a tus respuestas es posible que padezcas daltonismo total</string>
-
-  <!-- Step Counter Strings -->
-  <string name="step_counter_name">Podómetro</string> 
-
-  <!-- Sintrom Strings -->
-  <string name="sintrom_name">Sintrom</string>
+  <string name="no_daltonism">Do not worry, you don\'t suffer any type of color blindness.</string>
+  <string name="red_and_green_daltonism">Based on your answers it is possible that you may have red and green color blindness.</string>
+  <string name="total_daltonism">Based on your answers it is possible that you may have total color blindness.</string>
 
 </resources>
