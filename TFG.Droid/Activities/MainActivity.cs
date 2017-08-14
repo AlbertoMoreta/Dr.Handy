@@ -33,16 +33,19 @@ namespace TFG.Droid{
 			base.OnCreate (bundle); 
 
             SetContentView (Resource.Layout.Main); 
-            SetUpToolBar(false);
+            SetUpToolBar(false); 
 
+        }
+
+        private void RefreshLayout() {
             var listLayout = FindViewById<LinearLayout>(Resource.Id.list_layout);
             var emptyLayout = FindViewById<LinearLayout>(Resource.Id.empty_layout);
             var fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
 
             //DBHelper.Instance.DropTable(DBHelper.TABLE_NAME);
-            DBHelper.Instance.Init();  
-            List<HealthCard> cards = GetCardList(); 
-            if(cards.Count > 0) {
+            DBHelper.Instance.Init();
+            List<HealthCard> cards = GetCardList();
+            if (cards.Count > 0) {
                 listLayout.Visibility = ViewStates.Visible;
                 emptyLayout.Visibility = ViewStates.Gone;
 
@@ -57,24 +60,30 @@ namespace TFG.Droid{
                 helper.AttachToRecyclerView(recyclerView);
                 fab.AttachToRecyclerView(recyclerView);
                 var lp = (RelativeLayout.LayoutParams)fab.LayoutParameters;
+                lp.RemoveRule(LayoutRules.Below);
+                lp.RemoveRule(LayoutRules.CenterHorizontal);
                 lp.AddRule(LayoutRules.AlignParentBottom);
                 lp.AddRule(LayoutRules.AlignParentRight);
                 fab.LayoutParameters = lp;
-            } else { 
+            } else {
                 listLayout.Visibility = ViewStates.Gone;
                 emptyLayout.Visibility = ViewStates.Visible;
-                var lp = (RelativeLayout.LayoutParams) fab.LayoutParameters;
+                var lp = (RelativeLayout.LayoutParams)fab.LayoutParameters;
+                lp.RemoveRule(LayoutRules.AlignParentBottom);
+                lp.RemoveRule(LayoutRules.AlignParentRight);
                 lp.AddRule(LayoutRules.Below, Resource.Id.empty_layout);
-                lp.AddRule(LayoutRules.CenterHorizontal); 
+                lp.AddRule(LayoutRules.CenterHorizontal);
                 fab.LayoutParameters = lp;
             }
 
             fab.Click += delegate { StartActivity(typeof(ModuleListActivity)); };
-
         }
 
         protected override void OnStart() {
             base.OnStart();
+
+            RefreshLayout();
+
             if (_adapter != null) {
                 _adapter.SetCards(GetCardList());
                 _adapter.NotifyDataSetChanged();
