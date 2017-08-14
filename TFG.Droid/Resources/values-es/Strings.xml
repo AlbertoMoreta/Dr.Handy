@@ -7,5 +7,23 @@
   <string name="access">Acceso %1$s</string>
   <string name="sign_out">Cerrar Sesión</string>
   <string name="sign_in_description">Para utilizar la herramienta de %1$s es necesario autentificarse. Pulse en el botón de abajo para acceder a su cuenta de Google y empezar a utilizar la herramienta.</string>
-  <string name="no_modules">Parece que no tiene ninguna herramienta activada. Pulse en el botón de abajo para acceder a la lista de herramientas.</string>
+  <string name="no_modules">Parece que no tiene ninguna herramienta activada. Pulse en el botón de abajo para acceder a la lista de herramientas y activar las que le resulten más útiles.</string>
+
+  
+  <!-- Step Counter Strings -->
+  <string name="step_counter_name">Podómetro</string>
+  <string name="steps">Pasos</string>
+  <string name="calories">Calorías</string>
+  <string name="calories_short">cal.</string>
+  <string name="distance">Distancia</string>
+  <string name="kilometers">km</string>
+  <string name="yesterday">AYER</string>
+  <string name="same_day_last_week">MISMO DÍA DE LA SEMANA PASADA</string>
+  <string name="quick_results">Resultados Rápidos</string>
+  <string name="weekly_results">Resultados Semanales</string>
+  <string name="yearly_results">Resultados Anuales</string>
+
+  <string name="weekday">Día</string>
+  <string name="month">Mes</string>
+  
 </resources>
