@@ -3313,8 +3313,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f090092
 			public const int fab_elevation_lollipop = 2131296402;
 			
-			// aapt resource value: 0x7f0900a6
-			public const int fab_offset = 2131296422;
+			// aapt resource value: 0x7f0900a7
+			public const int fab_offset = 2131296423;
 			
 			// aapt resource value: 0x7f090091
 			public const int fab_scroll_threshold = 2131296401;
@@ -3322,8 +3322,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f090090
 			public const int fab_shadow_size = 2131296400;
 			
-			// aapt resource value: 0x7f0900a5
-			public const int fab_size = 2131296421;
+			// aapt resource value: 0x7f0900a6
+			public const int fab_size = 2131296422;
 			
 			// aapt resource value: 0x7f09008f
 			public const int fab_size_mini = 2131296399;
@@ -3333,6 +3333,9 @@ namespace TFG.Droid
 			
 			// aapt resource value: 0x7f0900a4
 			public const int health_module_icon_size = 2131296420;
+			
+			// aapt resource value: 0x7f0900a5
+			public const int health_module_shape_size = 2131296421;
 			
 			// aapt resource value: 0x7f090056
 			public const int highlight_alpha_material_colored = 2131296342;
@@ -3355,8 +3358,8 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f09005c
 			public const int hint_pressed_alpha_material_light = 2131296348;
 			
-			// aapt resource value: 0x7f0900a7
-			public const int image_final_size = 2131296423;
+			// aapt resource value: 0x7f0900a8
+			public const int image_final_size = 2131296424;
 			
 			// aapt resource value: 0x7f090000
 			public const int item_touch_helper_max_drag_scroll_per_frame = 2131296256;
@@ -4876,29 +4879,23 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f070023
 			public const int abc_toolbar_collapse_description = 2131165219;
 			
-			// aapt resource value: 0x7f07003d
-			public const int accept = 2131165245;
+			// aapt resource value: 0x7f070045
+			public const int accept = 2131165253;
 			
-			// aapt resource value: 0x7f07003e
-			public const int access = 2131165246;
+			// aapt resource value: 0x7f070046
+			public const int access = 2131165254;
 			
-			// aapt resource value: 0x7f07003b
-			public const int add = 2131165243;
+			// aapt resource value: 0x7f070043
+			public const int add = 2131165251;
 			
-			// aapt resource value: 0x7f07003a
-			public const int app_name = 2131165242;
+			// aapt resource value: 0x7f070041
+			public const int app_name = 2131165249;
 			
 			// aapt resource value: 0x7f070032
 			public const int appbar_scrolling_view_behavior = 2131165234;
 			
 			// aapt resource value: 0x7f070033
 			public const int bottom_sheet_behavior = 2131165235;
-			
-			// aapt resource value: 0x7f070044
-			public const int calories = 2131165252;
-			
-			// aapt resource value: 0x7f070045
-			public const int calories_short = 2131165253;
 			
 			// aapt resource value: 0x7f070034
 			public const int character_counter_pattern = 2131165236;
@@ -4954,17 +4951,29 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f070010
 			public const int common_signin_button_text_long = 2131165200;
 			
-			// aapt resource value: 0x7f070046
-			public const int distance = 2131165254;
+			// aapt resource value: 0x7f07003c
+			public const int default_web_client_id = 2131165244;
 			
-			// aapt resource value: 0x7f070047
-			public const int kilometers = 2131165255;
+			// aapt resource value: 0x7f07003d
+			public const int firebase_database_url = 2131165245;
 			
-			// aapt resource value: 0x7f07004e
-			public const int month = 2131165262;
+			// aapt resource value: 0x7f07003a
+			public const int gcm_defaultSenderId = 2131165242;
 			
-			// aapt resource value: 0x7f070041
-			public const int no_modules = 2131165249;
+			// aapt resource value: 0x7f07003e
+			public const int google_api_key = 2131165246;
+			
+			// aapt resource value: 0x7f07003b
+			public const int google_app_id = 2131165243;
+			
+			// aapt resource value: 0x7f07003f
+			public const int google_crash_reporting_api_key = 2131165247;
+			
+			// aapt resource value: 0x7f070040
+			public const int google_storage_bucket = 2131165248;
+			
+			// aapt resource value: 0x7f070049
+			public const int no_modules = 2131165257;
 			
 			// aapt resource value: 0x7f070035
 			public const int password_toggle_content_description = 2131165237;
@@ -4981,44 +4990,23 @@ namespace TFG.Droid
 			// aapt resource value: 0x7f070039
 			public const int path_password_strike_through = 2131165241;
 			
-			// aapt resource value: 0x7f07004a
-			public const int quick_results = 2131165258;
-			
-			// aapt resource value: 0x7f07003c
-			public const int remove = 2131165244;
-			
-			// aapt resource value: 0x7f070049
-			public const int same_day_last_week = 2131165257;
+			// aapt resource value: 0x7f070044
+			public const int remove = 2131165252;
 			
 			// aapt resource value: 0x7f070024
 			public const int search_menu_title = 2131165220;
 			
-			// aapt resource value: 0x7f070040
-			public const int sign_in_description = 2131165248;
+			// aapt resource value: 0x7f070048
+			public const int sign_in_description = 2131165256;
 			
-			// aapt resource value: 0x7f07003f
-			public const int sign_out = 2131165247;
+			// aapt resource value: 0x7f070047
+			public const int sign_out = 2131165255;
 			
 			// aapt resource value: 0x7f070025
 			public const int status_bar_notification_info_overflow = 2131165221;
 			
 			// aapt resource value: 0x7f070042
-			public const int step_counter_name = 2131165250;
-			
-			// aapt resource value: 0x7f070043
-			public const int steps = 2131165251;
-			
-			// aapt resource value: 0x7f07004d
-			public const int weekday = 2131165261;
-			
-			// aapt resource value: 0x7f07004b
-			public const int weekly_results = 2131165259;
-			
-			// aapt resource value: 0x7f07004c
-			public const int yearly_results = 2131165260;
-			
-			// aapt resource value: 0x7f070048
-			public const int yesterday = 2131165256;
+			public const int tools_activity_name = 2131165250;
 			
 			static String()
 			{

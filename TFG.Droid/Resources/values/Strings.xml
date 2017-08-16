@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
- <string name="app_name">TFG.Droid</string>
+  <string name="app_name">TFG.Droid</string>
+  <string name="tools_activity_name">Tools</string>
   <string name="add">Add</string>
   <string name="remove">Remove</string>
   <string name="accept">Accept</string>
