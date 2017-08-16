@@ -17,6 +17,6 @@
       }
    ],
    "color":"orange",
-   "loginRequired":false,
+   "loginRequired":true,
    "utils-class":"SintromUtils"
 }

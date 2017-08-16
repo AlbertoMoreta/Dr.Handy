@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using Android.App;
 using Android.Content;
@@ -12,6 +13,7 @@ using Android.Widget;
 using TFG.DataBase;
 using TFG.Droid.Custom_Views;
 using TFG.Model;
+using TFG.Droid.Utils;
 
 namespace TFG.Droid.Adapters {
     class SintromCalendarAdapter : RecyclerView.Adapter {
@@ -23,7 +25,7 @@ namespace TFG.Droid.Adapters {
                 get { return _date; }
                 set {
                     _date = value;
-                    DateText.Text = _date.ToString("dd/MM/yyyy");
+                    DateText.Text = _date.ToString("d");
                 }
             } 
             public CustomTextView DateText { get; set; }
@@ -81,9 +83,11 @@ namespace TFG.Droid.Adapters {
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             ViewHolder viewHolder = holder as ViewHolder;
-            var date = new DateTime(_date.Year, _date.Month, 1).AddDays(position - _firstDayMonth);  
-            var items = DBHelper.Instance.GetSintromItemFromDate(date);
-            var inrItems = DBHelper.Instance.GetSintromINRItemFromDate(date);
+            var firstDayOfWeek = (int) CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek;
+            var date = new DateTime(_date.Year, _date.Month, 1).AddDays(position - _firstDayMonth + firstDayOfWeek);
+            var userId = HealthModuleUtils.GetCurrentUserId(_context);
+            var items = DBHelper.Instance.GetSintromItemFromDate(date, userId);
+            var inrItems = DBHelper.Instance.GetSintromINRItemFromDate(date, userId);
 
             viewHolder.Date = date;
 
@@ -137,10 +141,11 @@ namespace TFG.Droid.Adapters {
             _dialog = new SintromConfigureTreatmentDialog(_context);
             _dialog.SelectedDate = date;
 
-            var items = DBHelper.Instance.GetSintromItemFromDate(date);
+            var userId = HealthModuleUtils.GetCurrentUserId(_context);
+            var items = DBHelper.Instance.GetSintromItemFromDate(date, userId);
             var currentItem = items.Count > 0 ? items[0] : null;
 
-            var inrItems = DBHelper.Instance.GetSintromINRItemFromDate(date);
+            var inrItems = DBHelper.Instance.GetSintromINRItemFromDate(date, userId);
             var currentINRItem = inrItems.Count > 0 ? inrItems[0] : null;
             if (currentINRItem != null)  { 
                 _dialog.Control.Checked = currentINRItem.Control;
@@ -175,13 +180,14 @@ namespace TFG.Droid.Adapters {
 
         //Save Sintrom configuration
         private void SaveInfo(object sender, EventArgs e) {
+            var userId = HealthModuleUtils.GetCurrentUserId(_context);
             if (!_dialog.Control.Checked) {
-                DBHelper.Instance.UpdateSintromItem(new SintromTreatmentItem(_dialog.SelectedDate,
+                DBHelper.Instance.UpdateSintromItem(new SintromTreatmentItem(userId, _dialog.SelectedDate,
                     _dialog.SelectedImageName, _dialog.SelectedMedicine));
 
-                DBHelper.Instance.RemoveOrHideSintromINRItem(_dialog.SelectedDate);
+                DBHelper.Instance.RemoveOrHideSintromINRItem(_dialog.SelectedDate, userId);
             } else {
-                DBHelper.Instance.InsertSintromINRItem(new SintromINRItem(_dialog.SelectedDate, _dialog.Control.Checked,
+                DBHelper.Instance.InsertSintromINRItem(new SintromINRItem(userId, _dialog.SelectedDate, _dialog.Control.Checked,
                     _dialog.INR.Text.Equals("") ? 0 : double.Parse(_dialog.INR.Text)));
             }
 

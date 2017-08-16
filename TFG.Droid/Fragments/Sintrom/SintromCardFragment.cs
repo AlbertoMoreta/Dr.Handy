@@ -15,6 +15,7 @@ using TFG.DataBase;
 using TFG.Droid.Custom_Views;
 using TFG.Droid.Interfaces;
 using TFG.Model;
+using TFG.Droid.Utils;
 
 namespace TFG.Droid.Fragments.Sintrom {
     public class SintromCardFragment : Fragment, IHealthFragment  {
@@ -41,8 +42,9 @@ namespace TFG.Droid.Fragments.Sintrom {
 
             moduleName.Text = module.Name;
 
-            var inrItems = DBHelper.Instance.GetSintromINRItemFromDate(DateTime.Now);
-            var sintromItems = DBHelper.Instance.GetSintromItemFromDate(DateTime.Now);
+            var userId = HealthModuleUtils.GetCurrentUserId(Activity);
+            var inrItems = DBHelper.Instance.GetSintromINRItemFromDate(DateTime.Now, userId);
+            var sintromItems = DBHelper.Instance.GetSintromItemFromDate(DateTime.Now, userId);
 
             if (inrItems.Count > 0) {
                 controlDayText.Visibility = ViewStates.Visible;

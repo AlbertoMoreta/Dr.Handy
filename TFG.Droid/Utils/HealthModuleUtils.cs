@@ -14,6 +14,7 @@ using Android.Views;
 using Android.Widget;
 using TFG.Droid.Interfaces;
 using TFG.Model;
+using Android.Preferences;
 
 namespace TFG.Droid.Utils {
     public abstract class HealthModuleUtils { 
@@ -26,6 +27,10 @@ namespace TFG.Droid.Utils {
         public abstract IHealthFragment GetHealthCardFragment(string shortName);
         public abstract NotificationItem GetNotificationItem(Context context, HealthModule healthModule);
 
+        public static string GetCurrentUserId(Context context) {
+            var prefs = PreferenceManager.GetDefaultSharedPreferences(context);
+            return prefs.GetString("IdToken", null);
+        }
 
         public Drawable GetHealthModuleBackground(Context context, string color) {
             return GetDrawableFromResources(context, "background_" + color);

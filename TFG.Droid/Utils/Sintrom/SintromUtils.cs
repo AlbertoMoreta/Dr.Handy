@@ -14,6 +14,7 @@ using Android.Widget;
 using TFG.DataBase;
 using TFG.Droid.Fragments.Sintrom;
 using TFG.Droid.Interfaces;
+using TFG.Model;
 
 namespace TFG.Droid.Utils {
     class SintromUtils : HealthModuleUtils{
@@ -48,6 +49,33 @@ namespace TFG.Droid.Utils {
 
         public override IHealthFragment GetHealthCardFragment(string shortName) {
             return new SintromCardFragment(shortName);
+        }
+
+        public override NotificationItem GetNotificationItem(Context context, HealthModule healthModule) {
+            NotificationItem notificationItem = null;
+
+            var controlday = DBHelper.Instance.GetSintromINRItemFromDate(DateTime.Now, GetCurrentUserId(context));
+            var title = healthModule.Name;
+            //Control Day Notification
+            if (controlday.Count > 0 && controlday[0].Control) { 
+                var description = context.GetString(context.Resources.GetIdentifier("sintrom_notification_control_description",
+                "string", context.PackageName));
+
+                notificationItem = new NotificationItem(title, description, true);
+            } else {
+
+                //Treatment Day Notification
+                var sintromItems = DBHelper.Instance.GetSintromItemFromDate(DateTime.Now, GetCurrentUserId(context));
+                if (sintromItems.Count > 0) {
+                    var sintromItem = sintromItems[0];
+                    var description = string.Format(context.GetString(context.Resources.GetIdentifier("sintrom_notification_description",
+                    "string", context.PackageName)), sintromItem.Fraction, sintromItem.Medicine);
+
+                    notificationItem = new NotificationItem(title, description, true);
+                }
+            }
+            //No Notification
+            return notificationItem;
         }
     }
 }

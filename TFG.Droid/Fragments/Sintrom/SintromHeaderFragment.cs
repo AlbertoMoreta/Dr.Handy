@@ -25,11 +25,8 @@ namespace TFG.Droid.Fragments.Sintrom {
     /// <summary>
     /// Header fragment for the Sintrom health module
     /// </summary>
-    public class SintromHeaderFragment : Fragment, IHealthFragment {
+    public class SintromHeaderFragment : Fragment, IHealthFragment { 
 
-        private CustomTextView _medicine;
-        private ImageView _icon;
-        private CustomTextView _fraction;
         private LayoutInflater _inflater;
         private ViewGroup _container;
 
@@ -43,71 +40,83 @@ namespace TFG.Droid.Fragments.Sintrom {
             calendar.Set(CalendarField.Date, calendar.Get(CalendarField.Date) + dayOffset);
             calendar.Set(CalendarField.HourOfDay, 12);
             calendar.Set(CalendarField.Minute, 0);
-            calendar.Set(CalendarField.Second, 0);  
-          
-            NotificationsUtils.ScheduleNotification(Activity, 1, calendar.TimeInMillis);
+            calendar.Set(CalendarField.Second, 0);
+
+            var moduleShortName = ((ModuleDetailActivity)Activity).CurrentHealthModule.ShortName;
+            NotificationsUtils.ScheduleNotification(Activity, moduleShortName, calendar.TimeInMillis);
         }
  
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             var view = inflater.Inflate(Resource.Layout.fragment_sintrom_header, container, false);
+
             _inflater = inflater;
-            _container = container;
-
-            _medicine = view.FindViewById<CustomTextView>(Resource.Id.medicine);
-            _icon = view.FindViewById<ImageView>(Resource.Id.icon);
-            _fraction = view.FindViewById<CustomTextView>(Resource.Id.fraction);  
-
+            _container = container; 
            
             return view;
         }
 
-        public override void OnStart() {
-            base.OnStart();
+        public override void OnResume() {
+            base.OnResume();
+             
+            //Toolbar title with today's date 
+            (Activity as BaseActivity).ToolbarTitle.Text = DateTime.Now.ToString("D");
             RefreshHeader();
         }
+         
 
         private void RefreshHeader() {
-             //Get Sintrom treatment for today
-            var items =
-                    DBHelper.Instance.GetSintromItemFromDate(DateTime.Now);
+            var userId = HealthModuleUtils.GetCurrentUserId(Activity);
 
-            var inrItems = DBHelper.Instance.GetSintromINRItemFromDate(DateTime.Now);
+            //Get Sintrom treatment for today
+            var items = DBHelper.Instance.GetSintromItemFromDate(DateTime.Now, userId);
 
-            if (items.Count > 0) {
-                //Toolbar title with today's date 
-                (Activity as BaseActivity).ToolbarTitle.Text = DateTime.Now.ToString("dd / MM / yyyy");
+            var inrItems = DBHelper.Instance.GetSintromINRItemFromDate(DateTime.Now, userId);
+    
+
+            if(inrItems.Count > 0 && inrItems[0].Control) {
                 View.Visibility = ViewStates.Visible;
+                RefreshLayout(true);
+
+                var inputINR = View.FindViewById<EditText>(Resource.Id.input_inr);
+                inputINR.Text = inrItems[0].INR.ToString();
+                inputINR.TextChanged += SintromUtils.INRTextChanged;
+                inputINR.AfterTextChanged += (s, e) => {
+                    DBHelper.Instance.InsertSintromINRItem(new SintromINRItem(userId, DateTime.Now, true,
+                        ((EditText)s).Text.Equals("") ? 0 : double.Parse(((EditText)s).Text)));
+                }; 
+            }else if (items.Count > 0) {
+
+                View.Visibility = ViewStates.Visible;
+                RefreshLayout(false);
+
+                var medicine = View.FindViewById<CustomTextView>(Resource.Id.medicine);
+                var icon = View.FindViewById<ImageView>(Resource.Id.icon);
+                var fraction = View.FindViewById<CustomTextView>(Resource.Id.fraction);
 
                 var item = items.ElementAt(0);
-                if (inrItems.Count > 0 && inrItems[0].Control) {
-                    var layout = (ViewGroup) View;
-                    layout.RemoveAllViews();
-                    var controlDayView = _inflater.Inflate(Resource.Layout.fragment_sintrom_header_control, _container, false);
-                    layout.AddView(controlDayView);
-                    var inputINR = controlDayView.FindViewById<EditText>(Resource.Id.input_inr);
-                    inputINR.Text = inrItems[0].INR.ToString();
-                    inputINR.TextChanged += SintromUtils.INRTextChanged;
-                    inputINR.AfterTextChanged += (s, e) => {
-                        DBHelper.Instance.InsertSintromINRItem(new SintromINRItem(DateTime.Now, true,
-                            ((EditText) s).Text.Equals("") ? 0 : double.Parse(((EditText) s).Text)));
-                    };
+                medicine.Text = item.Medicine;
+                icon.SetImageDrawable(item.ImageName.Equals("")
+                        ? null
+                        : ContextCompat.GetDrawable(Activity,
+                            Activity.Resources.GetIdentifier(item.ImageName,
+                                "drawable", Activity.PackageName)));
+                fraction.Text = item.Fraction;
 
-                }else { 
-                    _medicine.Text = item.Medicine;
-                    _icon.SetImageDrawable(item.ImageName.Equals("")
-                            ? null
-                            : ContextCompat.GetDrawable(Activity,
-                                Activity.Resources.GetIdentifier(item.ImageName,
-                                    "drawable", Activity.PackageName)));
-                    _fraction.Text = item.Fraction;
-                }
             } else  {
                 //If there is no treatment, set the toolbar title as the name of the health module
                 (Activity as BaseActivity).ToolbarTitle.Text = ((ModuleDetailActivity) Activity).CurrentHealthModule.Name;
                 View.Visibility = ViewStates.Gone;
             }
 
+        }
+
+        private void RefreshLayout(bool control) {
+            var layout = (ViewGroup)View;
+            layout.RemoveAllViews();
+            var resource = control ? Resource.Layout.fragment_sintrom_header_control : Resource.Layout.fragment_sintrom_header;
+            var newLayout = _inflater.Inflate(resource, _container, false);
+            layout.AddView(newLayout); 
         }
 
     }

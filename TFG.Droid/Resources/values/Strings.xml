@@ -37,4 +37,24 @@
 
   <string name="weekday">Day</string>
   <string name="month">Month</string>
+
+
+<!-- Sintrom Strings -->
+  <string name="sintrom_name">Sintrom</string>
+  <string name="sintrom_treatment">Treatment</string>
+  <string name="set_control">Set control day</string>
+  <string name="sintrom_control">Control</string>
+  <string name="sintrom_inr">INR</string>
+  <string name="input_inr">If you already have it, input the INR value provided by your doctor. (This value could be set when the control day comes)</string>
+  <string name="sintrom_updateinfo_success">Information updated successfully</string>
+  <string-array name="sintrom_array">
+    <item>1 mg</item>
+    <item>2 mg</item>
+    <item>4 mg</item>
+  </string-array>
+  <string name="sintrom_notification_description">Remember to take your dose today: {0} {1}</string>
+  <string name="sintrom_notification_control_description">Today is control day. Remember to write down the INR value provided by your doctor.</string>
+  <string name="sintrom_empty_treatment">Looks like you don\'t have a configured treatment yet.\n\nPress the button below and configure it as soon as possible.</string>
+  <string name="sintrom_empty_inr">There is no data available for the moment.\n\nPlease, come back when you have done your first control.</string>
+
 </resources>
