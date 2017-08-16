@@ -13,22 +13,24 @@ using Android.Support.V4.Content;
 
 namespace TFG.Model {
     public partial class HealthModule  {
-        [JsonProperty(Required = Newtonsoft.Json.Required.Always)]
+        [JsonProperty(Required = Required.Always)]
         public string ShortName { get; set; }
 
-        [JsonProperty(Required = Newtonsoft.Json.Required.Always)]
+        [JsonProperty(Required = Required.Always)]
         [JsonConverter(typeof(CurrentLanguageConverter))]
         public string Name { get; set; }
 
-        [JsonProperty(Required = Newtonsoft.Json.Required.Always)]
+        [JsonProperty(Required = Required.Always)]
         [JsonConverter(typeof(CurrentLanguageConverter))]
         public string Description { get; set; }
 
-        [JsonProperty(Required = Newtonsoft.Json.Required.DisallowNull)]
+        [JsonProperty(Required = Required.DisallowNull)]
         public string Color { get; set; } = "red";
 
-        [JsonProperty(PropertyName = "utils-class", Required = Newtonsoft.Json.Required.Always)] 
+        [JsonProperty(PropertyName = "utils-class", Required = Required.Always)] 
         public string UtilsClass { get; set; }
+
+        public Boolean LoginRequired { get; set; } = false;
 
 
         public string ConfigFilePath { get; set; }

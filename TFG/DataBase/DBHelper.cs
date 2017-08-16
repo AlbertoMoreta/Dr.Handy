@@ -76,9 +76,7 @@ namespace TFG.DataBase {
             var sql = "INSERT INTO " + TABLE_NAME + " (" + COL_KEY_SHORTNAME + ", " + COL_CONFIG_FILE_PATH + ", " + COL_POSITION + ", " + COL_VISIBLE + ") VALUES " 
                 + "('" + module.ShortName + "', '" + module.ConfigFilePath + "', " + Count() + ", 1)" ;
 
-            Connection.Execute(sql);
-
-         //   InitHealthModule(module);
+            Connection.Execute(sql); 
         }
 
         public void DeleteHealthModule(HealthModule module) {
