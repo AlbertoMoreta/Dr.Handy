@@ -1,216 +1,768 @@
 ﻿[
-  {
-    "number": "1",
-    "imageName": "ishihara_01",
-    "question": "¿Que número ves en la imagen?",
-    "correctAnswer": "12",
-    "answers": [ "12", "43", "31", "Ninguno" ]
-  },
-	{	
-    "number": "2",
-		"imageName": "ishihara_02",
-		"question":"¿Que número ves en la imagen?",
-    "correctAnswer": "8",
-    "RGColorBlindness": "3",
-    "TotalColorBlindness": "Ninguno",  
-		"answers":["22", "3", "8", "Ninguno"]
-	},
-	{	
-    "number": "3",
-		"imageName": "ishihara_04",
-		"question":"¿Que número ves en la imagen?",
-		"correctAnswer":"29",
-    "RGColorBlindness": "70",
-    "TotalColorBlindness": "Ninguno", 
-		"answers":["29", "9", "70", "Ninguno"]
-	},
-  {
-    "number": "4",
-    "imageName": "ishihara_06",
-    "question": "¿Que número ves en la imagen?",
-    "correctAnswer": "5",
-    "RGColorBlindness": "2",
-    "TotalColorBlindness": "Ninguno", 
-    "answers": [ "2", "5", "12", "Ninguno" ]
-  },
-  {
-    "number": "5",
-    "imageName": "ishihara_07",
-    "question": "¿Que número ves en la imagen?",
-    "correctAnswer": "3",
-    "RGColorBlindness": "5",
-    "TotalColorBlindness": "Ninguno", 
-    "answers": [ "23", "3", "5", "Ninguno" ]
-  },
-  {
-    "number": "6",
-    "imageName": "ishihara_08",
-    "question": "¿Que número ves en la imagen?",
-    "correctAnswer": "15",
-    "RGColorBlindness": "17",
-    "TotalColorBlindness": "Ninguno", 
-    "answers": [ "15", "29", "17", "Ninguno" ]
-  },
-  {
-    "number": "7",
-    "imageName": "ishihara_09",
-    "question": "¿Que número ves en la imagen?",
-    "correctAnswer": "74",
-    "RGColorBlindness": "21",
-    "TotalColorBlindness": "Ninguno", 
-    "answers": [ "63", "74", "21", "Ninguno" ]
-  },
-  {
-    "number": "8",
-    "imageName": "ishihara_11",
-    "question": "¿Que número ves en la imagen?",
-    "correctAnswer": "6",
-    "RGColorBlindness": "Ninguno",
-    "TotalColorBlindness": "Ninguno", 
-    "answers": [ "6", "42", "16", "Ninguno" ]
-  },
-  {
-    "number": "9",
-    "imageName": "ishihara_13",
-    "question": "¿Que número ves en la imagen?",
-    "correctAnswer": "45",
-    "RGColorBlindness": "Ninguno",
-    "TotalColorBlindness": "Ninguno",
-    "answers": [ "95", "45", "2", "Ninguno" ]
-  },
-  {
-    "number": "10",
-    "imageName": "ishihara_14",
-    "question": "¿Que número ves en la imagen?",
-    "correctAnswer": "5",
-    "RGColorBlindness": "Ninguno",
-    "TotalColorBlindness": "Ninguno",
-    "answers": [ "5", "80", "62", "Ninguno" ]
-  },
-  {
-    "number": "11",
-    "imageName": "ishihara_15",
-    "question": "¿Que número ves en la imagen?",
-    "correctAnswer": "7",
-    "RGColorBlindness": "Ninguno",
-    "TotalColorBlindness": "Ninguno",
-    "answers": [ "74", "3", "7", "Ninguno" ]
-  },
-  {
-    "number": "12",
-    "imageName": "ishihara_16",
-    "question": "¿Que número ves en la imagen?",
-    "correctAnswer": "16",
-    "RGColorBlindness": "Ninguno",
-    "TotalColorBlindness": "Ninguno",
-    "answers": [ "66", "8", "16", "Ninguno" ]
-  },
-  {
-    "number": "13",
-    "imageName": "ishihara_17",
-    "question": "¿Que número ves en la imagen?",
-    "correctAnswer": "73",
-    "RGColorBlindness": "Ninguno",
-    "TotalColorBlindness": "Ninguno",
-    "answers": [ "73", "29", "48", "Ninguno" ]
-  },
-  {
-    "number": "14",
-    "imageName": "ishihara_18",
-    "question": "¿Que número ves en la imagen?",
-    "correctAnswer": "Ninguno",
-    "RGColorBlindness": "5",
-    "TotalColorBlindness": "Ninguno",
-    "answers": [ "23", "5", "12", "Ninguno" ]
-  },
-  {
-    "number": "15",
-    "imageName": "ishihara_20",
-    "question": "¿Que número ves en la imagen?",
-    "correctAnswer": "Ninguno",
-    "RGColorBlindness": "45",
-    "TotalColorBlindness": "Ninguno",
-    "answers": [ "45", "82", "5", "Ninguno" ]
-  },
-  {	
-    "number": "16",
-		"imageName": "ishihara_22",
-		"question":"¿Que número ves en la imagen?",
-		"correctAnswer":"26",
-    "RGColorBlindness": "6",
-    "TotalColorBlindness": "Ninguno",
-		"answers":["6", "19", "26", "Ninguno"]
-	},
-  {	
-    "number": "17",
-		"imageName": "ishihara_23",
-		"question":"¿Que número ves en la imagen?",
-		"correctAnswer":"42",
-    "RGColorBlindness": "2",
-    "TotalColorBlindness": "Ninguno",
-		"answers":["42", "21", "2", "Ninguno"]
-	},
-  {	
-    "number": "18",
-		"imageName": "ishihara_26",
-		"question":"¿Cuántas líneas ves?",
-		"correctAnswer":"2",
-    "RGColorBlindness": "1",
-    "TotalColorBlindness": "0",
-		"answers":["3", "2", "1", "0"]
-	},
-  {	
-    "number": "19",
-		"imageName": "ishihara_29",
-		"question":"¿Cuántas líneas ves?",
-		"correctAnswer":"0",
-    "RGColorBlindness": "1",
-    "TotalColorBlindness": "1",
-		"answers":["3", "2", "1", "0"]
-	},
-  {	
-    "number": "20",
-		"imageName": "ishihara_30",
-		"question":"¿Cuántas líneas ves?",
-		"correctAnswer":"1",
-    "RGColorBlindness": "0",
-    "TotalColorBlindness": "0",
-		"answers":["3", "2", "1", "0"]
-	},
-  {	
-    "number": "21",
-		"imageName": "ishihara_32",
-		"question":"¿Cuántas líneas ves?",
-		"correctAnswer":"1",
-    "RGColorBlindness": "0",
-    "TotalColorBlindness": "0",
-		"answers":["3", "2", "1", "0"]
-	},
-  {	
-    "number": "22",
-		"imageName": "ishihara_35",
-		"question":"¿Cuántas líneas ves?",
-		"correctAnswer":"1",
-    "RGColorBlindness": "2",
-    "TotalColorBlindness": "0",
-		"answers":["3", "2", "1", "0"]
-	},
-  {	
-    "number": "23",
-		"imageName": "ishihara_37",
-		"question":"¿Cuántas líneas ves?",
-		"correctAnswer":"1",
-    "RGColorBlindness": "2",
-    "TotalColorBlindness": "0",
-		"answers":["3", "2", "1", "0"]
-	},
-  {	
-    "number": "24",
-		"imageName": "ishihara_38",
-		"question":"¿Cuántas líneas ves?",
-		"correctAnswer":"1", 
-		"answers":["3", "2", "1", "0"]
-	}
-
+   {
+      "number":"1",
+      "imageName":"ishihara_01",
+      "question":[
+         {
+            "en":"What number do you see?"
+         },
+         {
+            "es":"¿Que número ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"0",
+      "answers":[
+         {
+            "en":[
+               "12",
+               "43",
+               "31",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "12",
+               "43",
+               "31",
+               "Ninguno"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"2",
+      "imageName":"ishihara_02",
+      "question":[
+         {
+            "en":"What number do you see?"
+         },
+         {
+            "es":"¿Que número ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"2",
+      "RGColorBlindnessPos":"1", 
+      "answers":[
+         {
+            "en":[
+               "22",
+               "3",
+               "8",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "22",
+               "3",
+               "8",
+               "Ninguno"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"3",
+      "imageName":"ishihara_04",
+      "question":[
+         {
+            "en":"What number do you see?"
+         },
+         {
+            "es":"¿Que número ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"0",
+      "RGColorBlindnessPos":"2", 
+      "answers":[
+         {
+            "en":[
+               "29",
+               "9",
+               "70",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "29",
+               "9",
+               "70",
+               "Ninguno"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"4",
+      "imageName":"ishihara_06",
+      "question":[
+         {
+            "en":"What number do you see?"
+         },
+         {
+            "es":"¿Que número ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"1",
+      "RGColorBlindnessPos":"0", 
+      "answers":[
+         {
+            "en":[
+               "2",
+               "5",
+               "12",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "2",
+               "5",
+               "12",
+               "Ninguno"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"5",
+      "imageName":"ishihara_07",
+      "question":[
+         {
+            "en":"What number do you see?"
+         },
+         {
+            "es":"¿Que número ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"1",
+      "RGColorBlindnessPos":"2", 
+      "answers":[
+         {
+            "en":[
+               "23",
+               "3",
+               "5",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "23",
+               "3",
+               "5",
+               "Ninguno"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"6",
+      "imageName":"ishihara_08",
+      "question":[
+         {
+            "en":"What number do you see?"
+         },
+         {
+            "es":"¿Que número ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"0",
+      "RGColorBlindnessPos":"2", 
+      "answers":[
+         {
+            "en":[
+               "15",
+               "29",
+               "17",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "15",
+               "29",
+               "17",
+               "Ninguno"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"7",
+      "imageName":"ishihara_09",
+      "question":[
+         {
+            "en":"What number do you see?"
+         },
+         {
+            "es":"¿Que número ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"1",
+      "RGColorBlindnessPos":"2", 
+      "answers":[
+         {
+            "en":[
+               "63",
+               "74",
+               "21",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "63",
+               "74",
+               "21",
+               "Ninguno"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"8",
+      "imageName":"ishihara_11",
+      "question":[
+         {
+            "en":"What number do you see?"
+         },
+         {
+            "es":"¿Que número ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"0",
+      "RGColorBlindnessPos":"3", 
+      "answers":[
+         {
+            "en":[
+               "6",
+               "42",
+               "16",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "6",
+               "42",
+               "16",
+               "Ninguno"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"9",
+      "imageName":"ishihara_13",
+      "question":[
+         {
+            "en":"What number do you see?"
+         },
+         {
+            "es":"¿Que número ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"1",
+      "RGColorBlindnessPos":"3", 
+      "answers":[
+         {
+            "en":[
+               "95",
+               "45",
+               "2",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "95",
+               "45",
+               "2",
+               "Ninguno"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"10",
+      "imageName":"ishihara_14",
+      "question":[
+         {
+            "en":"What number do you see?"
+         },
+         {
+            "es":"¿Que número ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"0",
+      "RGColorBlindnessPos":"3", 
+      "answers":[
+         {
+            "en":[
+               "5",
+               "80",
+               "62",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "5",
+               "80",
+               "62",
+               "Ninguno"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"11",
+      "imageName":"ishihara_15",
+      "question":[
+         {
+            "en":"What number do you see?"
+         },
+         {
+            "es":"¿Que número ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"2",
+      "RGColorBlindnessPos":"3", 
+      "answers":[
+         {
+            "en":[
+               "74",
+               "3",
+               "7",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "74",
+               "3",
+               "7",
+               "Ninguno"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"12",
+      "imageName":"ishihara_16",
+      "question":[
+         {
+            "en":"What number do you see?"
+         },
+         {
+            "es":"¿Que número ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"2",
+      "RGColorBlindnessPos":"3", 
+      "answers":[
+         {
+            "en":[
+               "66",
+               "8",
+               "16",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "66",
+               "8",
+               "16",
+               "Ninguno"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"13",
+      "imageName":"ishihara_17",
+      "question":[
+         {
+            "en":"What number do you see?"
+         },
+         {
+            "es":"¿Que número ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"0",
+      "RGColorBlindnessPos":"3", 
+      "answers":[
+         {
+            "en":[
+               "73",
+               "29",
+               "48",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "73",
+               "29",
+               "48",
+               "Ninguno"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"14",
+      "imageName":"ishihara_18",
+      "question":[
+         {
+            "en":"What number do you see?"
+         },
+         {
+            "es":"¿Que número ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"3",
+      "RGColorBlindnessPos":"1", 
+      "answers":[
+         {
+            "en":[
+               "23",
+               "5",
+               "12",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "23",
+               "5",
+               "12",
+               "Ninguno"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"15",
+      "imageName":"ishihara_20",
+      "question":[
+         {
+            "en":"What number do you see?"
+         },
+         {
+            "es":"¿Que número ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"3",
+      "RGColorBlindnessPos":"0", 
+      "answers":[
+         {
+            "en":[
+               "45",
+               "82",
+               "5",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "45",
+               "82",
+               "5",
+               "Ninguno"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"16",
+      "imageName":"ishihara_22",
+      "question":[
+         {
+            "en":"What number do you see?"
+         },
+         {
+            "es":"¿Que número ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"2",
+      "RGColorBlindnessPos":"0", 
+      "answers":[
+         {
+            "en":[
+               "6",
+               "19",
+               "26",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "6",
+               "19",
+               "26",
+               "Ninguno"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"17",
+      "imageName":"ishihara_23",
+      "question":[
+         {
+            "en":"What number do you see?"
+         },
+         {
+            "es":"¿Que número ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"0",
+      "RGColorBlindnessPos":"2", 
+      "answers":[
+         {
+            "en":[
+               "42",
+               "21",
+               "2",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "42",
+               "21",
+               "2",
+               "Ninguno"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"18",
+      "imageName":"ishihara_26",
+      "question":[
+         {
+            "en":"How many lines do you see?"
+         },
+         {
+            "es":"¿Cuántas líneas ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"1",
+      "RGColorBlindnessPos":"2", 
+      "answers":[
+         {
+            "en":[
+               "3",
+               "2",
+               "1",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "3",
+               "2",
+               "1",
+               "Ninguna"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"19",
+      "imageName":"ishihara_29",
+      "question":[
+         {
+            "en":"How many lines do you see?"
+         },
+         {
+            "es":"¿Cuántas líneas ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"3",
+      "RGColorBlindnessPos":"2", 
+      "answers":[
+         {
+            "en":[
+               "3",
+               "2",
+               "1",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "3",
+               "2",
+               "1",
+               "Ninguna"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"20",
+      "imageName":"ishihara_30",
+      "question":[
+         {
+            "en":"How many lines do you see?"
+         },
+         {
+            "es":"¿Cuántas líneas ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"2",
+      "RGColorBlindnessPos":"3", 
+      "answers":[
+         {
+            "en":[
+               "3",
+               "2",
+               "1",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "3",
+               "2",
+               "1",
+               "Ninguna"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"21",
+      "imageName":"ishihara_32",
+      "question":[
+         {
+            "en":"How many lines do you see?"
+         },
+         {
+            "es":"¿Cuántas líneas ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"2",
+      "RGColorBlindnessPos":"3", 
+      "answers":[
+         {
+            "en":[
+               "3",
+               "2",
+               "1",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "3",
+               "2",
+               "1",
+               "Ninguna"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"22",
+      "imageName":"ishihara_35",
+      "question":[
+         {
+            "en":"How many lines do you see?"
+         },
+         {
+            "es":"¿Cuántas líneas ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"2",
+      "RGColorBlindnessPos":"1", 
+      "answers":[
+         {
+            "en":[
+               "3",
+               "2",
+               "1",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "3",
+               "2",
+               "1",
+               "Ninguna"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"23",
+      "imageName":"ishihara_37",
+      "question":[
+         {
+            "en":"How many lines do you see?"
+         },
+         {
+            "es":"¿Cuántas líneas ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"2",
+      "RGColorBlindnessPos":"1", 
+      "answers":[
+         {
+            "en":[
+               "3",
+               "2",
+               "1",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "3",
+               "2",
+               "1",
+               "Ninguna"
+            ]
+         }
+      ]
+   },
+   {
+      "number":"24",
+      "imageName":"ishihara_38",
+      "question":[
+         {
+            "en":"How many lines do you see?"
+         },
+         {
+            "es":"¿Cuántas líneas ves en la imagen?"
+         }
+      ],
+      "correctAnswerPos":"2",
+      "answers":[
+         {
+            "en":[
+               "3",
+               "2",
+               "1",
+               "None"
+            ]
+         },
+         {
+            "es":[
+               "3",
+               "2",
+               "1",
+               "Ninguna"
+            ]
+         }
+      ]
+   }
 ]
-

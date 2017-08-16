@@ -12,14 +12,15 @@ using TFG.Droid.Interfaces;
 using TFG.Logic;
 using TFG.Model;
 
+using GridLayout = Android.Support.V7.Widget.GridLayout;
+
 namespace TFG.Droid.Fragments.ColorBlindnessTest {
     public class CBTBodyFragment : Fragment, IHealthFragment {
 
         
 
         private List<ColorBlindnessQuestion> _questions;
-        private List<Button> _answers = new List<Button>();
-        private TextView _question;
+        private List<Button> _answers = new List<Button>(); 
         private LinearLayout _questionsLayout;
         private TableLayout _resultsTable;
         private LinearLayout _resultsLayout;
@@ -41,10 +42,8 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
             var view = inflater.Inflate(Resource.Layout.fragment_cbt_body, container, false);
             _questionsLayout = view.FindViewById<LinearLayout>(Resource.Id.questions_layout);
             _resultsLayout = view.FindViewById<LinearLayout>(Resource.Id.results_layout);
-            _resultsTable = view.FindViewById<TableLayout>(Resource.Id.table_results);
-            _question = view.FindViewById<TextView>(Resource.Id.question);
-            InitAnswers(view);
-            UpdateQuestion(_logic.CurrentQuestion);
+            _resultsTable = view.FindViewById<TableLayout>(Resource.Id.table_results); 
+            InitAnswers(view); 
             UpdateAnswers(_logic.CurrentQuestion);
             return view;
         }
@@ -58,11 +57,7 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
                 _answers.Add(answer);
             }
             
-        }
-
-        private void UpdateQuestion(int plateNumber) { 
-            _question.Text = _questions.ElementAt(plateNumber).Question;
-        }
+        } 
 
         private void UpdateAnswers(int plateNumber)  {
             for (var i = 0; i < _answers.Count; i++)  {
@@ -76,8 +71,7 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
             _logic.SubmitAnswer(((Button) sender).Text);
 
             _logic.CurrentQuestion ++;
-            if (_logic.CurrentQuestion < ColorBlindnessLogic.TOTAL_QUESTIONS) {
-                UpdateQuestion(_logic.CurrentQuestion);
+            if (_logic.CurrentQuestion < ColorBlindnessLogic.TOTAL_QUESTIONS) { 
                 UpdateAnswers(_logic.CurrentQuestion);
 
                 ((CBTHeaderFragment) ((ModuleDetailActivity) Activity).HeaderFragment)
@@ -114,7 +108,7 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
                 //Add correct answer to result row
                 var correctAnswer = row.FindViewById<CustomTextView>(Resource.Id.correct_answer);
                 correctAnswer.LayoutParameters = new TableRow.LayoutParams(0, ViewGroup.LayoutParams.WrapContent, 1f);
-                correctAnswer.Text = question.CorrectAnswer;
+                correctAnswer.Text = question.Answers.ElementAt(question.CorrectAnswerPos);
 
                 _resultsTable.AddView(row);
             }

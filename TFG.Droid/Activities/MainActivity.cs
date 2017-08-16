@@ -21,50 +21,73 @@ using TFG.Droid.Activities;
 using TFG.Droid.Listeners;
 using TFG.Model;
 using FloatingActionButton = com.refractored.fab.FloatingActionButton;
+using Android.Preferences;
 
 namespace TFG.Droid{
 	[Activity (Label = "MainActivity", MainLauncher = true, Icon = "@drawable/icon", Theme="@style/AppTheme", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
 	public class MainActivity : BaseActivity, HealthCardClickListener {
 
-        private HealthCardAdapter _adapter;
-	    private RecyclerView _recyclerView;
+        private HealthCardAdapter _adapter; 
 
 		protected override void OnCreate (Bundle bundle){
 			base.OnCreate (bundle); 
 
             SetContentView (Resource.Layout.Main); 
+            SetUpToolBar(false); 
+
+        }
+
+        private void RefreshLayout() {
+            var listLayout = FindViewById<LinearLayout>(Resource.Id.list_layout);
+            var emptyLayout = FindViewById<LinearLayout>(Resource.Id.empty_layout);
+            var fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
 
             //DBHelper.Instance.DropTable(DBHelper.TABLE_NAME);
-            DBHelper.Instance.Init(); 
-
+            DBHelper.Instance.Init();
             List<HealthCard> cards = GetCardList();
+            if (cards.Count > 0) {
+                listLayout.Visibility = ViewStates.Visible;
+                emptyLayout.Visibility = ViewStates.Gone;
 
-            _recyclerView = FindViewById<RecyclerView>(Resource.Id.recycler_view); 
-            _recyclerView.SetLayoutManager(new GridLayoutManager(this, 2));
+                var recyclerView = FindViewById<RecyclerView>(Resource.Id.recycler_view);
+                recyclerView.SetLayoutManager(new GridLayoutManager(this, 2));
 
-
-            _adapter = new HealthCardAdapter(this, cards);
-            _adapter.SetHealthCardClickListener(this);
-            _recyclerView.SetAdapter(_adapter);
-
-            ItemTouchHelper.Callback callback = new HealthCardCallback(_adapter);
-            ItemTouchHelper helper = new ItemTouchHelper(callback);
-            helper.AttachToRecyclerView(_recyclerView);
-
-            var fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.AttachToRecyclerView(_recyclerView);
+                _adapter = new HealthCardAdapter(this, cards);
+                _adapter.SetHealthCardClickListener(this);
+                recyclerView.SetAdapter(_adapter);
+                ItemTouchHelper.Callback callback = new HealthCardCallback(_adapter);
+                ItemTouchHelper helper = new ItemTouchHelper(callback);
+                helper.AttachToRecyclerView(recyclerView);
+                fab.AttachToRecyclerView(recyclerView);
+                var lp = (RelativeLayout.LayoutParams)fab.LayoutParameters;
+                lp.RemoveRule(LayoutRules.Below);
+                lp.RemoveRule(LayoutRules.CenterHorizontal);
+                lp.AddRule(LayoutRules.AlignParentBottom);
+                lp.AddRule(LayoutRules.AlignParentRight);
+                fab.LayoutParameters = lp;
+            } else {
+                listLayout.Visibility = ViewStates.Gone;
+                emptyLayout.Visibility = ViewStates.Visible;
+                var lp = (RelativeLayout.LayoutParams)fab.LayoutParameters;
+                lp.RemoveRule(LayoutRules.AlignParentBottom);
+                lp.RemoveRule(LayoutRules.AlignParentRight);
+                lp.AddRule(LayoutRules.Below, Resource.Id.empty_layout);
+                lp.AddRule(LayoutRules.CenterHorizontal);
+                fab.LayoutParameters = lp;
+            }
 
             fab.Click += delegate { StartActivity(typeof(ModuleListActivity)); };
-
         }
 
         protected override void OnStart() {
             base.OnStart();
-            _adapter.SetCards(GetCardList());
-            _adapter.NotifyDataSetChanged();
 
-            
-            SetScrollIfNeeded();
+            RefreshLayout();
+
+            if (_adapter != null) {
+                _adapter.SetCards(GetCardList());
+                _adapter.NotifyDataSetChanged();
+            }
         }
 
         private List<HealthCard> GetCardList() {
@@ -81,19 +104,17 @@ namespace TFG.Droid{
         }
 
 	    public void OnHealthCardClick(HealthModule healthModule)  {
-            var intent = new Intent(this, typeof(ModuleDetailActivity)); 
-	        intent.PutExtra("ShortName", healthModule.ShortName);
-	        StartActivity(intent);
-	    }
+            Intent intent;
+            if (healthModule.LoginRequired) { 
+                intent = new Intent(this, typeof(SignInActivity));
+            } else {
+                intent = new Intent(this, typeof(ModuleDetailActivity));
+            }
 
-        //Allow Toolbar animation if there are views off the screen
-        private void SetScrollIfNeeded() {
-            var layoutManager = (LinearLayoutManager) _recyclerView.GetLayoutManager();
-            var adapter = _recyclerView.GetAdapter(); 
-
-            _recyclerView.NestedScrollingEnabled = layoutManager != null && adapter != null
-                && layoutManager.FindLastCompletelyVisibleItemPosition() < (adapter.ItemCount - 1); 
-        }  
+            intent.PutExtra("ShortName", healthModule.ShortName);
+            StartActivity(intent);
+        }
+ 
 	}
 }
 

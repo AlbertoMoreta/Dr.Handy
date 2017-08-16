@@ -30,12 +30,11 @@ namespace TFG.Droid.Activities {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.module_detail); 
 
-            SetUpToolBar();
-
             var shortName = Intent.GetStringExtra("ShortName");
             var healthModule = DBHelper.Instance.GetHealthModuleByShortName(shortName);
 
-            CurrentHealthModule = healthModule;
+            CurrentHealthModule = healthModule; 
+            SetUpToolBar(showLoginInfo: healthModule.LoginRequired);
             ToolbarTitle.Text = healthModule.Name;
 
             Window.DecorView.Background = healthModule.GetBackground(this); 

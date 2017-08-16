@@ -15,12 +15,27 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"  > 
+
+    <refractored.controls.CircleImageView 
+        android:id="@+id/user_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="left"
+        app:civ_border_width="1dp"
+        app:civ_border_color="@android:color/white"/>  
+
     <TFG.Droid.Custom_Views.CustomTextView
         android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:layout_gravity="center_vertical" 
+        android:layout_height="wrap_content"  
+        android:layout_gravity="center_vertical"  
         android:gravity="center"
         android:textSize="@dimen/text_size_toolbar"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white" />
+  </RelativeLayout>
 </android.support.v7.widget.Toolbar>
