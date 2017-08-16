@@ -2,12 +2,10 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
   <item android:id="@+id/background">
     <shape android:shape="oval">
-      <size android:width="@dimen/health_module_icon_size"
-      android:height="@dimen/health_module_icon_size"/>
+      <size android:width="@dimen/health_module_shape_size"
+      android:height="@dimen/health_module_shape_size"/>
       <solid android:color="?attr/colorPrimary"/>
     </shape>
   </item>
-
-  <item android:id="@+id/icon" android:drawable="@android:color/transparent"/>
 
 </layer-list>

@@ -39,7 +39,7 @@ namespace TFG.Droid {
         }
 
 
-        protected void SetUpToolBar(bool isTransparent = true, bool showLoginInfo = false) { 
+        protected void SetUpToolBar(bool isTransparent = true, bool showBackButton = false, bool showLoginInfo = false) { 
             var toolBar = ToolBar = FindViewById<Toolbar>(Resource.Id.toolbar);
             
             if (toolBar != null) {  
@@ -48,6 +48,15 @@ namespace TFG.Droid {
                 ToolbarTitle = toolBar.FindViewById<CustomTextView>(Resource.Id.title);
                 ToolbarTitle.Text = Title;
                 if (isTransparent) { toolBar.Background = null; }
+                if (showBackButton) {
+                    SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+                    SupportActionBar.SetDisplayShowHomeEnabled(true);
+                    var lp = (RelativeLayout.LayoutParams)ToolbarTitle.LayoutParameters;
+                    var typedArray = ObtainStyledAttributes(new int[] { Resource.Attribute.actionBarSize });
+                    lp.RightMargin = typedArray.GetDimensionPixelSize(0, 0);
+                    typedArray.Recycle();
+                    ToolbarTitle.LayoutParameters = lp;
+                }
                 if (showLoginInfo) {
                     var iv = FindViewById<CircleImageView>(Resource.Id.user_image);
                     var prefs = PreferenceManager.GetDefaultSharedPreferences(this);
@@ -59,6 +68,11 @@ namespace TFG.Droid {
 
             }
         }
+
+        public override bool OnSupportNavigateUp() {
+            OnBackPressed();
+            return true;
+        } 
 
         private Bitmap GetImageBitmapFromUrl(string url) {
             Bitmap imageBitmap = null;
