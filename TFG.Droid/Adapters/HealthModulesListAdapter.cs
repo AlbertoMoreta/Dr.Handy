@@ -119,7 +119,6 @@ namespace TFG.Droid.Adapters {
 
             viewHolder.ModuleName.Text = item.Name;
             viewHolder.ModuleIcon.Background = item.GetIcon(_context);
-            viewHolder.ModuleName.SetTextColor(Color.DimGray);
             viewHolder.ModuleDescriptionShort.Text = viewHolder.ModuleDescriptionLong.Text = item.Description;
             viewHolder.ModuleDescriptionLong.SetTextColor(moduleColor);
             viewHolder.RevealView.Background = item.GetHeader(_context);
@@ -191,10 +190,10 @@ namespace TFG.Droid.Adapters {
                     AnimationUtils.HideViewCircular(v.Background, cx, cy, v.Background.MeasuredHeight, 300);
                     AnimationUtils.RevealViewCircular(v.RevealView, cx, cy, radius);
                     AnimationUtils.StartTranslateAnimation(v.ModuleIcon, (v.Header.Width - v.ModuleIcon.Width) / 2,
-                        (v.ModuleIcon.Height / 2));
+                        (int) (v.ModuleIcon.Height / 1.5f));
                     AnimationUtils.StartScaleAnimation(v.ModuleIcon, 1.5f, 1.5f);
                     var finalX = (v.Header.Width - v.ModuleName.Width) / 2;
-                    AnimationUtils.StartTranslateAnimation(v.ModuleName, finalX, v.ModuleIcon.Height * 2);
+                    AnimationUtils.StartTranslateAnimation(v.ModuleName, finalX, (int) (v.ModuleIcon.Height * 2.3f));
                     AnimationUtils.StartScaleAnimation(v.ModuleName, 1.5f, 1.5f);
                     headerAnimator = AnimationUtils.ExpandView(v.Header,
                         v.Header.MeasuredHeight + v.ModuleIcon.MeasuredHeight + v.ModuleName.MeasuredHeight * 2);

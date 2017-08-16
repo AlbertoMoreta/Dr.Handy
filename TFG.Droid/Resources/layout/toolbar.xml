@@ -17,7 +17,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" > 
+        android:layout_height="wrap_content"  > 
 
     <refractored.controls.CircleImageView 
         android:id="@+id/user_image"
@@ -36,6 +36,6 @@
         android:layout_gravity="center_vertical"  
         android:gravity="center"
         android:textSize="@dimen/text_size_toolbar"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white" />
   </RelativeLayout>
 </android.support.v7.widget.Toolbar>

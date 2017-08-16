@@ -20,7 +20,7 @@ using TFG.Logic;
 using AnimationUtils = TFG.Droid.Utils.AnimationUtils;
 
 namespace TFG.Droid {
-    [Activity(Label = "ModuleListActivity", Theme = "@style/AppTheme", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "@string/tools_activity_name", Theme = "@style/AppTheme", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
     public class ModuleListActivity : BaseActivity {
 
         private RecyclerView _modulesList;
@@ -31,7 +31,8 @@ namespace TFG.Droid {
             base.OnCreate(savedInstanceState); 
 
             SetContentView(Resource.Layout.modules_list);
-            SetUpToolBar(false); 
+            SetUpToolBar(false, true); 
+            
             
             _modulesList = FindViewById<RecyclerView>(Resource.Id.recycler_view);
             _modulesList.HasFixedSize = true; //TODO
@@ -42,8 +43,8 @@ namespace TFG.Droid {
             _adapter = new HealthModulesListAdapter(this, HealthModulesConfigReader.GetHealthModules());
             _modulesList.SetAdapter(_adapter); 
             
-        }
+        } 
 
-        
+
     }
 }
