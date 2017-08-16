@@ -10,21 +10,4 @@
   <string name="sign_in_description">For using the %1$s tool authentication is required. Press the button below to access your Google account and begin to use the tool.</string>
   <string name="no_modules">Looks like you don\'t have any activated tool. Press the button below to go to the tools list.</string>
 
-
-  <!-- Step Counter Strings -->
- <string name="step_counter_name">Step Counter</string>
-  <string name="steps">Steps</string>
-  <string name="calories">Calories</string>
-  <string name="calories_short">cal.</string>
-  <string name="distance">Distance</string>
-  <string name="kilometers">km</string>
-  <string name="yesterday">YESTERDAY</string>
-  <string name="same_day_last_week">SAME DAY LAST WEEK</string>
-  <string name="quick_results">Quick Results</string>
-  <string name="weekly_results">Weekly Results</string>
-  <string name="yearly_results">Yearly Results</string> 
-
-  <string name="weekday">Day</string>
-  <string name="month">Month</string>
-
 </resources>
