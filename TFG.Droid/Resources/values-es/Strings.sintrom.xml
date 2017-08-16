@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources> 
+  
+  <!-- Sintrom Strings -->
+  <string name="sintrom_name">Sintrom</string>
+  <string name="sintrom_treatment">Tratamiento</string>
+  <string name="set_control">Establecer Control</string>
+  <string name="sintrom_control">Control</string>
+  <string name="sintrom_inr">INR</string>
+  <string name="input_inr">Introduzca el valor de INR proporcionado por su doctor. (Este valor puede ser introducido cuando llegue el día del control)</string>
+  <string name="sintrom_updateinfo_success">Información actualizada correctamente</string>
+  <string-array name="sintrom_array">
+    <item>1 mg</item>
+    <item>2 mg</item>
+    <item>4 mg</item>
+  </string-array>
+  <string name="sintrom_notification_description">Recuerda tomar la dosis de hoy: {0} {1}</string>
+  <string name="sintrom_notification_control_description">Hoy es día de control. Recuerda anotar el valor de INR proporcionado por tu médico.</string>
+  <string name="sintrom_empty_treatment">Parece que no tienes un tratamiento configurado.\n\nPulsa en el botón y configúralo cuanto antes.</string>
+  <string name="sintrom_empty_inr">De momento no hay datos disponibles.\n\nRegresa a esta pantalla cuando hayas realizado tu primer control.</string>
+
+</resources>

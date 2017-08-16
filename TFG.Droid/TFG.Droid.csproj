@@ -212,6 +212,12 @@
     <AndroidResource Include="Resources\layout\fragment_sintrom_header_control.axml" />
     <AndroidResource Include="Resources\layout\fragment_sintrom_results.axml" />
     <AndroidResource Include="Resources\layout\fragment_sintrom_treatment.axml" />
+    <AndroidResource Include="Resources\values\Strings.sintrom.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\values-es\Strings.sintrom.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\module_icon.xml">
