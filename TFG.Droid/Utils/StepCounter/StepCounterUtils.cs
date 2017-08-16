@@ -14,6 +14,7 @@ using Android.Widget;
 using TFG.DataBase;
 using TFG.Droid.Fragments.StepCounter;
 using TFG.Droid.Interfaces;
+using TFG.Model;
 
 namespace TFG.Droid.Utils {
     class StepCounterUtils : HealthModuleUtils {
@@ -34,8 +35,8 @@ namespace TFG.Droid.Utils {
             return new StepCounterBodyFragment();
         }
 
-        public override IHealthFragment GetHealthCardFragment(string moduleName) {
-            return new StepCounterCardFragment(moduleName);
+        public override IHealthFragment GetHealthCardFragment(string shortName) {
+            return new StepCounterCardFragment(shortName);
         } 
 
         public static bool IsKitKatWithStepCounter(PackageManager pm) {
@@ -50,6 +51,8 @@ namespace TFG.Droid.Utils {
 
         }
 
-
+        public override NotificationItem GetNotificationItem(Context context, HealthModule healthModule) {
+            throw new NotImplementedException();
+        }
     }
 }

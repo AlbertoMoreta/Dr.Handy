@@ -1,4 +1,5 @@
-using System; 
+using System;
+using System.Globalization;
 using Android.Graphics;
 using Android.OS; 
 using Android.Support.V4.Content; 
@@ -35,13 +36,24 @@ namespace TFG.Droid.Fragments.StepCounter {
             var view =  inflater.Inflate(Resource.Layout.fragment_stepcounter_body_chart_results, container, false); 
 
             //Chart color
-            var colorName = DBHelper.Instance.GetHealthModuleByShortName(((ModuleDetailActivity) Activity).HealthModuleShortName).Color;
+            var colorName = DBHelper.Instance.GetHealthModuleByShortName(((ModuleDetailActivity) Activity).CurrentHealthModule.ShortName).Color;
             var colorRes = ContextCompat.GetColor(Activity, Activity.Resources.GetIdentifier(colorName, "color", Activity.PackageName));
+             
 
             //X Axis labels
-            _labels = _metric == ChartUtils.VisualizationMetric.Weekly
-                ? Resources.GetStringArray(Resource.Array.week_labels)
-                : Resources.GetStringArray(Resource.Array.year_labels);
+            if (_metric == ChartUtils.VisualizationMetric.Weekly) {
+                //Reorganize days based on current culture
+                var days = CultureInfo.CurrentCulture.DateTimeFormat.ShortestDayNames;
+                string[] currentCultureDays = new string[7];
+                for(var i = 0; i < days.Length; i++) {
+                    currentCultureDays[i] = days[((int) CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek + i) % days.Length];
+                }
+                _labels = currentCultureDays;
+
+            } else { 
+                _labels = CultureInfo.CurrentCulture.DateTimeFormat.AbbreviatedMonthNames;
+            } 
+            
 
             _stepsChart = view.FindViewById<CardViewBarChart>(Resource.Id.steps_chart);
             _stepsChart.Title.Text = Activity.GetString(Activity.Resources.GetIdentifier("steps", "string", Activity.PackageName));
@@ -115,9 +127,10 @@ namespace TFG.Droid.Fragments.StepCounter {
         //Refresh date text for charts
         private void RefreshDateText() {
             switch (_metric) {
-                case ChartUtils.VisualizationMetric.Weekly: { 
-                    var startDate = _date.AddDays(0 - (int) _date.DayOfWeek);
-                    var endDate = _date.AddDays(6 - (int) _date.DayOfWeek);
+                case ChartUtils.VisualizationMetric.Weekly: {
+                    var firstDay = CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek;
+                    var startDate = _date.AddDays((int)firstDay - (int) _date.DayOfWeek);
+                    var endDate = startDate.AddDays(6);
                     _dateText.Text = startDate.ToString("dd MMM") + " - " + endDate.ToString("dd MMM");
                     _dateText.TextSize = (int) Resources.GetDimension(Resource.Dimension.text_size_large) /
                                          Resources.DisplayMetrics.Density;
@@ -134,9 +147,9 @@ namespace TFG.Droid.Fragments.StepCounter {
         public override void SetMenuVisibility(bool menuVisible) {
             base.SetMenuVisibility(menuVisible);
             if (menuVisible) {
-                _stepsChart.Chart.AnimateY(700);
-                _caloriesChart.Chart.AnimateY(700);
-                _distanceChart.Chart.AnimateY(700);
+                _stepsChart?.Chart.AnimateY(700);
+                _caloriesChart?.Chart.AnimateY(700);
+                _distanceChart?.Chart.AnimateY(700);
             }
         }
     }
