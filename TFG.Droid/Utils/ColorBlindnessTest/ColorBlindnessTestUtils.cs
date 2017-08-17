@@ -12,6 +12,7 @@ using Android.Views;
 using Android.Widget;
 using TFG.Droid.Fragments.ColorBlindnessTest;
 using TFG.Droid.Interfaces;
+using TFG.Model;
 
 namespace TFG.Droid.Utils {
     class ColorBlindnessTestUtils : HealthModuleUtils  {
@@ -31,6 +32,10 @@ namespace TFG.Droid.Utils {
 
         public override IHealthFragment GetHealthCardFragment(string name) {
             return null;
+        }
+
+        public override NotificationItem GetNotificationItem(Context context, HealthModule healthModule) {
+            throw new NotImplementedException();
         }
     }
 }
