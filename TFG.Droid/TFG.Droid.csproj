@@ -155,26 +155,41 @@
     <Compile Include="Custom Views\ModuleViewCell.cs" />
     <Compile Include="Custom Views\SintromCalendar.cs" />
     <Compile Include="Custom Views\SintromConfigureTreatmentDialog.cs" />
+    <Compile Include="Fragments\ColorBlindnessTest\CBTBodyFragment.cs" />
+    <Compile Include="Fragments\ColorBlindnessTest\CBTHeaderFragment.cs" />
     <Compile Include="Fragments\Sintrom\SintromBodyFragment.cs" />
     <Compile Include="Fragments\Sintrom\SintromCalendarFragment.cs" />
     <Compile Include="Fragments\Sintrom\SintromCardFragment.cs" />
     <Compile Include="Fragments\Sintrom\SintromHeaderFragment.cs" />
     <Compile Include="Fragments\Sintrom\SintromResultsFragment.cs" />
     <Compile Include="Fragments\Sintrom\SintromTreatmentFragment.cs" />
+    <Compile Include="Fragments\StepCounter\StepCounterBodyFragment.cs" />
+    <Compile Include="Fragments\StepCounter\StepCounterCardFragment.cs" />
+    <Compile Include="Fragments\StepCounter\StepCounterChartFragment.cs" />
+    <Compile Include="Fragments\StepCounter\StepCounterHeaderFragment.cs" />
+    <Compile Include="Fragments\StepCounter\StepCounterQuickResultsFragment.cs" />
     <Compile Include="Interfaces\IHealthFragment.cs" />
     <Compile Include="Interfaces\IHealthFragmentTabItem.cs" />
     <Compile Include="Listeners\HealthCardClickListener.cs" />
+    <Compile Include="Listeners\IStepDetectedListener.cs" />
     <Compile Include="Model\HealthModule.Android.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receivers\NotificationReceiver.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Services\BootUpReceiver.cs" />
+    <Compile Include="Services\StepCounterService.cs" />
+    <Compile Include="Services\StepCounterServiceBinder.cs" />
+    <Compile Include="Services\StepCounterServiceConnection.cs" />
     <Compile Include="Utils\AnimationUtils.cs" />
+    <Compile Include="Utils\ChartUtils.cs" />
+    <Compile Include="Utils\ColorBlindnessTest\ColorBlindnessTestUtils.cs" />
     <Compile Include="Utils\HealthModuleUtils.cs" />
     <Compile Include="Utils\NotificationsUtils.cs" />
     <Compile Include="Utils\SignInUtils.cs" />
     <Compile Include="Utils\Sintrom\SintromUtils.cs" />
     <Compile Include="Utils\SQLite.cs" />
     <Compile Include="Utils\SQLiteAsync.cs" />
+    <Compile Include="Utils\StepCounter\StepCounterUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Fonts\DroidSerif-Bold.ttf" />
@@ -182,6 +197,9 @@
     <AndroidAsset Include="Assets\Fonts\Futura Medium.otf" />
     <GoogleServicesJson Include="google-services.json" />
     <AndroidAsset Include="Assets\ConfigFiles\SintromConfig.json" />
+    <AndroidAsset Include="Assets\JSON\ColorBlindnessTest.json" />
+    <AndroidAsset Include="Assets\ConfigFiles\StepCounterConfig.json" />
+    <AndroidAsset Include="Assets\ConfigFiles\ColorBlindnessConfig.json" />
     <None Include="packages.config" />
     <None Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\layout\cardview_barchart.axml" />
@@ -212,6 +230,13 @@
     <AndroidResource Include="Resources\layout\fragment_sintrom_header_control.axml" />
     <AndroidResource Include="Resources\layout\fragment_sintrom_results.axml" />
     <AndroidResource Include="Resources\layout\fragment_sintrom_treatment.axml" />
+    <AndroidResource Include="Resources\layout\fragment_cbt_body.axml" />
+    <AndroidResource Include="Resources\layout\fragment_cbt_header.axml" />
+    <AndroidResource Include="Resources\layout\fragment_stepcounter_body_chart_results.axml" />
+    <AndroidResource Include="Resources\layout\fragment_stepcounter_body_quick_results.axml" />
+    <AndroidResource Include="Resources\layout\fragment_stepcounter_card.axml" />
+    <AndroidResource Include="Resources\layout\fragment_stepcounter_header.axml" />
+    <AndroidResource Include="Resources\layout\result_row.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\module_icon.xml">
@@ -304,6 +329,96 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values-es\Strings.sintrom.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\colorblindnesstest_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_37.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_38.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\stepcounter_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.cbt.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.stepcounter.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values-es\Strings.cbt.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values-es\Strings.stepcounter.xml" />
   </ItemGroup>
   <Import Project="..\TFG\TFG.projitems" Label="Shared" Condition="Exists('..\TFG\TFG.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
