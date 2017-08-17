@@ -57,9 +57,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:maxLines = "1"
+            android:ellipsize="marquee"
             android:layout_toRightOf="@+id/module_icon"
             android:layout_below="@+id/module_name"
-            android:textSize="@dimen/text_size_normal" />
+            android:textSize="@dimen/text_size_medium" />
       </RelativeLayout>
       <com.refractored.fab.FloatingActionButton
           android:id="@+id/module_addbutton"
@@ -76,7 +79,11 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:gravity="center"
-          android:textSize="@dimen/text_size_xlarge"
+          android:layout_marginTop="10dp"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="20dp"
+          android:layout_marginBottom="20dp"
+          android:textSize="@dimen/text_size_large"
           android:textColor="@color/purple"
           android:visibility="gone" />
     </LinearLayout>
