@@ -212,12 +212,6 @@
     <AndroidResource Include="Resources\layout\fragment_sintrom_header_control.axml" />
     <AndroidResource Include="Resources\layout\fragment_sintrom_results.axml" />
     <AndroidResource Include="Resources\layout\fragment_sintrom_treatment.axml" />
-    <AndroidResource Include="Resources\values\Strings.sintrom.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\values-es\Strings.sintrom.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\module_icon.xml">
@@ -304,6 +298,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values-es\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.sintrom.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values-es\Strings.sintrom.xml" />
   </ItemGroup>
   <Import Project="..\TFG\TFG.projitems" Label="Shared" Condition="Exists('..\TFG\TFG.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
