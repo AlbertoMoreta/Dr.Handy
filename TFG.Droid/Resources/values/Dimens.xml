@@ -19,7 +19,7 @@
   <dimen name="card_height">120dp</dimen>
   <dimen name="card_padding">50dp</dimen>
   <dimen name="appbarlayout_height">130dp</dimen> 
-  <dimen name="health_module_icon_size">60dp</dimen>
+  <dimen name="health_module_icon_size">50dp</dimen>
   <dimen name="health_module_shape_size">70dp</dimen>
   <dimen name="fab_size">50dp</dimen>
   <dimen name="fab_offset">-40dp</dimen>
