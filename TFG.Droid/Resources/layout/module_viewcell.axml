@@ -37,8 +37,8 @@
             android:id="@+id/module_icon"
             android:layout_width="@dimen/health_module_icon_size"
             android:layout_height="@dimen/health_module_icon_size"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"
             android:background="@drawable/icon" />
@@ -47,16 +47,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="20dp"
             android:layout_toRightOf="@+id/module_icon"
-            android:textSize="@dimen/text_size_xlarge"
+            android:textSize="@dimen/text_size_large"
             android:gravity="left" />
         <TFG.Droid.Custom_Views.CustomTextView
             android:id="@+id/module_description_short"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="20dp"
             android:layout_toRightOf="@+id/module_icon"
             android:layout_below="@+id/module_name"
             android:textSize="@dimen/text_size_normal" />
