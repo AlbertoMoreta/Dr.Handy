@@ -12,8 +12,6 @@ using TFG.Droid.Interfaces;
 using TFG.Logic;
 using TFG.Model;
 
-using GridLayout = Android.Support.V7.Widget.GridLayout;
-
 namespace TFG.Droid.Fragments.ColorBlindnessTest {
     public class CBTBodyFragment : Fragment, IHealthFragment {
 
