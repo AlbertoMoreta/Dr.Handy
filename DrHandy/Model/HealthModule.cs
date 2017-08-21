@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
-using TFG.Logic;
+using DrHandy.Logic;
 
 #if __ANDROID__
 using Android.Graphics.Drawables;
@@ -11,7 +11,7 @@ using Android.Content.Res;
 using Android.Support.V4.Content;
 #endif
 
-namespace TFG.Model {
+namespace DrHandy.Model {
     public partial class HealthModule  {
         [JsonProperty(Required = Required.Always)]
         public string ShortName { get; set; }
