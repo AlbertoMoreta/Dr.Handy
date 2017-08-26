@@ -4,10 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using TFG.Logic;
-using TFG.Model;
+using DrHandy.Logic;
+using DrHandy.Model;
 
-namespace TFG.DataBase {
+namespace DrHandy.DataBase {
     public partial class DBHelper {
          
         public static readonly string DB_NAME = "HealthApp.db3";
