@@ -1,5 +1,5 @@
 ﻿
-namespace TFG.Model {
+namespace DrHandy.Model {
     public class NotificationItem {
 
         public string Title { get; set; }

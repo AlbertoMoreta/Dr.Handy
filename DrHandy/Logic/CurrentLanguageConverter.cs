@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Java.Util;
 
-namespace TFG.Logic {
+namespace DrHandy.Logic {
     class CurrentLanguageConverter : JsonConverter {
         //English as default language
         private static readonly string DEFAULT_LANGUAGE = "English";
