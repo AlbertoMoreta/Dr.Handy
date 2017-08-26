@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "480868285908",
+    "firebase_url": "https://drhandy-2eb4c.firebaseio.com",
+    "project_id": "drhandy-2eb4c",
+    "storage_bucket": "drhandy-2eb4c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480868285908:android:d03033f02b1a6f00",
+        "android_client_info": {
+          "package_name": "com.albertm.drhandy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "480868285908-dnsk95iae2nv4q1dmu70e6e5hsrug3b7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9kbXl0nD96ZH9rJnL2TrumrZcECKcmNc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
