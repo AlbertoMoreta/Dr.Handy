@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TFG.Logic;
-using TFG.Model;
+using DrHandy.Logic;
+using DrHandy.Model;
 
-namespace TFG.DataBase {
+namespace DrHandy.DataBase {
     public partial class DBHelper {
 
         //Step Counter Health Module

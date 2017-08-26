@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TFG.Logic {
+namespace DrHandy.Logic {
     class StepCounterLogic {
 
         private static StepCounterLogic _instance;

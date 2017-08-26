@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TFG.Model {
+namespace DrHandy.Model {
     public class StepCounterItem {
         public DateTime Date { get; set; }
         public int Steps { get; set; }
