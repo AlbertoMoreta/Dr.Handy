@@ -5,10 +5,10 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using Newtonsoft.Json;
-using TFG.Model;
-using HealthModule = TFG.Model.HealthModule;
+using DrHandy.Model;
+using HealthModule = DrHandy.Model.HealthModule;
 
-namespace TFG.Logic {
+namespace DrHandy.Logic {
     public static class HealthModulesConfigReader {
 
         private static readonly string CONFIG_FILES_ROOT = "ConfigFiles";
