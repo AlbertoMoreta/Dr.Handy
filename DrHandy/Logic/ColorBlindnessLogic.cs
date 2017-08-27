@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace TFG.Logic {
+namespace DrHandy.Logic {
     class ColorBlindnessLogic  {
 
         public static readonly int TOTAL_QUESTIONS = 24;
