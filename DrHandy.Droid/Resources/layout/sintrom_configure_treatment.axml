@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/toolbar_top_padding"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="center"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/current_date"
+            android:layout_marginRight="10dp" 
+            android:rotation="180"
+            android:src="@drawable/ic_arrow" />
+        <DrHandy.Droid.Custom_Views.CustomTextView
+            android:id="@+id/current_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_xlarge" />
+        <ImageView
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/current_date"
+            android:layout_marginLeft="10dp" 
+            android:src="@drawable/ic_arrow" />
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+        <DrHandy.Droid.Custom_Views.CustomTextView
+            android:id="@+id/day0"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_large" />
+        <DrHandy.Droid.Custom_Views.CustomTextView
+            android:id="@+id/day1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_large" />
+        <DrHandy.Droid.Custom_Views.CustomTextView
+            android:id="@+id/day2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_large" />
+        <DrHandy.Droid.Custom_Views.CustomTextView
+            android:id="@+id/day3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_large" />
+        <DrHandy.Droid.Custom_Views.CustomTextView
+            android:id="@+id/day4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_large" />
+        <DrHandy.Droid.Custom_Views.CustomTextView
+            android:id="@+id/day5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_large" />
+        <DrHandy.Droid.Custom_Views.CustomTextView
+            android:id="@+id/day6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_large" />
+    </LinearLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:layout_weight="0.7" />
+</LinearLayout>
