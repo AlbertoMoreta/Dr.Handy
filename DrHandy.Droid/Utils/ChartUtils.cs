@@ -37,7 +37,7 @@ namespace DrHandy.Droid.Utils {
                     var item = items.ElementAt(count);
 
                     var currentDate = metric == VisualizationMetric.Weekly
-                        ? (int) item.Date.DayOfWeek == i
+                        ? (int) item.Date.DayOfWeek == (i + (int)CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek) % labelsCount
                         : (item.Date.Month) - 1 == i;
 
                     if (currentDate) {
@@ -120,8 +120,8 @@ namespace DrHandy.Droid.Utils {
             var endDate = new DateTime();
             switch (metric) {
                 case VisualizationMetric.Weekly:
-                    startDate = date.AddDays(0 - (int) date.DayOfWeek);
-                    endDate = date.AddDays(6 - (int) date.DayOfWeek);
+                    startDate = date.AddDays((int) CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek - (int) date.DayOfWeek);
+                    endDate = startDate.AddDays(6);
                     items = DBHelper.Instance.GetStepCounterItemsFromDateRange(startDate, endDate);
                     break;
                 case VisualizationMetric.Yearly:

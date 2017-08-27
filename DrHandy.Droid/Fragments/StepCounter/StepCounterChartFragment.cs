@@ -129,7 +129,7 @@ namespace DrHandy.Droid.Fragments.StepCounter {
             switch (_metric) {
                 case ChartUtils.VisualizationMetric.Weekly: {
                     var firstDay = CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek;
-                    var startDate = _date.AddDays((int)firstDay - (int) _date.DayOfWeek);
+                    var startDate = _date.AddDays(-((int) _date.DayOfWeek - (int)firstDay) % 7);
                     var endDate = startDate.AddDays(6);
                     _dateText.Text = startDate.ToString("dd MMM") + " - " + endDate.ToString("dd MMM");
                     _dateText.TextSize = (int) Resources.GetDimension(Resource.Dimension.text_size_large) /
