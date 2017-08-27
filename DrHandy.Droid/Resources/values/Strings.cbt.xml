@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>  
+
+  <!-- Color Blindness Test Strings -->
+  <string name="color_blindness_test_name">Color Blindness Test</string>
+  <string name="question_number">Question</string>
+  <string name="answer">Your Answer</string>
+  <string name="correct_answer">Correct Answer</string>
+
+  <string name="no_daltonism">Do not worry, you don\'t suffer any type of color blindness.</string>
+  <string name="red_and_green_daltonism">Based on your answers it is possible that you may have red and green color blindness.</string>
+  <string name="total_daltonism">Based on your answers it is possible that you may have total color blindness.</string>
+
+</resources>
