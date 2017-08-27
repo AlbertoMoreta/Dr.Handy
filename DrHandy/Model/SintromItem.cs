@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TFG.Model {
+namespace DrHandy.Model {
     interface SintromItem {
         string UserId { get; set; }
         DateTime Date { get; set; }

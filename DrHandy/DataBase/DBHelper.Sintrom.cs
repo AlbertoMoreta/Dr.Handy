@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic; 
-using TFG.Model;
+using DrHandy.Model;
 
-namespace TFG.DataBase {
+namespace DrHandy.DataBase {
     public partial class DBHelper {
 
 		//Sintrom Health Module
