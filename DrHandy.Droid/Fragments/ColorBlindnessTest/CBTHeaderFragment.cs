@@ -64,6 +64,8 @@ namespace DrHandy.Droid.Fragments.ColorBlindnessTest {
          
 
         public void ShowResult()  {
+
+            ((ModuleDetailActivity)Activity).ToolbarTitle.Text = Resources.GetString(Resource.String.results);
             _questionImage.Visibility = ViewStates.Gone;
             _infoText.SetTextSize(ComplexUnitType.Px, Resources.GetDimension(Resources.GetIdentifier("text_size_large", "dimen",
                 Activity.PackageName)));
