@@ -27,7 +27,6 @@ namespace DrHandy.Droid.Utils {
         public abstract IHealthFragment GetHealthCardFragment(string shortName);
         public abstract NotificationItem GetNotificationItem(Context context, HealthModule healthModule);
 
-
         public static string GetCurrentUserId(Context context) {
             var prefs = PreferenceManager.GetDefaultSharedPreferences(context);
             return prefs.GetString("IdToken", null);
