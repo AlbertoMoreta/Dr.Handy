@@ -246,9 +246,6 @@
     <PackageReference Include="Xamarin.GooglePlayServices.Base">
       <Version>42.1021.1</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.GooglePlayServices.Basement">
-      <Version>42.1021.1</Version>
-    </PackageReference>
     <PackageReference Include="Xamarin.GooglePlayServices.Tasks">
       <Version>42.1021.1</Version>
     </PackageReference>
