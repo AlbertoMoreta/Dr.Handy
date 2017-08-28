@@ -1,7 +1,6 @@
 bin
 obj
 *.suo
-packages
 *.config 
 *.csproj.bak
 *.proj
