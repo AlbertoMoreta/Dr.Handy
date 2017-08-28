@@ -1,4 +1,4 @@
-
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,7 +37,7 @@ namespace DrHandy.Droid.Adapters {
 
         public override ICharSequence GetPageTitleFormatted(int position){
             return new String(_titles.ElementAt(position));
-        }
+        } 
 
         public void AddItem(Fragment f, string title = "") {
             _fragments.Add(f);
@@ -50,7 +50,7 @@ namespace DrHandy.Droid.Adapters {
         }
 
         public void RemoveFragment(Fragment f) { 
-            _titles.RemoveAt(_fragments.IndexOf(f)); 
+            _titles.RemoveAt(_fragments.IndexOf(f));
             _fragments.Remove(f);
         }
     }
