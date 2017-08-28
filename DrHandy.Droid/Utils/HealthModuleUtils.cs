@@ -30,12 +30,7 @@ namespace DrHandy.Droid.Utils {
         public static string GetCurrentUserId(Context context) {
             var prefs = PreferenceManager.GetDefaultSharedPreferences(context);
             return prefs.GetString("IdToken", null);
-        }
-
-        public static string GetCurrentUserId(Context context) {
-            var prefs = PreferenceManager.GetDefaultSharedPreferences(context);
-            return prefs.GetString("IdToken", null);
-        }
+        } 
 
         public Drawable GetHealthModuleBackground(Context context, string color) {
             return GetDrawableFromResources(context, "background_" + color);
