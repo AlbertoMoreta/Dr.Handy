@@ -37,16 +37,21 @@ namespace DrHandy.Droid.Adapters {
 
         public override ICharSequence GetPageTitleFormatted(int position){
             return new String(_titles.ElementAt(position));
-        }
+        } 
 
-        public void AddItem(Fragment f, string title) {
+        public void AddItem(Fragment f, string title = "") {
             _fragments.Add(f);
             _titles.Add(title);
         }
 
+        public void AddItemAtIndex(Fragment f, int index, string title = "") {
+            _fragments.Insert(index, f);
+            _titles.Insert(index, title);
+        }
+
         public void RemoveFragment(Fragment f) { 
-            _fragments.Remove(f);
             _titles.RemoveAt(_fragments.IndexOf(f));
+            _fragments.Remove(f);
         }
     }
 }
