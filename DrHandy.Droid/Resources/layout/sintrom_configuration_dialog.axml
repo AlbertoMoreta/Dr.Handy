@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <DrHandy.Droid.Custom_Views.CustomTextView
+        android:id="@+id/current_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="?colorPrimary"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_normal" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+        <DrHandy.Droid.Custom_Views.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@string/set_control"
+            android:textSize="@dimen/text_size_normal" />
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/control"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:checked="false"
+            android:textSize="@dimen/text_size_normal" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/input_inr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:visibility="gone">
+        <DrHandy.Droid.Custom_Views.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/inr"
+            android:text="@string/input_inr"
+            android:textSize="@dimen/text_size_normal" />
+        <EditText
+            android:id="@+id/inr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:hint="@string/sintrom_inr"
+            android:maxLength="4"
+            android:singleLine="true"
+            android:textSize="@dimen/text_size_normal"
+            android:inputType="numberDecimal" />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/no_control_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+            <DrHandy.Droid.Custom_Views.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:text="@string/sintrom_name"
+                android:textSize="@dimen/text_size_normal" />
+            <Spinner
+                android:id="@+id/medicine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+            <ImageView
+                android:id="@+id/sintrom1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:layout_weight="0.2"
+                android:padding="2dp" />
+            <ImageView
+                android:id="@+id/sintrom3_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:layout_weight="0.2"
+                android:padding="2dp" />
+            <ImageView
+                android:id="@+id/sintrom1_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:layout_weight="0.2"
+                android:padding="2dp" />
+            <ImageView
+                android:id="@+id/sintrom1_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:layout_weight="0.2"
+                android:padding="2dp" />
+            <ImageView
+                android:id="@+id/sintrom1_8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:layout_weight="0.2"
+                android:padding="2dp" />
+        </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:id="@+id/accept_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_gravity="right"
+        android:gravity="center"
+        android:text="@string/accept"
+        android:colorButtonNormal="?colorPrimary"
+        android:theme="@style/ButtonTheme" />
+</LinearLayout>
