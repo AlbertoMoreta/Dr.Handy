@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
-using TFG.Logic;
+using DrHandy.Logic;
 
-namespace TFG.Model {
+namespace DrHandy.Model {
     class ColorBlindnessQuestion {
 
         public int Number { get; set; }

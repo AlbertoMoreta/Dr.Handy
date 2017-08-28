@@ -6,13 +6,13 @@ using Android.App;
 using Android.OS; 
 using Android.Views;
 using Android.Widget;
-using TFG.Droid.Activities;
-using TFG.Droid.Custom_Views;
-using TFG.Droid.Interfaces;
-using TFG.Logic;
-using TFG.Model;
+using DrHandy.Droid.Activities;
+using DrHandy.Droid.Custom_Views;
+using DrHandy.Droid.Interfaces;
+using DrHandy.Logic;
+using DrHandy.Model;
 
-namespace TFG.Droid.Fragments.ColorBlindnessTest {
+namespace DrHandy.Droid.Fragments.ColorBlindnessTest {
     public class CBTBodyFragment : Fragment, IHealthFragment {
 
         

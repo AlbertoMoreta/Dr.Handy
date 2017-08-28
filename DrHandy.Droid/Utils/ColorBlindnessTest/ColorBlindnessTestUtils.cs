@@ -10,11 +10,11 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using TFG.Droid.Fragments.ColorBlindnessTest;
-using TFG.Droid.Interfaces;
-using TFG.Model;
+using DrHandy.Droid.Fragments.ColorBlindnessTest;
+using DrHandy.Droid.Interfaces;
+using DrHandy.Model;
 
-namespace TFG.Droid.Utils {
+namespace DrHandy.Droid.Utils {
     class ColorBlindnessTestUtils : HealthModuleUtils  {
         public override void InitModuleDB() { }
 

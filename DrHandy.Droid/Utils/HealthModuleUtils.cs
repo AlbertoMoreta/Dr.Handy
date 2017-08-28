@@ -14,6 +14,7 @@ using Android.Views;
 using Android.Widget;
 using DrHandy.Droid.Interfaces;
 using DrHandy.Model;
+using Android.Preferences;
 
 namespace DrHandy.Droid.Utils {
     public abstract class HealthModuleUtils { 
@@ -27,10 +28,14 @@ namespace DrHandy.Droid.Utils {
         public abstract NotificationItem GetNotificationItem(Context context, HealthModule healthModule);
 
 
-        public Drawable GetHealthModuleBackground(Context context, string color) {
-            return GetDrawableFromResources(context, "background_" + color);
+        public static string GetCurrentUserId(Context context) {
+            var prefs = PreferenceManager.GetDefaultSharedPreferences(context);
+            return prefs.GetString("IdToken", null);
         }
 
+        public Drawable GetHealthModuleBackground(Context context, string color) {
+            return GetDrawableFromResources(context, "background_" + color);
+        } 
 
         public Drawable GetHealthModuleHeader(Context context, string color) { 
             return GetDrawableFromResources(context, "header_" + color);
@@ -39,8 +44,7 @@ namespace DrHandy.Droid.Utils {
         public int GetHealthModuleTheme(Context context, string color) {
             var resName = "AppTheme_" + color;
             return GetStyleFromResources(context, resName);
-        }
-
+        } 
 
         public static Drawable GetDrawableFromResources(Context context, string resName) {
             try{
@@ -51,7 +55,7 @@ namespace DrHandy.Droid.Utils {
                 return null;
             }
 
-        }
+        } 
 
         public static int GetStyleFromResources(Context context, string resName) {
             try { 

@@ -11,12 +11,12 @@ using Android.Support.V4.Content;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
-using TFG.Droid.Activities;
-using TFG.Droid.Custom_Views;
-using TFG.Droid.Interfaces;
-using TFG.Logic;
+using DrHandy.Droid.Activities;
+using DrHandy.Droid.Custom_Views;
+using DrHandy.Droid.Interfaces;
+using DrHandy.Logic;
 
-namespace TFG.Droid.Fragments.ColorBlindnessTest {
+namespace DrHandy.Droid.Fragments.ColorBlindnessTest {
     public class CBTHeaderFragment : Fragment, IHealthFragment {
         private List<Model.ColorBlindnessQuestion> _questions;
         private ImageView _questionImage;
@@ -64,6 +64,8 @@ namespace TFG.Droid.Fragments.ColorBlindnessTest {
          
 
         public void ShowResult()  {
+
+            ((ModuleDetailActivity)Activity).ToolbarTitle.Text = Resources.GetString(Resource.String.results);
             _questionImage.Visibility = ViewStates.Gone;
             _infoText.SetTextSize(ComplexUnitType.Px, Resources.GetDimension(Resources.GetIdentifier("text_size_large", "dimen",
                 Activity.PackageName)));
