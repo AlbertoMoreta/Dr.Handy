@@ -2,8 +2,7 @@ bin
 obj
 *.suo
 packages
-*.config
-*.csproj
+*.config 
 *.csproj.bak
 *.proj
 */Resource.Designer.cs
