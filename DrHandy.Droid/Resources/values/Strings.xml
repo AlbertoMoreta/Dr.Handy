@@ -10,5 +10,6 @@
   <string name="sign_out">Sign Out</string>
   <string name="sign_in_description">For using the %1$s tool authentication is required. Press the button below to access your Google account and begin to use the tool.</string>
   <string name="no_modules">Looks like you don\'t have any activated tool. Press the button below to go to the tools list.</string>
-
+  <string name="module_added">Tool added successfully. Return to the previous screen to start using it.</string>
+  <string name="module_removed">Tool removed successfully.</string>
 </resources>
