@@ -147,12 +147,16 @@ namespace DrHandy.Droid.Adapters {
             if (DBHelper.Instance.CheckIfExists(module)) {
                 if (DBHelper.Instance.CheckIfVisible(module)) {
                     DBHelper.Instance.ChangeModuleVisibility(module, false);
-                }else {
+                    Toast.MakeText(_context, _context.Resources.GetString(Resource.String.module_removed), ToastLength.Short).Show();
+                }
+                else {
                     DBHelper.Instance.ChangeModuleVisibility(module, true);
+                    Toast.MakeText(_context, _context.Resources.GetString(Resource.String.module_added), ToastLength.Short).Show();
                 }
             }else {
                 DBHelper.Instance.AddHealthModule(module);
                 module.GetUtilsClass().InitModuleDB();
+                Toast.MakeText(_context, _context.Resources.GetString(Resource.String.module_added), ToastLength.Short).Show(); 
             }
 
             NotifyDataSetChanged();
