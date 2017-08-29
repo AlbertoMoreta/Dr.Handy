@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "480868285908-e28cbk3j2bhrm78dhp025l8ndul4fhbc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.albertm.drhandy",
+            "certificate_hash": "1d0d03e88a7cb9ea3f600d1375bb3eef1d32f6ef"
+          }
+        },
+        {
           "client_id": "480868285908-dnsk95iae2nv4q1dmu70e6e5hsrug3b7.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "480868285908-dnsk95iae2nv4q1dmu70e6e5hsrug3b7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

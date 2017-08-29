@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.albertm.drhandy">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.albertm.drhandy" android:versionName="0.2-beta" android:versionCode="1">
 	<uses-sdk android:minSdkVersion="18" />
 	<uses-feature android:name="android.hardware.sensor.stepdetector" />
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
