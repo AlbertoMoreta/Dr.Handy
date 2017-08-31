@@ -181,6 +181,7 @@ namespace DrHandy.Droid.Adapters {
         //Save Sintrom configuration
         private void SaveInfo(object sender, EventArgs e) {
             var userId = HealthModuleUtils.GetCurrentUserId(_context);
+            if(_dialog.SelectedImageName == null) { _dialog.SelectedImageName = ""; }
             if (!_dialog.Control.Checked) {
                 DBHelper.Instance.UpdateSintromItem(new SintromTreatmentItem(userId, _dialog.SelectedDate,
                     _dialog.SelectedImageName, _dialog.SelectedMedicine));
