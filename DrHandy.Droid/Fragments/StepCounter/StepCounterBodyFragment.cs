@@ -32,7 +32,10 @@ namespace DrHandy.Droid.Fragments.StepCounter {
 
             var pager = view.FindViewById<ViewPager>(Resource.Id.pager); 
             var adapter = new HealthModulePagerAdapter(((AppCompatActivity) Activity).SupportFragmentManager);
-            adapter.AddItem(new StepCounterQuickResultsFragment(), "Quick Results");
+
+            var quickResultsTitle = Activity.GetString(Activity.Resources.GetIdentifier("quick_results",
+                "string", Activity.PackageName)); 
+            adapter.AddItem(new StepCounterQuickResultsFragment(), quickResultsTitle);
 
             var weeklyResultsTitle = Activity.GetString(Activity.Resources.GetIdentifier("weekly_results",
                 "string", Activity.PackageName));
