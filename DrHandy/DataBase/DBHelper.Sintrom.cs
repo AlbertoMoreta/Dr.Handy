@@ -26,7 +26,7 @@ namespace DrHandy.DataBase {
 
         public void CreateINRTable() {
             var sql = "CREATE TABLE IF NOT EXISTS " + INR_TABLE + " (" + COL_USERID + " text, " + COL_DATE + " date, "
-                + COL_CONTROL + " boolean, " + COL_INR + " integer, primary key (" + COL_USERID + ", " + COL_DATE + "))";
+                + COL_CONTROL + " boolean, " + COL_INR + " real, primary key (" + COL_USERID + ", " + COL_DATE + "))";
 
             Connection.Execute(sql);
         }
@@ -154,8 +154,9 @@ namespace DrHandy.DataBase {
 
             for (var day = startDate.Date; day.Date <= endDate.Date; day = day.AddDays(1))  {
                 if (rnd.Next(10) == 1) {
-                    //Control day
-                    InsertSintromINRItem(new SintromINRItem(userId, day, true, 1.4));
+                    //Control day 
+                    var inrValue = Math.Round(rnd.NextDouble() * (4.0 - 1.0) + 1.0, 2);
+                    InsertSintromINRItem(new SintromINRItem(userId, day, true, inrValue));
                 } else {
                     var medicine = "Sintrom ";
                     var medicineRnd = rnd.Next(3);
