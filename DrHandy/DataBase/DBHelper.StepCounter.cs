@@ -18,7 +18,7 @@ namespace DrHandy.DataBase {
 
         public void CreateStepCounterTable() {
             var sql = "CREATE TABLE IF NOT EXISTS " + STEPCOUNTER_TABLE + " (" + COL_DATE + " date primary key, "
-                + COL_STEPS + " integer, " + COL_CALORIES + " integer, " + COL_DISTANCE + " integer)";
+                + COL_STEPS + " integer, " + COL_CALORIES + " real, " + COL_DISTANCE + " real)";
 
             Connection.Execute(sql);
         }
