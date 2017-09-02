@@ -18,6 +18,7 @@ using DrHandy.DataBase;
 
 namespace DrHandy.Droid.Receivers {
     [BroadcastReceiver]
+    [IntentFilter(new[] { Intent.ActionBootCompleted })]
     public class NotificationReceiver : BroadcastReceiver { 
 
         public override void OnReceive(Context context, Intent intent) {
