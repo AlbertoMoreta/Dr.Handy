@@ -20,6 +20,7 @@ using DrHandy.Droid.Custom_Views;
 using DrHandy.Droid.Interfaces;
 using DrHandy.Droid.Utils;
 using DrHandy.Model;
+using System.Globalization;
 
 namespace DrHandy.Droid.Fragments.Sintrom {
     /// <summary>
@@ -35,7 +36,7 @@ namespace DrHandy.Droid.Fragments.Sintrom {
              
             //Set alarm at 12 pm
             int dayOffset = DateTime.UtcNow.ToLocalTime().Hour < 12 ? 0 : 1;  
-            var calendar = Calendar.Instance;
+            var calendar = Java.Util.Calendar.Instance;
 
             calendar.Set(CalendarField.Date, calendar.Get(CalendarField.Date) + dayOffset);
             calendar.Set(CalendarField.HourOfDay, 12);
@@ -60,7 +61,8 @@ namespace DrHandy.Droid.Fragments.Sintrom {
             base.OnResume();
              
             //Toolbar title with today's date 
-            (Activity as BaseActivity).ToolbarTitle.Text = DateTime.Now.ToString("D");
+            (Activity as BaseActivity).ToolbarTitle.Text = DateTime.Now.ToString("dddd, dd MMMM",
+                                CultureInfo.CurrentCulture);
             RefreshHeader();
         }
          
