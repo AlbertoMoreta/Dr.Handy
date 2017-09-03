@@ -5,6 +5,7 @@
   <string name="add">Añadir</string>
   <string name="remove">Eliminar</string>
   <string name="accept">Aceptar</string>
+  <string name="info">Información</string>
   <string name="results">Resultados</string>
   <string name="access">Acceso %1$s</string>
   <string name="sign_out">Cerrar Sesión</string>
