@@ -15,6 +15,7 @@ using DrHandy.Droid.Custom_Views;
 using DrHandy.Droid.Interfaces;
 using DrHandy.Droid.Listeners;
 using DrHandy.Droid.Services;
+using System.Globalization;
 
 namespace DrHandy.Droid.Fragments.StepCounter {
     /// <summary>
@@ -56,7 +57,8 @@ namespace DrHandy.Droid.Fragments.StepCounter {
         public override void OnResume() {
             base.OnResume();
 
-            (Activity as BaseActivity).ToolbarTitle.Text = DateTime.Now.ToString("D");
+            (Activity as BaseActivity).ToolbarTitle.Text = DateTime.Now.ToString("dddd, dd MMMM",
+                    CultureInfo.CurrentCulture);
 
             _firstRun = false;
         }
