@@ -27,10 +27,24 @@ namespace DrHandy.Droid.Fragments.StepCounter {
 
         private CustomTextView _steps;
 
+        public StepCounterCardFragment() { }
+
         public StepCounterCardFragment(string shortName) {
             ShortName = shortName;
         }
 
+        public override void OnCreate(Bundle savedInstanceState) {
+            base.OnCreate(savedInstanceState);
+            if (savedInstanceState != null) {
+                ShortName = savedInstanceState.GetString("ShortName");
+            }
+
+        }
+
+        public override void OnSaveInstanceState(Bundle outState) {
+            base.OnSaveInstanceState(outState);
+            outState.PutString("ShortName", ShortName);
+        }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             var view = inflater.Inflate(Resource.Layout.fragment_stepcounter_card, container, false);
