@@ -6,6 +6,8 @@
   <string name="question_number">Question</string>
   <string name="answer">Your Answer</string>
   <string name="correct_answer">Correct Answer</string>
+  <string name="number_question_info">In this type of questions, you will have to answer which number do you see, selecting one of the four given choices. Take a look at the images below for a better understanding.</string>
+  <string name="line_question_info">In this type of questions, you will have to answers how many lines do you see, selecting one of the four given choices. Take a look at the images below for a better undestanding.</string>
 
   <string name="no_daltonism">Do not worry, you don\'t suffer any type of color blindness.</string>
   <string name="red_and_green_daltonism">Based on your answers it is possible that you may have red and green color blindness.</string>
