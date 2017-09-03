@@ -22,12 +22,22 @@ namespace DrHandy.Droid.Fragments.Sintrom {
 
         public string ShortName { get; set; }
 
+        public SintromCardFragment() { }
+
         public SintromCardFragment(string shortName) {
             ShortName = shortName;
         }
 
         public override void OnCreate(Bundle savedInstanceState) {
-            base.OnCreate(savedInstanceState); 
+            base.OnCreate(savedInstanceState);
+            if (savedInstanceState != null) {
+                ShortName = savedInstanceState.GetString("ShortName");
+            }
+        }
+
+        public override void OnSaveInstanceState(Bundle outState) {
+            base.OnSaveInstanceState(outState);
+            outState.PutString("ShortName", ShortName);
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) { 
