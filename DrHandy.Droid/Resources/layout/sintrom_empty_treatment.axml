@@ -1,32 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:gravity="center">
-
     <DrHandy.Droid.Custom_Views.CustomTextView
-      android:id="@+id/sintrom_empty_treatment"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"   
-      android:layout_marginBottom="10dp"
-      android:gravity="center"  
-      android:text="@string/sintrom_empty_treatment"
-      android:textColor="?colorPrimary"
-      android:textSize="@dimen/text_size_large" />
-
+        android:id="@+id/sintrom_empty_treatment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="@string/sintrom_empty_treatment"
+        android:textColor="?colorPrimary"
+        android:textSize="@dimen/text_size_large" />
     <com.refractored.fab.FloatingActionButton
-      android:id="@+id/fab"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"  
-      android:layout_margin="16dp"
-      android:layout_below="@+id/sintrom_empty_treatment" 
-      android:layout_centerHorizontal="true"
-      android:src="@drawable/ic_edit"
-      app:fab_colorNormal="?colorPrimary"
-      app:fab_colorPressed="?colorPrimaryDark"
-      app:fab_colorRipple="?colorAccent" />
-  
-
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_below="@+id/sintrom_empty_treatment"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_edit"
+        app:fab_colorNormal="?colorPrimary"
+        app:fab_colorPressed="?colorPrimaryDark"
+        app:fab_colorRipple="?colorAccent" />
 </RelativeLayout>
