@@ -6,6 +6,8 @@
   <string name="question_number">Pregunta</string>
   <string name="answer">Tu Respuesta</string>
   <string name="correct_answer">Respuesta Correcta</string>
+  <string name="number_question_info">En este tipo de preguntas deberás contestar qué número ves en la imagen seleccionando una de las cuatro posibles respuestas. Observa las imagenes en la parte inferior para un mejor entendimiento.</string>
+  <string name="line_question_info">En este tipo de preguntas deberás contestar cuántas líneas ves en la imagen seleccionando una de las cuatro posibles respuestas. Observa las imagenes en la parte inferior para un mejor entendimiento.</string>
 
   <string name="no_daltonism">No hay de que preocuparse, no sufres ningún tipo de daltonismo</string>
   <string name="red_and_green_daltonism">En base a tus respuestas es posible que padezcas daltonismo de rojo y verde</string>

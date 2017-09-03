@@ -69,6 +69,7 @@
     <Compile Include="Adapters\SintromTreatmentListAdapter.cs" />
     <Compile Include="Callbacks\HealthCardCallback.cs" />
     <Compile Include="Custom Views\CardViewBarChart.cs" />
+    <Compile Include="Custom Views\CBTInfoDialog.cs" />
     <Compile Include="Custom Views\CustomTextView.cs" />
     <Compile Include="Custom Views\HealthCard.cs" />
     <Compile Include="Custom Views\ModuleViewCell.cs" />
@@ -113,6 +114,9 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\Fonts\Futura Medium.otf" />
     <GoogleServicesJson Include="google-services.json" />
+    <AndroidResource Include="Resources\layout\cbt_info_dialog.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidAsset Include="Assets\ConfigFiles\SintromConfig.json" />
     <AndroidResource Include="Resources\layout\fragment_cbt_body.axml" />
     <AndroidResource Include="Resources\layout\fragment_cbt_header.axml" />
@@ -124,9 +128,9 @@
     <ProguardConfiguration Include="proguard.cfg">
       <SubType>Designer</SubType>
     </ProguardConfiguration>
-    <AndroidAsset Include="Assets\JSON\ColorBlindnessTest.json" />
     <AndroidAsset Include="Assets\ConfigFiles\StepCounterConfig.json" />
     <AndroidAsset Include="Assets\ConfigFiles\ColorBlindnessConfig.json" />
+    <AndroidAsset Include="Assets\JSON\ColorBlindnessTest.json" />
     <None Include="Properties\AndroidManifest.xml">
       <SubType>Designer</SubType>
     </None>
@@ -419,6 +423,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_38.png" />
   </ItemGroup>
+ <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\cbt_numbers_example.png" />
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\stepcounter_icon.png" />
   </ItemGroup>
@@ -430,6 +437,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values-es\Strings.cbt.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\cbt_lines_example.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values-es\Strings.stepcounter.xml" />

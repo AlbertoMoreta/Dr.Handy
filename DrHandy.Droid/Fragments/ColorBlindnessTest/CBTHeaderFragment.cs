@@ -53,6 +53,11 @@ namespace DrHandy.Droid.Fragments.ColorBlindnessTest {
 
 
         public void UpdateQuestion(int plate) {
+
+            //Show help dialogs
+            if (plate == 0) { new CBTInfoDialog(Activity, 1); }
+            if (plate == 17) { new CBTInfoDialog(Activity, 2); }
+
             ((ModuleDetailActivity) Activity).ToolbarTitle.Text = _questions.ElementAt(plate).Question;
 
             //Update Question Image
