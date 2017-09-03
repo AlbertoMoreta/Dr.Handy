@@ -27,7 +27,9 @@ namespace DrHandy.Droid{
 	[Activity (Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/icon", Theme="@style/AppTheme", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
 	public class MainActivity : BaseActivity, HealthCardClickListener {
 
-        private HealthCardAdapter _adapter; 
+        private HealthCardAdapter _adapter;
+        private ItemTouchHelper.Callback _callback;
+        private ItemTouchHelper _helper;
 
 		protected override void OnCreate (Bundle bundle){
 			base.OnCreate (bundle); 
@@ -52,12 +54,18 @@ namespace DrHandy.Droid{
                 var recyclerView = FindViewById<RecyclerView>(Resource.Id.recycler_view);
                 recyclerView.SetLayoutManager(new GridLayoutManager(this, 2));
 
-                _adapter = new HealthCardAdapter(this, cards);
-                _adapter.SetHealthCardClickListener(this);
-                recyclerView.SetAdapter(_adapter);
-                ItemTouchHelper.Callback callback = new HealthCardCallback(_adapter);
-                ItemTouchHelper helper = new ItemTouchHelper(callback);
-                helper.AttachToRecyclerView(recyclerView);
+                if (_adapter == null)  {
+                    _adapter = new HealthCardAdapter(this, cards);
+                    _adapter.SetHealthCardClickListener(this);
+                    recyclerView.SetAdapter(_adapter);
+                }
+                if(_helper == null) { 
+                    if (_callback == null) {
+                        _callback = new HealthCardCallback(_adapter);
+                    }
+                    _helper = new ItemTouchHelper(_callback);
+                    _helper.AttachToRecyclerView(recyclerView);
+                }
                 fab.AttachToRecyclerView(recyclerView);
                 var lp = (RelativeLayout.LayoutParams)fab.LayoutParameters;
                 lp.RemoveRule(LayoutRules.Below);
