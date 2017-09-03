@@ -423,7 +423,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_38.png" />
   </ItemGroup>
- <ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\cbt_numbers_example.png" />
   </ItemGroup>
   <ItemGroup>
@@ -442,13 +442,7 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\cbt_lines_example.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\values-es\Strings.stepcounter.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\stepcounter_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\values\Strings.stepcounter.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values-es\Strings.stepcounter.xml" />
