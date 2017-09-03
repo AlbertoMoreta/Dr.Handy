@@ -15,6 +15,7 @@ using DrHandy.Droid.Custom_Views;
 using DrHandy.Droid.Interfaces;
 using DrHandy.Droid.Listeners;
 using DrHandy.Droid.Services;
+using System.Globalization;
 
 namespace DrHandy.Droid.Fragments.StepCounter {
     /// <summary>
@@ -36,7 +37,7 @@ namespace DrHandy.Droid.Fragments.StepCounter {
             if (!Utils.StepCounterUtils.IsKitKatWithStepCounter(Activity.PackageManager)) {
                 Console.WriteLine("The device is not compatible with the step sensor");
                 return;
-            }
+            } 
 
             StartStepCounterService();
         }
@@ -49,6 +50,7 @@ namespace DrHandy.Droid.Fragments.StepCounter {
             _distance = view.FindViewById<CustomTextView>(Resource.Id.distance);
             UpdateSteps();
 
+            SetHasOptionsMenu(true);
 
             return view;
         }
@@ -56,7 +58,8 @@ namespace DrHandy.Droid.Fragments.StepCounter {
         public override void OnResume() {
             base.OnResume();
 
-            (Activity as BaseActivity).ToolbarTitle.Text = DateTime.Now.ToString("D");
+            (Activity as BaseActivity).ToolbarTitle.Text = DateTime.Now.ToString("dddd, dd MMMM",
+                    CultureInfo.CurrentCulture);
 
             _firstRun = false;
         }
@@ -156,6 +159,29 @@ namespace DrHandy.Droid.Fragments.StepCounter {
                 UnbindService();
             } 
         }
-         
+
+        public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater) {
+            inflater.Inflate(Resource.Menu.share_menu, menu);
+            var scale = Resources.DisplayMetrics.Density;
+            var toolBar = (Activity as BaseActivity).ToolBar;
+            var paddingLeft = (int) (48 * scale + 0.5f);
+            toolBar.SetPadding(paddingLeft, toolBar.PaddingTop, toolBar.PaddingRight, toolBar.PaddingBottom);
+            base.OnCreateOptionsMenu(menu, inflater);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item) {
+            switch (item.ItemId) {
+                case Resource.Id.share:
+                    var shareIntent = new Intent(Intent.ActionSend);
+                    shareIntent.SetType("text/plain");
+                    var shareText = Resources.GetString(Resource.String.share_steps, _steps.Text, _calories.Text, _distance.Text);
+                    shareIntent.PutExtra(Intent.ExtraText, shareText);
+                    StartActivity(Intent.CreateChooser(shareIntent, Activity.Resources.GetString(Resource.String.share)));
+                    return true;
+                default: return base.OnOptionsItemSelected(item);
+            }
+            
+        }
+
     }
 }
