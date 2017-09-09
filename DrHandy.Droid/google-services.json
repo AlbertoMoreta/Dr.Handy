@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "480868285908-n6boohomgmhel57ldpmuujh4kn0fk939.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.albertm.drhandy",
+            "certificate_hash": "c405c5f35a40593dd8af2bada807d9a00b14ccee"
+          }
+        },
+        {
           "client_id": "480868285908-e28cbk3j2bhrm78dhp025l8ndul4fhbc.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
