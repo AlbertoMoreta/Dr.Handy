@@ -1,11 +1,13 @@
 <h1 align="center">
   <br>
   <a href="https://github.com/AlbertoMoreta/Dr.Handy">
-  <img src="ReadMeAssets/Logo.png" alt="Markdownify" width="200"></a>
+  <img src="ReadMeAssets/Logo.png" alt="Markdownify" width="150"></a>
   <br>
-  Dr. Handy [![Build status](https://build.mobile.azure.com/v0.1/apps/6024c019-acf3-43b1-80c2-d1fdcd19883f/branches/android-dev/badge)](https://mobile.azure.com)
+  Dr. Handy
   <br>
 </h1>
+
+[![Build status](https://build.mobile.azure.com/v0.1/apps/6024c019-acf3-43b1-80c2-d1fdcd19883f/branches/android-dev/badge)](https://mobile.azure.com)
 
 <h4 align="center">
   Dr. Handy is a mobile app that works as a health center, allowing you to have a lot of medical/health kind of tools in just one app.
@@ -14,7 +16,7 @@
 <br>
 <br>
 
-<p align="left">
+<p align="center">
 <img src="ReadMeAssets/Screenshot1.png" width="150" style="margin-right:5px; border: 1px solid #ccc;"/>
 <img src="ReadMeAssets/Screenshot2.png" width="150" style="margin-right:5px; border: 1px solid #ccc;" />
 <img src="ReadMeAssets/Screenshot3.png" width="150" style="margin-right:5px; border: 1px solid #ccc;" />
@@ -32,7 +34,7 @@ Use the following image for reference:
 <h1 align="center">
   <br>
   <a href="https://github.com/AlbertoMoreta/Dr.Handy">
-  <img src="ReadMeAssets/GitBranchStructure.png" alt="Markdownify"></a>
+  <img src="ReadMeAssets/GitBranchStructure.png" alt="Markdownify" width="70%"></a>
 </h1>
 
 1. Fork it!
