@@ -4,8 +4,8 @@
   <br>
   Dr. Handy
   
-    <a href="https://mobile.azure.com">
-     <img src="https://build.mobile.azure.com/v0.1/apps/6024c019-acf3-43b1-80c2-d1fdcd19883f/branches/android-dev/badge" alt="Markdownify"></a>
+  <a href="https://mobile.azure.com">
+   <img src="https://build.mobile.azure.com/v0.1/apps/6024c019-acf3-43b1-80c2-d1fdcd19883f/branches/android-dev/badge" alt="Markdownify"></a>
 
   <br>
 </h1> 
