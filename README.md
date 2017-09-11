@@ -26,9 +26,17 @@
 </p>
 
 <br>
+
+At this moment, the app includes:
+
+* **Step Counter:** With this tool, you will be able to know how many steps you take each day, the distance you have walked and how many calories you burned.
+* **Color Blindness Test:** With this quick test, you will be able to know if you suffer any type of color blindness.
+* **Sintrom:** With this tool, you will be able to carry your Sintrom calendar on your phone. You will never forget to take your medicine.
+
 <br>
 
 ## Contributing
+### Getting started for adding a new tool
 
 Use the following image for reference: 
 
@@ -45,7 +53,12 @@ Use the following image for reference:
 6. Merge the contents from the shared-dev branch to the specific-dev branch: `git {platform-name}-{module-shortname} shared-{module-shortname}`
 7. Commit your changes: `git commit -am 'Add some feature'`
 8. Push to the branch: `git push origin {platform-name}-{module-shortname}`
-9. Submit a pull request :D
+9. Submit a pull request
+
+<h3 align="center">
+Any contribution will be appreciated :D
+</h3>
+
 
 ## Release History
 
