@@ -21,7 +21,7 @@ namespace DrHandy.Droid.Receivers {
 
             var modules = DBHelper.Instance.GetModules().Where(x => x.Visible).ToList();
             foreach(var module in modules)  {
-                module.GetUtilsClass().DeviceBootUp(context);
+                module.GetUtilsClass().DeviceBootUp(context, module.ShortName);
             } 
         }
     }
