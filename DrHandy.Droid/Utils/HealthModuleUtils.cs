@@ -20,7 +20,7 @@ namespace DrHandy.Droid.Utils {
     public abstract class HealthModuleUtils { 
         public abstract void InitModuleDB();
 
-        public abstract void DeviceBootUp(Context context);
+        public abstract void DeviceBootUp(Context context, string shortName);
 
         public abstract Drawable GetHealthModuleIcon(Context context);  
 
