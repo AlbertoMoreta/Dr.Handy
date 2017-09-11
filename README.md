@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://imgur.com/zHPpgL7" alt="Markdownify" width="150">
+  <img src="https://i.imgur.com/zHPpgL7.png" alt="Markdownify" width="150">
   <br>
   Dr. Handy 
   <a href="https://mobile.azure.com">
