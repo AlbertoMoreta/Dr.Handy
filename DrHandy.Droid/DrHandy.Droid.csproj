@@ -74,6 +74,7 @@
     <Compile Include="Listeners\HealthCardClickListener.cs" />
     <Compile Include="Model\HealthModule.Android.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receivers\BootUpReceiver.cs" />
     <Compile Include="Receivers\NotificationReceiver.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Utils\AnimationUtils.cs" />

@@ -17,8 +17,7 @@ using DrHandy.Model;
 using DrHandy.DataBase;
 
 namespace DrHandy.Droid.Receivers {
-    [BroadcastReceiver]
-    [IntentFilter(new[] { Intent.ActionBootCompleted })]
+    [BroadcastReceiver] 
     public class NotificationReceiver : BroadcastReceiver { 
 
         public override void OnReceive(Context context, Intent intent) {
