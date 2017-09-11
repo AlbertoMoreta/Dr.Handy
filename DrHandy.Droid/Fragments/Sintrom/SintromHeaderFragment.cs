@@ -33,18 +33,10 @@ namespace DrHandy.Droid.Fragments.Sintrom {
 
         public override void OnCreate(Bundle savedInstanceState) {
             base.OnCreate(savedInstanceState);
-             
-            //Set alarm at 12 pm
-            int dayOffset = DateTime.UtcNow.ToLocalTime().Hour < 12 ? 0 : 1;  
-            var calendar = Java.Util.Calendar.Instance;
 
-            calendar.Set(CalendarField.Date, calendar.Get(CalendarField.Date) + dayOffset);
-            calendar.Set(CalendarField.HourOfDay, 12);
-            calendar.Set(CalendarField.Minute, 0);
-            calendar.Set(CalendarField.Second, 0);
 
             var moduleShortName = ((ModuleDetailActivity)Activity).CurrentHealthModule.ShortName;
-            NotificationsUtils.ScheduleNotification(Activity, moduleShortName, calendar.TimeInMillis);
+            SintromUtils.ScheduleNotification(Activity, moduleShortName);
         }
  
 

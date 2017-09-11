@@ -15,6 +15,7 @@ using DrHandy.DataBase;
 using DrHandy.Droid.Fragments.Sintrom;
 using DrHandy.Droid.Interfaces;
 using DrHandy.Model;
+using Java.Util;
 
 namespace DrHandy.Droid.Utils {
     class SintromUtils : HealthModuleUtils{
@@ -27,6 +28,10 @@ namespace DrHandy.Droid.Utils {
             } else if (e.Text.Count() == 1 && e.Text.ElementAt(0).Equals('.')) {
                 editText.Text = "";
             }
+        }
+
+        public override void DeviceBootUp(Context context, string shortName) {
+            ScheduleNotification(context, shortName);
         }
 
         public override void InitModuleDB() {
@@ -76,6 +81,22 @@ namespace DrHandy.Droid.Utils {
             }
             //No Notification
             return notificationItem;
+        } 
+
+
+        public static void ScheduleNotification(Context context, string shortName) {
+            //Set alarm at 12 pm
+            int dayOffset = DateTime.UtcNow.ToLocalTime().Hour < 12 ? 0 : 1;
+            var calendar = Java.Util.Calendar.Instance;
+
+            calendar.Set(CalendarField.Date, calendar.Get(CalendarField.Date) + dayOffset);
+            calendar.Set(CalendarField.HourOfDay, 12);
+            calendar.Set(CalendarField.Minute, 0);
+            calendar.Set(CalendarField.Second, 0);
+             
+            NotificationsUtils.ScheduleNotification(context, shortName, calendar.TimeInMillis);
         }
+
+
     }
 }
