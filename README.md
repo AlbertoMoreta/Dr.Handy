@@ -7,8 +7,6 @@
   <br>
 </h1>
 
-[![Build status](https://build.mobile.azure.com/v0.1/apps/6024c019-acf3-43b1-80c2-d1fdcd19883f/branches/android-dev/badge)](https://mobile.azure.com)
-
 <h4 align="center">
   Dr. Handy is a mobile app that works as a health center, allowing you to have a lot of medical/health kind of tools in just one app.
 </h4>
@@ -67,3 +65,9 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * [Philipp Jahoda - MPAndroidCharts](https://github.com/PhilJay/MPAndroidChart): For the charts used in the app.
+
+
+
+
+
+[![Build status](https://build.mobile.azure.com/v0.1/apps/6024c019-acf3-43b1-80c2-d1fdcd19883f/branches/android-dev/badge)](https://mobile.azure.com)
