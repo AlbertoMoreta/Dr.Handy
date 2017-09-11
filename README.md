@@ -1,13 +1,14 @@
 <h1 align="center">
-  <br>
-  <a href="https://github.com/AlbertoMoreta/Dr.Handy">
-  <img src="ReadMeAssets/Logo.png" alt="Markdownify" width="150"></a>
+  <br> 
+  <img src="https://i.imgur.com/zHPpgL7.png" alt="Markdownify" width="150">
   <br>
   Dr. Handy
-  <br>
-</h1>
+  
+    <a href="https://mobile.azure.com">
+     <img src="https://build.mobile.azure.com/v0.1/apps/6024c019-acf3-43b1-80c2-d1fdcd19883f/branches/android-dev/badge" alt="Markdownify"></a>
 
-[![Build status](https://build.mobile.azure.com/v0.1/apps/6024c019-acf3-43b1-80c2-d1fdcd19883f/branches/android-dev/badge)](https://mobile.azure.com)
+  <br>
+</h1> 
 
 <h4 align="center">
   Dr. Handy is a mobile app that works as a health center, allowing you to have a lot of medical/health kind of tools in just one app.
