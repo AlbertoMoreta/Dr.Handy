@@ -9,14 +9,20 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using DrHandy.DataBase;
 
-namespace DrHandy.Droid.Services {
+namespace DrHandy.Droid.Receivers {
     [BroadcastReceiver]
     [IntentFilter(new [] {Intent.ActionBootCompleted, Intent.ActionMyPackageReplaced})]
     class BootUpReceiver : BroadcastReceiver{
         public override void OnReceive(Context context, Intent intent) {
-            var stepCounterIntent = new Intent(context, typeof(StepCounterService));
-            context.StartService(stepCounterIntent);
+
+            //Notify device boot up for every visible module
+
+            var modules = DBHelper.Instance.GetModules().Where(x => x.Visible).ToList();
+            foreach(var module in modules)  {
+                module.GetUtilsClass().DeviceBootUp(context, module.ShortName);
+            } 
         }
     }
 }

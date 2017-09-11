@@ -94,9 +94,9 @@
     <Compile Include="Listeners\IStepDetectedListener.cs" />
     <Compile Include="Model\HealthModule.Android.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receivers\BootUpReceiver.cs" />
     <Compile Include="Receivers\NotificationReceiver.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
-    <Compile Include="Services\BootUpReceiver.cs" />
     <Compile Include="Services\StepCounterService.cs" />
     <Compile Include="Services\StepCounterServiceBinder.cs" />
     <Compile Include="Services\StepCounterServiceConnection.cs" />
