@@ -23,7 +23,7 @@ namespace DrHandy.Droid.Utils {
         public override void InitModuleDB()  {
             DBHelper.Instance.CreateStepCounterTable(); 
         }
-        public override void DeviceBootUp(Context context) {
+        public override void DeviceBootUp(Context context, string shortName) {
             //Start StepCounter Service
             var stepCounterIntent = new Intent(context, typeof(StepCounterService));
             context.StartService(stepCounterIntent);
