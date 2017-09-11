@@ -1,12 +1,11 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/AlbertoMoreta/Dr.Handy">
-  <img src="ReadMeAssets/Logo.png" alt="Markdownify" width="150"></a>
+  <img src="https://imgur.com/zHPpgL7" alt="Markdownify" width="150">
   <br>
   Dr. Handy 
-</h1>
-
-[![Build status](https://build.mobile.azure.com/v0.1/apps/6024c019-acf3-43b1-80c2-d1fdcd19883f/branches/android-dev/badge)](https://mobile.azure.com) 
+  <a href="https://mobile.azure.com">
+    <img src="https://build.mobile.azure.com/v0.1/apps/6024c019-acf3-43b1-80c2-d1fdcd19883f/branches/android-dev/badge"      alt="Markdownify"></a>
+</h1> 
 
 <br>
 
