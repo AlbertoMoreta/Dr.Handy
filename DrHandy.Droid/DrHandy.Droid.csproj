@@ -77,8 +77,7 @@
     <Compile Include="Custom Views\SintromCalendar.cs" />
     <Compile Include="Custom Views\SintromConfigureTreatmentDialog.cs" />
     <Compile Include="Fragments\ColorBlindnessTest\CBTBodyFragment.cs" />
-    <Compile Include="Fragments\ColorBlindnessTest\CBTHeaderFragment.cs" />
-    <Compile Include="Custom Views\SquareLinearLayout.cs" />    
+    <Compile Include="Fragments\ColorBlindnessTest\CBTHeaderFragment.cs" /> 
     <Compile Include="Fragments\Sintrom\SintromBodyFragment.cs" />
     <Compile Include="Fragments\Sintrom\SintromCalendarFragment.cs" />
     <Compile Include="Fragments\Sintrom\SintromCardFragment.cs" />
