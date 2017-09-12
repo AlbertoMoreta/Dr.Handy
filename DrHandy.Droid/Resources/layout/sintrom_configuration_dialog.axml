@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_gravity="center"
-        android:padding="10dp"
+        android:padding="@dimen/margin_small"
         android:layout_centerHorizontal="true"
         android:background="?colorPrimary"
         android:textColor="@android:color/white"
@@ -17,10 +17,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/margin_small"
         android:layout_marginBottom="5dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp">
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium">
         <DrHandy.Droid.Custom_Views.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,10 +39,10 @@
         android:id="@+id/input_inr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/margin_small"
         android:layout_marginBottom="5dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
         android:visibility="gone">
         <DrHandy.Droid.Custom_Views.CustomTextView
             android:layout_width="wrap_content"
@@ -74,8 +74,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp">
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium">
             <DrHandy.Droid.Custom_Views.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -93,10 +93,10 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/margin_small"
             android:layout_marginBottom="5dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp">
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium">
             <ImageView
                 android:id="@+id/sintrom1"
                 android:layout_width="0dp"
@@ -148,7 +148,7 @@
         android:id="@+id/accept_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/margin_small"
         android:layout_gravity="right"
         android:gravity="center"
         android:text="@string/accept"

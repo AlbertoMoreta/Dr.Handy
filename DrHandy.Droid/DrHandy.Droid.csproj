@@ -73,6 +73,7 @@
     <Compile Include="Custom Views\CustomTextView.cs" />
     <Compile Include="Custom Views\HealthCard.cs" />
     <Compile Include="Custom Views\ModuleViewCell.cs" />
+    <Compile Include="Custom Views\SquareLinearLayout.cs" />
     <Compile Include="Custom Views\SintromCalendar.cs" />
     <Compile Include="Custom Views\SintromConfigureTreatmentDialog.cs" />
     <Compile Include="Fragments\ColorBlindnessTest\CBTBodyFragment.cs" />
