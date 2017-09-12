@@ -3,66 +3,63 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <DrHandy.Droid.Custom_Views.CustomTextView 
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:gravity="center"
-       android:layout_gravity="center"
-       android:padding="10dp"
-       android:layout_centerHorizontal="true"
-       android:text="@string/info"
-       android:background="?colorPrimary"
-       android:textColor="@android:color/white"
-       android:textSize="@dimen/text_size_normal" />
-
-
     <DrHandy.Droid.Custom_Views.CustomTextView
-      android:id="@+id/info_text"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="10dp"
-      android:layout_marginBottom="5dp"
-      android:layout_marginLeft="15dp"
-      android:layout_marginRight="15dp"  
-      android:textSize="@dimen/text_size_normal" />
-
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:padding="@dimen/margin_small"
+        android:layout_centerHorizontal="true"
+        android:text="@string/info"
+        android:background="?colorPrimary"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_normal" />
+    <DrHandy.Droid.Custom_Views.CustomTextView
+        android:id="@+id/info_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:textSize="@dimen/text_size_normal" />
     <LinearLayout
-      android:orientation="horizontal"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:layout_marginTop="10dp"
-      android:layout_marginBottom="5dp"
-      android:layout_marginLeft="15dp"
-      android:layout_marginRight="15dp">
-      <ImageView
-          android:id="@+id/image_left"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center"
-          android:scaleType="centerInside"
-          android:adjustViewBounds="true"
-          android:layout_weight="0.5"
-          android:padding="2dp" />
-      <ImageView
-          android:id="@+id/image_right"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center"
-          android:scaleType="centerInside"
-          android:adjustViewBounds="true"
-          android:layout_weight="0.5"
-          android:padding="2dp" />
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium">
+        <ImageView
+            android:id="@+id/image_left"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:layout_weight="0.5"
+            android:padding="2dp" />
+        <ImageView
+            android:id="@+id/image_right"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:layout_weight="0.5"
+            android:padding="2dp" />
     </LinearLayout>
-
     <Button
-      android:id="@+id/accept_button"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="10dp"
-      android:layout_gravity="right"
-      android:gravity="center"
-      android:text="@string/accept"
-      android:colorButtonNormal="?colorPrimary"
-      android:theme="@style/ButtonTheme" />
+        android:id="@+id/accept_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        android:padding="@dimen/margin_small"
+        android:layout_gravity="right"
+        android:gravity="center"
+        android:text="@string/accept"
+        android:textSize="@dimen/text_size_large"
+        android:colorButtonNormal="?colorPrimary"
+        android:theme="@style/ButtonTheme" />
 </LinearLayout>
