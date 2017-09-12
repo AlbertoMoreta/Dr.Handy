@@ -33,8 +33,6 @@ At this moment, the app includes:
 * **Color Blindness Test:** With this quick test, you will be able to know if you suffer any type of color blindness.
 * **Sintrom:** With this tool, you will be able to carry your Sintrom calendar on your phone. You will never forget to take your medicine.
 
-<br>
-
 ## Contributing
 
 See the [wiki page](https://github.com/AlbertoMoreta/Dr.Handy/wiki) if you want to help contributing to the project.
