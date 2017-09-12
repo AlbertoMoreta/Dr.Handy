@@ -77,6 +77,7 @@
     <Compile Include="Custom Views\SintromConfigureTreatmentDialog.cs" />
     <Compile Include="Fragments\ColorBlindnessTest\CBTBodyFragment.cs" />
     <Compile Include="Fragments\ColorBlindnessTest\CBTHeaderFragment.cs" />
+    <Compile Include="Custom Views\SquareLinearLayout.cs" />    
     <Compile Include="Fragments\Sintrom\SintromBodyFragment.cs" />
     <Compile Include="Fragments\Sintrom\SintromCalendarFragment.cs" />
     <Compile Include="Fragments\Sintrom\SintromCardFragment.cs" />
@@ -208,7 +209,6 @@
     <AndroidResource Include="Resources\values\Styles.xml" />
     <AndroidResource Include="Resources\values-v21\Dimens.xml" />
     <AndroidResource Include="Resources\values-v21\Styles.xml" />
-    <AndroidResource Include="Resources\values-xhdpi\Dimens.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\AboutAssets.txt" />
@@ -461,6 +461,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\ic_share_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values-sw600dp\Dimens.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values-hdpi\Dimens.xml" />
   </ItemGroup>
   <Import Project="..\DrHandy\DrHandy.projitems" Label="Shared" Condition="Exists('..\DrHandy\DrHandy.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
