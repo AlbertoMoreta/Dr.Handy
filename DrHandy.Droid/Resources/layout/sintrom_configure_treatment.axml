@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/current_date"
-            android:layout_marginRight="10dp" 
+            android:layout_marginRight="@dimen/margin_small" 
             android:rotation="180"
             android:src="@drawable/ic_arrow" />
         <DrHandy.Droid.Custom_Views.CustomTextView
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/current_date"
-            android:layout_marginLeft="10dp" 
+            android:layout_marginLeft="@dimen/margin_small" 
             android:src="@drawable/ic_arrow" />
     </RelativeLayout>
     <LinearLayout

@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_gravity="center"
-        android:paddingTop="10dp"
+        android:paddingTop="@dimen/margin_small"
         android:textColor="@android:color/white"
         android:textSize="@dimen/text_size_xlarge" />
     <LinearLayout
@@ -21,7 +21,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:padding="10dp"
+            android:padding="@dimen/margin_small"
             android:scaleType="centerInside"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
