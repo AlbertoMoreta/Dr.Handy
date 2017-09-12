@@ -5273,20 +5273,20 @@ namespace DrHandy.Droid
 			// aapt resource value: 0x7f070023
 			public const int abc_toolbar_collapse_description = 2131165219;
 			
-			// aapt resource value: 0x7f070060
-			public const int accept = 2131165280;
+			// aapt resource value: 0x7f070067
+			public const int accept = 2131165287;
+			
+			// aapt resource value: 0x7f07006a
+			public const int access = 2131165290;
+			
+			// aapt resource value: 0x7f070065
+			public const int add = 2131165285;
+			
+			// aapt resource value: 0x7f070043
+			public const int answer = 2131165251;
 			
 			// aapt resource value: 0x7f070063
-			public const int access = 2131165283;
-			
-			// aapt resource value: 0x7f07005e
-			public const int add = 2131165278;
-			
-			// aapt resource value: 0x7f07003c
-			public const int answer = 2131165244;
-			
-			// aapt resource value: 0x7f07005c
-			public const int app_name = 2131165276;
+			public const int app_name = 2131165283;
 			
 			// aapt resource value: 0x7f070032
 			public const int appbar_scrolling_view_behavior = 2131165234;
@@ -5294,17 +5294,17 @@ namespace DrHandy.Droid
 			// aapt resource value: 0x7f070033
 			public const int bottom_sheet_behavior = 2131165235;
 			
-			// aapt resource value: 0x7f070050
-			public const int calories = 2131165264;
+			// aapt resource value: 0x7f070057
+			public const int calories = 2131165271;
 			
-			// aapt resource value: 0x7f070051
-			public const int calories_short = 2131165265;
+			// aapt resource value: 0x7f070058
+			public const int calories_short = 2131165272;
 			
 			// aapt resource value: 0x7f070034
 			public const int character_counter_pattern = 2131165236;
 			
-			// aapt resource value: 0x7f07003a
-			public const int color_blindness_test_name = 2131165242;
+			// aapt resource value: 0x7f070041
+			public const int color_blindness_test_name = 2131165249;
 			
 			// aapt resource value: 0x7f070001
 			public const int common_google_play_services_enable_button = 2131165185;
@@ -5357,41 +5357,62 @@ namespace DrHandy.Droid
 			// aapt resource value: 0x7f070010
 			public const int common_signin_button_text_long = 2131165200;
 			
+			// aapt resource value: 0x7f070044
+			public const int correct_answer = 2131165252;
+			
+			// aapt resource value: 0x7f07003c
+			public const int default_web_client_id = 2131165244;
+			
+			// aapt resource value: 0x7f070059
+			public const int distance = 2131165273;
+			
 			// aapt resource value: 0x7f07003d
-			public const int correct_answer = 2131165245;
+			public const int firebase_database_url = 2131165245;
 			
-			// aapt resource value: 0x7f070052
-			public const int distance = 2131165266;
-			
-			// aapt resource value: 0x7f070061
-			public const int info = 2131165281;
-			
-			// aapt resource value: 0x7f070048
-			public const int input_inr = 2131165256;
-			
-			// aapt resource value: 0x7f070053
-			public const int kilometers = 2131165267;
-			
-			// aapt resource value: 0x7f07003f
-			public const int line_question_info = 2131165247;
-			
-			// aapt resource value: 0x7f070068
-			public const int module_added = 2131165288;
-			
-			// aapt resource value: 0x7f070069
-			public const int module_removed = 2131165289;
-			
-			// aapt resource value: 0x7f07005b
-			public const int month = 2131165275;
-			
-			// aapt resource value: 0x7f070040
-			public const int no_daltonism = 2131165248;
-			
-			// aapt resource value: 0x7f070067
-			public const int no_modules = 2131165287;
+			// aapt resource value: 0x7f07003a
+			public const int gcm_defaultSenderId = 2131165242;
 			
 			// aapt resource value: 0x7f07003e
-			public const int number_question_info = 2131165246;
+			public const int google_api_key = 2131165246;
+			
+			// aapt resource value: 0x7f07003b
+			public const int google_app_id = 2131165243;
+			
+			// aapt resource value: 0x7f07003f
+			public const int google_crash_reporting_api_key = 2131165247;
+			
+			// aapt resource value: 0x7f070040
+			public const int google_storage_bucket = 2131165248;
+			
+			// aapt resource value: 0x7f070068
+			public const int info = 2131165288;
+			
+			// aapt resource value: 0x7f07004f
+			public const int input_inr = 2131165263;
+			
+			// aapt resource value: 0x7f07005a
+			public const int kilometers = 2131165274;
+			
+			// aapt resource value: 0x7f070046
+			public const int line_question_info = 2131165254;
+			
+			// aapt resource value: 0x7f07006f
+			public const int module_added = 2131165295;
+			
+			// aapt resource value: 0x7f070070
+			public const int module_removed = 2131165296;
+			
+			// aapt resource value: 0x7f070062
+			public const int month = 2131165282;
+			
+			// aapt resource value: 0x7f070047
+			public const int no_daltonism = 2131165255;
+			
+			// aapt resource value: 0x7f07006e
+			public const int no_modules = 2131165294;
+			
+			// aapt resource value: 0x7f070045
+			public const int number_question_info = 2131165253;
 			
 			// aapt resource value: 0x7f070035
 			public const int password_toggle_content_description = 2131165237;
@@ -5408,95 +5429,95 @@ namespace DrHandy.Droid
 			// aapt resource value: 0x7f070039
 			public const int path_password_strike_through = 2131165241;
 			
-			// aapt resource value: 0x7f07003b
-			public const int question_number = 2131165243;
+			// aapt resource value: 0x7f070042
+			public const int question_number = 2131165250;
 			
-			// aapt resource value: 0x7f070056
-			public const int quick_results = 2131165270;
+			// aapt resource value: 0x7f07005d
+			public const int quick_results = 2131165277;
 			
-			// aapt resource value: 0x7f070041
-			public const int red_and_green_daltonism = 2131165249;
+			// aapt resource value: 0x7f070048
+			public const int red_and_green_daltonism = 2131165256;
 			
-			// aapt resource value: 0x7f07005f
-			public const int remove = 2131165279;
+			// aapt resource value: 0x7f070066
+			public const int remove = 2131165286;
 			
-			// aapt resource value: 0x7f070062
-			public const int results = 2131165282;
+			// aapt resource value: 0x7f070069
+			public const int results = 2131165289;
 			
-			// aapt resource value: 0x7f070055
-			public const int same_day_last_week = 2131165269;
+			// aapt resource value: 0x7f07005c
+			public const int same_day_last_week = 2131165276;
 			
 			// aapt resource value: 0x7f070024
 			public const int search_menu_title = 2131165220;
 			
-			// aapt resource value: 0x7f070045
-			public const int set_control = 2131165253;
+			// aapt resource value: 0x7f07004c
+			public const int set_control = 2131165260;
 			
-			// aapt resource value: 0x7f070064
-			public const int share = 2131165284;
+			// aapt resource value: 0x7f07006b
+			public const int share = 2131165291;
 			
-			// aapt resource value: 0x7f070059
-			public const int share_steps = 2131165273;
+			// aapt resource value: 0x7f070060
+			public const int share_steps = 2131165280;
 			
-			// aapt resource value: 0x7f070066
-			public const int sign_in_description = 2131165286;
+			// aapt resource value: 0x7f07006d
+			public const int sign_in_description = 2131165293;
 			
-			// aapt resource value: 0x7f070065
-			public const int sign_out = 2131165285;
-			
-			// aapt resource value: 0x7f070046
-			public const int sintrom_control = 2131165254;
+			// aapt resource value: 0x7f07006c
+			public const int sign_out = 2131165292;
 			
 			// aapt resource value: 0x7f07004d
-			public const int sintrom_empty_inr = 2131165261;
+			public const int sintrom_control = 2131165261;
 			
-			// aapt resource value: 0x7f07004c
-			public const int sintrom_empty_treatment = 2131165260;
+			// aapt resource value: 0x7f070054
+			public const int sintrom_empty_inr = 2131165268;
 			
-			// aapt resource value: 0x7f070047
-			public const int sintrom_inr = 2131165255;
+			// aapt resource value: 0x7f070053
+			public const int sintrom_empty_treatment = 2131165267;
 			
-			// aapt resource value: 0x7f070043
-			public const int sintrom_name = 2131165251;
-			
-			// aapt resource value: 0x7f07004b
-			public const int sintrom_notification_control_description = 2131165259;
+			// aapt resource value: 0x7f07004e
+			public const int sintrom_inr = 2131165262;
 			
 			// aapt resource value: 0x7f07004a
-			public const int sintrom_notification_description = 2131165258;
+			public const int sintrom_name = 2131165258;
 			
-			// aapt resource value: 0x7f070044
-			public const int sintrom_treatment = 2131165252;
+			// aapt resource value: 0x7f070052
+			public const int sintrom_notification_control_description = 2131165266;
 			
-			// aapt resource value: 0x7f070049
-			public const int sintrom_updateinfo_success = 2131165257;
+			// aapt resource value: 0x7f070051
+			public const int sintrom_notification_description = 2131165265;
+			
+			// aapt resource value: 0x7f07004b
+			public const int sintrom_treatment = 2131165259;
+			
+			// aapt resource value: 0x7f070050
+			public const int sintrom_updateinfo_success = 2131165264;
 			
 			// aapt resource value: 0x7f070025
 			public const int status_bar_notification_info_overflow = 2131165221;
 			
-			// aapt resource value: 0x7f07004e
-			public const int step_counter_name = 2131165262;
+			// aapt resource value: 0x7f070055
+			public const int step_counter_name = 2131165269;
 			
-			// aapt resource value: 0x7f07004f
-			public const int steps = 2131165263;
+			// aapt resource value: 0x7f070056
+			public const int steps = 2131165270;
 			
-			// aapt resource value: 0x7f07005d
-			public const int tools_activity_name = 2131165277;
+			// aapt resource value: 0x7f070064
+			public const int tools_activity_name = 2131165284;
 			
-			// aapt resource value: 0x7f070042
-			public const int total_daltonism = 2131165250;
+			// aapt resource value: 0x7f070049
+			public const int total_daltonism = 2131165257;
 			
-			// aapt resource value: 0x7f07005a
-			public const int weekday = 2131165274;
+			// aapt resource value: 0x7f070061
+			public const int weekday = 2131165281;
 			
-			// aapt resource value: 0x7f070057
-			public const int weekly_results = 2131165271;
+			// aapt resource value: 0x7f07005e
+			public const int weekly_results = 2131165278;
 			
-			// aapt resource value: 0x7f070058
-			public const int yearly_results = 2131165272;
+			// aapt resource value: 0x7f07005f
+			public const int yearly_results = 2131165279;
 			
-			// aapt resource value: 0x7f070054
-			public const int yesterday = 2131165268;
+			// aapt resource value: 0x7f07005b
+			public const int yesterday = 2131165275;
 			
 			static String()
 			{

@@ -77,7 +77,7 @@
     <Compile Include="Custom Views\SintromCalendar.cs" />
     <Compile Include="Custom Views\SintromConfigureTreatmentDialog.cs" />
     <Compile Include="Fragments\ColorBlindnessTest\CBTBodyFragment.cs" />
-    <Compile Include="Fragments\ColorBlindnessTest\CBTHeaderFragment.cs" /> 
+    <Compile Include="Fragments\ColorBlindnessTest\CBTHeaderFragment.cs" />
     <Compile Include="Fragments\Sintrom\SintromBodyFragment.cs" />
     <Compile Include="Fragments\Sintrom\SintromCalendarFragment.cs" />
     <Compile Include="Fragments\Sintrom\SintromCardFragment.cs" />
@@ -157,7 +157,9 @@
     <AndroidResource Include="Resources\layout\fragment_sintrom_treatment.axml" />
     <AndroidResource Include="Resources\layout\sintrom_calendar.axml" />
     <AndroidResource Include="Resources\layout\sintrom_calendar_item.axml" />
-    <AndroidResource Include="Resources\layout\sintrom_configuration_dialog.axml" />
+    <AndroidResource Include="Resources\layout\sintrom_configuration_dialog.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\layout\sintrom_configure_treatment.axml" />
     <AndroidResource Include="Resources\layout\sintrom_empty_treatment.axml" />
     <AndroidResource Include="Resources\layout\sintrom_treatment_row.axml" />
