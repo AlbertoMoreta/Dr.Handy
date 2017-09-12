@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <dimen name="text_size_medium">22sp</dimen>
+  <dimen name="text_size_normal">28sp</dimen>
+  <dimen name="text_size_large">32sp</dimen>
+  <dimen name="text_size_xlarge">45sp</dimen>
+  <dimen name="text_size_xxlarge">50sp</dimen>
+  <dimen name="text_size_xxxlarge">75sp</dimen>
+  <dimen name="text_size_toolbar">32sp</dimen>
+
+  <dimen name="margin_small">20dp</dimen>
+  <dimen name="margin_medium">30dp</dimen>
+  <dimen name="margin_normal">45sp</dimen>
+  <dimen name="margin_large">60sp</dimen>
+
+  <dimen name="health_module_icon_size">110dp</dimen>
+  <dimen name="health_module_shape_size">130dp</dimen>  
+
+
+</resources>

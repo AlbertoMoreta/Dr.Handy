@@ -14,7 +14,7 @@ using Android.Util;
 using DrHandy.Model;
 
 namespace DrHandy.Droid.Custom_Views {
-    class HealthCard : LinearLayout{ 
+    class HealthCard : SquareLinearLayout{ 
 
         public string Name { set; get; }
         public Drawable Icon { set; get; }
