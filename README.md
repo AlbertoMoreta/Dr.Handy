@@ -36,24 +36,8 @@ At this moment, the app includes:
 <br>
 
 ## Contributing
-### Getting started for adding a new tool
 
-Use the following image for reference: 
-
-<h1 align="center">
-  <br> 
-    <img src="https://i.imgur.com/8gQscrf.png" alt="Markdownify" width="70%">
-</h1>
-
-1. Fork it!
-2. Create your shared dev branch: `git checkout -b shared-{module-shortname} shared-dev`.  In this branch, you can add the shared functionality of your module for Android, iOS and Windows Phone projects.
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin shared-{module-shortname}`
-5. Create your specific dev branch: `git checkout -b {platform-name}-{module-shortname} {platform-name}-healthmodules`.  In this branch, you can add the specific functionality of your module for the indicated {platform-name}: Android, iOS or Windows-Phone.
-6. Merge the contents from the shared-dev branch to the specific-dev branch: `git {platform-name}-{module-shortname} shared-{module-shortname}`
-7. Commit your changes: `git commit -am 'Add some feature'`
-8. Push to the branch: `git push origin {platform-name}-{module-shortname}`
-9. Submit a pull request
+See the [wiki page](https://github.com/AlbertoMoreta/Dr.Handy/wiki) if you want to help contributing to the project.
 
 <h3 align="center">
 Any contribution will be appreciated :D
