@@ -123,7 +123,9 @@
     <AndroidResource Include="Resources\layout\fragment_cbt_header.axml" />
     <AndroidResource Include="Resources\layout\fragment_stepcounter_body_chart_results.axml" />
     <AndroidResource Include="Resources\layout\fragment_stepcounter_body_quick_results.axml" />
-    <AndroidResource Include="Resources\layout\fragment_stepcounter_card.axml" />
+    <AndroidResource Include="Resources\layout\fragment_stepcounter_card.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\layout\fragment_stepcounter_header.axml" />
     <AndroidResource Include="Resources\layout\result_row.axml" />
     <ProguardConfiguration Include="proguard.cfg">
@@ -480,6 +482,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable-sw600dp\stepcounter_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-sw720dp\stepcounter_icon.png" />
     <AndroidResource Include="Resources\drawable-sw600dp\sintrom_1.png" />
   </ItemGroup>
   <ItemGroup>
