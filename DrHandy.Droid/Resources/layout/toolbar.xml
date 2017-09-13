@@ -21,8 +21,8 @@
 
     <refractored.controls.CircleImageView 
         android:id="@+id/user_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/user_account_image_size"
+        android:layout_height="@dimen/user_account_image_size"
         android:layout_marginLeft="@dimen/margin_medium"
         android:layout_alignParentLeft="true"
         android:layout_gravity="left"
