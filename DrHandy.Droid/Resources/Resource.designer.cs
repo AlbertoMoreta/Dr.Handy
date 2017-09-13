@@ -3178,17 +3178,17 @@ namespace DrHandy.Droid
 			// aapt resource value: 0x7f09000a
 			public const int abc_text_size_title_material_toolbar = 2131296266;
 			
-			// aapt resource value: 0x7f09009d
-			public const int actionbar_height = 2131296413;
+			// aapt resource value: 0x7f09009e
+			public const int actionbar_height = 2131296414;
 			
-			// aapt resource value: 0x7f0900a3
-			public const int appbarlayout_height = 2131296419;
-			
-			// aapt resource value: 0x7f0900a1
-			public const int card_height = 2131296417;
+			// aapt resource value: 0x7f0900a4
+			public const int appbarlayout_height = 2131296420;
 			
 			// aapt resource value: 0x7f0900a2
-			public const int card_padding = 2131296418;
+			public const int card_height = 2131296418;
+			
+			// aapt resource value: 0x7f0900a3
+			public const int card_padding = 2131296419;
 			
 			// aapt resource value: 0x7f090003
 			public const int cardview_compat_inset_shadow = 2131296259;
@@ -3322,8 +3322,8 @@ namespace DrHandy.Droid
 			// aapt resource value: 0x7f090092
 			public const int fab_elevation_lollipop = 2131296402;
 			
-			// aapt resource value: 0x7f0900a7
-			public const int fab_offset = 2131296423;
+			// aapt resource value: 0x7f0900a8
+			public const int fab_offset = 2131296424;
 			
 			// aapt resource value: 0x7f090091
 			public const int fab_scroll_threshold = 2131296401;
@@ -3331,8 +3331,8 @@ namespace DrHandy.Droid
 			// aapt resource value: 0x7f090090
 			public const int fab_shadow_size = 2131296400;
 			
-			// aapt resource value: 0x7f0900a6
-			public const int fab_size = 2131296422;
+			// aapt resource value: 0x7f0900a7
+			public const int fab_size = 2131296423;
 			
 			// aapt resource value: 0x7f09008f
 			public const int fab_size_mini = 2131296399;
@@ -3340,11 +3340,11 @@ namespace DrHandy.Droid
 			// aapt resource value: 0x7f09008e
 			public const int fab_size_normal = 2131296398;
 			
-			// aapt resource value: 0x7f0900a4
-			public const int health_module_icon_size = 2131296420;
-			
 			// aapt resource value: 0x7f0900a5
-			public const int health_module_shape_size = 2131296421;
+			public const int health_module_icon_size = 2131296421;
+			
+			// aapt resource value: 0x7f0900a6
+			public const int health_module_shape_size = 2131296422;
 			
 			// aapt resource value: 0x7f090056
 			public const int highlight_alpha_material_colored = 2131296342;
@@ -3367,8 +3367,8 @@ namespace DrHandy.Droid
 			// aapt resource value: 0x7f09005c
 			public const int hint_pressed_alpha_material_light = 2131296348;
 			
-			// aapt resource value: 0x7f0900a8
-			public const int image_final_size = 2131296424;
+			// aapt resource value: 0x7f0900a9
+			public const int image_final_size = 2131296425;
 			
 			// aapt resource value: 0x7f090000
 			public const int item_touch_helper_max_drag_scroll_per_frame = 2131296256;
@@ -3379,17 +3379,20 @@ namespace DrHandy.Droid
 			// aapt resource value: 0x7f090002
 			public const int item_touch_helper_swipe_escape_velocity = 2131296258;
 			
-			// aapt resource value: 0x7f0900a0
-			public const int main_screen_padding_top = 2131296416;
+			// aapt resource value: 0x7f0900a1
+			public const int main_screen_padding_top = 2131296417;
 			
-			// aapt resource value: 0x7f09009c
-			public const int margin_large = 2131296412;
-			
-			// aapt resource value: 0x7f09009a
-			public const int margin_medium = 2131296410;
+			// aapt resource value: 0x7f09009d
+			public const int margin_large = 2131296413;
 			
 			// aapt resource value: 0x7f09009b
-			public const int margin_normal = 2131296411;
+			public const int margin_medium = 2131296411;
+			
+			// aapt resource value: 0x7f09009c
+			public const int margin_normal = 2131296412;
+			
+			// aapt resource value: 0x7f09009a
+			public const int margin_small = 2131296410;
 			
 			// aapt resource value: 0x7f09005d
 			public const int notification_action_icon_size = 2131296349;
@@ -3457,11 +3460,14 @@ namespace DrHandy.Droid
 			// aapt resource value: 0x7f090098
 			public const int text_size_xxxlarge = 2131296408;
 			
-			// aapt resource value: 0x7f09009e
-			public const int toolbar_header_height = 2131296414;
-			
 			// aapt resource value: 0x7f09009f
-			public const int toolbar_top_padding = 2131296415;
+			public const int toolbar_header_height = 2131296415;
+			
+			// aapt resource value: 0x7f0900a0
+			public const int toolbar_top_padding = 2131296416;
+			
+			// aapt resource value: 0x7f0900aa
+			public const int user_account_image_size = 2131296426;
 			
 			static Dimension()
 			{
@@ -3728,26 +3734,26 @@ namespace DrHandy.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
+			// aapt resource value: 0x7f020090
+			public const int avd_hide_password_1 = 2130837648;
+			
 			// aapt resource value: 0x7f020091
-			public const int avd_hide_password_1 = 2130837649;
+			public const int avd_hide_password_2 = 2130837649;
 			
 			// aapt resource value: 0x7f020092
-			public const int avd_hide_password_2 = 2130837650;
-			
-			// aapt resource value: 0x7f020093
-			public const int avd_hide_password_3 = 2130837651;
+			public const int avd_hide_password_3 = 2130837650;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
+			// aapt resource value: 0x7f020093
+			public const int avd_show_password_1 = 2130837651;
+			
 			// aapt resource value: 0x7f020094
-			public const int avd_show_password_1 = 2130837652;
+			public const int avd_show_password_2 = 2130837652;
 			
 			// aapt resource value: 0x7f020095
-			public const int avd_show_password_2 = 2130837653;
-			
-			// aapt resource value: 0x7f020096
-			public const int avd_show_password_3 = 2130837654;
+			public const int avd_show_password_3 = 2130837653;
 			
 			// aapt resource value: 0x7f020055
 			public const int background_blue = 2130837589;
@@ -3908,11 +3914,11 @@ namespace DrHandy.Droid
 			// aapt resource value: 0x7f020089
 			public const int notification_icon_background = 2130837641;
 			
-			// aapt resource value: 0x7f02008f
-			public const int notification_template_icon_bg = 2130837647;
+			// aapt resource value: 0x7f02008e
+			public const int notification_template_icon_bg = 2130837646;
 			
-			// aapt resource value: 0x7f020090
-			public const int notification_template_icon_low_bg = 2130837648;
+			// aapt resource value: 0x7f02008f
+			public const int notification_template_icon_low_bg = 2130837647;
 			
 			// aapt resource value: 0x7f02008a
 			public const int notification_tile_bg = 2130837642;
@@ -3925,9 +3931,6 @@ namespace DrHandy.Droid
 			
 			// aapt resource value: 0x7f02008d
 			public const int ripple = 2130837645;
-			
-			// aapt resource value: 0x7f02008e
-			public const int title_logo_1 = 2130837646;
 			
 			static Drawable()
 			{

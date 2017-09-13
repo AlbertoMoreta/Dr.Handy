@@ -14,7 +14,8 @@
   <dimen name="margin_large">60sp</dimen>
 
   <dimen name="health_module_icon_size">110dp</dimen>
-  <dimen name="health_module_shape_size">130dp</dimen>  
+  <dimen name="health_module_shape_size">130dp</dimen> 
+  <dimen name="user_account_image_size">48dp</dimen>
 
 
 </resources>
