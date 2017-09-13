@@ -3340,6 +3340,9 @@ namespace DrHandy.Droid
 			// aapt resource value: 0x7f09008e
 			public const int fab_size_normal = 2131296398;
 			
+			// aapt resource value: 0x7f0900ab
+			public const int health_card_icon_size = 2131296427;
+			
 			// aapt resource value: 0x7f0900a5
 			public const int health_module_icon_size = 2131296421;
 			
@@ -4906,17 +4909,17 @@ namespace DrHandy.Droid
 			// aapt resource value: 0x7f070023
 			public const int abc_toolbar_collapse_description = 2131165219;
 			
-			// aapt resource value: 0x7f070045
-			public const int accept = 2131165253;
-			
-			// aapt resource value: 0x7f070048
-			public const int access = 2131165256;
-			
-			// aapt resource value: 0x7f070043
-			public const int add = 2131165251;
+			// aapt resource value: 0x7f07003e
+			public const int accept = 2131165246;
 			
 			// aapt resource value: 0x7f070041
-			public const int app_name = 2131165249;
+			public const int access = 2131165249;
+			
+			// aapt resource value: 0x7f07003c
+			public const int add = 2131165244;
+			
+			// aapt resource value: 0x7f07003a
+			public const int app_name = 2131165242;
 			
 			// aapt resource value: 0x7f070032
 			public const int appbar_scrolling_view_behavior = 2131165234;
@@ -4978,38 +4981,17 @@ namespace DrHandy.Droid
 			// aapt resource value: 0x7f070010
 			public const int common_signin_button_text_long = 2131165200;
 			
-			// aapt resource value: 0x7f07003c
-			public const int default_web_client_id = 2131165244;
-			
-			// aapt resource value: 0x7f07003d
-			public const int firebase_database_url = 2131165245;
-			
-			// aapt resource value: 0x7f07003a
-			public const int gcm_defaultSenderId = 2131165242;
-			
-			// aapt resource value: 0x7f07003e
-			public const int google_api_key = 2131165246;
-			
-			// aapt resource value: 0x7f07003b
-			public const int google_app_id = 2131165243;
-			
 			// aapt resource value: 0x7f07003f
-			public const int google_crash_reporting_api_key = 2131165247;
-			
-			// aapt resource value: 0x7f070040
-			public const int google_storage_bucket = 2131165248;
+			public const int info = 2131165247;
 			
 			// aapt resource value: 0x7f070046
-			public const int info = 2131165254;
+			public const int module_added = 2131165254;
 			
-			// aapt resource value: 0x7f07004d
-			public const int module_added = 2131165261;
+			// aapt resource value: 0x7f070047
+			public const int module_removed = 2131165255;
 			
-			// aapt resource value: 0x7f07004e
-			public const int module_removed = 2131165262;
-			
-			// aapt resource value: 0x7f07004c
-			public const int no_modules = 2131165260;
+			// aapt resource value: 0x7f070045
+			public const int no_modules = 2131165253;
 			
 			// aapt resource value: 0x7f070035
 			public const int password_toggle_content_description = 2131165237;
@@ -5026,29 +5008,29 @@ namespace DrHandy.Droid
 			// aapt resource value: 0x7f070039
 			public const int path_password_strike_through = 2131165241;
 			
-			// aapt resource value: 0x7f070044
-			public const int remove = 2131165252;
+			// aapt resource value: 0x7f07003d
+			public const int remove = 2131165245;
 			
-			// aapt resource value: 0x7f070047
-			public const int results = 2131165255;
+			// aapt resource value: 0x7f070040
+			public const int results = 2131165248;
 			
 			// aapt resource value: 0x7f070024
 			public const int search_menu_title = 2131165220;
 			
-			// aapt resource value: 0x7f070049
-			public const int share = 2131165257;
+			// aapt resource value: 0x7f070042
+			public const int share = 2131165250;
 			
-			// aapt resource value: 0x7f07004b
-			public const int sign_in_description = 2131165259;
+			// aapt resource value: 0x7f070044
+			public const int sign_in_description = 2131165252;
 			
-			// aapt resource value: 0x7f07004a
-			public const int sign_out = 2131165258;
+			// aapt resource value: 0x7f070043
+			public const int sign_out = 2131165251;
 			
 			// aapt resource value: 0x7f070025
 			public const int status_bar_notification_info_overflow = 2131165221;
 			
-			// aapt resource value: 0x7f070042
-			public const int tools_activity_name = 2131165250;
+			// aapt resource value: 0x7f07003b
+			public const int tools_activity_name = 2131165243;
 			
 			static String()
 			{
