@@ -323,8 +323,12 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-sw600dp\Icon.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\drawable-sw720dp\" />
+    <AndroidResource Include="Resources\drawable-sw600dp\stepcounter_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-sw720dp\stepcounter_icon.png" />
   </ItemGroup>
   <Import Project="..\DrHandy\DrHandy.projitems" Label="Shared" Condition="Exists('..\DrHandy\DrHandy.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
