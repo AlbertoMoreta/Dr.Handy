@@ -33,8 +33,8 @@
             android:id="@+id/sintrom_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:maxWidth="70dp"
-            android:maxHeight="70dp"
+            android:maxWidth="@dimen/health_card_icon_size"
+            android:maxHeight="@dimen/health_card_icon_size"
             android:scaleType="centerInside"
             android:adjustViewBounds="true" />
     </RelativeLayout>

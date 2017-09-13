@@ -25,5 +25,7 @@
   <dimen name="fab_size">50dp</dimen>
   <dimen name="fab_offset">-40dp</dimen>
   <dimen name="image_final_size">32dp</dimen>
+  <dimen name="user_account_image_size">32dp</dimen>
+  <dimen name="health_card_icon_size">70dp</dimen>
 
 </resources>

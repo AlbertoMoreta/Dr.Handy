@@ -193,10 +193,6 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_clear.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_edit.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\Icon.png" />
-    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_add.png" />
-    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_clear.png" />
-    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_edit.png" />
-    <AndroidResource Include="Resources\drawable-xxxhdpi\Icon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Colors.xml">
@@ -214,9 +210,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\AboutAssets.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\title_logo_1.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values-xxhdpi\Dimens.xml" />
@@ -469,6 +462,43 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values-hdpi\Dimens.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-sw600dp\ic_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-sw600dp\ic_clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-sw600dp\ic_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-sw600dp\ic_share_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-sw600dp\Icon.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-sw600dp\sintrom_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-sw600dp\sintrom_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-sw600dp\sintrom_1_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-sw600dp\sintrom_1_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-sw600dp\sintrom_3_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-sw600dp\sintrom_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-sw720dp\sintrom_icon.png" />
   </ItemGroup>
   <Import Project="..\DrHandy\DrHandy.projitems" Label="Shared" Condition="Exists('..\DrHandy\DrHandy.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
