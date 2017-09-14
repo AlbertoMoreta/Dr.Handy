@@ -23,6 +23,10 @@ using DrHandy.Model;
 using Object = Java.Lang.Object;
 
 namespace DrHandy.Droid.Adapters {
+    
+    /*
+     * HealthModulesListAdapter - Adapter for displaying the list of available health modules
+     */ 
     class HealthModulesListAdapter : RecyclerView.Adapter {  
 
         //ViewHolder For The Health Modules

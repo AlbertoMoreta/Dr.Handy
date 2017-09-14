@@ -12,6 +12,10 @@ using Android.Widget;
 using DrHandy.DataBase;
 
 namespace DrHandy.Droid.Receivers {
+
+    /*
+     * BootUpReceiver - BroadcastReceiver that gets called when the device is booted up
+     */ 
     [BroadcastReceiver]
     [IntentFilter(new [] {Intent.ActionBootCompleted, Intent.ActionMyPackageReplaced})]
     class BootUpReceiver : BroadcastReceiver{
