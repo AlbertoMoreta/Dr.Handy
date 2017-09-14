@@ -19,6 +19,10 @@ using DrHandy.Droid.Interfaces;
 using DrHandy.Model;
 
 namespace DrHandy.Droid.Activities {
+
+    /*
+     * ModuleDetailActivity - This activity will contain the header and body fragments of your health module
+     */
     [Activity(Label = "ModuleDetailActivity", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
     public class ModuleDetailActivity : BaseActivity {
          

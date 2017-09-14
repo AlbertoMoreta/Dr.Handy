@@ -22,9 +22,13 @@ using DrHandy.Droid.Custom_Views;
 using Android.Preferences;
 using DrHandy.Droid.Utils;
 
-namespace DrHandy.Droid.Activities { 
+namespace DrHandy.Droid.Activities {
+    
+    /*
+     * SignInActivity - This activity will show up when your health module 
+     * is opened for the first time if you set "LoginRequired=true" in the config file.
+     */
     [Activity(Label = "SignInActivity", Theme = "@style/AppTheme", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
-
     public class SignInActivity : BaseActivity{
 
          
@@ -50,7 +54,7 @@ namespace DrHandy.Droid.Activities {
 
             //Set module icon
             var icon = FindViewById<ImageView>(Resource.Id.module_icon); 
-            icon.Background = _healthModule.GetIcon(this);
+            icon.Background = _healthModule.GetIcon(this, shortName);
 
             //Set text description
             var description = FindViewById<CustomTextView>(Resource.Id.sign_in_description);

@@ -14,6 +14,10 @@ using Android.Graphics.Drawables;
 using com.refractored.fab;
 
 namespace DrHandy.Droid.Custom_Views {
+    
+    /*
+     * ModuleViewCell - Custom view for the items in the available health modules list
+     */ 
     class ModuleViewCell : RelativeLayout{
 
         private TextView _moduleName;

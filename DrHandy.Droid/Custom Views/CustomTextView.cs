@@ -13,6 +13,7 @@ using Android.Views;
 using Android.Widget;
 
 namespace DrHandy.Droid.Custom_Views {
+    
     public class CustomTextView : TextView{
         public CustomTextView(Context context) : base(context) {
             Init();
@@ -20,9 +21,7 @@ namespace DrHandy.Droid.Custom_Views {
 
         public CustomTextView(Context context, IAttributeSet attrs) : base(context, attrs) {
             Init();
-        }
-
-
+        } 
 
         private void Init()  {
             Typeface = Typeface.CreateFromAsset(Context.Assets, "Fonts/Futura Medium.otf");

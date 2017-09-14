@@ -14,6 +14,10 @@ using Android.Util;
 using DrHandy.Model;
 
 namespace DrHandy.Droid.Custom_Views {
+    
+    /*
+     * HealthCard - Custom view for the health cards
+     */ 
     class HealthCard : SquareLinearLayout{ 
 
         public string Name { set; get; }
