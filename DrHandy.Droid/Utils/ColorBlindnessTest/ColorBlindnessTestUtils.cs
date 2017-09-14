@@ -18,11 +18,7 @@ namespace DrHandy.Droid.Utils {
     class ColorBlindnessTestUtils : HealthModuleUtils  {
         public override void InitModuleDB() { }
 
-        public override void DeviceBootUp(Context context, string shortName) { }
-
-        public override Drawable GetHealthModuleIcon(Context context) {
-            return GetDrawableFromResources(context, "colorblindnesstest_icon");
-        }
+        public override void DeviceBootUp(Context context, string shortName) { } 
 
         public override IHealthFragment GetHeaderFragment() {
             return  new CBTHeaderFragment();
