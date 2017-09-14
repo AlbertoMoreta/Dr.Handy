@@ -479,11 +479,11 @@
     <AndroidResource Include="Resources\drawable-sw600dp\Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-sw600dp\step_counter_icon_icon.png" />
+    <AndroidResource Include="Resources\drawable-sw600dp\step_counter_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-sw600dp\ishihara_02.png" />
-    <AndroidResource Include="Resources\drawable-sw720dp\step_counter_icon_icon.png" />
+    <AndroidResource Include="Resources\drawable-sw720dp\step_counter_icon.png" />
     <AndroidResource Include="Resources\drawable-sw600dp\sintrom_1.png" />
   </ItemGroup>
   <ItemGroup> 
