@@ -347,7 +347,7 @@
     <AndroidResource Include="Resources\values-es\Strings.sintrom.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\colorblindnesstest_icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\color_blindness_test_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\ishihara_01.png" />
@@ -580,13 +580,13 @@
     <AndroidResource Include="Resources\drawable-sw600dp\cbt_numbers_example.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-sw600dp\colorblindnesstest_icon.png" />
+    <AndroidResource Include="Resources\drawable-sw600dp\color_blindness_test_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-sw600dp\ishihara_01.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-sw720dp\colorblindnesstest_icon.png" />
+    <AndroidResource Include="Resources\drawable-sw720dp\color_blindness_test_icon.png" />
   </ItemGroup>
   <Import Project="..\DrHandy\DrHandy.projitems" Label="Shared" Condition="Exists('..\DrHandy\DrHandy.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
