@@ -438,10 +438,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\cbt_lines_example.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\stepcounter_icon.png" />
-  </ItemGroup>
+  </ItemGroup> 
   <ItemGroup>
     <AndroidResource Include="Resources\values-es\Strings.stepcounter.xml" />
   </ItemGroup>
@@ -481,7 +478,6 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-sw600dp\Icon.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-sw600dp\step_counter_icon_icon.png" />
   </ItemGroup>
@@ -587,6 +583,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-sw720dp\color_blindness_test_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\step_counter_icon.png" />
   </ItemGroup>
   <Import Project="..\DrHandy\DrHandy.projitems" Label="Shared" Condition="Exists('..\DrHandy\DrHandy.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
