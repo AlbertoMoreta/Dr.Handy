@@ -27,10 +27,6 @@ namespace DrHandy.Droid.Utils {
             //Start StepCounter Service
             var stepCounterIntent = new Intent(context, typeof(StepCounterService));
             context.StartService(stepCounterIntent);
-        }
-
-        public override Drawable GetHealthModuleIcon(Context context) {
-            return GetDrawableFromResources(context, "stepcounter_icon");
         } 
 
         public override IHealthFragment GetHeaderFragment() {
