@@ -9,6 +9,10 @@ using DrHandy.Model;
 using HealthModule = DrHandy.Model.HealthModule;
 
 namespace DrHandy.Logic {
+
+    /*
+     * HealthModulesConfigReader - This class will parse the config files from all the available health modules
+     */ 
     public static class HealthModulesConfigReader {
 
         private static readonly string CONFIG_FILES_ROOT = "ConfigFiles";
