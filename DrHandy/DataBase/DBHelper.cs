@@ -8,6 +8,13 @@ using DrHandy.Logic;
 using DrHandy.Model;
 
 namespace DrHandy.DataBase {
+
+    /*
+     * DBHelper - Database utils class for the app
+     * 
+     * If your health module needs database support, create another partial class 
+     * on this location with the name DBHelper.NameOfYourHealthModule
+     */ 
     public partial class DBHelper {
          
         public static readonly string DB_NAME = "HealthApp.db3";
