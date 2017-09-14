@@ -54,7 +54,7 @@ namespace DrHandy.Droid.Activities {
 
             //Set module icon
             var icon = FindViewById<ImageView>(Resource.Id.module_icon); 
-            icon.Background = _healthModule.GetIcon(this);
+            icon.Background = _healthModule.GetIcon(this, shortName);
 
             //Set text description
             var description = FindViewById<CustomTextView>(Resource.Id.sign_in_description);

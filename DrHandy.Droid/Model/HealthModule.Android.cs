@@ -20,8 +20,8 @@ namespace DrHandy.Model {
             return (HealthModuleUtils)Activator.CreateInstance(t); 
         }
 
-        public Drawable GetIcon (Context context) {   
-            return GetUtilsClass().GetHealthModuleIcon(context);  
+        public Drawable GetIcon (Context context, string shortName) {   
+            return GetUtilsClass().GetHealthModuleIcon(context, shortName);  
         }
 
         public Drawable GetBackground(Context context) { 

@@ -24,19 +24,20 @@ namespace DrHandy.Droid.Utils {
     public abstract class HealthModuleUtils { 
         public abstract void InitModuleDB();
 
-        public abstract void DeviceBootUp(Context context, string shortName);
-
-        public abstract Drawable GetHealthModuleIcon(Context context);  
+        public abstract void DeviceBootUp(Context context, string shortName); 
 
         public abstract IHealthFragment GetHeaderFragment();
         public abstract IHealthFragment GetBodyFragment();
         public abstract IHealthFragment GetHealthCardFragment(string shortName);
         public abstract NotificationItem GetNotificationItem(Context context, HealthModule healthModule);
 
-
         public static string GetCurrentUserId(Context context) {
             var prefs = PreferenceManager.GetDefaultSharedPreferences(context);
             return prefs.GetString("Id", null);
+        } 
+
+        public Drawable GetHealthModuleIcon(Context context, string shortName) {
+            return GetDrawableFromResources(context, shortName + "_icon");  
         }
 
         public Drawable GetHealthModuleBackground(Context context, string color) {
