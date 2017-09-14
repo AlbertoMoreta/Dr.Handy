@@ -6,8 +6,10 @@ using DrHandy.Droid.Utils;
 using DrHandy.Model;
 
 namespace DrHandy.Model {
-    public partial class HealthModule {
-        
+    /*
+     * HealthModule.Android - Partial class of shared HealthModule with Android specific methods
+     */
+    public partial class HealthModule { 
 
         public HealthModuleUtils GetUtilsClass() {
             var utilsClass = "DrHandy.Droid.Utils." + UtilsClass;
@@ -18,8 +20,8 @@ namespace DrHandy.Model {
             return (HealthModuleUtils)Activator.CreateInstance(t); 
         }
 
-        public Drawable GetIcon (Context context) {   
-            return GetUtilsClass().GetHealthModuleIcon(context);  
+        public Drawable GetIcon (Context context, string shortName) {   
+            return GetUtilsClass().GetHealthModuleIcon(context, shortName);  
         }
 
         public Drawable GetBackground(Context context) { 
