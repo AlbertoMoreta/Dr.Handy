@@ -5,6 +5,12 @@ using Newtonsoft.Json.Linq;
 using Java.Util;
 
 namespace DrHandy.Logic {
+
+    /*
+     * CurrentLanguageConverter - This class uses the current device lenguage for selecting the 
+     * right language from a JSON file (follow this link to see an example of a JSON file with 
+     * multilanguage support -> https://github.com/AlbertoMoreta/Dr.Handy/wiki/Adding-a-new-health-module-for-Android#adding-the-config-file
+     */
     class CurrentLanguageConverter : JsonConverter {
         //English as default language
         private static readonly string DEFAULT_LANGUAGE = "English";
