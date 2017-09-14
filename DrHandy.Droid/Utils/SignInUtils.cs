@@ -15,6 +15,10 @@ using Android.Gms.Auth.Api;
 using Android.Preferences;
 
 namespace DrHandy.Droid.Utils {
+
+    /*
+     * SignInUtils - Utils class for performing the authentication process
+     */ 
     class SignInUtils { 
 
         public static readonly int RC_SIGN_IN = 9001;

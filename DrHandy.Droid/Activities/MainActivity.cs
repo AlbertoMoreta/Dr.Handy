@@ -24,6 +24,10 @@ using FloatingActionButton = com.refractored.fab.FloatingActionButton;
 using Android.Preferences;
 
 namespace DrHandy.Droid{
+
+    /*
+     * MainActivity - Where Health Cards are shown 
+     */
 	[Activity (Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/icon", Theme="@style/AppTheme", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
 	public class MainActivity : BaseActivity, HealthCardClickListener {
 

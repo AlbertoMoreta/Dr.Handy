@@ -18,7 +18,7 @@ namespace DrHandy.Droid.Callbacks {
     class HealthCardCallback : ItemTouchHelper.Callback {
 
         /**
-         *  Callback for the list of HealthCards  
+         *  Callback for the HealthCards  
          **/
 
         private readonly HealthCardAdapter _adapter;

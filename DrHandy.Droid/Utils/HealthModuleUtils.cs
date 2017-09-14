@@ -17,6 +17,10 @@ using DrHandy.Model;
 using Android.Preferences;
 
 namespace DrHandy.Droid.Utils {
+    
+    /*
+     * HealthModuleUtils - Utils class to retrieve information for an specific health module 
+     */ 
     public abstract class HealthModuleUtils { 
         public abstract void InitModuleDB();
 
