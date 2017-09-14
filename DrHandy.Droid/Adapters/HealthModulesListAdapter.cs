@@ -122,7 +122,7 @@ namespace DrHandy.Droid.Adapters {
             }
 
             viewHolder.ModuleName.Text = item.Name;
-            viewHolder.ModuleIcon.Background = item.GetIcon(_context);
+            viewHolder.ModuleIcon.Background = item.GetIcon(_context, item.ShortName);
             viewHolder.ModuleDescriptionShort.Text = viewHolder.ModuleDescriptionLong.Text = item.Description;
             viewHolder.ModuleDescriptionLong.SetTextColor(moduleColor);
             viewHolder.RevealView.Background = item.GetHeader(_context);

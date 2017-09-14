@@ -109,7 +109,7 @@ namespace DrHandy.Droid{
             foreach(HealthModule module in modules) { 
                 cards.Add(new HealthCard(this, module) {
                     Name = module.Name,
-                    Icon = module.GetIcon(this)
+                    Icon = module.GetIcon(this, module.ShortName)
                 });
             }
             return cards;
