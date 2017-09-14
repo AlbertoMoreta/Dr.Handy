@@ -17,6 +17,10 @@ using DrHandy.Droid.Listeners;
 using DrHandy.Model;
 
 namespace DrHandy.Droid.Adapters {
+    
+    /*
+     * HealthCardAdapter - Adapter for displaying the health cards on the main screen
+     */
     class HealthCardAdapter : RecyclerView.Adapter {
 
         //ViewHolder for the Cards

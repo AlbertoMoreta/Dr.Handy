@@ -19,6 +19,10 @@ using String = Java.Lang.String;
 
 
 namespace DrHandy.Droid.Adapters {
+    
+    /*
+     * HealthModulePagerAdapter - Adapter for those health module that include tabs
+     */ 
     class HealthModulePagerAdapter : FragmentPagerAdapter  {
 
         private readonly List<Fragment> _fragments;

@@ -38,11 +38,7 @@ namespace DrHandy.Droid.Utils {
             var db = DBHelper.Instance;
             db.CreateSintromTable();
             db.CreateINRTable();
-        }
-
-        public override Drawable GetHealthModuleIcon(Context context) {
-            return GetDrawableFromResources(context, "sintrom_icon");
-        }
+        } 
 
         public override IHealthFragment GetHeaderFragment() {
             return new SintromHeaderFragment();

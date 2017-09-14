@@ -73,7 +73,7 @@ namespace DrHandy.Droid.Fragments.Sintrom {
 
                 sintromDate.Text = sintromItems[0].Date.ToString("dd - MMM - yyyy");
             } else {
-                sintromImage.SetImageDrawable(module.GetIcon(Activity)); 
+                sintromImage.SetImageDrawable(module.GetIcon(Activity, module.ShortName)); 
 
                 controlDayText.Visibility = ViewStates.Gone;
                 sintromDate.Visibility = ViewStates.Gone;

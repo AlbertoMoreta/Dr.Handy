@@ -20,6 +20,10 @@ using MikePhil.Charting.Listener;
 using DrHandy.Droid.Utils;
 
 namespace DrHandy.Droid.Custom_Views {
+
+    /*
+     * Custom View with a Bar Chart
+     */ 
     class CardViewBarChart : CardView, GestureDetector.IOnGestureListener, View.IOnTouchListener {
 
         private Context _context;

@@ -4,7 +4,11 @@ using Android.App;
 using Android.Graphics; 
 using Android.Views; 
 
-namespace DrHandy.Droid.Utils {
+namespace DrHandy.Droid.Utils{
+
+    /*
+     * AnimationUtils - Utils class with methods for animating views
+     */
     class AnimationUtils {
 
         public static void RevealViewCircular(View v, int centerX, int centerY, int radius, long duration = 500, long delay = 0) { 

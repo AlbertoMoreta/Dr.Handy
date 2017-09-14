@@ -6,6 +6,9 @@ using DrHandy.Droid.Receivers;
 using DrHandy.Model;
 
 namespace DrHandy.Droid.Utils {
+    /*
+     * NotificationUtils - Utils class for scheduling notifications
+     */ 
     class NotificationsUtils {
 
         public static void ScheduleNotification(Context ctx, string moduleShortName, long time) {
