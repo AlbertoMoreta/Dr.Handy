@@ -111,13 +111,13 @@ namespace DrHandy.Droid.Adapters {
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             HealthModulesListAdapter.ViewHolder viewHolder = holder as HealthModulesListAdapter.ViewHolder;
-            var item = _modules[position];
+            var item = _modules[position]; 
 
-            var moduleColor = ContextCompat.GetColorStateList(_context, _context.Resources.GetIdentifier(item.Color, "color", _context.PackageName));
+            var moduleColor = new Color(ContextCompat.GetColor(_context, _context.Resources.GetIdentifier(item.Color, "color", _context.PackageName)));
 
             if (viewHolder != null) {
                 var drawable = (LayerDrawable) viewHolder.Background.Background;
-                var background = (GradientDrawable) drawable.FindDrawableByLayerId(Resource.Id.background);
+                var background = (GradientDrawable) drawable.FindDrawableByLayerId(Resource.Id.background); 
                 background.SetColor(moduleColor);
             }
 
@@ -129,11 +129,13 @@ namespace DrHandy.Droid.Adapters {
 
             if (DBHelper.Instance.CheckIfExists(item) && DBHelper.Instance.CheckIfVisible(item)) {
                 viewHolder.AddButton.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.ic_clear));
-                viewHolder.AddButton.BackgroundTintList = ContextCompat.GetColorStateList(_context, Resource.Color.red);
+                viewHolder.AddButton.SetColorNormalResId(Resource.Color.red);
+                viewHolder.AddButton.SetColorPressedResId(Resource.Color.red);
 
             } else {
-                viewHolder.AddButton.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.ic_add));
-                viewHolder.AddButton.BackgroundTintList = ContextCompat.GetColorStateList(_context, Resource.Color.green);
+                viewHolder.AddButton.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.ic_add)); 
+                viewHolder.AddButton.SetColorNormalResId(Resource.Color.green);
+                viewHolder.AddButton.SetColorPressedResId(Resource.Color.green);
             }
 
         }
