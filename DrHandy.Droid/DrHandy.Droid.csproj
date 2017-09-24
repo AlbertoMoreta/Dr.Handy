@@ -352,6 +352,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable-v21\ripple.xml" />
+  </ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-sw600dp\sintrom_1.png" />
   </ItemGroup>
   <ItemGroup>
