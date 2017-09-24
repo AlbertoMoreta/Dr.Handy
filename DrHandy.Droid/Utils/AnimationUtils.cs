@@ -1,7 +1,8 @@
 
 using Android.Animation;
 using Android.App;
-using Android.Graphics; 
+using Android.Graphics;
+using Android.OS;
 using Android.Views; 
 
 namespace DrHandy.Droid.Utils{
@@ -11,25 +12,34 @@ namespace DrHandy.Droid.Utils{
      */
     class AnimationUtils {
 
-        public static void RevealViewCircular(View v, int centerX, int centerY, int radius, long duration = 500, long delay = 0) { 
-            var anim = ViewAnimationUtils.CreateCircularReveal(v, centerX, centerY,
-              0, radius);
+        public static void RevealViewCircular(View v, int centerX, int centerY, int radius, long duration = 500, long delay = 0) {
 
-            anim.SetDuration(duration);
-            anim.StartDelay = delay;
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop) {
+                var anim = ViewAnimationUtils.CreateCircularReveal(v, centerX, centerY, 0, radius);
+
+                anim.SetDuration(duration);
+                anim.StartDelay = delay;
+                anim.Start();
+
+            }
+
             v.Visibility = ViewStates.Visible;
-            anim.Start();
         }
 
-        public static void HideViewCircular(View v, int centerX, int centerY, int radius, long duration = 500, long delay = 0) { 
-            var anim = ViewAnimationUtils.CreateCircularReveal(v, centerX, centerY,
-              radius, 0);
+        public static void HideViewCircular(View v, int centerX, int centerY, int radius, long duration = 500, long delay = 0) {
 
-            anim.SetDuration(duration);
-            anim.StartDelay = delay;
-            anim.Start();
-            anim.AnimationEnd += delegate { v.Visibility = ViewStates.Gone; };
 
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop) {
+                var anim = ViewAnimationUtils.CreateCircularReveal(v, centerX, centerY, radius, 0);
+
+                anim.SetDuration(duration);
+                anim.StartDelay = delay;
+                anim.Start();
+                anim.AnimationEnd += delegate { v.Visibility = ViewStates.Gone; };
+
+            } else {
+                v.Visibility = ViewStates.Gone;
+            }
 
         } 
 
@@ -43,12 +53,17 @@ namespace DrHandy.Droid.Utils{
             path.MoveTo(startX, startY);
             path.QuadTo(startX, startY, endX, endY);
 
-            var pathAnimator = ObjectAnimator.OfFloat(v, "x", "y", path);
+            var translateAnimatorX = ObjectAnimator.OfFloat(v, "x", endX);
+            var translateAnimatorY = ObjectAnimator.OfFloat(v, "y", endY);
 
-            pathAnimator.SetDuration(duration);
-            pathAnimator.StartDelay = delay;  
-            pathAnimator.Start();
+            translateAnimatorX.SetDuration(duration);
+            translateAnimatorY.SetDuration(duration);
 
+            translateAnimatorX.StartDelay = delay;
+            translateAnimatorY.StartDelay = delay;
+
+            translateAnimatorX.Start();
+            translateAnimatorY.Start();  
 
         }
 
