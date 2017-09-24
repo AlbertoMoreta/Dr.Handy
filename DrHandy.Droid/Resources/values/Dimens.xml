@@ -15,7 +15,7 @@
   
   <dimen name="actionbar_height">60dp</dimen>
   <dimen name="toolbar_header_height">100dp</dimen>
-  <dimen name="toolbar_top_padding">0dp</dimen>
+  <dimen name="toolbar_top_padding">24dp</dimen>
   <dimen name="main_screen_padding_top">40dp</dimen>
   <dimen name="card_height">120dp</dimen>
   <dimen name="card_padding">50dp</dimen>
