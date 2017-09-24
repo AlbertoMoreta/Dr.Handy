@@ -67,7 +67,7 @@ namespace DrHandy.Droid.Utils {
                     var item = items.ElementAt(count);
 
                     var currentDate = metric == VisualizationMetric.Weekly
-                        ? (int) item.Date.DayOfWeek == i
+                        ? (int) item.Date.DayOfWeek == (i + (int)CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek) % labelsCount
                         : (item.Date.Month) - 1 == i;
 
                     if (currentDate) {
@@ -98,7 +98,7 @@ namespace DrHandy.Droid.Utils {
                     var item = items.ElementAt(count);
 
                     var currentDate = metric == VisualizationMetric.Weekly
-                        ? (int) item.Date.DayOfWeek == i
+                        ? (int) item.Date.DayOfWeek == (i + (int)CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek) % labelsCount
                         : (item.Date.Month) - 1 == i;
 
                     if (currentDate) {
