@@ -589,6 +589,10 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\step_counter_icon.png" />
+    <AndroidResource Include="Resources\drawable-v21\ripple.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ripple.xml" />
   </ItemGroup>
   <Import Project="..\DrHandy\DrHandy.projitems" Label="Shared" Condition="Exists('..\DrHandy\DrHandy.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
