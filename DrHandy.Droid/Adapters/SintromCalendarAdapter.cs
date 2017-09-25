@@ -14,6 +14,8 @@ using DrHandy.DataBase;
 using DrHandy.Droid.Custom_Views;
 using DrHandy.Model;
 using DrHandy.Droid.Utils;
+using Android.Support.V7.Content.Res;
+using Android.Util;
 
 namespace DrHandy.Droid.Adapters {
     class SintromCalendarAdapter : RecyclerView.Adapter {
@@ -94,11 +96,22 @@ namespace DrHandy.Droid.Adapters {
             if (date.Month == _date.Month) {
                 viewHolder.ItemView.Clickable = true; 
                 if (date.Date.Equals(DateTime.Now.Date)) {
-                    viewHolder.ItemView.Background = ContextCompat.GetDrawable(_context,
+                    var drawable = (GradientDrawable) ContextCompat.GetDrawable(_context,
                         Resource.Drawable.background_selector);
-                } else {
-                    viewHolder.ItemView.SetBackgroundColor(Color.White);
-                } 
+
+                    var typedValue = new TypedValue();
+                    _context.Theme.ResolveAttribute(Resource.Attribute.colorPrimary, typedValue, true); 
+                    int color = typedValue.Data; 
+                    drawable.SetStroke(5, new Color(color));
+
+                    ((CardView)viewHolder.ItemView).GetChildAt(0).Background = drawable;
+                }
+                else
+                {
+                    ((CardView)viewHolder.ItemView).GetChildAt(0).SetBackgroundColor(Color.White);
+                }
+
+                
 
                 if (inrItems.Count != 0) {
                     var item = inrItems[0];
@@ -129,7 +142,7 @@ namespace DrHandy.Droid.Adapters {
 
             } else {
                 viewHolder.ItemView.Clickable = false;
-                viewHolder.ItemView.SetBackgroundColor(Color.LightGray);
+                ((CardView) viewHolder.ItemView).GetChildAt(0).SetBackgroundColor(Color.LightGray);
                 viewHolder.Icon.SetImageDrawable(null);
                 viewHolder.Control.Visibility = ViewStates.Gone;
                 viewHolder.Info.Text = null;

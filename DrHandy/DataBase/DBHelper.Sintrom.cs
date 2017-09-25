@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic; 
 using DrHandy.Model;
+using System.Globalization;
 
 namespace DrHandy.DataBase {
     public partial class DBHelper {
@@ -87,8 +88,13 @@ namespace DrHandy.DataBase {
         public void InsertSintromINRItem(SintromINRItem sintromInrItem) {
             var stringDate = sintromInrItem.Date.ToString(DATE_FORMAT);
 
+            NumberFormatInfo nfi = new NumberFormatInfo
+            {
+                NumberDecimalSeparator = "."
+            };
+
             var sql = "INSERT OR REPLACE INTO " + INR_TABLE + " (" + COL_USERID + ", " +COL_DATE + ", " + COL_CONTROL + ", " + COL_INR + ") VALUES "
-                + "('" + sintromInrItem.UserId + "', '" + stringDate + "', '" + (sintromInrItem.Control ? "1" : "0")  + "', " + sintromInrItem.INR + ")";
+                + "('" + sintromInrItem.UserId + "', '" + stringDate + "', '" + (sintromInrItem.Control ? "1" : "0")  + "', '" + sintromInrItem.INR.ToString(nfi) + "')";
 
             Connection.Execute(sql);
         }
