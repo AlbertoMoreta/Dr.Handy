@@ -127,7 +127,6 @@
     <AndroidResource Include="Resources\drawable\module_icon.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable\ripple.xml" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_add.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_clear.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_edit.png" />
@@ -482,6 +481,10 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-sw720dp\color_blindness_test_icon.png" />
+    <AndroidResource Include="Resources\drawable-v21\ripple.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ripple.xml" />
   </ItemGroup>
   <Import Project="..\DrHandy\DrHandy.projitems" Label="Shared" Condition="Exists('..\DrHandy\DrHandy.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
