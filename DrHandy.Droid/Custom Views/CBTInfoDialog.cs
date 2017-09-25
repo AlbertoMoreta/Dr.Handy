@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Support.V4.Content;
 
 namespace DrHandy.Droid.Custom_Views {
     class CBTInfoDialog : AlertDialog {
@@ -37,13 +38,13 @@ namespace DrHandy.Droid.Custom_Views {
             switch (type) {
                 case 1:
                     InfoText.Text = _context.Resources.GetString(Resource.String.number_question_info);
-                    ImageLeft.SetImageDrawable(_context.GetDrawable(Resource.Drawable.ishihara_08));
-                    ImageRight.SetImageDrawable(_context.GetDrawable(Resource.Drawable.cbt_numbers_example));
+                    ImageLeft.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.ishihara_08));
+                    ImageRight.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.cbt_numbers_example));
                     break;
                 case 2:
                     InfoText.Text = _context.Resources.GetString(Resource.String.line_question_info);
-                    ImageLeft.SetImageDrawable(_context.GetDrawable(Resource.Drawable.ishihara_35));
-                    ImageRight.SetImageDrawable(_context.GetDrawable(Resource.Drawable.cbt_lines_example));
+                    ImageLeft.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.ishihara_35));
+                    ImageRight.SetImageDrawable(ContextCompat.GetDrawable(_context, Resource.Drawable.cbt_lines_example));
                     break;
             }
 

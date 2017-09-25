@@ -15,6 +15,7 @@ using DrHandy.DataBase;
 using DrHandy.Droid.Fragments.StepCounter;
 using DrHandy.Droid.Interfaces;
 using DrHandy.Model;
+using DrHandy.Droid.Services;
 
 namespace DrHandy.Droid.Utils {
     class StepCounterUtils : HealthModuleUtils {
@@ -22,9 +23,10 @@ namespace DrHandy.Droid.Utils {
         public override void InitModuleDB()  {
             DBHelper.Instance.CreateStepCounterTable(); 
         }
-
-        public override Drawable GetHealthModuleIcon(Context context) {
-            return GetDrawableFromResources(context, "stepcounter_icon");
+        public override void DeviceBootUp(Context context, string shortName) {
+            //Start StepCounter Service
+            var stepCounterIntent = new Intent(context, typeof(StepCounterService));
+            context.StartService(stepCounterIntent);
         } 
 
         public override IHealthFragment GetHeaderFragment() {
@@ -54,5 +56,6 @@ namespace DrHandy.Droid.Utils {
         public override NotificationItem GetNotificationItem(Context context, HealthModule healthModule) {
             throw new NotImplementedException();
         }
+
     }
 }

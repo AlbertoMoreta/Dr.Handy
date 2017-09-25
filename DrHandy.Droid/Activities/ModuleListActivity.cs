@@ -20,6 +20,10 @@ using DrHandy.Logic;
 using AnimationUtils = DrHandy.Droid.Utils.AnimationUtils;
 
 namespace DrHandy.Droid {
+    
+    /*
+     *  ModuleListActivity - This activity will list all the existing health modules in the app 
+     */
     [Activity(Label = "@string/tools_activity_name", Theme = "@style/AppTheme", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait)]
     public class ModuleListActivity : BaseActivity {
 

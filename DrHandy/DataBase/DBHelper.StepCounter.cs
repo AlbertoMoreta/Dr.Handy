@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using DrHandy.Logic;
 using DrHandy.Model;
+using System.Globalization;
 
 namespace DrHandy.DataBase {
     public partial class DBHelper {
@@ -27,8 +28,12 @@ namespace DrHandy.DataBase {
 
             var stringDate = date.ToString(DATE_FORMAT);
 
+            NumberFormatInfo nfi = new NumberFormatInfo {
+                NumberDecimalSeparator = "."
+            };
+
             var sql = "INSERT OR REPLACE INTO " + STEPCOUNTER_TABLE + " (" + COL_DATE + ", " + COL_STEPS + ", " + COL_CALORIES + ", " + COL_DISTANCE + ") VALUES "
-                      + "('" + stringDate + "', " + steps + ", " + calories + ", " + distance + ")"; 
+                      + "('" + stringDate + "', " + steps + ", " + calories.ToString(nfi) + ", " + distance.ToString(nfi) + ")"; 
 
             Connection.Execute(sql);
         }
@@ -63,13 +68,12 @@ namespace DrHandy.DataBase {
             DropTable(STEPCOUNTER_TABLE);
             CreateStepCounterTable();
 
-            var startDate = DateTime.Now.AddMonths(-5);
-            var endDate = DateTime.Now.AddMonths(5);
+            var startDate = DateTime.Now.AddMonths(-8); 
 
             var rnd = new Random();
             var logic = StepCounterLogic.Instance();
 
-            for (var day = startDate.Date; day.Date <= endDate.Date; day = day.AddDays(1)) {
+            for (var day = startDate.Date; day.Date <= DateTime.Now.Date; day = day.AddDays(1)) {
                 var steps = rnd.Next(3000);
                  
                 UpdateSteps(day, steps, logic.GetCaloriesFromSteps(steps), logic.GetDistanceFromSteps(steps));

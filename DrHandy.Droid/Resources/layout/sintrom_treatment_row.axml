@@ -9,7 +9,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" 
-        android:padding="10dp">
+        android:padding="@dimen/margin_small">
         <DrHandy.Droid.Custom_Views.CustomTextView
             android:id="@+id/date"
             android:layout_width="wrap_content"
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="0.3"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="@dimen/margin_small"
             android:padding="5dp"
             android:scaleType="centerInside"
             android:adjustViewBounds="true" />

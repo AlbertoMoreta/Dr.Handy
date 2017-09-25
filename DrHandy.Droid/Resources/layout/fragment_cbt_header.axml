@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp">
+    android:layout_margin="@dimen/margin_small">
     <ImageView
         android:id="@+id/test_image"
         android:layout_width="wrap_content"
@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:padding="10dp"
+        android:padding="@dimen/margin_small"
         android:textColor="@android:color/white"
         android:textSize="@dimen/text_size_xlarge" />
 </LinearLayout>

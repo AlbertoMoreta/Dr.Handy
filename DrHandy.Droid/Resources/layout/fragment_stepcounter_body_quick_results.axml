@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/light_grey"
-    android:padding="10dp">
+    android:padding="@dimen/margin_small">
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -12,7 +12,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:padding="@dimen/margin_small">
             <DrHandy.Droid.Custom_Views.CustomTextView
                 android:id="@+id/yesterday"
                 android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="@dimen/margin_small">
                 <LinearLayout
                     android:id="@+id/steps_layout"
                     android:orientation="vertical"
@@ -57,7 +57,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@+id/steps_layout"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="@dimen/margin_small"
                     android:layout_centerVertical="true">
                     <DrHandy.Droid.Custom_Views.CustomTextView
                         android:layout_width="wrap_content"
@@ -81,7 +81,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/steps_layout"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="@dimen/margin_small"
                     android:layout_centerVertical="true">
                     <DrHandy.Droid.Custom_Views.CustomTextView
                         android:layout_width="wrap_content"
@@ -106,12 +106,12 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="@dimen/margin_small">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:padding="@dimen/margin_small">
           <DrHandy.Droid.Custom_Views.CustomTextView 
                 android:id="@+id/last_week"
                 android:layout_width="match_parent"
@@ -127,7 +127,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="@dimen/margin_small">
                 <LinearLayout
                     android:id="@+id/steps_layout"
                     android:orientation="vertical"
@@ -156,7 +156,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@+id/steps_layout"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="@dimen/margin_small"
                     android:layout_centerVertical="true">
                     <DrHandy.Droid.Custom_Views.CustomTextView
                         android:layout_width="wrap_content"
@@ -181,7 +181,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:layout_toRightOf="@+id/steps_layout"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="@dimen/margin_small"
                     android:layout_centerVertical="true">
                     <DrHandy.Droid.Custom_Views.CustomTextView
                         android:layout_width="wrap_content"

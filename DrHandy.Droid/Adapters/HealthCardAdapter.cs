@@ -17,6 +17,10 @@ using DrHandy.Droid.Listeners;
 using DrHandy.Model;
 
 namespace DrHandy.Droid.Adapters {
+    
+    /*
+     * HealthCardAdapter - Adapter for displaying the health cards on the main screen
+     */
     class HealthCardAdapter : RecyclerView.Adapter {
 
         //ViewHolder for the Cards
@@ -79,8 +83,8 @@ namespace DrHandy.Droid.Adapters {
                     fragmentTransaction.Remove(oldFragment);    //Remove previous fragment if exists
                 }
                 viewHolder.FragmentContainer.Id = (int)SystemClock.CurrentThreadTimeMillis();   //Give unique ID
-                fragmentTransaction.Replace(viewHolder.FragmentContainer.Id, fragment as Fragment); 
-                fragmentTransaction.Commit();
+                fragmentTransaction.Replace(viewHolder.FragmentContainer.Id, fragment as Fragment);
+                fragmentTransaction.CommitAllowingStateLoss();
                 viewHolder.FragmentContainer.Background = backgroundImage;
             } else {    //Show default fragment
                 viewHolder.ModuleLayout.Visibility = ViewStates.Visible;

@@ -18,9 +18,7 @@ namespace DrHandy.Droid.Utils {
     class ColorBlindnessTestUtils : HealthModuleUtils  {
         public override void InitModuleDB() { }
 
-        public override Drawable GetHealthModuleIcon(Context context) {
-            return GetDrawableFromResources(context, "colorblindnesstest_icon");
-        }
+        public override void DeviceBootUp(Context context, string shortName) { } 
 
         public override IHealthFragment GetHeaderFragment() {
             return  new CBTHeaderFragment();
@@ -37,5 +35,7 @@ namespace DrHandy.Droid.Utils {
         public override NotificationItem GetNotificationItem(Context context, HealthModule healthModule) {
             throw new NotImplementedException();
         }
+
+       
     }
 }

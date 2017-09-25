@@ -8,13 +8,14 @@
   <dimen name="text_size_xxxlarge">60sp</dimen>
   <dimen name="text_size_toolbar">40sp</dimen>
 
-  <dimen name="margin_medium">20sp</dimen>
+  <dimen name="margin_small">10dp</dimen>
+  <dimen name="margin_medium">20dp</dimen>
   <dimen name="margin_normal">35sp</dimen>
   <dimen name="margin_large">50sp</dimen> 
   
   <dimen name="actionbar_height">60dp</dimen>
   <dimen name="toolbar_header_height">100dp</dimen>
-  <dimen name="toolbar_top_padding">0dp</dimen>
+  <dimen name="toolbar_top_padding">24dp</dimen>
   <dimen name="main_screen_padding_top">40dp</dimen>
   <dimen name="card_height">120dp</dimen>
   <dimen name="card_padding">50dp</dimen>
@@ -24,5 +25,7 @@
   <dimen name="fab_size">50dp</dimen>
   <dimen name="fab_offset">-40dp</dimen>
   <dimen name="image_final_size">32dp</dimen>
+  <dimen name="user_account_image_size">32dp</dimen>
+  <dimen name="health_card_icon_size">70dp</dimen>
 
 </resources>

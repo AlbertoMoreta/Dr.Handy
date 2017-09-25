@@ -12,18 +12,18 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:layout_margin="@dimen/margin_small">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="@dimen/margin_small">
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/chart"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="@dimen/margin_small" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
@@ -34,12 +34,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    android:padding="10dp"
+    android:padding="@dimen/margin_small"
     android:visibility="gone">
     <DrHandy.Droid.Custom_Views.CustomTextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="@dimen/margin_small"
         android:gravity="center"
         android:text="@string/sintrom_empty_inr"
         android:textColor="?colorPrimary"

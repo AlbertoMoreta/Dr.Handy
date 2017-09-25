@@ -17,8 +17,11 @@ using DrHandy.Model;
 using DrHandy.DataBase;
 
 namespace DrHandy.Droid.Receivers {
-    [BroadcastReceiver]
-    [IntentFilter(new[] { Intent.ActionBootCompleted })]
+    
+    /*
+     * NotificationReceiver - BroadcastReceiver that will retrieve and display a NotificationItem when a notification is received 
+     */ 
+    [BroadcastReceiver] 
     public class NotificationReceiver : BroadcastReceiver { 
 
         public override void OnReceive(Context context, Intent intent) {
@@ -27,7 +30,6 @@ namespace DrHandy.Droid.Receivers {
 
             var healthModule = DBHelper.Instance.GetHealthModuleByShortName(moduleShortName);
 
-            //TODO
             var notificationItem = healthModule.GetNotificationItem(context, healthModule);
 
 
