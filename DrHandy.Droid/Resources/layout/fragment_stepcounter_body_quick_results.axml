@@ -1,206 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/light_grey"
     android:padding="@dimen/margin_small">
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" >
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <LinearLayout
-            android:orientation="vertical"
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:padding="@dimen/margin_small">
+        <DrHandy.Droid.Custom_Views.CustomTextView
+            android:id="@+id/yesterday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/margin_small">
+            android:text="@string/yesterday"
+            android:textColor="?colorPrimary"
+            android:textSize="@dimen/text_size_normal" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?colorPrimary" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/margin_small">
+          <LinearLayout
+              android:id="@+id/steps_layout"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerVertical="true"
+              android:layout_centerHorizontal="true">
             <DrHandy.Droid.Custom_Views.CustomTextView
-                android:id="@+id/yesterday"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/yesterday"
-                android:textColor="?colorPrimary"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/steps"
+                android:textSize="@dimen/text_size_xlarge" />
+            <DrHandy.Droid.Custom_Views.CustomTextView
+                android:id="@+id/steps_yesterday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/text_size_xxlarge" />
+          </LinearLayout>
+          <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_toLeftOf="@+id/steps_layout"
+              android:layout_marginRight="@dimen/margin_small"
+              android:layout_centerVertical="true">
+            <DrHandy.Droid.Custom_Views.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/calories_short"
                 android:textSize="@dimen/text_size_normal" />
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="?colorPrimary" />
-            <RelativeLayout
+            <DrHandy.Droid.Custom_Views.CustomTextView
+                android:id="@+id/calories_yesterday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:layout_centerVertical="true"
-                android:layout_marginTop="@dimen/margin_small">
-                <LinearLayout
-                    android:id="@+id/steps_layout"
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true">
-                    <DrHandy.Droid.Custom_Views.CustomTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="@string/steps"
-                        android:textSize="@dimen/text_size_xlarge" />
-                    <DrHandy.Droid.Custom_Views.CustomTextView
-                        android:id="@+id/steps_yesterday"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:layout_centerHorizontal="true"
-                        android:textSize="@dimen/text_size_xxlarge" />
-                </LinearLayout>
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_toLeftOf="@+id/steps_layout"
-                    android:layout_marginRight="@dimen/margin_small"
-                    android:layout_centerVertical="true">
-                    <DrHandy.Droid.Custom_Views.CustomTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="@string/calories_short"
-                        android:textSize="@dimen/text_size_normal" />
-                    <DrHandy.Droid.Custom_Views.CustomTextView
-                        android:id="@+id/calories_yesterday"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:layout_centerVertical="true"
-                        android:textSize="@dimen/text_size_xlarge"
-                        android:layout_toLeftOf="@+id/steps_yesterday" />
-                </LinearLayout>
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/steps_layout"
-                    android:layout_marginLeft="@dimen/margin_small"
-                    android:layout_centerVertical="true">
-                    <DrHandy.Droid.Custom_Views.CustomTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="@string/kilometers"
-                        android:textSize="@dimen/text_size_normal" />
-                    <DrHandy.Droid.Custom_Views.CustomTextView
-                        android:id="@+id/distance_yesterday"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:layout_centerVertical="true"
-                        android:textSize="@dimen/text_size_xlarge"
-                        android:layout_toRightOf="@+id/steps_yesterday" />
-                </LinearLayout>
-            </RelativeLayout>
-        </LinearLayout>
+                android:textSize="@dimen/text_size_xlarge"
+                android:layout_toLeftOf="@+id/steps_yesterday" />
+          </LinearLayout>
+          <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_toRightOf="@+id/steps_layout"
+              android:layout_marginLeft="@dimen/margin_small"
+              android:layout_centerVertical="true">
+            <DrHandy.Droid.Custom_Views.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/kilometers"
+                android:textSize="@dimen/text_size_normal" />
+            <DrHandy.Droid.Custom_Views.CustomTextView
+                android:id="@+id/distance_yesterday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/text_size_xlarge"
+                android:layout_toRightOf="@+id/steps_yesterday" />
+          </LinearLayout>
+        </RelativeLayout>
+      </LinearLayout>
     </android.support.v7.widget.CardView>
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_small">
-        <LinearLayout
-            android:orientation="vertical"
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:padding="@dimen/margin_small">
+        <DrHandy.Droid.Custom_Views.CustomTextView
+            android:id="@+id/last_week"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/margin_small">
-          <DrHandy.Droid.Custom_Views.CustomTextView 
-                android:id="@+id/last_week"
-                android:layout_width="match_parent"
+            android:text="@string/same_day_last_week"
+            android:textColor="?colorPrimary"
+            android:textSize="@dimen/text_size_normal" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?colorPrimary" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/margin_small">
+          <LinearLayout
+              android:id="@+id/steps_layout"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerVertical="true"
+              android:layout_centerHorizontal="true">
+            <DrHandy.Droid.Custom_Views.CustomTextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/same_day_last_week"
-                android:textColor="?colorPrimary"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/steps"
+                android:textSize="@dimen/text_size_xlarge" />
+            <DrHandy.Droid.Custom_Views.CustomTextView
+                android:id="@+id/steps_last_week"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/text_size_xxlarge" />
+          </LinearLayout>
+          <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_toLeftOf="@+id/steps_layout"
+              android:layout_marginRight="@dimen/margin_small"
+              android:layout_centerVertical="true">
+            <DrHandy.Droid.Custom_Views.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/calories_short"
                 android:textSize="@dimen/text_size_normal" />
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="?colorPrimary" />
-            <RelativeLayout
+            <DrHandy.Droid.Custom_Views.CustomTextView
+                android:id="@+id/calories_last_week"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:layout_centerVertical="true"
-                android:layout_marginTop="@dimen/margin_small">
-                <LinearLayout
-                    android:id="@+id/steps_layout"
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true">
-                    <DrHandy.Droid.Custom_Views.CustomTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="@string/steps"
-                        android:textSize="@dimen/text_size_xlarge" />
-                    <DrHandy.Droid.Custom_Views.CustomTextView
-                        android:id="@+id/steps_last_week"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:layout_centerHorizontal="true"
-                        android:textSize="@dimen/text_size_xxlarge" />
-                </LinearLayout>
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_toLeftOf="@+id/steps_layout"
-                    android:layout_marginRight="@dimen/margin_small"
-                    android:layout_centerVertical="true">
-                    <DrHandy.Droid.Custom_Views.CustomTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="@string/calories_short"
-                        android:textSize="@dimen/text_size_normal" />
-                    <DrHandy.Droid.Custom_Views.CustomTextView
-                        android:id="@+id/calories_last_week"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:layout_centerVertical="true"
-                        android:textSize="@dimen/text_size_xlarge"
-                        android:layout_toLeftOf="@+id/steps_last_week" />
-                </LinearLayout>
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_toRightOf="@+id/steps_layout"
-                    android:layout_marginLeft="@dimen/margin_small"
-                    android:layout_centerVertical="true">
-                    <DrHandy.Droid.Custom_Views.CustomTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="@string/kilometers"
-                        android:textSize="@dimen/text_size_normal" />
-                    <DrHandy.Droid.Custom_Views.CustomTextView
-                        android:id="@+id/distance_last_week"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:layout_centerVertical="true"
-                        android:textSize="@dimen/text_size_xlarge"
-                        android:layout_toRightOf="@+id/steps_last_week" />
-                </LinearLayout>
-            </RelativeLayout>
-        </LinearLayout>
+                android:textSize="@dimen/text_size_xlarge"
+                android:layout_toLeftOf="@+id/steps_last_week" />
+          </LinearLayout>
+          <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="bottom"
+              android:layout_toRightOf="@+id/steps_layout"
+              android:layout_marginLeft="@dimen/margin_small"
+              android:layout_centerVertical="true">
+            <DrHandy.Droid.Custom_Views.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/kilometers"
+                android:textSize="@dimen/text_size_normal" />
+            <DrHandy.Droid.Custom_Views.CustomTextView
+                android:id="@+id/distance_last_week"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/text_size_xlarge"
+                android:layout_toRightOf="@+id/steps_last_week" />
+          </LinearLayout>
+        </RelativeLayout>
+      </LinearLayout>
     </android.support.v7.widget.CardView>
-</LinearLayout>
+  </LinearLayout>
+</ScrollView>
