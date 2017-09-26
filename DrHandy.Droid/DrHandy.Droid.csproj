@@ -53,7 +53,8 @@
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
     <EnableProguard>false</EnableProguard>
     <AndroidSupportedAbis>armeabi-v7a;x86;x86_64</AndroidSupportedAbis>
-    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
+    <JavaMaximumHeapSize>
+    </JavaMaximumHeapSize>
     <AndroidLinkMode>Full</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
@@ -438,7 +439,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\cbt_lines_example.png" />
-  </ItemGroup> 
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values-es\Strings.stepcounter.xml" />
   </ItemGroup>
@@ -489,21 +490,21 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-sw600dp\sintrom_1.png" />
   </ItemGroup>
-  <ItemGroup> 
- </ItemGroup>
-<ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-sw600dp\sintrom_1_4.png" />
   </ItemGroup>
-<ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-sw600dp\sintrom_1_8.png" />
   </ItemGroup>
-<ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-sw600dp\sintrom_icon.png" />
   </ItemGroup>
-<ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-sw720dp\sintrom_icon.png" />
   </ItemGroup>
-<ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-sw600dp\sintrom_3_4.png" />
   </ItemGroup>
   <ItemGroup>
