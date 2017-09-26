@@ -13,7 +13,7 @@
   <string name="quick_results">Quick Results</string>
   <string name="weekly_results">Weekly Results</string>
   <string name="yearly_results">Yearly Results</string>
-  <string name="share_steps">Today I walked %1$s steps, burned %2$s calories and traveled %3$s km.</string>
+  <string name="share_steps">Today I walked %1$s steps, burned %2$s calories and traveled %3$s km. See more at https://goo.gl/3Wdg7a #DrHandy</string>
 
   <string name="weekday">Day</string>
   <string name="month">Month</string>

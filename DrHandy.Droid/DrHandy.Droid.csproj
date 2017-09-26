@@ -39,7 +39,7 @@
     <EnableLLVM>False</EnableLLVM>
     <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
     <EnableProguard>False</EnableProguard>
-    <AndroidSupportedAbis>armeabi;armeabi-v7a;x86;x86_64;arm64-v8a</AndroidSupportedAbis>
+    <AndroidSupportedAbis>armeabi-v7a;x86;x86_64</AndroidSupportedAbis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -52,8 +52,9 @@
     <DebugSymbols>true</DebugSymbols>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
     <EnableProguard>false</EnableProguard>
-    <AndroidSupportedAbis />
-    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
+    <AndroidSupportedAbis>armeabi-v7a;x86;x86_64</AndroidSupportedAbis>
+    <JavaMaximumHeapSize>
+    </JavaMaximumHeapSize>
     <AndroidLinkMode>Full</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
@@ -438,7 +439,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\cbt_lines_example.png" />
-  </ItemGroup> 
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values-es\Strings.stepcounter.xml" />
   </ItemGroup>
@@ -489,21 +490,21 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-sw600dp\sintrom_1.png" />
   </ItemGroup>
-  <ItemGroup> 
- </ItemGroup>
-<ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-sw600dp\sintrom_1_4.png" />
   </ItemGroup>
-<ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-sw600dp\sintrom_1_8.png" />
   </ItemGroup>
-<ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-sw600dp\sintrom_icon.png" />
   </ItemGroup>
-<ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-sw720dp\sintrom_icon.png" />
   </ItemGroup>
-<ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable-sw600dp\sintrom_3_4.png" />
   </ItemGroup>
   <ItemGroup>
@@ -593,6 +594,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ripple.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values-xhdpi\Dimens.xml" />
   </ItemGroup>
   <Import Project="..\DrHandy\DrHandy.projitems" Label="Shared" Condition="Exists('..\DrHandy\DrHandy.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
